@@ -1,6 +1,6 @@
 # react-native-ficus-ui
 
-React Native UI library inspired by Magnus UI and Chakra UI
+Ficus UI is a React Native UI library forked on Magnus UI and inspired by Chakra UI
 
 ## Installation
 
@@ -8,14 +8,8 @@ React Native UI library inspired by Magnus UI and Chakra UI
 npm install react-native-ficus-ui
 ```
 
-## Usage
-
-```js
-import { multiply } from 'react-native-ficus-ui';
-
-// ...
-
-const result = await multiply(3, 7);
+```sh
+yarn add react-native-ficus-ui
 ```
 
 ## Contributing
