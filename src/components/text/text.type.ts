@@ -23,6 +23,6 @@ export interface TextProps
     OverflowPropsType,
     OpacityPropsType,
     ZIndexPropsType,
-    Pick<BackgroundPropsType, 'bg'>,
-    Pick<FlexPropsType, 'flex'>,
+    Partial<Pick<BackgroundPropsType, 'bg'>>,
+    Partial<Pick<FlexPropsType, 'flex'>>,
     VariantPropsType {}

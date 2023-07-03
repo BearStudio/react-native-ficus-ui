@@ -24,5 +24,6 @@
     "target": "esnext",
     "types": ["react-native", "jest"]
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["./**/*.spec.ts", "./**/*.spec.tsx"]
 }

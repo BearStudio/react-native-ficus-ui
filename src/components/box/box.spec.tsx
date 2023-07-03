@@ -1,10 +1,10 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react-native';
 
-import { Text } from 'components/text/text.component';
+import { Text } from '../text/text.component';
 import { Box } from './box.component';
 import type { BoxProps } from './box.type';
-import { ThemeProvider } from 'theme/theme.provider';
+import { ThemeProvider } from '../../theme/theme.provider';
 
 describe('Box component', () => {
   const TestBox: React.FC<BoxProps> = (props) => (
