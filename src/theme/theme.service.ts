@@ -1,4 +1,4 @@
-import { TextProps } from 'src/components/text/text.type';
+import { TextProps } from 'components/text/text.type';
 import { isValidColor } from '../utilities';
 import type { ThemeType } from './type';
 

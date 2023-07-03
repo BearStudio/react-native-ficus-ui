@@ -11,7 +11,7 @@ import type {
   SpacingPropsType,
   BorderRadiusPropsType,
   VariantPropsType,
-} from '../../types';
+} from 'types';
 
 export interface TextProps
   extends RNTextProps,

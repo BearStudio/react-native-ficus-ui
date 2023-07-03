@@ -1,6 +1,6 @@
-import type { TextProps } from 'src/components/text/text.type';
+import type { TextProps } from 'components/text/text.type';
 import type { ThemeProps, VariantType } from '../types';
-import type { BoxProps } from 'src/components/box/box.type';
+import type { BoxProps } from 'components/box/box.type';
 
 export interface ColorHues {
   50: string;

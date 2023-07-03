@@ -3,8 +3,8 @@ import { Text as RNText } from 'react-native';
 
 import type { TextProps } from './text.type';
 import { getStyle } from './text.style';
-import { useTheme } from 'src/theme/theme.hook';
-import { useDefaultProps } from 'src/utilities/useDefaultProps';
+import { useDefaultProps } from 'utilities/useDefaultProps';
+import { useTheme } from 'theme/theme.hook';
 
 const Text: React.FunctionComponent<TextProps> = (incomingProps) => {
   const props = useDefaultProps('Text', incomingProps, {
