@@ -1,3 +1,4 @@
+import { TextProps } from 'src/components/text/text.type';
 import { isValidColor } from '../utilities';
 import type { ThemeType } from './type';
 
@@ -13,7 +14,7 @@ export const createSpacingStyles = (
   props: any,
   theme: ThemeType['spacing']
 ) => {
-  const propKeys : any = {
+  const propKeys: any = {
     p: 'padding',
     pt: 'paddingTop',
     pr: 'paddingRight',
@@ -41,7 +42,7 @@ export const createSpacingStyles = (
       computedStyle[styleProperty] = getThemeProperty(theme, props[propKey]);
     }
   }
-  
+
   return computedStyle;
 };
 
@@ -105,19 +106,22 @@ export const getThemeColor = (
 ): string => {
   if (themeColors && value) {
     if (typeof themeColors[value] !== 'undefined') {
-      let colorValue : string | String = themeColors[value] as string;
+      let colorValue: string | String = themeColors[value] as string;
 
       if (value.includes('.')) {
         const keyParts = value.split('.');
-        let subPropertyValue : any = themeColors;
+        let subPropertyValue: any = themeColors;
         for (const part in keyParts) {
           subPropertyValue = subPropertyValue[part];
         }
-        if (typeof subPropertyValue === 'string' || subPropertyValue instanceof String) {
+        if (
+          typeof subPropertyValue === 'string' ||
+          subPropertyValue instanceof String
+        ) {
           colorValue = subPropertyValue;
         }
       }
-      
+
       if (isValidColor(colorValue as string)) {
         return colorValue as string;
       }
@@ -163,7 +167,7 @@ export const createBorderRadiusStyles = (
   props: any,
   theme: ThemeType['borderRadius']
 ) => {
-  const propKeys : any = {
+  const propKeys: any = {
     borderRadius: 'borderRadius',
     borderTopLeftRadius: 'borderTopLeftRadius',
     borderTopRightRadius: 'borderTopRightRadius',
@@ -200,7 +204,7 @@ export const createBorderRadiusStyles = (
  * @param props
  */
 export const createFlexStyles = (props: any) => {
-  const propKeys : any = {
+  const propKeys: any = {
     flex: 'flex',
   };
 
@@ -223,7 +227,7 @@ export const createFlexStyles = (props: any) => {
  * @param value
  */
 export const createBorderWidthStyles = (props: any) => {
-  const propKeys : any = {
+  const propKeys: any = {
     borderWidth: 'borderWidth',
     borderStartWidth: 'borderStartWidth',
     borderEndWidth: 'borderEndWidth',
@@ -255,7 +259,7 @@ export const createBorderColorStyles = (
   props: any,
   theme: ThemeType['colors']
 ) => {
-  const propKeys : any = {
+  const propKeys: any = {
     borderColor: 'borderColor',
     borderTopColor: 'borderTopColor',
     borderRightColor: 'borderRightColor',
@@ -307,7 +311,7 @@ export const createShadowStyles = (props: any, theme: ThemeType) => {
  * @param value
  */
 export const createPositionStyle = (props: any) => {
-  const propKeys : any = {
+  const propKeys: any = {
     position: 'position',
     top: 'top',
     left: 'left',

@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react-native';
 import { Text } from '../text/text.component';
 import { Box } from './box.component';
 import type { BoxProps } from './box.type';
-import { ThemeProvider } from 'src/theme/theme.provider';
+import { ThemeProvider } from '../../theme/theme.provider';
 
 describe('Box component', () => {
   const TestBox: React.FC<BoxProps> = (props) => (
@@ -20,6 +20,8 @@ describe('Box component', () => {
       </TestBox>
     );
 
-    expect(screen.getByText('I love Ficus UI (forked from Magnus UI)')).toBeTruthy();
+    expect(
+      screen.getByText('I love Ficus UI (forked from Magnus UI)')
+    ).toBeTruthy();
   });
 });
