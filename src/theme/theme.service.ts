@@ -105,29 +105,34 @@ export const getThemeColor = (
   value: string | undefined
 ): string => {
   if (themeColors && value) {
-    if (typeof themeColors[value] !== 'undefined') {
-      let colorValue: string | String = themeColors[value] as string;
-
-      if (value.includes('.')) {
-        const keyParts = value.split('.');
-        let subPropertyValue: any = themeColors;
-        for (const part in keyParts) {
-          subPropertyValue = subPropertyValue[part];
-        }
-        if (
-          typeof subPropertyValue === 'string' ||
-          subPropertyValue instanceof String
-        ) {
-          colorValue = subPropertyValue;
-        }
-      }
-
-      if (isValidColor(colorValue as string)) {
-        return colorValue as string;
-      }
-
-      return getThemeColor(themeColors, colorValue as string);
+    if (
+      themeColors.hasOwnProperty(value) &&
+      typeof themeColors[value] !== 'undefined'
+    ) {
+      const colorValue: string | String = themeColors[value] as string;
+      return colorValue as string;
     }
+
+    let colorValue: string | String = 'transparent';
+    if (value.includes('.')) {
+      const keyParts = value.split('.');
+      let subPropertyValue: any = themeColors;
+      for (const part of keyParts) {
+        subPropertyValue = subPropertyValue[part];
+      }
+      if (
+        typeof subPropertyValue === 'string' ||
+        subPropertyValue instanceof String
+      ) {
+        colorValue = subPropertyValue;
+      }
+    }
+
+    if (isValidColor(colorValue as string)) {
+      return colorValue as string;
+    }
+
+    return getThemeColor(themeColors, colorValue as string);
   }
 
   return value as string;

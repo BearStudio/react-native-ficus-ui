@@ -16,7 +16,7 @@ describe('Box component', () => {
   it('should render component passed to children', () => {
     render(
       <TestBox>
-        <Text>I love magnus ui</Text>
+        <Text>I love Ficus UI (forked from Magnus UI)</Text>
       </TestBox>
     );
 

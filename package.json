@@ -89,9 +89,8 @@
   "packageManager": "^yarn@1.22.15",
   "jest": {
     "preset": "react-native",
-    "modulePathIgnorePatterns": [
-      "<rootDir>/example/node_modules",
-      "<rootDir>/lib/"
+    "modulePaths": [
+      "<rootDir>/src"
     ]
   },
   "commitlint": {
