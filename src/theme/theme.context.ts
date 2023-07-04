@@ -7,8 +7,9 @@ export interface ThemeContextType {
   setTheme: (theme: ThemeType) => void;
 }
 
-export const ThemeContext: React.Context<ThemeContextType> =
-  React.createContext({
+export const ThemeContext: React.Context<ThemeContextType> = React.createContext(
+  {
     theme: defaultTheme,
     setTheme: (_theme: ThemeType) => {},
-  });
+  }
+);

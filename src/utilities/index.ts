@@ -58,9 +58,9 @@ export const useStateCallback = (initialState: any) => {
   const [state, setState] = useState(initialState);
   const cbRef = useRef(null); // mutable ref to store current callback
 
-  const setStateCallback = (state: any, cb: any) => {
+  const setStateCallback = (newState: any, cb: any) => {
     cbRef.current = cb; // store passed callback to ref
-    setState(state);
+    setState(newState);
   };
 
   useEffect(() => {
