@@ -9,8 +9,8 @@ import {
   getThemeFontFamily,
   getFontWeight,
   getThemeColor,
-} from 'theme/theme.service';
-import type { ThemeType } from 'theme/type';
+} from '../../theme/theme.service';
+import type { ThemeType } from '../../theme/type';
 import type { TextProps } from './text.type';
 
 /**
@@ -33,7 +33,6 @@ export const getStyle = (theme: ThemeType, props: TextProps) => {
     backgroundColor: getThemeColor(theme.colors, props.bg),
     overflow: props.overflow,
     opacity: props.opacity,
-
     textDecorationLine: props.textDecorLine,
     textDecorationStyle: props.textDecorStyle,
     letterSpacing: props.letterSpacing,

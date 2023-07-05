@@ -5,9 +5,9 @@ import {
 } from 'react-native';
 
 import { getStyle } from './box.style';
-import { useDefaultProps } from 'utilities/useDefaultProps';
 import type { BoxProps } from './box.type';
-import { useTheme } from 'theme/theme.hook';
+import { useTheme } from '../../theme/theme.hook';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
 
 const Box: React.FunctionComponent<BoxProps> = (incomingProps) => {
   const props = useDefaultProps('Box', incomingProps, {
