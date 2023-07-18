@@ -84,10 +84,10 @@ const ScrollBox: React.FunctionComponent<ScrollBoxProps> = (incomingProps) => {
   const computedStyle = getStyle(theme, props);
 
   return (
-    <ScrollView style={computedStyle.box} {...rest}>
+    <ScrollView style={computedStyle.scrollbox} {...rest}>
       {children}
     </ScrollView>
   );
 };
 
-export { ScrollBox };
+export { ScrollBox };à

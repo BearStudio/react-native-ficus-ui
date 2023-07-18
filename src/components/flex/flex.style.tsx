@@ -21,7 +21,7 @@ import type { ThemeType } from '../../theme/type';
 export const getStyle = (theme: ThemeType, props: FlexProps) => {
   const computedStyle: any = {};
 
-  computedStyle.box = {
+  computedStyle.flex = {
     flexDirection: props.row ? 'row' : props.flexDirection,
     flexWrap: props.flexWrap,
     alignItems: props.alignItems,
@@ -53,8 +53,8 @@ export const getStyle = (theme: ThemeType, props: FlexProps) => {
 
   // merging custom style props to computed style
   if (props.style) {
-    computedStyle.box = {
-      ...computedStyle.box,
+    computedStyle.flex = {
+      ...computedStyle.flex,
       // @ts-ignore
       ...props.style,
     };

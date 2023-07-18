@@ -83,7 +83,7 @@ const Flex: React.FunctionComponent<FlexProps> = (incomingProps) => {
   const computedStyle = getStyle(theme, props);
 
   return (
-    <RNView style={computedStyle.box} {...rest}>
+    <RNView style={computedStyle.flex} {...rest}>
       {children}
     </RNView>
   );

@@ -7,7 +7,7 @@ import type { ScrollBoxProps } from './scrollbox.type';
 import { ThemeProvider } from '../../theme/theme.provider';
 
 describe('ScrollBox component', () => {
-  const TestBox: React.FC<ScrollBoxProps> = (props) => (
+  const TestScrollBox: React.FC<ScrollBoxProps> = (props) => (
     <ThemeProvider>
       <ScrollBox {...props} />
     </ThemeProvider>
@@ -15,9 +15,9 @@ describe('ScrollBox component', () => {
 
   it('should render component passed to children', () => {
     render(
-      <TestBox>
+      <TestScrollBox>
         <Text>I love Ficus UI (forked from Magnus UI)</Text>
-      </TestBox>
+      </TestScrollBox>
     );
 
     expect(
