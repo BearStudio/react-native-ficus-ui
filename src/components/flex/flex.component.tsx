@@ -1,14 +1,15 @@
 import * as React from 'react';
+import { View as RNView } from 'react-native';
 
-import { ScrollView } from 'react-native';
-import { getStyle } from './scrollbox.style';
-import type { ScrollBoxProps } from './scrollbox.type';
+import { getStyle } from './flex.style';
+import type { FlexProps } from './flex.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
 
-const ScrollBox: React.FunctionComponent<ScrollBoxProps> = (incomingProps) => {
-  const props = useDefaultProps('ScrollBox', incomingProps, {
+const Flex: React.FunctionComponent<FlexProps> = (incomingProps) => {
+  const props = useDefaultProps('Flex', incomingProps, {
     bg: 'transparent',
+    flex: 1,
     flexDirection: 'column',
     flexWrap: 'nowrap',
     borderRadius: 'none',
@@ -53,8 +54,6 @@ const ScrollBox: React.FunctionComponent<ScrollBoxProps> = (incomingProps) => {
     borderRightRadius,
     borderBottomRadius,
     children,
-    bgImg,
-    bgMode,
     alignItems,
     justifyContent,
     borderColor,
@@ -84,10 +83,25 @@ const ScrollBox: React.FunctionComponent<ScrollBoxProps> = (incomingProps) => {
   const computedStyle = getStyle(theme, props);
 
   return (
-    <ScrollView style={computedStyle.box} {...rest}>
+    <RNView style={computedStyle.box} {...rest}>
       {children}
-    </ScrollView>
+    </RNView>
   );
 };
 
-export { ScrollBox };
+// Flex.defaultProps = {
+//   flex: 1,
+//   bg: 'transparent',
+//   flexDirection: 'column',
+//   flexWrap: 'nowrap',
+//   borderRadius: 'none',
+//   shadow: 'none',
+//   shadowColor: 'gray900',
+//   position: 'relative',
+//   bgMode: 'cover',
+//   pointerEvents: 'auto',
+//   row: false,
+//   borderStyle: 'solid',
+// };
+
+export { Flex };
