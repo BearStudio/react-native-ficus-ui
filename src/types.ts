@@ -172,8 +172,11 @@ export interface FlexPropsType {
   direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
   flexWrap?: 'wrap' | 'nowrap' | 'wrap-reverse';
   wrap?: 'wrap' | 'nowrap' | 'wrap-reverse';
+  flexBasis?: string | number;
   basis?: string | number;
+  flexGrow?: number;
   grow?: number;
+  flexShrink?: number;
   shrink?: number;
   justifyContent?:
     | 'flex-start'
