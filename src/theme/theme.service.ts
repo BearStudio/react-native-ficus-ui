@@ -61,7 +61,8 @@ export const createStackSpacingStyles = (
   const computedStyle: any = {};
 
   if ('spacing' in props) {
-    computedStyle.mt = getThemeProperty(theme, props.spacing);
+    computedStyle.height = getThemeProperty(theme, props.spacing);
+    computedStyle.width = getThemeProperty(theme, props.spacing);
   }
 
   return computedStyle;
