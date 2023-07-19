@@ -1,7 +1,5 @@
 import * as React from 'react';
-import {
-  View as RNView,
-} from 'react-native';
+import { View as RNView } from 'react-native';
 
 import { getStyle } from './stack.style';
 import type { StackProps } from './stack.type';
@@ -97,14 +95,15 @@ const Stack: React.FunctionComponent<StackProps> = (incomingProps) => {
 
   return (
     <RNView style={computedStyle.stack} {...rest}>
-      {children && Array.isArray(children) ? children.map((item, index) => (
-        <RNView key={`stack-${index}`}>
-          {item}
-          {index !== (children.length - 1) ? (
-            <RNView style={computedStyle.stackSpacing}></RNView>
-          ) : null}
-        </RNView>
-      )) : children}
+      {children && Array.isArray(children)
+        ? children.map((item, index) => (
+          <RNView key={`stack-${index}`}>
+            {item}
+            {index !== (children.length - 1) ? (
+              <RNView style={computedStyle.stackSpacing} />
+            ) : null}
+          </RNView>
+        )) : children}
     </RNView>
   );
 };

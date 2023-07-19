@@ -24,7 +24,7 @@ describe('Stack component', () => {
     );
 
     expect(
-      screen.getByText('I love Ficus UI (forked from Magnus UI)')
+      screen.getAllByText('I love Ficus UI (forked from Magnus UI)')
     ).toBeTruthy();
   });
 });
