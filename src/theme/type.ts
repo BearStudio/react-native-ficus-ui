@@ -25,6 +25,8 @@ export interface ThemeType {
     Flex?: VariantType<FlexProps>;
     ScrollBox?: VariantType<ScrollBoxProps>;
     Stack?: VariantType<StackProps>;
+    HStack?: VariantType<StackProps>;
+    VStack?: VariantType<StackProps>;
   };
 
   fontFamily?: {

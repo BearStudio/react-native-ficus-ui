@@ -1,9 +1,6 @@
 import * as React from 'react';
-import { View as RNView } from 'react-native';
 
-import { getStyle } from './stack.style';
 import type { StackProps } from './stack.type';
-import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { Stack } from './stack.component';
 
