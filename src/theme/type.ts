@@ -43,6 +43,7 @@ export interface ThemeType {
   fontSize?: ThemeProps<number>;
   borderRadius?: { none: 0; full: 99999 } & ThemeProps<number>;
   spacing?: { none: 0 } & ThemeProps<number>;
+  stackSpacing?: { none: 0 } & ThemeProps<number>;
   shadowColor?: string;
   shadow?: ThemeProps<{
     shadowOffset?: {

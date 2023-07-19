@@ -19,6 +19,7 @@ const Stack: React.FunctionComponent<StackProps> = (incomingProps) => {
     bgMode: 'cover',
     pointerEvents: 'auto',
     borderStyle: 'solid',
+    spacing: 0,
   });
 
   const {
@@ -88,6 +89,7 @@ const Stack: React.FunctionComponent<StackProps> = (incomingProps) => {
     right,
     bottom,
     zIndex,
+    spacing,
     ...rest
   } = props;
   const { theme } = useTheme();
@@ -95,7 +97,14 @@ const Stack: React.FunctionComponent<StackProps> = (incomingProps) => {
 
   return (
     <RNView style={computedStyle.stack} {...rest}>
-      {children}
+      {children && Array.isArray(children) ? children.map((item, index) => (
+        <RNView key={`stack-${index}`}>
+          {item}
+          {index !== (children.length - 1) ? (
+            <RNView style={computedStyle.stackSpacing}></RNView>
+          ) : null}
+        </RNView>
+      )) : children}
     </RNView>
   );
 };
@@ -111,6 +120,7 @@ const Stack: React.FunctionComponent<StackProps> = (incomingProps) => {
 //   bgMode: 'cover',
 //   pointerEvents: 'auto',
 //   borderStyle: 'solid',
+//   spacing: 0,
 // };
 
 export { Stack };

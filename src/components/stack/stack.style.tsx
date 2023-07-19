@@ -4,6 +4,7 @@ import {
   createShadowStyles,
   createPositionStyle,
   createSpacingStyles,
+  createStackSpacingStyles,
   createBorderWidthStyles,
   createBorderColorStyles,
   createBorderRadiusStyles,
@@ -58,6 +59,10 @@ export const getStyle = (theme: ThemeType, props: StackProps) => {
       ...props.style,
     };
   }
+
+  computedStyle.stackSpacing = {
+    ...createStackSpacingStyles(props, theme.stackSpacing),
+  };
 
   return StyleSheet.create(computedStyle);
 };

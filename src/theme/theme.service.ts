@@ -46,10 +46,6 @@ export const createSpacingStyles = (
   return computedStyle;
 };
 
-import { TextProps } from 'components/text/text.type';
-import { isValidColor } from '../utilities';
-import type { ThemeType } from './type';
-
 /**
  * Create spacing styles from object of style props passed to ficus component
  *
@@ -60,14 +56,12 @@ import type { ThemeType } from './type';
  */
 export const createStackSpacingStyles = (
   props: any,
-  theme: ThemeType['spacing']
+  theme: ThemeType['stackSpacing']
 ) => {
   const computedStyle: any = {};
 
-  const styleProperty = propKeys['spacing'];
-
   if ('spacing' in props) {
-    computedStyle[styleProperty] = getThemeProperty(theme, props['spacing']);
+    computedStyle['mt'] = getThemeProperty(theme, props['spacing']);
   }
 
   return computedStyle;

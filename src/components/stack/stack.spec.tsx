@@ -2,22 +2,25 @@ import React from 'react';
 import { render, screen } from '@testing-library/react-native';
 
 import { Text } from '../text/text.component';
-import { Box } from './box.component';
-import type { BoxProps } from './box.type';
+import { Stack } from './stack.component';
+import type { StackProps } from './stack.type';
 import { ThemeProvider } from '../../theme/theme.provider';
 
-describe('Box component', () => {
-  const TestBox: React.FC<BoxProps> = (props) => (
+describe('Stack component', () => {
+  const TestStack: React.FC<StackProps> = (props) => (
     <ThemeProvider>
-      <Box {...props} />
+      <Stack {...props} />
     </ThemeProvider>
   );
 
   it('should render component passed to children', () => {
     render(
-      <TestBox>
+      <TestStack spacing={20}>
         <Text>I love Ficus UI (forked from Magnus UI)</Text>
-      </TestBox>
+        <Text>I love Ficus UI (forked from Magnus UI)</Text>
+        <Text>I love Ficus UI (forked from Magnus UI)</Text>
+        <Text>I love Ficus UI (forked from Magnus UI)</Text>
+      </TestStack>
     );
 
     expect(
