@@ -22,10 +22,13 @@ export const getStyle = (theme: ThemeType, props: FlexProps) => {
   const computedStyle: any = {};
 
   computedStyle.flex = {
-    flexDirection: props.row ? 'row' : props.flexDirection,
-    flexWrap: props.flexWrap,
-    alignItems: props.alignItems,
-    justifyContent: props.justifyContent,
+    flexDirection: props.direction ? props.direction : props.flexDirection,
+    flexWrap: props.wrap ? props.wrap : props.flexWrap,
+    alignItems: props.align ? props.align : props.alignItems,
+    justifyContent: props.justify ? props.justify : props.justifyContent,
+    flexBasis: props.basis ? props.basis : props.flexBasis,
+    flexGrow: props.grow ? props.grow : props.flexGrow,
+    flexShrink: props.shrink ? props.shrink : props.flexShrink,
     height: props.h,
     width: props.w,
     minWidth: props.minW,
@@ -44,10 +47,6 @@ export const getStyle = (theme: ThemeType, props: FlexProps) => {
     ...createBorderWidthStyles(props),
     ...createSpacingStyles(props, theme.spacing),
     ...createBorderColorStyles(props, theme.colors),
-    ...createBorderRadiusStyles(props, theme.borderRadius),
-  };
-
-  computedStyle.image = {
     ...createBorderRadiusStyles(props, theme.borderRadius),
   };
 

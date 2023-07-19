@@ -17,7 +17,6 @@ const Flex: React.FunctionComponent<FlexProps> = (incomingProps) => {
     position: 'relative',
     bgMode: 'cover',
     pointerEvents: 'auto',
-    row: false,
     borderStyle: 'solid',
   });
 
@@ -43,7 +42,7 @@ const Flex: React.FunctionComponent<FlexProps> = (incomingProps) => {
     position,
     style,
     flexDirection,
-    row,
+    direction,
     borderRadius,
     borderTopRadius,
     borderTopLeftRadius,
@@ -55,7 +54,9 @@ const Flex: React.FunctionComponent<FlexProps> = (incomingProps) => {
     borderBottomRadius,
     children,
     alignItems,
+    align,
     justifyContent,
+    justify,
     borderColor,
     borderBottomColor,
     borderLeftColor,
@@ -68,6 +69,13 @@ const Flex: React.FunctionComponent<FlexProps> = (incomingProps) => {
     borderTopWidth,
     borderEndWidth,
     flexWrap,
+    wrap,
+    flexGrow,
+    grow,
+    flexBasis,
+    basis,
+    flexShrink,
+    shrink,
     shadow,
     shadowColor,
     opacity,
@@ -100,7 +108,6 @@ const Flex: React.FunctionComponent<FlexProps> = (incomingProps) => {
 //   position: 'relative',
 //   bgMode: 'cover',
 //   pointerEvents: 'auto',
-//   row: false,
 //   borderStyle: 'solid',
 // };
 

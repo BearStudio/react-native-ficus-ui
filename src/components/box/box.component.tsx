@@ -19,7 +19,6 @@ const Box: React.FunctionComponent<BoxProps> = (incomingProps) => {
     position: 'relative',
     bgMode: 'cover',
     pointerEvents: 'auto',
-    row: false,
     borderStyle: 'solid',
   });
 
@@ -45,7 +44,7 @@ const Box: React.FunctionComponent<BoxProps> = (incomingProps) => {
     position,
     style,
     flexDirection,
-    row,
+    direction,
     borderRadius,
     borderTopRadius,
     borderTopLeftRadius,
@@ -59,7 +58,9 @@ const Box: React.FunctionComponent<BoxProps> = (incomingProps) => {
     bgImg,
     bgMode,
     alignItems,
+    align,
     justifyContent,
+    justify,
     borderColor,
     borderBottomColor,
     borderLeftColor,
@@ -72,6 +73,13 @@ const Box: React.FunctionComponent<BoxProps> = (incomingProps) => {
     borderTopWidth,
     borderEndWidth,
     flexWrap,
+    wrap,
+    flexGrow,
+    grow,
+    flexBasis,
+    basis,
+    flexShrink,
+    shrink,
     shadow,
     shadowColor,
     opacity,
@@ -119,7 +127,6 @@ const Box: React.FunctionComponent<BoxProps> = (incomingProps) => {
 //   position: 'relative',
 //   bgMode: 'cover',
 //   pointerEvents: 'auto',
-//   row: false,
 //   borderStyle: 'solid',
 // };
 

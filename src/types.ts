@@ -149,20 +149,31 @@ export interface DimensionPropsType {
 }
 
 export const flexProps = [
-  'row',
   'flex',
   'flexDirection',
+  'direction',
   'flexWrap',
   'justifyContent',
   'alignSelf',
   'alignItems',
 ] as const;
 export interface FlexPropsType {
-  row?: boolean;
   flex?: number;
   flexDirection?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
+  direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
   flexWrap?: 'wrap' | 'nowrap' | 'wrap-reverse';
+  wrap?: 'wrap' | 'nowrap' | 'wrap-reverse';
+  basis?: string | number;
+  grow?: number;
+  shrink?: number;
   justifyContent?:
+    | 'flex-start'
+    | 'flex-end'
+    | 'center'
+    | 'space-between'
+    | 'space-around'
+    | 'space-evenly';
+  justify?:
     | 'flex-start'
     | 'flex-end'
     | 'center'
@@ -177,6 +188,7 @@ export interface FlexPropsType {
     | 'stretch'
     | 'baseline';
   alignItems?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
+  align?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
 }
 
 export const positionProps = [
