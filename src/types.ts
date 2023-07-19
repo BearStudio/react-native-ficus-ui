@@ -105,7 +105,7 @@ export interface SpacingPropsType {
 export const stackSpacingProps = ['spacing'] as const;
 export interface StackSpacingPropsType {
   spacing?: string | number;
-};
+}
 
 export const borderRadiusProps = [
   'borderRadius',
