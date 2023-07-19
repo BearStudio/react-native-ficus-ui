@@ -153,9 +153,18 @@ export const flexProps = [
   'flexDirection',
   'direction',
   'flexWrap',
+  'wrap',
+  'flexGrow',
+  'grow',
+  'flexBasis',
+  'basis',
+  'flexShrink',
+  'shrink',
   'justifyContent',
+  'justify',
   'alignSelf',
   'alignItems',
+  'align',
 ] as const;
 export interface FlexPropsType {
   flex?: number;
