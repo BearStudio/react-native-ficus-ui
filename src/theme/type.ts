@@ -23,6 +23,7 @@ export interface ThemeType {
     Box?: VariantType<BoxProps>;
     Flex?: VariantType<FlexProps>;
     ScrollBox?: VariantType<ScrollBoxProps>;
+    Stack?: VariantType<StackProps>;
   };
 
   fontFamily?: {
