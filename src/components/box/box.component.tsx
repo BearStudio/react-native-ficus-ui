@@ -13,7 +13,6 @@ const Box: React.FunctionComponent<BoxProps> = (incomingProps) => {
   const props = useDefaultProps('Box', incomingProps, {
     bg: 'transparent',
     flexDirection: 'column',
-    flexGrow: '',
     flexWrap: 'nowrap',
     borderRadius: 'none',
     shadow: 'none',

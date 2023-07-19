@@ -1,6 +1,8 @@
 import type { TextProps } from 'components/text/text.type';
 import type { ThemeProps, VariantType } from '../types';
 import type { BoxProps } from 'components/box/box.type';
+import type { FlexProps } from 'components/flex/flex.type';
+import type { ScrollBoxProps } from 'components/scrollbox/scrollbox.type';
 
 export interface ColorHues {
   50: string;
@@ -19,6 +21,8 @@ export interface ThemeType {
   components?: {
     Text?: VariantType<TextProps>;
     Box?: VariantType<BoxProps>;
+    Flex?: VariantType<FlexProps>;
+    ScrollBox?: VariantType<ScrollBoxProps>;
   };
 
   fontFamily?: {
