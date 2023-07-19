@@ -21,9 +21,7 @@ const HStack: React.FunctionComponent<StackProps> = (incomingProps) => {
     spacing: 0,
   });
 
-  return (
-    <Stack {...props} />
-  );
+  return <Stack {...props} />;
 };
 
 // VStack.defaultProps = {
