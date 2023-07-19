@@ -102,6 +102,11 @@ export interface SpacingPropsType {
   ps?: string | number;
 }
 
+export const stackSpacingProps = ['spacing'] as const;
+export interface StackSpacingPropsType {
+  spacing?: string | number;
+};
+
 export const borderRadiusProps = [
   'borderRadius',
   'borderTopLeftRadius',

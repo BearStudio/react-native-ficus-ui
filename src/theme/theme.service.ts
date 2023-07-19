@@ -46,6 +46,33 @@ export const createSpacingStyles = (
   return computedStyle;
 };
 
+import { TextProps } from 'components/text/text.type';
+import { isValidColor } from '../utilities';
+import type { ThemeType } from './type';
+
+/**
+ * Create spacing styles from object of style props passed to ficus component
+ *
+ * m="10", mt="xl"
+ *
+ * @param value
+ * @param theme
+ */
+export const createStackSpacingStyles = (
+  props: any,
+  theme: ThemeType['spacing']
+) => {
+  const computedStyle: any = {};
+
+  const styleProperty = propKeys['spacing'];
+
+  if ('spacing' in props) {
+    computedStyle[styleProperty] = getThemeProperty(theme, props['spacing']);
+  }
+
+  return computedStyle;
+} 
+
 /**
  * Get font weight for font
  *
