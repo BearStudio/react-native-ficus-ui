@@ -98,4 +98,4 @@ const ScrollBox: React.FunctionComponent<ScrollBoxProps> = (incomingProps) => {
   );
 };
 
-export { ScrollBox };à
+export { ScrollBox };
