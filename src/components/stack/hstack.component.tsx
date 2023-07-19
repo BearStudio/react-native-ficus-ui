@@ -8,7 +8,7 @@ import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { Stack } from './stack.component';
 
 const HStack: React.FunctionComponent<StackProps> = (incomingProps) => {
-  const props = useDefaultProps('VStack', incomingProps, {
+  const props = useDefaultProps('HStack', incomingProps, {
     bg: 'transparent',
     flexDirection: 'row',
     flexWrap: 'nowrap',
@@ -24,7 +24,7 @@ const HStack: React.FunctionComponent<StackProps> = (incomingProps) => {
   return <Stack {...props} />;
 };
 
-// VStack.defaultProps = {
+// HStack.defaultProps = {
 //   bg: 'transparent',
 //   flexDirection: 'row',
 //   flexWrap: 'nowrap',
@@ -38,4 +38,4 @@ const HStack: React.FunctionComponent<StackProps> = (incomingProps) => {
 //   spacing: 0,
 // };
 
-export { VStack };
+export { HStack };
