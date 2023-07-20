@@ -1,5 +1,8 @@
 import * as React from 'react';
-import { View as RNView } from 'react-native';
+import {
+  View as RNView,
+  ImageBackground as RNImageBackground,
+} from 'react-native';
 
 import { getStyle } from './center.style';
 import type { CenterProps } from './center.type';
@@ -54,6 +57,7 @@ const Center: React.FunctionComponent<CenterProps> = (incomingProps) => {
     borderRightRadius,
     borderBottomRadius,
     children,
+    bgImg,
     bgMode,
     alignItems,
     align,
@@ -91,6 +95,22 @@ const Center: React.FunctionComponent<CenterProps> = (incomingProps) => {
   } = props;
   const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
+
+  // if there is a bgImage prop, use ImageBackground
+  // instead of regular View component
+  if (bgImg) {
+    return (
+      <RNImageBackground
+        source={bgImg}
+        style={computedStyle.center}
+        resizeMode={props.bgMode}
+        imageStyle={computedStyle.image}
+        {...rest}
+      >
+        {children}
+      </RNImageBackground>
+    );
+  }
 
   return (
     <RNView style={computedStyle.center} {...rest}>

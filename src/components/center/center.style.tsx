@@ -50,6 +50,10 @@ export const getStyle = (theme: ThemeType, props: CenterProps) => {
     ...createBorderRadiusStyles(props, theme.borderRadius),
   };
 
+  computedStyle.image = {
+    ...createBorderRadiusStyles(props, theme.borderRadius),
+  };
+
   // merging custom style props to computed style
   if (props.style) {
     computedStyle.center = {

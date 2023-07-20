@@ -1,5 +1,8 @@
 import * as React from 'react';
-import { View as RNView } from 'react-native';
+import {
+  View as RNView,
+  ImageBackground as RNImageBackground,
+} from 'react-native';
 
 import { getStyle } from './flex.style';
 import type { FlexProps } from './flex.type';
@@ -89,6 +92,22 @@ const Flex: React.FunctionComponent<FlexProps> = (incomingProps) => {
   } = props;
   const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
+
+  // if there is a bgImage prop, use ImageBackground
+  // instead of regular View component
+  if (bgImg) {
+    return (
+      <RNImageBackground
+        source={bgImg}
+        style={computedStyle.flex}
+        resizeMode={props.bgMode}
+        imageStyle={computedStyle.image}
+        {...rest}
+      >
+        {children}
+      </RNImageBackground>
+    );
+  }
 
   return (
     <RNView style={computedStyle.flex} {...rest}>

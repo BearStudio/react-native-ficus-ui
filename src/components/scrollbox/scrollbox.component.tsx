@@ -14,7 +14,6 @@ const ScrollBox: React.FunctionComponent<ScrollBoxProps> = (incomingProps) => {
     borderRadius: 'none',
     shadow: 'none',
     position: 'relative',
-    bgMode: 'cover',
     pointerEvents: 'auto',
     borderStyle: 'solid',
   });
@@ -52,8 +51,6 @@ const ScrollBox: React.FunctionComponent<ScrollBoxProps> = (incomingProps) => {
     borderRightRadius,
     borderBottomRadius,
     children,
-    bgImg,
-    bgMode,
     alignItems,
     align,
     justifyContent,
