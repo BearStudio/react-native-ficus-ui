@@ -223,9 +223,13 @@ export interface PositionPropsType {
   left?: number;
 }
 
-export const backgroundProps = ['bg', 'bgImg', 'bgMode'] as const;
+export const backgroundProps = ['bg'] as const;
 export interface BackgroundPropsType {
   bg?: string;
+}
+
+export const backgroundImgProps = ['bgImg', 'bgMode'] as const;
+export interface BackgroundImgPropsType {
   bgImg?: RNImageSourcePropType;
   bgMode?: 'contain' | 'cover' | 'stretch' | 'repeat';
 }

@@ -4,6 +4,8 @@ export { ScrollBox } from './scrollbox/scrollbox.component';
 export { ScrollBoxProps } from './scrollbox/scrollbox.type';
 export { Flex } from './flex/flex.component';
 export { FlexProps } from './flex/flex.type';
+export { Center } from './center/center.component';
+export { CenterProps } from './center/center.type';
 export { Text } from './text/text.component';
 export { TextProps } from './text/text.type';
 export { Stack } from './stack/stack.component';

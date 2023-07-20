@@ -3,6 +3,7 @@ import type { ThemeProps, VariantType } from '../types';
 import type { BoxProps } from 'components/box/box.type';
 import type { StackProps } from 'components/stack/stack.type';
 import type { FlexProps } from 'components/flex/flex.type';
+import type { CenterProps } from 'components/center/center.type';
 import type { ScrollBoxProps } from 'components/scrollbox/scrollbox.type';
 
 export interface ColorHues {
@@ -23,6 +24,7 @@ export interface ThemeType {
     Text?: VariantType<TextProps>;
     Box?: VariantType<BoxProps>;
     Flex?: VariantType<FlexProps>;
+    Center?: VariantType<CenterProps>;
     ScrollBox?: VariantType<ScrollBoxProps>;
     Stack?: VariantType<StackProps>;
     HStack?: VariantType<StackProps>;

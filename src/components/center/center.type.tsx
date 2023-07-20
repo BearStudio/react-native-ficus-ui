@@ -7,7 +7,6 @@ import type {
   ShadowPropsType,
   DimensionPropsType,
   BackgroundPropsType,
-  BackgroundImgPropsType,
   FlexPropsType,
   PositionPropsType,
   ZIndexPropsType,
@@ -16,7 +15,7 @@ import type {
   VariantPropsType,
 } from 'types';
 
-export interface BoxProps
+export interface CenterProps
   extends RNViewProps,
     BorderPropsType,
     SpacingPropsType,
@@ -24,7 +23,6 @@ export interface BoxProps
     ShadowPropsType,
     DimensionPropsType,
     BackgroundPropsType,
-    BackgroundImgPropsType,
     FlexPropsType,
     PositionPropsType,
     ZIndexPropsType,
