@@ -18,7 +18,10 @@ import type { ThemeType } from '../../theme/type';
  * @param theme
  * @param props
  */
-export const getStyle = (theme: ThemeType, props: TouchableWithoutFeedbackProps) => {
+export const getStyle = (
+  theme: ThemeType,
+  props: TouchableWithoutFeedbackProps
+) => {
   const computedStyle: any = {};
 
   computedStyle.touchable = {

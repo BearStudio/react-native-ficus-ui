@@ -7,7 +7,9 @@ import type { TouchableWithoutFeedbackProps } from './touchable-without-feedback
 import { ThemeProvider } from '../../theme/theme.provider';
 
 describe('TouchableWithoutFeedback component', () => {
-  const TestTouchableWithoutFeedback: React.FC<TouchableWithoutFeedbackProps> = (props) => (
+  const TestTouchableWithoutFeedback: React.FC<TouchableWithoutFeedbackProps> = (
+    props
+  ) => (
     <ThemeProvider>
       <TouchableWithoutFeedback {...props} />
     </ThemeProvider>
