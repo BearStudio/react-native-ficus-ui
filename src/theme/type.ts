@@ -7,7 +7,7 @@ import type { CenterProps } from 'components/center/center.type';
 import type { ScrollBoxProps } from 'components/scrollbox/scrollbox.type';
 import type { TouchableOpacityProps } from 'components/touchable-opacity/touchable-opacity.type';
 import type { TouchableHighlightProps } from 'components/touchable-highlight/touchable-highlight.type';
-import type { TouchableWithoutFeedbackProps } from 'components/touchable-highlight/touchable-without-feedback.type';
+import type { TouchableWithoutFeedbackProps } from 'components/touchable-without-feedback/touchable-without-feedback.type';
 
 export interface ColorHues {
   50: string;
