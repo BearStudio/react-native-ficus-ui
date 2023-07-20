@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { TouchableOpacity as RNTouchableOpacity } from 'react-native';
 
-import { getStyle } from './box.style';
+import { getStyle } from './touchable-opacity.style';
 import type { TouchableOpacityProps } from './touchable-opacity.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
 
-const TouchableOpacity: React.FunctionComponent<TouchableOpacityProps> = (incomingProps) => {
+const TouchableOpacity: React.FunctionComponent<TouchableOpacityProps> = (
+  incomingProps
+) => {
   const props = useDefaultProps('TouchableOpacity', incomingProps, {});
 
   const {
