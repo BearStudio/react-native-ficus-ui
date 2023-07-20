@@ -5,6 +5,7 @@ import type { StackProps } from 'components/stack/stack.type';
 import type { FlexProps } from 'components/flex/flex.type';
 import type { CenterProps } from 'components/center/center.type';
 import type { ScrollBoxProps } from 'components/scrollbox/scrollbox.type';
+import type { TouchableOpacityProps } from 'components/touchable-opacity/touchable-opacity.type';
 
 export interface ColorHues {
   50: string;
@@ -29,6 +30,7 @@ export interface ThemeType {
     Stack?: VariantType<StackProps>;
     HStack?: VariantType<StackProps>;
     VStack?: VariantType<StackProps>;
+    TouchableOpacity?: VariantType<TouchableOpacityProps>;
   };
 
   fontFamily?: {

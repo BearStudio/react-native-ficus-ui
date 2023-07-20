@@ -1,4 +1,4 @@
-import type { ScrollViewProps as RNScrollViewProps } from 'react-native';
+import type { TouchableOpacityProps as RNTouchableOpacityProps } from 'react-native';
 
 import type {
   BorderPropsType,
@@ -15,8 +15,8 @@ import type {
   VariantPropsType,
 } from 'types';
 
-export interface ScrollBoxProps
-  extends RNScrollViewProps,
+export interface TouchableOpacityProps
+  extends RNTouchableOpacityProps,
     BorderPropsType,
     SpacingPropsType,
     BorderRadiusPropsType,
