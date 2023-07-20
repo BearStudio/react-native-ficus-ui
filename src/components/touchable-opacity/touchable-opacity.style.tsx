@@ -18,7 +18,7 @@ import type { ThemeType } from '../../theme/type';
  * @param theme
  * @param props
  */
-export const getStyle = (theme: ThemeType, props: BoxProps) => {
+export const getStyle = (theme: ThemeType, props: TouchableOpacityProps) => {
   const computedStyle: any = {};
 
   computedStyle.touchable = {
