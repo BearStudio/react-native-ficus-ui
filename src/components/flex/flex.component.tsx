@@ -56,6 +56,8 @@ const Flex: React.FunctionComponent<FlexProps> = (incomingProps) => {
     borderRightRadius,
     borderBottomRadius,
     children,
+    bgImg,
+    bgMode,
     alignItems,
     align,
     justifyContent,
