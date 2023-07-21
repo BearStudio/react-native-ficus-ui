@@ -79,12 +79,7 @@ const List: React.FunctionComponent<ListProps> = (incomingProps) => {
   const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
-  return (
-    <FlatList
-      style={computedStyle.list}
-      {...rest}
-    />
-  );
+  return <FlatList style={computedStyle.list} {...rest} />;
 };
 
 // List.defaultProps = {};
