@@ -1,3 +1,5 @@
+import type { ViewProps as RNViewProps } from 'react-native';
+
 import type {
   BorderPropsType,
   SpacingPropsType,
@@ -15,7 +17,8 @@ import type {
 } from 'types';
 
 export interface SpinnerProps
-  extends BorderPropsType,
+  extends RNViewProps,
+    BorderPropsType,
     SpacingPropsType,
     BorderRadiusPropsType,
     ShadowPropsType,
