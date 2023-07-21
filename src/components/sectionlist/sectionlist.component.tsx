@@ -6,7 +6,9 @@ import type { SectionListProps } from './sectionlist.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
 
-const SectionList: React.FunctionComponent<SectionListProps> = (incomingProps) => {
+const SectionList: React.FunctionComponent<SectionListProps> = (
+  incomingProps
+) => {
   const props = useDefaultProps('SectionList', incomingProps, {});
 
   const {

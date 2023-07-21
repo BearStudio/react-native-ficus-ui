@@ -17,15 +17,15 @@ describe('SectionList component', () => {
   it('should render component passed to children', () => {
     render(
       <TestSectionList
-        data={[{ title: 'Test', data: ['I love Ficus UI (forked from Magnus UI)'] }]}
+        data={[
+          { title: 'Test', data: ['I love Ficus UI (forked from Magnus UI)'] }
+        ]}
         renderItem={({ item }) => (
           <Box>
             <Text>{item}</Text>
           </Box>
         )}
-        renderSectionHeader={({ section: { title } }) => (
-          <Text>{title}</Text>
-        )}
+        renderSectionHeader={({ section: { title } }) => <Text>{title}</Text>}
         keyExtractor={(item) => item}
       />
     );
