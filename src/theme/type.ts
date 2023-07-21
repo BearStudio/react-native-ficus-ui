@@ -10,6 +10,7 @@ import type { TouchableHighlightProps } from 'components/touchable-highlight/tou
 import type { TouchableWithoutFeedbackProps } from 'components/touchable-without-feedback/touchable-without-feedback.type';
 import type { PressableProps } from 'components/pressable/pressable.type';
 import type { SpinnerProps } from 'components/spinner/spinner.type';
+import type { ListProps } from 'components/list/list.type';
 
 export interface ColorHues {
   50: string;
@@ -39,6 +40,7 @@ export interface ThemeType {
     TouchableWithoutFeedback?: VariantType<TouchableWithoutFeedbackProps>;
     Pressable?: VariantType<PressableProps>;
     Spinner?: VariantType<SpinnerProps>;
+    List?: VariantType<ListProps>;
   };
 
   fontFamily?: {
