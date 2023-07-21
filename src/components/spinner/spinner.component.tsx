@@ -81,14 +81,14 @@ const Spinner: React.FunctionComponent<SpinnerProps> = (incomingProps) => {
   } = props;
   const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
-  const color = getThemeColor(theme.colors, props.color);
-  const size = getThemeProperty(theme.spinner, props.size);
+  const colorValue = getThemeColor(theme.colors, color);
+  const sizeValue = getThemeProperty(theme.spinner, size);
 
   return (
     <ActivityIndicator
       style={computedStyle.spinner}
-      color={color}
-      size={size}
+      color={colorValue}
+      size={sizeValue}
       {...rest}
     />
   );
