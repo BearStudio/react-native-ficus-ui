@@ -14,8 +14,6 @@ describe('Spinner component', () => {
   );
 
   it('should render component passed to children', () => {
-    render(
-      <TestSpinner size="lg" />
-    );
+    render(<TestSpinner size="lg" />);
   });
 });

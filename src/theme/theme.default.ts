@@ -370,7 +370,7 @@ export const defaultTheme: ThemeType = {
   },
 
   spinner: {
-    'sm': 'small',
-    'lg': 'large',
+    sm: 'small',
+    lg: 'large',
   },
 };
