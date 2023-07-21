@@ -1,7 +1,6 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react-native';
+import { render } from '@testing-library/react-native';
 
-import { Text } from '../text/text.component';
 import { Spinner } from './spinner.component';
 import type { SpinnerProps } from './spinner.type';
 import { ThemeProvider } from '../../theme/theme.provider';

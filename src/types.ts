@@ -223,6 +223,11 @@ export interface PositionPropsType {
   left?: number;
 }
 
+export const sizeProps = ['size'] as const;
+export interface SizePropsType {
+  size?: number | 'small' | 'large' | 'sm' | 'lg' | undefined;
+}
+
 export const backgroundProps = ['bg'] as const;
 export interface BackgroundPropsType {
   bg?: string;
