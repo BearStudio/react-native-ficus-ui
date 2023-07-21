@@ -9,6 +9,7 @@ import type { TouchableOpacityProps } from 'components/touchable-opacity/touchab
 import type { TouchableHighlightProps } from 'components/touchable-highlight/touchable-highlight.type';
 import type { TouchableWithoutFeedbackProps } from 'components/touchable-without-feedback/touchable-without-feedback.type';
 import type { PressableProps } from 'components/pressable/pressable.type';
+import type { SpinnerProps } from 'components/spinner/spinner.type';
 
 export interface ColorHues {
   50: string;
@@ -37,6 +38,7 @@ export interface ThemeType {
     TouchableHighlight?: VariantType<TouchableHighlightProps>;
     TouchableWithoutFeedback?: VariantType<TouchableWithoutFeedbackProps>;
     Pressable?: VariantType<PressableProps>;
+    Spinner?: VariantType<SpinnerProps>;
   };
 
   fontFamily?: {
@@ -69,4 +71,5 @@ export interface ThemeType {
     elevation?: number;
   }>;
   name?: string;
+  spinner?: ThemeProps<string | number>;
 }

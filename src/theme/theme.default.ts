@@ -368,4 +368,9 @@ export const defaultTheme: ThemeType = {
     '-2xl': -32,
     '-3xl': -64,
   },
+
+  spinner: {
+    'sm': 'small',
+    'lg': 'large',
+  },
 };

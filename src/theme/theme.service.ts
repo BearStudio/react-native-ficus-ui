@@ -173,6 +173,7 @@ export const getThemeProperty = (
     | ThemeType['fontSize']
     | ThemeType['shadow']
     | ThemeType['spacing']
+    | ThemeType['spinner']
     | undefined,
   value: any
 ) => {
