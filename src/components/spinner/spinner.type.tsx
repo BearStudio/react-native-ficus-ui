@@ -1,5 +1,3 @@
-import type { ActivityIndicatorProps as RNActivityIndicatorProps } from 'react-native';
-
 import type {
   BorderPropsType,
   SpacingPropsType,
@@ -9,7 +7,7 @@ import type {
   BackgroundPropsType,
   FlexPropsType,
   PositionPropsType,
-  SizePropsType,
+  ActivityIndicatorPropsType,
   ZIndexPropsType,
   OverflowPropsType,
   OpacityPropsType,
@@ -17,8 +15,7 @@ import type {
 } from 'types';
 
 export interface SpinnerProps
-  extends RNActivityIndicatorProps,
-    BorderPropsType,
+  extends BorderPropsType,
     SpacingPropsType,
     BorderRadiusPropsType,
     ShadowPropsType,
@@ -26,7 +23,7 @@ export interface SpinnerProps
     BackgroundPropsType,
     FlexPropsType,
     PositionPropsType,
-    SizePropsType,
+    ActivityIndicatorPropsType,
     ZIndexPropsType,
     OverflowPropsType,
     OpacityPropsType,

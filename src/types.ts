@@ -223,8 +223,16 @@ export interface PositionPropsType {
   left?: number;
 }
 
-export const sizeProps = ['size'] as const;
-export interface SizePropsType {
+export const activityIndicatorProps = [
+  'animating',
+  'color',
+  'hidesWhenStopped',
+  'size',
+] as const;
+export interface ActivityIndicatorPropsType {
+  animating?: boolean;
+  color?: string | undefined;
+  hidesWhenStopped?: boolean;
   size?: number | 'small' | 'large' | 'sm' | 'lg' | undefined;
 }
 
