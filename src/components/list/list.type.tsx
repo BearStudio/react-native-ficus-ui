@@ -1,4 +1,4 @@
-import type { FlatListProps, ItemT } from 'react-native';
+import type { FlatListProps } from 'react-native';
 
 import type {
   BorderPropsType,
@@ -16,7 +16,7 @@ import type {
 } from 'types';
 
 export interface ListProps
-  extends FlatListProps<ItemT>,
+  extends FlatListProps<any>,
     BorderPropsType,
     SpacingPropsType,
     BorderRadiusPropsType,
