@@ -8,6 +8,7 @@ import type { ScrollBoxProps } from 'components/scrollbox/scrollbox.type';
 import type { TouchableOpacityProps } from 'components/touchable-opacity/touchable-opacity.type';
 import type { TouchableHighlightProps } from 'components/touchable-highlight/touchable-highlight.type';
 import type { TouchableWithoutFeedbackProps } from 'components/touchable-without-feedback/touchable-without-feedback.type';
+import type { PressableProps } from 'components/pressable/pressable.type';
 
 export interface ColorHues {
   50: string;
@@ -35,6 +36,7 @@ export interface ThemeType {
     TouchableOpacity?: VariantType<TouchableOpacityProps>;
     TouchableHighlight?: VariantType<TouchableHighlightProps>;
     TouchableWithoutFeedback?: VariantType<TouchableWithoutFeedbackProps>;
+    Pressable?: VariantType<PressableProps>;
   };
 
   fontFamily?: {
