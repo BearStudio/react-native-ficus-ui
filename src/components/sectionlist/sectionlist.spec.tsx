@@ -17,8 +17,8 @@ describe('SectionList component', () => {
   it('should render component passed to children', () => {
     render(
       <TestSectionList
-        data={[
-          { title: 'Test', data: ['I love Ficus UI (forked from Magnus UI)'] }
+        sections={[
+          { title: 'Test', data: ['I love Ficus UI (forked from Magnus UI)'] },
         ]}
         renderItem={({ item }) => (
           <Box>
