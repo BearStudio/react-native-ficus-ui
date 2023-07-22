@@ -79,9 +79,7 @@ const Image: React.FunctionComponent<ImageProps> = (incomingProps) => {
   const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
-  return (
-    <RNImage style={computedStyle.image} {...rest} />
-  );
+  return <RNImage style={computedStyle.image} {...rest} />;
 };
 
 // Image.defaultProps = {};
