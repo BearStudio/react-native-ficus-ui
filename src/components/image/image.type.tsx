@@ -18,11 +18,11 @@ import type {
 export interface ImageProps
   extends Omit<
       RNImageProps,
-      "borderBottomLeftRadius"
-      | "borderBottomRightRadius"
-      | "borderRadius"
-      | "borderTopLeftRadius"
-      | "borderTopRightRadius"
+      | 'borderBottomLeftRadius'
+      | 'borderBottomRightRadius'
+      | 'borderRadius'
+      | 'borderTopLeftRadius'
+      | 'borderTopRightRadius'
     >,
     BorderPropsType,
     SpacingPropsType,
