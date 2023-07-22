@@ -1,7 +1,6 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react-native';
+import { render } from '@testing-library/react-native';
 
-import { Text } from '../text/text.component';
 import { Image } from './image.component';
 import type { ImageProps } from './image.type';
 import { ThemeProvider } from '../../theme/theme.provider';
@@ -14,6 +13,6 @@ describe('Image component', () => {
   );
 
   it('should render component passed to children', () => {
-    render(<TestImage />);
+    render(<TestImage src="https://reactnative.dev/img/tiny_logo.png" />);
   });
 });
