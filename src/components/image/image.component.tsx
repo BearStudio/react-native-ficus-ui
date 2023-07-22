@@ -41,7 +41,6 @@ const Image: React.FunctionComponent<ImageProps> = (incomingProps) => {
     borderLeftRadius,
     borderRightRadius,
     borderBottomRadius,
-    children,
     alignItems,
     align,
     justifyContent,
