@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Image as RNImage } from 'react-native';
 
-import { getStyle } from './box.style';
-import type { BoxProps } from './box.type';
+import { getStyle } from './image.style';
+import type { ImageProps } from './image.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
 
