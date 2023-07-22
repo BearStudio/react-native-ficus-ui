@@ -13,6 +13,10 @@ describe('Image component', () => {
   );
 
   it('should render component passed to children', () => {
-    render(<TestImage source={{ uri: "https://reactnative.dev/img/tiny_logo.png" }} />);
+    render(
+      <TestImage
+        source={{ uri: "https://reactnative.dev/img/tiny_logo.png" }}
+      />
+    );
   });
 });
