@@ -24,6 +24,7 @@ describe('List component', () => {
           </Box>
         )}
         keyExtractor={(item) => item.id}
+        estimatedItemSize={200}
       />
     );
 
