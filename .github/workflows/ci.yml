@@ -21,7 +21,7 @@ jobs:
         run: yarn
 
       - name: Push yarn lock
-        run: cat yarn.lock | base64
+        run: cat yarn.lock
   lint:
     runs-on: ubuntu-latest
     steps:
