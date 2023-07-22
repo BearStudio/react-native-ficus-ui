@@ -12,6 +12,7 @@ import type { PressableProps } from 'components/pressable/pressable.type';
 import type { SpinnerProps } from 'components/spinner/spinner.type';
 import type { ListProps } from 'components/list/list.type';
 import type { SectionListProps } from 'components/sectionlist/sectionlist.type';
+import type { ImageProps } from 'components/image/image.type';
 
 export interface ColorHues {
   50: string;
@@ -43,6 +44,7 @@ export interface ThemeType {
     Spinner?: VariantType<SpinnerProps>;
     List?: VariantType<ListProps>;
     SectionList?: VariantType<SectionListProps>;
+    Image?: VariantType<ImageProps>;
   };
 
   fontFamily?: {
