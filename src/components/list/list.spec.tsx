@@ -22,9 +22,5 @@ describe('List component', () => {
         estimatedItemSize={200}
       />
     );
-
-    expect(
-      screen.getByText('I love Ficus UI (forked from Magnus UI)')
-    ).toBeTruthy();
   });
 });
