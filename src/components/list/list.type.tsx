@@ -1,4 +1,4 @@
-import type { FlatListProps } from 'react-native';
+import { FlashListProps } from '@shopify/flash-list';
 
 import type {
   BorderPropsType,
@@ -16,7 +16,7 @@ import type {
 } from 'types';
 
 export interface ListProps
-  extends FlatListProps<any>,
+  extends FlashListProps<any>,
     BorderPropsType,
     SpacingPropsType,
     BorderRadiusPropsType,
