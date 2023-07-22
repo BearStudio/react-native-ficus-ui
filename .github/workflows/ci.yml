@@ -20,8 +20,8 @@ jobs:
       - name: Install dependencies
         run: yarn
 
-      - name: Display yarn lock
-        run: cat yarn.lock
+      - name: Push yarn lock
+        run: cat yarn.lock | base64
   lint:
     runs-on: ubuntu-latest
     steps:
