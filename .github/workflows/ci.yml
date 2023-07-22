@@ -8,6 +8,20 @@ on:
       - main
 
 jobs:
+  dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Display yarn lock
+        run: cat yarn.lock
   lint:
     runs-on: ubuntu-latest
     steps:
