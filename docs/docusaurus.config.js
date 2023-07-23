@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'React Native Ficus UI',
-  tagline: 'Forked from Magnus UI and inspired by Chakra UI',
+  tagline: 'React Native UI library forked from Magnus UI and inspired by Chakra UI.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -72,13 +72,13 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'mainSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Get started',
           },
-          // {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/docs/Components/Text', label: 'Components', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/BearStudio/react-native-ficus-ui',
             label: 'GitHub',
             position: 'right',
           },
@@ -91,25 +91,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Get started',
                 to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
               },
             ],
           },
@@ -122,12 +105,12 @@ const config = {
               // },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/BearStudio/react-native-ficus-ui',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} BearStudio.`,
       },
       prism: {
         theme: lightCodeTheme,
