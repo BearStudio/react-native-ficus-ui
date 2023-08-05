@@ -38,22 +38,6 @@ The background color property (`backgroundColor` style prop in StyleSheet)
 |---|---|
 |string|No|
 
-`bgImg`
----
-The background image property. Will use `ImageBackground` component as parent wrapper.
-
-|Type|Required|
-|---|---|
-|ImageSourcePropType|No|
-
-`bgMode`
----
-The background image mode property.
-
-|Type|Required|
-|---|---|
-|enum("contain", "cover", "stretch")|No|
-
 `m`
 ---
 The margin property (`margin` style prop in StyleSheet)
@@ -206,9 +190,17 @@ The flex property for container (`flex` style prop in StyleSheet)
 |---|---|
 |number|No|
 
-`flexDir`
+`flexDirection`
 ---
-The flex direction property for container (`flexDir` style prop in StyleSheet)
+The flex direction property for container (`flexDirection` style prop in StyleSheet)
+
+|Type|Required|
+|---|---|
+|enum("row", "column", "row-reverse", "column-reverse")|No|
+
+`direction`
+---
+The flex direction property for container (`flexDirection` style prop in StyleSheet)
 
 |Type|Required|
 |---|---|
@@ -221,6 +213,62 @@ The flex wrap property for container (`flexWrap` style prop in StyleSheet)
 |Type|Required|
 |---|---|
 |enum("wrap", "nowrap", "wrap-reverse")|No|
+
+`wrap`
+---
+The flex wrap property for container (`flexWrap` style prop in StyleSheet)
+
+|Type|Required|
+|---|---|
+|enum("wrap", "nowrap", "wrap-reverse")|No|
+
+`flexGrow`
+---
+The flex grow property for container (`flexGrow` style prop in StyleSheet)
+
+|Type|Required|
+|---|---|
+|number|No|
+
+`grow`
+---
+The flex grow property for container (`flexGrow` style prop in StyleSheet)
+
+|Type|Required|
+|---|---|
+|number|No|
+
+`flexBasis`
+---
+The flex basis property for container (`flexBasis` style prop in StyleSheet)
+
+|Type|Required|
+|---|---|
+|number, string|No|
+
+`basis`
+---
+The flex basis property for container (`flexBasis` style prop in StyleSheet)
+
+|Type|Required|
+|---|---|
+|number, string|No|
+
+`flexShrink`
+---
+The flex shrink property for container (`flexShrink` style prop in StyleSheet)
+
+|Type|Required|
+|---|---|
+|number|No|
+
+`shrink`
+---
+The flex shrink property for container (`flexShrink` style prop in StyleSheet)
+
+|Type|Required|
+|---|---|
+|number|No|
 
 `justifyContent`
 ---
