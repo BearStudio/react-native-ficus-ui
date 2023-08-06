@@ -1,5 +1,8 @@
 import * as React from 'react';
-import { TouchableWithoutFeedback as RNTouchableWithoutFeedback } from 'react-native';
+import {
+  TouchableWithoutFeedback as RNTouchableWithoutFeedback,
+  View,
+} from 'react-native';
 
 import { getStyle } from './touchable-without-feedback.style';
 import type { TouchableWithoutFeedbackProps } from './touchable-without-feedback.type';
@@ -82,8 +85,8 @@ const TouchableWithoutFeedback: React.FunctionComponent<TouchableWithoutFeedback
   const computedStyle = getStyle(theme, props);
 
   return (
-    <RNTouchableWithoutFeedback style={computedStyle.touchable} {...rest}>
-      {children}
+    <RNTouchableWithoutFeedback {...rest}>
+      <View style={computedStyle.touchable}>{children}</View>
     </RNTouchableWithoutFeedback>
   );
 };

@@ -7,6 +7,11 @@ import StackComponent from './components/Stack';
 import ListComponent from './components/List';
 import SectionListComponent from './components/SectionList';
 import ImageComponent from './components/Image';
+import SpinnerComponent from './components/Spinner';
+import PressableComponent from './components/Pressable';
+import TouchableOpacityComponent from './components/TouchableOpacity';
+import TouchableHighlightComponent from './components/TouchableHighlight';
+import TouchableWithoutFeedbackComponent from './components/TouchableWithoutFeedback';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -38,5 +43,30 @@ export const components: ExampleComponentType[] = [
     navigationPath: 'Image',
     onScreenName: 'Image',
     component: ImageComponent,
+  },
+  {
+    navigationPath: 'Spinner',
+    onScreenName: 'Spinner',
+    component: SpinnerComponent,
+  },
+  {
+    navigationPath: 'Pressable',
+    onScreenName: 'Pressable',
+    component: PressableComponent,
+  },
+  {
+    navigationPath: 'TouchableOpacity',
+    onScreenName: 'TouchableOpacity',
+    component: TouchableOpacityComponent,
+  },
+  {
+    navigationPath: 'TouchableHighlight',
+    onScreenName: 'TouchableHighlight',
+    component: TouchableHighlightComponent,
+  },
+  {
+    navigationPath: 'TouchableWithoutFeedback',
+    onScreenName: 'TouchableWithoutFeedback',
+    component: TouchableWithoutFeedbackComponent,
   },
 ];
