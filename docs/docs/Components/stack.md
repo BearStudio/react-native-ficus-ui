@@ -17,13 +17,13 @@ import { Stack } from "react-native-ficus-ui";
 ```js
 <Stack direction="row" spacing={10}>
   <Box w={40} h={40} bg="yellow.200">
-    1
+    <Text>1</Text>
   </Box>
   <Box w={40} h={40} bg="red.200">
-    2
+    <Text>2</Text>
   </Box>
   <Box w={40} h={40} bg="pink.200">
-    3
+    <Text>3</Text>
   </Box>
 </Stack>
 ```

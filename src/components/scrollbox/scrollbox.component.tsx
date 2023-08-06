@@ -16,6 +16,7 @@ const ScrollBox: React.FunctionComponent<ScrollBoxProps> = (incomingProps) => {
     position: 'relative',
     pointerEvents: 'auto',
     borderStyle: 'solid',
+    overflow: 'hidden',
   });
 
   const {

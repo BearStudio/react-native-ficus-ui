@@ -1,6 +1,6 @@
 import React from 'react';
-import { SafeAreaView, ScrollView } from 'react-native';
-import { Box, Text } from 'react-native-ficus-ui';
+import { SafeAreaView } from 'react-native';
+import { Box, ScrollBox, Text } from 'react-native-ficus-ui';
 import ExampleSection from '../ExampleSection';
 
 const BoxComponent = () => {
@@ -9,9 +9,9 @@ const BoxComponent = () => {
       <Text mx="xl" fontSize="4xl">
         Box component
       </Text>
-      <ScrollView>
+      <ScrollBox>
         <ExampleSection name="background color">
-          <Box flexDir="row">
+          <Box flexDirection="row">
             <Box h={40} w={40} mr="sm" bg="green.500" />
             <Box h={40} w={40} mr="sm" bg="teal.500" />
             <Box h={40} w={40} mr="sm" bg="yellow.500" />
@@ -22,7 +22,7 @@ const BoxComponent = () => {
         </ExampleSection>
 
         <ExampleSection name="shadows">
-          <Box flexDir="row">
+          <Box flexDirection="row">
             <Box
               h={40}
               w={40}
@@ -111,7 +111,7 @@ const BoxComponent = () => {
         </ExampleSection>
 
         <ExampleSection name="border">
-          <Box flexDir="row">
+          <Box flexDirection="row">
             <Box
               h={40}
               w={40}
@@ -133,7 +133,7 @@ const BoxComponent = () => {
         </ExampleSection>
 
         <ExampleSection name="radius">
-          <Box flexDir="row">
+          <Box flexDirection="row">
             <Box h={40} w={40} mr="sm" borderRadius="none" bg="blue.400" />
             <Box h={40} w={40} mr="sm" borderRadius="xs" bg="blue.400" />
             <Box h={40} w={40} mr="sm" borderRadius="sm" bg="blue.400" />
@@ -164,7 +164,7 @@ const BoxComponent = () => {
             }}
           />
         </ExampleSection>
-      </ScrollView>
+      </ScrollBox>
     </SafeAreaView>
   );
 };
