@@ -1,0 +1,188 @@
+{
+  "manifest": {
+    "name": "react-native-ficus-ui",
+    "version": "0.1.0",
+    "description": "test",
+    "main": "lib/commonjs/index",
+    "module": "lib/module/index",
+    "types": "lib/typescript/index.d.ts",
+    "react-native": "src/index",
+    "source": "src/index",
+    "files": [
+      "src",
+      "lib",
+      "android",
+      "ios",
+      "cpp",
+      "*.podspec",
+      "!lib/typescript/example",
+      "!ios/build",
+      "!android/build",
+      "!android/gradle",
+      "!android/gradlew",
+      "!android/gradlew.bat",
+      "!android/local.properties",
+      "!**/__tests__",
+      "!**/__fixtures__",
+      "!**/__mocks__",
+      "!**/.*"
+    ],
+    "scripts": {
+      "test": "jest",
+      "typecheck": "tsc --noEmit",
+      "lint": "eslint \"**/*.{js,ts,tsx}\"",
+      "prepack": "bob build",
+      "release": "release-it",
+      "example": "yarn --cwd example",
+      "bootstrap": "yarn example && yarn install"
+    },
+    "keywords": [
+      "react-native",
+      "ios",
+      "android"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/ntorionbearstudio/react-native-ficus-ui"
+    },
+    "author": {
+      "name": "Nicolas Torion",
+      "email": "nicolas.torion@bearstudio.fr",
+      "url": "https://github.com/ntorionbearstudio"
+    },
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/ntorionbearstudio/react-native-ficus-ui/issues"
+    },
+    "homepage": "https://github.com/ntorionbearstudio/react-native-ficus-ui#readme",
+    "publishConfig": {
+      "registry": "https://registry.npmjs.org/"
+    },
+    "devDependencies": {
+      "@commitlint/config-conventional": "17.0.2",
+      "@evilmartians/lefthook": "1.2.2",
+      "@react-native-community/eslint-config": "3.2.0",
+      "@release-it/conventional-changelog": "5.0.0",
+      "@testing-library/react-native": "12.1.2",
+      "@types/jest": "29.5.2",
+      "@types/react": "18.2.14",
+      "@types/react-native": "0.72.2",
+      "@types/react-test-renderer": "18.0.0",
+      "commitlint": "17.0.2",
+      "del-cli": "5.0.0",
+      "eslint": "8.4.1",
+      "eslint-config-prettier": "8.5.0",
+      "eslint-plugin-ft-flow": "^2.0.3",
+      "eslint-plugin-prettier": "4.0.0",
+      "@shopify/flash-list": "1.5.0",
+      "jest": "29.5.0",
+      "pod-install": "0.1.0",
+      "prettier": "2.0.5",
+      "react": "18.2.0",
+      "react-native": "0.72.1",
+      "react-native-builder-bob": "0.21.0",
+      "react-test-renderer": "18.2.0",
+      "release-it": "15.0.0",
+      "typescript": "5.1.6",
+      "validate-color": "2.2.4"
+    },
+    "resolutions": {
+      "@types/react": "17.0.21"
+    },
+    "peerDependencies": {
+      "react": "*",
+      "react-native": "*"
+    },
+    "engines": {
+      "node": ">= 16.0.0"
+    },
+    "packageManager": "^yarn@1.22.15",
+    "jest": {
+      "preset": "react-native",
+      "modulePaths": [
+        "<rootDir>/src"
+      ]
+    },
+    "commitlint": {
+      "extends": [
+        "@commitlint/config-conventional"
+      ]
+    },
+    "release-it": {
+      "git": {
+        "commitMessage": "chore: release ${version}",
+        "tagName": "v${version}"
+      },
+      "npm": {
+        "publish": true
+      },
+      "github": {
+        "release": true
+      },
+      "plugins": {
+        "@release-it/conventional-changelog": {
+          "preset": "angular"
+        }
+      }
+    },
+    "eslintConfig": {
+      "root": true,
+      "extends": [
+        "@react-native-community",
+        "prettier"
+      ],
+      "rules": {
+        "prettier/prettier": [
+          "error",
+          {
+            "quoteProps": "consistent",
+            "singleQuote": true,
+            "tabWidth": 2,
+            "trailingComma": "es5",
+            "useTabs": false
+          }
+        ]
+      }
+    },
+    "eslintIgnore": [
+      "node_modules/",
+      "lib/",
+      "docs/"
+    ],
+    "prettier": {
+      "quoteProps": "consistent",
+      "singleQuote": true,
+      "tabWidth": 2,
+      "trailingComma": "es5",
+      "useTabs": false
+    },
+    "react-native-builder-bob": {
+      "source": "src",
+      "output": "lib",
+      "targets": [
+        "commonjs",
+        "module",
+        [
+          "typescript",
+          {
+            "project": "tsconfig.build.json"
+          }
+        ]
+      ]
+    },
+    "_registry": "npm",
+    "_loc": "/Users/nicolastorion/Library/Caches/Yarn/v6/npm-react-native-ficus-ui-0.1.0-c51cd1fa-e54a-4114-8c7b-9831cc1aaa75-1691311404307/node_modules/react-native-ficus-ui/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# react-native-ficus-ui\n\nFicus UI is a React Native UI library forked on Magnus UI and inspired by Chakra UI\n\n## Installation\n\n```sh\nnpm install react-native-ficus-ui\n```\n\n```sh\nyarn add react-native-ficus-ui\n```\n\n## Contributing\n\nSee the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.\n\n## License\n\nMIT\n\n---\n\nMade with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)\n",
+    "licenseText": "MIT License\n\nCopyright (c) 2023 Nicolas Torion\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "type": "copy",
+    "registry": "npm",
+    "hash": "0466998d-25fa-4fff-ade1-de390edc940e-1691311409114",
+    "reference": "/Users/nicolastorion/.nvm/versions/node/v16.17.0/lib/node_modules/react-native-ficus-ui"
+  },
+  "registry": "npm",
+  "hash": "0466998d-25fa-4fff-ade1-de390edc940e-1691311409114"
+}

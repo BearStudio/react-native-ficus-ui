@@ -1,0 +1,9 @@
+{
+  "settings": {
+    "import/core-modules": ["react-native-ficus-ui"]
+  },
+
+  "rules": {
+    "react/prop-types": "off"
+  }
+}
