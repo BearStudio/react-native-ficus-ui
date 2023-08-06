@@ -2,7 +2,7 @@
 sidebar_position: 9
 ---
 
-# List
+# List ⚡️
 
 Wrapper around `FlashList` component from `@shopify/flash-list`.
 

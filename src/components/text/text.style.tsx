@@ -31,7 +31,7 @@ export const getStyle = (theme: ThemeType, props: TextProps) => {
     maxWidth: props.maxW,
     flex: props.flex,
     backgroundColor: getThemeColor(theme.colors, props.bg),
-    overflow: props.overflow,
+    overflow: props.overflow || 'hidden',
     opacity: props.opacity,
     textDecorationLine: props.textDecorLine,
     textDecorationStyle: props.textDecorStyle,

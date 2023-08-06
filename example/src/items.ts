@@ -6,6 +6,7 @@ import FlexComponent from './components/Flex';
 import StackComponent from './components/Stack';
 import ListComponent from './components/List';
 import SectionListComponent from './components/SectionList';
+import ImageComponent from './components/Image';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -32,5 +33,10 @@ export const components: ExampleComponentType[] = [
     navigationPath: 'SectionList',
     onScreenName: 'SectionList',
     component: SectionListComponent,
+  },
+  {
+    navigationPath: 'Image',
+    onScreenName: 'Image',
+    component: ImageComponent,
   },
 ];
