@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { View } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
 
 import { getStyle } from './list.style';
@@ -80,11 +79,7 @@ const List: React.FunctionComponent<ListProps> = (incomingProps) => {
   const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
-  return (
-    <View style={computedStyle.list}>
-      <FlashList {...rest} />
-    </View>
-  );
+  return <FlashList {...rest} contentContainerStyle={computedStyle.list} />;
 };
 
 // List.defaultProps = {};

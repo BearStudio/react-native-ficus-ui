@@ -4,6 +4,8 @@ import TextComponent from './components/Text';
 import CenterComponent from './components/Center';
 import FlexComponent from './components/Flex';
 import StackComponent from './components/Stack';
+import ListComponent from './components/List';
+import SectionListComponent from './components/SectionList';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -25,4 +27,10 @@ export const components: ExampleComponentType[] = [
   },
   { navigationPath: 'Flex', onScreenName: 'Flex', component: FlexComponent },
   { navigationPath: 'Stack', onScreenName: 'Stack', component: StackComponent },
+  { navigationPath: 'List', onScreenName: 'List', component: ListComponent },
+  {
+    navigationPath: 'SectionList',
+    onScreenName: 'SectionList',
+    component: SectionListComponent,
+  },
 ];

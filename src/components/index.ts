@@ -12,3 +12,7 @@ export { Stack } from './stack/stack.component';
 export { VStack } from './stack/vstack.component';
 export { HStack } from './stack/hstack.component';
 export { StackProps } from './stack/stack.type';
+export { List } from './list/list.component';
+export { ListProps } from './list/list.type';
+export { SectionList } from './sectionlist/sectionlist.component';
+export { SectionListProps } from './sectionlist/sectionlist.type';
