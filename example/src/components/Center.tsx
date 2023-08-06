@@ -10,7 +10,7 @@ const CenterComponent = () => {
         Center component
       </Text>
       <ScrollBox>
-        <ExampleSection name="background color">
+        <ExampleSection name="boxes centered">
           <Center>
             <Box h={40} w={40} mr="sm" bg="green.500" />
             <Box h={40} w={40} mr="sm" bg="teal.500" />
@@ -18,6 +18,13 @@ const CenterComponent = () => {
             <Box h={40} w={40} mr="sm" bg="red.500" />
             <Box h={40} w={40} mr="sm" bg="blue.500" />
             <Box h={40} w={40} mr="sm" bg="gray.500" />
+          </Center>
+        </ExampleSection>
+
+        <ExampleSection name="Text centered">
+          <Center>
+            <Text>I'm a text that is centered by Center component</Text>
+            <Text>I'm another text that is centered by Center component</Text>
           </Center>
         </ExampleSection>
       </ScrollBox>
