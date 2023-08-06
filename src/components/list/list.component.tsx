@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { View } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
 
 import { getStyle } from './list.style';
@@ -7,7 +8,7 @@ import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
 
 const List: React.FunctionComponent<ListProps> = (incomingProps) => {
-  const props = useDefaultProps('List', incomingProps, {});
+  const props = useDefaultProps('List', incomingProps, { flex: 1 });
 
   const {
     bg,
@@ -79,7 +80,11 @@ const List: React.FunctionComponent<ListProps> = (incomingProps) => {
   const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
-  return <FlashList {...rest} contentContainerStyle={computedStyle.list} />;
+  return (
+    <View style={computedStyle.list}>
+      <FlashList {...rest} />
+    </View>
+  );
 };
 
 // List.defaultProps = {};
