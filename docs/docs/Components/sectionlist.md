@@ -16,7 +16,7 @@ import { SectionList } from "react-native-ficus-ui";
 
 ```js
 <SectionList
-    data={[
+    sections={[
         {
             title: 'Main dishes',
             data: ['Pizza', 'Burger', 'Risotto'],
