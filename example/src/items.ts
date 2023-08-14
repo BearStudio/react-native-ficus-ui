@@ -13,6 +13,7 @@ import TouchableOpacityComponent from './components/TouchableOpacity';
 import TouchableHighlightComponent from './components/TouchableHighlight';
 import TouchableWithoutFeedbackComponent from './components/TouchableWithoutFeedback';
 import ButtonComponent from './components/Button';
+import IconComponent from './components/Icon';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -44,6 +45,11 @@ export const components: ExampleComponentType[] = [
     navigationPath: 'Image',
     onScreenName: 'Image',
     component: ImageComponent,
+  },
+  {
+    navigationPath: 'Icon',
+    onScreenName: 'Icon',
+    component: IconComponent,
   },
   {
     navigationPath: 'Spinner',

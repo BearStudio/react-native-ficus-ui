@@ -61,6 +61,7 @@
     "@types/jest": "29.5.2",
     "@types/react": "18.2.14",
     "@types/react-native": "0.72.2",
+    "@types/react-native-vector-icons": "^6.4.13",
     "@types/react-test-renderer": "18.0.0",
     "color": "4.2.3",
     "commitlint": "17.0.2",
@@ -75,13 +76,14 @@
     "react": "18.2.0",
     "react-native": "0.72.1",
     "react-native-builder-bob": "0.21.0",
+    "react-native-vector-icons": "^10.0.0",
     "react-test-renderer": "18.2.0",
     "release-it": "15.0.0",
     "typescript": "5.1.6",
     "validate-color": "2.2.4"
   },
   "resolutions": {
-    "@types/react": "17.0.21"
+    "@types/react": "18.2.14"
   },
   "peerDependencies": {
     "react": "*",

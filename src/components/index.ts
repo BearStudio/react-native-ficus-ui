@@ -30,3 +30,5 @@ export { TouchableOpacity } from './touchable-opacity/touchable-opacity.componen
 export { TouchableOpacityProps } from './touchable-opacity/touchable-opacity.type';
 export { TouchableWithoutFeedback } from './touchable-without-feedback/touchable-without-feedback.component';
 export { TouchableWithoutFeedbackProps } from './touchable-without-feedback/touchable-without-feedback.type';
+export { Icon } from './icon/icon.component';
+export { IconProps } from './icon/icon.type';
