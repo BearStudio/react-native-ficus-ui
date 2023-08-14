@@ -318,9 +318,9 @@ export interface ZIndexPropsType {
   zIndex?: number;
 }
 
-export const loadingProps = ['loading', 'loaderSize', 'loaderColor'] as const;
+export const loadingProps = ['isLoading', 'loaderSize', 'loaderColor'] as const;
 export interface LoadingPropsType {
-  loading?: boolean;
+  isLoading?: boolean;
   loaderSize?: number | string;
   loaderColor?: string;
 }
@@ -336,24 +336,24 @@ export interface InputPropsType {
   focusBorderColor?: string;
 }
 
-export const disabledProps = ['disabled'] as const;
+export const disabledProps = ['isDisabled'] as const;
 export interface DisabledPropsType {
-  disabled?: null | boolean;
+  isDisabled?: null | boolean;
 }
 
 export const buttonProps = [
   'underlayColor',
-  'block',
-  'borderless',
+  'full',
   'rippleColor',
   'ripple',
+  'colorScheme',
 ] as const;
 export interface ButtonPropsType {
   underlayColor?: string;
-  block?: boolean;
-  borderless?: boolean;
+  full?: boolean;
   rippleColor?: string;
   ripple?: boolean;
+  colorScheme?: string;
 }
 
 export const overlayProps = ['overlayColor', 'overlayOpacity'] as const;

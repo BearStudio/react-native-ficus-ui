@@ -20,6 +20,8 @@ export { Image } from './image/image.component';
 export { ImageProps } from './image/image.type';
 export { Spinner } from './spinner/spinner.component';
 export { SpinnerProps } from './spinner/spinner.type';
+export { Button } from './button/button.component';
+export { ButtonProps } from './button/button.type';
 export { Pressable } from './pressable/pressable.component';
 export { PressableProps } from './pressable/pressable.type';
 export { TouchableHighlight } from './touchable-highlight/touchable-highlight.component';

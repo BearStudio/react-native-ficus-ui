@@ -12,6 +12,7 @@ import PressableComponent from './components/Pressable';
 import TouchableOpacityComponent from './components/TouchableOpacity';
 import TouchableHighlightComponent from './components/TouchableHighlight';
 import TouchableWithoutFeedbackComponent from './components/TouchableWithoutFeedback';
+import ButtonComponent from './components/Button';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -48,6 +49,11 @@ export const components: ExampleComponentType[] = [
     navigationPath: 'Spinner',
     onScreenName: 'Spinner',
     component: SpinnerComponent,
+  },
+  {
+    navigationPath: 'Button',
+    onScreenName: 'Button',
+    component: ButtonComponent,
   },
   {
     navigationPath: 'Pressable',
