@@ -32,3 +32,5 @@ export { TouchableWithoutFeedback } from './touchable-without-feedback/touchable
 export { TouchableWithoutFeedbackProps } from './touchable-without-feedback/touchable-without-feedback.type';
 export { Icon } from './icon/icon.component';
 export { IconProps } from './icon/icon.type';
+export { Switch } from './switch/switch.component';
+export { SwitchProps } from './switch/switch.type';

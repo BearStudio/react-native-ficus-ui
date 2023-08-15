@@ -14,6 +14,7 @@ import TouchableHighlightComponent from './components/TouchableHighlight';
 import TouchableWithoutFeedbackComponent from './components/TouchableWithoutFeedback';
 import ButtonComponent from './components/Button';
 import IconComponent from './components/Icon';
+import SwitchComponent from './components/Switch';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -80,5 +81,10 @@ export const components: ExampleComponentType[] = [
     navigationPath: 'TouchableWithoutFeedback',
     onScreenName: 'TouchableWithoutFeedback',
     component: TouchableWithoutFeedbackComponent,
+  },
+  {
+    navigationPath: 'Switch',
+    onScreenName: 'Switch',
+    component: SwitchComponent,
   },
 ];

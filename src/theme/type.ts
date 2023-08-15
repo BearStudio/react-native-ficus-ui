@@ -15,6 +15,7 @@ import type { SectionListProps } from 'components/sectionlist/sectionlist.type';
 import type { ImageProps } from 'components/image/image.type';
 import type { ButtonProps } from 'components/button/button.type';
 import type { IconProps } from 'components/icon/icon.type';
+import type { SwitchProps } from 'components/switch/switch.type';
 
 export interface ColorHues {
   50: string;
@@ -49,6 +50,7 @@ export interface ThemeType {
     Image?: VariantType<ImageProps>;
     Button?: VariantType<ButtonProps>;
     Icon?: VariantType<IconProps>;
+    Switch?: VariantType<SwitchProps>;
   };
 
   fontFamily?: {
