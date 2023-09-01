@@ -13,20 +13,20 @@ const Switch: React.FC<SwitchProps> = (incomingProps) => {
     w: 55,
     h: 30,
     onPress: (): void => {},
-    activeBg: 'green.500',
+    colorScheme: 'green',
     bg: 'gray.400',
     on: false,
-    circleBg: 'white',
-    activeCircleBg: 'white',
+    thumbBg: 'white',
+    activeThumbBg: 'white',
     duration: 300,
     borderRadius: 'full',
     isDisabled: false,
   });
 
   const {
+    bg,
     h,
     w,
-    bg,
     m,
     mt,
     mr,
@@ -60,9 +60,9 @@ const Switch: React.FC<SwitchProps> = (incomingProps) => {
     borderTopWidth,
     borderEndWidth,
     onPress,
-    activeBg,
-    circleBg,
-    activeCircleBg,
+    colorScheme,
+    thumbBg,
+    activeThumbBg,
     duration,
     on,
     ...rest
@@ -112,7 +112,7 @@ const Switch: React.FC<SwitchProps> = (incomingProps) => {
               inputRange: [0, 1],
               outputRange: [
                 getThemeColor(theme.colors, bg),
-                getThemeColor(theme.colors, activeBg),
+                getThemeColor(theme.colors, `${props.colorScheme}.500`),
               ],
             }),
           },
@@ -125,8 +125,8 @@ const Switch: React.FC<SwitchProps> = (incomingProps) => {
               backgroundColor: animXValue.interpolate({
                 inputRange: [0, 1],
                 outputRange: [
-                  getThemeColor(theme.colors, circleBg),
-                  getThemeColor(theme.colors, activeCircleBg),
+                  getThemeColor(theme.colors, thumbBg),
+                  getThemeColor(theme.colors, activeThumbBg),
                 ],
               }),
             },

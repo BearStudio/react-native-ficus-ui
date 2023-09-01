@@ -7922,7 +7922,7 @@ react-native-builder-bob@0.21.0:
   optionalDependencies:
     jetifier "^2.0.0"
 
-react-native-modal@^13.0.1:
+react-native-modal@13.0.1:
   version "13.0.1"
   resolved "https://registry.yarnpkg.com/react-native-modal/-/react-native-modal-13.0.1.tgz#691f1e646abb96fa82c1788bf18a16d585da37cd"
   integrity sha512-UB+mjmUtf+miaG/sDhOikRfBOv0gJdBU2ZE1HtFWp6UixW9jCk/bhGdHUgmZljbPpp0RaO/6YiMmQSSK3kkMaw==

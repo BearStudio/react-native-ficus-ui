@@ -16,13 +16,7 @@ const SwitchComponent = () => {
           <Switch on={on} onPress={() => toggle(!on)} />
         </ExampleSection>
         <ExampleSection name="change color">
-          <Switch
-            on={on2}
-            onPress={() => toggle2(!on2)}
-            bg="gray.200"
-            circleBg="blue.500"
-            activeBg="blue.700"
-          />
+          <Switch colorScheme="red" on={on2} onPress={() => toggle2(!on2)} />
         </ExampleSection>
       </ScrollBox>
     </SafeAreaView>

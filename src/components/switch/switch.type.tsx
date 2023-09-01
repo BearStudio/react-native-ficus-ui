@@ -23,8 +23,8 @@ export interface SwitchProps
   testID?: string;
   on?: boolean;
   onPress: () => void;
-  activeBg?: string;
-  circleBg?: string;
-  activeCircleBg?: string;
+  colorScheme?: string;
+  thumbBg?: string;
+  activeThumbBg?: string;
   duration?: number;
 }

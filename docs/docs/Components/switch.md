@@ -4,7 +4,7 @@ sidebar_position: 14
 
 # Switch
 
-Toggle component from Magnus UI.
+Toggle component from Magnus UI, moved to `colorScheme` prop from Chakra UI.
 
 ## Import
 
@@ -16,42 +16,44 @@ import { Switch } from "react-native-ficus-ui";
 
 ```js
 <Switch on={on} onPress={() => toggle(!on)} />
-<Switch
-    on={on2}
-    onPress={() => toggle2(!on2)}
-    bg="gray.200"
-    circleBg="blue.500"
-    activeBg="blue.700"
-/>
+<Switch colorScheme="red" on={on2} onPress={() => toggle2(!on2)} />
 ```
 
 <img src="/img/switch.png" />
 
 ## Props
 
+`colorScheme`
+---
+The background color of switch when is active.
+
+|Type|Required|Default|
+|---|---|---|
+|string|No|green|
+
 `bg`
 ---
 The background color property (`backgroundColor` style prop in StyleSheet)
 
-|Type|Required|
-|---|---|
-|string|No|
+|Type|Required|Default|
+|---|---|---|
+|string|No|gray.400|
 
-`circleBg`
+`thumbBg`
 ---
-The background color of circle.
+The background color of thumb component (circle).
 
-|Type|Required|
-|---|---|
-|string|No|
+|Type|Required|Default|
+|---|---|---|
+|string|No|white|
 
-`activeCircleBg`
+`activeThumbBg`
 ---
-The background color of circle when toggle is on.
+The background color of thumb when toggle is on.
 
-|Type|Required|
-|---|---|
-|string|No|
+|Type|Required|Default|
+|---|---|---|
+|string|No|white|
 
 `isDisabled`
 ---
