@@ -16,6 +16,10 @@ import type { ImageProps } from 'components/image/image.type';
 import type { ButtonProps } from 'components/button/button.type';
 import type { IconProps } from 'components/icon/icon.type';
 import type { SwitchProps } from 'components/switch/switch.type';
+import type { InputProps } from 'components/input/input.type';
+import type { SelectProps } from 'components/select/select.type';
+import type { TextareaProps } from 'components/input/textarea.type';
+import type { SelectOptionProps } from 'components/select/select.option.type';
 
 export interface ColorHues {
   50: string;
@@ -51,6 +55,10 @@ export interface ThemeType {
     Button?: VariantType<ButtonProps>;
     Icon?: VariantType<IconProps>;
     Switch?: VariantType<SwitchProps>;
+    Input?: VariantType<InputProps>;
+    Textarea?: VariantType<TextareaProps>;
+    Select?: VariantType<SelectProps>;
+    Option?: VariantType<SelectOptionProps>;
   };
 
   fontFamily?: {

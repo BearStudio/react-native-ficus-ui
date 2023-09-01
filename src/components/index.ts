@@ -32,5 +32,13 @@ export { TouchableWithoutFeedback } from './touchable-without-feedback/touchable
 export { TouchableWithoutFeedbackProps } from './touchable-without-feedback/touchable-without-feedback.type';
 export { Icon } from './icon/icon.component';
 export { IconProps } from './icon/icon.type';
+export { Input } from './input/input.component';
+export { InputProps } from './input/input.type';
+export { Textarea } from './input/textarea.component';
+export { TextareaProps } from './input/textarea.type';
+export { Select } from './select/select.component';
+export { SelectProps } from './select/select.type';
+export { Option } from './select/select.option.component';
+export { SelectOptionProps } from './select/select.option.type';
 export { Switch } from './switch/switch.component';
 export { SwitchProps } from './switch/switch.type';
