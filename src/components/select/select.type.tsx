@@ -37,7 +37,7 @@ export interface SelectProps
     VariantPropsType {
   title?: string | React.ReactNode;
   message?: string | React.ReactNode;
-  submitMessage?: string;
+  submitText?: string;
   showScrollIndicator?: boolean;
   isMultiple?: boolean;
   value: any;

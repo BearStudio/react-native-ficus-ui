@@ -35,7 +35,7 @@ const Select = React.forwardRef<SelectRef, SelectProps>(
       renderSubmitButton,
       onSelect: onSelectProp,
       submit,
-      submitMessage,
+      submitText,
       showScrollIndicator,
     } = props;
 
@@ -161,7 +161,7 @@ const Select = React.forwardRef<SelectRef, SelectProps>(
           {...mandatoryProps}
         >
           <Text fontSize="xl" py="xs" color="white">
-            {submitMessage || 'Submit'}
+            {submitText || 'Submit'}
           </Text>
         </Button>
       );
