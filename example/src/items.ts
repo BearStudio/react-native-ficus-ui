@@ -17,6 +17,7 @@ import IconComponent from './components/Icon';
 import SwitchComponent from './components/Switch';
 import InputComponent from './components/Input';
 import SelectComponent from './components/Select';
+import CheckboxComponent from './components/Checkbox';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -98,5 +99,10 @@ export const components: ExampleComponentType[] = [
     navigationPath: 'Switch',
     onScreenName: 'Switch',
     component: SwitchComponent,
+  },
+  {
+    navigationPath: 'Checkbox',
+    onScreenName: 'Checkbox',
+    component: CheckboxComponent,
   },
 ];

@@ -42,3 +42,6 @@ export { Option } from './select/select.option.component';
 export { SelectOptionProps } from './select/select.option.type';
 export { Switch } from './switch/switch.component';
 export { SwitchProps } from './switch/switch.type';
+export { Checkbox } from './checkbox/checkbox.component';
+export { CheckboxProps, CheckboxGroupProps } from './checkbox/checkbox.type';
+export { CheckboxGroup } from './checkbox/group.component';

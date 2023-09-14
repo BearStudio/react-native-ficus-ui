@@ -20,6 +20,10 @@ import type { InputProps } from 'components/input/input.type';
 import type { SelectProps } from 'components/select/select.type';
 import type { TextareaProps } from 'components/input/textarea.type';
 import type { SelectOptionProps } from 'components/select/select.option.type';
+import type {
+  CheckboxProps,
+  CheckboxGroupProps,
+} from 'components/checkbox/checkbox.type';
 
 export interface ColorHues {
   50: string;
@@ -59,6 +63,8 @@ export interface ThemeType {
     Textarea?: VariantType<TextareaProps>;
     Select?: VariantType<SelectProps>;
     Option?: VariantType<SelectOptionProps>;
+    Checkbox?: VariantType<CheckboxProps>;
+    CheckboxGroup?: VariantType<CheckboxGroupProps>;
   };
 
   fontFamily?: {
