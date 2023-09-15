@@ -2,33 +2,37 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import {
   View as RNView,
-  Pressable as RNButton,
   GestureResponderEvent as RNGestureResponderEvent,
+  Pressable as RNButton,
 } from 'react-native';
 
-import { getStyle } from './checkbox.style';
+import { getStyle } from './radio.style';
+import { getThemeProperty, useTheme } from '../../theme';
+import { Icon } from '../icon/icon.component';
+import { getIconName, getIconColor } from './radio.service';
+import { RadioProps, CompoundedRadio } from './radio.type';
+import { RadioGroup } from './group.component';
+import { Spinner } from '../spinner/spinner.component';
 import { isFunction } from '../../utilities';
-import { getIcon } from './checkbox.service';
-import { CheckboxGroup } from './group.component';
-import { CompundedCheckbox, CheckboxProps } from './checkbox.type';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { useTheme } from '../../theme';
 import { Text } from '../text/text.component';
+import { Box } from '../box/box.component';
 
-const Checkbox: CompundedCheckbox<CheckboxProps> = (incomingProps) => {
-  const props = useDefaultProps('Checkbox', incomingProps, {
+const Radio: CompoundedRadio<RadioProps> = (incomingProps) => {
+  const props = useDefaultProps('Radio', incomingProps, {
     defaultChecked: false,
     colorScheme: 'blue',
     bg: 'transparent',
     p: 'none',
     color: 'black',
-    borderRadius: 'md',
+    borderRadius: 'full',
     isLoading: false,
     isDisabled: false,
     full: false,
     position: 'relative',
-    shadowColor: 'gray.800',
+    shadowColor: 'gray800',
     shadow: 0,
+    fontSize: '5xl',
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'flex-start',
@@ -56,6 +60,7 @@ const Checkbox: CompundedCheckbox<CheckboxProps> = (incomingProps) => {
     minH,
     suffix,
     style,
+    fontSize,
     fontWeight,
     prefix,
     borderRadius,
@@ -87,57 +92,123 @@ const Checkbox: CompundedCheckbox<CheckboxProps> = (incomingProps) => {
     full,
     alignSelf,
     icon,
-    onChange,
-    value,
+    iconColor,
     colorScheme,
+    onChange,
     defaultChecked,
+    value,
     isChecked: checkedProp,
-    onChecked,
     onPress: onPressProp,
     size,
     ...rest
   } = props;
   const { theme } = useTheme();
-  const [checked, setChecked] = useState(
-    ('checked' in props ? checkedProp : defaultChecked) ?? false
-  );
-  const computedStyle = getStyle(theme, props);
+  const [checked, setChecked] = useState(props.isChecked ?? defaultChecked);
+  const [isFocussed, setIsFocussed] = useState(false);
+  const computedStyle = getStyle(theme, props as RadioProps);
 
   useEffect(() => {
-    if ('checked' in props) {
-      setChecked(props.isChecked ?? false);
+    if ('isChecked' in props) {
+      setChecked(props.isChecked);
     }
   }, [props]);
 
   /**
-   * on press checkbox
+   * on press radio
    */
   const onPress = (event: RNGestureResponderEvent) => {
     if (isDisabled) {
       return;
     }
 
-    setChecked(!checked);
-
-    if (isFunction(onChecked)) {
-      onChecked(!checked);
+    // set the checked to true on press if there is no isChecked prop pass
+    if (!('isChecked' in props)) {
+      setChecked(true);
     }
 
     if (isFunction(onPressProp)) {
       onPressProp(event);
     }
 
-    // if onChange prop is a valid function, call it
     if (isFunction(onChange)) {
       onChange(value);
     }
   };
 
-  const iconObj = getIcon(theme, props, checked);
+  /**
+   * sets focussed to true
+   *
+   * @param event
+   */
+  const onPressIn = () => {
+    setIsFocussed(true);
+  };
+
+  /**
+   * sets focussed to true
+   *
+   * @param event
+   */
+  const onPressOut = () => {
+    setIsFocussed(false);
+  };
+
+  const iconName = getIconName(checked);
+  const iconColorValue = getIconColor(checked, isDisabled, iconColor, theme);
+  const iconSize = getThemeProperty(theme.radio, size);
+
+  /**
+   * get icon
+   * shows activity indication if loading state is true
+   */
+  const getIcon = () => {
+    if (isLoading) {
+      return (
+        <Box
+          w={iconSize}
+          h={iconSize}
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Spinner size={size} color={`${colorScheme}.600`} />
+        </Box>
+      );
+    }
+
+    if (props.icon && typeof icon === 'string') {
+      return (
+        <Icon
+          name={icon}
+          color={iconColorValue}
+          style={{ zIndex: 2, position: 'relative' }}
+          fontFamily="AntDesign"
+          fontSize={iconSize}
+        />
+      );
+    }
+
+    if (props.icon) {
+      return icon;
+    }
+
+    return (
+      <Icon
+        name={iconName}
+        color={`${colorScheme}.600`}
+        zIndex={2}
+        position="relative"
+        fontFamily="MaterialIcons"
+        fontSize={iconSize}
+      />
+    );
+  };
+
+  const iconObj = getIcon();
 
   const renderChildren = () => {
     if (isFunction(children)) {
       return children({
+        isFocussed,
         isDisabled: isDisabled ?? false,
         isChecked: checked,
         isLoading,
@@ -165,35 +236,40 @@ const Checkbox: CompundedCheckbox<CheckboxProps> = (incomingProps) => {
   return (
     <RNButton
       {...rest}
+      disabled={isDisabled ?? isLoading}
       style={computedStyle.button}
-      onPress={isDisabled || isLoading ? undefined : onPress}
+      onPress={isDisabled ? undefined : onPress}
+      onPressIn={isDisabled ? undefined : onPressIn}
+      onPressOut={isDisabled ? undefined : onPressOut}
     >
       <RNView style={computedStyle.container}>{renderChildren()}</RNView>
     </RNButton>
   );
 };
 
-// Checkbox.defaultProps = {
+// Radio.defaultProps = {
 // defaultChecked: false,
 // colorScheme: 'blue',
 // bg: 'transparent',
 // p: 'none',
 // color: 'white',
-// borderRadius: 'md',
+// borderRadius: 'full',
+// isChecked: false,
 // isLoading: false,
 // isDisabled: false,
 // full: false,
 // position: 'relative',
-// shadowColor: 'gray.800',
+// shadowColor: 'gray800',
 // shadow: 0,
+// fontSize: '5xl',
 // alignItems: 'center',
 // justifyContent: 'center',
 // alignSelf: 'flex-start',
 // onPress: () => {},
 // flexDirection: 'row',
-// size: 'sm',
 // };
 
-Checkbox.Group = CheckboxGroup;
+// passing RadioGroup as part of Radio
+Radio.Group = RadioGroup;
 
-export { Checkbox };
+export { Radio };

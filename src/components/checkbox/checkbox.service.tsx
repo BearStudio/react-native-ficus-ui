@@ -1,11 +1,12 @@
 /* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
-import { ActivityIndicator } from 'react-native';
 
 import { ThemeType } from '../..//theme';
 import { Icon } from '../icon/icon.component';
 import { CheckboxProps } from './checkbox.type';
-import { getThemeProperty, getThemeColor } from '../../theme/theme.service';
+import { getThemeColor, getThemeProperty } from '../../theme/theme.service';
+import { Spinner } from '../spinner/spinner.component';
+import { Box } from '../box/box.component';
 
 /**
  * get icon name based on state
@@ -55,20 +56,22 @@ export const getIcon = (
   props: CheckboxProps,
   isChecked: boolean
 ) => {
-  const { fontSize, icon, iconColor, colorScheme, isDisabled } = props;
+  const { size, icon, iconColor, colorScheme, isDisabled } = props;
 
   const iconName = getIconName(isChecked, isDisabled ?? false);
   const iconColorValue = getIconColor(isChecked, isDisabled, iconColor, theme);
-
-  const colorValue = getThemeColor(theme.colors, `${colorScheme}.600`);
+  const iconSize = getThemeProperty(theme.checkbox, size);
 
   if (props.isLoading) {
     return (
-      <ActivityIndicator
-        size={getThemeProperty(theme.fontSize, fontSize)}
-        color={colorValue}
-        style={{ zIndex: 2, position: 'relative' }}
-      />
+      <Box
+        w={iconSize}
+        h={iconSize}
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Spinner size={size} color={`${colorScheme}.600`} />
+      </Box>
     );
   }
 
@@ -79,7 +82,7 @@ export const getIcon = (
         color={iconColorValue}
         style={{ zIndex: 2, position: 'relative' }}
         fontFamily="AntDesign"
-        fontSize={fontSize}
+        fontSize={iconSize}
       />
     );
   }
@@ -94,7 +97,7 @@ export const getIcon = (
       color={`${colorScheme}.600`}
       style={{ zIndex: 2, position: 'relative' }}
       fontFamily="MaterialIcons"
-      fontSize={fontSize}
+      fontSize={iconSize}
     />
   );
 };

@@ -1,60 +1,49 @@
 ---
-sidebar_position: 20
+sidebar_position: 21
 ---
 
-# Checkbox
+# Radio
 
-Component to render a checkbox input.
+Component to render a radio input.
 
 ## Import
 
 ```js
-import { Checkbox, CheckboxGroup } from "react-native-ficus-ui";
+import { Radio, RadioGroup } from "react-native-ficus-ui";
 ```
 
 ## Usage
 
 ```js
-<Checkbox value={1} prefix={<Text flex={1}>Option 1</Text>} />
-<Checkbox value={2} prefix={<Text flex={1}>Option 2</Text>} />
-<Checkbox
-    value={3}
-    prefix={<Text flex={1}>Option 3</Text>}
-    colorScheme="red"
-/>
-<Checkbox
-    value={4}
-    prefix={<Text flex={1}>Option 4</Text>}
-    colorScheme="pink"
-/>
-<Checkbox
-    value={5}
-    prefix={<Text flex={1}>Option 5</Text>}
-    isLoading
-/>
+<Radio value={1} />
+<Radio value={2} defaultChecked />
+<Radio value={3} colorScheme="green" />
+<Radio value={4} isDisabled />
+<Radio value={5} isLoading />
 
-<CheckboxGroup flexDirection="row">
-    {['Option 1', 'Option 2', 'Option 3'].map((item) => (
-    <Checkbox value={item}>
-        {({ isChecked }) => (
-        <Box
-            bg={isChecked ? 'blue.600' : 'blue.100'}
-            px="xl"
-            py="md"
-            mr="md"
-            borderRadius="full"
-        >
-            <Text color={isChecked ? 'white' : 'gray.800'}>{item}</Text>
-        </Box>
-        )}
-    </Checkbox>
-    ))}
-</CheckboxGroup>
+<RadioGroup colorScheme="red">
+    <Radio value={1} prefix={<Text flex={1}>Option 1</Text>} />
+    <Radio value={2} prefix={<Text flex={1}>Option 2</Text>} />
+    <Radio value={3} prefix={<Text flex={1}>Option 3</Text>} />
+</RadioGroup>
+
+<RadioGroup>
+    <Radio value={1} size="sm">
+        Option 1
+    </Radio>
+    <Radio value={2} size="lg">
+        Option 2
+    </Radio>
+</RadioGroup>
+
+<Radio value={3} size="lg" isLoading>
+    Loading option
+</Radio>
 ```
 
 ## Props
 
-### Checkbox props
+### Radio props
 
 Extends every `Box` props.
 
@@ -130,7 +119,7 @@ Size of checkbox.
 |---|---|
 |number 'sm' 'lg'|No|
 
-### Checkbox.Group props
+### RadioGroup props
 
 `onChange`
 ---

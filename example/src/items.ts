@@ -18,6 +18,7 @@ import SwitchComponent from './components/Switch';
 import InputComponent from './components/Input';
 import SelectComponent from './components/Select';
 import CheckboxComponent from './components/Checkbox';
+import RadioComponent from './components/Radio';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -104,5 +105,10 @@ export const components: ExampleComponentType[] = [
     navigationPath: 'Checkbox',
     onScreenName: 'Checkbox',
     component: CheckboxComponent,
+  },
+  {
+    navigationPath: 'Radio',
+    onScreenName: 'Radio',
+    component: RadioComponent,
   },
 ];

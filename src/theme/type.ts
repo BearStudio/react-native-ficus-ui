@@ -24,6 +24,7 @@ import type {
   CheckboxProps,
   CheckboxGroupProps,
 } from 'components/checkbox/checkbox.type';
+import type { RadioGroupProps, RadioProps } from 'components/radio/radio.type';
 
 export interface ColorHues {
   50: string;
@@ -65,6 +66,8 @@ export interface ThemeType {
     Option?: VariantType<SelectOptionProps>;
     Checkbox?: VariantType<CheckboxProps>;
     CheckboxGroup?: VariantType<CheckboxGroupProps>;
+    Radio?: VariantType<RadioProps>;
+    RadioGroup?: VariantType<RadioGroupProps>;
   };
 
   fontFamily?: {
@@ -98,4 +101,6 @@ export interface ThemeType {
   }>;
   name?: string;
   spinner?: ThemeProps<string | number>;
+  checkbox?: ThemeProps<string | number>;
+  radio?: ThemeProps<string | number>;
 }

@@ -373,4 +373,14 @@ export const defaultTheme: ThemeType = {
     sm: 'small',
     lg: 'large',
   },
+
+  checkbox: {
+    sm: 26,
+    lg: 36,
+  },
+
+  radio: {
+    sm: 26,
+    lg: 36,
+  },
 };

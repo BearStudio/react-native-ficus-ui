@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { PressableProps as RNButtonProps } from 'react-native';
 import {
   BackgroundPropsType,
@@ -17,28 +18,28 @@ import {
   VariantPropsType,
 } from '../../types';
 import { BoxProps } from '../box/box.type';
-import { CheckboxGroup } from './group.component';
+import { RadioGroup } from './group.component';
 
-export type CompundedCheckbox<P> = React.FunctionComponent<P> & {
-  Group: typeof CheckboxGroup;
+export type CompoundedRadio<P> = React.FunctionComponent<P> & {
+  Group: typeof RadioGroup;
 };
 
-export interface CheckboxProps
+export interface RadioProps
   extends Omit<RNButtonProps, 'children'>,
     BorderPropsType,
     SpacingPropsType,
     ShadowPropsType,
     BorderRadiusPropsType,
-    DimensionPropsType,
     PositionPropsType,
+    DimensionPropsType,
     FlexPropsType,
+    DisabledPropsType,
     PrefixSuffixPropsType,
     OpacityPropsType,
     ZIndexPropsType,
-    DisabledPropsType,
-    Pick<TextPropsType, 'fontWeight' | 'color'>,
+    Omit<ButtonPropsType, 'underlayColor'>,
     Pick<BackgroundPropsType, 'bg'>,
-    ButtonPropsType,
+    Pick<TextPropsType, 'fontWeight' | 'color' | 'fontSize'>,
     VariantPropsType {
   colorScheme?: string;
   defaultChecked?: boolean;
@@ -46,26 +47,26 @@ export interface CheckboxProps
   iconColor?: string;
   isChecked?: boolean;
   isLoading?: boolean;
-  onChecked?: (newValue: boolean) => void;
   onChange?: (value: any) => void;
   value?: any;
-  children?:
-    | ((states: CheckboxStates) => React.ReactNode)
-    | React.ReactNode
-    | string;
+  children: ((states: RadioStates) => React.ReactNode) | React.ReactNode;
   size?: number | 'sm' | 'lg';
 }
 
-export interface CheckboxGroupProps extends BoxProps {
-  onChange?: (value: any[]) => void;
-  value?: any[];
-  defaultValue?: any[];
-  children: React.ReactElement[] | React.ReactElement;
-  colorScheme?: string;
-}
-
-export interface CheckboxStates {
+export interface RadioStates {
+  isFocussed?: boolean;
   isChecked?: boolean;
   isDisabled?: boolean;
   isLoading?: boolean;
 }
+
+export interface RadioGroupProps extends BoxProps {
+  onChange?: (value: any) => void;
+  value?: any;
+  defaultValue?: any;
+  children: React.ReactElement[] | React.ReactElement;
+  colorScheme?: string;
+}
+
+// Backwards compatibility
+export type IRadioProps = RadioProps;

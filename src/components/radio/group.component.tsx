@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { useState } from 'react';
+
+import { RadioGroupProps } from './radio.type';
+import { Box } from '../box/box.component';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
 
-import { Box } from '../box/box.component';
-import { CheckboxGroupProps } from './checkbox.type';
-
-const CheckboxGroup: React.FunctionComponent<CheckboxGroupProps> = (
+const RadioGroup: React.FunctionComponent<RadioGroupProps> = (
   incomingProps
 ) => {
-  const props = useDefaultProps('CheckboxGroup', incomingProps, {});
+  const props = useDefaultProps('RadioGroup', incomingProps, {});
 
-  const [value, setValue] = useState(props.value ?? props.defaultValue ?? []);
+  const [value, setValue] = useState(props.value ?? props.defaultValue ?? null);
   const {
     children,
     onChange: onChangeProp,
@@ -26,32 +26,23 @@ const CheckboxGroup: React.FunctionComponent<CheckboxGroupProps> = (
    * @param value
    */
   const onChange = (optionValue: any) => {
-    const optionIndex = value.indexOf(optionValue);
-    const newValue = [...value];
-
-    if (optionIndex === -1) {
-      newValue.push(optionValue);
-    } else {
-      newValue.splice(optionIndex, 1);
-    }
-
     if (!('value' in props)) {
-      setValue(newValue);
+      setValue(optionValue);
     }
 
     if (onChangeProp) {
-      onChangeProp(newValue);
+      onChangeProp(optionValue);
     }
   };
 
   /**
-   * clones the children and add checked, onChange prop
+   * clones the children and add isChecked, onChange prop
    */
   const renderChildren = () => {
     return React.Children.map(children, (child: React.ReactElement) => {
       return React.cloneElement(child, {
         onChange,
-        isChecked: value.indexOf(child.props.value) > -1,
+        isChecked: value === child.props.value,
         ...(colorScheme ? { colorScheme } : {}),
       });
     });
@@ -60,4 +51,4 @@ const CheckboxGroup: React.FunctionComponent<CheckboxGroupProps> = (
   return <Box {...rest}>{renderChildren()}</Box>;
 };
 
-export { CheckboxGroup };
+export { RadioGroup };

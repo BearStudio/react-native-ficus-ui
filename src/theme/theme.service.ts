@@ -174,6 +174,8 @@ export const getThemeProperty = (
     | ThemeType['shadow']
     | ThemeType['spacing']
     | ThemeType['spinner']
+    | ThemeType['checkbox']
+    | ThemeType['radio']
     | undefined,
   value: any
 ) => {

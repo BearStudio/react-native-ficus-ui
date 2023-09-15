@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { Box, Checkbox, Text } from 'react-native-ficus-ui';
+import { Box, Checkbox, CheckboxGroup, Text } from 'react-native-ficus-ui';
 import ExampleSection from '../ExampleSection';
 
 const CheckboxComponent = () => {
@@ -10,29 +10,46 @@ const CheckboxComponent = () => {
         Checkbox component
       </Text>
       <ExampleSection name="Simple checkbox">
-        <Box>
-          <Checkbox value={1} prefix={<Text flex={1}>Option 1</Text>} />
-          <Checkbox value={2} prefix={<Text flex={1}>Option 2</Text>} />
-          <Checkbox
-            value={3}
-            prefix={<Text flex={1}>Option 3</Text>}
-            colorScheme="red"
-          />
-          <Checkbox
-            value={4}
-            prefix={<Text flex={1}>Option 4</Text>}
-            colorScheme="pink"
-          />
-          <Checkbox
-            value={5}
-            prefix={<Text flex={1}>Option 5</Text>}
-            isLoading
-          />
-        </Box>
+        <Checkbox value={1} prefix={<Text flex={1}>Option 1</Text>} />
+        <Checkbox value={2} prefix={<Text flex={1}>Option 2</Text>} />
+        <Checkbox
+          value={3}
+          prefix={<Text flex={1}>Option 3</Text>}
+          colorScheme="red"
+        />
+        <Checkbox
+          value={4}
+          prefix={<Text flex={1}>Option 4</Text>}
+          colorScheme="pink"
+        />
+        <Checkbox value={5} prefix={<Text flex={1}>Option 5</Text>} isLoading />
+      </ExampleSection>
+
+      <ExampleSection name="Checkbox sizes">
+        <Checkbox value={1}>Option 1</Checkbox>
+        <Checkbox value={2} size="lg">
+          Option 2
+        </Checkbox>
+        <Checkbox value={3} size="lg" isLoading>
+          Option 3
+        </Checkbox>
+      </ExampleSection>
+
+      <ExampleSection name="Checkbox disabled">
+        <Checkbox value={1} isDisabled>
+          Option 1
+        </Checkbox>
+      </ExampleSection>
+
+      <ExampleSection name="Checkbox group">
+        <CheckboxGroup colorScheme="green">
+          <Checkbox value={1}>Option 1</Checkbox>
+          <Checkbox value={2}>Option 2</Checkbox>
+        </CheckboxGroup>
       </ExampleSection>
 
       <ExampleSection name="Custom render">
-        <Checkbox.Group flexDirection="row">
+        <CheckboxGroup flexDirection="row">
           {['Option 1', 'Option 2', 'Option 3'].map((item) => (
             <Checkbox value={item}>
               {({ isChecked }) => (
@@ -48,7 +65,7 @@ const CheckboxComponent = () => {
               )}
             </Checkbox>
           ))}
-        </Checkbox.Group>
+        </CheckboxGroup>
       </ExampleSection>
     </SafeAreaView>
   );

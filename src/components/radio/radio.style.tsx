@@ -11,7 +11,7 @@ import {
   createBorderWidthStyles,
   getThemeColor,
 } from '../../theme/theme.service';
-import { CheckboxProps } from './checkbox.type';
+import { RadioProps } from './radio.type';
 
 /**
  * computed style
@@ -19,7 +19,7 @@ import { CheckboxProps } from './checkbox.type';
  * @param theme
  * @param props
  */
-export const getStyle = (theme: ThemeType, props: CheckboxProps) => {
+export const getStyle = (theme: ThemeType, props: RadioProps) => {
   const computedStyle: any = {};
 
   computedStyle.button = {
@@ -48,7 +48,7 @@ export const getStyle = (theme: ThemeType, props: CheckboxProps) => {
   computedStyle.text = {
     fontWeight: props.fontWeight,
     color: getThemeColor(theme.colors, props.color),
-    fontSize: getThemeProperty(theme.fontSize, props.size) * 1.2,
+    fontSize: getThemeProperty(theme.fontSize, props.fontSize),
   };
 
   computedStyle.loadingContainer = {
@@ -87,6 +87,7 @@ export const getStyle = (theme: ThemeType, props: CheckboxProps) => {
       opacity: 0.5,
     };
   }
+
   // merging style props to computed style
   if (props.style) {
     computedStyle.container = {

@@ -45,3 +45,6 @@ export { SwitchProps } from './switch/switch.type';
 export { Checkbox } from './checkbox/checkbox.component';
 export { CheckboxProps, CheckboxGroupProps } from './checkbox/checkbox.type';
 export { CheckboxGroup } from './checkbox/group.component';
+export { Radio } from './radio/radio.component';
+export { RadioProps, RadioGroupProps } from './radio/radio.type';
+export { RadioGroup } from './radio/group.component';
