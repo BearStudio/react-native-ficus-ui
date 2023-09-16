@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # Text
 
 Component to display text, it's a wrapper around the `Text` component from `react-native` library.
@@ -14,29 +16,7 @@ import { Text } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-<Text>I love React Native Ficus UI</Text>
-```
-
-#### Change font size
-
-```js
-<Text fontSize="xl">I love React Native Ficus UI</Text>
-```
-
-#### Change color
-
-```js
-<Text color="blue.500">I love React Native Ficus UI</Text>
-```
-
-#### Change margins
-
-```js
-<Text m="lg">I love React Native Ficus UI</Text>
-
-<Text mt={10}>I love React Native Ficus UI</Text>
-```
+<ExpoLayout id="text" />
 
 ## Props
 

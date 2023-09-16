@@ -2,6 +2,8 @@
 sidebar_position: 4
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # Center
 
 As `Box` component but all chidrens are centered, it accepts every props from react native `View` component.
@@ -14,19 +16,7 @@ import { Center } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-<Center>
-    <Text>I love React Native Ficus UI</Text>
-</Center>
-```
-
-#### Background color
-
-```js
-<Center bg="blue.200">
-    <Text>I love React Native Ficus UI</Text>
-</Center>
-```
+<ExpoLayout id="center" />
 
 ## Props
 

@@ -2,6 +2,8 @@
 sidebar_position: 12
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # Spinner
 
 Simple spinner component that is based on react native `ActivityIndicator` component.
@@ -14,13 +16,7 @@ import { Spinner } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-<Spinner />
-<Spinner color="blue.500" size="sm" />
-<Spinner color="red.500" size="lg" />
-<Spinner color="green.500" size="lg" />
-<Spinner color="pink.500" size="lg" />
-```
+<ExpoLayout id="spinner" />
 
 ## Props
 

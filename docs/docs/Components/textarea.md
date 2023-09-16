@@ -2,6 +2,8 @@
 sidebar_position: 18
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # Textarea
 
 Component that is based on react native `TextInput` component, like input but a textarea larger.
@@ -14,11 +16,7 @@ import { Textarea } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-<Textarea mt="md" p={10} focusBorderColor="blue.500" />
-```
-
-<img src="/img/textarea.png" />
+<ExpoLayout id="input" />
 
 ## Props
 

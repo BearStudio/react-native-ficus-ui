@@ -2,6 +2,8 @@
 sidebar_position: 2
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # Box
 
 Wrapper around `View` component from `react-native`, it accepts every props from react native `View` component.
@@ -14,81 +16,7 @@ import { Box } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-<Box>
-    <Text>I love React Native Ficus UI</Text>
-</Box>
-```
-
-#### Background color
-
-```js
-<Box bg="blue.200">
-    <Text>I love React Native Ficus UI</Text>
-</Box>
-```
-
-#### Borders
-
-```js
-<Box h={30} w={30} bg="blue.200" borderColor="blue.800" borderWidth={1} />
-<Box
-    h={30}
-    w={30}
-    bg="blue.200"
-    borderColor="blue.800"
-    borderWidth={1}
-    borderRadius="xl"
-/>
-```
-
-#### Shadows
-
-```js
-<Box h={30} w={30} shadow="xs" />
-<Box h={30} w={30} shadow="sm" />
-<Box h={30} w={30} shadow="md" />
-<Box h={30} w={30} shadow="lg" />
-<Box h={30} w={30} shadow="xl" />
-<Box h={30} w={30} shadow="2xl" />
-```
-
-#### Border radius
-
-```js
-<Box
-    h={30}
-    w={30}
-    bg="blue.200"
-    borderColor="blue.800"
-    borderWidth={1}
-    borderRadius="sm"
-/>
-<Box
-    h={30}
-    w={30}
-    bg="blue.200"
-    borderColor="blue.800"
-    borderWidth={1}
-    borderRadius="md"
-/>
-<Box
-    h={30}
-    w={30}
-    bg="blue.200"
-    borderColor="blue.800"
-    borderWidth={1}
-    borderRadius="lg"
-/>
-<Box
-    h={30}
-    w={30}
-    bg="blue.200"
-    borderColor="blue.800"
-    borderWidth={1}
-    borderRadius="xl"
-/>
-```
+<ExpoLayout id="box" />
 
 ## Props
 

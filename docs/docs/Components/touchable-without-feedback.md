@@ -2,6 +2,8 @@
 sidebar_position: 16
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # TouchableWithoutFeedback
 
 Component that is based on react native `TouchableWithoutFeedback` component.
@@ -14,19 +16,7 @@ import { TouchableWithoutFeedback } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-<TouchableWithoutFeedback onPress={() => console.log('Pressed')}>
-    <Text>Test</Text>
-</TouchableWithoutFeedback>
-<TouchableWithoutFeedback
-    bg="red.300"
-    p="xl"
-    borderRadius="xl"
-    onPress={() => console.log('Pressed')}
->
-    <Text>Test</Text>
-</TouchableWithoutFeedback>
-```
+<ExpoLayout id="touchable-without-feedback" />
 
 ## Props
 

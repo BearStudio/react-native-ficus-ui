@@ -2,6 +2,8 @@
 sidebar_position: 14
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # Switch
 
 Toggle component from Magnus UI, moved to `colorScheme` prop from Chakra UI.
@@ -14,12 +16,7 @@ import { Switch } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-<Switch on={on} onPress={() => toggle(!on)} />
-<Switch colorScheme="red" on={on2} onPress={() => toggle2(!on2)} />
-```
-
-<img src="/img/switch.png" />
+<ExpoLayout id="switch" />
 
 ## Props
 

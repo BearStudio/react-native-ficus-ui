@@ -2,6 +2,8 @@
 sidebar_position: 12
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # Icon
 
 Component to display icon, it's a wrapper around the `Icon` component from `react-native-vector-icons` library.
@@ -14,33 +16,7 @@ import { Icon } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-<Icon name="like1" color="blue.700" fontSize="6xl" />
-<Icon
-    name="star"
-    color="yellow.700"
-    fontSize="6xl"
-    fontFamily="FontAwesome"
-/>
-<Icon name="codesquare" color="red.500" fontSize="6xl" />
-<Icon name="android1" color="teal.500" fontSize="6xl" />
-<Icon name="heart" color="red.500" fontSize="6xl" />
-<Icon name="apple1" color="blue.700" fontSize="6xl" />
-<Icon name="appstore1" color="teal.500" fontSize="6xl" />
-<Icon name="slack" color="yellow.700" fontSize="6xl" />
-
-<Icon
-    bg="yellow.400"
-    p={15}
-    borderRadius="full"
-    name="star"
-    color="yellow.700"
-    fontSize="2xl"
-    fontFamily="FontAwesome"
-/>
-```
-
-<img src="/img/icon.png" />
+<ExpoLayout id="icon" />
 
 ## Props
 

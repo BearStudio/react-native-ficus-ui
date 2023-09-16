@@ -2,6 +2,8 @@
 sidebar_position: 15
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # TouchableOpacity
 
 Component that is based on react native `TouchableOpacity` component.
@@ -14,19 +16,7 @@ import { TouchableOpacity } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-<TouchableOpacity onPress={() => console.log('Pressed')}>
-    <Text>Test</Text>
-</TouchableOpacity>
-<TouchableOpacity
-    bg="red.300"
-    p="xl"
-    borderRadius="xl"
-    onPress={() => console.log('Pressed')}
->
-    <Text>Test</Text>
-</TouchableOpacity>
-```
+<ExpoLayout id="touchable-opacity" />
 
 ## Props
 

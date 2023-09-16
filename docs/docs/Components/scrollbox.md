@@ -2,6 +2,8 @@
 sidebar_position: 3
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # ScrollBox
 
 Wrapper around `ScrollView` component from `react-native`, it accepts every props from react native `ScrollView` component.
@@ -14,19 +16,7 @@ import { ScrollBox } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-<ScrollBox flex={1}>
-    <Text>I love React Native Ficus UI</Text>
-</ScrollBox>
-```
-
-#### Background color
-
-```js
-<ScrollBox bg="blue.200">
-    <Text>I love React Native Ficus UI</Text>
-</ScrollBox>
-```
+<ExpoLayout id="box" />
 
 ## Props
 

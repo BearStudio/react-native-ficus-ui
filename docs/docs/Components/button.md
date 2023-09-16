@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # Button
 
 Button component that is based on react native `Button` component.
@@ -14,21 +16,7 @@ import { Button } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-<Button onPress={() => console.log('PRESSED')}>Button</Button>
-<Button colorScheme="red">Button</Button>
-<Button colorScheme="orange">Button</Button>
-<Button colorScheme="green">Button</Button>
-<Button colorScheme="pink">Button</Button>
-<Button colorScheme="pink" full>
-    Button
-</Button>
-<Button colorScheme="blue" full isLoading>
-    Button
-</Button>
-```
-
-<img src="/img/button.png" />
+<ExpoLayout id="button" />
 
 ## Props
 

@@ -2,6 +2,8 @@
 sidebar_position: 21
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # Radio
 
 Component to render a radio input.
@@ -14,32 +16,7 @@ import { Radio, RadioGroup } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-<Radio value={1} />
-<Radio value={2} defaultChecked />
-<Radio value={3} colorScheme="green" />
-<Radio value={4} isDisabled />
-<Radio value={5} isLoading />
-
-<RadioGroup colorScheme="red">
-    <Radio value={1} prefix={<Text flex={1}>Option 1</Text>} />
-    <Radio value={2} prefix={<Text flex={1}>Option 2</Text>} />
-    <Radio value={3} prefix={<Text flex={1}>Option 3</Text>} />
-</RadioGroup>
-
-<RadioGroup>
-    <Radio value={1} size="sm">
-        Option 1
-    </Radio>
-    <Radio value={2} size="lg">
-        Option 2
-    </Radio>
-</RadioGroup>
-
-<Radio value={3} size="lg" isLoading>
-    Loading option
-</Radio>
-```
+<ExpoLayout id="radio" />
 
 ## Props
 

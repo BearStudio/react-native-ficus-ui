@@ -2,6 +2,8 @@
 sidebar_position: 22
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # Modal
 
 Component to render a modal imported from `react-native-modal`
@@ -16,26 +18,7 @@ import { Modal } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-const { isOpen, onOpen, onClose } = useDisclosure();
-
-<Modal isOpen={isOpen}>
-    <Button
-        h={35}
-        w={35}
-        position="absolute"
-        top={50}
-        right={15}
-        borderRadius="full"
-        colorScheme="gray"
-        onPress={() => {
-            onClose();
-        }}
-    >
-        <Icon color="white" name="close" />
-    </Button>
-</Modal>
-```
+<ExpoLayout id="modal" />
 
 ## Props
 

@@ -2,6 +2,8 @@
 sidebar_position: 14
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # TouchableHighlight
 
 Component that is based on react native `TouchableHighlight` component.
@@ -14,21 +16,7 @@ import { TouchableHighlight } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-<TouchableHighlight onPress={() => console.log('Pressed')}>
-    <Text>Test</Text>
-</TouchableHighlight>
-<TouchableHighlight
-    bg="red.300"
-    p="xl"
-    borderRadius="xl"
-    underlayColor="white"
-    activeOpacity={0.5}
-    onPress={() => console.log('Pressed')}
->
-    <Text>Test</Text>
-</TouchableHighlight>
-```
+<ExpoLayout id="touchable-highlight" />
 
 ## Props
 

@@ -2,6 +2,8 @@
 sidebar_position: 10
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # SectionList
 
 Wrapper around `SectionList` component from `react-native`, it accepts every props from react native `SectionList` component.
@@ -14,33 +16,7 @@ import { SectionList } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-<SectionList
-    sections={[
-        {
-            title: 'Main dishes',
-            data: ['Pizza', 'Burger', 'Risotto'],
-        },
-        {
-            title: 'Sides',
-            data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
-        },
-        {
-            title: 'Drinks',
-            data: ['Water', 'Coke', 'Beer'],
-        }
-    ]}
-    keyExtractor={(item, index) => item + index}
-    renderItem={({item}) => (
-        <Box>
-          <Text>{item}</Text>
-        </Box>
-    )}
-    renderSectionHeader={({section: {title}}) => (
-        <Text>{title}</Text>
-    )}
-/>
-```
+<ExpoLayout id="section-list" />
 
 ## Props
 

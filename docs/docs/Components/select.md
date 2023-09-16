@@ -2,6 +2,8 @@
 sidebar_position: 19
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # Select
 
 Component to select an item between several options.
@@ -14,99 +16,7 @@ import { Select, Option } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-// SINGLE VALUE
-
-<Button
-    full
-    colorScheme="blue"
-    onPress={() => {
-        if (selectRef.current) {
-            selectRef.current.open();
-        }
-    }}
->
-    {selectValue ? selectValue.toString() : 'Select'}
-</Button>
-
-<Select
-    onSelect={setSelectedValue}
-    ref={selectRef}
-    value={selectValue}
-    title="This is your title"
-    mt="md"
-    pb="2xl"
-    message="This is the long message used to set some context"
-    data={[1, 2, 3, 4, 5, 6]}
-    renderItem={(item, index) => (
-        <Option value={item} py="md" px="xl">
-            <Text>Option {index}</Text>
-        </Option>
-    )}
-/>
-
-// MULTI VALUE
-
-<Button
-    full
-    colorScheme="orange"
-    onPress={() => {
-        if (selectMultiRef.current) {
-            selectMultiRef.current.open();
-        }
-    }}
->
-    {selectMultiValue?.length ? selectMultiValue.toString() : 'Select'}
-</Button>
-
-<Select
-    isMultiple
-    onSelect={setSelectedMultiValue}
-    ref={selectMultiRef}
-    value={selectMultiValue}
-    title="This is your title"
-    mt="md"
-    pb="2xl"
-    message="This is the long message used to set some context"
-    data={[1, 2, 3, 4, 5, 6]}
-    renderItem={(item, index) => (
-        <Option value={item} py="md" px="xl">
-            <Text>Option {index}</Text>
-        </Option>
-    )}
-/>
-
-// WITH SUBMIT
-
-<Button
-    full
-    colorScheme="red"
-    onPress={() => {
-        if (selectSubmitRef.current) {
-            selectSubmitRef.current.open();
-        }
-    }}
->
-    {selectSubmitValue ? selectSubmitValue.toString() : 'Select'}
-</Button>
-
-<Select
-    submit
-    onSelect={setSelectedSubmitValue}
-    ref={selectSubmitRef}
-    value={selectSubmitValue}
-    title="This is your title"
-    mt="md"
-    pb="2xl"
-    message="This is the long message used to set some context"
-    data={[1, 2, 3, 4, 5, 6]}
-    renderItem={(item, index) => (
-        <Option value={item} py="md" px="xl">
-            <Text>Option {index}</Text>
-        </Option>
-    )}
-/>
-```
+<ExpoLayout id="select" />
 
 ## Props
 

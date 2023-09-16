@@ -2,6 +2,8 @@
 sidebar_position: 11
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # Image
 
 Wrapper around `Image` component from `react-native`, it accepts every props from react native `Image` component.
@@ -14,17 +16,7 @@ import { Image } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-<Image
-    h={200}
-    w={300}
-    borderRadius={10}
-    source={{
-    uri:
-        'https://www.example.com/image/1.jpeg',
-    }}
-/>
-```
+<ExpoLayout id="image" />
 
 ## Props
 

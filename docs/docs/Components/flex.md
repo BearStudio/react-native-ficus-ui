@@ -2,6 +2,8 @@
 sidebar_position: 5
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # Flex
 
 As `Box` component but with `flex={1}` property by default, it accepts every props from react native `View` component.
@@ -14,19 +16,7 @@ import { Flex } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-<Flex>
-    <Text>I love React Native Ficus UI</Text>
-</Flex>
-```
-
-#### Background color
-
-```js
-<Flex bg="blue.200">
-    <Text>I love React Native Ficus UI</Text>
-</Flex>
-```
+<ExpoLayout id="flex" />
 
 ## Props
 

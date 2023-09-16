@@ -32,6 +32,13 @@ const config = {
     locales: ['en'],
   },
 
+  scripts: [
+    {
+      src: 'https://snack.expo.dev/embed.js',
+      async: true,
+    },
+  ],
+
   presets: [
     [
       'classic',

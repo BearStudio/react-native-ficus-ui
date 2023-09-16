@@ -2,6 +2,8 @@
 sidebar_position: 7
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # HStack
 
 HStack is a layout component to display several children elements horizontally with a space between them.
@@ -14,19 +16,7 @@ import { HStack } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-<HStack spacing={10}>
-  <Box w={40} h={40} bg="yellow.200">
-    <Text>1</Text>
-  </Box>
-  <Box w={40} h={40} bg="red.200">
-    <Text>2</Text>
-  </Box>
-  <Box w={40} h={40} bg="pink.200">
-    <Text>3</Text>
-  </Box>
-</HStack>
-```
+<ExpoLayout id="stack" />
 
 ## Props
 

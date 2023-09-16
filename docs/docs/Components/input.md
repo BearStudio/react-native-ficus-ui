@@ -2,6 +2,8 @@
 sidebar_position: 17
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # Input
 
 Component that is based on react native `TextInput` component.
@@ -14,23 +16,7 @@ import { Input } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-<Input
-    placeholder="Username"
-    p={10}
-    focusBorderColor="blue.500"
-    suffix={<Icon name="search" color="gray.900" fontFamily="Feather" />}
-/>
-<Input
-    placeholder="Password"
-    mt="md"
-    p={10}
-    secureTextEntry
-    focusBorderColor="blue.500"
-/>
-```
-
-<img src="/img/input.png" />
+<ExpoLayout id="input" />
 
 ## Props
 

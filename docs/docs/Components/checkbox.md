@@ -2,6 +2,8 @@
 sidebar_position: 20
 ---
 
+import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+
 # Checkbox
 
 Component to render a checkbox input.
@@ -14,43 +16,7 @@ import { Checkbox, CheckboxGroup } from "react-native-ficus-ui";
 
 ## Usage
 
-```js
-<Checkbox value={1} prefix={<Text flex={1}>Option 1</Text>} />
-<Checkbox value={2} prefix={<Text flex={1}>Option 2</Text>} />
-<Checkbox
-    value={3}
-    prefix={<Text flex={1}>Option 3</Text>}
-    colorScheme="red"
-/>
-<Checkbox
-    value={4}
-    prefix={<Text flex={1}>Option 4</Text>}
-    colorScheme="pink"
-/>
-<Checkbox
-    value={5}
-    prefix={<Text flex={1}>Option 5</Text>}
-    isLoading
-/>
-
-<CheckboxGroup flexDirection="row">
-    {['Option 1', 'Option 2', 'Option 3'].map((item) => (
-    <Checkbox value={item}>
-        {({ isChecked }) => (
-        <Box
-            bg={isChecked ? 'blue.600' : 'blue.100'}
-            px="xl"
-            py="md"
-            mr="md"
-            borderRadius="full"
-        >
-            <Text color={isChecked ? 'white' : 'gray.800'}>{item}</Text>
-        </Box>
-        )}
-    </Checkbox>
-    ))}
-</CheckboxGroup>
-```
+<ExpoLayout id="checkbox" />
 
 ## Props
 
