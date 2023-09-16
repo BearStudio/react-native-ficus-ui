@@ -21,6 +21,7 @@ function HomepageHeader() {
             Get started
           </Link>
         </div>
+        <p style={{fontSize: 20, fontWeight: 'bold', marginTop: 20}}>🎉 Alpha version available ! 🎉</p>
       </div>
     </header>
   );
