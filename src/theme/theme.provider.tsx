@@ -4,6 +4,7 @@ import { ThemeContext } from './theme.context';
 import deepmerge from 'deepmerge';
 import type { ThemeType } from './type';
 import { defaultTheme } from './theme.default';
+import Toast from 'react-native-toast-message';
 
 export interface ThemeProviderProps {
   theme?: ThemeType;
@@ -27,6 +28,7 @@ export const ThemeProvider: React.FunctionComponent<ThemeProviderProps> = (
   return (
     <ThemeContext.Provider value={{ theme: themeState, setTheme }}>
       {children}
+      <Toast {...themeState.toastProps} />
     </ThemeContext.Provider>
   );
 };

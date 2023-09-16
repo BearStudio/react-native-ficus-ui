@@ -19,6 +19,7 @@ import InputComponent from './components/Input';
 import SelectComponent from './components/Select';
 import CheckboxComponent from './components/Checkbox';
 import RadioComponent from './components/Radio';
+import ToastHook from './components/Toast';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -110,5 +111,10 @@ export const components: ExampleComponentType[] = [
     navigationPath: 'Radio',
     onScreenName: 'Radio',
     component: RadioComponent,
+  },
+  {
+    navigationPath: 'Toast',
+    onScreenName: 'Toast',
+    component: ToastHook,
   },
 ];

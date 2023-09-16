@@ -25,6 +25,7 @@ import type {
   CheckboxGroupProps,
 } from 'components/checkbox/checkbox.type';
 import type { RadioGroupProps, RadioProps } from 'components/radio/radio.type';
+import { ToastProps } from 'react-native-toast-message';
 
 export interface ColorHues {
   50: string;
@@ -103,4 +104,5 @@ export interface ThemeType {
   spinner?: ThemeProps<string | number>;
   checkbox?: ThemeProps<string | number>;
   radio?: ThemeProps<string | number>;
+  toastProps?: ToastProps;
 }

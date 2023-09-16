@@ -1,4 +1,7 @@
+import { Box } from '../components/box/box.component';
 import type { ThemeType } from './type';
+import React from 'react';
+import { Text } from '../components/text/text.component';
 
 export const defaultTheme: ThemeType = {
   name: 'default',
@@ -382,5 +385,43 @@ export const defaultTheme: ThemeType = {
   radio: {
     sm: 26,
     lg: 36,
+  },
+
+  toastProps: {
+    position: 'bottom',
+    config: {
+      success: ({ text1, text2 }) => (
+        <Box bg="green.500" p="lg" borderRadius="lg">
+          <Text color="white" fontWeight="bold" fontSize="lg">
+            {text1}
+          </Text>
+          <Text color="white">{text2}</Text>
+        </Box>
+      ),
+      error: ({ text1, text2 }) => (
+        <Box bg="red.500" p="lg" borderRadius="lg">
+          <Text color="white" fontWeight="bold" fontSize="lg">
+            {text1}
+          </Text>
+          <Text color="white">{text2}</Text>
+        </Box>
+      ),
+      warning: ({ text1, text2 }) => (
+        <Box bg="orange.500" p="lg" borderRadius="lg">
+          <Text color="white" fontWeight="bold" fontSize="lg">
+            {text1}
+          </Text>
+          <Text color="white">{text2}</Text>
+        </Box>
+      ),
+      info: ({ text1, text2 }) => (
+        <Box bg="blue.500" p="lg" borderRadius="lg">
+          <Text color="white" fontWeight="bold" fontSize="lg">
+            {text1}
+          </Text>
+          <Text color="white">{text2}</Text>
+        </Box>
+      ),
+    },
   },
 };
