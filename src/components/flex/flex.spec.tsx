@@ -6,6 +6,8 @@ import { Flex } from './flex.component';
 import type { FlexProps } from './flex.type';
 import { ThemeProvider } from '../../theme/theme.provider';
 
+jest.mock('react-native-toast-message', () => 'Toast');
+
 describe('Flex component', () => {
   const TestFlex: React.FC<FlexProps> = (props) => (
     <ThemeProvider>

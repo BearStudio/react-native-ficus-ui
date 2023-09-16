@@ -5,6 +5,8 @@ import { Spinner } from './spinner.component';
 import type { SpinnerProps } from './spinner.type';
 import { ThemeProvider } from '../../theme/theme.provider';
 
+jest.mock('react-native-toast-message', () => 'Toast');
+
 describe('Spinner component', () => {
   const TestSpinner: React.FC<SpinnerProps> = (props) => (
     <ThemeProvider>

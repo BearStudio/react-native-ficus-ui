@@ -6,6 +6,8 @@ import { TouchableHighlight } from './touchable-highlight.component';
 import type { TouchableHighlightProps } from './touchable-highlight.type';
 import { ThemeProvider } from '../../theme/theme.provider';
 
+jest.mock('react-native-toast-message', () => 'Toast');
+
 describe('TouchableHighlight component', () => {
   const TestTouchableHighlight: React.FC<TouchableHighlightProps> = (props) => (
     <ThemeProvider>

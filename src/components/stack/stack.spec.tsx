@@ -6,6 +6,8 @@ import { Stack } from './stack.component';
 import type { StackProps } from './stack.type';
 import { ThemeProvider } from '../../theme/theme.provider';
 
+jest.mock('react-native-toast-message', () => 'Toast');
+
 describe('Stack component', () => {
   const TestStack: React.FC<StackProps> = (props) => (
     <ThemeProvider>

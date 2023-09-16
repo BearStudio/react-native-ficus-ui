@@ -6,6 +6,8 @@ import { Box } from './box.component';
 import type { BoxProps } from './box.type';
 import { ThemeProvider } from '../../theme/theme.provider';
 
+jest.mock('react-native-toast-message', () => 'Toast');
+
 describe('Box component', () => {
   const TestBox: React.FC<BoxProps> = (props) => (
     <ThemeProvider>

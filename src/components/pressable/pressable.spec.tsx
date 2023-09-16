@@ -6,6 +6,8 @@ import { Pressable } from './pressable.component';
 import type { PressableProps } from './pressable.type';
 import { ThemeProvider } from '../../theme/theme.provider';
 
+jest.mock('react-native-toast-message', () => 'Toast');
+
 describe('Pressable component', () => {
   const TestPressable: React.FC<PressableProps> = (props) => (
     <ThemeProvider>

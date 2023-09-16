@@ -5,6 +5,8 @@ import { Image } from './image.component';
 import type { ImageProps } from './image.type';
 import { ThemeProvider } from '../../theme/theme.provider';
 
+jest.mock('react-native-toast-message', () => 'Toast');
+
 describe('Image component', () => {
   const TestImage: React.FC<ImageProps> = (props) => (
     <ThemeProvider>

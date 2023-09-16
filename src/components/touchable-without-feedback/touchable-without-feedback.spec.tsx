@@ -6,6 +6,8 @@ import { TouchableWithoutFeedback } from './touchable-without-feedback.component
 import type { TouchableWithoutFeedbackProps } from './touchable-without-feedback.type';
 import { ThemeProvider } from '../../theme/theme.provider';
 
+jest.mock('react-native-toast-message', () => 'Toast');
+
 describe('TouchableWithoutFeedback component', () => {
   const TestTouchableWithoutFeedback: React.FC<TouchableWithoutFeedbackProps> = (
     props

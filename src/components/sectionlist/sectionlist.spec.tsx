@@ -7,6 +7,8 @@ import { SectionList } from './sectionlist.component';
 import type { SectionListProps } from './sectionlist.type';
 import { ThemeProvider } from '../../theme/theme.provider';
 
+jest.mock('react-native-toast-message', () => 'Toast');
+
 describe('SectionList component', () => {
   const TestSectionList: React.FC<SectionListProps> = (props) => (
     <ThemeProvider>

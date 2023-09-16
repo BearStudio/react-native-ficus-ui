@@ -6,6 +6,8 @@ import { List } from './list.component';
 import type { ListProps } from './list.type';
 import { ThemeProvider } from '../../theme/theme.provider';
 
+jest.mock('react-native-toast-message', () => 'Toast');
+
 describe('List component', () => {
   const TestList: React.FC<ListProps> = (props) => (
     <ThemeProvider>

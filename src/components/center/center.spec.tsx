@@ -6,6 +6,8 @@ import { Center } from './center.component';
 import type { CenterProps } from './center.type';
 import { ThemeProvider } from '../../theme/theme.provider';
 
+jest.mock('react-native-toast-message', () => 'Toast');
+
 describe('Center component', () => {
   const TestCenter: React.FC<CenterProps> = (props) => (
     <ThemeProvider>

@@ -6,6 +6,8 @@ import { TouchableOpacity } from './touchable-opacity.component';
 import type { TouchableOpacityProps } from './touchable-opacity.type';
 import { ThemeProvider } from '../../theme/theme.provider';
 
+jest.mock('react-native-toast-message', () => 'Toast');
+
 describe('TouchableOpacity component', () => {
   const TestTouchableOpacity: React.FC<TouchableOpacityProps> = (props) => (
     <ThemeProvider>

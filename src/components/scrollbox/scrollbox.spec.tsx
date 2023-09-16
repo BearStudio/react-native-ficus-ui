@@ -6,6 +6,8 @@ import { ScrollBox } from './scrollbox.component';
 import type { ScrollBoxProps } from './scrollbox.type';
 import { ThemeProvider } from '../../theme/theme.provider';
 
+jest.mock('react-native-toast-message', () => 'Toast');
+
 describe('ScrollBox component', () => {
   const TestScrollBox: React.FC<ScrollBoxProps> = (props) => (
     <ThemeProvider>
