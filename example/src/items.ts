@@ -20,6 +20,7 @@ import SelectComponent from './components/Select';
 import CheckboxComponent from './components/Checkbox';
 import RadioComponent from './components/Radio';
 import ToastHook from './components/Toast';
+import ModalComponent from './components/Modal';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -116,5 +117,10 @@ export const components: ExampleComponentType[] = [
     navigationPath: 'Toast',
     onScreenName: 'Toast',
     component: ToastHook,
+  },
+  {
+    navigationPath: 'Modal',
+    onScreenName: 'Modal',
+    component: ModalComponent,
   },
 ];

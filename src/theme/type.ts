@@ -25,6 +25,7 @@ import type {
   CheckboxGroupProps,
 } from 'components/checkbox/checkbox.type';
 import type { RadioGroupProps, RadioProps } from 'components/radio/radio.type';
+import type { ModalProps } from 'components/modal/modal.type';
 import { ToastProps } from 'react-native-toast-message';
 
 export interface ColorHues {
@@ -69,6 +70,7 @@ export interface ThemeType {
     CheckboxGroup?: VariantType<CheckboxGroupProps>;
     Radio?: VariantType<RadioProps>;
     RadioGroup?: VariantType<RadioGroupProps>;
+    Modal?: VariantType<ModalProps>;
   };
 
   fontFamily?: {

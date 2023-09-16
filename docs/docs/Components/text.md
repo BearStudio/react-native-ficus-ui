@@ -288,12 +288,6 @@ The border radius property (`borderRadius` style prop in StyleSheet)
 |---|---|---|
 |number, string|No|none|
 
-borderTopLeftRadius: 'borderTopLeftRadius',
-    borderTopRightRadius: 'borderTopRightRadius',
-    borderBottomLeftRadius: 'borderBottomLeftRadius',
-    borderBottomRightRadius: 'borderBottomRightRadius',
-
-
 `borderTopRadius`
 ---
 The border radius top property (`borderTopLeftRadius` and `borderTopRightRadius` style props in StyleSheet)
