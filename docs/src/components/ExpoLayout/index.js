@@ -5,7 +5,7 @@ const ExpoLayout = ({ id }) => {
   const { colorMode } = useColorMode();
 
   return (
-    <iframe src={`/iframes/${id}${colorMode === 'dark' ? '-dark' : ''}.html`} width='100%' height="505px"/>
+    <iframe src={`/iframes/${id}${colorMode === 'dark' ? '-dark' : ''}.html`} width='100%' height="520px"/>
   )
 }
 
