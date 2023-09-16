@@ -1,6 +1,6 @@
 {
   "name": "react-native-ficus-ui",
-  "version": "1.0.0-alpha3",
+  "version": "1.0.0-alpha4",
   "description": "React Native UI library forked from Magnus UI and inspired by Chakra UI",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -53,14 +53,15 @@
   "dependencies": {
     "color": "4.2.3",
     "deepmerge": "4.2.2",
-    "validate-color": "2.2.1"
+    "validate-color": "2.2.1",
+    "react-native-toast-message": "2.1.6",
+    "@shopify/flash-list": "1.5.0"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "17.0.2",
     "@evilmartians/lefthook": "1.2.2",
     "@react-native-community/eslint-config": "3.2.0",
     "@release-it/conventional-changelog": "5.0.0",
-    "@shopify/flash-list": "1.5.0",
     "@testing-library/react-native": "12.1.2",
     "@types/color": "^3.0.3",
     "@types/jest": "29.5.2",
@@ -81,7 +82,6 @@
     "react-native": "0.72.1",
     "react-native-builder-bob": "0.21.0",
     "react-native-modal": "^13.0.1",
-    "react-native-toast-message": "^2.1.6",
     "react-native-vector-icons": "^10.0.0",
     "react-test-renderer": "18.2.0",
     "release-it": "15.0.0",
