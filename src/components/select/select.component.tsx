@@ -43,6 +43,8 @@ const Select = React.forwardRef<SelectRef, SelectProps>(
       submit,
       submitText,
       showScrollIndicator,
+      style,
+      ...rest
     } = props;
 
     const [visible, setVisible] = useState(false);
@@ -185,6 +187,7 @@ const Select = React.forwardRef<SelectRef, SelectProps>(
           margin: 0,
           justifyContent: 'flex-end',
         }}
+        {...rest}
       >
         <Box style={computedStyle.wrapper}>
           <SafeAreaView style={computedStyle.container}>
