@@ -1,6 +1,6 @@
 {
   "name": "react-native-ficus-ui",
-  "version": "1.0.0-alpha5",
+  "version": "1.0.0-alpha6",
   "description": "React Native UI library forked from Magnus UI and inspired by Chakra UI",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -105,7 +105,7 @@
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!(@react-native|react-native|react-native-vector-icons))"
-    ] 
+    ]
   },
   "commitlint": {
     "extends": [
