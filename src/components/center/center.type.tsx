@@ -14,7 +14,7 @@ import type {
   OverflowPropsType,
   OpacityPropsType,
   VariantPropsType,
-} from 'types';
+} from '../../types';
 
 export interface CenterProps
   extends RNViewProps,
