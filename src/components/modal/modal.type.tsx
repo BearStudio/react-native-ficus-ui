@@ -10,7 +10,7 @@ import {
 } from '../../types';
 
 export interface ModalProps
-  extends RNModalProps,
+  extends Partial<RNModalProps>,
     BorderPropsType,
     SpacingPropsType,
     BorderRadiusPropsType,
