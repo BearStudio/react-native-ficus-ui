@@ -18,12 +18,6 @@ With yarn :
 yarn add react-native-ficus-ui
 ```
 
-Install peer dependencies :
-
-```sh
-yarn add react-native-animatable react-native-modal react-native-vector-icons
-```
-
 Then, install the pods for iOS :
 
 ```sh
