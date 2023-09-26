@@ -24,6 +24,10 @@ import { List } from "react-native-ficus-ui";
 
 <ExpoLayout id="list" />
 
+## Performance demo ⚡️
+
+<ExpoLayout id="list-perf" />
+
 ## Props
 
 `renderItem`

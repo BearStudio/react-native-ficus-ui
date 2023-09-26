@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title} - Documentaion`}
-      description="Description will go into a meta tag in <head />">
+      description="React Native UI library forked from Magnus UI and inspired by Chakra UI">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
