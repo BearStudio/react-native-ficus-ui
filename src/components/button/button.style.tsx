@@ -45,7 +45,7 @@ export const getStyle = (theme: ThemeType, props: ButtonProps) => {
     ...createBorderRadiusStyles(props, theme.borderRadius),
     backgroundColor: getThemeColor(
       theme.colors,
-      props.colorScheme ? `${props.colorScheme}.500` : props.bg
+      props.bg || `${props.colorScheme}.500`
     ),
   };
 

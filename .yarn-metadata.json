@@ -36,25 +36,21 @@
       "example": "yarn --cwd example",
       "bootstrap": "yarn example && yarn install"
     },
-    "keywords": [
-      "react-native",
-      "ios",
-      "android"
-    ],
+    "keywords": ["react-native", "ios", "android"],
     "repository": {
       "type": "git",
-      "url": "https://github.com/ntorionbearstudio/react-native-ficus-ui"
+      "url": "https://github.com/BearStudio/react-native-ficus-ui"
     },
     "author": {
-      "name": "Nicolas Torion",
+      "name": "Nicolas Torion - BearStudio",
       "email": "nicolas.torion@bearstudio.fr",
       "url": "https://github.com/ntorionbearstudio"
     },
     "license": "MIT",
     "bugs": {
-      "url": "https://github.com/ntorionbearstudio/react-native-ficus-ui/issues"
+      "url": "https://github.com/BearStudio/react-native-ficus-ui/issues"
     },
-    "homepage": "https://github.com/ntorionbearstudio/react-native-ficus-ui#readme",
+    "homepage": "https://github.com/BearStudio/react-native-ficus-ui#readme",
     "publishConfig": {
       "registry": "https://registry.npmjs.org/"
     },
@@ -99,14 +95,10 @@
     "packageManager": "^yarn@1.22.15",
     "jest": {
       "preset": "react-native",
-      "modulePaths": [
-        "<rootDir>/src"
-      ]
+      "modulePaths": ["<rootDir>/src"]
     },
     "commitlint": {
-      "extends": [
-        "@commitlint/config-conventional"
-      ]
+      "extends": ["@commitlint/config-conventional"]
     },
     "release-it": {
       "git": {
@@ -127,10 +119,7 @@
     },
     "eslintConfig": {
       "root": true,
-      "extends": [
-        "@react-native-community",
-        "prettier"
-      ],
+      "extends": ["@react-native-community", "prettier"],
       "rules": {
         "prettier/prettier": [
           "error",
@@ -144,11 +133,7 @@
         ]
       }
     },
-    "eslintIgnore": [
-      "node_modules/",
-      "lib/",
-      "docs/"
-    ],
+    "eslintIgnore": ["node_modules/", "lib/", "docs/"],
     "prettier": {
       "quoteProps": "consistent",
       "singleQuote": true,

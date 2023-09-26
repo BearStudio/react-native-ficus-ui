@@ -20,10 +20,11 @@ import { useDefaultProps } from '../../utilities/useDefaultProps';
 
 const Button: React.FunctionComponent<ButtonProps> = (incomingProps) => {
   const props = useDefaultProps('Button', incomingProps, {
-    colorScheme: 'blue',
-    p: 'lg',
+    colorScheme: 'gray',
+    py: 'lg',
+    px: 15,
     color: 'white',
-    borderRadius: 'sm',
+    borderRadius: 'lg',
     isLoading: false,
     isDisabled: false,
     loaderSize: '2xl',
@@ -40,6 +41,7 @@ const Button: React.FunctionComponent<ButtonProps> = (incomingProps) => {
     alignSelf: 'flex-start',
     onPress: () => {},
     flexDirection: 'row',
+    fontWeight: 'bold',
   });
 
   const {
@@ -165,26 +167,26 @@ const Button: React.FunctionComponent<ButtonProps> = (incomingProps) => {
 };
 
 // Button.defaultProps = {
-//   bg: 'blue.600',
-//   p: 'lg',
-//   color: 'white',
-//   rounded: 'sm',
-//   isLoading: false,
-//   isDisabled: false,
-//   loaderSize: '2xl',
-//   loaderColor: 'white',
-//   full: false,
-//   position: 'relative',
-//   shadowColor: 'gray.800',
-//   shadow: 0,
-//   fontSize: 'lg',
-//   rippleColor: 'white',
-//   ripple: true,
-//   alignItems: 'center',
-//   justifyContent: 'center',
-//   alignSelf: 'flex-start',
-//   onPress: () => {},
-//   flexDirection: 'row',
+// colorScheme: 'gray',
+// p: 'lg',
+// color: 'white',
+// borderRadius: 'sm',
+// isLoading: false,
+// isDisabled: false,
+// loaderSize: '2xl',
+// loaderColor: 'white',
+// full: false,
+// position: 'relative',
+// shadowColor: 'gray.800',
+// shadow: 0,
+// fontSize: 'lg',
+// rippleColor: 'white',
+// ripple: true,
+// alignItems: 'center',
+// justifyContent: 'center',
+// alignSelf: 'flex-start',
+// onPress: () => {},
+// flexDirection: 'row',
 // };
 
 export { Button };
