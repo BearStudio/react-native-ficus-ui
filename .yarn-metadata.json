@@ -50,7 +50,7 @@
     "bugs": {
       "url": "https://github.com/BearStudio/react-native-ficus-ui/issues"
     },
-    "homepage": "https://github.com/BearStudio/react-native-ficus-ui#readme",
+    "homepage": "https://ficus-ui.com",
     "publishConfig": {
       "registry": "https://registry.npmjs.org/"
     },

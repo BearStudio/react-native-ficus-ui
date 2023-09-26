@@ -1,6 +1,6 @@
 {
   "name": "react-native-ficus-ui",
-  "version": "1.0.0-alpha10",
+  "version": "1.0.0-alpha11",
   "description": "React Native UI library forked from Magnus UI and inspired by Chakra UI",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -46,7 +46,7 @@
   "bugs": {
     "url": "https://github.com/BearStudio/react-native-ficus-ui/issues"
   },
-  "homepage": "https://github.com/BearStudio/react-native-ficus-ui#readme",
+  "homepage": "https://ficus-ui.com",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
