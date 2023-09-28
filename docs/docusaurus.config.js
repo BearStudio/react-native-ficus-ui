@@ -70,6 +70,7 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      metadata: [{name: 'keywords', content: 'react, react native, ui library, ficus ui'}],
       navbar: {
         title: 'React Native Ficus UI',
         logo: {
