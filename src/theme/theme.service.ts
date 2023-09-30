@@ -134,8 +134,8 @@ export const getThemeColor = (
       themeColors.hasOwnProperty(value) &&
       typeof themeColors[value] !== 'undefined'
     ) {
-      const colorValue: string | String = themeColors[value] as string;
-      return colorValue as string;
+      const colorValue = themeColors[value];
+      return colorValue[500];
     }
 
     let colorValue: string | String = 'transparent';
