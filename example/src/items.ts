@@ -21,6 +21,7 @@ import CheckboxComponent from './components/Checkbox';
 import RadioComponent from './components/Radio';
 import ToastHook from './components/Toast';
 import ModalComponent from './components/Modal';
+import FlashListComponent from './components/FlashList';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -43,6 +44,11 @@ export const components: ExampleComponentType[] = [
   { navigationPath: 'Flex', onScreenName: 'Flex', component: FlexComponent },
   { navigationPath: 'Stack', onScreenName: 'Stack', component: StackComponent },
   { navigationPath: 'List', onScreenName: 'List', component: ListComponent },
+  {
+    navigationPath: 'FlashList',
+    onScreenName: 'FlashList',
+    component: FlashListComponent,
+  },
   {
     navigationPath: 'SectionList',
     onScreenName: 'SectionList',

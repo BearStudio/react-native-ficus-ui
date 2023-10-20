@@ -10,6 +10,7 @@ import type { TouchableHighlightProps } from 'components/touchable-highlight/tou
 import type { TouchableWithoutFeedbackProps } from 'components/touchable-without-feedback/touchable-without-feedback.type';
 import type { PressableProps } from 'components/pressable/pressable.type';
 import type { SpinnerProps } from 'components/spinner/spinner.type';
+import type { FlashListProps } from 'components/flashlist/flashlist.type';
 import type { ListProps } from 'components/list/list.type';
 import type { SectionListProps } from 'components/sectionlist/sectionlist.type';
 import type { ImageProps } from 'components/image/image.type';
@@ -56,6 +57,7 @@ export interface ThemeType {
     TouchableWithoutFeedback?: VariantType<TouchableWithoutFeedbackProps>;
     Pressable?: VariantType<PressableProps>;
     Spinner?: VariantType<SpinnerProps>;
+    FlashList?: VariantType<FlashListProps>;
     List?: VariantType<ListProps>;
     SectionList?: VariantType<SectionListProps>;
     Image?: VariantType<ImageProps>;

@@ -2,16 +2,16 @@ import React from 'react';
 import { render } from '@testing-library/react-native';
 
 import { Text } from '../text/text.component';
-import { List } from './list.component';
-import type { ListProps } from './list.type';
+import { FlashList } from './flashlist.component';
+import type { FlashListProps } from './flashlist.type';
 import { ThemeProvider } from '../../theme/theme.provider';
 
 jest.mock('react-native-toast-message', () => 'Toast');
 
-describe('List component', () => {
-  const TestList: React.FC<ListProps> = (props) => (
+describe('FlashList component', () => {
+  const TestList: React.FC<FlashListProps> = (props) => (
     <ThemeProvider>
-      <List {...props} />
+      <FlashList {...props} />
     </ThemeProvider>
   );
 
@@ -21,6 +21,7 @@ describe('List component', () => {
         data={[{ id: 0, text: 'I love Ficus UI (forked from Magnus UI)' }]}
         renderItem={({ item }) => <Text>{item.text}</Text>}
         keyExtractor={(item) => item.id}
+        estimatedItemSize={200}
       />
     );
   });

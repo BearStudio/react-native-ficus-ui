@@ -14,6 +14,8 @@ export { HStack } from './stack/hstack.component';
 export { StackProps } from './stack/stack.type';
 export { List } from './list/list.component';
 export { ListProps } from './list/list.type';
+export { FlashList } from './flashlist/flashlist.component';
+export { FlashListProps } from './flashlist/flashlist.type';
 export { SectionList } from './sectionlist/sectionlist.component';
 export { SectionListProps } from './sectionlist/sectionlist.type';
 export { Image } from './image/image.component';

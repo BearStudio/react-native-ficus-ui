@@ -1,9 +1,9 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { Box, Flex, List, Text } from 'react-native-ficus-ui';
+import { Box, Flex, FlashList, Text } from 'react-native-ficus-ui';
 
-const ListComponent = () => {
+const FlashListComponent = () => {
   const DATA = [
     {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -21,10 +21,10 @@ const ListComponent = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Text mx="xl" fontSize="4xl">
-        List component
+        FlashList component
       </Text>
       <Flex mt="xl">
-        <List
+        <FlashList
           bg="gray.200"
           p="xl"
           data={DATA}
@@ -33,10 +33,11 @@ const ListComponent = () => {
               <Text>{item.title}</Text>
             </Box>
           )}
+          estimatedItemSize={200}
         />
       </Flex>
     </SafeAreaView>
   );
 };
 
-export default ListComponent;
+export default FlashListComponent;

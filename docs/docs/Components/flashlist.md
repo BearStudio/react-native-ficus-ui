@@ -1,24 +1,32 @@
 ---
-sidebar_position: 9
+sidebar_position: 10
 ---
 
 import ExpoLayout from '../../src/components/ExpoLayout/index.js';
 
-# List
+# FlashList ⚡️
 
-Wrapper around `FlatList` component from `react-native`.
+Wrapper around `FlashList` component from `@shopify/flash-list`.
 
-`List` component accepts every props from react native `FlatList` component.
+https://shopify.github.io/flash-list/docs/
+
+`FlashList` component is a more optimized list component from Shopify development team, it works as react native `FlatList` component.
+
+So, `List` component accepts every props from react native `FlatList` component.
 
 ## Import
 
 ```js
-import { List } from "react-native-ficus-ui";
+import { FlashList } from "react-native-ficus-ui";
 ```
 
 ## Usage
 
 <ExpoLayout id="list" />
+
+## Performance demo ⚡️
+
+<ExpoLayout id="list-perf" />
 
 ## Props
 

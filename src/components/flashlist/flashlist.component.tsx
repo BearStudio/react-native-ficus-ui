@@ -1,13 +1,14 @@
 import * as React from 'react';
-import { FlatList, View } from 'react-native';
+import { View } from 'react-native';
+import { FlashList as ShopifyFlashList } from '@shopify/flash-list';
 
-import { getStyle } from './list.style';
-import type { ListProps } from './list.type';
+import { getStyle } from './flashlist.style';
+import type { FlashListProps } from './flashlist.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
 
-const List: React.FunctionComponent<ListProps> = (incomingProps) => {
-  const props = useDefaultProps('List', incomingProps, { flex: 1 });
+const FlashList: React.FunctionComponent<FlashListProps> = (incomingProps) => {
+  const props = useDefaultProps('FlashList', incomingProps, { flex: 1 });
 
   const {
     bg,
@@ -81,11 +82,11 @@ const List: React.FunctionComponent<ListProps> = (incomingProps) => {
 
   return (
     <View style={computedStyle.list}>
-      <FlatList {...rest} />
+      <ShopifyFlashList {...rest} />
     </View>
   );
 };
 
-// List.defaultProps = {};
+// FlashList.defaultProps = {};
 
-export { List };
+export { FlashList };
