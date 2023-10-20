@@ -94,12 +94,12 @@ const Stack: React.FunctionComponent<StackProps> = (incomingProps) => {
     <RNView style={computedStyle.stack} {...rest}>
       {children && Array.isArray(children)
         ? children.map((item, index) => (
-            <>
-              <RNView key={`stack-${index}`}>{item}</RNView>
+            <React.Fragment key={`stack-${index}`}>
+              <RNView>{item}</RNView>
               {index !== children.length - 1 ? (
                 <RNView style={computedStyle.stackSpacing} />
               ) : null}
-            </>
+            </React.Fragment>
           ))
         : children}
     </RNView>
