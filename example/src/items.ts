@@ -22,6 +22,7 @@ import RadioComponent from './components/Radio';
 import ToastHook from './components/Toast';
 import ModalComponent from './components/Modal';
 import FlashListComponent from './components/FlashList';
+import SafeAreaBoxComponent from './components/SafeAreaBox';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -36,6 +37,11 @@ export const components: ExampleComponentType[] = [
     component: TextComponent,
   },
   { navigationPath: 'Box', onScreenName: 'Box', component: BoxComponent },
+  {
+    navigationPath: 'SafeAreaBox',
+    onScreenName: 'SafeAreaBox',
+    component: SafeAreaBoxComponent,
+  },
   {
     navigationPath: 'Center',
     onScreenName: 'Center',

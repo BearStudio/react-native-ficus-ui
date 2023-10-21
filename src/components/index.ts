@@ -1,5 +1,7 @@
 export { Box } from './box/box.component';
 export { BoxProps } from './box/box.type';
+export { SafeAreaBox } from './safeareabox/safeareabox.component';
+export { SafeAreaBoxProps } from './safeareabox/safeareabox.type';
 export { ScrollBox } from './scrollbox/scrollbox.component';
 export { ScrollBoxProps } from './scrollbox/scrollbox.type';
 export { Flex } from './flex/flex.component';
