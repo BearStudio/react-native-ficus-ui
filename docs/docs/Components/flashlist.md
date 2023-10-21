@@ -22,7 +22,7 @@ import { FlashList } from "react-native-ficus-ui";
 
 ## Usage
 
-<ExpoLayout id="list" />
+<ExpoLayout id="flashlist" />
 
 ## Performance demo ⚡️
 
