@@ -1,24 +1,32 @@
 ---
-sidebar_position: 5
+sidebar_position: 8
 ---
 
-import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+import ExpoLayout from '../../../src/components/ExpoLayout/index.js';
 
-# Flex
+# VStack
 
-As `Box` component but with `flex={1}` property by default, it accepts every props from react native `View` component.
+VStack is a layout component to display several children elements vertically with a space between them.
 
 ## Import
 
 ```js
-import { Flex } from "react-native-ficus-ui";
+import { VStack } from "react-native-ficus-ui";
 ```
 
 ## Usage
 
-<ExpoLayout id="flex" />
+<ExpoLayout id="stack" />
 
 ## Props
+
+`spacing`
+---
+The stack spacing property between childrens.
+
+|Type|Required|
+|---|---|
+|string, number|No|
 
 `bg`
 ---
@@ -27,22 +35,6 @@ The background color property (`backgroundColor` style prop in StyleSheet)
 |Type|Required|
 |---|---|
 |string|No|
-
-`bgImg`
----
-The background image property. Will use `ImageBackground` component as parent wrapper.
-
-|Type|Required|
-|---|---|
-|ImageSourcePropType|No|
-
-`bgMode`
----
-The background image mode property.
-
-|Type|Required|
-|---|---|
-|enum("contain", "cover", "stretch")|No|
 
 `m`
 ---

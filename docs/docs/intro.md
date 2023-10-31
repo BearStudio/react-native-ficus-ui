@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # Get started
 
+<img src="/img/banner.png" width="80%" alt="React Native Ficus UI banner" />
+
 ## Installation
 
 With npm :

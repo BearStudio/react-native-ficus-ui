@@ -2,7 +2,7 @@
 sidebar_position: 14
 ---
 
-import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+import ExpoLayout from '../../../src/components/ExpoLayout/index.js';
 
 # Switch
 

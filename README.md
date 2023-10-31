@@ -1,4 +1,6 @@
-# react-native-ficus-ui
+<img src="docs/static/img/banner.png" width="80%" alt="React Native Ficus UI banner" />
+
+<br />
 
 Ficus UI is a React Native UI library forked on Magnus UI and inspired by Chakra UI
 

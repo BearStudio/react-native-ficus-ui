@@ -1,26 +1,32 @@
 ---
-sidebar_position: 10
+sidebar_position: 7
 ---
 
-import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+import ExpoLayout from '../../../src/components/ExpoLayout/index.js';
 
-# SectionList
+# HStack
 
-Wrapper around `SectionList` component from `react-native`, it accepts every props from react native `SectionList` component.
+HStack is a layout component to display several children elements horizontally with a space between them.
 
 ## Import
 
 ```js
-import { SectionList } from "react-native-ficus-ui";
+import { HStack } from "react-native-ficus-ui";
 ```
 
 ## Usage
 
-<ExpoLayout id="section-list" />
+<ExpoLayout id="stack" />
 
 ## Props
 
-All props from react native `SectionList` component : https://reactnative.dev/docs/sectionlist#props
+`spacing`
+---
+The stack spacing property between childrens.
+
+|Type|Required|
+|---|---|
+|string, number|No|
 
 `bg`
 ---

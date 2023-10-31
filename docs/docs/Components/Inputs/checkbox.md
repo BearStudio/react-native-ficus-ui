@@ -1,26 +1,26 @@
 ---
-sidebar_position: 21
+sidebar_position: 20
 ---
 
-import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+import ExpoLayout from '../../../src/components/ExpoLayout/index.js';
 
-# Radio
+# Checkbox
 
-Component to render a radio input.
+Component to render a checkbox input.
 
 ## Import
 
 ```js
-import { Radio, RadioGroup } from "react-native-ficus-ui";
+import { Checkbox, CheckboxGroup } from "react-native-ficus-ui";
 ```
 
 ## Usage
 
-<ExpoLayout id="radio" />
+<ExpoLayout id="checkbox" />
 
 ## Props
 
-### Radio props
+### Checkbox props
 
 Extends every `Box` props.
 
@@ -96,7 +96,7 @@ Size of checkbox.
 |---|---|
 |number 'sm' 'lg'|No|
 
-### RadioGroup props
+### Checkbox.Group props
 
 `onChange`
 ---

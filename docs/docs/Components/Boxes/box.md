@@ -1,22 +1,22 @@
 ---
-sidebar_position: 4
+sidebar_position: 2
 ---
 
-import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+import ExpoLayout from '../../../src/components/ExpoLayout/index.js';
 
-# Center
+# Box
 
-As `Box` component but all chidrens are centered, it accepts every props from react native `View` component.
+Wrapper around `View` component from `react-native`, it accepts every props from react native `View` component.
 
 ## Import
 
 ```js
-import { Center } from "react-native-ficus-ui";
+import { Box } from "react-native-ficus-ui";
 ```
 
 ## Usage
 
-<ExpoLayout id="center" />
+<ExpoLayout id="box" />
 
 ## Props
 

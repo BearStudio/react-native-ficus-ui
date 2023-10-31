@@ -1,22 +1,22 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
-import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+import ExpoLayout from '../../../src/components/ExpoLayout/index.js';
 
-# ScrollBox
+# Center
 
-Wrapper around `ScrollView` component from `react-native`, it accepts every props from react native `ScrollView` component.
+As `Box` component but all chidrens are centered, it accepts every props from react native `View` component.
 
 ## Import
 
 ```js
-import { ScrollBox } from "react-native-ficus-ui";
+import { Center } from "react-native-ficus-ui";
 ```
 
 ## Usage
 
-<ExpoLayout id="box" />
+<ExpoLayout id="center" />
 
 ## Props
 
@@ -27,6 +27,22 @@ The background color property (`backgroundColor` style prop in StyleSheet)
 |Type|Required|
 |---|---|
 |string|No|
+
+`bgImg`
+---
+The background image property. Will use `ImageBackground` component as parent wrapper.
+
+|Type|Required|
+|---|---|
+|ImageSourcePropType|No|
+
+`bgMode`
+---
+The background image mode property.
+
+|Type|Required|
+|---|---|
+|enum("contain", "cover", "stretch")|No|
 
 `m`
 ---

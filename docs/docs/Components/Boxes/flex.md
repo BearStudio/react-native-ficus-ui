@@ -1,22 +1,22 @@
 ---
-sidebar_position: 2
+sidebar_position: 5
 ---
 
-import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+import ExpoLayout from '../../../src/components/ExpoLayout/index.js';
 
-# Box
+# Flex
 
-Wrapper around `View` component from `react-native`, it accepts every props from react native `View` component.
+As `Box` component but with `flex={1}` property by default, it accepts every props from react native `View` component.
 
 ## Import
 
 ```js
-import { Box } from "react-native-ficus-ui";
+import { Flex } from "react-native-ficus-ui";
 ```
 
 ## Usage
 
-<ExpoLayout id="box" />
+<ExpoLayout id="flex" />
 
 ## Props
 

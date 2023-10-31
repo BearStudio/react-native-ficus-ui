@@ -1,68 +1,24 @@
 ---
-sidebar_position: 10
+sidebar_position: 3
 ---
 
-import ExpoLayout from '../../src/components/ExpoLayout/index.js';
+import ExpoLayout from '../../../src/components/ExpoLayout/index.js';
 
-# FlashList ⚡️
+# ScrollBox
 
-Wrapper around `FlashList` component from `@shopify/flash-list`.
-
-https://shopify.github.io/flash-list/docs/
-
-`FlashList` component is a more optimized list component from Shopify development team, it works as react native `FlatList` component.
-
-So, `List` component accepts every props from react native `FlatList` component.
+Wrapper around `ScrollView` component from `react-native`, it accepts every props from react native `ScrollView` component.
 
 ## Import
 
 ```js
-import { FlashList } from "react-native-ficus-ui";
+import { ScrollBox } from "react-native-ficus-ui";
 ```
 
 ## Usage
 
-<ExpoLayout id="flashlist" />
-
-## Performance demo ⚡️
-
-<ExpoLayout id="list-perf" />
+<ExpoLayout id="box" />
 
 ## Props
-
-`renderItem`
----
-`renderItem: ({ item, index, target, extraData }) => void;`
-
-Takes an item from data and renders it into the list.
-
-https://shopify.github.io/flash-list/docs/usage#renderitem
-
-|Type|Required|
-|---|---|
-|function|yes|
-
-`data`
----
-`data: ItemT[];`
-
-For simplicity, data is a plain array of items of a given type.
-
-https://shopify.github.io/flash-list/docs/usage#data
-
-|Type|Required|
-|---|---|
-|ItemT[]|yes|
-
-`estimatedItemSize`
----
-`estimatedItemSize?: number;`
-
-https://shopify.github.io/flash-list/docs/usage#estimateditemsize
-
-|Type|Required|
-|---|---|
-|number|no|
 
 `bg`
 ---
