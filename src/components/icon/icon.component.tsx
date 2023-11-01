@@ -7,13 +7,19 @@ import { useTheme } from '../../theme';
 import { IconProps } from './icon.type';
 import { getThemeProperty, getThemeColor } from '../../theme/theme.service';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { handleResponsiveProps } from '../../types';
 
 const Icon: React.FunctionComponent<IconProps> = (incomingProps) => {
-  const props = useDefaultProps('Icon', incomingProps, {
-    color: 'gray.500',
-    fontSize: 'md',
-    fontFamily: 'AntDesign',
-  });
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'Icon',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {
+      color: 'gray.500',
+      fontSize: 'md',
+      fontFamily: 'AntDesign',
+    }
+  );
 
   const {
     m,
@@ -70,7 +76,6 @@ const Icon: React.FunctionComponent<IconProps> = (incomingProps) => {
     style,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
   const IconComponent = getIconSet(fontFamily);

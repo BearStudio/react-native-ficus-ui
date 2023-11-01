@@ -7,14 +7,20 @@ import { Box } from '../box/box.component';
 import { ModalProps } from './modal.type';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { getStyle } from './modal.style';
+import { handleResponsiveProps } from '../../types';
 
 const Modal: React.FunctionComponent<ModalProps> = (incomingProps) => {
-  const props = useDefaultProps('Modal', incomingProps, {
-    bg: 'white',
-    h: '100%',
-    isOpen: false,
-    justifyContent: 'flex-end',
-  });
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'Modal',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {
+      bg: 'white',
+      h: '100%',
+      isOpen: false,
+      justifyContent: 'flex-end',
+    }
+  );
 
   const {
     bg,
@@ -56,7 +62,6 @@ const Modal: React.FunctionComponent<ModalProps> = (incomingProps) => {
     isVisible,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props as ModalProps);
 
   return (

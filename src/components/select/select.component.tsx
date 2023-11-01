@@ -11,18 +11,24 @@ import { Button } from '../button/button.component';
 import { SelectProps, SelectRef, CompoundedSelect } from './select.type';
 import { ButtonProps } from '../button/button.type';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { handleResponsiveProps } from '../../types';
 
 const Select = React.forwardRef<SelectRef, SelectProps>(
   (incomingProps, ref) => {
-    const props = useDefaultProps('Select', incomingProps, {
-      bg: 'white',
-      borderRadius: 'none',
-      flexDirection: 'column',
-      showScrollIndicator: false,
-      keyExtractor: (_, index) => `${index}`,
-      submit: false,
-      isMultiple: false,
-    });
+    const { theme, windowWidth } = useTheme();
+    const props = useDefaultProps(
+      'Select',
+      handleResponsiveProps(incomingProps, theme, windowWidth),
+      {
+        bg: 'white',
+        borderRadius: 'none',
+        flexDirection: 'column',
+        showScrollIndicator: false,
+        keyExtractor: (_: any, index: any) => `${index}`,
+        submit: false,
+        isMultiple: false,
+      }
+    );
 
     const {
       value,
@@ -39,7 +45,6 @@ const Select = React.forwardRef<SelectRef, SelectProps>(
       showScrollIndicator,
     } = props;
 
-    const { theme } = useTheme();
     const [visible, setVisible] = useState(false);
     const [selectedValue, setSelectedValue] = useState(value || []);
 

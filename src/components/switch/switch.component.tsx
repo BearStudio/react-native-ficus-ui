@@ -7,21 +7,27 @@ import { SwitchProps } from './switch.type';
 import { useTheme } from '../../theme';
 import { getThemeColor } from '../../theme/theme.service';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { handleResponsiveProps } from '../../types';
 
 const Switch: React.FC<SwitchProps> = (incomingProps) => {
-  const props = useDefaultProps('Switch', incomingProps, {
-    w: 55,
-    h: 30,
-    onPress: (): void => {},
-    colorScheme: 'green',
-    bg: 'gray.400',
-    on: false,
-    thumbBg: 'white',
-    activeThumbBg: 'white',
-    duration: 300,
-    borderRadius: 'full',
-    isDisabled: false,
-  });
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'Switch',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {
+      w: 55,
+      h: 30,
+      onPress: (): void => {},
+      colorScheme: 'green',
+      bg: 'gray.400',
+      on: false,
+      thumbBg: 'white',
+      activeThumbBg: 'white',
+      duration: 300,
+      borderRadius: 'full',
+      isDisabled: false,
+    }
+  );
 
   const {
     bg,
@@ -68,7 +74,6 @@ const Switch: React.FC<SwitchProps> = (incomingProps) => {
     ...rest
   } = props;
   const [animXValue] = useState(new Animated.Value(on ? 1 : 0));
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
   const endPos = (w as number) - (h as number) + 3;

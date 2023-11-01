@@ -1,4 +1,8 @@
+import React from 'react';
 import { ImageSourcePropType as RNImageSourcePropType } from 'react-native';
+import { ThemeType } from 'theme';
+
+export type ResponsiveValue<T> = T | Record<string, T>;
 
 type Undefined<T> = { [P in keyof T]: P extends undefined ? T[P] : never };
 
@@ -50,19 +54,19 @@ export const borderProps = [
   'borderStyle',
 ] as const;
 export interface BorderPropsType {
-  borderColor?: string;
-  borderTopColor?: string;
-  borderRightColor?: string;
-  borderBottomColor?: string;
-  borderLeftColor?: string;
-  borderWidth?: number;
-  borderTopWidth?: number;
-  borderRightWidth?: number;
-  borderLeftWidth?: number;
-  borderBottomWidth?: number;
-  borderStartWidth?: number;
-  borderEndWidth?: number;
-  borderStyle?: 'solid' | 'dotted' | 'dashed';
+  borderColor?: ResponsiveValue<string>;
+  borderTopColor?: ResponsiveValue<string>;
+  borderRightColor?: ResponsiveValue<string>;
+  borderBottomColor?: ResponsiveValue<string>;
+  borderLeftColor?: ResponsiveValue<string>;
+  borderWidth?: ResponsiveValue<number>;
+  borderTopWidth?: ResponsiveValue<number>;
+  borderRightWidth?: ResponsiveValue<number>;
+  borderLeftWidth?: ResponsiveValue<number>;
+  borderBottomWidth?: ResponsiveValue<number>;
+  borderStartWidth?: ResponsiveValue<number>;
+  borderEndWidth?: ResponsiveValue<number>;
+  borderStyle?: ResponsiveValue<'solid' | 'dotted' | 'dashed'>;
 }
 
 export const spacingProps = [
@@ -84,32 +88,32 @@ export const spacingProps = [
   'ps',
 ] as const;
 export interface SpacingPropsType {
-  m?: string | number;
-  mt?: string | number;
-  mr?: string | number;
-  mb?: string | number;
-  ml?: string | number;
-  mx?: string | number;
-  my?: string | number;
-  ms?: string | number;
-  p?: string | number;
-  pt?: string | number;
-  pr?: string | number;
-  pb?: string | number;
-  pl?: string | number;
-  px?: string | number;
-  py?: string | number;
-  ps?: string | number;
+  m?: ResponsiveValue<string | number>;
+  mt?: ResponsiveValue<string | number>;
+  mr?: ResponsiveValue<string | number>;
+  mb?: ResponsiveValue<string | number>;
+  ml?: ResponsiveValue<string | number>;
+  mx?: ResponsiveValue<string | number>;
+  my?: ResponsiveValue<string | number>;
+  ms?: ResponsiveValue<string | number>;
+  p?: ResponsiveValue<string | number>;
+  pt?: ResponsiveValue<string | number>;
+  pr?: ResponsiveValue<string | number>;
+  pb?: ResponsiveValue<string | number>;
+  pl?: ResponsiveValue<string | number>;
+  px?: ResponsiveValue<string | number>;
+  py?: ResponsiveValue<string | number>;
+  ps?: ResponsiveValue<string | number>;
 }
 
 export const stackSpacingProps = ['spacing'] as const;
 export interface StackSpacingPropsType {
-  spacing?: string | number;
+  spacing?: ResponsiveValue<string | number>;
 }
 
 export const orientationProps = ['orientation'] as const;
 export interface OrientationPropsType {
-  orientation?: 'vertical' | 'horizontal';
+  orientation?: ResponsiveValue<'vertical' | 'horizontal'>;
 }
 
 export const borderRadiusProps = [
@@ -124,21 +128,21 @@ export const borderRadiusProps = [
   'borderBottomRadius',
 ] as const;
 export interface BorderRadiusPropsType {
-  borderRadius?: string | number;
-  borderTopLeftRadius?: string | number;
-  borderTopRightRadius?: string | number;
-  borderBottomLeftRadius?: string | number;
-  borderBottomRightRadius?: string | number;
-  borderTopRadius?: string | number;
-  borderLeftRadius?: string | number;
-  borderRightRadius?: string | number;
-  borderBottomRadius?: string | number;
+  borderRadius?: ResponsiveValue<string | number>;
+  borderTopLeftRadius?: ResponsiveValue<string | number>;
+  borderTopRightRadius?: ResponsiveValue<string | number>;
+  borderBottomLeftRadius?: ResponsiveValue<string | number>;
+  borderBottomRightRadius?: ResponsiveValue<string | number>;
+  borderTopRadius?: ResponsiveValue<string | number>;
+  borderLeftRadius?: ResponsiveValue<string | number>;
+  borderRightRadius?: ResponsiveValue<string | number>;
+  borderBottomRadius?: ResponsiveValue<string | number>;
 }
 
 export const shadowProps = ['shadow', 'shadowColor'] as const;
 export interface ShadowPropsType {
-  shadow?: string | number;
-  shadowColor?: string;
+  shadow?: ResponsiveValue<string | number>;
+  shadowColor?: ResponsiveValue<string>;
 }
 
 export const dimensionProps = [
@@ -150,12 +154,12 @@ export const dimensionProps = [
   'w',
 ] as const;
 export interface DimensionPropsType {
-  minH?: number | string;
-  minW?: number | string;
-  maxH?: number | string;
-  maxW?: number | string;
-  h?: number | string;
-  w?: number | string;
+  minH?: ResponsiveValue<number | string>;
+  minW?: ResponsiveValue<number | string>;
+  maxH?: ResponsiveValue<number | string>;
+  maxW?: ResponsiveValue<number | string>;
+  h?: ResponsiveValue<number | string>;
+  w?: ResponsiveValue<number | string>;
 }
 
 export const flexProps = [
@@ -177,40 +181,46 @@ export const flexProps = [
   'align',
 ] as const;
 export interface FlexPropsType {
-  flex?: number;
-  flexDirection?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
-  direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
-  flexWrap?: 'wrap' | 'nowrap' | 'wrap-reverse';
-  wrap?: 'wrap' | 'nowrap' | 'wrap-reverse';
-  flexBasis?: string | number;
-  basis?: string | number;
-  flexGrow?: number;
-  grow?: number;
-  flexShrink?: number;
-  shrink?: number;
-  justifyContent?:
+  flex?: ResponsiveValue<number>;
+  flexDirection?: ResponsiveValue<
+    'row' | 'column' | 'row-reverse' | 'column-reverse'
+  >;
+  direction?: ResponsiveValue<
+    'row' | 'column' | 'row-reverse' | 'column-reverse'
+  >;
+  flexWrap?: ResponsiveValue<'wrap' | 'nowrap' | 'wrap-reverse'>;
+  wrap?: ResponsiveValue<'wrap' | 'nowrap' | 'wrap-reverse'>;
+  flexBasis?: ResponsiveValue<string | number>;
+  basis?: ResponsiveValue<string | number>;
+  flexGrow?: ResponsiveValue<number>;
+  grow?: ResponsiveValue<number>;
+  flexShrink?: ResponsiveValue<number>;
+  shrink?: ResponsiveValue<number>;
+  justifyContent?: ResponsiveValue<
     | 'flex-start'
     | 'flex-end'
     | 'center'
     | 'space-between'
     | 'space-around'
-    | 'space-evenly';
-  justify?:
+    | 'space-evenly'
+  >;
+  justify?: ResponsiveValue<
     | 'flex-start'
     | 'flex-end'
     | 'center'
     | 'space-between'
     | 'space-around'
-    | 'space-evenly';
-  alignSelf?:
-    | 'auto'
-    | 'flex-start'
-    | 'flex-end'
-    | 'center'
-    | 'stretch'
-    | 'baseline';
-  alignItems?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
-  align?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
+    | 'space-evenly'
+  >;
+  alignSelf?: ResponsiveValue<
+    'auto' | 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline'
+  >;
+  alignItems?: ResponsiveValue<
+    'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline'
+  >;
+  align?: ResponsiveValue<
+    'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline'
+  >;
 }
 
 export const positionProps = [
@@ -221,11 +231,11 @@ export const positionProps = [
   'left',
 ] as const;
 export interface PositionPropsType {
-  position?: 'absolute' | 'relative';
-  top?: number;
-  right?: number;
-  bottom?: number;
-  left?: number;
+  position?: ResponsiveValue<'absolute' | 'relative'>;
+  top?: ResponsiveValue<number>;
+  right?: ResponsiveValue<number>;
+  bottom?: ResponsiveValue<number>;
+  left?: ResponsiveValue<number>;
 }
 
 export const activityIndicatorProps = [
@@ -243,7 +253,7 @@ export interface ActivityIndicatorPropsType {
 
 export const backgroundProps = ['bg'] as const;
 export interface BackgroundPropsType {
-  bg?: string;
+  bg?: ResponsiveValue<string>;
 }
 
 export const backgroundImgProps = ['bgImg', 'bgMode'] as const;
@@ -268,17 +278,15 @@ export const textProps = [
   'textAlignVertical',
 ] as const;
 export interface TextPropsType {
-  color?: string;
-  fontSize?: string | number;
-  textDecorLine?:
-    | 'none'
-    | 'underline'
-    | 'line-through'
-    | 'underline line-through';
-  textDecorStyle?: 'solid' | 'double' | 'dotted' | 'dashed';
-  fontStyle?: 'normal' | 'italic';
-  textDecorColor?: string;
-  fontWeight?:
+  color?: ResponsiveValue<string>;
+  fontSize?: ResponsiveValue<string | number>;
+  textDecorLine?: ResponsiveValue<
+    'none' | 'underline' | 'line-through' | 'underline line-through'
+  >;
+  textDecorStyle?: ResponsiveValue<'solid' | 'double' | 'dotted' | 'dashed'>;
+  fontStyle?: ResponsiveValue<'normal' | 'italic'>;
+  textDecorColor?: ResponsiveValue<string>;
+  fontWeight?: ResponsiveValue<
     | 'normal'
     | 'bold'
     | '100'
@@ -289,38 +297,41 @@ export interface TextPropsType {
     | '600'
     | '700'
     | '800'
-    | '900';
-  fontFamily?: string;
-  lineHeight?: number;
-  textAlign?: 'auto' | 'left' | 'right' | 'center' | 'justify';
-  textTransform?: 'none' | 'uppercase' | 'lowercase' | 'capitalize';
-  letterSpacing?: number;
-  textAlignVertical?: 'auto' | 'top' | 'bottom' | 'center';
-  textDecorationLine?:
-    | 'none'
-    | 'underline'
-    | 'line-through'
-    | 'underline line-through';
-  textDecorationStyle?: 'solid' | 'double' | 'dotted' | 'dashed';
-  textDecorationColor?: string;
-  textShadowColor?: string;
-  textShadowOffset?: { width: number; height: number };
-  textShadowRadius?: number;
+    | '900'
+  >;
+  fontFamily?: ResponsiveValue<string>;
+  lineHeight?: ResponsiveValue<number>;
+  textAlign?: ResponsiveValue<'auto' | 'left' | 'right' | 'center' | 'justify'>;
+  textTransform?: ResponsiveValue<
+    'none' | 'uppercase' | 'lowercase' | 'capitalize'
+  >;
+  letterSpacing?: ResponsiveValue<number>;
+  textAlignVertical?: ResponsiveValue<'auto' | 'top' | 'bottom' | 'center'>;
+  textDecorationLine?: ResponsiveValue<
+    'none' | 'underline' | 'line-through' | 'underline line-through'
+  >;
+  textDecorationStyle?: ResponsiveValue<
+    'solid' | 'double' | 'dotted' | 'dashed'
+  >;
+  textDecorationColor?: ResponsiveValue<string>;
+  textShadowColor?: ResponsiveValue<string>;
+  textShadowOffset?: ResponsiveValue<{ width: number; height: number }>;
+  textShadowRadius?: ResponsiveValue<number>;
 }
 
 export const opacityProps = ['opacity'] as const;
 export interface OpacityPropsType {
-  opacity?: number;
+  opacity?: ResponsiveValue<number>;
 }
 
 export const overflowProps = ['overflow'] as const;
 export interface OverflowPropsType {
-  overflow?: 'hidden' | 'visible' | 'scroll';
+  overflow?: ResponsiveValue<'hidden' | 'visible' | 'scroll'>;
 }
 
 export const zIndexProps = ['zIndex'] as const;
 export interface ZIndexPropsType {
-  zIndex?: number;
+  zIndex?: ResponsiveValue<number>;
 }
 
 export const loadingProps = ['isLoading', 'loaderSize', 'loaderColor'] as const;
@@ -338,7 +349,7 @@ export interface PrefixSuffixPropsType {
 
 export const inputProps = ['focusBorderColor'] as const;
 export interface InputPropsType {
-  focusBorderColor?: string;
+  focusBorderColor?: ResponsiveValue<string>;
 }
 
 export const disabledProps = ['isDisabled'] as const;
@@ -354,20 +365,55 @@ export const buttonProps = [
   'colorScheme',
 ] as const;
 export interface ButtonPropsType {
-  underlayColor?: string;
-  full?: boolean;
-  rippleColor?: string;
-  ripple?: boolean;
-  colorScheme?: string;
+  underlayColor?: ResponsiveValue<string>;
+  full?: ResponsiveValue<boolean>;
+  rippleColor?: ResponsiveValue<string>;
+  ripple?: ResponsiveValue<boolean>;
+  colorScheme?: ResponsiveValue<string>;
 }
 
 export const overlayProps = ['overlayColor', 'overlayOpacity'] as const;
 export interface OverlayPropsType {
-  overlayColor?: string;
-  overlayOpacity?: number;
+  overlayColor?: ResponsiveValue<string>;
+  overlayOpacity?: ResponsiveValue<number>;
 }
 
 export const variantProps = ['variant'] as const;
 export interface VariantPropsType {
-  variant?: string;
+  variant?: ResponsiveValue<string>;
+}
+
+export function handleResponsiveProps<
+  T extends Record<string, ResponsiveValue<any>>
+>(props: T, theme: ThemeType, windowWidth: number): any {
+  let newProps = {};
+
+  for (const prop in props) {
+    const value = props[prop];
+
+    newProps = { ...newProps, [prop]: value };
+
+    if (
+      typeof value === 'object' &&
+      value !== null &&
+      !React.isValidElement(value) &&
+      !Array.isArray(value)
+    ) {
+      newProps = { ...newProps, [prop]: null };
+      // Handle as an object with responsive values
+      for (const breakpoint in value) {
+        if (theme?.breakpoints && breakpoint in theme?.breakpoints) {
+          const themeBreakpointValue = (theme.breakpoints as Record<
+            string,
+            number
+          >)[breakpoint];
+          console.log({ themeBreakpointValue, windowWidth });
+          if (windowWidth >= themeBreakpointValue) {
+            newProps = { ...newProps, [prop]: value[breakpoint] };
+          }
+        }
+      }
+    }
+  }
+  return newProps;
 }

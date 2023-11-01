@@ -5,9 +5,15 @@ import { getStyle } from './image.style';
 import type { ImageProps } from './image.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { handleResponsiveProps } from '../../types';
 
 const Image: React.FunctionComponent<ImageProps> = (incomingProps) => {
-  const props = useDefaultProps('Image', incomingProps, {});
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'Image',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {}
+  );
 
   const {
     bg,
@@ -75,7 +81,6 @@ const Image: React.FunctionComponent<ImageProps> = (incomingProps) => {
     zIndex,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
   return <RNImage style={computedStyle.image} {...rest} />;

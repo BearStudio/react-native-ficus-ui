@@ -40,7 +40,7 @@ export const getStyle = (theme: ThemeType, props: SectionListProps) => {
     overflow: props.overflow || 'hidden',
     zIndex: props.zIndex,
     borderStyle: props.borderStyle,
-    backgroundColor: getThemeColor(theme.colors, props.bg),
+    backgroundColor: getThemeColor(theme.colors, props.bg as string),
     flex: props.flex,
     ...createPositionStyle(props),
     ...createShadowStyles(props, theme),

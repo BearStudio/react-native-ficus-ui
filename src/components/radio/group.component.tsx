@@ -4,11 +4,18 @@ import { useState } from 'react';
 import { RadioGroupProps } from './radio.type';
 import { Box } from '../box/box.component';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { handleResponsiveProps } from '../../types';
+import { useTheme } from '../../theme';
 
 const RadioGroup: React.FunctionComponent<RadioGroupProps> = (
   incomingProps
 ) => {
-  const props = useDefaultProps('RadioGroup', incomingProps, {});
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'RadioGroup',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {}
+  );
 
   const [value, setValue] = useState(props.value ?? props.defaultValue ?? null);
   const {

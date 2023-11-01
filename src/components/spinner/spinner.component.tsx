@@ -6,9 +6,15 @@ import type { SpinnerProps } from './spinner.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { getThemeColor, getThemeProperty } from '../../theme/theme.service';
+import { handleResponsiveProps } from '../../types';
 
 const Spinner: React.FunctionComponent<SpinnerProps> = (incomingProps) => {
-  const props = useDefaultProps('Spinner', incomingProps, {});
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'Spinner',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {}
+  );
 
   const {
     bg,
@@ -79,7 +85,6 @@ const Spinner: React.FunctionComponent<SpinnerProps> = (incomingProps) => {
     size,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
   const colorProp = props.color as string | undefined;
   const colorValue = getThemeColor(theme.colors, colorProp);

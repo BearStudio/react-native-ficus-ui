@@ -14,28 +14,34 @@ import { CompundedCheckbox, CheckboxProps } from './checkbox.type';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { useTheme } from '../../theme';
 import { Text } from '../text/text.component';
+import { handleResponsiveProps } from '../../types';
 
 const Checkbox: CompundedCheckbox<CheckboxProps> = (incomingProps) => {
-  const props = useDefaultProps('Checkbox', incomingProps, {
-    defaultChecked: false,
-    colorScheme: 'blue',
-    bg: 'transparent',
-    p: 'none',
-    color: 'black',
-    borderRadius: 'md',
-    isLoading: false,
-    isDisabled: false,
-    full: false,
-    position: 'relative',
-    shadowColor: 'gray.800',
-    shadow: 0,
-    alignItems: 'center',
-    justifyContent: 'center',
-    alignSelf: 'flex-start',
-    onPress: () => {},
-    flexDirection: 'row',
-    size: 'sm',
-  });
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'Checkbox',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {
+      defaultChecked: false,
+      colorScheme: 'blue',
+      bg: 'transparent',
+      p: 'none',
+      color: 'black',
+      borderRadius: 'md',
+      isLoading: false,
+      isDisabled: false,
+      full: false,
+      position: 'relative',
+      shadowColor: 'gray.800',
+      shadow: 0,
+      alignItems: 'center',
+      justifyContent: 'center',
+      alignSelf: 'flex-start',
+      onPress: () => {},
+      flexDirection: 'row',
+      size: 'sm',
+    }
+  );
 
   const {
     m,
@@ -97,7 +103,6 @@ const Checkbox: CompundedCheckbox<CheckboxProps> = (incomingProps) => {
     size,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const [checked, setChecked] = useState(
     ('checked' in props ? checkedProp : defaultChecked) ?? false
   );

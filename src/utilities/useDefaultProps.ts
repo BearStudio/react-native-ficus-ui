@@ -21,7 +21,10 @@ export const useDefaultProps = <Props extends object>(
     let propsFromTheme = {
       ...(theme.components?.[componentName] ?? {}),
       ...(props.variant &&
-        (theme.components?.[componentName]?.variants?.[props.variant] ?? {})),
+        (theme.components?.[componentName]?.variants?.[
+          props.variant as string
+        ] ??
+          {})),
     };
 
     delete propsFromTheme.variants;

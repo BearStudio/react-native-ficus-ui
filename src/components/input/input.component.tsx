@@ -14,24 +14,30 @@ import { InputProps } from './input.type';
 import { useTheme } from '../../theme';
 import { getThemeProperty, getThemeColor } from '../../theme/theme.service';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { handleResponsiveProps } from '../../types';
 
 const Input = React.forwardRef<RNTextInput, InputProps>(
   (incomingProps, ref) => {
-    const props = useDefaultProps('Input', incomingProps, {
-      px: 'lg',
-      py: 'lg',
-      fontSize: 'md',
-      borderWidth: 1,
-      bg: 'white',
-      borderColor: 'gray.400',
-      borderRadius: 'md',
-      isLoading: false,
-      color: 'gray.800',
-      shadow: 0,
-      shadowColor: 'gray.500',
-      loaderSize: '3xl',
-      loaderColor: 'blue.700',
-    });
+    const { theme, windowWidth } = useTheme();
+    const props = useDefaultProps(
+      'Input',
+      handleResponsiveProps(incomingProps, theme, windowWidth),
+      {
+        px: 'lg',
+        py: 'lg',
+        fontSize: 'md',
+        borderWidth: 1,
+        bg: 'white',
+        borderColor: 'gray.400',
+        borderRadius: 'md',
+        isLoading: false,
+        color: 'gray.800',
+        shadow: 0,
+        shadowColor: 'gray.500',
+        loaderSize: '3xl',
+        loaderColor: 'blue.700',
+      }
+    );
 
     const {
       h,
@@ -91,7 +97,6 @@ const Input = React.forwardRef<RNTextInput, InputProps>(
       selectionColor,
       ...rest
     } = props;
-    const { theme } = useTheme();
     const [isFocussed, setIsFocussed] = useState(false);
     const computedStyle = getStyle(theme, props, { isFocussed });
     const placeholderColor = placeholderTextColor

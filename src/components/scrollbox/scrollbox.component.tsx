@@ -5,19 +5,25 @@ import { getStyle } from './scrollbox.style';
 import type { ScrollBoxProps } from './scrollbox.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { handleResponsiveProps } from '../../types';
 
 const ScrollBox: React.FunctionComponent<ScrollBoxProps> = (incomingProps) => {
-  const props = useDefaultProps('ScrollBox', incomingProps, {
-    bg: 'transparent',
-    flexDirection: 'column',
-    flexWrap: 'nowrap',
-    borderRadius: 'none',
-    shadow: 'none',
-    position: 'relative',
-    pointerEvents: 'auto',
-    borderStyle: 'solid',
-    overflow: 'hidden',
-  });
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'ScrollBox',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {
+      bg: 'transparent',
+      flexDirection: 'column',
+      flexWrap: 'nowrap',
+      borderRadius: 'none',
+      shadow: 'none',
+      position: 'relative',
+      pointerEvents: 'auto',
+      borderStyle: 'solid',
+      overflow: 'hidden',
+    }
+  );
 
   const {
     bg,
@@ -86,7 +92,6 @@ const ScrollBox: React.FunctionComponent<ScrollBoxProps> = (incomingProps) => {
     zIndex,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
   return (

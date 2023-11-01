@@ -5,16 +5,22 @@ import type { TextProps } from './text.type';
 import { getStyle } from './text.style';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { useTheme } from '../../theme/theme.hook';
+import { handleResponsiveProps } from '../../types';
 
 const Text: React.FunctionComponent<TextProps> = (incomingProps) => {
-  const props = useDefaultProps('Text', incomingProps, {
-    color: 'gray.900',
-    textAlign: 'auto',
-    textTransform: 'none',
-    fontSize: 'md',
-    overflow: 'hidden',
-    textAlignVertical: 'center',
-  });
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'Text',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {
+      color: 'gray.900',
+      textAlign: 'auto',
+      textTransform: 'none',
+      fontSize: 'md',
+      overflow: 'hidden',
+      textAlignVertical: 'center',
+    }
+  );
 
   const {
     w,
@@ -53,7 +59,6 @@ const Text: React.FunctionComponent<TextProps> = (incomingProps) => {
     style,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
   return (

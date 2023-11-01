@@ -85,7 +85,10 @@ export const getFontWeight = (
   }
 
   if (themeFontFamily) {
-    if (typeof themeFontFamily[fontWeight] !== 'undefined') {
+    if (
+      typeof themeFontFamily[fontWeight as keyof TextProps['fontWeight']] !==
+      'undefined'
+    ) {
       return 'normal';
     }
   }
@@ -108,8 +111,8 @@ export const getThemeFontFamily = (
   fontWeight: TextProps['fontWeight'] = 'normal'
 ): string | undefined => {
   if (themeFontFamily) {
-    if (typeof themeFontFamily[fontWeight] !== 'undefined') {
-      return themeFontFamily[fontWeight];
+    if ((fontWeight as string) in themeFontFamily) {
+      return themeFontFamily[fontWeight as keyof TextProps['fontWeight']];
     }
   }
 

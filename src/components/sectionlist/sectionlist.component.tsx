@@ -5,11 +5,17 @@ import { getStyle } from './sectionlist.style';
 import type { SectionListProps } from './sectionlist.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { handleResponsiveProps } from '../../types';
 
 const SectionList: React.FunctionComponent<SectionListProps> = (
   incomingProps
 ) => {
-  const props = useDefaultProps('SectionList', incomingProps, {});
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'SectionList',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {}
+  );
 
   const {
     bg,
@@ -78,7 +84,6 @@ const SectionList: React.FunctionComponent<SectionListProps> = (
     zIndex,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
   return <RNSectionList style={computedStyle.sectionlist} {...rest} />;

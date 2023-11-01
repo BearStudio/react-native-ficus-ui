@@ -8,20 +8,26 @@ import { getStyle } from './flex.style';
 import type { FlexProps } from './flex.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { handleResponsiveProps } from '../../types';
 
 const Flex: React.FunctionComponent<FlexProps> = (incomingProps) => {
-  const props = useDefaultProps('Flex', incomingProps, {
-    bg: 'transparent',
-    flex: 1,
-    flexDirection: 'column',
-    flexWrap: 'nowrap',
-    borderRadius: 'none',
-    shadow: 'none',
-    position: 'relative',
-    bgMode: 'cover',
-    pointerEvents: 'auto',
-    borderStyle: 'solid',
-  });
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'Flex',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {
+      bg: 'transparent',
+      flex: 1,
+      flexDirection: 'column',
+      flexWrap: 'nowrap',
+      borderRadius: 'none',
+      shadow: 'none',
+      position: 'relative',
+      bgMode: 'cover',
+      pointerEvents: 'auto',
+      borderStyle: 'solid',
+    }
+  );
 
   const {
     bg,
@@ -92,7 +98,6 @@ const Flex: React.FunctionComponent<FlexProps> = (incomingProps) => {
     zIndex,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
   // if there is a bgImage prop, use ImageBackground

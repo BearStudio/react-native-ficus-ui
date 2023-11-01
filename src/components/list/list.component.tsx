@@ -5,9 +5,15 @@ import { getStyle } from './list.style';
 import type { ListProps } from './list.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { handleResponsiveProps } from '../../types';
 
 const List: React.FunctionComponent<ListProps> = (incomingProps) => {
-  const props = useDefaultProps('List', incomingProps, { flex: 1 });
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'List',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    { flex: 1 }
+  );
 
   const {
     bg,
@@ -76,7 +82,6 @@ const List: React.FunctionComponent<ListProps> = (incomingProps) => {
     zIndex,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
   return (

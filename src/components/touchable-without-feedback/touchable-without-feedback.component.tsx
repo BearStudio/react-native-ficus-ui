@@ -8,11 +8,17 @@ import { getStyle } from './touchable-without-feedback.style';
 import type { TouchableWithoutFeedbackProps } from './touchable-without-feedback.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { handleResponsiveProps } from '../../types';
 
 const TouchableWithoutFeedback: React.FunctionComponent<TouchableWithoutFeedbackProps> = (
   incomingProps
 ) => {
-  const props = useDefaultProps('TouchableWithoutFeedback', incomingProps, {});
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'TouchableWithoutFeedback',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {}
+  );
 
   const {
     bg,
@@ -81,7 +87,6 @@ const TouchableWithoutFeedback: React.FunctionComponent<TouchableWithoutFeedback
     zIndex,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
   return (

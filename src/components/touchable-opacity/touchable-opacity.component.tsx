@@ -5,11 +5,17 @@ import { getStyle } from './touchable-opacity.style';
 import type { TouchableOpacityProps } from './touchable-opacity.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { handleResponsiveProps } from '../../types';
 
 const TouchableOpacity: React.FunctionComponent<TouchableOpacityProps> = (
   incomingProps
 ) => {
-  const props = useDefaultProps('TouchableOpacity', incomingProps, {});
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'TouchableOpacity',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {}
+  );
 
   const {
     bg,
@@ -78,7 +84,6 @@ const TouchableOpacity: React.FunctionComponent<TouchableOpacityProps> = (
     zIndex,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
   return (

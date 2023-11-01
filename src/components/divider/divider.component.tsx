@@ -5,20 +5,26 @@ import { getStyle } from './divider.style';
 import type { DividerProps } from './divider.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { handleResponsiveProps } from '../../types';
 
 const Divider: React.FunctionComponent<DividerProps> = (incomingProps) => {
-  const props = useDefaultProps('Divider', incomingProps, {
-    flexDirection: 'column',
-    flexWrap: 'nowrap',
-    borderRadius: 'none',
-    shadow: 'none',
-    position: 'relative',
-    pointerEvents: 'auto',
-    borderStyle: 'solid',
-    colorScheme: 'gray',
-    orientation: 'horizontal',
-    size: 1,
-  });
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'Divider',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {
+      flexDirection: 'column',
+      flexWrap: 'nowrap',
+      borderRadius: 'none',
+      shadow: 'none',
+      position: 'relative',
+      pointerEvents: 'auto',
+      borderStyle: 'solid',
+      colorScheme: 'gray',
+      orientation: 'horizontal',
+      size: 1,
+    }
+  );
 
   const {
     h,
@@ -86,7 +92,6 @@ const Divider: React.FunctionComponent<DividerProps> = (incomingProps) => {
     zIndex,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
   return <RNView style={computedStyle.divider} {...rest} />;

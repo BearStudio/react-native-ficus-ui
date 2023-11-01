@@ -6,9 +6,15 @@ import { getStyle } from './flashlist.style';
 import type { FlashListProps } from './flashlist.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { handleResponsiveProps } from '../../types';
 
 const FlashList: React.FunctionComponent<FlashListProps> = (incomingProps) => {
-  const props = useDefaultProps('FlashList', incomingProps, { flex: 1 });
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'FlashList',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    { flex: 1 }
+  );
 
   const {
     bg,
@@ -77,7 +83,6 @@ const FlashList: React.FunctionComponent<FlashListProps> = (incomingProps) => {
     zIndex,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
   return (
