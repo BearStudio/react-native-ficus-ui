@@ -8,21 +8,27 @@ import { getStyle } from './center.style';
 import type { CenterProps } from './center.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { handleResponsiveProps } from '../../types';
 
 const Center: React.FunctionComponent<CenterProps> = (incomingProps) => {
-  const props = useDefaultProps('Center', incomingProps, {
-    bg: 'transparent',
-    flexDirection: 'column',
-    flexWrap: 'nowrap',
-    borderRadius: 'none',
-    shadow: 'none',
-    position: 'relative',
-    bgMode: 'cover',
-    pointerEvents: 'auto',
-    borderStyle: 'solid',
-    justifyContent: 'center',
-    alignItems: 'center',
-  });
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'Center',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {
+      bg: 'transparent',
+      flexDirection: 'column',
+      flexWrap: 'nowrap',
+      borderRadius: 'none',
+      shadow: 'none',
+      position: 'relative',
+      bgMode: 'cover',
+      pointerEvents: 'auto',
+      borderStyle: 'solid',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }
+  );
 
   const {
     bg,
@@ -93,7 +99,6 @@ const Center: React.FunctionComponent<CenterProps> = (incomingProps) => {
     zIndex,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
   // if there is a bgImage prop, use ImageBackground

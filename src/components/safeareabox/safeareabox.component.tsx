@@ -5,20 +5,26 @@ import { getStyle } from './safeareabox.style';
 import type { SafeAreaBoxProps } from './safeareabox.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { handleResponsiveProps } from '../../types';
 
 const SafeAreaBox: React.FunctionComponent<SafeAreaBoxProps> = (
   incomingProps
 ) => {
-  const props = useDefaultProps('SafeAreaBox', incomingProps, {
-    bg: 'transparent',
-    flexDirection: 'column',
-    flexWrap: 'nowrap',
-    borderRadius: 'none',
-    shadow: 'none',
-    position: 'relative',
-    pointerEvents: 'auto',
-    borderStyle: 'solid',
-  });
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'SafeAreaBox',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {
+      bg: 'transparent',
+      flexDirection: 'column',
+      flexWrap: 'nowrap',
+      borderRadius: 'none',
+      shadow: 'none',
+      position: 'relative',
+      pointerEvents: 'auto',
+      borderStyle: 'solid',
+    }
+  );
 
   const {
     bg,
@@ -87,7 +93,6 @@ const SafeAreaBox: React.FunctionComponent<SafeAreaBoxProps> = (
     zIndex,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
   return (

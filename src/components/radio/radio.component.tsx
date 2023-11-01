@@ -18,29 +18,35 @@ import { isFunction } from '../../utilities';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { Text } from '../text/text.component';
 import { Box } from '../box/box.component';
+import { handleResponsiveProps } from '../../types';
 
 const Radio: CompoundedRadio<RadioProps> = (incomingProps) => {
-  const props = useDefaultProps('Radio', incomingProps, {
-    defaultChecked: false,
-    colorScheme: 'blue',
-    bg: 'transparent',
-    p: 'none',
-    color: 'black',
-    borderRadius: 'full',
-    isLoading: false,
-    isDisabled: false,
-    full: false,
-    position: 'relative',
-    shadowColor: 'gray800',
-    shadow: 0,
-    fontSize: '5xl',
-    alignItems: 'center',
-    justifyContent: 'center',
-    alignSelf: 'flex-start',
-    onPress: () => {},
-    flexDirection: 'row',
-    size: 'sm',
-  });
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'Radio',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {
+      defaultChecked: false,
+      colorScheme: 'blue',
+      bg: 'transparent',
+      p: 'none',
+      color: 'black',
+      borderRadius: 'full',
+      isLoading: false,
+      isDisabled: false,
+      full: false,
+      position: 'relative',
+      shadowColor: 'gray800',
+      shadow: 0,
+      fontSize: '5xl',
+      alignItems: 'center',
+      justifyContent: 'center',
+      alignSelf: 'flex-start',
+      onPress: () => {},
+      flexDirection: 'row',
+      size: 'sm',
+    }
+  );
 
   const {
     m,
@@ -103,7 +109,6 @@ const Radio: CompoundedRadio<RadioProps> = (incomingProps) => {
     size,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const [checked, setChecked] = useState(props.isChecked ?? defaultChecked);
   const [isFocussed, setIsFocussed] = useState(false);
   const computedStyle = getStyle(theme, props as RadioProps);

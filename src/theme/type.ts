@@ -93,6 +93,13 @@ export interface ThemeType {
     900?: string;
   };
 
+  breakpoints?: {
+    base: number;
+    sm: number;
+    md: number;
+    lg: number;
+    xl: number;
+  };
   colors?: ThemeProps<string | ColorHues>;
   fontSize?: ThemeProps<number>;
   borderRadius?: { none: 0; full: 99999 } & ThemeProps<number>;

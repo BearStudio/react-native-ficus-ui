@@ -5,11 +5,17 @@ import { getStyle } from './touchable-highlight.style';
 import type { TouchableHighlightProps } from './touchable-highlight.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { handleResponsiveProps } from '../../types';
 
 const TouchableHighlight: React.FunctionComponent<TouchableHighlightProps> = (
   incomingProps
 ) => {
-  const props = useDefaultProps('TouchableHighlight', incomingProps, {});
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'TouchableHighlight',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {}
+  );
 
   const {
     bg,
@@ -78,7 +84,6 @@ const TouchableHighlight: React.FunctionComponent<TouchableHighlightProps> = (
     zIndex,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
   return (

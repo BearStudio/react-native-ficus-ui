@@ -8,19 +8,25 @@ import { getStyle } from './box.style';
 import type { BoxProps } from './box.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { handleResponsiveProps } from '../../types';
 
 const Box: React.FunctionComponent<BoxProps> = (incomingProps) => {
-  const props = useDefaultProps('Box', incomingProps, {
-    bg: 'transparent',
-    flexDirection: 'column',
-    flexWrap: 'nowrap',
-    borderRadius: 'none',
-    shadow: 'none',
-    position: 'relative',
-    bgMode: 'cover',
-    pointerEvents: 'auto',
-    borderStyle: 'solid',
-  });
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'Box',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {
+      bg: 'transparent',
+      flexDirection: 'column',
+      flexWrap: 'nowrap',
+      borderRadius: 'none',
+      shadow: 'none',
+      position: 'relative',
+      bgMode: 'cover',
+      pointerEvents: 'auto',
+      borderStyle: 'solid',
+    }
+  );
 
   const {
     bg,
@@ -91,7 +97,6 @@ const Box: React.FunctionComponent<BoxProps> = (incomingProps) => {
     zIndex,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
   // if there is a bgImage prop, use ImageBackground

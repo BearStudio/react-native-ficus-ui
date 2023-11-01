@@ -21,7 +21,7 @@ export const getStyle = (theme: ThemeType, props: SelectProps) => {
   const computedStyle: any = {};
 
   computedStyle.wrapper = {
-    backgroundColor: getThemeColor(theme.colors, props.bg),
+    backgroundColor: getThemeColor(theme.colors, props.bg as string),
     ...createBorderWidthStyles(props),
     ...createBorderColorStyles(props, theme.colors),
     ...createBorderRadiusStyles(props, theme.borderRadius),

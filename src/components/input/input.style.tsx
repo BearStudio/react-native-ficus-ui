@@ -37,7 +37,7 @@ export const getStyle = (theme: ThemeType, props: InputProps, state: any) => {
     width: props.w,
     height: props.h,
     opacity: props.opacity,
-    backgroundColor: getThemeColor(theme.colors, props.bg),
+    backgroundColor: getThemeColor(theme.colors, props.bg as string),
     ...createFlexStyles(props),
     ...createBorderWidthStyles(props),
     ...createShadowStyles(props, theme),
@@ -73,8 +73,14 @@ export const getStyle = (theme: ThemeType, props: InputProps, state: any) => {
     fontSize: getThemeProperty(theme.fontSize, props.fontSize),
     textAlign: props.textAlign,
     textTransform: props.textTransform,
-    textDecorationColor: getThemeColor(theme.colors, props.textDecorColor),
-    textShadowColor: getThemeColor(theme.colors, props.textShadowColor),
+    textDecorationColor: getThemeColor(
+      theme.colors,
+      props.textDecorColor as string
+    ),
+    textShadowColor: getThemeColor(
+      theme.colors,
+      props.textShadowColor as string
+    ),
     textShadowOffset: {
       width: getThemeProperty(theme.shadow, props.textShadowOffset),
       height: getThemeProperty(theme.shadow, props.textShadowOffset),

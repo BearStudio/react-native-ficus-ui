@@ -5,9 +5,15 @@ import { getStyle } from './pressable.style';
 import type { PressableProps } from './pressable.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { handleResponsiveProps } from '../../types';
 
 const Pressable: React.FunctionComponent<PressableProps> = (incomingProps) => {
-  const props = useDefaultProps('Pressable', incomingProps, {});
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'Pressable',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {}
+  );
 
   const {
     bg,
@@ -76,7 +82,6 @@ const Pressable: React.FunctionComponent<PressableProps> = (incomingProps) => {
     zIndex,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
   return (

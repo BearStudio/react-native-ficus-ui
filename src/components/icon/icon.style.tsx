@@ -39,7 +39,7 @@ export const getStyle = (theme: ThemeType, props: IconProps) => {
     opacity: props.opacity,
     color: getThemeColor(theme.colors, props.color),
     fontSize: getThemeProperty(theme.fontSize, props.fontSize),
-    backgroundColor: getThemeColor(theme.colors, props.bg),
+    backgroundColor: getThemeColor(theme.colors, props.bg as string),
     ...createBorderWidthStyles(props),
     ...createSpacingStyles(props, theme.spacing),
     ...createBorderColorStyles(props, theme.colors),

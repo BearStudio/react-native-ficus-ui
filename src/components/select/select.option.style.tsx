@@ -24,7 +24,7 @@ export const getStyle = (theme: ThemeType, props: SelectOptionProps) => {
     flexDirection: 'row',
     alignSelf: 'flex-start',
     position: props.position,
-    backgroundColor: getThemeColor(theme.colors, props.bg),
+    backgroundColor: getThemeColor(theme.colors, props.bg as string),
     ...createSpacingStyles(props, theme.spacing),
   };
 
@@ -44,8 +44,8 @@ export const getStyle = (theme: ThemeType, props: SelectOptionProps) => {
   if (props.shadow) {
     computedStyle.button = {
       ...computedStyle.button,
-      ...(theme.shadow && theme.shadow[props.shadow]),
-      shadowColor: getThemeColor(theme.colors, props.shadowColor),
+      ...(theme.shadow && theme.shadow[props.shadow as string]),
+      shadowColor: getThemeColor(theme.colors, props.shadowColor as string),
     };
   }
 
@@ -101,7 +101,7 @@ export const getStyle = (theme: ThemeType, props: SelectOptionProps) => {
   if (props.borderColor) {
     computedStyle.button = {
       ...computedStyle.button,
-      borderColor: getThemeColor(theme.colors, props.borderColor),
+      borderColor: getThemeColor(theme.colors, props.borderColor as string),
     };
   }
 

@@ -5,19 +5,25 @@ import { getStyle } from './stack.style';
 import type { StackProps } from './stack.type';
 import { useTheme } from '../../theme/theme.hook';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { handleResponsiveProps } from '../../types';
 
 const Stack: React.FunctionComponent<StackProps> = (incomingProps) => {
-  const props = useDefaultProps('Stack', incomingProps, {
-    bg: 'transparent',
-    flexDirection: 'column',
-    flexWrap: 'nowrap',
-    borderRadius: 'none',
-    shadow: 'none',
-    position: 'relative',
-    pointerEvents: 'auto',
-    borderStyle: 'solid',
-    spacing: 0,
-  });
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'Stack',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {
+      bg: 'transparent',
+      flexDirection: 'column',
+      flexWrap: 'nowrap',
+      borderRadius: 'none',
+      shadow: 'none',
+      position: 'relative',
+      pointerEvents: 'auto',
+      borderStyle: 'solid',
+      spacing: 0,
+    }
+  );
 
   const {
     bg,
@@ -87,7 +93,6 @@ const Stack: React.FunctionComponent<StackProps> = (incomingProps) => {
     spacing,
     ...rest
   } = props;
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
 
   return (

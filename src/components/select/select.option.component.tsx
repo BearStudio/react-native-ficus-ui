@@ -7,29 +7,36 @@ import { Text } from '../text/text.component';
 import { SelectOptionProps } from './select.option.type';
 import { Button } from '../button/button.component';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { useTheme } from '../../theme';
+import { handleResponsiveProps } from '../../types';
 
 const Option: React.FunctionComponent<SelectOptionProps> = (incomingProps) => {
-  const props = useDefaultProps('Option', incomingProps, {
-    onSelect: () => {},
-    borderRadius: 0,
-    bg: 'white',
-    px: 'xl',
-    py: 'xl',
-    colorScheme: 'transparent',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-    center: false,
-    prefix: (
-      <Icon
-        name="ios-checkmark-circle"
-        fontFamily="Ionicons"
-        fontSize="2xl"
-        color="green.600"
-        mr="md"
-        alignSelf="center"
-      />
-    ),
-  });
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'Option',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {
+      onSelect: () => {},
+      borderRadius: 0,
+      bg: 'white',
+      px: 'xl',
+      py: 'xl',
+      colorScheme: 'transparent',
+      alignItems: 'flex-start',
+      justifyContent: 'flex-start',
+      center: false,
+      prefix: (
+        <Icon
+          name="ios-checkmark-circle"
+          fontFamily="Ionicons"
+          fontSize="2xl"
+          color="green.600"
+          mr="md"
+          alignSelf="center"
+        />
+      ),
+    }
+  );
 
   const {
     children,

@@ -12,10 +12,13 @@ import { ThemeType } from '../../theme/type';
  */
 export const getUnderlayColor = (theme: ThemeType, props: ButtonProps) => {
   return props.underlayColor
-    ? getThemeColor(theme.colors, props.underlayColor)
+    ? getThemeColor(theme.colors, props.underlayColor as string)
     : props.colorScheme
     ? getThemeColor(theme.colors, `${props.colorScheme}.800`)
-    : color(getThemeColor(theme.colors, props.bg)).darken(0.1).rgb().string();
+    : color(getThemeColor(theme.colors, props.bg as string))
+        .darken(0.1)
+        .rgb()
+        .string();
 };
 
 /**
@@ -25,7 +28,7 @@ export const getUnderlayColor = (theme: ThemeType, props: ButtonProps) => {
  * @param props
  */
 export const getRippleColor = (theme: ThemeType, props: ButtonProps) => {
-  return color(getThemeColor(theme.colors, props.rippleColor))
+  return color(getThemeColor(theme.colors, props.rippleColor as string))
     .alpha(props.disabled ? 0 : 0.2)
     .rgb()
     .string();

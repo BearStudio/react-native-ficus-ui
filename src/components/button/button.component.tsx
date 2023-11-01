@@ -13,36 +13,41 @@ import { getThemeProperty, getThemeColor } from '../../theme/theme.service';
 import { getUnderlayColor, getRippleColor } from './button.service';
 
 import { Text } from '../text/text.component';
-import { textProps } from '../../types';
+import { handleResponsiveProps, textProps } from '../../types';
 import { getSpecificProps } from '../../utilities';
 
 import { useDefaultProps } from '../../utilities/useDefaultProps';
 
 const Button: React.FunctionComponent<ButtonProps> = (incomingProps) => {
-  const props = useDefaultProps('Button', incomingProps, {
-    colorScheme: 'gray',
-    py: 'lg',
-    px: 15,
-    color: 'white',
-    borderRadius: 'lg',
-    isLoading: false,
-    isDisabled: false,
-    loaderSize: '2xl',
-    loaderColor: 'white',
-    full: false,
-    position: 'relative',
-    shadowColor: 'gray.800',
-    shadow: 0,
-    fontSize: 'lg',
-    rippleColor: 'white',
-    ripple: true,
-    alignItems: 'center',
-    justifyContent: 'center',
-    alignSelf: 'flex-start',
-    onPress: () => {},
-    flexDirection: 'row',
-    fontWeight: 'bold',
-  });
+  const { theme, windowWidth } = useTheme();
+  const props = useDefaultProps(
+    'Button',
+    handleResponsiveProps(incomingProps, theme, windowWidth),
+    {
+      colorScheme: 'gray',
+      py: 'lg',
+      px: 15,
+      color: 'white',
+      borderRadius: 'lg',
+      isLoading: false,
+      isDisabled: false,
+      loaderSize: '2xl',
+      loaderColor: 'white',
+      full: false,
+      position: 'relative',
+      shadowColor: 'gray.800',
+      shadow: 0,
+      fontSize: 'lg',
+      rippleColor: 'white',
+      ripple: true,
+      alignItems: 'center',
+      justifyContent: 'center',
+      alignSelf: 'flex-start',
+      onPress: () => {},
+      flexDirection: 'row',
+      fontWeight: 'bold',
+    }
+  );
 
   const {
     m,
@@ -103,7 +108,6 @@ const Button: React.FunctionComponent<ButtonProps> = (incomingProps) => {
     ...rest
   } = props;
 
-  const { theme } = useTheme();
   const computedStyle = getStyle(theme, props);
   const underlayColor = getUnderlayColor(theme, props);
   const calculatedRippleColor = getRippleColor(theme, props);

@@ -42,7 +42,7 @@ export const getStyle = (theme: ThemeType, props: CheckboxProps) => {
     ...createSpacingStyles(props, theme.spacing),
     ...createBorderColorStyles(props, theme.colors),
     ...createBorderRadiusStyles(props, theme.borderRadius),
-    backgroundColor: getThemeColor(theme.colors, props.bg),
+    backgroundColor: getThemeColor(theme.colors, props.bg as string),
   };
 
   computedStyle.text = {
