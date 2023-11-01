@@ -39,7 +39,7 @@ export const getStyle = (theme: ThemeType, props: TextProps) => {
     fontStyle: props.fontStyle,
     textAlignVertical: props.textAlignVertical,
     lineHeight: props.lineHeight,
-    color: getThemeColor(theme.colors, props.color),
+    color: getThemeColor(theme.colors, props.color as string),
     fontSize: getThemeProperty(theme.fontSize, props.fontSize),
     textAlign: props.textAlign,
     textTransform: props.textTransform,

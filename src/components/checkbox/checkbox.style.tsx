@@ -47,7 +47,7 @@ export const getStyle = (theme: ThemeType, props: CheckboxProps) => {
 
   computedStyle.text = {
     fontWeight: props.fontWeight,
-    color: getThemeColor(theme.colors, props.color),
+    color: getThemeColor(theme.colors, props.color as string),
     fontSize: getThemeProperty(theme.fontSize, props.size) * 1.2,
   };
 

@@ -29,7 +29,7 @@ export const getStyle = (theme: ThemeType, props: SelectOptionProps) => {
   };
 
   computedStyle.text = {
-    color: getThemeColor(theme.colors, props.color),
+    color: getThemeColor(theme.colors, props.color as string),
     textAlign: 'right',
     fontSize: getThemeProperty(theme.fontSize, props.fontSize),
   };

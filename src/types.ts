@@ -278,7 +278,7 @@ export const textProps = [
   'textAlignVertical',
 ] as const;
 export interface TextPropsType {
-  color?: string;
+  color?: ResponsiveValue<string>;
   fontSize?: ResponsiveValue<string | number>;
   textDecorLine?: ResponsiveValue<
     'none' | 'underline' | 'line-through' | 'underline line-through'
@@ -301,12 +301,12 @@ export interface TextPropsType {
   >;
   fontFamily?: ResponsiveValue<string>;
   lineHeight?: ResponsiveValue<number>;
-  textAlign?: 'auto' | 'left' | 'right' | 'center' | 'justify';
+  textAlign?: ResponsiveValue<'auto' | 'left' | 'right' | 'center' | 'justify'>;
   textTransform?: ResponsiveValue<
     'none' | 'uppercase' | 'lowercase' | 'capitalize'
   >;
   letterSpacing?: ResponsiveValue<number>;
-  textAlignVertical?: 'auto' | 'top' | 'bottom' | 'center';
+  textAlignVertical?: ResponsiveValue<'auto' | 'top' | 'bottom' | 'center'>;
   textDecorationLine?: ResponsiveValue<
     'none' | 'underline' | 'line-through' | 'underline line-through'
   >;

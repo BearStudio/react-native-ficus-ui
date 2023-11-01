@@ -29,6 +29,6 @@ export interface InputProps
     OpacityPropsType,
     Pick<FlexPropsType, 'flex'>,
     Pick<BackgroundPropsType, 'bg'>,
-    Omit<TextPropsType, 'textAlign'>,
+    Omit<TextPropsType, 'textAlign' | 'textAlignVertical'>,
     InputPropsType,
     VariantPropsType {}
