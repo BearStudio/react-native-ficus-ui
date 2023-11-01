@@ -399,7 +399,6 @@ export function handleResponsiveProps<
       !React.isValidElement(value) &&
       !Array.isArray(value)
     ) {
-      newProps = { ...newProps, [prop]: null };
       // Handle as an object with responsive values
       for (const breakpoint in value) {
         if (theme?.breakpoints && breakpoint in theme?.breakpoints) {
