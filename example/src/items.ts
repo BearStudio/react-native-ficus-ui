@@ -23,6 +23,7 @@ import ToastHook from './components/Toast';
 import ModalComponent from './components/Modal';
 import FlashListComponent from './components/FlashList';
 import SafeAreaBoxComponent from './components/SafeAreaBox';
+import DividerComponent from './components/Divider';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -37,6 +38,11 @@ export const components: ExampleComponentType[] = [
     component: TextComponent,
   },
   { navigationPath: 'Box', onScreenName: 'Box', component: BoxComponent },
+  {
+    navigationPath: 'Divider',
+    onScreenName: 'Divider',
+    component: DividerComponent,
+  },
   {
     navigationPath: 'SafeAreaBox',
     onScreenName: 'SafeAreaBox',

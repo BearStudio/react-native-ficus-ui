@@ -1,5 +1,7 @@
 export { Box } from './box/box.component';
 export { BoxProps } from './box/box.type';
+export { Divider } from './divider/divider.component';
+export { DividerProps } from './divider/divider.type';
 export { SafeAreaBox } from './safeareabox/safeareabox.component';
 export { SafeAreaBoxProps } from './safeareabox/safeareabox.type';
 export { ScrollBox } from './scrollbox/scrollbox.component';

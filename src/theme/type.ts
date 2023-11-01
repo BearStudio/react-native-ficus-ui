@@ -29,6 +29,7 @@ import type {
 import type { RadioGroupProps, RadioProps } from 'components/radio/radio.type';
 import type { ModalProps } from 'components/modal/modal.type';
 import { ToastProps } from 'react-native-toast-message';
+import type { DividerProps } from 'components/divider/divider.type';
 
 export interface ColorHues {
   50: string;
@@ -75,6 +76,7 @@ export interface ThemeType {
     Radio?: VariantType<RadioProps>;
     RadioGroup?: VariantType<RadioGroupProps>;
     Modal?: VariantType<ModalProps>;
+    Divider?: VariantType<DividerProps>;
   };
 
   fontFamily?: {

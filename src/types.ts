@@ -107,6 +107,11 @@ export interface StackSpacingPropsType {
   spacing?: string | number;
 }
 
+export const orientationProps = ['orientation'] as const;
+export interface OrientationPropsType {
+  orientation?: 'vertical' | 'horizontal';
+}
+
 export const borderRadiusProps = [
   'borderRadius',
   'borderTopLeftRadius',
