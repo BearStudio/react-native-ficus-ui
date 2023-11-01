@@ -406,7 +406,6 @@ export function handleResponsiveProps<
             string,
             number
           >)[breakpoint];
-          console.log({ themeBreakpointValue, windowWidth });
           if (windowWidth >= themeBreakpointValue) {
             newProps = { ...newProps, [prop]: value[breakpoint] };
           }
