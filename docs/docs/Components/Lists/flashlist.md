@@ -14,6 +14,15 @@ https://shopify.github.io/flash-list/docs/
 
 So, `List` component accepts every props from react native `FlatList` component.
 
+:::info
+
+`FlashList` is a great component with huge performances improvements but it works better with list items of the same size/height.
+That's why you have to pass an `estimatedItemSize` param to `FlashList` component. <br /><br />
+If you have items with different sizes to display inside your list, you should use default `List` / `FlatList` component.
+Using `FlashList` with different sizes will cause blank spaces while scrolling into the list.
+
+:::
+
 ## Import
 
 ```js
