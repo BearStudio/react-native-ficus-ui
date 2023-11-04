@@ -16,6 +16,8 @@ import { Divider } from "react-native-ficus-ui";
 
 ## Usage
 
+<ExpoLayout id="divider" />
+
 ## Props
 
 Extends all `Box` props, except background properties.
