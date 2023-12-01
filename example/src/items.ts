@@ -24,6 +24,7 @@ import ModalComponent from './components/Modal';
 import FlashListComponent from './components/FlashList';
 import SafeAreaBoxComponent from './components/SafeAreaBox';
 import DividerComponent from './components/Divider';
+import TabsComponent from './components/Tabs';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -140,5 +141,10 @@ export const components: ExampleComponentType[] = [
     navigationPath: 'Modal',
     onScreenName: 'Modal',
     component: ModalComponent,
+  },
+  {
+    navigationPath: 'Tabs',
+    onScreenName: 'Tabs',
+    component: TabsComponent,
   },
 ];

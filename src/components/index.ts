@@ -56,3 +56,11 @@ export { RadioProps, RadioGroupProps } from './radio/radio.type';
 export { RadioGroup } from './radio/group.component';
 export { Modal } from './modal/modal.component';
 export { ModalProps } from './modal/modal.type';
+export { Tab, TabList, TabPanel, TabPanels, Tabs } from './tabs/tabs.component';
+export {
+  TabListProps,
+  TabPanelProps,
+  TabProps,
+  TabsProps,
+  TabPanelsProps,
+} from './tabs/tabs.type';
