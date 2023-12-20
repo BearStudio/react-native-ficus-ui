@@ -4,6 +4,7 @@ import {
   Animated as RNAnimated,
   Pressable as RNButton,
   ActivityIndicator as RNActivityIndicator,
+  Platform,
 } from 'react-native';
 
 import { getStyle } from './button.style';
@@ -31,7 +32,7 @@ const Button: React.FunctionComponent<ButtonProps> = (incomingProps) => {
       borderRadius: 'lg',
       isLoading: false,
       isDisabled: false,
-      loaderSize: 'lg',
+      loaderSize: Platform.OS === 'ios' ? 'lg' : 'xl',
       loaderColor: 'white',
       full: false,
       position: 'relative',
