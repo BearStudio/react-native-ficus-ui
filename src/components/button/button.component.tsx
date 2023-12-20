@@ -31,7 +31,7 @@ const Button: React.FunctionComponent<ButtonProps> = (incomingProps) => {
       borderRadius: 'lg',
       isLoading: false,
       isDisabled: false,
-      loaderSize: '2xl',
+      loaderSize: 'lg',
       loaderColor: 'white',
       full: false,
       position: 'relative',
