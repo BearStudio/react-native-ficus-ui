@@ -59,16 +59,11 @@ export const getStyle = (theme: ThemeType, props: BoxProps) => {
     ...createBorderRadiusStyles(props, theme.borderRadius),
   };
 
-  computedStyle.image = {
-    ...createBorderRadiusStyles(props, theme.borderRadius),
-  };
-
   computedStyle.tabPanel = {
     flex: 1,
   };
 
   removeUndefinedProps(computedStyle.box);
-  removeUndefinedProps(computedStyle.image);
 
   // merging custom style props to computed style
   if (props.style) {

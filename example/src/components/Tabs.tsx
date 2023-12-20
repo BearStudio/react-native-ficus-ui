@@ -1,5 +1,4 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
 import {
   Tabs,
   TabList,
@@ -7,37 +6,37 @@ import {
   TabPanel,
   TabPanels,
   Text,
+  SafeAreaBox,
 } from 'react-native-ficus-ui';
 
 const TabsExampleComponent = () => {
   const [index, setIndex] = React.useState(0);
   return (
-    <SafeAreaView style={{ flex: 1, paddingTop: 20 }}>
-      <Tabs initialPage={0} onChangeTab={setIndex} selectedTab={index} mt="md">
+    <SafeAreaBox flex={1}>
+      <Tabs
+        colorScheme="green"
+        initialPage={0}
+        onChangeTab={setIndex}
+        selectedTab={index}
+      >
         <TabList>
-          <Tab name="first">
-            {({ focused }) => (
-              <Text color={focused ? 'red.500' : 'black'}>Tab 1</Text>
-            )}
-          </Tab>
-          <Tab name="second">
-            <Text>Tab 2</Text>
-          </Tab>
+          <Tab name="first">Tab 1</Tab>
+          <Tab name="second">Tab 2</Tab>
           <Tab name="third">Tab 3</Tab>
         </TabList>
         <TabPanels>
-          <TabPanel linkedTo="first" bg="red.800">
-            <Text color="red.600">Content for the first tab</Text>
+          <TabPanel linkedTo="first" bg="red.800" p="lg">
+            <Text color="white">Content for the first tab</Text>
           </TabPanel>
-          <TabPanel linkedTo="second" bg="gray.600">
-            <Text>Content for the second tab</Text>
+          <TabPanel linkedTo="second" bg="gray.600" p="lg">
+            <Text color="white">Content for the second tab</Text>
           </TabPanel>
-          <TabPanel linkedTo="third" bg="yellow.400">
+          <TabPanel linkedTo="third" bg="yellow.400" p="lg">
             <Text>Content for the third tab</Text>
           </TabPanel>
         </TabPanels>
       </Tabs>
-    </SafeAreaView>
+    </SafeAreaBox>
   );
 };
 

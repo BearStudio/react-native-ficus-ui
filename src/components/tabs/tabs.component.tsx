@@ -12,6 +12,7 @@ import {
   TabsProps,
 } from './tabs.type';
 import { Text } from '../text/text.component';
+import { getThemeColor } from '../../theme/theme.service';
 
 const Tab: FC<TabProps> = ({ name, children, ...rest }) => {
   const { theme } = useTheme();
@@ -44,6 +45,7 @@ const Tabs: FC<TabsProps> = ({
   selectedTab,
   onChangeTab,
   initialPage,
+  colorScheme,
   ...rest
 }) => {
   const layout = useWindowDimensions();
@@ -57,6 +59,10 @@ const Tabs: FC<TabsProps> = ({
   const panels = React.Children.toArray(children).find(
     (child: any) => child.type?.displayName === 'TabPanels'
   ) as any;
+
+  const tabsMainColor = colorScheme
+    ? getThemeColor(theme.colors, `${colorScheme}.600`)
+    : null;
 
   // Construct the routes from Tab children
   const routes = React.Children.map((tabs as any)?.props.children, (child) => ({
@@ -86,14 +92,20 @@ const Tabs: FC<TabsProps> = ({
     color,
   }) => {
     if (typeof route.renderLabelChildren === 'string') {
-      return <Text style={{ color }}>{route.renderLabelChildren}</Text>;
+      return (
+        <Text style={{ color: tabsMainColor || color }}>
+          {route.renderLabelChildren}
+        </Text>
+      );
     }
-    const renderLabelStyle = getStyle(theme, route.otherProps);
-
     return (
-      <View style={{ ...styles.box, ...renderLabelStyle.box }}>
+      <View>
         {typeof route.renderLabelChildren === 'function'
-          ? route.renderLabelChildren({ route, focused, color })
+          ? route.renderLabelChildren({
+              route,
+              focused,
+              color,
+            })
           : route.renderLabelChildren}
       </View>
     );
@@ -106,7 +118,9 @@ const Tabs: FC<TabsProps> = ({
     children: panelsChildren,
     ...otherPanelsProps
   } = panels?.props as any;
+
   const panelsStyles = getStyle(theme, otherPanelsProps);
+  const tabBarStyle = getStyle(theme, otherTabsProps);
 
   return (
     <TabView
@@ -122,15 +136,15 @@ const Tabs: FC<TabsProps> = ({
         onChangeTab(ind);
         setIndex(ind);
       }}
-      renderTabBar={(prop) => {
+      renderTabBar={(props) => {
         return (
           <TabBar
-            {...prop}
-            onTabPress={({ route, preventDefault }) => {
-              preventDefault();
-              prop.jumpTo(route.key);
-            }}
             renderLabel={renderLabel}
+            style={tabBarStyle.box}
+            {...(colorScheme
+              ? { indicatorStyle: { backgroundColor: tabsMainColor } }
+              : {})}
+            {...props}
             {...otherTabsProps}
           />
         );

@@ -38,15 +38,8 @@ type CommonStyleProps = BorderPropsType &
 // Extend CommonStyleProps with specific props for each component
 export interface TabsProps<T extends Route = Route>
   extends CommonStyleProps,
-    Omit<
-      RNTabViewProps<T>,
-      | 'navigationState'
-      | 'initialLayout'
-      | 'onIndexChange'
-      | 'sceneContainerStyle'
-      | 'renderScene'
-      | 'renderTabBar'
-    > {
+    RNTabViewProps<T> {
+  colorScheme?: string;
   children: ReactNode;
   initialPage?: number;
   selectedTab?: number;
