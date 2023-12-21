@@ -7,7 +7,7 @@ import {
   Text,
   useDisclosure,
 } from 'react-native-ficus-ui';
-import ExampleSection from '../ExampleSection';
+import ExampleSection from '../../components/ExampleSection';
 
 const ModalComponent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();

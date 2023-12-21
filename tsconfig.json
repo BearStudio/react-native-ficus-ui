@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
@@ -24,6 +24,5 @@
     "target": "esnext",
     "types": ["react-native", "jest"]
   },
-  "include": ["src"],
   "exclude": ["./**/*.spec.ts", "./**/*.spec.tsx"]
 }

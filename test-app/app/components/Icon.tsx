@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, ScrollView } from 'react-native';
 import { Icon, HStack, Text } from 'react-native-ficus-ui';
-import ExampleSection from '../ExampleSection';
+import ExampleSection from '../../components/ExampleSection';
 
 const IconComponent = () => {
   return (

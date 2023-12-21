@@ -8,7 +8,7 @@ import {
   ScrollBox,
   Text,
 } from 'react-native-ficus-ui';
-import ExampleSection from '../ExampleSection';
+import ExampleSection from '../../components/ExampleSection';
 
 const StackComponent = () => {
   return (

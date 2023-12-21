@@ -1,12 +1,9 @@
-import React from 'react';
 import { SafeAreaView, ScrollView } from 'react-native';
-import { Link } from 'expo-router';
-import { components } from './items';
 import { Box, Text } from 'react-native-ficus-ui';
+import { components } from '../constants/components';
+import { Link } from 'expo-router';
 
-const HomeScreen = () => {
-  // Temporary silencing typescript
-  // We would need to add types to navigator
+export default function HomeScreen() {
   return (
     <>
       <SafeAreaView style={{ flex: 1 }}>
@@ -30,6 +27,4 @@ const HomeScreen = () => {
       </SafeAreaView>
     </>
   );
-};
-
-export default HomeScreen;
+}
