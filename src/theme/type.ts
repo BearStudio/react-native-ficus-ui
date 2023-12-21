@@ -1,35 +1,38 @@
-import type { TextProps } from 'components/text/text.type';
-import type { ThemeProps, VariantType } from '../types';
-import type { BoxProps } from 'components/box/box.type';
-import type { SafeAreaBoxProps } from 'components/safeareabox/safeareabox.type';
-import type { StackProps } from 'components/stack/stack.type';
-import type { FlexProps } from 'components/flex/flex.type';
-import type { CenterProps } from 'components/center/center.type';
-import type { ScrollBoxProps } from 'components/scrollbox/scrollbox.type';
-import type { TouchableOpacityProps } from 'components/touchable-opacity/touchable-opacity.type';
-import type { TouchableHighlightProps } from 'components/touchable-highlight/touchable-highlight.type';
-import type { TouchableWithoutFeedbackProps } from 'components/touchable-without-feedback/touchable-without-feedback.type';
-import type { PressableProps } from 'components/pressable/pressable.type';
-import type { SpinnerProps } from 'components/spinner/spinner.type';
-import type { FlashListProps } from 'components/flashlist/flashlist.type';
-import type { ListProps } from 'components/list/list.type';
-import type { SectionListProps } from 'components/sectionlist/sectionlist.type';
-import type { ImageProps } from 'components/image/image.type';
-import type { ButtonProps } from 'components/button/button.type';
-import type { IconProps } from 'components/icon/icon.type';
-import type { SwitchProps } from 'components/switch/switch.type';
-import type { InputProps } from 'components/input/input.type';
-import type { SelectProps } from 'components/select/select.type';
-import type { TextareaProps } from 'components/input/textarea.type';
-import type { SelectOptionProps } from 'components/select/select.option.type';
+import type { TextProps } from '@/components/text/text.type';
+import type { ThemeProps, VariantType } from '@/types';
+import type { BoxProps } from '@/components/box/box.type';
+import type { SafeAreaBoxProps } from '@/components/safeareabox/safeareabox.type';
+import type { StackProps } from '@/components/stack/stack.type';
+import type { FlexProps } from '@/components/flex/flex.type';
+import type { CenterProps } from '@/components/center/center.type';
+import type { ScrollBoxProps } from '@/components/scrollbox/scrollbox.type';
+import type { TouchableOpacityProps } from '@/components/touchable-opacity/touchable-opacity.type';
+import type { TouchableHighlightProps } from '@/components/touchable-highlight/touchable-highlight.type';
+import type { TouchableWithoutFeedbackProps } from '@/components/touchable-without-feedback/touchable-without-feedback.type';
+import type { PressableProps } from '@/components/pressable/pressable.type';
+import type { SpinnerProps } from '@/components/spinner/spinner.type';
+import type { FlashListProps } from '@/components/flashlist/flashlist.type';
+import type { ListProps } from '@/components/list/list.type';
+import type { SectionListProps } from '@/components/sectionlist/sectionlist.type';
+import type { ImageProps } from '@/components/image/image.type';
+import type { ButtonProps } from '@/components/button/button.type';
+import type { IconProps } from '@/components/icon/icon.type';
+import type { SwitchProps } from '@/components/switch/switch.type';
+import type { InputProps } from '@/components/input/input.type';
+import type { SelectProps } from '@/components/select/select.type';
+import type { TextareaProps } from '@/components/input/textarea.type';
+import type { SelectOptionProps } from '@/components/select/select.option.type';
 import type {
   CheckboxProps,
   CheckboxGroupProps,
-} from 'components/checkbox/checkbox.type';
-import type { RadioGroupProps, RadioProps } from 'components/radio/radio.type';
-import type { ModalProps } from 'components/modal/modal.type';
+} from '@/components/checkbox/checkbox.type';
+import type {
+  RadioGroupProps,
+  RadioProps,
+} from '@/components/radio/radio.type';
+import type { ModalProps } from '@/components/modal/modal.type';
 import { ToastProps } from 'react-native-toast-message';
-import type { DividerProps } from 'components/divider/divider.type';
+import type { DividerProps } from '@/components/divider/divider.type';
 
 export interface ColorHues {
   50: string;

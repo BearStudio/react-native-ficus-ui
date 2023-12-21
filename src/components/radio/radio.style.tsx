@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { ThemeType } from '../../theme';
+import { ThemeType } from '@/theme';
 
 import {
   getThemeProperty,
@@ -10,7 +10,7 @@ import {
   createBorderColorStyles,
   createBorderWidthStyles,
   getThemeColor,
-} from '../../theme/theme.service';
+} from '@/theme/theme.service';
 import { RadioProps } from './radio.type';
 
 /**

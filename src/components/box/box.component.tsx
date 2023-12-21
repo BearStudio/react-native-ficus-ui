@@ -6,9 +6,9 @@ import {
 
 import { getStyle } from './box.style';
 import type { BoxProps } from './box.type';
-import { useTheme } from '../../theme/theme.hook';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
+import { useTheme } from '@/theme/theme.hook';
+import { useDefaultProps } from '@/utilities/useDefaultProps';
+import { handleResponsiveProps } from '@/types';
 
 const Box: React.FunctionComponent<BoxProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

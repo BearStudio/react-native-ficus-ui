@@ -13,7 +13,7 @@ import type {
   OpacityPropsType,
   VariantPropsType,
   OrientationPropsType,
-} from '../../types';
+} from '@/types';
 
 export interface DividerProps
   extends RNViewProps,

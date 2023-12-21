@@ -16,7 +16,7 @@ import {
   BorderRadiusPropsType,
   ShadowPropsType,
   VariantPropsType,
-} from '../../types';
+} from '@/types';
 
 export interface ButtonProps
   extends RNButtonProps,

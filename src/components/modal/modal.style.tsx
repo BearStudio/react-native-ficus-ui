@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native';
-import { ThemeType } from '../../theme';
+import { ThemeType } from '@/theme';
 import {
   createSpacingStyles,
   createBorderWidthStyles,
   createBorderColorStyles,
   createBorderRadiusStyles,
-} from '../../theme/theme.service';
+} from '@/theme/theme.service';
 import { ModalProps } from './modal.type';
 
 /**

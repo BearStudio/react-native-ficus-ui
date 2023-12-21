@@ -15,9 +15,8 @@ import {
   BorderRadiusPropsType,
   ShadowPropsType,
   VariantPropsType,
-} from '../../types';
-import { BoxProps } from '../box/box.type';
-import { CheckboxGroup } from './group.component';
+} from '@/types';
+import { CheckboxGroup, BoxProps } from '@/components';
 
 export type CompundedCheckbox<P> = React.FunctionComponent<P> & {
   Group: typeof CheckboxGroup;

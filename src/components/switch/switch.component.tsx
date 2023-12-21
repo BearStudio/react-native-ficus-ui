@@ -3,11 +3,11 @@ import { Animated, TouchableOpacity } from 'react-native';
 import { useEffect, useRef, useState } from 'react';
 
 import { getStyle } from './switch.style';
-import { SwitchProps } from './switch.type';
-import { useTheme } from '../../theme';
-import { getThemeColor } from '../../theme/theme.service';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
+import { SwitchProps } from '@/components';
+import { useTheme } from '@/theme';
+import { getThemeColor } from '@/theme/theme.service';
+import { useDefaultProps } from '@/utilities/useDefaultProps';
+import { handleResponsiveProps } from '@/types';
 
 const Switch: React.FC<SwitchProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

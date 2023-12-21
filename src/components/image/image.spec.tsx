@@ -3,7 +3,7 @@ import { render } from '@testing-library/react-native';
 
 import { Image } from './image.component';
 import type { ImageProps } from './image.type';
-import { ThemeProvider } from '../../theme/theme.provider';
+import { ThemeProvider } from '@/theme/theme.provider';
 
 jest.mock('react-native-toast-message', () => 'Toast');
 

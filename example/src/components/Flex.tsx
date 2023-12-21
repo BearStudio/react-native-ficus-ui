@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { Flex, Text } from 'react-native-ficus-ui';
+import { Flex, Text } from '@/components';
 
 const FlexComponent = () => {
   return (

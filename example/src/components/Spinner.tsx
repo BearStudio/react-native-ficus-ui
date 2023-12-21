@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { Box, Spinner, Text } from 'react-native-ficus-ui';
+import { Box, Spinner, Text } from '@/components';
 
 const SpinnerComponent = () => {
   return (

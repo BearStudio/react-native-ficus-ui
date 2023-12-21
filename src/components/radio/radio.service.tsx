@@ -1,5 +1,5 @@
-import { ThemeType } from '../../theme';
-import { getThemeColor } from '../../theme/theme.service';
+import { ThemeType } from '@/theme';
+import { getThemeColor } from '@/theme/theme.service';
 
 /**
  * get icon name to be used based on checked state

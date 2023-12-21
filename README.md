@@ -31,7 +31,7 @@ You need to wrap your root component inside ThemeProvider component from react-n
 
 ```js title="index.js"
 import { AppRegistry } from 'react-native';
-import { ThemeProvider } from 'react-native-ficus-ui';
+import { ThemeProvider } from '@/theme';
 
 import App from './src/App';
 

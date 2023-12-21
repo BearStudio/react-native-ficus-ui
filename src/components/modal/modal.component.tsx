@@ -2,12 +2,12 @@ import * as React from 'react';
 import RNModal from 'react-native-modal';
 import { SafeAreaView } from 'react-native';
 
-import { useTheme } from '../../theme';
-import { Box } from '../box/box.component';
+import { useTheme } from '@/theme';
+import { Box } from '@/components';
 import { ModalProps } from './modal.type';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { useDefaultProps } from '@/utilities/useDefaultProps';
 import { getStyle } from './modal.style';
-import { handleResponsiveProps } from '../../types';
+import { handleResponsiveProps } from '@/types';
 
 const Modal: React.FunctionComponent<ModalProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

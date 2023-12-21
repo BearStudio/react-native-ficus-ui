@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { Box, Center, ScrollBox, Text } from 'react-native-ficus-ui';
+import { Box, Center, ScrollBox, Text } from '@/components';
 import ExampleSection from '../ExampleSection';
 
 const CenterComponent = () => {

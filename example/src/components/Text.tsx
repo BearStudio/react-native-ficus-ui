@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView, ScrollView } from 'react-native';
-import { Text } from 'react-native-ficus-ui';
+import { Text } from '@/components';
 import ExampleSection from '../ExampleSection';
 
 const TextComponent = () => {

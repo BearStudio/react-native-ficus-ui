@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native';
-import { ThemeType } from '../../theme';
+import { ThemeType } from '@/theme';
 
 import {
   createSpacingStyles,
   createBorderRadiusStyles,
-} from '../../theme/theme.service';
-import { SwitchProps } from './switch.type';
+} from '@/theme/theme.service';
+import { SwitchProps } from '@/components';
 
 /**
  * computed style

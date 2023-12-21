@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { ThemeType } from '../../theme';
+import { ThemeType } from '@/theme';
 
 import {
   createSpacingStyles,
@@ -7,9 +7,9 @@ import {
   createBorderColorStyles,
   createBorderWidthStyles,
   getThemeColor,
-} from '../../theme/theme.service';
-import { WINDOW_HEIGHT } from '../../utilities';
-import { SelectProps } from './select.type';
+} from '@/theme/theme.service';
+import { WINDOW_HEIGHT } from '@/utilities';
+import { SelectProps } from '@/components';
 
 /**
  * computed style

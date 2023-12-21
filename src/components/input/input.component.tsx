@@ -11,10 +11,10 @@ import {
 
 import { getStyle } from './input.style';
 import { InputProps } from './input.type';
-import { useTheme } from '../../theme';
-import { getThemeProperty, getThemeColor } from '../../theme/theme.service';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
+import { useTheme } from '@/theme';
+import { getThemeProperty, getThemeColor } from '@/theme/theme.service';
+import { useDefaultProps } from '@/utilities/useDefaultProps';
+import { handleResponsiveProps } from '@/types';
 
 const Input = React.forwardRef<RNTextInput, InputProps>(
   (incomingProps, ref) => {

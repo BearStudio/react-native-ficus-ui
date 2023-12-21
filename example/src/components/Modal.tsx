@@ -1,12 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import {
-  Button,
-  Icon,
-  Modal,
-  Text,
-  useDisclosure,
-} from 'react-native-ficus-ui';
+import { Button, Icon, Modal, Text, useDisclosure } from '@/components';
 import ExampleSection from '../ExampleSection';
 
 const ModalComponent = () => {

@@ -1,13 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import {
-  Box,
-  Stack,
-  HStack,
-  VStack,
-  ScrollBox,
-  Text,
-} from 'react-native-ficus-ui';
+import { Box, Stack, HStack, VStack, ScrollBox, Text } from '@/components';
 import ExampleSection from '../ExampleSection';
 
 const StackComponent = () => {

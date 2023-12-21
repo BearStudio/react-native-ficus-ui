@@ -14,7 +14,7 @@ import {
   BorderRadiusPropsType,
   ShadowPropsType,
   VariantPropsType,
-} from '../../types';
+} from '@/types';
 
 export interface InputProps
   extends RNTextInputProps,

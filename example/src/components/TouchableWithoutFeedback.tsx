@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { Box, TouchableWithoutFeedback, Text } from 'react-native-ficus-ui';
+import { Box, TouchableWithoutFeedback, Text } from '@/components';
 
 const TouchableWithoutFeedbackComponent = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ImageSourcePropType as RNImageSourcePropType } from 'react-native';
-import { ThemeType } from 'theme';
+import { ThemeType } from '@/theme';
 
 export type ResponsiveValue<T> = T | Record<string, T>;
 

@@ -7,7 +7,7 @@ import {
   DimensionPropsType,
   FlexPropsType,
   VariantPropsType,
-} from '../../types';
+} from '@/types';
 
 export interface ModalProps
   extends Partial<RNModalProps>,

@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { ThemeType } from '../../theme';
+import { ThemeType } from '@/theme';
 
 import {
   getThemeProperty,
@@ -9,7 +9,7 @@ import {
   createBorderWidthStyles,
   createBorderRadiusStyles,
   getThemeColor,
-} from '../../theme/theme.service';
+} from '@/theme/theme.service';
 import { IconProps } from './icon.type';
 
 /**

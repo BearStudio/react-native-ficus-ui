@@ -3,9 +3,9 @@ import { FlatList, View } from 'react-native';
 
 import { getStyle } from './list.style';
 import type { ListProps } from './list.type';
-import { useTheme } from '../../theme/theme.hook';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
+import { useTheme } from '@/theme/theme.hook';
+import { useDefaultProps } from '@/utilities/useDefaultProps';
+import { handleResponsiveProps } from '@/types';
 
 const List: React.FunctionComponent<ListProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

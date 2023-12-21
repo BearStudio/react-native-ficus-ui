@@ -1,7 +1,6 @@
 import React from 'react';
-import type { DefaultProps, VariantPropsType } from '../types';
-import { useTheme } from '../theme/theme.hook';
-import type { ThemeType } from '../theme/type';
+import type { DefaultProps, VariantPropsType } from '@/types';
+import { ThemeType, useTheme } from '@/theme';
 
 export const useDefaultProps = <Props extends object>(
   componentName: keyof NonNullable<ThemeType['components']> | null,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { Box, TouchableHighlight, Text } from 'react-native-ficus-ui';
+import { Box, TouchableHighlight, Text } from '@/components';
 
 const TouchableHighlightComponent = () => {
   return (

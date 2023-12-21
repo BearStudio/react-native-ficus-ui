@@ -3,9 +3,9 @@ import { Image as RNImage } from 'react-native';
 
 import { getStyle } from './image.style';
 import type { ImageProps } from './image.type';
-import { useTheme } from '../../theme/theme.hook';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
+import { useTheme } from '@/theme/theme.hook';
+import { useDefaultProps } from '@/utilities/useDefaultProps';
+import { handleResponsiveProps } from '@/types';
 
 const Image: React.FunctionComponent<ImageProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

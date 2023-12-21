@@ -4,14 +4,11 @@ import { SafeAreaView, FlatList } from 'react-native';
 import { useState, useImperativeHandle, useEffect } from 'react';
 
 import { getStyle } from './select.style';
-import { Box } from '../box/box.component';
-import { useTheme } from '../../theme';
-import { Text } from '../text/text.component';
-import { Button } from '../button/button.component';
+import { useTheme } from '@/theme';
+import { Box, Button, ButtonProps, Text } from '@/components';
 import { SelectProps, SelectRef, CompoundedSelect } from './select.type';
-import { ButtonProps } from '../button/button.type';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '@/utilities/useDefaultProps';
+import { handleResponsiveProps } from '@/types';
 
 const Select = React.forwardRef<SelectRef, SelectProps>(
   (incomingProps, ref) => {

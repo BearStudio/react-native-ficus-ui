@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { Box, Radio, RadioGroup, Text } from 'react-native-ficus-ui';
+import { Box, Radio, RadioGroup, Text } from '@/components';
 import ExampleSection from '../ExampleSection';
 
 const RadioComponent = () => {

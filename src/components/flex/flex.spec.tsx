@@ -1,10 +1,10 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react-native';
 
-import { Text } from '../text/text.component';
+import { Text } from '@/components/text/text.component';
 import { Flex } from './flex.component';
 import type { FlexProps } from './flex.type';
-import { ThemeProvider } from '../../theme/theme.provider';
+import { ThemeProvider } from '@/theme/theme.provider';
 
 jest.mock('react-native-toast-message', () => 'Toast');
 

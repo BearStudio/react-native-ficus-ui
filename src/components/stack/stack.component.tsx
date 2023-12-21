@@ -3,9 +3,9 @@ import { View as RNView } from 'react-native';
 
 import { getStyle } from './stack.style';
 import type { StackProps } from './stack.type';
-import { useTheme } from '../../theme/theme.hook';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
+import { useTheme } from '@/theme/theme.hook';
+import { useDefaultProps } from '@/utilities/useDefaultProps';
+import { handleResponsiveProps } from '@/types';
 
 const Stack: React.FunctionComponent<StackProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

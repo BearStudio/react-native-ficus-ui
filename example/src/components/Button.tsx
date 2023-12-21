@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView, ScrollView } from 'react-native';
-import { Button, Text, VStack } from 'react-native-ficus-ui';
+import { Button, Text, VStack } from '@/components';
 import ExampleSection from '../ExampleSection';
 
 const ButtonComponent = () => {

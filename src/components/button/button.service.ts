@@ -1,8 +1,8 @@
 import color from 'color';
 
-import { getThemeColor } from '../../theme/theme.service';
-import { ButtonProps } from './button.type';
-import { ThemeType } from '../../theme/type';
+import { getThemeColor } from '@/theme/theme.service';
+import { ButtonProps } from '@/components';
+import { ThemeType } from '@/theme/type';
 
 /**
  * returns underlay color

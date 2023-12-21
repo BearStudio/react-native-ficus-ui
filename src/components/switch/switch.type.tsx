@@ -8,7 +8,7 @@ import {
   SpacingPropsType,
   BorderRadiusPropsType,
   VariantPropsType,
-} from '../../types';
+} from '@/types';
 
 export interface SwitchProps
   extends SpacingPropsType,

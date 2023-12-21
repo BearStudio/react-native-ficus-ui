@@ -5,10 +5,10 @@ import {
 } from 'react-native';
 
 import { getStyle } from './center.style';
-import type { CenterProps } from './center.type';
-import { useTheme } from '../../theme/theme.hook';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
+import type { CenterProps } from '@/components';
+import { useTheme } from '@/theme/theme.hook';
+import { useDefaultProps } from '@/utilities/useDefaultProps';
+import { handleResponsiveProps } from '@/types';
 
 const Center: React.FunctionComponent<CenterProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

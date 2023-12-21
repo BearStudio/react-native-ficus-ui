@@ -8,9 +8,9 @@ import {
   createBorderColorStyles,
   createBorderRadiusStyles,
   getThemeColor,
-} from '../../theme/theme.service';
-import type { FlashListProps } from './flashlist.type';
-import type { ThemeType } from '../../theme/type';
+} from '@/theme/theme.service';
+import type { FlashListProps } from '@/components';
+import type { ThemeType } from '@/theme/type';
 
 /**
  * computed style

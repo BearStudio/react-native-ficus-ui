@@ -9,9 +9,9 @@ import {
   createBorderColorStyles,
   createBorderRadiusStyles,
   getThemeColor,
-} from '../../theme/theme.service';
+} from '@/theme/theme.service';
 import type { StackProps } from './stack.type';
-import type { ThemeType } from '../../theme/type';
+import type { ThemeType } from '@/theme/type';
 
 /**
  * computed style

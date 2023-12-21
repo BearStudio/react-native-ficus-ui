@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { Box, Checkbox, CheckboxGroup, Text } from 'react-native-ficus-ui';
+import { Box, Checkbox, CheckboxGroup, Text } from '@/components';
 import ExampleSection from '../ExampleSection';
 
 const CheckboxComponent = () => {

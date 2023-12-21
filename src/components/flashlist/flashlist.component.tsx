@@ -3,10 +3,10 @@ import { View } from 'react-native';
 import { FlashList as ShopifyFlashList } from '@shopify/flash-list';
 
 import { getStyle } from './flashlist.style';
-import type { FlashListProps } from './flashlist.type';
-import { useTheme } from '../../theme/theme.hook';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
+import type { FlashListProps } from '@/components';
+import { useTheme } from '@/theme/theme.hook';
+import { useDefaultProps } from '@/utilities/useDefaultProps';
+import { handleResponsiveProps } from '@/types';
 
 const FlashList: React.FunctionComponent<FlashListProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

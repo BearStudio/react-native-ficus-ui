@@ -8,9 +8,9 @@ import {
   createBorderColorStyles,
   createBorderRadiusStyles,
   getThemeColor,
-} from '../../theme/theme.service';
+} from '@/theme/theme.service';
 import type { FlexProps } from './flex.type';
-import type { ThemeType } from '../../theme/type';
+import type { ThemeType } from '@/theme/type';
 
 /**
  * computed style

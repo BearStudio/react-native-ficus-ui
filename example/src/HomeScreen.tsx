@@ -1,10 +1,10 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
-import { Box, Text } from 'react-native-ficus-ui';
 
 import { useNavigation } from '@react-navigation/native';
 import { components } from './items';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { Text, Box } from '@/components';
 
 const HomeScreen = () => {
   // Temporary silencing typescript

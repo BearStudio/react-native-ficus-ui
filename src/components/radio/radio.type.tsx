@@ -16,9 +16,8 @@ import {
   BorderRadiusPropsType,
   ShadowPropsType,
   VariantPropsType,
-} from '../../types';
-import { BoxProps } from '../box/box.type';
-import { RadioGroup } from './group.component';
+} from '@/types';
+import { RadioGroup, BoxProps } from '@/components';
 
 export type CompoundedRadio<P> = React.FunctionComponent<P> & {
   Group: typeof RadioGroup;

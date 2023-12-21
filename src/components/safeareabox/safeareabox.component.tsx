@@ -2,10 +2,10 @@ import * as React from 'react';
 import { SafeAreaView } from 'react-native';
 
 import { getStyle } from './safeareabox.style';
-import type { SafeAreaBoxProps } from './safeareabox.type';
-import { useTheme } from '../../theme/theme.hook';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
+import type { SafeAreaBoxProps } from '@/components';
+import { useTheme } from '@/theme/theme.hook';
+import { useDefaultProps } from '@/utilities/useDefaultProps';
+import { handleResponsiveProps } from '@/types';
 
 const SafeAreaBox: React.FunctionComponent<SafeAreaBoxProps> = (
   incomingProps

@@ -1,10 +1,10 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react-native';
 
-import { Text } from '../text/text.component';
+import { Text } from '@/components';
 import { TouchableHighlight } from './touchable-highlight.component';
 import type { TouchableHighlightProps } from './touchable-highlight.type';
-import { ThemeProvider } from '../../theme/theme.provider';
+import { ThemeProvider } from '@/theme/theme.provider';
 
 jest.mock('react-native-toast-message', () => 'Toast');
 

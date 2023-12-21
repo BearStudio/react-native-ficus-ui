@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { Box, Pressable, Text } from 'react-native-ficus-ui';
+import { Box, Pressable, Text } from '@/components';
 
 const PressableComponent = () => {
   return (

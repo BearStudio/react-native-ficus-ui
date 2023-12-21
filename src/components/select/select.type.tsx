@@ -9,8 +9,8 @@ import {
   BorderRadiusPropsType,
   ShadowPropsType,
   VariantPropsType,
-} from '../../types';
-import { Option } from './select.option.component';
+} from '@/types';
+import { Option } from '@/components';
 
 export interface CompoundedSelect
   extends React.ForwardRefExoticComponent<

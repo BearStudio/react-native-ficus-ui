@@ -7,14 +7,13 @@ import {
 } from 'react-native';
 
 import { getStyle } from './checkbox.style';
-import { isFunction } from '../../utilities';
+import { isFunction } from '@/utilities';
 import { getIcon } from './checkbox.service';
-import { CheckboxGroup } from './group.component';
+import { CheckboxGroup, Text } from '@/components';
 import { CompundedCheckbox, CheckboxProps } from './checkbox.type';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { useTheme } from '../../theme';
-import { Text } from '../text/text.component';
-import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '@/utilities/useDefaultProps';
+import { useTheme } from '@/theme';
+import { handleResponsiveProps } from '@/types';
 
 const Checkbox: CompundedCheckbox<CheckboxProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

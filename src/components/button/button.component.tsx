@@ -8,16 +8,16 @@ import {
 } from 'react-native';
 
 import { getStyle } from './button.style';
-import { useTheme } from '../../theme';
-import { ButtonProps } from './button.type';
-import { getThemeProperty, getThemeColor } from '../../theme/theme.service';
+import { useTheme } from '@/theme';
+import { ButtonProps } from '@/components';
+import { getThemeProperty, getThemeColor } from '@/theme/theme.service';
 import { getUnderlayColor, getRippleColor } from './button.service';
 
-import { Text } from '../text/text.component';
-import { handleResponsiveProps, textProps } from '../../types';
-import { getSpecificProps } from '../../utilities';
+import { Text } from '@/components/';
+import { handleResponsiveProps, textProps } from '@/types';
+import { getSpecificProps } from '@/utilities';
 
-import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { useDefaultProps } from '@/utilities/useDefaultProps';
 
 const Button: React.FunctionComponent<ButtonProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

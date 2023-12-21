@@ -6,9 +6,9 @@ import {
 
 import { getStyle } from './flex.style';
 import type { FlexProps } from './flex.type';
-import { useTheme } from '../../theme/theme.hook';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
+import { useTheme } from '@/theme/theme.hook';
+import { useDefaultProps } from '@/utilities/useDefaultProps';
+import { handleResponsiveProps } from '@/types';
 
 const Flex: React.FunctionComponent<FlexProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

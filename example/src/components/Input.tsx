@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { Icon, Input, Textarea, Text } from 'react-native-ficus-ui';
+import { Icon, Input, Textarea, Text } from '@/components';
 import ExampleSection from '../ExampleSection';
 
 const InputComponent = () => {

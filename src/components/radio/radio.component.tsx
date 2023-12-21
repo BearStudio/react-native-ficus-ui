@@ -8,17 +8,13 @@ import {
 } from 'react-native';
 
 import { getStyle } from './radio.style';
-import { getThemeProperty, useTheme } from '../../theme';
-import { Icon } from '../icon/icon.component';
+import { getThemeProperty, useTheme } from '@/theme';
 import { getIconName, getIconColor } from './radio.service';
 import { RadioProps, CompoundedRadio } from './radio.type';
-import { RadioGroup } from './group.component';
-import { Spinner } from '../spinner/spinner.component';
-import { isFunction } from '../../utilities';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { Text } from '../text/text.component';
-import { Box } from '../box/box.component';
-import { handleResponsiveProps } from '../../types';
+import { RadioGroup, Icon, Spinner, Text, Box } from '@/components';
+import { isFunction } from '@/utilities';
+import { useDefaultProps } from '@/utilities/useDefaultProps';
+import { handleResponsiveProps } from '@/types';
 
 const Radio: CompoundedRadio<RadioProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

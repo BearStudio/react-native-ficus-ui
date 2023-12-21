@@ -20,6 +20,7 @@ To start the app :
 ```sh
 yarn example start
 ```
+
 Then follow Expo instructions
 
 ## Good practices
@@ -47,7 +48,6 @@ Also, remember to add tests for your change if possible. Run the unit tests by:
 ```sh
 yarn test
 ```
-
 
 ### Commit message convention
 

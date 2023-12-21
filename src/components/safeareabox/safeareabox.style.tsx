@@ -8,9 +8,9 @@ import {
   createBorderColorStyles,
   createBorderRadiusStyles,
   getThemeColor,
-} from '../../theme/theme.service';
-import type { SafeAreaBoxProps } from './safeareabox.type';
-import type { ThemeType } from '../../theme/type';
+} from '@/theme/theme.service';
+import type { SafeAreaBoxProps } from '@/components';
+import type { ThemeType } from '@/theme/type';
 
 /**
  * computed style

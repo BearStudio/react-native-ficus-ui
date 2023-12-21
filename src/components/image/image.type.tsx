@@ -13,7 +13,7 @@ import type {
   OverflowPropsType,
   OpacityPropsType,
   VariantPropsType,
-} from '../../types';
+} from '@/types';
 
 export interface ImageProps
   extends Omit<

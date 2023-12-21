@@ -1,7 +1,6 @@
 import React from 'react';
-import { ThemeType } from '../theme/type';
-import { ThemeContext } from '../theme/theme.context';
-import { DefaultProps, VariantPropsType } from '../types';
+import { ThemeContext, ThemeType } from '@/theme';
+import { DefaultProps, VariantPropsType } from '@/types';
 
 export function withDefaultProps<
   Props extends object,

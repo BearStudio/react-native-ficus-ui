@@ -12,7 +12,7 @@ import {
   BorderRadiusPropsType,
   ShadowPropsType,
   VariantPropsType,
-} from '../../types';
+} from '@/types';
 
 export type iconFontFamilyType =
   | 'AntDesign'

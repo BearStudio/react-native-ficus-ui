@@ -1,7 +1,6 @@
-import { Box } from '../components/box/box.component';
+import { Box, Text } from '@/components';
 import type { ThemeType } from './type';
 import React from 'react';
-import { Text } from '../components/text/text.component';
 
 export const defaultTheme: ThemeType = {
   name: 'default',

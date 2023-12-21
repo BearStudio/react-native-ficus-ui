@@ -1,6 +1,6 @@
 import { isValidElement } from 'react';
 import { StyleSheet } from 'react-native';
-import { ThemeType } from '../../theme';
+import { ThemeType } from '@/theme';
 
 import {
   getThemeProperty,
@@ -14,7 +14,7 @@ import {
   getThemeFontFamily,
   getFontWeight,
   getThemeColor,
-} from '../../theme/theme.service';
+} from '@/theme/theme.service';
 import { InputProps } from './input.type';
 
 /**

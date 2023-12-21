@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native';
-import { Button, Select, Option, Text } from 'react-native-ficus-ui';
+import { Button, Select, Option, Text } from '@/components';
 import ExampleSection from '../ExampleSection';
 
 const SelectComponent = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { Divider, Box, Text } from 'react-native-ficus-ui';
+import { Divider, Box, Text } from '@/components';
 import ExampleSection from '../ExampleSection';
 
 const DividerComponent = () => {

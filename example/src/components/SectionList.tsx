@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { Box, Flex, SectionList, Text } from 'react-native-ficus-ui';
+import { Box, Flex, SectionList, Text } from '@/components';
 
 const SectionListComponent = () => {
   const DATA = [

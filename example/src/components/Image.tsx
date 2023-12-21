@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { Box, Image, Text } from 'react-native-ficus-ui';
+import { Box, Image, Text } from '@/components';
 
 const ImageComponent = () => {
   return (

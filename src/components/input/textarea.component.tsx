@@ -8,9 +8,9 @@ import {
 } from 'react-native';
 
 import { getStyle } from './input.style';
-import { TextareaProps } from './textarea.type';
-import { useTheme } from '../../theme';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { TextareaProps } from '@/components';
+import { useTheme } from '@/theme';
+import { useDefaultProps } from '@/utilities/useDefaultProps';
 
 const Textarea: React.FunctionComponent<TextareaProps> = (incomingProps) => {
   const props = useDefaultProps('Textarea', incomingProps, {

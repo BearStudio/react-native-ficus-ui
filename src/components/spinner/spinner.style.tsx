@@ -8,9 +8,9 @@ import {
   createBorderColorStyles,
   createBorderRadiusStyles,
   getThemeColor,
-} from '../../theme/theme.service';
-import type { SpinnerProps } from './spinner.type';
-import type { ThemeType } from '../../theme/type';
+} from '@/theme/theme.service';
+import type { SpinnerProps } from '@/components';
+import type { ThemeType } from '@/theme/type';
 
 /**
  * computed style

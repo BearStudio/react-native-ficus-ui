@@ -2,10 +2,10 @@ import * as React from 'react';
 import { Pressable as RNPressable } from 'react-native';
 
 import { getStyle } from './pressable.style';
-import type { PressableProps } from './pressable.type';
-import { useTheme } from '../../theme/theme.hook';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
+import type { PressableProps } from '@/components';
+import { useTheme } from '@/theme/theme.hook';
+import { useDefaultProps } from '@/utilities/useDefaultProps';
+import { handleResponsiveProps } from '@/types';
 
 const Pressable: React.FunctionComponent<PressableProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();
