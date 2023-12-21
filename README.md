@@ -2,7 +2,8 @@
 
 <br />
 
-Ficus UI is a React Native UI library forked on Magnus UI and inspired by Chakra UI
+Ficus UI is a React Native UI library forked on Magnus UI and inspired by Chakra UI.
+[**[Read the Documentation](https://ficus-ui.com)**]
 
 ## Installation
 
@@ -18,7 +19,7 @@ With yarn :
 yarn add react-native-ficus-ui
 ```
 
-Then, install the pods for iOS :
+**[Native iOS only]** : Install the pods
 
 ```sh
 cd ios && pod install
