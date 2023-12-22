@@ -40,7 +40,7 @@ export const getStyle = (
     maxWidth: props.maxW,
     maxHeight: props.maxH,
     opacity: props.opacity,
-    overflow: props.overflow || 'hidden',
+    overflow: props.overflow,
     zIndex: props.zIndex,
     borderStyle: props.borderStyle,
     backgroundColor: getThemeColor(theme.colors, props.bg as string),

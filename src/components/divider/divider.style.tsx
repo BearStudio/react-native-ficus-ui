@@ -37,7 +37,7 @@ export const getStyle = (theme: ThemeType, props: DividerProps) => {
     maxWidth: props.maxW,
     maxHeight: props.maxH,
     opacity: props.opacity,
-    overflow: props.overflow || 'hidden',
+    overflow: props.overflow,
     zIndex: props.zIndex,
     borderStyle: props.borderStyle,
     borderColor: getThemeColor(theme.colors, `${props.colorScheme}.400`),

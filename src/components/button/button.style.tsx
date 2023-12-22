@@ -23,7 +23,6 @@ export const getStyle = (theme: ThemeType, props: ButtonProps) => {
   const computedStyle: any = {};
 
   computedStyle.button = {
-    overflow: 'hidden',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',

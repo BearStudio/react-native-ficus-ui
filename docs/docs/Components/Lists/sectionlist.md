@@ -330,9 +330,9 @@ The left position property for container (`left` style prop in StyleSheet)
 ---
 The overflow property for container (`overflow` style prop in StyleSheet)
 
-|Type|Required|Default|
-|---|---|---|
-|enum("visible", "scroll", "hidden")|No|"hidden"|
+|Type|Required|
+|---|---|
+|enum("visible", "scroll", "hidden")|No|
 
 `borderRadius`
 ---
