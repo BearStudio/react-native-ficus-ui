@@ -24,6 +24,5 @@
     "target": "esnext",
     "types": ["react-native", "jest", "@testing-library/jest-native"]
   },
-  "include": ["src"],
-  "exclude": ["./**/*.spec.ts", "./**/*.spec.tsx"]
+  "include": ["src"]
 }

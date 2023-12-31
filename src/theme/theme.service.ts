@@ -129,38 +129,34 @@ export const getThemeColor = (
   themeColors: ThemeType['colors'],
   value: string | undefined
 ): string => {
-  if (themeColors && value) {
-    if (
-      themeColors.hasOwnProperty(value) &&
-      typeof themeColors[value] !== 'undefined'
-    ) {
-      const colorValue = themeColors[value];
-      return colorValue[500];
-    }
-
-    let colorValue: string | String = 'transparent';
-    if (value.includes('.')) {
-      const keyParts = value.split('.');
-      let subPropertyValue: any = themeColors;
-      for (const part of keyParts) {
-        subPropertyValue = subPropertyValue[part];
-      }
-      if (
-        typeof subPropertyValue === 'string' ||
-        subPropertyValue instanceof String
-      ) {
-        colorValue = subPropertyValue;
-      }
-    }
-
-    if (isValidColor(colorValue as string)) {
-      return colorValue as string;
-    }
-
-    return getThemeColor(themeColors, colorValue as string);
+  if (!(themeColors && value) || value.startsWith('#')) {
+    return value as string;
   }
 
-  return value as string;
+  if (themeColors.hasOwnProperty(value)) {
+    return typeof themeColors[value] === 'string'
+      ? (themeColors[value] as string)
+      : (value as string);
+  }
+
+  let colorValue: string | String = 'transparent';
+  const keyParts = value.split('.');
+  let subPropertyValue: any = themeColors;
+  for (const part of keyParts) {
+    subPropertyValue = subPropertyValue[part];
+  }
+  if (
+    typeof subPropertyValue === 'string' ||
+    subPropertyValue instanceof String
+  ) {
+    colorValue = subPropertyValue;
+  }
+
+  if (isValidColor(colorValue as string)) {
+    return colorValue as string;
+  }
+
+  return getThemeColor(themeColors, colorValue as string);
 };
 
 /**

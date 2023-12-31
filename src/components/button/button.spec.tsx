@@ -59,25 +59,35 @@ describe('Button component', () => {
   });
 
   it('should have background color of bg prop value', () => {
-    const defaultColorButtonId = 'defaultColorButton';
+    const colorNameButtonId = 'colorNameButton';
+    const hexCodeButtonId = 'hexCodeButton';
     const specificHueButtonId = 'specificHueButton';
+
+    const red = 'red';
+    const hexCode = '#FED7D7';
+    const red600 = 'red.600';
 
     render(
       <View>
-        <Button testID={defaultColorButtonId} bg="red" />
-        <Button testID={specificHueButtonId} bg="red.600" />
+        <Button testID={colorNameButtonId} bg={red} />
+        <Button testID={hexCodeButtonId} bg={hexCode} />
+        <Button testID={specificHueButtonId} bg={red600} />
       </View>
     );
 
-    const defaultColorButton = screen.getByTestId(defaultColorButtonId);
+    const colorNameButton = screen.getByTestId(colorNameButtonId);
+    const hexCodeButton = screen.getByTestId(hexCodeButtonId);
     const specificHueButton = screen.getByTestId(specificHueButtonId);
 
-    expect(defaultColorButton).toBeVisible();
-    expect(defaultColorButton).toHaveProp('style');
-    expect(defaultColorButton.props.style[0]).toHaveProperty('backgroundColor');
-    expect(defaultColorButton.props.style[0].backgroundColor).toEqual(
-      defaultTheme?.colors?.red[500]
-    );
+    expect(colorNameButton).toBeVisible();
+    expect(colorNameButton).toHaveProp('style');
+    expect(colorNameButton.props.style[0]).toHaveProperty('backgroundColor');
+    expect(colorNameButton.props.style[0].backgroundColor).toEqual(red);
+
+    expect(hexCodeButton).toBeVisible();
+    expect(hexCodeButton).toHaveProp('style');
+    expect(hexCodeButton.props.style[0]).toHaveProperty('backgroundColor');
+    expect(hexCodeButton.props.style[0].backgroundColor).toEqual(hexCode);
 
     expect(specificHueButton).toBeVisible();
     expect(specificHueButton).toHaveProp('style');
