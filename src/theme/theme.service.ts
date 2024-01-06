@@ -129,34 +129,38 @@ export const getThemeColor = (
   themeColors: ThemeType['colors'],
   value: string | undefined
 ): string => {
-  if (!(themeColors && value) || value.startsWith('#')) {
-    return value as string;
+  let colorValueResult: string | String = value as string;
+
+  if (themeColors && value) {
+    // Check if color value is a valid theme color
+    if (
+      themeColors.hasOwnProperty(value) &&
+      (typeof themeColors[value] === 'string' ||
+        themeColors[value] instanceof String)
+    ) {
+      const colorValue: string | String = themeColors[value] as string;
+      return colorValue as string;
+    }
+
+    // If color value contains dots, check into theme sub objects if it's a valid theme color
+    if (value.includes('.')) {
+      const keyParts = value.split('.');
+      let subPropertyValue: any = themeColors;
+      for (const part of keyParts) {
+        subPropertyValue = subPropertyValue[part];
+      }
+      if (
+        typeof subPropertyValue === 'string' ||
+        subPropertyValue instanceof String
+      ) {
+        colorValueResult = subPropertyValue;
+      }
+    }
   }
 
-  if (themeColors.hasOwnProperty(value)) {
-    return typeof themeColors[value] === 'string'
-      ? (themeColors[value] as string)
-      : (value as string);
-  }
-
-  let colorValue: string | String = 'transparent';
-  const keyParts = value.split('.');
-  let subPropertyValue: any = themeColors;
-  for (const part of keyParts) {
-    subPropertyValue = subPropertyValue[part];
-  }
-  if (
-    typeof subPropertyValue === 'string' ||
-    subPropertyValue instanceof String
-  ) {
-    colorValue = subPropertyValue;
-  }
-
-  if (isValidColor(colorValue as string)) {
-    return colorValue as string;
-  }
-
-  return getThemeColor(themeColors, colorValue as string);
+  return isValidColor(colorValueResult as string)
+    ? (colorValueResult as string)
+    : 'transparent';
 };
 
 /**
