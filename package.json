@@ -65,6 +65,7 @@
     "@evilmartians/lefthook": "1.2.2",
     "@react-native-community/eslint-config": "3.2.0",
     "@release-it/conventional-changelog": "5.0.0",
+    "@testing-library/jest-native": "^5.4.3",
     "@testing-library/react-native": "12.1.2",
     "@types/color": "^3.0.3",
     "@types/jest": "29.5.2",
@@ -104,6 +105,7 @@
     "modulePaths": [
       "<rootDir>/src"
     ],
+    "setupFilesAfterEnv": ["./jest-setup.ts"],
     "transformIgnorePatterns": [
       "node_modules/(?!(@react-native|react-native|react-native-vector-icons))"
     ]

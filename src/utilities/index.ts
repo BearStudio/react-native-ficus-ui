@@ -6,6 +6,7 @@ import {
   validateHTMLColorSpecialName,
   validateHTMLColorHex,
   validateHTMLColorHsl,
+  validateHTMLColorName,
 } from 'validate-color';
 
 const WINDOW = Dimensions.get('window');
@@ -80,7 +81,8 @@ export const isValidColor = (color: string): boolean => {
     validateHTMLColorRgb(color) ||
     validateHTMLColorSpecialName(color) ||
     validateHTMLColorHex(color) ||
-    validateHTMLColorHsl(color)
+    validateHTMLColorHsl(color) ||
+    validateHTMLColorName(color)
   );
 };
 
