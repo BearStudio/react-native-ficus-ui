@@ -56,12 +56,20 @@ export const getStyle = (theme: ThemeType, props: InputProps, state: any) => {
           ? props.focusBorderColor
           : computedStyle.container.borderColor
       ),
+      borderWidth: props.focusBorderWidth,
     };
   }
+
+  computedStyle.marginContainer = {
+    padding: state.isFocussed
+      ? 0
+      : (props.focusBorderWidth as number) - (props.borderWidth as number),
+  };
 
   computedStyle.input = {
     flex: 1,
     padding: 0,
+    margin: state.isFocussed && state.isTextarea ? -1 : 0,
 
     textDecorationLine: props.textDecorLine || props.textDecorationLine,
     textDecorationStyle: props.textDecorStyle || props.textDecorationStyle,
@@ -109,7 +117,9 @@ export const getStyle = (theme: ThemeType, props: InputProps, state: any) => {
     alignSelf:
       props.suffix &&
       isValidElement(props.suffix) &&
-      props.suffix.props.alignSelf,
+      props.suffix.props.alignSelf
+        ? props.suffix.props.alignSelf
+        : 'center',
     marginLeft: 5,
   };
 
@@ -120,7 +130,9 @@ export const getStyle = (theme: ThemeType, props: InputProps, state: any) => {
     alignSelf:
       props.prefix &&
       isValidElement(props.prefix) &&
-      props.prefix.props.alignSelf,
+      props.prefix.props.alignSelf
+        ? props.prefix.props.alignSelf
+        : 'center',
   };
 
   // merging style props to computed style
