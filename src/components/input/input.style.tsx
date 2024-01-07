@@ -63,8 +63,8 @@ export const getStyle = (theme: ThemeType, props: InputProps, state: any) => {
     flex: 1,
     padding: 0,
 
-    textDecorationLine: props.textDecorLine,
-    textDecorationStyle: props.textDecorStyle,
+    textDecorationLine: props.textDecorLine || props.textDecorationLine,
+    textDecorationStyle: props.textDecorStyle || props.textDecorationStyle,
     letterSpacing: props.letterSpacing,
     fontStyle: props.fontStyle,
     textAlignVertical: props.textAlignVertical,
@@ -75,7 +75,7 @@ export const getStyle = (theme: ThemeType, props: InputProps, state: any) => {
     textTransform: props.textTransform,
     textDecorationColor: getThemeColor(
       theme.colors,
-      props.textDecorColor as string
+      (props.textDecorColor as string) || (props.textDecorationColor as string)
     ),
     textShadowColor: getThemeColor(
       theme.colors,

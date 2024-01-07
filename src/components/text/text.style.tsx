@@ -33,8 +33,8 @@ export const getStyle = (theme: ThemeType, props: TextProps) => {
     backgroundColor: getThemeColor(theme.colors, props.bg as string),
     overflow: props.overflow || 'hidden',
     opacity: props.opacity,
-    textDecorationLine: props.textDecorLine,
-    textDecorationStyle: props.textDecorStyle,
+    textDecorationLine: props.textDecorLine || props.textDecorationLine,
+    textDecorationStyle: props.textDecorStyle || props.textDecorationStyle,
     letterSpacing: props.letterSpacing,
     fontStyle: props.fontStyle,
     textAlignVertical: props.textAlignVertical,
@@ -45,7 +45,7 @@ export const getStyle = (theme: ThemeType, props: TextProps) => {
     textTransform: props.textTransform,
     textDecorationColor: getThemeColor(
       theme.colors,
-      props.textDecorColor as string
+      (props.textDecorColor as string) || (props.textDecorationColor as string)
     ),
     textShadowColor: getThemeColor(
       theme.colors,

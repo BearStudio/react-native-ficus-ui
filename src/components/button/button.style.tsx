@@ -50,7 +50,7 @@ export const getStyle = (theme: ThemeType, props: ButtonProps) => {
   };
 
   computedStyle.text = {
-    color: props.color,
+    color: getThemeColor(theme.colors, props.color as string),
   };
 
   computedStyle.loadingContainer = {
