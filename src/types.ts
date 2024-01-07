@@ -350,9 +350,10 @@ export interface PrefixSuffixPropsType {
   prefix?: React.ReactNode;
 }
 
-export const inputProps = ['focusBorderColor'] as const;
+export const inputProps = ['focusBorderColor', 'focusBorderWidth'] as const;
 export interface InputPropsType {
   focusBorderColor?: ResponsiveValue<string>;
+  focusBorderWidth?: ResponsiveValue<number>;
 }
 
 export const disabledProps = ['isDisabled'] as const;

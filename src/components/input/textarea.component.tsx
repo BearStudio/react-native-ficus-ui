@@ -5,6 +5,7 @@ import {
   NativeSyntheticEvent,
   TextInputFocusEventData,
   TextInput as RNTextInput,
+  TouchableWithoutFeedback,
 } from 'react-native';
 
 import { getStyle } from './input.style';
@@ -12,71 +13,92 @@ import { TextareaProps } from './textarea.type';
 import { useTheme } from '../../theme';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
 
-const Textarea: React.FunctionComponent<TextareaProps> = (incomingProps) => {
-  const props = useDefaultProps('Textarea', incomingProps, {
-    minH: 100,
-    p: 'lg',
-    bg: 'white',
-    borderColor: 'gray.500',
-    borderWidth: 1,
-    multiline: true,
-    textAlignVertical: 'top',
-  });
+const Textarea = React.forwardRef<RNTextInput, TextareaProps>(
+  (incomingProps, ref) => {
+    const [isFocussed, setIsFocussed] = useState(false);
+    const innerRef = React.useRef<RNTextInput>(null);
 
-  const {
-    h,
-    w,
-    m,
-    minH,
-    minW,
-    suffix,
-    prefix,
-    style,
-    onBlur,
-    onFocus,
-    children,
-    focusBorderColor,
-    borderWidth,
-    ...rest
-  } = props;
-  const { theme } = useTheme();
-  const [isFocussed, setIsFocussed] = useState(false);
-  const computedStyle = getStyle(theme, props, { isFocussed });
+    React.useImperativeHandle(ref, () => innerRef.current as RNTextInput);
 
-  /**
-   * on focus input
-   */
-  const onFocusInput = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
-    setIsFocussed(true);
+    const props = useDefaultProps('Textarea', incomingProps, {
+      minH: 100,
+      p: 'lg',
+      bg: 'white',
+      borderColor: 'gray.400',
+      borderWidth: 1,
+      focusBorderWidth: 2,
+      borderRadius: 'md',
+      multiline: true,
+      textAlignVertical: 'top',
+      color: 'gray.800',
+    });
 
-    if (onFocus) {
-      onFocus(e);
-    }
-  };
+    const {
+      h,
+      w,
+      m,
+      minH,
+      minW,
+      suffix,
+      prefix,
+      style,
+      onBlur,
+      onFocus,
+      children,
+      focusBorderColor,
+      borderWidth,
+      ...rest
+    } = props;
+    const { theme } = useTheme();
+    const computedStyle = getStyle(theme, props, {
+      isFocussed,
+      isTextarea: true,
+    });
 
-  /**
-   * on blur input
-   * @param e
-   */
-  const onBlurInput = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
-    setIsFocussed(false);
+    /**
+     * on focus input
+     */
+    const onFocusInput = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
+      setIsFocussed(true);
 
-    if (onBlur) {
-      onBlur(e);
-    }
-  };
+      if (onFocus) {
+        onFocus(e);
+      }
+    };
 
-  return (
-    <RNView style={computedStyle.container}>
-      <RNTextInput
-        onFocus={(e) => onFocusInput(e)}
-        onBlur={(e) => onBlurInput(e)}
-        style={computedStyle.input}
-        {...rest}
-      />
-    </RNView>
-  );
-};
+    /**
+     * on blur input
+     * @param e
+     */
+    const onBlurInput = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
+      setIsFocussed(false);
+
+      if (onBlur) {
+        onBlur(e);
+      }
+    };
+
+    const onPressComponent = () => {
+      if (innerRef?.current) {
+        innerRef?.current?.focus();
+      }
+    };
+
+    return (
+      <TouchableWithoutFeedback onPress={onPressComponent}>
+        <RNView style={computedStyle.container}>
+          <RNTextInput
+            ref={innerRef}
+            onFocus={(e) => onFocusInput(e)}
+            onBlur={(e) => onBlurInput(e)}
+            style={computedStyle.input}
+            {...rest}
+          />
+        </RNView>
+      </TouchableWithoutFeedback>
+    );
+  }
+);
 
 // Textarea.defaultProps = {
 //   minH: 100,
