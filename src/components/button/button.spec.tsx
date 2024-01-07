@@ -111,6 +111,6 @@ describe('Button component', () => {
     expect(text).toBeVisible();
     expect(text).toHaveProp('style');
     expect(text.props.style).toHaveProperty('color');
-    expect(text.props.style.color).toEqual('black');
+    expect(text.props.style.color).toEqual('#000000');
   });
 });
