@@ -54,7 +54,7 @@ export interface RadioProps
 }
 
 export interface RadioStates {
-  isFocussed?: boolean;
+  isFocused?: boolean;
   isChecked?: boolean;
   isDisabled?: boolean;
   isLoading?: boolean;

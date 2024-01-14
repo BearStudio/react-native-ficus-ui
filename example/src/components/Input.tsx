@@ -39,9 +39,24 @@ const InputComponent = () => {
           focusBorderWidth={3}
           suffix={<Icon name="search" color="gray.900" fontFamily="Feather" />}
         />
+        <Input
+          mt="md"
+          placeholder="Username"
+          borderWidth={2}
+          focusBorderColor="red.500"
+          focusBorderWidth={3}
+          focusBorderStyle="dashed"
+          suffix={<Icon name="search" color="gray.900" fontFamily="Feather" />}
+        />
       </ExampleSection>
       <ExampleSection name="Textarea">
         <Textarea mt="md" focusBorderColor="blue.500" />
+        <Textarea
+          mt="md"
+          focusBorderColor="red.500"
+          focusBorderWidth={3}
+          focusBorderStyle="dashed"
+        />
       </ExampleSection>
     </SafeAreaView>
   );

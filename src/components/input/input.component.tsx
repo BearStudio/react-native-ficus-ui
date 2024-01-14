@@ -19,7 +19,7 @@ import { handleResponsiveProps } from '../../types';
 
 const Input = React.forwardRef<RNTextInput, InputProps>(
   (incomingProps, ref) => {
-    const [isFocussed, setIsFocussed] = useState(false);
+    const [isFocused, setIsFocused] = useState(false);
     const innerRef = React.useRef<RNTextInput>(null);
 
     React.useImperativeHandle(ref, () => innerRef.current as RNTextInput);
@@ -35,6 +35,7 @@ const Input = React.forwardRef<RNTextInput, InputProps>(
         bg: 'white',
         borderWidth: 1,
         focusBorderWidth: 2,
+        focusBorderStyle: 'solid',
         borderColor: 'gray.400',
         borderRadius: 'md',
         isLoading: false,
@@ -95,6 +96,7 @@ const Input = React.forwardRef<RNTextInput, InputProps>(
       borderEndWidth,
       loaderColor,
       focusBorderColor,
+      focusBorderWidth,
       shadow,
       flex,
       shadowColor,
@@ -104,7 +106,7 @@ const Input = React.forwardRef<RNTextInput, InputProps>(
       selectionColor,
       ...rest
     } = props;
-    const computedStyle = getStyle(theme, props, { isFocussed });
+    const computedStyle = getStyle(theme, props, { isFocused });
     const placeholderColor = placeholderTextColor
       ? typeof placeholderTextColor === 'string'
         ? color(getThemeColor(theme.colors, placeholderTextColor))
@@ -120,7 +122,7 @@ const Input = React.forwardRef<RNTextInput, InputProps>(
      * @param e
      */
     const onFocusInput = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
-      setIsFocussed(true);
+      setIsFocused(true);
 
       if (onFocus) {
         onFocus(e);
@@ -133,7 +135,7 @@ const Input = React.forwardRef<RNTextInput, InputProps>(
      * @param e
      */
     const onBlurInput = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
-      setIsFocussed(false);
+      setIsFocused(false);
 
       if (onBlur) {
         onBlur(e);
@@ -160,9 +162,9 @@ const Input = React.forwardRef<RNTextInput, InputProps>(
                   ? getThemeColor(theme.colors, props.selectionColor)
                   : props.selectionColor
               }
+              placeholderTextColor={placeholderColor}
               {...rest}
               style={computedStyle.input}
-              placeholderTextColor={placeholderColor}
             />
             {!isLoading && suffix && (
               <RNView style={computedStyle.suffix}>{suffix}</RNView>

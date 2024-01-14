@@ -47,7 +47,7 @@ export const getStyle = (theme: ThemeType, props: InputProps, state: any) => {
     ...createBorderRadiusStyles(props, theme.borderRadius),
   };
 
-  if (state.isFocussed) {
+  if (state.isFocused) {
     computedStyle.container = {
       ...computedStyle.container,
       borderColor: getThemeColor(
@@ -57,11 +57,12 @@ export const getStyle = (theme: ThemeType, props: InputProps, state: any) => {
           : computedStyle.container.borderColor
       ),
       borderWidth: props.focusBorderWidth,
+      borderStyle: props.focusBorderStyle,
     };
   }
 
   computedStyle.marginContainer = {
-    padding: state.isFocussed
+    padding: state.isFocused
       ? 0
       : (props.focusBorderWidth as number) - (props.borderWidth as number),
   };
@@ -69,7 +70,7 @@ export const getStyle = (theme: ThemeType, props: InputProps, state: any) => {
   computedStyle.input = {
     flex: 1,
     padding: 0,
-    margin: state.isFocussed && state.isTextarea ? -1 : 0,
+    margin: state.isFocused && state.isTextarea ? -1 : 0,
 
     textDecorationLine: props.textDecorLine || props.textDecorationLine,
     textDecorationStyle: props.textDecorStyle || props.textDecorationStyle,

@@ -110,7 +110,7 @@ const Radio: CompoundedRadio<RadioProps> = (incomingProps) => {
     ...rest
   } = props;
   const [checked, setChecked] = useState(props.isChecked ?? defaultChecked);
-  const [isFocussed, setIsFocussed] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
   const computedStyle = getStyle(theme, props as RadioProps);
 
   useEffect(() => {
@@ -147,7 +147,7 @@ const Radio: CompoundedRadio<RadioProps> = (incomingProps) => {
    * @param event
    */
   const onPressIn = () => {
-    setIsFocussed(true);
+    setIsFocused(true);
   };
 
   /**
@@ -156,7 +156,7 @@ const Radio: CompoundedRadio<RadioProps> = (incomingProps) => {
    * @param event
    */
   const onPressOut = () => {
-    setIsFocussed(false);
+    setIsFocused(false);
   };
 
   const iconName = getIconName(checked);
@@ -214,7 +214,7 @@ const Radio: CompoundedRadio<RadioProps> = (incomingProps) => {
   const renderChildren = () => {
     if (isFunction(children)) {
       return children({
-        isFocussed,
+        isFocused,
         isDisabled: isDisabled ?? false,
         isChecked: checked,
         isLoading,

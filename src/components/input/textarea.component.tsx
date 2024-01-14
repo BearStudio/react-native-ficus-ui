@@ -15,7 +15,7 @@ import { useDefaultProps } from '../../utilities/useDefaultProps';
 
 const Textarea = React.forwardRef<RNTextInput, TextareaProps>(
   (incomingProps, ref) => {
-    const [isFocussed, setIsFocussed] = useState(false);
+    const [isFocused, setIsFocused] = useState(false);
     const innerRef = React.useRef<RNTextInput>(null);
 
     React.useImperativeHandle(ref, () => innerRef.current as RNTextInput);
@@ -27,6 +27,7 @@ const Textarea = React.forwardRef<RNTextInput, TextareaProps>(
       borderColor: 'gray.400',
       borderWidth: 1,
       focusBorderWidth: 2,
+      focusBorderStyle: 'solid',
       borderRadius: 'md',
       multiline: true,
       textAlignVertical: 'top',
@@ -46,12 +47,13 @@ const Textarea = React.forwardRef<RNTextInput, TextareaProps>(
       onFocus,
       children,
       focusBorderColor,
+      focusBorderWidth,
       borderWidth,
       ...rest
     } = props;
     const { theme } = useTheme();
     const computedStyle = getStyle(theme, props, {
-      isFocussed,
+      isFocused,
       isTextarea: true,
     });
 
@@ -59,7 +61,7 @@ const Textarea = React.forwardRef<RNTextInput, TextareaProps>(
      * on focus input
      */
     const onFocusInput = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
-      setIsFocussed(true);
+      setIsFocused(true);
 
       if (onFocus) {
         onFocus(e);
@@ -71,7 +73,7 @@ const Textarea = React.forwardRef<RNTextInput, TextareaProps>(
      * @param e
      */
     const onBlurInput = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
-      setIsFocussed(false);
+      setIsFocused(false);
 
       if (onBlur) {
         onBlur(e);
