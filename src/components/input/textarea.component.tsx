@@ -49,6 +49,7 @@ const Textarea = React.forwardRef<RNTextInput, TextareaProps>(
       focusBorderColor,
       focusBorderWidth,
       borderWidth,
+      borderRadius,
       ...rest
     } = props;
     const { theme } = useTheme();
