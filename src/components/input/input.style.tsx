@@ -47,7 +47,7 @@ export const getStyle = (theme: ThemeType, props: InputProps, state: any) => {
     ...createBorderRadiusStyles(props, theme.borderRadius),
   };
 
-  if (state.isFocussed) {
+  if (state.isFocused) {
     computedStyle.container = {
       ...computedStyle.container,
       borderColor: getThemeColor(
@@ -56,12 +56,21 @@ export const getStyle = (theme: ThemeType, props: InputProps, state: any) => {
           ? props.focusBorderColor
           : computedStyle.container.borderColor
       ),
+      borderWidth: props.focusBorderWidth,
+      borderStyle: props.focusBorderStyle,
     };
   }
+
+  computedStyle.marginContainer = {
+    padding: state.isFocused
+      ? 0
+      : (props.focusBorderWidth as number) - (props.borderWidth as number),
+  };
 
   computedStyle.input = {
     flex: 1,
     padding: 0,
+    margin: state.isFocused && state.isTextarea ? -1 : 0,
 
     textDecorationLine: props.textDecorLine || props.textDecorationLine,
     textDecorationStyle: props.textDecorStyle || props.textDecorationStyle,
@@ -109,7 +118,9 @@ export const getStyle = (theme: ThemeType, props: InputProps, state: any) => {
     alignSelf:
       props.suffix &&
       isValidElement(props.suffix) &&
-      props.suffix.props.alignSelf,
+      props.suffix.props.alignSelf
+        ? props.suffix.props.alignSelf
+        : 'center',
     marginLeft: 5,
   };
 
@@ -120,7 +131,9 @@ export const getStyle = (theme: ThemeType, props: InputProps, state: any) => {
     alignSelf:
       props.prefix &&
       isValidElement(props.prefix) &&
-      props.prefix.props.alignSelf,
+      props.prefix.props.alignSelf
+        ? props.prefix.props.alignSelf
+        : 'center',
   };
 
   // merging style props to computed style

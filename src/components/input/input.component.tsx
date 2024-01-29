@@ -7,6 +7,7 @@ import {
   TextInputFocusEventData,
   TextInput as RNTextInput,
   ActivityIndicator as RNActivityIndicator,
+  TouchableWithoutFeedback,
 } from 'react-native';
 
 import { getStyle } from './input.style';
@@ -18,6 +19,11 @@ import { handleResponsiveProps } from '../../types';
 
 const Input = React.forwardRef<RNTextInput, InputProps>(
   (incomingProps, ref) => {
+    const [isFocused, setIsFocused] = useState(false);
+    const innerRef = React.useRef<RNTextInput>(null);
+
+    React.useImperativeHandle(ref, () => innerRef.current as RNTextInput);
+
     const { theme, windowWidth } = useTheme();
     const props = useDefaultProps(
       'Input',
@@ -26,8 +32,10 @@ const Input = React.forwardRef<RNTextInput, InputProps>(
         px: 'lg',
         py: 'lg',
         fontSize: 'md',
-        borderWidth: 1,
         bg: 'white',
+        borderWidth: 1,
+        focusBorderWidth: 2,
+        focusBorderStyle: 'solid',
         borderColor: 'gray.400',
         borderRadius: 'md',
         isLoading: false,
@@ -88,6 +96,7 @@ const Input = React.forwardRef<RNTextInput, InputProps>(
       borderEndWidth,
       loaderColor,
       focusBorderColor,
+      focusBorderWidth,
       shadow,
       flex,
       shadowColor,
@@ -97,8 +106,7 @@ const Input = React.forwardRef<RNTextInput, InputProps>(
       selectionColor,
       ...rest
     } = props;
-    const [isFocussed, setIsFocussed] = useState(false);
-    const computedStyle = getStyle(theme, props, { isFocussed });
+    const computedStyle = getStyle(theme, props, { isFocused });
     const placeholderColor = placeholderTextColor
       ? typeof placeholderTextColor === 'string'
         ? color(getThemeColor(theme.colors, placeholderTextColor))
@@ -114,7 +122,7 @@ const Input = React.forwardRef<RNTextInput, InputProps>(
      * @param e
      */
     const onFocusInput = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
-      setIsFocussed(true);
+      setIsFocused(true);
 
       if (onFocus) {
         onFocus(e);
@@ -127,41 +135,51 @@ const Input = React.forwardRef<RNTextInput, InputProps>(
      * @param e
      */
     const onBlurInput = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
-      setIsFocussed(false);
+      setIsFocused(false);
 
       if (onBlur) {
         onBlur(e);
       }
     };
 
+    const onPressComponent = () => {
+      if (innerRef?.current) {
+        innerRef?.current?.focus();
+      }
+    };
+
     return (
-      <RNView style={computedStyle.container}>
-        {prefix && <RNView style={computedStyle.prefix}>{prefix}</RNView>}
-        <RNTextInput
-          ref={ref}
-          onFocus={onFocusInput}
-          onBlur={onBlurInput}
-          selectionColor={
-            typeof props.selectionColor === 'string'
-              ? getThemeColor(theme.colors, props.selectionColor)
-              : props.selectionColor
-          }
-          {...rest}
-          style={computedStyle.input}
-          placeholderTextColor={placeholderColor}
-        />
-        {!isLoading && suffix && (
-          <RNView style={computedStyle.suffix}>{suffix}</RNView>
-        )}
-        {isLoading && (
-          <RNView style={computedStyle.suffix}>
-            <RNActivityIndicator
-              size={getThemeProperty(theme.fontSize, loaderSize)}
-              color={getThemeColor(theme.colors, loaderColor)}
+      <TouchableWithoutFeedback onPress={onPressComponent}>
+        <RNView style={computedStyle.marginContainer}>
+          <RNView style={computedStyle.container}>
+            {prefix && <RNView style={computedStyle.prefix}>{prefix}</RNView>}
+            <RNTextInput
+              ref={innerRef}
+              onFocus={onFocusInput}
+              onBlur={onBlurInput}
+              selectionColor={
+                typeof props.selectionColor === 'string'
+                  ? getThemeColor(theme.colors, props.selectionColor)
+                  : props.selectionColor
+              }
+              placeholderTextColor={placeholderColor}
+              {...rest}
+              style={computedStyle.input}
             />
+            {!isLoading && suffix && (
+              <RNView style={computedStyle.suffix}>{suffix}</RNView>
+            )}
+            {isLoading && (
+              <RNView style={computedStyle.suffix}>
+                <RNActivityIndicator
+                  size={getThemeProperty(theme.fontSize, loaderSize)}
+                  color={getThemeColor(theme.colors, loaderColor)}
+                />
+              </RNView>
+            )}
           </RNView>
-        )}
-      </RNView>
+        </RNView>
+      </TouchableWithoutFeedback>
     );
   }
 );

@@ -31,3 +31,19 @@ The border color when input is focused.
 |Type|Required|
 |---|---|
 |string|No|
+
+`focusBorderWidth`
+---
+The border width when input is focused.
+
+|Type|Required|Default|
+|---|---|---|
+|number|No|2|
+
+`focusBorderStyle`
+---
+The border style property when input is focused.
+
+|Type|Required|Default|
+|---|---|---|
+|"solid", "dashed", "dotted"|No|"solid"|

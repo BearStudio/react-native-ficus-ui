@@ -9,10 +9,16 @@ const InputComponent = () => {
       <Text mx="xl" fontSize="4xl">
         Input component
       </Text>
+      <ExampleSection name="With prefix">
+        <Input
+          placeholder="Username"
+          focusBorderColor="blue.500"
+          prefix={<Icon name="search" color="gray.900" fontFamily="Feather" />}
+        />
+      </ExampleSection>
       <ExampleSection name="With suffix">
         <Input
           placeholder="Username"
-          p={10}
           focusBorderColor="blue.500"
           suffix={<Icon name="search" color="gray.900" fontFamily="Feather" />}
         />
@@ -21,13 +27,36 @@ const InputComponent = () => {
         <Input
           placeholder="Password"
           mt="md"
-          p={10}
           secureTextEntry
           focusBorderColor="blue.500"
         />
       </ExampleSection>
+      <ExampleSection name="Custom border style">
+        <Input
+          placeholder="Username"
+          borderWidth={2}
+          focusBorderColor="orange.500"
+          focusBorderWidth={3}
+          suffix={<Icon name="search" color="gray.900" fontFamily="Feather" />}
+        />
+        <Input
+          mt="md"
+          placeholder="Username"
+          borderWidth={2}
+          focusBorderColor="red.500"
+          focusBorderWidth={3}
+          focusBorderStyle="dashed"
+          suffix={<Icon name="search" color="gray.900" fontFamily="Feather" />}
+        />
+      </ExampleSection>
       <ExampleSection name="Textarea">
-        <Textarea mt="md" p={10} focusBorderColor="blue.500" />
+        <Textarea mt="md" focusBorderColor="blue.500" />
+        <Textarea
+          mt="md"
+          focusBorderColor="red.500"
+          focusBorderWidth={3}
+          focusBorderStyle="dashed"
+        />
       </ExampleSection>
     </SafeAreaView>
   );
