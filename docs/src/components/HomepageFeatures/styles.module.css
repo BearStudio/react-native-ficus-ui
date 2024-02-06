@@ -9,3 +9,29 @@
   height: 200px;
   width: 200px;
 }
+
+.feature{
+display:flex;
+justify-content: space-between;
+}
+
+.code{
+width: 80%;
+
+}
+.img {
+  width: 900px;
+  height: 500px;
+  padding-right: 2rem;
+}
+@media only screen and (max-width: 600px) {
+  .feature {
+    flex-wrap: wrap;
+  }
+  .code{
+    width:90% ;
+  }
+
+}
+
+
