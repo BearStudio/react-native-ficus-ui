@@ -10,12 +10,12 @@
   width: 200px;
 }
 
-.feature{
+.feature {
 display:flex;
 justify-content: space-between;
 }
 
-.code{
+.code {
 width: 80%;
 
 }
@@ -24,12 +24,31 @@ width: 80%;
   height: 500px;
   padding-right: 2rem;
 }
-@media only screen and (max-width: 600px) {
+
+.livetext {
+  padding-right: 1rem;
+}
+
+.clickable {
+cursor:pointer;
+}
+
+@media only screen and (max-width: 1000px) {
   .feature {
     flex-wrap: wrap;
   }
   .code{
     width:90% ;
+  }
+  .live {
+    display:flex;
+    flex-wrap: wrap;
+  }
+  .img {
+    padding-bottom: 10px;
+  }
+  .livetext {
+    width: 100%;
   }
 
 }
