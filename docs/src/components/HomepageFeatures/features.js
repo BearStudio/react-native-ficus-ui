@@ -12,17 +12,18 @@ export const SimpleFeature = ({  title, description, code,codetitle }) => {
       <div
         className={clsx('padding-horiz--md padding-vert--lg ',styles.feature)}
       >
-        <div>
+        <div  className={styles.content} >
           <h3 style={{ textAlign: 'start' }}>{title}</h3>
           <p className={styles.description} >
             {description}
           </p>
         </div>
-        <div className={styles.code}>
-          <CodeBlock language="javascript" title={codetitle}>
+          <div className={styles.codeSimple} >
+          <CodeBlock language="jsx" title={codetitle} >
             {code}
           </CodeBlock>
-        </div>
+          </div>
+
       </div>
 
   );
@@ -33,9 +34,9 @@ export const ComplexFeature = ({ title, description, code }) => {
       <div
         className={clsx('padding-horiz--md padding-vert--lg ', styles.feature)}
       >
-        <div style={{paddingRight:'2rem',width:'100%'}}>
+        <div className={styles.content}>
           <h3 style={{ textAlign: 'start' }}>{title}</h3>
-          <p style={{ textAlign: 'start', paddingRight: '1rem' }}>
+          <p  style={{ textAlign: 'start', paddingRight: '1rem' }}>
             {description}
           </p>
 
@@ -63,15 +64,16 @@ export const ComplexFeature = ({ title, description, code }) => {
                 <img
                 src={themeimage}
                 className={styles.img}
-                style={{backgroundColor:'white'}}
+                alt='Color degradation'
+                style={{objectFit:'cover'}}
               />
               ):<ThemesTable/>}
 
 
         </div>
 
-        <div className={styles.code}>
-          <CodeBlock language="javascript" title={item}>
+        <div className={styles.codeComplex}>
+          <CodeBlock language="jsx" title={item} >
             {code[item]}
           </CodeBlock>
         </div>
@@ -97,7 +99,7 @@ const ThemesTable = () => {
   ];
   return (
 
-    <table style={{paddingTop:'10px'}}>
+    <table  className={styles.table} >
     <thead>
       <tr >
         <th style={{ paddingRight: '20px' }}>Size</th>
@@ -139,12 +141,12 @@ export const TryItLive =()=>{
   >
     <div>
       <h3 className="">Test it out live!</h3>
-      <p className={styles.livetext}>
+      <p className={styles.TryItLiveDescription}>
         Discover components live with Expo. Experiment with interactive
         features for an immersive development experience.
       </p>
     </div>
-    <ExpoLayout id="box" />
+    <ExpoLayout id="box"  />
    </div>
   )
 }

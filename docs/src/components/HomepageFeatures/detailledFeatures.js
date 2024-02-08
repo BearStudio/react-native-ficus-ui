@@ -14,7 +14,7 @@ const FeatureList = [
       </>
     ),
     codetitle: 'input',
-    code: `    <Input placeholder="Username" p={10}
+    code: `<Input placeholder="Username" p={10}
     focusBorderColor="blue.500" suffix={<Icon
     name="search" color="gray.900"
     fontFamily="Feather" />}/>
@@ -94,7 +94,7 @@ const FeatureList = [
                 "8xl": "96px",
                 "9xl": "128px",
                 },
-
+              }
     };`,
     },
   },
@@ -110,9 +110,10 @@ const FeatureList = [
       </>
     ),
     codetitle: 'Text',
-    code: `   <Text fontSize="xs" style={{ color: 'blue',
+    code: `<Text fontSize="xs" style={{ color: 'blue',
      padding: '10px', fontWeight: 'bold',
-     textDecoration: 'underline' }}>Ficus UI</Text>
+     textDecoration: 'underline' }}>Ficus UI
+     </Text>
     `,
   },
 ];
@@ -137,4 +138,3 @@ export default function DetailledFeatures() {
     </section>
   );
 }
-
