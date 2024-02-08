@@ -79,12 +79,12 @@ const config = {
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'mainSidebar',
             position: 'left',
             label: 'Get started',
+            activeBasePath:'/docs/intro',
+            to:'/docs/intro'
           },
-          {to: '/docs/Components/Text', label: 'Components', position: 'left'},
+          {to: '/docs/Components/Text', label: 'Components', position: 'left',activeBaseRegex: "^/docs/components/.*"},
           {
             href: 'https://github.com/BearStudio/react-native-ficus-ui',
             label: 'GitHub',
