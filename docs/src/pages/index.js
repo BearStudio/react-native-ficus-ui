@@ -23,6 +23,7 @@ function HomepageHeader() {
           </Link>
         </div>
         <p style={{fontSize: 20, fontWeight: 'bold', marginTop: 20}}>🎉 Beta version available ! 🎉</p>
+        <p style={{fontWeight:'bold'}}>Currently v1.0.0-beta7</p>
       </div>
     </header>
   );
