@@ -13,7 +13,7 @@ export const SimpleFeature = ({  title, description, code,codetitle }) => {
         className={clsx('padding-horiz--md padding-vert--lg ',styles.feature)}
       >
         <div  className={styles.content} >
-          <h3 style={{ textAlign: 'start' }}>{title}</h3>
+        <p style={{ fontSize: '18px', fontWeight: 'bold', marginTop: '20px', marginBottom: '10px' ,textAlign:'start'}}>{title}</p>
           <p className={styles.description} >
             {description}
           </p>
@@ -35,7 +35,7 @@ export const ComplexFeature = ({ title, description, code }) => {
         className={clsx('padding-horiz--md padding-vert--lg ', styles.feature)}
       >
         <div className={styles.content}>
-          <h3 style={{ textAlign: 'start' }}>{title}</h3>
+        <p style={{ fontSize: '18px', fontWeight: 'bold', marginTop: '20px', marginBottom: '10px' ,textAlign:'start'}}>{title}</p>
           <p  style={{ textAlign: 'start', paddingRight: '1rem' }}>
             {description}
           </p>
@@ -141,7 +141,7 @@ export const TryItLive =()=>{
     )}
   >
     <div>
-      <h3 className="">Test it out live!</h3>
+      <p style={{ fontSize: '18px', fontWeight: 'bold', marginTop: '20px', marginBottom: '10px' ,textAlign:'start'}}>Test it out live!</p>
       <p className={styles.TryItLiveDescription}>
         Discover components live with Expo. Experiment with interactive
         features for an immersive development experience.
