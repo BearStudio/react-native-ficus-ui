@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles.module.css';
-import {ComplexFeature,SimpleFeature, TryItLive} from './features.js'
+import { ComplexFeature, SimpleFeature, TryItLive } from './features.js';
 
 const FeatureList = [
   {
@@ -8,12 +8,11 @@ const FeatureList = [
     // Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-
-   You can use style props to directly apply specific styles to components,
-   simplifying code and improving readability.
+        You can use style props to directly apply specific styles to components,
+        simplifying code and improving readability.
       </>
     ),
-    codetitle: 'input',
+    codetitle: 'Input',
     code: `<Input placeholder="Username" p={10}
     focusBorderColor="blue.500" suffix={<Icon
     name="search" color="gray.900"
@@ -25,15 +24,14 @@ const FeatureList = [
     // Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-
-      In Ficus UI, customization options include modifying theme tokens like colors
-      and font sizes and adjusting component styles such as base styles and sizes, and customizing
-      global styles for universal application.
+        In Ficus UI, customization options include modifying theme tokens like
+        colors and font sizes and adjusting component styles such as base styles
+        and sizes, and customizing global styles for universal application.
       </>
     ),
     codetitle: 'Theme',
     code: {
-      colors: `const theme = {
+      Colors: `const theme = {
             colors: {
               violet: {
                 50: '#f0eaff',
@@ -103,10 +101,9 @@ const FeatureList = [
     // Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-
-       You can style your components using StyleSheet.
-      create or style props directly, providing flexibility in how you manage
-      and apply styles according to your preferences.
+        You can style your components using StyleSheet. create or style props
+        directly, providing flexibility in how you manage and apply styles
+        according to your preferences.
       </>
     ),
     codetitle: 'Text',
@@ -118,10 +115,12 @@ const FeatureList = [
   },
 ];
 
-
-function Feature ({feature}){
-
- return  typeof feature.code=="string"?<SimpleFeature {...feature}/>: <ComplexFeature {...feature}/>
+function Feature({ feature }) {
+  return typeof feature.code == 'string' ? (
+    <SimpleFeature {...feature} />
+  ) : (
+    <ComplexFeature {...feature} />
+  );
 }
 export default function DetailledFeatures() {
   return (
@@ -129,11 +128,10 @@ export default function DetailledFeatures() {
       <div className="container">
         <div>
           {FeatureList.map((props, idx) => (
-
             <Feature key={idx} feature={props} />
           ))}
         </div>
-      <TryItLive/>
+        <TryItLive />
       </div>
     </section>
   );

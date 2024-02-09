@@ -12,12 +12,12 @@
 
 .feature {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .codeComplex,
 .codeSimple {
-  width: 100%;
+  width: 500px;
 }
 .img {
   width: 100%;
@@ -37,6 +37,7 @@
 .content {
   flex: 0 0 50%;
 }
+
 @media only screen and (min-width: 600px) and (max-width: 1000px) {
   .feature {
     display: flex;
