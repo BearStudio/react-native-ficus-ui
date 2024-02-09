@@ -40,25 +40,26 @@ export const ComplexFeature = ({ title, description, code }) => {
             {description}
           </p>
 
-            <a
+            <button
               onClick={() => setitem('colors')}
-              className={styles.clickable}
+              className='button button--primary'
               style={{
-                paddingRight: '20px',
-                textDecoration: item === 'colors' ? 'underline 2px' : 'none',
+                marginRight: '10px',
+                color:'black'
               }}
             >
               Colors
-            </a>
-            <a
+            </button>
+            <button
               onClick={() => setitem('Theme')}
-              className={styles.clickable}
+              className='button button--primary'
               style={{
-                textDecoration: item === 'Theme' ? 'underline 2px' : 'none',
+                marginRight: '10px',
+                color:'black',
               }}
             >
               Spacing
-            </a>
+            </button>
 
               {item!='Theme' ?(
                 <img
@@ -99,7 +100,7 @@ const ThemesTable = () => {
   ];
   return (
 
-    <table  className={styles.table} >
+    <table style={{paddingTop:'15px'}}>
     <thead>
       <tr >
         <th style={{ paddingRight: '20px' }}>Size</th>
