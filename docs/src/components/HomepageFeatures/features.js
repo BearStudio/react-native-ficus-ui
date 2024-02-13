@@ -53,21 +53,21 @@ export const ComplexFeature = ({ title, description, code }) => {
 
         <button
           onClick={() => setitem('Colors')}
-          className="button button--primary"
-          style={{
-            marginRight: '10px',
-            color: 'black',
-          }}
+          className={clsx('button button--primary', styles.themeButton)}
+          style={
+            item === 'Colors'
+              ? {}
+              : { backgroundColor: 'white', color: 'black' }
+          }
         >
           Colors
         </button>
         <button
           onClick={() => setitem('Theme')}
           className="button button--primary"
-          style={{
-            marginRight: '10px',
-            color: 'black',
-          }}
+          style={
+            item === 'Theme' ? {} : { backgroundColor: 'white', color: 'black' }
+          }
         >
           Spacing
         </button>
@@ -80,21 +80,14 @@ export const ComplexFeature = ({ title, description, code }) => {
             style={{ objectFit: 'cover' }}
           />
         ) : (
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              width: '100%',
-            }}
-          >
+          <div>
             <ThemesTable />
           </div>
         )}
       </div>
 
       <div className={styles.codeComplex}>
-        <CodeBlock language="jsx" title={item}>
+        <CodeBlock title={item} language="jsx">
           {code[item]}
         </CodeBlock>
       </div>

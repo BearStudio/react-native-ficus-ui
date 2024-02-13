@@ -13,11 +13,14 @@ const FeatureList = [
       </>
     ),
     codetitle: 'Input',
-    code: `<Input placeholder="Username" p={10}
-    focusBorderColor="blue.500" suffix={<Icon
-    name="search" color="gray.900"
-    fontFamily="Feather" />}/>
-`,
+    code: `<Input
+    placeholder='Username'
+    p={10}
+    focusBorderColor='blue.500'
+    suffix={<Icon name='search'
+    color='gray.900'
+    fontFamily='Feather' />}
+  />`,
   },
   {
     title: 'Theme support',
@@ -107,10 +110,17 @@ const FeatureList = [
       </>
     ),
     codetitle: 'Text',
-    code: `<Text fontSize="xs" style={{ color: 'blue',
-     padding: '10px', fontWeight: 'bold',
-     textDecoration: 'underline' }}>Ficus UI
-     </Text>
+    code: `<Text
+    fontSize='xs'
+    style={{
+      color: 'blue',
+      padding: '10px',
+      fontWeight: 'bold',
+      textDecoration: 'underline',
+    }}
+  >
+    Ficus UI
+  </Text>
     `,
   },
 ];

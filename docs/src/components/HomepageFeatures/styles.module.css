@@ -17,10 +17,10 @@
 
 .codeComplex,
 .codeSimple {
-  width: 500px;
+  width: 400px;
 }
 .img {
-  width: 100%;
+  width: 80%;
   margin-top: 40px;
 }
 
@@ -35,7 +35,11 @@
   padding-right: 16px;
 }
 .content {
-  flex: 0 0 50%;
+  flex: 0 0 70%;
+}
+.themeButton{
+  margin-right: 10px;
+
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1000px) {

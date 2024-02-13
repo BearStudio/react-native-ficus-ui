@@ -73,7 +73,3 @@ export default function HomepageFeatures() {
     </section>
   );
 }
-
-const iconDisplay =(icon)=> {
-
-}

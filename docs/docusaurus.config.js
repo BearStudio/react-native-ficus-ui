@@ -1,13 +1,13 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-
+const lightCodeTheme = require('./src/theme/LightCustomTheme.js');
+const darkCodeTheme = require('./src/theme/DarkCustomTheme.js');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'React Native Ficus UI',
-  tagline: 'React Native UI library forked from Magnus UI and inspired by Chakra UI.',
+  tagline:
+    'React Native UI library forked from Magnus UI and inspired by Chakra UI.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -70,7 +70,12 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
-      metadata: [{name: 'keywords', content: 'react, react native, ui library, ficus ui'}],
+      metadata: [
+        {
+          name: 'keywords',
+          content: 'react, react native, ui library, ficus ui',
+        },
+      ],
       navbar: {
         title: 'React Native Ficus UI',
         logo: {
@@ -81,10 +86,15 @@ const config = {
           {
             position: 'left',
             label: 'Get started',
-            activeBasePath:'/docs/intro',
-            to:'/docs/intro'
+            activeBasePath: '/docs/intro',
+            to: '/docs/intro',
           },
-          {to: '/docs/Components/Text', label: 'Components', position: 'left',activeBaseRegex: "^/docs/components/.*"},
+          {
+            to: '/docs/Components/Text',
+            label: 'Components',
+            position: 'left',
+            activeBaseRegex: '^/docs/components/.*',
+          },
           {
             href: 'https://github.com/BearStudio/react-native-ficus-ui',
             label: 'GitHub',
@@ -102,6 +112,10 @@ const config = {
                 label: 'Get started',
                 to: '/docs/intro',
               },
+              {
+                label: 'Components',
+                to: '/docs/Components/Text',
+              },
             ],
           },
           {
@@ -112,13 +126,14 @@ const config = {
               //   to: '/blog',
               // },
               {
+                icon: 'FaGithub',
                 label: 'GitHub',
                 href: 'https://github.com/BearStudio/react-native-ficus-ui',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} BearStudio.`,
+        copyright: ` © ${new Date().getFullYear()} From the BearStudio Team`,
       },
       prism: {
         theme: lightCodeTheme,
