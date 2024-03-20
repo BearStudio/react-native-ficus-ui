@@ -54,7 +54,6 @@
     "@shopify/flash-list": "1.5.0",
     "color": "4.2.3",
     "deepmerge": "4.2.2",
-    "lucide-react-native": "^0.343.0",
     "react-native-animatable": "1.3.3",
     "react-native-modal": "13.0.1",
     "react-native-toast-message": "2.1.6",
