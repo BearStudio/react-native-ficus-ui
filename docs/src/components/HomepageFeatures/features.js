@@ -126,7 +126,7 @@ const ThemesTable = () => {
                     height: '10px',
                     backgroundColor: '#25c2a0',
                   }}
-                ></span>
+                 />
               </td>
             </tr>
           ))}
@@ -206,7 +206,7 @@ const ColorsTable = () => {
   );
 };
 const Square = ({ color }) => (
-  <div style={{ backgroundColor: color }} className={styles.square}></div>
+  <div style={{ backgroundColor: color }} className={styles.square} />
 );
 
 export const TryItLive = () => {
@@ -231,7 +231,7 @@ export const TryItLive = () => {
         </p>
         <p className={styles.tryItLiveDescription}>
           Discover components live with Expo. Experiment with interactive
-          features for an immersive development experience.
+          features for an immersive development experience
         </p>
       </div>
       <ExpoLayout id="box" />
