@@ -9,3 +9,110 @@
   height: 200px;
   width: 200px;
 }
+
+.feature {
+  display: flex;
+  justify-content: space-between;
+}
+
+.codeComplex,
+.codeSimple {
+  width: 400px;
+}
+
+.description {
+  text-align: start;
+  padding-right: 10px;
+}
+
+.tryItLiveDescription {
+  padding-right: 16px;
+}
+
+.featureTextContent {
+  flex: 0 0 70%;
+}
+
+.themeButton {
+  margin-right: 10px;
+}
+
+.colorsList {
+  padding-top: 40px;
+  padding-right: 10px;
+}
+
+.square {
+  width: 65px;
+  height: 65px;
+  margin-bottom: 15px;
+}
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  .feature {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .codeSimple {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  .codeComplex {
+    width: 430px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tryItLiveDescription {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .featureTextContent {
+    flex: 0 0 100%;
+  }
+
+  .square {
+    height: 45px;
+    width: 45px;
+    margin-bottom: 15px;
+  }
+
+  .colorsList {
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .feature {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .codeComplex,
+  .codeSimple {
+    width: 100%;
+  }
+  .featureTextContent {
+    flex: 0 0 100%;
+  }
+  .colorsList {
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  .square {
+    height: 6vw;
+    width: 6vw;
+    margin-bottom: 15px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .square {
+    height: 4vw;
+    width: 4vw;
+    margin-bottom: 15px;
+  }
+}

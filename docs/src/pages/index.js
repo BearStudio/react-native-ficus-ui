@@ -7,6 +7,7 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import styles from './index.module.css';
+import { version } from '../constant/library';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -23,6 +24,7 @@ function HomepageHeader() {
           </Link>
         </div>
         <p style={{fontSize: 20, fontWeight: 'bold', marginTop: 20}}>🎉 Beta version available ! 🎉</p>
+        <p style={{fontWeight:'bold'}}>Currently v{version}</p>
       </div>
     </header>
   );
