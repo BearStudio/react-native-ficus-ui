@@ -24,7 +24,7 @@ export const SimpleFeature = ({ title, description, code, codetitle }) => {
         <p className={styles.description}>{description}</p>
       </div>
       <div className={styles.codeSimple}>
-        <CodeBlock title={codetitle} language="jsx">
+        <CodeBlock language="jsx">
           {code}
         </CodeBlock>
       </div>
@@ -76,7 +76,7 @@ export const ComplexFeature = ({ title, description, code }) => {
       </div>
 
       <div className={styles.codeComplex}>
-        <CodeBlock title={item} language="jsx">
+        <CodeBlock language="jsx">
           {code[item]}
         </CodeBlock>
       </div>
