@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require('./src/theme/lightCustomTheme.js');
 const darkCodeTheme = require('./src/theme/darkCustomTheme.js');
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'React Native Ficus UI',
