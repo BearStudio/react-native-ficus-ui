@@ -43,7 +43,6 @@ export const getStyle = (theme: ThemeType, props: InputProps, state: any) => {
     ...createShadowStyles(props, theme),
     ...createPositionStyle(props),
     ...createSpacingStyles(props, theme.spacing),
-    ...createBorderColorStyles(props, theme.colors),
     ...createBorderRadiusStyles(props, theme.borderRadius),
   };
 
@@ -110,6 +109,8 @@ export const getStyle = (theme: ThemeType, props: InputProps, state: any) => {
       getThemeFontFamily(theme.fontFamily, props.fontWeight),
 
     borderWidth: 0,
+
+    ...createBorderColorStyles(props, theme.colors),
   };
 
   computedStyle.suffix = {
