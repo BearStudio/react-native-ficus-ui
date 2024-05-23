@@ -24,6 +24,7 @@ import ModalComponent from './components/Modal';
 import FlashListComponent from './components/FlashList';
 import SafeAreaBoxComponent from './components/SafeAreaBox';
 import DividerComponent from './components/Divider';
+import ScrollBoxComponent from './components/ScrollBox';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -38,6 +39,11 @@ export const components: ExampleComponentType[] = [
     component: TextComponent,
   },
   { navigationPath: 'Box', onScreenName: 'Box', component: BoxComponent },
+  {
+    navigationPath: 'ScrollBox',
+    onScreenName: 'ScrollBox',
+    component: ScrollBoxComponent,
+  },
   {
     navigationPath: 'Divider',
     onScreenName: 'Divider',

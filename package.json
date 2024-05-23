@@ -1,6 +1,6 @@
 {
   "name": "react-native-ficus-ui",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0",
   "description": "React Native UI library forked from Magnus UI and inspired by Chakra UI",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

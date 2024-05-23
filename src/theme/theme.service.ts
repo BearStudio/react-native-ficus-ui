@@ -330,7 +330,10 @@ export const createShadowStyles = (props: any, theme: ThemeType) => {
   if (props.shadow) {
     computedStyle = {
       ...(theme.shadow && theme.shadow[props.shadow]),
-      shadowColor: getThemeColor(theme.colors, props.shadowColor),
+      shadowColor: props.shadowColor
+        ? getThemeColor(theme.colors, props.shadowColor)
+        : 'black',
+      overflow: 'visible',
     };
   }
 

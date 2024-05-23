@@ -36,11 +36,9 @@ const theme = {
     '5xl': 64
   },
   // components defaults can also be customized
-  {
-    components: {
-      Text: {
-        color: 'gray.100'
-      }
+  components: {
+    Text: {
+      color: 'gray.100'
     }
   }
 };

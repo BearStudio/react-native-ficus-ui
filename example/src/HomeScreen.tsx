@@ -1,6 +1,11 @@
 import React from 'react';
-import { SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
-import { Box, Text } from 'react-native-ficus-ui';
+import {
+  Box,
+  ScrollBox,
+  Text,
+  TouchableOpacity,
+  SafeAreaView,
+} from 'react-native-ficus-ui';
 
 import { useNavigation } from '@react-navigation/native';
 import { components } from './items';
@@ -14,31 +19,27 @@ const HomeScreen = () => {
   >();
   return (
     <>
-      <SafeAreaView style={{ flex: 1 }}>
-        <Box flex={1}>
-          {/* list */}
-          <ScrollView>
-            <Box mt="xl" px="xl">
-              <Text pb="lg" fontSize="3xl">
-                Components
-              </Text>
-              <Box flexDir="row">
-                {components.map((item) => (
-                  <TouchableOpacity
-                    onPress={() => navigation.navigate(item.navigationPath)}
-                    style={{
-                      marginTop: 10,
-                      width: '100%',
-                      paddingVertical: 10,
-                    }}
-                  >
-                    <Text fontSize="xl">{item.onScreenName}</Text>
-                  </TouchableOpacity>
-                ))}
-              </Box>
+      <SafeAreaView flex={1}>
+        {/* list */}
+        <ScrollBox>
+          <Box mt="xl" px="xl">
+            <Text pb="lg" fontSize="3xl">
+              Components
+            </Text>
+            <Box flexDir="row">
+              {components.map((item) => (
+                <TouchableOpacity
+                  onPress={() => navigation.navigate(item.navigationPath)}
+                  mt={10}
+                  w="100%"
+                  py={10}
+                >
+                  <Text fontSize="xl">{item.onScreenName}</Text>
+                </TouchableOpacity>
+              ))}
             </Box>
-          </ScrollView>
-        </Box>
+          </Box>
+        </ScrollBox>
       </SafeAreaView>
     </>
   );

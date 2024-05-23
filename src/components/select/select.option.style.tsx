@@ -45,7 +45,9 @@ export const getStyle = (theme: ThemeType, props: SelectOptionProps) => {
     computedStyle.button = {
       ...computedStyle.button,
       ...(theme.shadow && theme.shadow[props.shadow as string]),
-      shadowColor: getThemeColor(theme.colors, props.shadowColor as string),
+      shadowColor: props.shadowColor
+        ? getThemeColor(theme.colors, props.shadowColor as string)
+        : 'black',
     };
   }
 

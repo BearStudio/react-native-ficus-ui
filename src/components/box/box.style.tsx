@@ -1,4 +1,4 @@
-import { Platform, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 import {
   createShadowStyles,
@@ -60,14 +60,6 @@ export const getStyle = (theme: ThemeType, props: BoxProps) => {
       ...computedStyle.box,
       // @ts-ignore
       ...props.style,
-    };
-  }
-
-  if (props.shadow && Platform.OS === 'ios') {
-    computedStyle.box = {
-      ...computedStyle.box,
-      overflow: 'visible',
-      shadowColor: props.shadowColor || 'black',
     };
   }
 
