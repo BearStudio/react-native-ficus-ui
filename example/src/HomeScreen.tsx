@@ -4,7 +4,7 @@ import {
   ScrollBox,
   Text,
   TouchableOpacity,
-  SafeAreaView,
+  SafeAreaBox,
 } from 'react-native-ficus-ui';
 
 import { useNavigation } from '@react-navigation/native';
@@ -19,7 +19,7 @@ const HomeScreen = () => {
   >();
   return (
     <>
-      <SafeAreaView flex={1}>
+      <SafeAreaBox flex={1}>
         {/* list */}
         <ScrollBox>
           <Box mt="xl" px="xl">
@@ -40,7 +40,7 @@ const HomeScreen = () => {
             </Box>
           </Box>
         </ScrollBox>
-      </SafeAreaView>
+      </SafeAreaBox>
     </>
   );
 };
