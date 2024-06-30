@@ -104,6 +104,9 @@ export interface SpacingPropsType {
   px?: ResponsiveValue<string | number>;
   py?: ResponsiveValue<string | number>;
   ps?: ResponsiveValue<string | number>;
+  gap?: ResponsiveValue<string | number>;
+  gapX?: ResponsiveValue<string | number>;
+  gapY?: ResponsiveValue<string | number>;
 }
 
 export const stackSpacingProps = ['spacing'] as const;
