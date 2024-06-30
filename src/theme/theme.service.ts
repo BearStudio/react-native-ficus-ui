@@ -31,6 +31,9 @@ export const createSpacingStyles = (
     mx: 'marginHorizontal',
     my: 'marginVertical',
     ms: 'marginStart',
+    gap: 'gap',
+    gapX: 'rowGap',
+    gapY: 'columnGap',
   };
 
   const computedStyle: any = {};
