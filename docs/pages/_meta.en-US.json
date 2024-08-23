@@ -1,0 +1,38 @@
+{
+  "index": {
+    "title": "Introduction",
+    "type": "page",
+    "display": "hidden"
+  },
+  "demo": {
+    "type": "page",
+    "display": "hidden",
+    "theme": {
+      "breadcrumb": false,
+      "navbar": false,
+      "footer": false,
+      "sidebar": false,
+      "toc": false,
+      "pagination": false,
+      "layout": "raw"
+    }
+  },
+  "docs": {
+    "type": "page",
+    "title": "Docs"
+  },
+  "404": {
+    "type": "page",
+    "theme": {
+      "timestamp": false,
+      "typesetting": "article"
+    }
+  },
+  "500": {
+    "type": "page",
+    "theme": {
+      "timestamp": false,
+      "typesetting": "article"
+    }
+  }
+}

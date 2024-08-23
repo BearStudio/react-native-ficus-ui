@@ -1,0 +1,10 @@
+{
+  "box": {},
+  "safeareabox": "SafeAreaBox",
+  "scrollbox": "ScrollBox",
+  "center": {},
+  "flex": {},
+  "stack": {},
+  "hstack": "HStack",
+  "vstack": "VStack"
+}

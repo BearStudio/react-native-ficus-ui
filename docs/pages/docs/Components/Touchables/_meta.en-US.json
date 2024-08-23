@@ -1,0 +1,7 @@
+{
+  "button": {},
+  "pressable": {},
+  "touchable-highlight": "TouchableHighlight",
+  "touchable-opacity": "TouchableOpacity",
+  "touchable-without-feedback": "TouchableWithoutFeedback"
+}

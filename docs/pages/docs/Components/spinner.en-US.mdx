@@ -1,0 +1,44 @@
+---
+searchable: true
+---
+
+import { ExpoDemo } from '@components/expo-demo';
+import { Box } from '@chakra-ui/react';
+
+# Spinner
+
+Simple spinner component that is based on react native `ActivityIndicator` component.
+
+## Import
+
+```js
+import { Spinner } from 'react-native-ficus-ui';
+```
+
+## Usage
+
+<Box mt={5}>
+  <ExpoDemo id="@bearstudio/ficus-ui-spinner" />
+</Box>
+
+## Props
+
+Extends every `Box` props and react native `ActivityIndicator` component.
+
+https://reactnative.dev/docs/activityindicator#props
+
+### `color`
+
+The color property for `ActivityIndicator`.
+
+| Type   | Required |
+| ------ | -------- |
+| string | No       |
+
+### `size`
+
+The size property for `ActivityIndicator`.
+
+| Type           | Required |
+| -------------- | -------- |
+| number, string | No       |
