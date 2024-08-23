@@ -1,0 +1,199 @@
+---
+title: Ficus UI
+searchable: false
+---
+
+import {
+  HomepageHeader,
+  Features,
+  HomepageTitle,
+  GraySection,
+} from '@components/homepage';
+import { ExpoDemo } from '@components/expo-demo';
+import { Responsive } from '@components/demos/responsive';
+import { Card } from '@components/demos/card';
+import { Theme } from '@components/demos/theme';
+import { ResizableIframe } from '@components/iframe';
+import { Callout, Tabs } from 'nextra/components';
+import {
+  Box,
+  Center,
+  Heading,
+  Highlight,
+  HStack,
+  Text,
+  SimpleGrid,
+} from '@chakra-ui/react';
+
+<HomepageHeader />
+
+<Box w="80vw" marginLeft="calc(-40vw + 50%)">
+  <Box
+    display="flex"
+    flexDirection={['column', null, null, 'row']}
+    alignItems={[undefined, null, null, 'center']}
+  >
+    <Box flex={0.6} mr={[null, null, null, '1rem']}>
+      ```js
+      <VStack
+        p={10}
+        borderWidth={1}
+        borderColor="gray.200"
+        borderRadius="lg"
+        spacing="md"
+        bg="white"
+      >
+        <Image
+          borderRadius="md"
+          source={{ uri: 'https://bit.ly/4dR2Hgy' }}
+          w="100%"
+          h={200}
+          alt="House image"
+        />
+        <HStack alignItems="center" mt={2} spacing="sm">
+          <Box bg="pink.100" w="fit-content" p={2}>
+            <Text
+              color="pink.800"
+              textTransform="uppercase"
+              fontSize="sm"
+              fontWeight="bold"
+            >
+              Plus
+            </Text>
+          </Box>
+          <Text
+            textTransform="uppercase"
+            fontSize="sm"
+            fontWeight="bold"
+            color="pink.800"
+          >
+            Cape Town
+          </Text>
+        </HStack>
+        <Text fontSize="xl" fontWeight="bold" lineHeight="short">
+          Modern, Chic Penthouse with Pool and Golf park
+        </Text>
+        <Text fontSize="lg">200$/night</Text>
+        <Box flexDirection="row" alignItems="center">
+          <Text fontSize="sm">⭐️</Text>
+          <Text ml={5} fontSize="sm" fontWeight="bold">
+            4.91 (290)
+          </Text>
+        </Box>
+      </VStack>
+      ```
+    </Box>
+    <Box flex={0.4}>
+      <Card />
+    </Box>
+  </Box>
+</Box>
+
+<Features />
+
+<Box w="80vw" marginLeft="calc(-40vw + 50%)" py="2rem">
+  <HomepageTitle>Responsive has never been easier 🤩</HomepageTitle>
+  <Box display="flex" flexDirection={['column', null, null, 'row']}>
+    <Box flex={0.3} mr={[null, null, null, '1rem']}>
+      ```js
+      <Box w="100%">
+        <Box
+          flexDirection="row"
+          justify={{ base: 'flex-start', sm: 'center' }}
+          my="lg"
+        >
+          <Box
+            flexDirection={{ base: 'column', sm: 'row' }}
+            w={{ base: '100%', sm: undefined }}
+          >
+            <Input
+              placeholder="Search location"
+              p={10}
+              w={{ base: '100%', sm: 300 }}
+              borderWidth={2}
+              focusBorderColor="teal.500"
+            />
+            <Button
+              colorScheme="teal"
+              full={{ base: true, sm: false }}
+              mt={{ base: 5, sm: undefined }}
+              ml={{ base: undefined, sm: 5 }}
+            >
+              Search
+            </Button>
+          </Box>
+        </Box>
+        <Box mt="lg">
+          <ItemCard content={item} w={{ base: '100%', sm: '50%' }} />
+        </Box>
+      </Box>
+      ```
+    </Box>
+    <Box flex={0.7}>
+      <ResizableIframe />
+    </Box>
+  </Box>
+</Box>
+
+<GraySection>
+  <HomepageTitle>Customize the theme as you want 🎨</HomepageTitle>
+
+  <Box display="flex" flexDirection={['column', null, null, 'row']} alignItems={[undefined, null, null, 'center']}>
+    <Box flex={0.5} mr={[null, null, null, '1rem']} display="flex" justifyContent="center">
+      <Theme />
+    </Box>
+    <Box flex={0.5} mt={['1rem', null, null, 0]}>
+      ```js
+      export const Theme = () => {
+        const theme = {
+          colors: {
+            brand: {
+              50: '#ddfff3',
+              100: '#b5f6e0',
+              200: '#8cf0cd',
+              300: '#60e8ba',
+              400: '#36e2a6',
+              500: '#1dc98d',
+              600: '#119c6d',
+              700: '#046f4d',
+              800: '#00442e',
+              900: '#00180e',
+            },
+            violet: {
+              50: '#f0eaff',
+              100: '#d1c1f4',
+              200: '#b199e7',
+              300: '#9171dc',
+              400: '#7248d0',
+              500: '#592fb7',
+              600: '#45248f',
+              700: '#311968',
+              800: '#1e0f40',
+              900: '#0c031b',
+            },
+          },
+          fontSize: {
+            'xs': 11,
+            'sm': 12,
+            'md': 13,
+            'lg': 15,
+            'xl': 17,
+            '2xl': 19,
+            '3xl': 21,
+            '4xl': 24,
+            '5xl': 27,
+            '6xl': 32,
+          },
+        };
+
+        return (
+          <ThemeProvider theme={theme}>
+            ...
+          </ThemeProvider>
+        )
+      };
+      ```
+    </Box>
+
+  </Box>
+</GraySection>

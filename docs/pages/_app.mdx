@@ -1,0 +1,26 @@
+import '../styles.css';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+
+export default function App({ Component, pageProps }) {
+  const theme = extendTheme({
+    colors: {
+      brand: {
+        50: '#ddfff3',
+        100: '#b5f6e0',
+        200: '#8cf0cd',
+        300: '#60e8ba',
+        400: '#36e2a6',
+        500: '#1dc98d',
+        600: '#119c6d',
+        700: '#046f4d',
+        800: '#00442e',
+        900: '#00180e',
+      },
+    },
+  });
+  return (
+    <ChakraProvider theme={theme}>
+      <Component {...pageProps} />
+    </ChakraProvider>
+  );
+}
