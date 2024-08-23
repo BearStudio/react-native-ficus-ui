@@ -30,10 +30,10 @@ import {
 <Box w="80vw" marginLeft="calc(-40vw + 50%)">
   <Box
     display="flex"
-    flexDirection={['column', null, null, null, 'row']}
-    alignItems={[undefined, null, null, null, 'center']}
+    flexDirection={['column', null, null, 'row']}
+    alignItems={[undefined, null, null, 'center']}
   >
-    <Box flex={0.6} mr={[null, null, null, null, '1rem']}>
+    <Box flex={0.6} mr={[null, null, null, '1rem']}>
       ```js
       <VStack
         p={10}
@@ -93,8 +93,8 @@ import {
 
 <Box w="80vw" marginLeft="calc(-40vw + 50%)" py="2rem">
   <HomepageTitle>Responsive has never been easier 🤩</HomepageTitle>
-  <Box display="flex" flexDirection={['column', null, null, null, 'row']}>
-    <Box flex={0.3} mr={[null, null, null, null, '1rem']}>
+  <Box display="flex" flexDirection={['column', null, null, 'row']}>
+    <Box flex={0.3} mr={[null, null, null, '1rem']}>
       ```js
       <Box w="100%">
         <Box
@@ -138,16 +138,15 @@ import {
 <GraySection>
   <HomepageTitle>Customize the theme as you want 🎨</HomepageTitle>
 
-  <Box display="flex" flexDirection={['column', null, null, null, 'row']} alignItems={[undefined, null, null, null, 'center']}>
-    <Box flex={0.5} mr={[null, null, null, null, '1rem']} display="flex" justifyContent="center">
+  <Box display="flex" flexDirection={['column', null, null, 'row']} alignItems={[undefined, null, null, 'center']}>
+    <Box flex={0.5} mr={[null, null, null, '1rem']} display="flex" justifyContent="center">
       <Theme />
     </Box>
-    <Box flex={0.5} mt={['1rem', null, null, null, 0]}>
+    <Box flex={0.5} mt={['1rem', null, null, 0]}>
       ```js
       export const Theme = () => {
         const theme = {
           colors: {
-            // Use Smart Swatch to generate colors palette https://smart-swatch.netlify.app
             brand: {
               50: '#ddfff3',
               100: '#b5f6e0',

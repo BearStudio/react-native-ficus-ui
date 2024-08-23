@@ -14,7 +14,7 @@ export const ResizableIframe = () => {
   const [dimensions, setDimensions] = useState({ width: 800 });
   const iframeRef = useRef(null);
 
-  const [sliderValue, setSliderValue] = useState(50);
+  const [sliderValue, setSliderValue] = useState(60);
 
   const [isMediumScreen] = useMediaQuery('(min-width: 600px)');
 
