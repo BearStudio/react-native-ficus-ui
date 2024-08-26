@@ -7,16 +7,11 @@ import {
   SafeAreaBox,
 } from 'react-native-ficus-ui';
 
-import { useNavigation } from '@react-navigation/native';
-import { components } from './items';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { components } from '@/app/items';
+import { useRouter } from 'expo-router';
 
 const HomeScreen = () => {
-  // Temporary silencing typescript
-  // We would need to add types to navigator
-  const navigation = useNavigation<
-    StackNavigationProp<Record<string, undefined>>
-  >();
+  const router = useRouter();
   return (
     <>
       <SafeAreaBox flex={1}>
@@ -27,9 +22,12 @@ const HomeScreen = () => {
               Components
             </Text>
             <Box flexDir="row">
-              {components.map((item) => (
+              {components.map((item, index) => (
                 <TouchableOpacity
-                  onPress={() => navigation.navigate(item.navigationPath)}
+                  key={`item-${index}`}
+                  onPress={() =>
+                    router.push(`/components/${item.navigationPath}`)
+                  }
                   mt={10}
                   w="100%"
                   py={10}

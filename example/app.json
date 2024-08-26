@@ -1,18 +1,36 @@
 {
   "expo": {
-    "name": "React Native Ficus UI Example",
-    "description": "Example app for React Native Ficus UI",
-    "slug": "react-native-ficus-ui-example",
-    "privacy": "public",
+    "name": "update-example",
+    "slug": "update-example",
     "version": "1.0.0",
-    "orientation": "default",
-    "icon": "./assets/images/favicon.png",
-    "primaryColor": "#cccccc",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
     "userInterfaceStyle": "automatic",
-    "notification": {
-      "icon": "https://s3.amazonaws.com/exp-us-standard/placeholder-push-icon-blue-circle.png",
-      "color": "#000000"
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
     },
-    "platforms": ["android", "ios", "web"]
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
   }
 }
