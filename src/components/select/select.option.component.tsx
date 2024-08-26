@@ -27,7 +27,7 @@ const Option: React.FunctionComponent<SelectOptionProps> = (incomingProps) => {
       center: false,
       prefix: (
         <Icon
-          name="ios-checkmark-circle"
+          name="checkmark-circle-outline"
           fontFamily="Ionicons"
           fontSize="2xl"
           color="green.600"
