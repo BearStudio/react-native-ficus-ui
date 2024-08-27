@@ -17,7 +17,7 @@ runs:
           **/node_modules
         key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
         restore-keys: |
-          ${{ runner.os }}-pnm-
+          ${{ runner.os }}-pnpm-
 
     - name: Install dependencies
       if: steps.pnpm-cache.outputs.cache-hit != 'true'
