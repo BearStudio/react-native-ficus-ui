@@ -27,6 +27,6 @@ runs:
     - name: Install dependencies
       if: steps.pnpm-cache.outputs.cache-hit != 'true'
       run: |
-        pnpm install --cwd example --frozen-lockfile
+        pnpm install -C example --frozen-lockfile
         pnpm install --frozen-lockfile
       shell: bash
