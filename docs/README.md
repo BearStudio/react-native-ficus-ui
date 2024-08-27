@@ -4,8 +4,8 @@ To develop locally, clone this repository and run the following command to start
 the local dev server:
 
 ```bash
-yarn
-yarn dev
+pnpm install
+pnpm dev
 ```
 
 And visit `localhost:3000` to preview your changes.

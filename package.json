@@ -32,8 +32,7 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "prepack": "bob build",
     "release": "release-it",
-    "example": "yarn --cwd example",
-    "bootstrap": "yarn example && yarn install"
+    "example": "pnpm -C example run"
   },
   "keywords": [
     "react-native",
@@ -103,7 +102,6 @@
   "engines": {
     "node": ">= 18.0.0"
   },
-  "packageManager": "yarn@1.22.21",
   "jest": {
     "preset": "react-native",
     "modulePaths": [
@@ -114,6 +112,11 @@
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!(@react-native|react-native|react-native-vector-icons))"
+    ],
+    "testPathIgnorePatterns": [
+      "/lib/typescript/.*\\.test\\.d\\.ts$",
+      "/src/.*\\.test\\.d\\.ts$",
+      "/src/.*\\.test\\.ts$"
     ]
   },
   "commitlint": {
