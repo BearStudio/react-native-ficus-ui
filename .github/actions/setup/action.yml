@@ -10,18 +10,18 @@ runs:
         node-version-file: .nvmrc
 
     - name: Cache dependencies
-      id: yarn-cache
+      id: pnpm-cache
       uses: actions/cache@v3
       with:
         path: |
           **/node_modules
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
         restore-keys: |
-          ${{ runner.os }}-yarn-
+          ${{ runner.os }}-pnm-
 
     - name: Install dependencies
-      if: steps.yarn-cache.outputs.cache-hit != 'true'
+      if: steps.pnpm-cache.outputs.cache-hit != 'true'
       run: |
-        yarn install --cwd example --frozen-lockfile
-        yarn install --frozen-lockfile
+        pnpm install --cwd example --frozen-lockfile
+        pnpm install --frozen-lockfile
       shell: bash
