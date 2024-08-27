@@ -9,6 +9,9 @@ runs:
       with:
         node-version-file: .nvmrc
 
+    - uses: pnpm/action-setup@v4
+        name: Install pnpm
+
     - name: Cache dependencies
       id: pnpm-cache
       uses: actions/cache@v3
