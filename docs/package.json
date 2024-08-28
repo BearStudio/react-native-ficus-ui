@@ -12,13 +12,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.1.1",
-    "@chakra-ui/react": "^2.8.2",
-    "@emotion/react": "^11.13.0",
-    "@emotion/styled": "^11.13.0",
     "eslint-config-next": "^14.2.6",
     "focus-visible": "^5.1.0",
-    "framer-motion": "^11.3.28",
     "intersection-observer": "^0.10.0",
     "isomorphic-git": "1.21.0",
     "markdown-to-jsx": "^6.11.4",
