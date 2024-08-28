@@ -135,7 +135,7 @@ const config: DocsThemeConfig = {
     extraContent: LocaleSwitch,
   },
   nextThemes: {
-    defaultTheme: 'dark',
+    defaultTheme: 'light',
   },
   project: {
     link: 'https://github.com/BearStudio/react-native-ficus-ui',
