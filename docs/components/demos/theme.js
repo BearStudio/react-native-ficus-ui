@@ -5,8 +5,17 @@ import {
   VStack,
   Text,
 } from 'react-native-ficus-ui';
+import { useTheme } from 'nextra-theme-docs';
+import { useEffect, useState } from 'react';
 
 export const Theme = () => {
+  const { theme: nextraTheme } = useTheme();
+  const [textColor, setTextColor] = useState(nextraTheme === 'dark' ? 'white' : 'black');
+
+  useEffect(() => {
+    setTextColor(nextraTheme === 'dark' ? 'white' : 'black')
+  }, [nextraTheme])
+
   const ThemePalette = ({ color }) => (
     <HStack spacing={5}>
       {[50, 100, 200, 300, 400, 500, 600, 700, 800].map((i) => (
@@ -76,16 +85,14 @@ export const Theme = () => {
         </VStack>
 
         <Box mt="xl">
-          <Text fontSize="xs">Example of text with font size xs</Text>
-          <Text fontSize="sm">Example of text with font size sm</Text>
-          <Text fontSize="md">Example of text with font size md</Text>
-          <Text fontSize="lg">Example of text with font size lg</Text>
-          <Text fontSize="xl">Example of text with font size xl</Text>
-          <Text fontSize="2xl">Example of text with font size 2xl</Text>
-          <Text fontSize="3xl">Example of text with font size 3xl</Text>
-          <Text fontSize="4xl">Example of text with font size 4xl</Text>
-          <Text fontSize="5xl">Example of text with font size 5xl</Text>
-          <Text fontSize="6xl">Example of text with font size 6xl</Text>
+          <Text fontSize="xs" color={textColor}>Example of text with font size xs</Text>
+          <Text fontSize="sm" color={textColor}>Example of text with font size sm</Text>
+          <Text fontSize="md" color={textColor}>Example of text with font size md</Text>
+          <Text fontSize="lg" color={textColor}>Example of text with font size lg</Text>
+          <Text fontSize="xl" color={textColor}>Example of text with font size xl</Text>
+          <Text fontSize="2xl" color={textColor}>Example of text with font size 2xl</Text>
+          <Text fontSize="3xl" color={textColor}>Example of text with font size 3xl</Text>
+          <Text fontSize="4xl" color={textColor}>Example of text with font size 4xl</Text>
         </Box>
       </Box>
     </ThemeProvider>
