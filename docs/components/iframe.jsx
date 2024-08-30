@@ -25,6 +25,7 @@ export const ResizableIframe = () => {
   return (
     <div className="my-4">
       <iframe
+        loading="lazy"
         ref={iframeRef}
         src="/demo"
         style={{
