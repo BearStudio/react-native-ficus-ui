@@ -30,6 +30,7 @@ import type { RadioGroupProps, RadioProps } from 'components/radio/radio.type';
 import type { ModalProps } from 'components/modal/modal.type';
 import { ToastProps } from 'react-native-toast-message';
 import type { DividerProps } from 'components/divider/divider.type';
+import { BadgeProps } from 'components/badge/badge.type';
 
 export interface ColorHues {
   50: string;
@@ -47,6 +48,7 @@ export interface ColorHues {
 export interface ThemeType {
   components?: {
     Text?: VariantType<TextProps>;
+    Badge?: VariantType<BadgeProps>;
     Box?: VariantType<BoxProps>;
     SafeAreaBox?: VariantType<SafeAreaBoxProps>;
     Flex?: VariantType<FlexProps>;
