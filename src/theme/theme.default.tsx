@@ -432,4 +432,14 @@ export const defaultTheme: ThemeType = {
       ),
     },
   },
+
+  components: {
+    Badge: {
+      variants: {
+        subtle: {},
+        solid: {},
+        outline: {},
+      },
+    },
+  },
 };
