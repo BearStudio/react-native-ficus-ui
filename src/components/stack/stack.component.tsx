@@ -102,7 +102,7 @@ const Stack: React.FunctionComponent<StackProps> = (incomingProps) => {
             <React.Fragment key={`stack-${index}`}>
               {!!item && (
                 <React.Fragment>
-                  <RNView>{item}</RNView>
+                  <RNView style={{ zIndex: item.props.zIndex }}>{item}</RNView>
                   {index !== children.length - 1 ? (
                     <RNView style={computedStyle.stackSpacing} />
                   ) : null}

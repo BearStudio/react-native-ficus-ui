@@ -26,6 +26,7 @@ import SafeAreaBoxComponent from './components/SafeAreaBox';
 import DividerComponent from './components/Divider';
 import ScrollBoxComponent from './components/ScrollBox';
 import BadgeComponent from './components/Badge';
+import AvatarComponent from './components/Avatar';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -41,6 +42,11 @@ export const components: ExampleComponentType[] = [
   },
   { navigationPath: 'Box', onScreenName: 'Box', component: BoxComponent },
   { navigationPath: 'Badge', onScreenName: 'Badge', component: BadgeComponent },
+  {
+    navigationPath: 'Avatar',
+    onScreenName: 'Avatar',
+    component: AvatarComponent,
+  },
   {
     navigationPath: 'ScrollBox',
     onScreenName: 'ScrollBox',

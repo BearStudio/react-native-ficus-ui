@@ -1,0 +1,76 @@
+---
+searchable: true
+---
+
+import { ExpoDemo } from '@components/expo-demo';
+
+
+# Avatar
+
+Component to represent user, and displays the profile picture, initials or fallback icon.
+
+## Import
+
+```js
+import { Avatar } from 'react-native-ficus-ui';
+```
+
+## Usage
+
+<div className="mt-2">
+  <ExpoDemo id="@bearstudio/ficus-ui-text" />
+</div>
+
+## Props
+
+Extends every `Box` and `Text` props.
+
+### `colorScheme`
+
+The colorScheme property, will define background color and text color.
+
+| Type   | Required | Default |
+| ------ | -------- | ------- |
+| string | Yes      | gray    |
+
+### `icon`
+
+The icon property, icon is used as fallback when name, and src is not specified.
+
+| Type   | Required |
+| ------ | -------- |
+| string, React Element | No      |
+
+### `icon`
+
+The icon property, icon is used as fallback when name, and src is not specified.
+
+| Type   | Required |
+| ------ | -------- |
+| string | No      |
+
+### `name`
+
+The name property. The name of the person in the avatar. - if src has loaded, the name will be used as the alt attribute of the img - If src is not loaded, the name will be used to create the initials
+
+| Type   | Required |
+| ------ | -------- |
+| string | No      |
+
+
+### `size`
+
+The size property, defining the size of avatr
+
+| Type   | Required |
+| ------ | -------- |
+| string | No      |
+
+
+### `src`
+
+The src property. The source of avatar image
+
+| Type   | Required |
+| ------ | -------- |
+| string | No      |

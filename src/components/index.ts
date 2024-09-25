@@ -1,3 +1,11 @@
+export { Avatar } from './avatar/avatar.component';
+export { AvatarGroup } from './avatar/group.component';
+export { AvatarBadge } from './avatar/badge.component';
+export {
+  AvatarProps,
+  AvatarGroupProps,
+  AvatarBadgeProps,
+} from './avatar/avatar.type';
 export { Box } from './box/box.component';
 export { BoxProps } from './box/box.type';
 export { Badge } from './badge/badge.component';

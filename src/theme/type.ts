@@ -31,6 +31,11 @@ import type { ModalProps } from 'components/modal/modal.type';
 import { ToastProps } from 'react-native-toast-message';
 import type { DividerProps } from 'components/divider/divider.type';
 import { BadgeProps } from 'components/badge/badge.type';
+import { AvatarProps } from 'components';
+import {
+  AvatarBadgeProps,
+  AvatarGroupProps,
+} from 'components/avatar/avatar.type';
 
 export interface ColorHues {
   50: string;
@@ -50,6 +55,9 @@ export interface ThemeType {
     Text?: VariantType<TextProps>;
     Badge?: VariantType<BadgeProps>;
     Box?: VariantType<BoxProps>;
+    Avatar?: VariantType<AvatarProps>;
+    AvatarGroup?: VariantType<AvatarGroupProps>;
+    AvatarBadge?: VariantType<AvatarBadgeProps>;
     SafeAreaBox?: VariantType<SafeAreaBoxProps>;
     Flex?: VariantType<FlexProps>;
     Center?: VariantType<CenterProps>;
@@ -107,6 +115,7 @@ export interface ThemeType {
   borderRadius?: { none: 0; full: 99999 } & ThemeProps<number>;
   spacing?: { none: 0 } & ThemeProps<number>;
   stackSpacing?: { none: 0 } & ThemeProps<number>;
+  avatar?: ThemeProps<number>;
   shadowColor?: string;
   shadow?: ThemeProps<{
     shadowOffset?: {

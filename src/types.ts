@@ -338,6 +338,7 @@ export interface OverflowPropsType {
 export const zIndexProps = ['zIndex'] as const;
 export interface ZIndexPropsType {
   zIndex?: ResponsiveValue<number>;
+  elevation?: ResponsiveValue<number>;
 }
 
 export const loadingProps = ['isLoading', 'loaderSize', 'loaderColor'] as const;
