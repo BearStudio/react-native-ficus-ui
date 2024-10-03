@@ -4,7 +4,7 @@ searchable: true
 
 # Responsive styles
 
-Ficus UI supports responsive styles out of the box. You can pass directly the prop value or an object containing differents values for each screen size.
+Ficus UI supports responsive styles out of the box. You can pass directly the prop value or an object/array containing differents values for each screen size.
 
 ```js
 export default function App() {
@@ -12,6 +12,7 @@ export default function App() {
     <ThemeProvider>
       <SafeAreaBox>
         <Box h="100%" bg={{ base: 'blue.500', sm: 'red.600' }} />
+        <Box h="100%" bg={['blue.500', 'red.600']} />
       </SafeAreaBox>
     </ThemeProvider>
   );

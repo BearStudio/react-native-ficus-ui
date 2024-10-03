@@ -54,7 +54,7 @@ export const createSpacingStyles = (
  *
  * m="10", mt="xl"
  *
- * @param value
+ * @param props
  * @param theme
  */
 export const createStackSpacingStyles = (
@@ -72,9 +72,33 @@ export const createStackSpacingStyles = (
 };
 
 /**
+ * Create size styles from object of style props passed to ficus component
+ *
+ * @param props
+ * @param theme
+ */
+export const createAvatarStyles = (props: any, theme: ThemeType['avatar']) => {
+  const computedStyle: any = {};
+
+  if (props.h || props.w) {
+    computedStyle.height = props.h;
+    computedStyle.width = props.w;
+
+    return computedStyle;
+  }
+
+  if ('size' in props) {
+    computedStyle.height = getThemeProperty(theme, props.size);
+    computedStyle.width = getThemeProperty(theme, props.size);
+  }
+
+  return computedStyle;
+};
+
+/**
  * Get font weight for font
  *
- * @param
+ * @param themeFontFamily
  * @param fontFamily
  * @param fontWeight
  */
@@ -150,7 +174,9 @@ export const getThemeColor = (
       const keyParts = value.split('.');
       let subPropertyValue: any = themeColors;
       for (const part of keyParts) {
-        subPropertyValue = subPropertyValue[part];
+        if (subPropertyValue && part) {
+          subPropertyValue = subPropertyValue[part];
+        }
       }
       if (
         typeof subPropertyValue === 'string' ||
@@ -182,6 +208,7 @@ export const getThemeProperty = (
     | ThemeType['spinner']
     | ThemeType['checkbox']
     | ThemeType['radio']
+    | ThemeType['avatar']
     | undefined,
   value: any
 ) => {

@@ -1,9 +1,19 @@
+export { Avatar } from './avatar/avatar.component';
+export { AvatarGroup } from './avatar/group.component';
+export { AvatarBadge } from './avatar/badge.component';
+export {
+  AvatarProps,
+  AvatarGroupProps,
+  AvatarBadgeProps,
+} from './avatar/avatar.type';
 export { Box } from './box/box.component';
 export { BoxProps } from './box/box.type';
 export { Badge } from './badge/badge.component';
 export { BadgeProps } from './badge/badge.type';
 export { Divider } from './divider/divider.component';
 export { DividerProps } from './divider/divider.type';
+export { PinInput } from './pin-input/pin-input.component';
+export { PinInputProps } from './pin-input/pin-input.type';
 export { SafeAreaBox } from './safeareabox/safeareabox.component';
 export { SafeAreaBoxProps } from './safeareabox/safeareabox.type';
 export { ScrollBox } from './scrollbox/scrollbox.component';
