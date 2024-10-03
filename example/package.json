@@ -55,6 +55,7 @@
     "react-native-modal": "13.0.1",
     "react-native-toast-message": "2.1.6",
     "react-native-vector-icons": "10.0.0",
+    "react-native-confirmation-code-field": "7.4.0",
     "validate-color": "2.2.1"
   }
 }

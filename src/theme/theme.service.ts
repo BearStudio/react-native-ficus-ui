@@ -174,7 +174,9 @@ export const getThemeColor = (
       const keyParts = value.split('.');
       let subPropertyValue: any = themeColors;
       for (const part of keyParts) {
-        subPropertyValue = subPropertyValue[part];
+        if (subPropertyValue && part) {
+          subPropertyValue = subPropertyValue[part];
+        }
       }
       if (
         typeof subPropertyValue === 'string' ||

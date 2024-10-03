@@ -36,6 +36,7 @@ import {
   AvatarBadgeProps,
   AvatarGroupProps,
 } from 'components/avatar/avatar.type';
+import { PinInputProps } from 'components/pin-input/pin-input.type';
 
 export interface ColorHues {
   50: string;
@@ -55,6 +56,7 @@ export interface ThemeType {
     Text?: VariantType<TextProps>;
     Badge?: VariantType<BadgeProps>;
     Box?: VariantType<BoxProps>;
+    PinInput?: VariantType<PinInputProps>;
     Avatar?: VariantType<AvatarProps>;
     AvatarGroup?: VariantType<AvatarGroupProps>;
     AvatarBadge?: VariantType<AvatarBadgeProps>;

@@ -4,5 +4,6 @@
   "checkbox": {},
   "radio": {},
   "select": {},
-  "switch": {}
+  "switch": {},
+  "pininput": "PinInput"
 }

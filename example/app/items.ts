@@ -27,6 +27,7 @@ import DividerComponent from './components/Divider';
 import ScrollBoxComponent from './components/ScrollBox';
 import BadgeComponent from './components/Badge';
 import AvatarComponent from './components/Avatar';
+import PinInputComponent from './components/PinInput';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -46,6 +47,11 @@ export const components: ExampleComponentType[] = [
     navigationPath: 'Avatar',
     onScreenName: 'Avatar',
     component: AvatarComponent,
+  },
+  {
+    navigationPath: 'PinInput',
+    onScreenName: 'PinInput',
+    component: PinInputComponent,
   },
   {
     navigationPath: 'ScrollBox',
