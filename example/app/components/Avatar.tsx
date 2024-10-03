@@ -8,7 +8,6 @@ import {
   Text,
   HStack,
   VStack,
-  Icon,
 } from 'react-native-ficus-ui';
 import ExampleSection from '@/src/ExampleSection';
 

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Badge } from 'react-native-ficus-ui';
 import {
   ThemeProvider,
   Box,
@@ -31,16 +32,7 @@ export const ItemCard = ({ content, ...props }) => {
         alt="House image"
       />
       <HStack alignItems="center" mt={2} spacing="sm">
-        <Box bg="pink.100" w="fit-content" p={2}>
-          <Text
-            color="pink.800"
-            textTransform="uppercase"
-            fontSize="sm"
-            fontWeight="bold"
-          >
-            Plus
-          </Text>
-        </Box>
+        <Badge colorScheme="pink" fontSize="md" p={2}>Plus</Badge>
         <Text
           textTransform="uppercase"
           fontSize="sm"

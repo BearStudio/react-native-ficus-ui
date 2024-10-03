@@ -76,6 +76,7 @@ export default withNextra({
     'react-native-toast-message',
     'react-native-vector-icons',
     'react-native-ficus-ui',
+    'react-native-confirmation-code-field',
   ],
 
   webpack: (config) => {

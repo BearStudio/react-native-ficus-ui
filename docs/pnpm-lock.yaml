@@ -45,8 +45,8 @@ dependencies:
     specifier: ^0.75.2
     version: 0.75.2(@babel/core@7.25.2)(@babel/preset-env@7.25.4)(react@18.3.1)(typescript@5.5.4)
   react-native-ficus-ui:
-    specifier: ^1.0.0
-    version: 1.0.0(@babel/runtime@7.25.0)(react-native@0.75.2)(react@18.3.1)
+    specifier: 1.1.0
+    version: 1.1.0(@babel/runtime@7.25.0)(react-native@0.75.2)(react@18.3.1)
   react-native-web:
     specifier: ^0.19.12
     version: 0.19.12(react-dom@18.3.1)(react@18.3.1)
@@ -8192,8 +8192,23 @@ packages:
       prop-types: 15.8.1
     dev: false
 
-  /react-native-ficus-ui@1.0.0(@babel/runtime@7.25.0)(react-native@0.75.2)(react@18.3.1):
-    resolution: {integrity: sha512-KfYDNN19KA45KePQnDce60TDYCiMLUD6hcH8FmaaGrHeQMtSthiZfUNPTmCuWiZE3AZLW0R5GFrp6X5pwNaK3Q==}
+  /react-native-confirmation-code-field@7.4.0(react-native@0.75.2)(react@18.3.1):
+    resolution: {integrity: sha512-Kw7rD0RXi6vZnt0Y67nkSW2wYmZFdnxJ23yxkKm3jqwvSxAvaA1NP3h3MHSPmJd25l0WK/+fjXOeCliDqWZ9rw==}
+    peerDependencies:
+      react: '>=16.4.0'
+      react-native: '>=0.64.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      react: 18.3.1
+      react-native: 0.75.2(@babel/core@7.25.2)(@babel/preset-env@7.25.4)(react@18.3.1)(typescript@5.5.4)
+    dev: false
+
+  /react-native-ficus-ui@1.1.0(@babel/runtime@7.25.0)(react-native@0.75.2)(react@18.3.1):
+    resolution: {integrity: sha512-P8higK1hwhu0JHYtiGD+mGN0V1qkVl2fmahTUy5FaQ4DlBBqFmfNdZmloZUOlIsnV2siwOxcbP6QVzyTe1geYw==}
     engines: {node: '>= 18.0.0'}
     peerDependencies:
       react: '*'
@@ -8205,6 +8220,7 @@ packages:
       react: 18.3.1
       react-native: 0.75.2(@babel/core@7.25.2)(@babel/preset-env@7.25.4)(react@18.3.1)(typescript@5.5.4)
       react-native-animatable: 1.3.3
+      react-native-confirmation-code-field: 7.4.0(react-native@0.75.2)(react@18.3.1)
       react-native-modal: 13.0.1(react-native@0.75.2)(react@18.3.1)
       react-native-toast-message: 2.1.6(react-native@0.75.2)(react@18.3.1)
       react-native-vector-icons: 10.0.0
