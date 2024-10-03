@@ -396,22 +396,53 @@ export interface VariantPropsType {
   variant?: ResponsiveValue<string>;
 }
 
+export const allFicusProps: string[] = [
+  ...borderProps,
+  ...spacingProps,
+  ...stackSpacingProps,
+  ...orientationProps,
+  ...borderRadiusProps,
+  ...shadowProps,
+  ...dimensionProps,
+  ...flexProps,
+  ...positionProps,
+  ...activityIndicatorProps,
+  ...backgroundProps,
+  ...backgroundImgProps,
+  ...textProps,
+  ...opacityProps,
+  ...overflowProps,
+  ...zIndexProps,
+  ...loadingProps,
+  ...preffixSuffixProps,
+  ...inputProps,
+  ...disabledProps,
+  ...buttonProps,
+  ...overlayProps,
+  ...variantProps,
+];
+
 export function handleResponsiveProps<
   T extends Record<string, ResponsiveValue<any>>
 >(props: T, theme: ThemeType, windowWidth: number): any {
   let newProps = {};
+
+  // Extract breakpoints from the theme and sort them by their numeric value (ascending)
+  const breakpoints = theme?.breakpoints
+    ? Object.entries(theme.breakpoints).sort((a, b) => a[1] - b[1])
+    : [];
 
   for (const prop in props) {
     const value = props[prop];
 
     newProps = { ...newProps, [prop]: value };
 
-    if (
-      typeof value === 'object' &&
-      value !== null &&
-      !React.isValidElement(value) &&
-      !Array.isArray(value)
-    ) {
+    // Skip props that are valid React elements (e.g., JSX) or not ficus props
+    if (!allFicusProps.includes(prop) || React.isValidElement(value)) {
+      continue;
+    }
+
+    if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
       // Handle as an object with responsive values
       for (const breakpoint in value) {
         if (theme?.breakpoints && breakpoint in theme?.breakpoints) {
@@ -424,6 +455,23 @@ export function handleResponsiveProps<
           }
         }
       }
+    } // Handle as an array of responsive values
+    else if (Array.isArray(value)) {
+      // Otherwise, treat it as an array of responsive values
+      let matchedValue = value[0]; // Default to the first value
+
+      for (let i = 0; i < breakpoints.length; i++) {
+        const [, minWidth] = breakpoints[i];
+
+        if (windowWidth >= minWidth) {
+          matchedValue =
+            value[i] !== undefined && value[i] !== null
+              ? value[i]
+              : matchedValue;
+        }
+      }
+
+      newProps = { ...newProps, [prop]: matchedValue };
     }
   }
   return newProps;

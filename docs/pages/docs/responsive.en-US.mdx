@@ -12,6 +12,7 @@ export default function App() {
     <ThemeProvider>
       <SafeAreaBox>
         <Box h="100%" bg={{ base: 'blue.500', sm: 'red.600' }} />
+        <Box h="100%" bg={['blue.500', 'red.600']} />
       </SafeAreaBox>
     </ThemeProvider>
   );
