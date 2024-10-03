@@ -150,7 +150,9 @@ const config: DocsThemeConfig = {
           {title}
         </div>
       ) : (
-        <>{title}</>
+        <div className="flex flex-1 justify-between align-middle">
+          <span>{title}</span> {(title === 'Avatar' || title === 'Badge' || title === 'PinInput' || title === 'Responsive') && <div className='bg-pink-600 text-white font-bold text-[0.6rem] rounded-md p-1'>NEW</div>}
+        </div>
       ),
     toggleButton: true,
   },
