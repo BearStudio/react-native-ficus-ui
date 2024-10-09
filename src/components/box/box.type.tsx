@@ -1,4 +1,4 @@
-import type { ViewProps as RNViewProps } from 'react-native';
+import type { ViewProps as RNViewProps, View as RNView } from 'react-native';
 
 import type {
   BorderPropsType,
@@ -16,18 +16,22 @@ import type {
   VariantPropsType,
 } from '../../types';
 
-export interface BoxProps
-  extends RNViewProps,
-    BorderPropsType,
-    SpacingPropsType,
-    BorderRadiusPropsType,
-    ShadowPropsType,
-    DimensionPropsType,
-    BackgroundPropsType,
-    BackgroundImgPropsType,
-    FlexPropsType,
-    PositionPropsType,
-    ZIndexPropsType,
-    OverflowPropsType,
-    OpacityPropsType,
-    VariantPropsType {}
+export type BoxProps<
+  T extends React.ElementType = typeof RNView
+> = RNViewProps &
+  BorderPropsType &
+  SpacingPropsType &
+  BorderRadiusPropsType &
+  ShadowPropsType &
+  DimensionPropsType &
+  BackgroundPropsType &
+  BackgroundImgPropsType &
+  FlexPropsType &
+  PositionPropsType &
+  ZIndexPropsType &
+  OverflowPropsType &
+  OpacityPropsType &
+  VariantPropsType &
+  React.ComponentPropsWithoutRef<T> & {
+    as?: T;
+  };
