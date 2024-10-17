@@ -28,12 +28,10 @@ const Button: React.FunctionComponent<ButtonProps> = (incomingProps) => {
       colorScheme: 'gray',
       py: 'lg',
       px: 15,
-      color: 'white',
       borderRadius: 'lg',
       isLoading: false,
       isDisabled: false,
       loaderSize: Platform.OS === 'ios' ? 'lg' : 'xl',
-      loaderColor: 'white',
       full: false,
       position: 'relative',
       shadowColor: 'gray.800',
@@ -47,6 +45,7 @@ const Button: React.FunctionComponent<ButtonProps> = (incomingProps) => {
       onPress: () => {},
       flexDirection: 'row',
       fontWeight: 'bold',
+      variant: 'solid',
     }
   );
 
@@ -122,6 +121,13 @@ const Button: React.FunctionComponent<ButtonProps> = (incomingProps) => {
         <Text
           {...getSpecificProps(props, ...textProps)}
           style={computedStyle.text}
+          {...(props.variant === 'link'
+            ? {
+                textDecorationLine: 'underline',
+                textDecorationStyle: 'solid',
+                textDecorationColor: computedStyle.text.color,
+              }
+            : {})}
         >
           {children}
         </Text>
@@ -154,7 +160,11 @@ const Button: React.FunctionComponent<ButtonProps> = (incomingProps) => {
           <RNView style={computedStyle.loadingContainer}>
             <RNActivityIndicator
               size={getThemeProperty(theme.fontSize, loaderSize)}
-              color={getThemeColor(theme.colors, loaderColor)}
+              color={
+                loaderColor
+                  ? getThemeColor(theme.colors, loaderColor)
+                  : computedStyle?.text?.color
+              }
             />
           </RNView>
         </RNView>
@@ -179,7 +189,6 @@ const Button: React.FunctionComponent<ButtonProps> = (incomingProps) => {
 // isLoading: false,
 // isDisabled: false,
 // loaderSize: '2xl',
-// loaderColor: 'white',
 // full: false,
 // position: 'relative',
 // shadowColor: 'gray.800',

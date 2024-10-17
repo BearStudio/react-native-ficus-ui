@@ -450,5 +450,13 @@ export const defaultTheme: ThemeType = {
         outline: {},
       },
     },
+    Button: {
+      variants: {
+        solid: {},
+        outline: {},
+        ghost: {},
+        link: {},
+      },
+    },
   },
 };

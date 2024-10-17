@@ -22,6 +22,20 @@ import { ButtonProps } from './button.type';
 export const getStyle = (theme: ThemeType, props: ButtonProps) => {
   const computedStyle: any = {};
 
+  const buttonBgColor = props.bg
+    ? getThemeColor(theme.colors, props.bg as string)
+    : props.variant === 'solid'
+    ? getThemeColor(theme.colors, `${props.colorScheme}.500`)
+    : 'transparent';
+
+  const buttonTextColor = props.color
+    ? getThemeColor(theme.colors, props.color as string)
+    : props.variant === 'outline' ||
+      props.variant === 'ghost' ||
+      props.variant === 'link'
+    ? getThemeColor(theme.colors, `${props.colorScheme}.500`)
+    : 'white';
+
   computedStyle.button = {
     overflow: 'hidden',
     justifyContent: 'center',
@@ -37,20 +51,21 @@ export const getStyle = (theme: ThemeType, props: ButtonProps) => {
     minHeight: props.minH,
     maxWidth: props.maxW,
     maxHeight: props.maxH,
+    borderStyle: props.borderStyle,
+    ...(props.variant === 'outline'
+      ? { borderColor: buttonTextColor, borderWidth: 1 }
+      : {}),
     ...createPositionStyle(props),
     ...createBorderWidthStyles(props),
     ...createShadowStyles(props, theme),
     ...createSpacingStyles(props, theme.spacing),
     ...createBorderColorStyles(props, theme.colors),
     ...createBorderRadiusStyles(props, theme.borderRadius),
-    backgroundColor: getThemeColor(
-      theme.colors,
-      (props.bg as string) || `${props.colorScheme}.500`
-    ),
+    backgroundColor: buttonBgColor,
   };
 
   computedStyle.text = {
-    color: getThemeColor(theme.colors, props.color as string),
+    color: buttonTextColor,
   };
 
   computedStyle.loadingContainer = {
