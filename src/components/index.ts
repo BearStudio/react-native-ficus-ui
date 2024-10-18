@@ -70,3 +70,11 @@ export { Modal } from './modal/modal.component';
 export { ModalProps } from './modal/modal.type';
 export { Slider } from './slider/slider.component';
 export { SliderProps } from './slider/slider.type';
+export { Tab, TabList, TabPanel, TabPanels, Tabs } from './tabs/tabs.component';
+export {
+  TabListProps,
+  TabPanelProps,
+  TabProps,
+  TabsProps,
+  TabPanelsProps,
+} from './tabs/tabs.type';
