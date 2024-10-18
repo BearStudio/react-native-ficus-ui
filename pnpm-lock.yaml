@@ -8,6 +8,9 @@ overrides:
   '@types/react': 18.2.14
 
 dependencies:
+  '@react-native-community/slider':
+    specifier: 4.5.4
+    version: 4.5.4
   '@shopify/flash-list':
     specifier: 1.5.0
     version: 1.5.0(@babel/runtime@7.25.4)(react-native@0.72.1)(react@18.2.0)
@@ -2451,6 +2454,10 @@ packages:
   /@react-native-community/eslint-plugin@1.3.0:
     resolution: {integrity: sha512-+zDZ20NUnSWghj7Ku5aFphMzuM9JulqCW+aPXT6IfIXFbb8tzYTTOSeRFOtuekJ99ibW2fUCSsjuKNlwDIbHFg==}
     dev: true
+
+  /@react-native-community/slider@4.5.4:
+    resolution: {integrity: sha512-TFhwnrp0LTFG90yat8mqEOBLLMJylpnchO5F0KusH8dI0VzViIVIXOzhnx0mUVqLvRwRPbqBB0tvhxd739UhmA==}
+    dev: false
 
   /@react-native/assets-registry@0.72.0:
     resolution: {integrity: sha512-Im93xRJuHHxb1wniGhBMsxLwcfzdYreSZVQGDoMJgkd6+Iky61LInGEHnQCTN0fKNYF1Dvcofb4uMmE1RQHXHQ==}

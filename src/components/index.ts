@@ -68,3 +68,5 @@ export { RadioProps, RadioGroupProps } from './radio/radio.type';
 export { RadioGroup } from './radio/group.component';
 export { Modal } from './modal/modal.component';
 export { ModalProps } from './modal/modal.type';
+export { Slider } from './slider/slider.component';
+export { SliderProps } from './slider/slider.type';
