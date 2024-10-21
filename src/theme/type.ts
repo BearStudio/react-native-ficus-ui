@@ -31,8 +31,9 @@ import type { ModalProps } from 'components/modal/modal.type';
 import { ToastProps } from 'react-native-toast-message';
 import type { DividerProps } from 'components/divider/divider.type';
 import { BadgeProps } from 'components/badge/badge.type';
-import { AvatarProps } from 'components';
+import { SliderProps } from 'components/slider/slider.type';
 import {
+  AvatarProps,
   AvatarBadgeProps,
   AvatarGroupProps,
 } from 'components/avatar/avatar.type';
@@ -89,6 +90,7 @@ export interface ThemeType {
     RadioGroup?: VariantType<RadioGroupProps>;
     Modal?: VariantType<ModalProps>;
     Divider?: VariantType<DividerProps>;
+    Slider?: VariantType<SliderProps>;
   };
 
   fontFamily?: {

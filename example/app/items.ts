@@ -28,6 +28,8 @@ import ScrollBoxComponent from './components/ScrollBox';
 import BadgeComponent from './components/Badge';
 import AvatarComponent from './components/Avatar';
 import PinInputComponent from './components/PinInput';
+import SliderComponent from './components/Slider';
+import TabsComponent from './components/Tabs';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -160,5 +162,15 @@ export const components: ExampleComponentType[] = [
     navigationPath: 'Modal',
     onScreenName: 'Modal',
     component: ModalComponent,
+  },
+  {
+    navigationPath: 'Slider',
+    onScreenName: 'Slider',
+    component: SliderComponent,
+  },
+  {
+    navigationPath: 'Tabs',
+    onScreenName: 'Tabs',
+    component: TabsComponent,
   },
 ];

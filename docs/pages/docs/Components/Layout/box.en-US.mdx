@@ -21,6 +21,26 @@ import { Box } from 'react-native-ficus-ui';
   <ExpoDemo id="@bearstudio/ficus-ui-box" />
 </div>
 
+## As prop
+
+The as prop can be used to style any React Native component with Ficus UI.
+
+Example :
+
+```js
+import { TouchableOpacity } from 'react-native';
+
+<Box
+  as={TouchableOpacity}
+  bg="green.400"
+  p="xl"
+  mt="sm"
+  borderRadius="md"
+>
+  <Text>Style any RN component with Ficus UI with "as" prop !</Text>
+</Box>
+```
+
 ## Props
 
 ### `bg`

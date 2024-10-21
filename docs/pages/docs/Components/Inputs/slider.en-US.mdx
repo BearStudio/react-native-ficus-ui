@@ -1,0 +1,70 @@
+---
+searchable: true
+---
+
+import { ExpoDemo } from '@components/expo-demo';
+
+
+# Slider
+
+Component that is based on `@react-native-community/slider` library.
+
+https://github.com/callstack/react-native-slider
+
+## Import
+
+```js
+import { Slider } from 'react-native-ficus-ui';
+```
+
+## Usage
+
+<div className="mt-2">
+  <ExpoDemo id="@bearstudio/ficus-ui-slider" />
+</div>
+
+## Props
+
+Extends every `Box` props and `SliderProps` from `@react-native-community/slider`
+
+https://github.com/callstack/react-native-slider/blob/main/package/typings/index.d.ts
+
+### `colorScheme`
+
+The colorScheme property, will define slider main color
+
+| Type   | Required |
+| ------ | -------- |
+| string | No      |
+
+### `filledTrackColor`
+
+The filled track color of the slider.
+
+| Type   | Required |
+| ------ | -------- |
+| string | No       |
+
+### `min`
+
+The minimum value of the slider input.
+
+| Type   | Required | Default |
+| ------ | -------- | ------- |
+| number | No       | 0       |
+
+### `max`
+
+The maximum value of the slider input.
+
+| Type   | Required | Default |
+| ------ | -------- | ------- |
+| number | No       | 1       |
+
+### `defaultValue`
+
+The default value of the slider input.
+
+| Type   | Required |
+| ------ | -------- |
+| number | No       |

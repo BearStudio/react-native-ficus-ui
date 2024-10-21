@@ -6,5 +6,6 @@
   "flex": {},
   "stack": {},
   "hstack": "HStack",
-  "vstack": "VStack"
+  "vstack": "VStack",
+  "tabs": "Tabs"
 }

@@ -25,6 +25,7 @@ const Box: React.FunctionComponent<BoxProps> = (incomingProps) => {
       bgMode: 'cover',
       pointerEvents: 'auto',
       borderStyle: 'solid',
+      as: RNView,
     }
   );
 
@@ -95,6 +96,7 @@ const Box: React.FunctionComponent<BoxProps> = (incomingProps) => {
     right,
     bottom,
     zIndex,
+    as,
     ...rest
   } = props;
   const computedStyle = getStyle(theme, props);
@@ -115,10 +117,12 @@ const Box: React.FunctionComponent<BoxProps> = (incomingProps) => {
     );
   }
 
+  const Component = as || RNView;
+
   return (
-    <RNView style={computedStyle.box} {...rest}>
+    <Component style={computedStyle.box} {...rest}>
       {children}
-    </RNView>
+    </Component>
   );
 };
 
