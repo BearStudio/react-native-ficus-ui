@@ -52,9 +52,6 @@ export const getStyle = (theme: ThemeType, props: ButtonProps) => {
     maxWidth: props.maxW,
     maxHeight: props.maxH,
     borderStyle: props.borderStyle,
-    ...(props.variant === 'outline'
-      ? { borderColor: buttonTextColor, borderWidth: 1 }
-      : {}),
     ...createPositionStyle(props),
     ...createBorderWidthStyles(props),
     ...createShadowStyles(props, theme),
@@ -63,6 +60,32 @@ export const getStyle = (theme: ThemeType, props: ButtonProps) => {
     ...createBorderRadiusStyles(props, theme.borderRadius),
     backgroundColor: buttonBgColor,
   };
+
+  if (props.variant === 'outline') {
+    computedStyle.button = {
+      ...computedStyle.button,
+      borderColor: buttonTextColor,
+      borderWidth: 1,
+      paddingVertical: computedStyle.button?.paddingVertical
+        ? computedStyle.button?.paddingVertical - 1
+        : null,
+      paddingHorizontal: computedStyle.button?.paddingHorizontal
+        ? computedStyle.button?.paddingHorizontal - 1
+        : null,
+      paddingLeft: computedStyle.button?.paddingLeft
+        ? computedStyle.button?.paddingLeft - 1
+        : null,
+      paddingRight: computedStyle.button?.paddingRight
+        ? computedStyle.button?.paddingRight - 1
+        : null,
+      paddingTop: computedStyle.button?.paddingTop
+        ? computedStyle.button?.paddingTop - 1
+        : null,
+      paddingBottom: computedStyle.button?.paddingBottom
+        ? computedStyle.button?.paddingBottom - 1
+        : null,
+    };
+  }
 
   computedStyle.text = {
     color: buttonTextColor,

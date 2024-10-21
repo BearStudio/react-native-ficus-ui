@@ -40,7 +40,13 @@ const TabsExampleComponent = () => {
       <ScrollBox>
         <ExampleSection name="simple tabs">
           <Box h={200}>
-            <Tabs initialPage={0} onChangeTab={setIndex} selectedTab={index}>
+            <Tabs
+              initialPage={0}
+              onChangeTab={setIndex}
+              selectedTab={index}
+              bg="white"
+              borderRadius="xl"
+            >
               <TabList>
                 <Tab name="first">Tab 1</Tab>
                 <Tab name="second">Tab 2</Tab>
@@ -68,6 +74,8 @@ const TabsExampleComponent = () => {
               onChangeTab={setIndex2}
               selectedTab={index2}
               colorScheme="orange"
+              bg="white"
+              borderRadius="xl"
             >
               <TabList>
                 <Tab name="first">Tab 1</Tab>
@@ -96,6 +104,8 @@ const TabsExampleComponent = () => {
               onChangeTab={setIndex3}
               selectedTab={index3}
               indicatorStyle={{ backgroundColor: 'transparent' }}
+              bg="white"
+              borderRadius="xl"
             >
               <TabList>
                 <Tab name="first">
