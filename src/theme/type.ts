@@ -119,7 +119,6 @@ export interface ThemeType {
   borderRadius?: { none: 0; full: 99999 } & ThemeProps<number>;
   spacing?: { none: 0 } & ThemeProps<number>;
   stackSpacing?: { none: 0 } & ThemeProps<number>;
-  avatar?: ThemeProps<number>;
   shadowColor?: string;
   shadow?: ThemeProps<{
     shadowOffset?: {
@@ -131,8 +130,15 @@ export interface ThemeType {
     elevation?: number;
   }>;
   name?: string;
+  // Custom sizes for components
+  avatar?: ThemeProps<number>;
   spinner?: ThemeProps<string | number>;
   checkbox?: ThemeProps<string | number>;
   radio?: ThemeProps<string | number>;
+  button?: ThemeProps<{
+    paddingHorizontal: number;
+    paddingVertical: number;
+    fontSize: number;
+  }>;
   toastProps?: ToastProps;
 }

@@ -389,6 +389,39 @@ export const defaultTheme: ThemeType = {
     '2xl': 110,
   },
 
+  button: {
+    'xs': {
+      paddingHorizontal: 8,
+      paddingVertical: 5,
+      fontSize: 12,
+    },
+    'sm': {
+      paddingHorizontal: 12,
+      paddingVertical: 8,
+      fontSize: 13,
+    },
+    'md': {
+      paddingHorizontal: 15,
+      paddingVertical: 12,
+      fontSize: 15,
+    },
+    'lg': {
+      paddingHorizontal: 20,
+      paddingVertical: 15,
+      fontSize: 17,
+    },
+    'xl': {
+      paddingHorizontal: 25,
+      paddingVertical: 18,
+      fontSize: 19,
+    },
+    '2xl': {
+      paddingHorizontal: 30,
+      paddingVertical: 22,
+      fontSize: 21,
+    },
+  },
+
   spinner: {
     sm: 'small',
     lg: 'large',

@@ -38,7 +38,7 @@ export interface CheckboxProps
     DisabledPropsType,
     Pick<TextPropsType, 'fontWeight' | 'color'>,
     Pick<BackgroundPropsType, 'bg'>,
-    ButtonPropsType,
+    Omit<ButtonPropsType, 'size'>,
     VariantPropsType {
   colorScheme?: string;
   defaultChecked?: boolean;

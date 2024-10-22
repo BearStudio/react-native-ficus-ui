@@ -52,12 +52,18 @@ export const getStyle = (theme: ThemeType, props: ButtonProps) => {
     maxWidth: props.maxW,
     maxHeight: props.maxH,
     borderStyle: props.borderStyle,
+    padding: getThemeProperty(theme.button, props.size)?.paddingVertical,
+    paddingHorizontal: getThemeProperty(theme.button, props.size)
+      ?.paddingHorizontal,
+    paddingVertical: getThemeProperty(theme.button, props.size)
+      ?.paddingVertical,
     ...createPositionStyle(props),
     ...createBorderWidthStyles(props),
     ...createShadowStyles(props, theme),
     ...createSpacingStyles(props, theme.spacing),
     ...createBorderColorStyles(props, theme.colors),
     ...createBorderRadiusStyles(props, theme.borderRadius),
+    ...(props.isRound ? { borderRadius: 999999 } : {}),
     backgroundColor: buttonBgColor,
   };
 
@@ -66,6 +72,9 @@ export const getStyle = (theme: ThemeType, props: ButtonProps) => {
       ...computedStyle.button,
       borderColor: buttonTextColor,
       borderWidth: 1,
+      padding: computedStyle.button?.padding
+        ? computedStyle.button?.padding - 1
+        : null,
       paddingVertical: computedStyle.button?.paddingVertical
         ? computedStyle.button?.paddingVertical - 1
         : null,
@@ -89,12 +98,12 @@ export const getStyle = (theme: ThemeType, props: ButtonProps) => {
 
   computedStyle.text = {
     color: buttonTextColor,
+    fontSize: getThemeProperty(theme.button, props.size)?.fontSize,
   };
 
   computedStyle.loadingContainer = {
     alignItems: 'center',
     justifyContent: 'center',
-    minHeight: getThemeProperty(theme.fontSize, props.loaderSize) * 1.2,
   };
 
   computedStyle.container = {

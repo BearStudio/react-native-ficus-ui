@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Box,
-  ScrollBox,
   Text,
   TouchableOpacity,
   SafeAreaBox,
@@ -9,6 +8,7 @@ import {
 
 import { components } from '@/app/items';
 import { useRouter } from 'expo-router';
+import { ScrollView } from 'react-native';
 
 const HomeScreen = () => {
   const router = useRouter();
@@ -16,7 +16,7 @@ const HomeScreen = () => {
     <>
       <SafeAreaBox flex={1}>
         {/* list */}
-        <ScrollBox>
+        <ScrollView style={{ flex: 1 }}>
           <Box mt="xl" px="xl">
             <Text pb="lg" fontSize="3xl">
               Components
@@ -37,7 +37,7 @@ const HomeScreen = () => {
               ))}
             </Box>
           </Box>
-        </ScrollBox>
+        </ScrollView>
       </SafeAreaBox>
     </>
   );

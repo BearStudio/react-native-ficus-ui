@@ -26,6 +26,47 @@ const ButtonComponent = () => {
           </VStack>
         </ExampleSection>
 
+        <ExampleSection name="sizes">
+          <VStack spacing={10}>
+            <Button size="xs">Button</Button>
+            <Button colorScheme="red" size="sm">
+              Button
+            </Button>
+            <Button colorScheme="orange" size="md">
+              Button
+            </Button>
+            <Button colorScheme="green" size="lg">
+              Button
+            </Button>
+            <Button colorScheme="pink" size="xl">
+              Button
+            </Button>
+            <Button colorScheme="blue" size="2xl">
+              Button
+            </Button>
+          </VStack>
+        </ExampleSection>
+
+        <ExampleSection name="round">
+          <VStack spacing={10}>
+            <Button size="xs" isRound>
+              Button
+            </Button>
+            <Button colorScheme="red" size="sm" isRound>
+              Button
+            </Button>
+            <Button colorScheme="orange" size="md" isRound>
+              Button
+            </Button>
+            <Button colorScheme="green" size="lg" isRound>
+              Button
+            </Button>
+            <Button colorScheme="pink" size="xl" isRound>
+              Button
+            </Button>
+          </VStack>
+        </ExampleSection>
+
         <ExampleSection name="variants">
           <HStack spacing={10}>
             <Button colorScheme="teal">Button</Button>

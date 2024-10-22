@@ -35,4 +35,6 @@ export interface ButtonProps
     ZIndexPropsType,
     ButtonPropsType,
     Pick<BackgroundPropsType, 'bg'>,
-    VariantPropsType {}
+    VariantPropsType {
+  isRound?: boolean;
+}

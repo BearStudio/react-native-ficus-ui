@@ -18,6 +18,7 @@ import { handleResponsiveProps, textProps } from '../../types';
 import { getSpecificProps } from '../../utilities';
 
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { Icon } from '../icon/icon.component';
 
 const Button: React.FunctionComponent<ButtonProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();
@@ -26,17 +27,14 @@ const Button: React.FunctionComponent<ButtonProps> = (incomingProps) => {
     handleResponsiveProps(incomingProps, theme, windowWidth),
     {
       colorScheme: 'gray',
-      py: 'lg',
-      px: 15,
+      size: 'md',
       borderRadius: 'lg',
       isLoading: false,
       isDisabled: false,
-      loaderSize: Platform.OS === 'ios' ? 'lg' : 'xl',
       full: false,
       position: 'relative',
       shadowColor: 'gray.800',
       shadow: 0,
-      fontSize: 'lg',
       rippleColor: 'white',
       ripple: true,
       alignItems: 'center',
@@ -105,6 +103,8 @@ const Button: React.FunctionComponent<ButtonProps> = (incomingProps) => {
     full,
     ripple,
     alignSelf,
+    size,
+    isRound,
     ...rest
   } = props;
 
@@ -134,6 +134,15 @@ const Button: React.FunctionComponent<ButtonProps> = (incomingProps) => {
       );
     }
 
+    // Check if children is an Icon component
+    if (React.isValidElement(children) && children.type === Icon) {
+      // Clone the Icon element and add the style prop to it
+      return React.cloneElement(children as React.ReactElement<any>, {
+        color: computedStyle.text.color,
+        fontSize: computedStyle.text.fontSize,
+      });
+    }
+
     return children;
   };
 
@@ -159,7 +168,11 @@ const Button: React.FunctionComponent<ButtonProps> = (incomingProps) => {
         <RNView style={computedStyle.container}>
           <RNView style={computedStyle.loadingContainer}>
             <RNActivityIndicator
-              size={getThemeProperty(theme.fontSize, loaderSize)}
+              size={
+                loaderSize ||
+                getThemeProperty(theme.button, size)?.fontSize +
+                  (Platform.OS === 'ios' ? 3 : 5)
+              }
               color={
                 loaderColor
                   ? getThemeColor(theme.colors, loaderColor)
@@ -180,27 +193,5 @@ const Button: React.FunctionComponent<ButtonProps> = (incomingProps) => {
     </RNButton>
   );
 };
-
-// Button.defaultProps = {
-// colorScheme: 'gray',
-// p: 'lg',
-// color: 'white',
-// borderRadius: 'sm',
-// isLoading: false,
-// isDisabled: false,
-// loaderSize: '2xl',
-// full: false,
-// position: 'relative',
-// shadowColor: 'gray.800',
-// shadow: 0,
-// fontSize: 'lg',
-// rippleColor: 'white',
-// ripple: true,
-// alignItems: 'center',
-// justifyContent: 'center',
-// alignSelf: 'flex-start',
-// onPress: () => {},
-// flexDirection: 'row',
-// };
 
 export { Button };

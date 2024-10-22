@@ -13,6 +13,7 @@ import TouchableOpacityComponent from './components/TouchableOpacity';
 import TouchableHighlightComponent from './components/TouchableHighlight';
 import TouchableWithoutFeedbackComponent from './components/TouchableWithoutFeedback';
 import ButtonComponent from './components/Button';
+import IconButtonComponent from './components/IconButton';
 import IconComponent from './components/Icon';
 import SwitchComponent from './components/Switch';
 import InputComponent from './components/Input';
@@ -117,6 +118,11 @@ export const components: ExampleComponentType[] = [
     navigationPath: 'Button',
     onScreenName: 'Button',
     component: ButtonComponent,
+  },
+  {
+    navigationPath: 'IconButton',
+    onScreenName: 'IconButton',
+    component: IconButtonComponent,
   },
   {
     navigationPath: 'Pressable',

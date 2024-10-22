@@ -40,6 +40,8 @@ export { Spinner } from './spinner/spinner.component';
 export { SpinnerProps } from './spinner/spinner.type';
 export { Button } from './button/button.component';
 export { ButtonProps } from './button/button.type';
+export { IconButton } from './icon-button/icon-button.component';
+export { IconButtonProps } from './icon-button/icon-button.type';
 export { Pressable } from './pressable/pressable.component';
 export { PressableProps } from './pressable/pressable.type';
 export { TouchableHighlight } from './touchable-highlight/touchable-highlight.component';
