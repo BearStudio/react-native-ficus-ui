@@ -83,6 +83,7 @@ const Slider: React.FunctionComponent<SliderProps> = (incomingProps) => {
       value={defaultValue}
       minimumTrackTintColor={getThemeColor(theme.colors, `${colorScheme}.500`)}
       maximumTrackTintColor={getThemeColor(theme.colors, filledTrackColor)}
+      thumbTintColor="white"
       style={computedStyle.slider}
       {...rest}
     />
