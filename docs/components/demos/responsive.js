@@ -85,32 +85,32 @@ export const Responsive = () => {
         <Box w="100%">
           <Box
             flexDirection="row"
-            justify={{ base: 'flex-start', sm: 'center' }}
+            justify={['flex-start', 'center']}
             my="lg"
           >
             <Box
-              flexDirection={{ base: 'column', sm: 'row' }}
-              w={{ base: '100%', sm: undefined }}
+              flexDirection={['column', 'row']}
+              w={['100%', undefined]}
             >
               <Input
                 placeholder="Search location"
                 p={10}
-                w={{ base: '100%', sm: 300 }}
+                w={['100%', 300]}
                 borderWidth={2}
                 focusBorderColor="teal.500"
               />
               <Button
                 colorScheme="teal"
-                full={{ base: true, sm: false }}
-                mt={{ base: 5, sm: undefined }}
-                ml={{ base: undefined, sm: 5 }}
+                full={[true, false]}
+                mt={[5, 0]}
+                ml={[0, 5]}
               >
                 Search
               </Button>
             </Box>
           </Box>
           <Box mt="lg">
-            <ItemCard content={item} w={{ base: '100%', sm: '50%' }} />
+            <ItemCard content={item} w={['100%', '50%']} />
           </Box>
         </Box>
       )}
