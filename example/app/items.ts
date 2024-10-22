@@ -13,6 +13,7 @@ import TouchableOpacityComponent from './components/TouchableOpacity';
 import TouchableHighlightComponent from './components/TouchableHighlight';
 import TouchableWithoutFeedbackComponent from './components/TouchableWithoutFeedback';
 import ButtonComponent from './components/Button';
+import IconButtonComponent from './components/IconButton';
 import IconComponent from './components/Icon';
 import SwitchComponent from './components/Switch';
 import InputComponent from './components/Input';
@@ -28,6 +29,8 @@ import ScrollBoxComponent from './components/ScrollBox';
 import BadgeComponent from './components/Badge';
 import AvatarComponent from './components/Avatar';
 import PinInputComponent from './components/PinInput';
+import SliderComponent from './components/Slider';
+import TabsComponent from './components/Tabs';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -117,6 +120,11 @@ export const components: ExampleComponentType[] = [
     component: ButtonComponent,
   },
   {
+    navigationPath: 'IconButton',
+    onScreenName: 'IconButton',
+    component: IconButtonComponent,
+  },
+  {
     navigationPath: 'Pressable',
     onScreenName: 'Pressable',
     component: PressableComponent,
@@ -160,5 +168,15 @@ export const components: ExampleComponentType[] = [
     navigationPath: 'Modal',
     onScreenName: 'Modal',
     component: ModalComponent,
+  },
+  {
+    navigationPath: 'Slider',
+    onScreenName: 'Slider',
+    component: SliderComponent,
+  },
+  {
+    navigationPath: 'Tabs',
+    onScreenName: 'Tabs',
+    component: TabsComponent,
   },
 ];

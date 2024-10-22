@@ -383,6 +383,7 @@ export interface ButtonPropsType {
   rippleColor?: ResponsiveValue<string>;
   ripple?: ResponsiveValue<boolean>;
   colorScheme?: ResponsiveValue<string>;
+  size?: ResponsiveValue<'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'>;
 }
 
 export const overlayProps = ['overlayColor', 'overlayOpacity'] as const;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, TouchableOpacity } from 'react-native';
 import { Box, ScrollBox, Text } from 'react-native-ficus-ui';
 import ExampleSection from '@/src/ExampleSection';
 
@@ -163,6 +163,18 @@ const BoxComponent = () => {
                 'https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Monochrome-Type-Simple-Background-Image.jpg',
             }}
           />
+        </ExampleSection>
+
+        <ExampleSection name="as prop">
+          <Box
+            as={TouchableOpacity}
+            bg="green.400"
+            p="xl"
+            mt="sm"
+            borderRadius="md"
+          >
+            <Text>Style any RN component with Ficus UI with "as" prop !</Text>
+          </Box>
         </ExampleSection>
       </ScrollBox>
     </SafeAreaView>

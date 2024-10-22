@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { Box, Radio, RadioGroup, Text } from 'react-native-ficus-ui';
+import { Badge, Box, Radio, RadioGroup, Text } from 'react-native-ficus-ui';
 import ExampleSection from '@/src/ExampleSection';
 
 const RadioComponent = () => {
@@ -39,6 +39,56 @@ const RadioComponent = () => {
         <Radio value={3} size="lg" isLoading>
           Loading option
         </Radio>
+      </ExampleSection>
+
+      <ExampleSection name="Custom radio">
+        <RadioGroup colorScheme="red" flexDirection="row">
+          <Radio value={1}>
+            {({ isChecked }: { isChecked: boolean }) => (
+              <Badge
+                variant={isChecked ? 'solid' : 'subtle'}
+                colorScheme="pink"
+                fontSize="xl"
+                px="lg"
+                py="lg"
+                borderRadius="full"
+                mx="sm"
+              >
+                Option 1
+              </Badge>
+            )}
+          </Radio>
+          <Radio value={2}>
+            {({ isChecked }: { isChecked: boolean }) => (
+              <Badge
+                variant={isChecked ? 'solid' : 'subtle'}
+                colorScheme="pink"
+                fontSize="xl"
+                px="lg"
+                py="lg"
+                borderRadius="full"
+                mx="sm"
+              >
+                Option 2
+              </Badge>
+            )}
+          </Radio>
+          <Radio value={3}>
+            {({ isChecked }: { isChecked: boolean }) => (
+              <Badge
+                variant={isChecked ? 'solid' : 'subtle'}
+                colorScheme="pink"
+                fontSize="xl"
+                px="lg"
+                py="lg"
+                borderRadius="full"
+                mx="sm"
+              >
+                Option 3
+              </Badge>
+            )}
+          </Radio>
+        </RadioGroup>
       </ExampleSection>
     </SafeAreaView>
   );

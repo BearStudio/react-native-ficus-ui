@@ -25,8 +25,8 @@ const Badge: React.FunctionComponent<BadgeProps> = (incomingProps) => {
       textTransform: 'uppercase',
       fontWeight: 'bold',
       alignSelf: 'flex-start',
-      paddingHorizontal: 4,
-      paddingVertical: 2,
+      px: 4,
+      py: 2,
       variant: 'subtle',
     }
   );

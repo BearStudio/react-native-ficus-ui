@@ -1,5 +1,6 @@
 {
   "button": {},
+  "icon-button": "IconButton",
   "pressable": {},
   "touchable-highlight": "TouchableHighlight",
   "touchable-opacity": "TouchableOpacity",

@@ -40,6 +40,8 @@ export { Spinner } from './spinner/spinner.component';
 export { SpinnerProps } from './spinner/spinner.type';
 export { Button } from './button/button.component';
 export { ButtonProps } from './button/button.type';
+export { IconButton } from './icon-button/icon-button.component';
+export { IconButtonProps } from './icon-button/icon-button.type';
 export { Pressable } from './pressable/pressable.component';
 export { PressableProps } from './pressable/pressable.type';
 export { TouchableHighlight } from './touchable-highlight/touchable-highlight.component';
@@ -68,3 +70,13 @@ export { RadioProps, RadioGroupProps } from './radio/radio.type';
 export { RadioGroup } from './radio/group.component';
 export { Modal } from './modal/modal.component';
 export { ModalProps } from './modal/modal.type';
+export { Slider } from './slider/slider.component';
+export { SliderProps } from './slider/slider.type';
+export { Tab, TabList, TabPanel, TabPanels, Tabs } from './tabs/tabs.component';
+export {
+  TabListProps,
+  TabPanelProps,
+  TabProps,
+  TabsProps,
+  TabPanelsProps,
+} from './tabs/tabs.type';

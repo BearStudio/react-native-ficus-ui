@@ -1,0 +1,60 @@
+---
+searchable: true
+---
+
+import { ExpoDemo } from '@components/expo-demo';
+
+
+# Tabs
+
+Component that is based on `react-native-tab-view` library.
+
+https://github.com/react-navigation/react-navigation
+
+## Import
+
+```js
+import { Tabs, TabList, Tab, TabPanel, TabPanels } from 'react-native-ficus-ui';
+```
+
+## Usage
+
+<div className="mt-2">
+  <ExpoDemo id="@bearstudio/ficus-ui-tabs" />
+</div>
+
+## Props
+
+Extends every `Box` props and `TabViewProps` from `react-native-tab-view`
+
+### `colorScheme`
+
+The colorScheme property, will define tabs main color
+
+| Type   | Required |
+| ------ | -------- |
+| string | No      |
+
+### `initialPage`
+
+The initial displayed tab index
+
+| Type   | Required | Default |
+| ------ | -------- | ------- |
+| number | No       | 0       |
+
+### `selectedTab`
+
+The current selected tab index
+
+| Type   | Required |
+| ------ | -------- |
+| number | No       |
+
+### `onChangeTab`
+
+Callback called when current selected tab has changed
+
+| Type   | Required |
+| ------ | -------- |
+| (index: number) => void | No       |

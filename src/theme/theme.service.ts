@@ -209,6 +209,7 @@ export const getThemeProperty = (
     | ThemeType['checkbox']
     | ThemeType['radio']
     | ThemeType['avatar']
+    | ThemeType['button']
     | undefined,
   value: any
 ) => {

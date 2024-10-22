@@ -37,7 +37,7 @@ export interface RadioProps
     PrefixSuffixPropsType,
     OpacityPropsType,
     ZIndexPropsType,
-    Omit<ButtonPropsType, 'underlayColor'>,
+    Omit<ButtonPropsType, 'underlayColor' | 'size'>,
     Pick<BackgroundPropsType, 'bg'>,
     Pick<TextPropsType, 'fontWeight' | 'color' | 'fontSize'>,
     VariantPropsType {
