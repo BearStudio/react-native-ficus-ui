@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import type { DocsThemeConfig } from 'nextra-theme-docs';
 import { LocaleSwitch, useConfig, useTheme } from 'nextra-theme-docs';
 import type { ComponentProps, ReactElement } from 'react';
+import { Badge } from 'react-native-ficus-ui';
 
 export const FicusLogo = (props: ComponentProps<'svg'>): ReactElement => (
   <svg viewBox="0 0 200 250" width="30" xmlns="http://www.w3.org/2000/svg">
@@ -151,7 +152,7 @@ const config: DocsThemeConfig = {
         </div>
       ) : (
         <div className="flex flex-1 justify-between align-middle">
-          <span>{title}</span> {(title === 'Avatar' || title === 'Badge' || title === 'PinInput' || title === 'Responsive' || title === 'Slider' || title === 'Tabs' || title === 'IconButton') && <div className='bg-pink-600 text-white font-bold text-[0.6rem] rounded-md p-1'>NEW</div>}
+          <span>{title}</span> {(title === 'Avatar' || title === 'Badge' || title === 'PinInput' || title === 'Responsive' || title === 'Slider' || title === 'Tabs' || title === 'IconButton') && <Badge colorScheme="purple" fontSize="sm">New</Badge>}
         </div>
       ),
     toggleButton: true,
