@@ -2,7 +2,6 @@ import React from 'react';
 import { LiveProvider, LiveEditor, LivePreview } from "react-live";
 import * as ReactNative from 'react-native';
 import * as FicusUI from 'react-native-ficus-ui';
-import { themes } from 'prism-react-renderer';
 
 const scope = { React, ...ReactNative, ...FicusUI };
 
