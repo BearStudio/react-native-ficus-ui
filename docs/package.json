@@ -27,6 +27,7 @@
     "react-live": "^4.1.7",
     "react-native": "^0.75.2",
     "react-native-ficus-ui": "1.2.0",
+    "react-native-vector-icons": "^10.2.0",
     "react-native-web": "^0.19.12"
   },
   "dependenciesMeta": {

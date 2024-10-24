@@ -16,3 +16,38 @@
 .dark .invert-on-dark {
   filter: invert(1) brightness(1.8);
 }
+
+@font-face {
+  font-family: 'AntDesign';
+  src: url('/fonts/AntDesign.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('/fonts/FontAwesome.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Feather';
+  src: url('/fonts/Feather.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ionicons';
+  src: url('/fonts/Ionicons.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MaterialIcons';
+  src: url('/fonts/MaterialIcons.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

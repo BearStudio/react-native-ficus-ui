@@ -50,6 +50,9 @@ dependencies:
   react-native-ficus-ui:
     specifier: 1.2.0
     version: 1.2.0(@babel/core@7.25.2)(@babel/plugin-proposal-nullish-coalescing-operator@7.18.6)(@babel/plugin-proposal-optional-chaining@7.21.0)(@babel/plugin-transform-arrow-functions@7.24.7)(@babel/plugin-transform-shorthand-properties@7.24.7)(@babel/plugin-transform-template-literals@7.24.7)(@babel/runtime@7.25.0)(react-native@0.75.2)(react@18.3.1)
+  react-native-vector-icons:
+    specifier: ^10.2.0
+    version: 10.2.0
   react-native-web:
     specifier: ^0.19.12
     version: 0.19.12(react-dom@18.3.1)(react@18.3.1)
@@ -8360,6 +8363,14 @@ packages:
 
   /react-native-vector-icons@10.0.0:
     resolution: {integrity: sha512-efMOVbZIebY8RszZPzPBoXi9pvD/NFYmjIDYxRoc9LYSzV8rMJtT8FfcO2hPu85Rn2x9xktha0+qn0B7EqMAcQ==}
+    hasBin: true
+    dependencies:
+      prop-types: 15.8.1
+      yargs: 16.2.0
+    dev: false
+
+  /react-native-vector-icons@10.2.0:
+    resolution: {integrity: sha512-n5HGcxUuVaTf9QJPs/W22xQpC2Z9u0nb0KgLPnVltP8vdUvOp6+R26gF55kilP/fV4eL4vsAHUqUjewppJMBOQ==}
     hasBin: true
     dependencies:
       prop-types: 15.8.1

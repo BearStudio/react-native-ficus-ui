@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # Image
 
@@ -17,9 +16,15 @@ import { Image } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-image" />
-</div>
+<CodeEditor code={`<Image
+  h={200}
+  w={300}
+  borderRadius={10}
+  source={{
+    uri:
+      'https://www.picturethisai.com/wiki-image/1080/153400456440184865.jpeg',
+  }}
+/>`} />
 
 ## Props
 
