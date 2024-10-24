@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # Pressable
 
@@ -17,9 +16,14 @@ import { Pressable } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-pressable" />
-</div>
+<CodeEditor code={`<Pressable
+  bg="red.300"
+  p="xl"
+  borderRadius="xl"
+  onPress={() => console.log('Pressed')}
+>
+  <Text>Test</Text>
+</Pressable>`} />
 
 ## Props
 

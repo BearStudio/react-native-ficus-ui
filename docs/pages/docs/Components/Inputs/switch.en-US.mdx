@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # Switch
 
@@ -17,9 +16,27 @@ import { Switch } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-switch" />
-</div>
+### Default
+
+<CodeEditor code={`const SimpleSwitch = () => {
+  const [on, toggle] = React.useState(false);
+
+  return (
+    <Switch on={on} onPress={() => toggle(!on)} />
+  );
+}
+render(<SimpleSwitch />)`} noInline />
+
+### Change color
+
+<CodeEditor code={`const SimpleSwitch = () => {
+  const [on, toggle] = React.useState(false);
+
+  return (
+    <Switch colorScheme="red" on={on} onPress={() => toggle(!on)} />
+  );
+}
+render(<SimpleSwitch />)`} noInline />
 
 ## Props
 

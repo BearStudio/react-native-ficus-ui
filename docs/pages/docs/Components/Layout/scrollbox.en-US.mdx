@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # ScrollBox
 
@@ -17,9 +16,41 @@ import { ScrollBox } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-box" />
-</div>
+<CodeEditor code={`<ScrollBox h={100}>
+  <VStack spacing="md">
+
+    <HStack spacing={10}>
+      <Box h={40} w={40} bg="green.500" />
+      <Box h={40} w={40} bg="teal.500" />
+      <Box h={40} w={40} bg="yellow.500" />
+      <Box h={40} w={40} bg="red.500" />
+      <Box h={40} w={40} bg="blue.500" />
+      <Box h={40} w={40} bg="gray.500" />
+    </HStack>
+
+    <HStack spacing={10}>
+      {['none', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'].map(shadow => (
+        <Box
+          h={40}
+          w={40}
+          bg="white"
+          borderRadius="sm"
+          shadow={shadow}
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Text>{shadow}</Text>
+        </Box>
+      ))}
+    </HStack>
+
+    <HStack spacing={10}>
+      {['none', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', 'full'].map(radius => (
+        <Box h={40} w={40} borderRadius={radius} bg="blue.400" />
+      ))}
+    </HStack>
+  </VStack>
+</ScrollBox>`} />
 
 ## Props
 

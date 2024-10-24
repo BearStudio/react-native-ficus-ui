@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # IconButton
 
@@ -17,9 +16,104 @@ import { IconButton } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-icon-button" />
-</div>
+### Default
+
+<CodeEditor code={`<VStack spacing={10}>
+  <IconButton icon={<Icon name="search1" />} size="xs" />
+  <IconButton
+    icon={<Icon name="search1" />}
+    colorScheme="pink"
+    size="sm"
+  />
+  <IconButton icon={<Icon name="search1" />} colorScheme="teal" />
+  <IconButton
+    icon={<Icon name="search1" />}
+    colorScheme="blue"
+    size="lg"
+  />
+  <IconButton
+    icon={<Icon name="search1" />}
+    colorScheme="red"
+    size="xl"
+  />
+  <IconButton
+    icon={<Icon name="search1" />}
+    colorScheme="orange"
+    size="2xl"
+  />
+</VStack>`} />
+
+### Round
+
+<CodeEditor code={`<VStack spacing={10}>
+  <IconButton icon={<Icon name="search1" />} size="xs" isRound />
+  <IconButton
+    icon={<Icon name="search1" />}
+    colorScheme="pink"
+    size="sm"
+    isRound
+  />
+  <IconButton
+    icon={<Icon name="search1" />}
+    colorScheme="teal"
+    isRound
+  />
+  <IconButton
+    icon={<Icon name="search1" />}
+    colorScheme="blue"
+    size="lg"
+    isRound
+  />
+  <IconButton
+    icon={<Icon name="search1" />}
+    colorScheme="red"
+    size="xl"
+    isRound
+  />
+  <IconButton
+    icon={<Icon name="search1" />}
+    colorScheme="orange"
+    size="2xl"
+    isRound
+  />
+</VStack>`} />
+
+### Variants
+
+<CodeEditor code={`<Box>
+  <HStack spacing={10}>
+    <IconButton icon={<Icon name="search1" />} colorScheme="teal" />
+    <IconButton
+      icon={<Icon name="search1" />}
+      colorScheme="teal"
+      variant="outline"
+    />
+    <IconButton
+      icon={<Icon name="search1" />}
+      colorScheme="teal"
+      variant="ghost"
+    />
+  </HStack>
+  <VStack spacing={10} mt="xl">
+    <IconButton
+      icon={<Icon name="search1" />}
+      colorScheme="teal"
+      full
+    />
+    <IconButton
+      icon={<Icon name="search1" />}
+      colorScheme="teal"
+      variant="outline"
+      full
+    />
+    <IconButton
+      icon={<Icon name="search1" />}
+      colorScheme="teal"
+      variant="ghost"
+      full
+    />
+  </VStack>
+</Box>`} />
 
 ## Props
 

@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # Flex
 
@@ -17,9 +16,9 @@ import { Flex } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-flex" />
-</div>
+<CodeEditor code={`<Box h={200}>
+  <Flex bg="red.500" />
+</Box>`} />
 
 ## Props
 

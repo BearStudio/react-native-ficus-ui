@@ -46,17 +46,14 @@ export const getStyle = (theme: ThemeType, props: ButtonProps) => {
     flex: props.flex,
     zIndex: props.zIndex,
     width: props.w,
-    height: props.h,
+    height: props.h || getThemeProperty(theme.button, props.size)?.height,
     minWidth: props.minW,
     minHeight: props.minH,
     maxWidth: props.maxW,
     maxHeight: props.maxH,
     borderStyle: props.borderStyle,
-    padding: getThemeProperty(theme.button, props.size)?.paddingVertical,
     paddingHorizontal: getThemeProperty(theme.button, props.size)
       ?.paddingHorizontal,
-    paddingVertical: getThemeProperty(theme.button, props.size)
-      ?.paddingVertical,
     ...createPositionStyle(props),
     ...createBorderWidthStyles(props),
     ...createShadowStyles(props, theme),

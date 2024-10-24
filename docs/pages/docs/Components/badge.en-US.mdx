@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # Badge
 
@@ -17,9 +16,52 @@ import { Badge } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-badge" />
-</div>
+### Change color scheme
+
+<CodeEditor code={`<HStack spacing="md">
+  <Badge>New</Badge>
+  <Badge colorScheme="green">New</Badge>
+  <Badge colorScheme="red">New</Badge>
+  <Badge colorScheme="orange">New</Badge>
+  <Badge colorScheme="purple">New</Badge>
+  <Badge colorScheme="pink">New</Badge>
+</HStack>`} />
+
+### Change font size
+
+<CodeEditor code={`<HStack spacing="md">
+  <Badge fontSize="xs">New</Badge>
+  <Badge colorScheme="green" fontSize="sm">
+    New
+  </Badge>
+  <Badge colorScheme="red" fontSize="md">
+    New
+  </Badge>
+  <Badge colorScheme="orange" fontSize="lg">
+    New
+  </Badge>
+  <Badge colorScheme="purple" fontSize="xl">
+    New
+  </Badge>
+  <Badge colorScheme="pink" fontSize="2xl">
+    New
+  </Badge>
+</HStack>`}
+/>
+
+### Variants
+
+<CodeEditor code={`<HStack spacing="md">
+  <Badge variant="outline" colorScheme="green" fontSize="xl">
+    Outline
+  </Badge>
+  <Badge variant="solid" colorScheme="green" fontSize="xl">
+    Solid
+  </Badge>
+  <Badge variant="subtle" colorScheme="green" fontSize="xl">
+    Subtle
+  </Badge>
+</HStack>`} />
 
 ## Props
 

@@ -137,8 +137,8 @@ export interface ThemeType {
   radio?: ThemeProps<string | number>;
   button?: ThemeProps<{
     paddingHorizontal: number;
-    paddingVertical: number;
     fontSize: number;
+    height: number;
   }>;
   toastProps?: ToastProps;
 }

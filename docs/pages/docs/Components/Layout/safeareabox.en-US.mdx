@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # SafeAreaBox
 
@@ -17,9 +16,15 @@ import { SafeAreaBox } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-safeareabox" />
-</div>
+### Background color
+
+<CodeEditor code={`<SafeAreaBox bg="blue.100" h="100%">
+  <HStack spacing={10} p="lg">
+    <Box h={40} w={40} bg="green.500" />
+    <Box h={40} w={40} bg="teal.500" />
+    <Box h={40} w={40} bg="yellow.500" />
+  </HStack>
+</SafeAreaBox>`} />
 
 ## Props
 

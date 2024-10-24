@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # TouchableOpacity
 
@@ -17,9 +16,19 @@ import { TouchableOpacity } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-touchableopacity" />
-</div>
+<CodeEditor code={`<VStack spacing={10}>
+  <TouchableOpacity onPress={() => console.log('Pressed')}>
+    <Text>Test</Text>
+  </TouchableOpacity>
+  <TouchableOpacity
+    bg="red.300"
+    p="xl"
+    borderRadius="xl"
+    onPress={() => console.log('Pressed')}
+  >
+    <Text>Test</Text>
+  </TouchableOpacity>
+</VStack>`} />
 
 ## Props
 

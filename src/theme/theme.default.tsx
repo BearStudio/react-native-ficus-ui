@@ -392,33 +392,33 @@ export const defaultTheme: ThemeType = {
   button: {
     'xs': {
       paddingHorizontal: 8,
-      paddingVertical: 5,
       fontSize: 12,
+      height: 25,
     },
     'sm': {
       paddingHorizontal: 12,
-      paddingVertical: 8,
       fontSize: 13,
+      height: 30,
     },
     'md': {
       paddingHorizontal: 15,
-      paddingVertical: 12,
       fontSize: 15,
+      height: 42,
     },
     'lg': {
       paddingHorizontal: 20,
-      paddingVertical: 15,
       fontSize: 17,
+      height: 50,
     },
     'xl': {
       paddingHorizontal: 25,
-      paddingVertical: 18,
       fontSize: 19,
+      height: 60,
     },
     '2xl': {
       paddingHorizontal: 30,
-      paddingVertical: 22,
       fontSize: 21,
+      height: 70,
     },
   },
 

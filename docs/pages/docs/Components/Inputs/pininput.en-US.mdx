@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # PinInput
 
@@ -19,9 +18,91 @@ import { PinInput } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-pininput" />
-</div>
+### Default
+
+<CodeEditor code={`const SimplePinInput = () => {
+  const [pinValue, setPinValue] = React.useState(null);
+
+  return (
+    <PinInput
+      value={pinValue}
+      onChangeText={setPinValue}
+      keyboardType="number-pad"
+      w={250}
+    />
+  );
+}
+render(<SimplePinInput />)`} noInline />
+
+### Change count
+
+<CodeEditor code={`const SimplePinInput = () => {
+  const [pinValue, setPinValue] = React.useState(null);
+
+  return (
+    <PinInput
+      value={pinValue}
+      onChangeText={setPinValue}
+      keyboardType="number-pad"
+      cellCount={6}
+      w={380}
+    />
+  );
+}
+render(<SimplePinInput />)`} noInline />
+
+### Change color scheme
+
+<CodeEditor code={`const SimplePinInput = () => {
+  const [pinValue, setPinValue] = React.useState(null);
+
+  return (
+    <PinInput
+      value={pinValue}
+      onChangeText={setPinValue}
+      keyboardType="number-pad"
+      colorScheme="orange"
+      w={250}
+    />
+  );
+}
+render(<SimplePinInput />)`} noInline />
+
+### Set mask on input
+
+<CodeEditor code={`const SimplePinInput = () => {
+  const [pinValue, setPinValue] = React.useState(null);
+
+  return (
+    <PinInput
+      value={pinValue}
+      onChangeText={setPinValue}
+      keyboardType="number-pad"
+      mask
+      w={250}
+    />
+  );
+}
+render(<SimplePinInput />)`} noInline />
+
+### Change mask placeholder on input
+
+<CodeEditor code={`const SimplePinInput = () => {
+  const [pinValue, setPinValue] = React.useState(null);
+
+  return (
+    <PinInput
+      value={pinValue}
+      onChangeText={setPinValue}
+      keyboardType="number-pad"
+      colorScheme="green"
+      mask
+      placeholder="🌿"
+      w={250}
+    />
+  );
+}
+render(<SimplePinInput />)`} noInline />
 
 ## Props
 

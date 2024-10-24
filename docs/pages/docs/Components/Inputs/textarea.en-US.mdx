@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # Textarea
 
@@ -17,9 +16,15 @@ import { Textarea } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-input" />
-</div>
+<CodeEditor code={`<Box>
+  <Textarea focusBorderColor="blue.500" />
+  <Textarea
+    mt="md"
+    focusBorderColor="red.500"
+    focusBorderWidth={3}
+    focusBorderStyle="dashed"
+  />
+</Box>`} />
 
 ## Props
 

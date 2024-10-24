@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # SectionList
 
@@ -17,9 +16,35 @@ import { SectionList } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-sectionlist" />
-</div>
+<CodeEditor code={`<SectionList
+  bg="gray.200"
+  p="xl"
+  sections={[
+    {
+      title: 'Main dishes',
+      data: ['Pizza', 'Burger', 'Risotto'],
+    },
+    {
+      title: 'Sides',
+      data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
+    },
+    {
+      title: 'Drinks',
+      data: ['Water', 'Coke', 'Beer'],
+    },
+  ]}
+  keyExtractor={(item, index) => item + index}
+  renderItem={({ item }) => (
+    <Box p="sm">
+      <Text>{item}</Text>
+    </Box>
+  )}
+  renderSectionHeader={({ section: { title } }) => (
+    <Box bg="gray.300" p="sm">
+      <Text>{title}</Text>
+    </Box>
+  )}
+/>`} />
 
 ## Props
 

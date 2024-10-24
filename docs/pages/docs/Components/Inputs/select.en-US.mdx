@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # Select
 
@@ -17,9 +16,127 @@ import { Select, Option } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-select" />
-</div>
+### Single value selection
+
+<CodeEditor code={`const SingleValue = () => {
+  const [selectValue, setSelectedValue] = React.useState(null);
+  const selectRef = React.createRef();
+
+  return (
+    <Box>
+      <Button
+        w={300}
+        colorScheme="blue"
+        onPress={() => {
+          if (selectRef.current) {
+            selectRef.current.open();
+          }
+        }}
+      >
+        {selectValue ? selectValue.toString() : 'Select'}
+      </Button>
+
+      <Select
+        onSelect={setSelectedValue}
+        ref={selectRef}
+        value={selectValue}
+        title="This is your title"
+        mt="md"
+        pb="2xl"
+        message="This is the long message used to set some context"
+        data={[1, 2, 3, 4, 5, 6]}
+        renderItem={(item, index) => (
+          <Option value={item} py="md" px="xl">
+            <Text>Option {item}</Text>
+          </Option>
+        )}
+      />
+    </Box>
+  );
+}
+render(<SingleValue />)`} noInline />
+
+### Multiple values selection
+
+<CodeEditor code={`const MultiValue = () => {
+  const [selectMultiValue, setSelectedMultiValue] = React.useState([]);
+  const selectMultiRef = React.createRef();
+
+  return (
+    <Box>
+      <Button
+        w={300}
+        colorScheme="orange"
+        onPress={() => {
+          if (selectMultiRef.current) {
+            selectMultiRef.current.open();
+          }
+        }}
+      >
+        {selectMultiValue?.length ? selectMultiValue.toString() : 'Select'}
+      </Button>
+
+      <Select
+        isMultiple
+        onSelect={setSelectedMultiValue}
+        ref={selectMultiRef}
+        value={selectMultiValue}
+        title="This is your title"
+        mt="md"
+        pb="2xl"
+        message="This is the long message used to set some context"
+        data={[1, 2, 3, 4, 5, 6]}
+        renderItem={(item, index) => (
+          <Option value={item} py="md" px="xl">
+            <Text>Option {item}</Text>
+          </Option>
+        )}
+      />
+    </Box>
+  );
+}
+render(<MultiValue />)`} noInline />
+
+### Single value selection with submit
+
+<CodeEditor code={`const SubmitSelect = () => {
+  const [selectSubmitValue, setSelectedSubmitValue] = React.useState(null);
+  const selectSubmitRef = React.createRef();
+
+  return (
+    <Box>
+      <Button
+        w={300}
+        colorScheme="red"
+        onPress={() => {
+          if (selectSubmitRef.current) {
+            selectSubmitRef.current.open();
+          }
+        }}
+      >
+        {selectSubmitValue ? selectSubmitValue.toString() : 'Select'}
+      </Button>
+
+      <Select
+        submit
+        onSelect={setSelectedSubmitValue}
+        ref={selectSubmitRef}
+        value={selectSubmitValue}
+        title="This is your title"
+        mt="md"
+        pb="2xl"
+        message="This is the long message used to set some context"
+        data={[1, 2, 3, 4, 5, 6]}
+        renderItem={(item, index) => (
+          <Option value={item} py="md" px="xl">
+            <Text>Option {index}</Text>
+          </Option>
+        )}
+      />
+    </Box>
+  );
+}
+render(<SubmitSelect />)`} noInline />
 
 ## Props
 

@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # Input
 
@@ -17,9 +16,62 @@ import { Input } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-input" />
-</div>
+### With prefix
+
+<CodeEditor code={`<Input
+  placeholder="Username"
+  focusBorderColor="blue.500"
+  prefix={<Icon name="search" color="gray.900" fontFamily="Feather" />}
+/>`} />
+
+### With suffix
+
+<CodeEditor code={`<Input
+  placeholder="Username"
+  focusBorderColor="blue.500"
+  suffix={<Icon name="search" color="gray.900" fontFamily="Feather" />}
+/>`} />
+
+### Password
+
+<CodeEditor code={`<Input
+  placeholder="Password"
+  secureTextEntry
+  focusBorderColor="blue.500"
+/>`} />
+
+### Custom border style
+
+<CodeEditor code={`<Box>
+  <Input
+    placeholder="Username"
+    borderWidth={2}
+    focusBorderColor="orange.500"
+    focusBorderWidth={3}
+    suffix={<Icon name="search" color="gray.900" fontFamily="Feather" />}
+  />
+  <Input
+    mt="md"
+    placeholder="Username"
+    borderWidth={2}
+    focusBorderColor="red.500"
+    focusBorderWidth={3}
+    focusBorderStyle="dashed"
+    suffix={<Icon name="search" color="gray.900" fontFamily="Feather" />}
+  />
+</Box>`} />
+
+### Textarea
+
+<CodeEditor code={`<Box>
+  <Textarea focusBorderColor="blue.500" />
+  <Textarea
+    mt="md"
+    focusBorderColor="red.500"
+    focusBorderWidth={3}
+    focusBorderStyle="dashed"
+  />
+</Box>`} />
 
 ## Props
 

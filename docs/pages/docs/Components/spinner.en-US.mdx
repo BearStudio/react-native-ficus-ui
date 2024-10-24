@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # Spinner
 
@@ -17,9 +16,13 @@ import { Spinner } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-spinner" />
-</div>
+<CodeEditor code={`<HStack spacing={10}>
+  <Spinner />
+  <Spinner color="blue.500" size="sm" />
+  <Spinner color="red.500" size="lg" />
+  <Spinner color="green.500" size="lg" />
+  <Spinner color="pink.500" size="lg" />
+</HStack>`} />
 
 ## Props
 
