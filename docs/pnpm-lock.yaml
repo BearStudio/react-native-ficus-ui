@@ -48,8 +48,8 @@ dependencies:
     specifier: ^0.75.2
     version: 0.75.2(@babel/core@7.25.2)(@babel/preset-env@7.25.4)(react@18.3.1)(typescript@5.5.4)
   react-native-ficus-ui:
-    specifier: 1.2.0
-    version: 1.2.0(@babel/core@7.25.2)(@babel/plugin-proposal-nullish-coalescing-operator@7.18.6)(@babel/plugin-proposal-optional-chaining@7.21.0)(@babel/plugin-transform-arrow-functions@7.24.7)(@babel/plugin-transform-shorthand-properties@7.24.7)(@babel/plugin-transform-template-literals@7.24.7)(@babel/runtime@7.25.0)(react-native@0.75.2)(react@18.3.1)
+    specifier: 1.2.1
+    version: 1.2.1(@babel/core@7.25.2)(@babel/plugin-proposal-nullish-coalescing-operator@7.18.6)(@babel/plugin-proposal-optional-chaining@7.21.0)(@babel/plugin-transform-arrow-functions@7.24.7)(@babel/plugin-transform-shorthand-properties@7.24.7)(@babel/plugin-transform-template-literals@7.24.7)(@babel/runtime@7.25.0)(react-native@0.75.2)(react@18.3.1)
   react-native-vector-icons:
     specifier: ^10.2.0
     version: 10.2.0
@@ -428,7 +428,7 @@ packages:
     dependencies:
       '@babel/core': 7.25.2
       '@babel/helper-create-class-features-plugin': 7.25.4(@babel/core@7.25.2)
-      '@babel/helper-plugin-utils': 7.24.8
+      '@babel/helper-plugin-utils': 7.25.7
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -440,7 +440,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-plugin-utils': 7.24.8
+      '@babel/helper-plugin-utils': 7.25.7
       '@babel/plugin-syntax-export-default-from': 7.24.7(@babel/core@7.25.2)
     dev: false
 
@@ -452,7 +452,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-plugin-utils': 7.24.8
+      '@babel/helper-plugin-utils': 7.25.7
       '@babel/plugin-syntax-nullish-coalescing-operator': 7.8.3(@babel/core@7.25.2)
     dev: false
 
@@ -464,7 +464,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-plugin-utils': 7.24.8
+      '@babel/helper-plugin-utils': 7.25.7
       '@babel/helper-skip-transparent-expression-wrappers': 7.24.7
       '@babel/plugin-syntax-optional-chaining': 7.8.3(@babel/core@7.25.2)
     transitivePeerDependencies:
@@ -519,7 +519,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-plugin-utils': 7.24.8
+      '@babel/helper-plugin-utils': 7.25.7
     dev: false
 
   /@babel/plugin-syntax-export-namespace-from@7.8.3(@babel/core@7.25.2):
@@ -537,7 +537,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-plugin-utils': 7.24.8
+      '@babel/helper-plugin-utils': 7.25.7
     dev: false
 
   /@babel/plugin-syntax-import-assertions@7.24.7(@babel/core@7.25.2):
@@ -850,7 +850,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-plugin-utils': 7.24.8
+      '@babel/helper-plugin-utils': 7.25.7
       '@babel/plugin-syntax-flow': 7.24.7(@babel/core@7.25.2)
     dev: false
 
@@ -1136,7 +1136,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-plugin-utils': 7.24.8
+      '@babel/helper-plugin-utils': 7.25.7
     dev: false
 
   /@babel/plugin-transform-react-jsx-source@7.24.7(@babel/core@7.25.2):
@@ -1146,7 +1146,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-plugin-utils': 7.24.8
+      '@babel/helper-plugin-utils': 7.25.7
     dev: false
 
   /@babel/plugin-transform-react-jsx@7.25.2(@babel/core@7.25.2):
@@ -1202,7 +1202,7 @@ packages:
     dependencies:
       '@babel/core': 7.25.2
       '@babel/helper-module-imports': 7.24.7
-      '@babel/helper-plugin-utils': 7.24.8
+      '@babel/helper-plugin-utils': 7.25.7
       babel-plugin-polyfill-corejs2: 0.4.11(@babel/core@7.25.2)
       babel-plugin-polyfill-corejs3: 0.10.6(@babel/core@7.25.2)
       babel-plugin-polyfill-regenerator: 0.6.2(@babel/core@7.25.2)
@@ -1413,7 +1413,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-plugin-utils': 7.24.8
+      '@babel/helper-plugin-utils': 7.25.7
       '@babel/helper-validator-option': 7.24.8
       '@babel/plugin-transform-flow-strip-types': 7.25.2(@babel/core@7.25.2)
     dev: false
@@ -8255,8 +8255,8 @@ packages:
       react-native: 0.75.2(@babel/core@7.25.2)(@babel/preset-env@7.25.4)(react@18.3.1)(typescript@5.5.4)
     dev: false
 
-  /react-native-ficus-ui@1.2.0(@babel/core@7.25.2)(@babel/plugin-proposal-nullish-coalescing-operator@7.18.6)(@babel/plugin-proposal-optional-chaining@7.21.0)(@babel/plugin-transform-arrow-functions@7.24.7)(@babel/plugin-transform-shorthand-properties@7.24.7)(@babel/plugin-transform-template-literals@7.24.7)(@babel/runtime@7.25.0)(react-native@0.75.2)(react@18.3.1):
-    resolution: {integrity: sha512-s8yN50n5sY2R32gDLsFZn3jn7El1rx5zBU8fFZDfXzcNmyasOTw8+DAPamS6LCcj15XfhCWdcNbjW7z6NopqrA==}
+  /react-native-ficus-ui@1.2.1(@babel/core@7.25.2)(@babel/plugin-proposal-nullish-coalescing-operator@7.18.6)(@babel/plugin-proposal-optional-chaining@7.21.0)(@babel/plugin-transform-arrow-functions@7.24.7)(@babel/plugin-transform-shorthand-properties@7.24.7)(@babel/plugin-transform-template-literals@7.24.7)(@babel/runtime@7.25.0)(react-native@0.75.2)(react@18.3.1):
+    resolution: {integrity: sha512-Ag2uAbLdfdHxoSfLA2pM0831C0IPxXnTAW00qklREeOnvMsrqx9DowcumPkaAdq741L75ghD0ObLqmJ/rBW+0A==}
     engines: {node: '>= 18.0.0'}
     peerDependencies:
       react: '*'
