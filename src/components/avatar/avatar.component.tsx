@@ -169,6 +169,7 @@ const Avatar: React.FunctionComponent<AvatarProps> = (incomingProps) => {
       style={computedStyle.avatar}
       imageStyle={computedStyle.avatarImage}
       alt={name}
+      source={props.src}
       {...rest}
     >
       {React.Children.map(children, (child: React.ReactElement) => {

@@ -63,9 +63,6 @@ export const getStyle = (theme: ThemeType, props: BadgeProps) => {
       ? getThemeColor(theme.colors, props.bg as string)
       : badgeBgColor,
     flex: props.flex,
-    ...(props.variant === 'outline'
-      ? { borderColor: badgeTextColor, borderWidth: 1 }
-      : {}),
     ...createPositionStyle(props),
     ...createShadowStyles(props, theme),
     ...createBorderWidthStyles(props),
@@ -73,6 +70,35 @@ export const getStyle = (theme: ThemeType, props: BadgeProps) => {
     ...createBorderColorStyles(props, theme.colors),
     ...createBorderRadiusStyles(props, theme.borderRadius),
   };
+
+  if (props.variant === 'outline') {
+    computedStyle.badge = {
+      ...computedStyle.badge,
+      borderColor: badgeTextColor,
+      borderWidth: 1,
+      padding: computedStyle.badge?.padding
+        ? computedStyle.badge?.padding - 1
+        : null,
+      paddingVertical: computedStyle.badge?.paddingVertical
+        ? computedStyle.badge?.paddingVertical - 1
+        : null,
+      paddingHorizontal: computedStyle.badge?.paddingHorizontal
+        ? computedStyle.badge?.paddingHorizontal - 1
+        : null,
+      paddingLeft: computedStyle.badge?.paddingLeft
+        ? computedStyle.badge?.paddingLeft - 1
+        : null,
+      paddingRight: computedStyle.badge?.paddingRight
+        ? computedStyle.badge?.paddingRight - 1
+        : null,
+      paddingTop: computedStyle.badge?.paddingTop
+        ? computedStyle.badge?.paddingTop - 1
+        : null,
+      paddingBottom: computedStyle.badge?.paddingBottom
+        ? computedStyle.badge?.paddingBottom - 1
+        : null,
+    };
+  }
 
   computedStyle.image = {
     ...createBorderRadiusStyles(props, theme.borderRadius),
