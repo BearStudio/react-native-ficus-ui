@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # Radio
 
@@ -17,9 +16,61 @@ import { Radio, RadioGroup } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-radio" />
-</div>
+### Simple radio
+
+<CodeEditor code={`<Box>
+  <Radio value={1} />
+  <Radio value={2} defaultChecked />
+  <Radio value={3} colorScheme="green" />
+  <Radio value={4} isDisabled />
+  <Radio value={5} isLoading />
+</Box>`} />
+
+### Radio group
+
+<CodeEditor code={`<RadioGroup colorScheme="red">
+  <Radio value={1} prefix={<Text flex={1}>Option 1</Text>} />
+  <Radio value={2} prefix={<Text flex={1}>Option 2</Text>} />
+  <Radio value={3} prefix={<Text flex={1}>Option 3</Text>} />
+</RadioGroup>`} />
+
+### Radio sizes
+
+<CodeEditor code={`<Box>
+  <RadioGroup>
+    <Radio value={1} size="sm">
+      Option 1
+    </Radio>
+    <Radio value={2} size="lg">
+      Option 2
+    </Radio>
+  </RadioGroup>
+  <Radio value={3} size="lg" isLoading>
+    Loading option
+  </Radio>
+</Box>`} />
+
+### Custom radio
+
+<CodeEditor code={`<RadioGroup colorScheme="red" flexDirection="row">
+  {['Option 1', 'Option 2', 'Option 3'].map((item) => (
+    <Radio value={item}>
+      {({ isChecked }) => (
+        <Badge
+          variant={isChecked ? 'solid' : 'subtle'}
+          colorScheme="pink"
+          fontSize="lg"
+          px="md"
+          py="md"
+          borderRadius="full"
+          mx="sm"
+        >
+          {item}
+        </Badge>
+      )}
+    </Radio>
+  ))}
+</RadioGroup>`} />
 
 ## Props
 

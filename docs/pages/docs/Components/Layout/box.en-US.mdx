@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # Box
 
@@ -17,29 +16,96 @@ import { Box } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-box" />
-</div>
+### Background color
 
-## As prop
+<CodeEditor code={`<HStack spacing={10}>
+  <Box h={40} w={40} bg="green.500" />
+  <Box h={40} w={40} bg="teal.500" />
+  <Box h={40} w={40} bg="yellow.500" />
+  <Box h={40} w={40} bg="red.500" />
+  <Box h={40} w={40} bg="blue.500" />
+  <Box h={40} w={40} bg="gray.500" />
+</HStack>`} />
+
+### Shadows
+
+<CodeEditor code={`<HStack spacing={10}>
+  {['none', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'].map(shadow => (
+    <Box
+      h={40}
+      w={40}
+      bg="white"
+      borderRadius="sm"
+      shadow={shadow}
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Text>{shadow}</Text>
+    </Box>
+  ))}
+</HStack>`} />
+
+### Borders
+
+<CodeEditor code={`<HStack spacing={10}>
+  <Box
+    h={40}
+    w={40}
+    borderColor="green.500"
+    borderWidth={1}
+  />
+  <Box
+    h={40}
+    w={40}
+    borderColor="yellow.500"
+    borderWidth={1}
+  />
+  <Box h={40} w={40} borderColor="red.500" borderWidth={1} />
+  <Box h={40} w={40} borderColor="blue.500" borderWidth={1} />
+  <Box h={40} w={40} borderColor="gray.500" borderWidth={1} />
+</HStack>`} />
+
+### Border radius
+
+<CodeEditor code={`<HStack spacing={10}>
+  {['none', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', 'full'].map(radius => (
+    <Box h={40} w={40} borderRadius={radius} bg="blue.400" />
+  ))}
+</HStack>`} />
+
+### Flex
+
+<CodeEditor code={`<Box direction="row">
+  <Box h={40} w={40} bg="red.400" flex={1} />
+  <Box h={40} w={40} bg="yellow.400" flex={2} />
+  <Box h={40} w={40} bg="green.400" flex={2} />
+</Box>`} />
+
+### Background image
+
+<CodeEditor code={`<Box
+  borderRadius="md"
+  h={150}
+  bgImg={{
+    uri:
+      'https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Monochrome-Type-Simple-Background-Image.jpg',
+  }}
+/>`} />
+
+
+### As prop
 
 The as prop can be used to style any React Native component with Ficus UI.
 
-Example :
-
-```js
-import { TouchableOpacity } from 'react-native';
-
-<Box
-  as={TouchableOpacity}
+<CodeEditor code={`<Box
+  as={ReactNative.TouchableOpacity}
   bg="green.400"
   p="xl"
   mt="sm"
   borderRadius="md"
 >
   <Text>Style any RN component with Ficus UI with "as" prop !</Text>
-</Box>
-```
+</Box>`} />
 
 ## Props
 

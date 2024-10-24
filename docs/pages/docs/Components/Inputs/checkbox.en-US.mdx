@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # Checkbox
 
@@ -17,9 +16,70 @@ import { Checkbox, CheckboxGroup } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-checkbox" />
-</div>
+### Simple checkbox
+
+<CodeEditor code={`<VStack>
+  <Checkbox value={1} prefix={<Text flex={1}>Option 1</Text>} />
+  <Checkbox value={2} prefix={<Text flex={1}>Option 2</Text>} />
+  <Checkbox
+    value={3}
+    prefix={<Text flex={1}>Option 3</Text>}
+    colorScheme="red"
+  />
+  <Checkbox
+    value={4}
+    prefix={<Text flex={1}>Option 4</Text>}
+    colorScheme="pink"
+  />
+  <Checkbox value={5} prefix={<Text flex={1}>Option 5</Text>} isLoading />
+</VStack>`} />
+
+### Checkbox sizes
+
+<CodeEditor code={`<VStack>
+  <Checkbox value={1}>Option 1</Checkbox>
+  <Checkbox value={2} size="lg">
+    Option 2
+  </Checkbox>
+  <Checkbox value={3} size="lg" isLoading>
+    Option 3
+  </Checkbox>
+</VStack>`} />
+
+### Checkbox disabled
+
+<CodeEditor code={`<Checkbox value={1} isDisabled>
+  Option 1
+</Checkbox>`} />
+
+### Checkbox group
+
+<CodeEditor code={`<CheckboxGroup colorScheme="green">
+  <Checkbox value={1}>Option 1</Checkbox>
+  <Checkbox value={2}>Option 2</Checkbox>
+</CheckboxGroup>`} />
+
+### Custom render
+
+<CodeEditor code={`<CheckboxGroup flexDirection="row">
+  {['Option 1', 'Option 2', 'Option 3'].map((item) => (
+    <Checkbox value={item}>
+      {({ isChecked }) => (
+        <Badge
+          variant={isChecked ? 'solid' : 'subtle'}
+          colorScheme="pink"
+          fontSize="lg"
+          px="md"
+          py="md"
+          borderRadius="full"
+          mx="sm"
+        >
+          {item}
+        </Badge>
+      )}
+    </Checkbox>
+  ))}
+</CheckboxGroup>`} />
 
 ## Props
 

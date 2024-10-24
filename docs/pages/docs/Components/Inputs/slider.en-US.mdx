@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # Slider
 
@@ -19,9 +18,33 @@ import { Slider } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-slider" />
-</div>
+### Default
+
+<CodeEditor code={`<Box>
+  <Slider />
+  <Slider colorScheme="green" defaultValue={0.2} />
+  <Slider colorScheme="red" defaultValue={0.3} />
+  <Slider colorScheme="orange" defaultValue={0.5} />
+  <Slider colorScheme="pink" filledTrackColor="pink.100" />
+</Box>`} />
+
+### Change value
+
+<CodeEditor code={`const SimpleSlider = () => {
+  const [value, setValue] = React.useState(0.2);
+
+  return (
+    <Box>
+      <Text>Slider value : {Math.round(value * 100) / 100}</Text>
+      <Slider colorScheme="teal" value={value} onValueChange={setValue} />
+    </Box>
+  );
+}
+render(<SimpleSlider />)`} noInline />
+
+### Custom step
+
+<CodeEditor code={`<Slider colorScheme="orange" step={0.2} />`} />
 
 ## Props
 
