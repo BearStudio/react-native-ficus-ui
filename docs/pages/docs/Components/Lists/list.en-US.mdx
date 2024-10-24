@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # List
 
@@ -19,9 +18,29 @@ import { List } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-list" />
-</div>
+<CodeEditor code={`<List
+  bg="gray.200"
+  p="xl"
+  data={[
+    {
+      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+      title: 'First Item',
+    },
+    {
+      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+      title: 'Second Item',
+    },
+    {
+      id: '58694a0f-3da1-471f-bd96-145571e29d72',
+      title: 'Third Item',
+    },
+  ]}
+  renderItem={({ item }) => (
+    <Box p="lg">
+      <Text>{item.title}</Text>
+    </Box>
+  )}
+/>`} />
 
 ## Props
 

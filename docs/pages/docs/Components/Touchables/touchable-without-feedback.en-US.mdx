@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # TouchableWithoutFeedback
 
@@ -17,9 +16,19 @@ import { TouchableWithoutFeedback } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-touchablewithoutfeedback" />
-</div>
+<CodeEditor code={`<VStack spacing={10}>
+  <TouchableWithoutFeedback onPress={() => console.log('Pressed')}>
+    <Text>Test</Text>
+  </TouchableWithoutFeedback>
+  <TouchableWithoutFeedback
+    bg="red.300"
+    p="xl"
+    borderRadius="xl"
+    onPress={() => console.log('Pressed')}
+  >
+    <Text>Test</Text>
+  </TouchableWithoutFeedback>
+</VStack>`} />
 
 ## Props
 

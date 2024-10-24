@@ -2,8 +2,7 @@
 searchable: true
 ---
 
-import { ExpoDemo } from '@components/expo-demo';
-
+import { CodeEditor } from '@components/code-editor';
 
 # TouchableHighlight
 
@@ -17,9 +16,21 @@ import { TouchableHighlight } from 'react-native-ficus-ui';
 
 ## Usage
 
-<div className="mt-2">
-  <ExpoDemo id="@bearstudio/ficus-ui-touchablehightlight" />
-</div>
+<CodeEditor code={`<VStack spacing={10}>
+  <TouchableHighlight onPress={() => console.log('Pressed')}>
+    <Text>Test</Text>
+  </TouchableHighlight>
+  <TouchableHighlight
+    bg="red.300"
+    p="xl"
+    borderRadius="xl"
+    underlayColor="white"
+    activeOpacity={0.5}
+    onPress={() => console.log('Pressed')}
+  >
+    <Text>Test</Text>
+  </TouchableHighlight>
+</VStack>`} />
 
 ## Props
 
