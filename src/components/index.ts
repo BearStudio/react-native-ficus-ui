@@ -70,6 +70,8 @@ export { RadioProps, RadioGroupProps } from './radio/radio.type';
 export { RadioGroup } from './radio/group.component';
 export { Modal } from './modal/modal.component';
 export { ModalProps } from './modal/modal.type';
+export { DraggableModal } from './draggable-modal/draggable-modal.component';
+export { DraggableModalProps } from './draggable-modal/draggable-modal.type';
 export { Slider } from './slider/slider.component';
 export { SliderProps } from './slider/slider.type';
 export { Tab, TabList, TabPanel, TabPanels, Tabs } from './tabs/tabs.component';

@@ -8,6 +8,9 @@ dependencies:
   '@expo/vector-icons':
     specifier: ^14.0.2
     version: 14.0.2
+  '@gorhom/bottom-sheet':
+    specifier: 5.0.4
+    version: 5.0.4(@types/react@18.2.79)(react-native-gesture-handler@2.20.2)(react-native-reanimated@3.10.1)(react-native@0.74.5)(react@18.2.0)
   '@react-native-community/slider':
     specifier: 4.5.4
     version: 4.5.4
@@ -66,8 +69,8 @@ dependencies:
     specifier: 7.4.0
     version: 7.4.0(react-native@0.74.5)(react@18.2.0)
   react-native-gesture-handler:
-    specifier: ~2.16.1
-    version: 2.16.2(react-native@0.74.5)(react@18.2.0)
+    specifier: 2.20.2
+    version: 2.20.2(react-native@0.74.5)(react@18.2.0)
   react-native-modal:
     specifier: 13.0.1
     version: 13.0.1(react-native@0.74.5)(react@18.2.0)
@@ -2086,6 +2089,41 @@ packages:
       chalk: 4.1.2
       find-up: 5.0.0
       js-yaml: 4.1.0
+    dev: false
+
+  /@gorhom/bottom-sheet@5.0.4(@types/react@18.2.79)(react-native-gesture-handler@2.20.2)(react-native-reanimated@3.10.1)(react-native@0.74.5)(react@18.2.0):
+    resolution: {integrity: sha512-DTKFE+KwcS4Du5hbzTzh3r9hdfEfYmChcRi6hSeiDPGiCMq8GQ7VD5VE1WaFRrEbcc0+Seu1ZEjsf+JMcFM4vg==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-native': '*'
+      react: '*'
+      react-native: '*'
+      react-native-gesture-handler: '>=2.16.1'
+      react-native-reanimated: '>=3.10.1'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-native':
+        optional: true
+    dependencies:
+      '@gorhom/portal': 1.0.14(react-native@0.74.5)(react@18.2.0)
+      '@types/react': 18.2.79
+      invariant: 2.2.4
+      react: 18.2.0
+      react-native: 0.74.5(@babel/core@7.25.2)(@babel/preset-env@7.25.4)(@types/react@18.2.79)(react@18.2.0)
+      react-native-gesture-handler: 2.20.2(react-native@0.74.5)(react@18.2.0)
+      react-native-reanimated: 3.10.1(@babel/core@7.25.2)(react-native@0.74.5)(react@18.2.0)
+    dev: false
+
+  /@gorhom/portal@1.0.14(react-native@0.74.5)(react@18.2.0):
+    resolution: {integrity: sha512-MXyL4xvCjmgaORr/rtryDNFy3kU4qUbKlwtQqqsygd0xX3mhKjOLn6mQK8wfu0RkoE0pBE0nAasRoHua+/QZ7A==}
+    peerDependencies:
+      react: '*'
+      react-native: '*'
+    dependencies:
+      nanoid: 3.3.7
+      react: 18.2.0
+      react-native: 0.74.5(@babel/core@7.25.2)(@babel/preset-env@7.25.4)(@types/react@18.2.79)(react@18.2.0)
     dev: false
 
   /@graphql-typed-document-node/core@3.2.0(graphql@15.8.0):
@@ -7833,8 +7871,8 @@ packages:
       react-native: 0.74.5(@babel/core@7.25.2)(@babel/preset-env@7.25.4)(@types/react@18.2.79)(react@18.2.0)
     dev: false
 
-  /react-native-gesture-handler@2.16.2(react-native@0.74.5)(react@18.2.0):
-    resolution: {integrity: sha512-vGFlrDKlmyI+BT+FemqVxmvO7nqxU33cgXVsn6IKAFishvlG3oV2Ds67D5nPkHMea8T+s1IcuMm0bF8ntZtAyg==}
+  /react-native-gesture-handler@2.20.2(react-native@0.74.5)(react@18.2.0):
+    resolution: {integrity: sha512-HqzFpFczV4qCnwKlvSAvpzEXisL+Z9fsR08YV5LfJDkzuArMhBu2sOoSPUF/K62PCoAb+ObGlTC83TKHfUd0vg==}
     peerDependencies:
       react: '*'
       react-native: '*'
@@ -7842,7 +7880,6 @@ packages:
       '@egjs/hammerjs': 2.0.17
       hoist-non-react-statics: 3.3.2
       invariant: 2.2.4
-      lodash: 4.17.21
       prop-types: 15.8.1
       react: 18.2.0
       react-native: 0.74.5(@babel/core@7.25.2)(@babel/preset-env@7.25.4)(@types/react@18.2.79)(react@18.2.0)

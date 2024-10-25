@@ -6,6 +6,8 @@ import type { ThemeType } from './type';
 import { defaultTheme } from './theme.default';
 import Toast from 'react-native-toast-message';
 import { useWindowDimensions } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 
 export interface ThemeProviderProps {
   theme?: ThemeType;
@@ -28,11 +30,16 @@ export const ThemeProvider: React.FunctionComponent<ThemeProviderProps> = (
   };
 
   return (
-    <ThemeContext.Provider
-      value={{ theme: themeState, setTheme, windowWidth: width }}
-    >
-      {children}
-      <Toast {...themeState.toastProps} />
-    </ThemeContext.Provider>
+    // eslint-disable-next-line react-native/no-inline-styles
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <BottomSheetModalProvider>
+        <ThemeContext.Provider
+          value={{ theme: themeState, setTheme, windowWidth: width }}
+        >
+          {children}
+          <Toast {...themeState.toastProps} />
+        </ThemeContext.Provider>
+      </BottomSheetModalProvider>
+    </GestureHandlerRootView>
   );
 };
