@@ -32,7 +32,7 @@ export const ItemCard = ({ content, ...props }) => {
         alt="House image"
       />
       <HStack alignItems="center" mt={2} spacing="sm">
-        <Badge colorScheme="pink" fontSize="md" p={2}>Plus</Badge>
+        <Badge colorScheme="pink" fontSize="md">Plus</Badge>
         <Text
           textTransform="uppercase"
           fontSize="sm"

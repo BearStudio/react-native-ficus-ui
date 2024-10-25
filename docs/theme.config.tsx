@@ -141,6 +141,7 @@ const config: DocsThemeConfig = {
   project: {
     link: 'https://github.com/BearStudio/react-native-ficus-ui',
   },
+  gitTimestamp: false,
   sidebar: {
     autoCollapse: true,
     defaultMenuCollapseLevel: 1,
