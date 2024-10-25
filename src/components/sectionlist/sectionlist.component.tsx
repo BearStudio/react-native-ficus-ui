@@ -75,6 +75,8 @@ const SectionList: React.FunctionComponent<SectionListProps> = (
     shrink,
     shadow,
     shadowColor,
+    boxShadow,
+    filter,
     opacity,
     overflow,
     top,

@@ -91,6 +91,8 @@ const Badge: React.FunctionComponent<BadgeProps> = (incomingProps) => {
     shrink,
     shadow,
     shadowColor,
+    boxShadow,
+    filter,
     opacity,
     overflow,
     top,

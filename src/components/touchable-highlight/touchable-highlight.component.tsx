@@ -75,6 +75,8 @@ const TouchableHighlight: React.FunctionComponent<TouchableHighlightProps> = (
     shrink,
     shadow,
     shadowColor,
+    boxShadow,
+    filter,
     opacity,
     overflow,
     top,

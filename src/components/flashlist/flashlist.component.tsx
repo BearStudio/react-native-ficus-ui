@@ -74,6 +74,8 @@ const FlashList: React.FunctionComponent<FlashListProps> = (incomingProps) => {
     shrink,
     shadow,
     shadowColor,
+    boxShadow,
+    filter,
     opacity,
     overflow,
     top,

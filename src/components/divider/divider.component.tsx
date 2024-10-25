@@ -83,6 +83,8 @@ const Divider: React.FunctionComponent<DividerProps> = (incomingProps) => {
     shrink,
     shadow,
     shadowColor,
+    boxShadow,
+    filter,
     opacity,
     overflow,
     top,

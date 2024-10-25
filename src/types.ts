@@ -146,6 +146,9 @@ export const shadowProps = ['shadow', 'shadowColor'] as const;
 export interface ShadowPropsType {
   shadow?: ResponsiveValue<string | number>;
   shadowColor?: ResponsiveValue<string>;
+  // New React Native 0.76 props
+  boxShadow?: ResponsiveValue<string | object>;
+  filter?: ResponsiveValue<string | object[]>;
 }
 
 export const dimensionProps = [

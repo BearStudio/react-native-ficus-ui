@@ -90,6 +90,8 @@ const Avatar: React.FunctionComponent<AvatarProps> = (incomingProps) => {
     shrink,
     shadow,
     shadowColor,
+    boxShadow,
+    filter,
     opacity,
     overflow,
     top,

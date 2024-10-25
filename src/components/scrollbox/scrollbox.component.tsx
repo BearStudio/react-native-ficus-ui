@@ -83,6 +83,8 @@ const ScrollBox: React.FunctionComponent<ScrollBoxProps> = (incomingProps) => {
     shrink,
     shadow,
     shadowColor,
+    boxShadow,
+    filter,
     opacity,
     overflow,
     top,

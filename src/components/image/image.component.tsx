@@ -72,6 +72,8 @@ const Image: React.FunctionComponent<ImageProps> = (incomingProps) => {
     shrink,
     shadow,
     shadowColor,
+    boxShadow,
+    filter,
     opacity,
     overflow,
     top,

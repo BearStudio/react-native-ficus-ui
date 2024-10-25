@@ -84,6 +84,8 @@ const SafeAreaBox: React.FunctionComponent<SafeAreaBoxProps> = (
     shrink,
     shadow,
     shadowColor,
+    boxShadow,
+    filter,
     opacity,
     overflow,
     top,
