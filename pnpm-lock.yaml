@@ -30,7 +30,7 @@ dependencies:
     specifier: 7.4.0
     version: 7.4.0(react-native@0.72.1)(react@18.2.0)
   react-native-gesture-handler:
-    specifier: ^2.20.2
+    specifier: 2.20.2
     version: 2.20.2(react-native@0.72.1)(react@18.2.0)
   react-native-modal:
     specifier: 13.0.1
