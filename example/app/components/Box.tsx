@@ -101,7 +101,7 @@ const BoxComponent = () => {
               bg="white"
               m="md"
               borderRadius="sm"
-              shadow="2xl"
+              boxShadow="5 5 5 0 rgba(255, 0, 0, 0.5)"
               justifyContent="center"
               alignItems="center"
             >
