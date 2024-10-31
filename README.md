@@ -4,6 +4,12 @@
 
 Ficus UI is a React Native UI library forked on Magnus UI and inspired by Chakra UI
 
+## Requirements
+
+This library now needs `react-native-gesture-handler` to be installed inside the React Native project.
+If you use Expo Go then you have nothing to do as Gesture Handler is integrated inside Expo SDK.
+But if you use a Bare React Native project, please follow those instructions in first : https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/installation/
+
 ## Installation
 
 With pnpm :
