@@ -77,6 +77,7 @@ export default withNextra({
     'react-native-vector-icons',
     'react-native-ficus-ui',
     'react-native-confirmation-code-field',
+    '@gorhom/bottom-sheet'
   ],
 
   webpack: (config) => {
