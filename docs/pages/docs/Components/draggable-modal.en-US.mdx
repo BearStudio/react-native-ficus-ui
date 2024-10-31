@@ -1,0 +1,76 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+
+# DraggableModal
+
+Component to render a draggable modal, based on `react-native-bottom-sheet`
+
+https://github.com/gorhom/react-native-bottom-sheet
+
+## Import
+
+```js
+import { DraggableModal } from 'react-native-ficus-ui';
+```
+
+## Usage
+
+<CodeEditor code={`const TestModal = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  
+  return (
+    <ThemeProvider>
+      <Box h={500} bg="gray.50" p="xl">
+        <Button
+          colorScheme={!isOpen ? 'green' : 'red'}
+          onPress={() => {
+            if (!isOpen) {
+              onOpen();
+            } else {
+              onClose();
+            }
+          }}
+        >
+          {!isOpen ? 'Show Modal' : 'Hide Modal'}
+        </Button>
+
+        <DraggableModal
+          isOpen={isOpen}
+          onClose={onClose}
+          snapPoints={['30%', '80%']}
+          p="xl"
+        >
+          <Text fontSize="4xl" fontWeight="bold">
+            Settings
+          </Text>
+
+          <Text mt="xl">Your settings</Text>
+        </DraggableModal>
+      </Box>
+    </ThemeProvider>
+  );
+}
+render(<TestModal />)`} noInline />
+
+## Props
+
+Extends every `Box` props and `BottomSheetModalProps` from `react-native-bottom-sheet`
+
+### `isOpen`
+
+Boolean to indicate if modal is opened or not.
+
+| Type    | Required | Default |
+| ------- | -------- | ------- |
+| boolean | No       | false   |
+
+### `onClose`
+
+Method called when modal is closed by user.
+
+| Type    | Required |
+| ------- | -------- |
+| () => void | No       |

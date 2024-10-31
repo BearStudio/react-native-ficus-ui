@@ -5,5 +5,7 @@
   "divider": "Divider",
   "image": "Image",
   "icon": "Icon",
-  "spinner": "Spinner"
+  "spinner": "Spinner",
+  "modal": "Modal",
+  "draggable-modal": "DraggableModal"
 }

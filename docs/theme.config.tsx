@@ -153,7 +153,7 @@ const config: DocsThemeConfig = {
         </div>
       ) : (
         <div className="flex flex-1 justify-between align-middle">
-          <span>{title}</span> {(title === 'Avatar' || title === 'Badge' || title === 'PinInput' || title === 'Responsive' || title === 'Slider' || title === 'Tabs' || title === 'IconButton') && <Badge colorScheme="purple" fontSize="sm" alignSelf="center">New</Badge>}
+          <span>{title}</span> {(title === 'Avatar' || title === 'Badge' || title === 'PinInput' || title === 'Responsive' || title === 'Slider' || title === 'Tabs' || title === 'IconButton' || title === 'DraggableModal') && <Badge colorScheme="purple" fontSize="sm" alignSelf="center">New</Badge>}
         </div>
       ),
     toggleButton: true,

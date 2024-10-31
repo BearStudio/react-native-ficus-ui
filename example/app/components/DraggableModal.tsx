@@ -18,17 +18,22 @@ const DraggableModalComponent = () => {
       </Text>
       <ExampleSection name="Simple Modal">
         <Button
+          colorScheme={!isOpen ? 'green' : 'red'}
           onPress={() => {
-            onOpen();
+            if (!isOpen) {
+              onOpen();
+            } else {
+              onClose();
+            }
           }}
         >
-          Show Modal
+          {!isOpen ? 'Show Modal' : 'Hide Modal'}
         </Button>
 
         <DraggableModal
           isOpen={isOpen}
           onClose={onClose}
-          snapPoints={['20%', '80%']}
+          snapPoints={['30%', '80%']}
           p="xl"
         >
           <Text fontSize="4xl" fontWeight="bold">

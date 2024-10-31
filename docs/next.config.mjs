@@ -1,4 +1,5 @@
 import nextra from 'nextra';
+import webpack from 'webpack';
 
 const withNextra = nextra({
   theme: 'nextra-theme-docs',
@@ -67,7 +68,7 @@ export default withNextra({
       statusCode: 302,
     },
   ],
-  reactStrictMode: true,
+  reactStrictMode: false,
 
   transpilePackages: [
     'react-native',
@@ -77,10 +78,11 @@ export default withNextra({
     'react-native-vector-icons',
     'react-native-ficus-ui',
     'react-native-confirmation-code-field',
-    '@gorhom/bottom-sheet'
+    '@gorhom/bottom-sheet',
+    'react-native-gesture-handler'
   ],
 
-  webpack: (config) => {
+  webpack: (config, { isDevelopment }) => {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
       // Transform all direct `react-native` imports to `react-native-web`
@@ -93,6 +95,7 @@ export default withNextra({
       '.web.tsx',
       ...config.resolve.extensions,
     ];
+    config.plugins.push(new webpack.DefinePlugin({ __DEV__: isDevelopment, }));
     return config;
   },
 });
