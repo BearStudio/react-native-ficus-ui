@@ -58,6 +58,8 @@ const Icon: React.FunctionComponent<IconProps> = (incomingProps) => {
     borderBottomRadius,
     shadow,
     shadowColor,
+    boxShadow,
+    filter,
     borderColor,
     borderBottomColor,
     borderLeftColor,

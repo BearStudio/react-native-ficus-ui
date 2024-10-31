@@ -110,6 +110,81 @@ const BoxComponent = () => {
           </Box>
         </ExampleSection>
 
+        <ExampleSection name="boxShadow prop">
+          <Box flexDirection="row">
+            <Box
+              h={40}
+              w={40}
+              bg="white"
+              m="md"
+              borderRadius="sm"
+              boxShadow="5 5 5 0 rgba(255, 0, 0, 0.5)"
+              justifyContent="center"
+              alignItems="center"
+            />
+            <Box
+              h={40}
+              w={40}
+              bg="white"
+              m="md"
+              borderRadius="sm"
+              boxShadow="5 -5 teal"
+              justifyContent="center"
+              alignItems="center"
+            />
+            <Box
+              h={40}
+              w={40}
+              bg="white"
+              m="md"
+              borderRadius="sm"
+              boxShadow="12 12 2 1 rgba(0, 0, 255, .2);"
+              justifyContent="center"
+              alignItems="center"
+            />
+            <Box
+              h={40}
+              w={40}
+              bg="white"
+              m="md"
+              borderRadius="sm"
+              boxShadow="inset 5 5 gold"
+              justifyContent="center"
+              alignItems="center"
+            />
+            <Box
+              h={40}
+              w={40}
+              bg="white"
+              m="md"
+              borderRadius="sm"
+              boxShadow="3 3 red, -3 0 5 olive"
+              justifyContent="center"
+              alignItems="center"
+            />
+            <Box
+              h={40}
+              w={40}
+              bg="white"
+              m="md"
+              borderRadius="sm"
+              boxShadow="0 0 0 4 #f4aab9, 0 0 0 6 #66ccff"
+              justifyContent="center"
+              alignItems="center"
+            />
+            <Box
+              h={40}
+              w={40}
+              bg="white"
+              m="md"
+              borderRadius="sm"
+              boxShadow="5 5 0 0 #289FED"
+              justifyContent="center"
+              alignItems="center"
+            />
+          </Box>
+        </ExampleSection>
+
         <ExampleSection name="border">
           <Box flexDirection="row">
             <Box

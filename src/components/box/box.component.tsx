@@ -89,6 +89,8 @@ const Box: React.FunctionComponent<BoxProps> = (incomingProps) => {
     shrink,
     shadow,
     shadowColor,
+    boxShadow,
+    filter,
     opacity,
     overflow,
     top,

@@ -96,6 +96,8 @@ const Radio: CompoundedRadio<RadioProps> = (incomingProps) => {
     borderEndWidth,
     shadow,
     shadowColor,
+    boxShadow,
+    filter,
     full,
     alignSelf,
     icon,

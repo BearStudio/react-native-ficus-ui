@@ -358,13 +358,24 @@ export const createBorderColorStyles = (
 export const createShadowStyles = (props: any, theme: ThemeType) => {
   let computedStyle: any = {};
 
-  if (props.shadow) {
+  if (props.boxShadow) {
+    computedStyle = {
+      boxShadow: props.boxShadow,
+    };
+  } else if (props.shadow) {
     computedStyle = {
       ...(theme.shadow && theme.shadow[props.shadow]),
       shadowColor: props.shadowColor
         ? getThemeColor(theme.colors, props.shadowColor)
         : 'black',
       overflow: 'visible',
+    };
+  }
+
+  if (props.filter) {
+    computedStyle = {
+      ...computedStyle,
+      filter: props.filter,
     };
   }
 

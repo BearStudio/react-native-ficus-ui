@@ -90,6 +90,8 @@ const Checkbox: CompundedCheckbox<CheckboxProps> = (incomingProps) => {
     borderEndWidth,
     shadow,
     shadowColor,
+    boxShadow,
+    filter,
     full,
     alignSelf,
     icon,

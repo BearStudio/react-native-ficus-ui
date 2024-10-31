@@ -74,6 +74,8 @@ const Spinner: React.FunctionComponent<SpinnerProps> = (incomingProps) => {
     shrink,
     shadow,
     shadowColor,
+    boxShadow,
+    filter,
     opacity,
     overflow,
     top,

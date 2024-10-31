@@ -73,6 +73,8 @@ const List: React.FunctionComponent<ListProps> = (incomingProps) => {
     shrink,
     shadow,
     shadowColor,
+    boxShadow,
+    filter,
     opacity,
     overflow,
     top,

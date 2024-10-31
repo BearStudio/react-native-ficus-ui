@@ -22,6 +22,7 @@ import CheckboxComponent from './components/Checkbox';
 import RadioComponent from './components/Radio';
 import ToastHook from './components/Toast';
 import ModalComponent from './components/Modal';
+import DraggableModalComponent from './components/DraggableModal';
 import FlashListComponent from './components/FlashList';
 import SafeAreaBoxComponent from './components/SafeAreaBox';
 import DividerComponent from './components/Divider';
@@ -168,6 +169,11 @@ export const components: ExampleComponentType[] = [
     navigationPath: 'Modal',
     onScreenName: 'Modal',
     component: ModalComponent,
+  },
+  {
+    navigationPath: 'DraggableModal',
+    onScreenName: 'DraggableModal',
+    component: DraggableModalComponent,
   },
   {
     navigationPath: 'Slider',

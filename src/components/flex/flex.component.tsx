@@ -89,6 +89,8 @@ const Flex: React.FunctionComponent<FlexProps> = (incomingProps) => {
     shrink,
     shadow,
     shadowColor,
+    boxShadow,
+    filter,
     opacity,
     overflow,
     top,

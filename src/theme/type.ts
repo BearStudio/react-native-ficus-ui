@@ -28,6 +28,7 @@ import type {
 } from 'components/checkbox/checkbox.type';
 import type { RadioGroupProps, RadioProps } from 'components/radio/radio.type';
 import type { ModalProps } from 'components/modal/modal.type';
+import type { DraggableModalProps } from 'components/draggable-modal/draggable-modal.type';
 import { ToastProps } from 'react-native-toast-message';
 import type { DividerProps } from 'components/divider/divider.type';
 import { BadgeProps } from 'components/badge/badge.type';
@@ -89,6 +90,7 @@ export interface ThemeType {
     Radio?: VariantType<RadioProps>;
     RadioGroup?: VariantType<RadioGroupProps>;
     Modal?: VariantType<ModalProps>;
+    DraggableModal?: VariantType<DraggableModalProps>;
     Divider?: VariantType<DividerProps>;
     Slider?: VariantType<SliderProps>;
   };

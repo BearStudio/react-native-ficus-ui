@@ -83,6 +83,8 @@ const Stack: React.FunctionComponent<StackProps> = (incomingProps) => {
     shrink,
     shadow,
     shadowColor,
+    boxShadow,
+    filter,
     opacity,
     overflow,
     top,

@@ -75,6 +75,8 @@ const TouchableOpacity: React.FunctionComponent<TouchableOpacityProps> = (
     shrink,
     shadow,
     shadowColor,
+    boxShadow,
+    filter,
     opacity,
     overflow,
     top,

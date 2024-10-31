@@ -78,6 +78,8 @@ const TouchableWithoutFeedback: React.FunctionComponent<TouchableWithoutFeedback
     shrink,
     shadow,
     shadowColor,
+    boxShadow,
+    filter,
     opacity,
     overflow,
     top,
