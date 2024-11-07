@@ -2,7 +2,6 @@ import React from 'react';
 import { SafeAreaView } from 'react-native';
 import {
   Button,
-  Icon,
   DraggableModal,
   Text,
   useDisclosure,

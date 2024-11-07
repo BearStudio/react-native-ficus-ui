@@ -88,8 +88,8 @@ const DraggableModal: React.FunctionComponent<DraggableModalProps> = (
       style={computedStyle.modal}
       {...rest}
     >
-      <BottomSheetView>
-        <Box bg={bg} h={h ?? '100%'} style={computedStyle.container}>
+      <BottomSheetView style={computedStyle.container}>
+        <Box h={h ?? '100%'}>
           <SafeAreaView style={computedStyle.safeView}>{children}</SafeAreaView>
         </Box>
       </BottomSheetView>

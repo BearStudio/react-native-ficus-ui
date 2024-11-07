@@ -32,14 +32,14 @@ export const ThemeProvider: React.FunctionComponent<ThemeProviderProps> = (
   return (
     // eslint-disable-next-line react-native/no-inline-styles
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <BottomSheetModalProvider>
-        <ThemeContext.Provider
-          value={{ theme: themeState, setTheme, windowWidth: width }}
-        >
+      <ThemeContext.Provider
+        value={{ theme: themeState, setTheme, windowWidth: width }}
+      >
+        <BottomSheetModalProvider>
           {children}
           <Toast {...themeState.toastProps} />
-        </ThemeContext.Provider>
-      </BottomSheetModalProvider>
+        </BottomSheetModalProvider>
+      </ThemeContext.Provider>
     </GestureHandlerRootView>
   );
 };

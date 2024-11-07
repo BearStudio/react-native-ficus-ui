@@ -5,6 +5,7 @@ import {
   createBorderWidthStyles,
   createBorderColorStyles,
   createBorderRadiusStyles,
+  getThemeColor,
 } from '../../theme/theme.service';
 import { DraggableModalProps } from './draggable-modal.type';
 
@@ -27,6 +28,7 @@ export const getStyle = (theme: ThemeType, props: DraggableModalProps) => {
     ...createSpacingStyles(props, theme.spacing),
     ...createBorderColorStyles(props, theme.colors),
     ...createBorderRadiusStyles(props, theme.borderRadius),
+    backgroundColor: getThemeColor(theme.colors, props.bg as string),
   };
 
   computedStyle.safeView = {
