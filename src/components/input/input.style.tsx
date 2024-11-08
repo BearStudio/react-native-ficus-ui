@@ -90,10 +90,14 @@ export const getStyle = (theme: ThemeType, props: InputProps, state: any) => {
       theme.colors,
       props.textShadowColor as string
     ),
-    textShadowOffset: {
-      width: getThemeProperty(theme.shadow, props.textShadowOffset),
-      height: getThemeProperty(theme.shadow, props.textShadowOffset),
-    },
+    ...(props.textShadowOffset?.width || props.textShadowOffset?.height
+      ? {
+          textShadowOffset: {
+            width: props.textShadowOffset?.width,
+            height: props.textShadowOffset?.height,
+          },
+        }
+      : {}),
     textShadowRadius: getThemeProperty(
       theme.borderRadius,
       props.textShadowRadius

@@ -325,7 +325,7 @@ export interface TextPropsType {
   textDecorationColor?: ResponsiveValue<string>;
   textShadowColor?: ResponsiveValue<string>;
   textShadowOffset?: ResponsiveValue<{ width: number; height: number }>;
-  textShadowRadius?: ResponsiveValue<number>;
+  textShadowRadius?: ResponsiveValue<string | number>;
 }
 
 export const opacityProps = ['opacity'] as const;
