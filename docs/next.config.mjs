@@ -79,7 +79,8 @@ export default withNextra({
     'react-native-ficus-ui',
     'react-native-confirmation-code-field',
     '@gorhom/bottom-sheet',
-    'react-native-gesture-handler'
+    'react-native-gesture-handler',
+    'react-native-reanimated'
   ],
 
   webpack: (config, { isDevelopment }) => {
