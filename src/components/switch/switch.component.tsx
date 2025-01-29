@@ -19,7 +19,7 @@ const Switch: React.FC<SwitchProps> = (incomingProps) => {
       h: 30,
       onPress: (): void => {},
       colorScheme: '',
-      activeBg: 'green',
+      activeBg: 'green.300',
       bg: 'gray.400',
       on: false,
       thumbSize: 12,
