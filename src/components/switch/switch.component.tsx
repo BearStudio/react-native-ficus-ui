@@ -18,7 +18,8 @@ const Switch: React.FC<SwitchProps> = (incomingProps) => {
       w: 55,
       h: 30,
       onPress: (): void => {},
-      colorScheme: 'green',
+      colorScheme: '',
+      activeBg: 'green',
       bg: 'gray.400',
       on: false,
       thumbSize: 12,
@@ -68,6 +69,7 @@ const Switch: React.FC<SwitchProps> = (incomingProps) => {
     borderEndWidth,
     onPress,
     colorScheme,
+    activeBg,
     thumbSize,
     thumbBg,
     activeThumbBg,
@@ -78,7 +80,7 @@ const Switch: React.FC<SwitchProps> = (incomingProps) => {
   const [animXValue] = useState(new Animated.Value(on ? 1 : 0));
   const computedStyle = getStyle(theme, props);
 
-  const endPos = (w as number) - (thumbSize as number) - 3;
+  const endPos = (w as number) - thumbSize - 3;
   const circlePosXEnd = endPos;
   const [circlePosXStart] = useState(3);
 
@@ -119,7 +121,10 @@ const Switch: React.FC<SwitchProps> = (incomingProps) => {
               inputRange: [0, 1],
               outputRange: [
                 getThemeColor(theme.colors, bg),
-                getThemeColor(theme.colors, props.colorScheme),
+                getThemeColor(
+                  theme.colors,
+                  props.colorScheme ? `${props.colorScheme}.500` : activeBg
+                ),
               ],
             }),
           },
