@@ -1,10 +1,6 @@
 import { ReactNode } from 'react';
 import { ViewStyle, TextStyle } from 'react-native';
-import type {
-  TabViewProps as RNTabViewProps,
-  Route,
-  SceneRendererProps,
-} from 'react-native-tab-view';
+import type { Route, SceneRendererProps } from 'react-native-tab-view';
 import type {
   BorderPropsType,
   SpacingPropsType,
@@ -35,9 +31,7 @@ type CommonStyleProps = BorderPropsType &
   VariantPropsType;
 
 // Extend CommonStyleProps with specific props for each component
-export interface TabsProps<T extends Route = Route>
-  extends CommonStyleProps,
-    RNTabViewProps<T> {
+export interface TabsProps extends CommonStyleProps {
   colorScheme?: string;
   children: ReactNode;
   initialPage?: number;
@@ -51,6 +45,7 @@ export interface TabListProps extends CommonStyleProps {
 }
 
 export interface TabPanelProps extends CommonStyleProps {
+  linkedTo: string;
   children: ReactNode;
   // Additional props can be added if needed
 }
