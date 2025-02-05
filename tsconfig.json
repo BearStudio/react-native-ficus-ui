@@ -1,28 +1,27 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "baseUrl": "src",
-    "paths": {
-      "react-native-ficus-ui": ["./src/index"]
-    },
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
+    "allowJs": true,
+    "composite": false,
+    "declaration": true,
+    "declarationMap": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
-    "lib": ["esnext"],
-    "module": "esnext",
+    "inlineSources": false,
+    "module": "ESNext",
     "moduleResolution": "node",
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noImplicitUseStrict": false,
-    "noStrictGenericChecks": false,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "resolveJsonModule": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "preserveWatchOutput": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "esnext",
-    "types": ["react-native", "jest", "@testing-library/jest-native"]
+    "target": "ESNext",
+    "jsx": "react-native"
   },
-  "include": ["src"]
+  "exclude": [
+    "node_modules",
+    "apps",
+    "./babel.config.js",
+    "packages/react-native-ficus-ui/lib"
+  ]
 }
