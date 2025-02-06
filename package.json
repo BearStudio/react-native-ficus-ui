@@ -2,6 +2,9 @@
   "name": "ficus-ui-monorepo",
   "private": true,
   "version": "1.3.3",
+  "engines": {
+    "node": ">= 18.0.0"
+  },
   "scripts": {
     "dev": "pnpm -C apps/examples run",
     "docs:dev": "pnpm -C ./apps/docs run dev",
@@ -10,7 +13,8 @@
     "typecheck": "pnpm -C ./packages/react-native-ficus-ui run typecheck",
     "test:components": "pnpm -C ./packages/react-native-ficus-ui run test",
     "ci": "pnpm typecheck && pnpm lint && pnpm test:components",
-    "clean": "del ./**/node_modules ./**/lib ./**/.next ./**/.expo"
+    "clean": "del ./**/node_modules ./**/lib ./**/.next ./**/.expo",
+    "release": "release-it"
   },
   "dependencies": {
     "react": "18.3.1",

@@ -1,3 +1,6 @@
-**/node_modules/
-**/lib/
-apps/
+node_modules
+lib
+.next
+
+# Temporary 
+apps
