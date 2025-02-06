@@ -25,10 +25,10 @@ pnpm install
 ### Development
 While developing, you can run the [example app](/example/) to test your changes.
 
-To build the library and start the example app:
+To build the packages:
 
 ```sh
-pnpm dev
+pnpm prepack
 ```
 
 > [!NOTE]
@@ -36,25 +36,25 @@ pnpm dev
 
 To start the example app:
 ```sh
-pnpm examples
+pnpm dev
 ```
 
 To run the example app on Android:
 
 ```sh
-pnpm examples android
+pnpm dev android
 ```
 
 To run the example app on iOS:
 
 ```sh
-pnpm examples ios
+pnpm dev ios
 ```
 
 To run the example app on Web:
 
 ```sh
-pnpm examples web
+pnpm dev web
 ```
 
 ### Code quality
@@ -82,9 +82,9 @@ To test if all the CI steps are working all at once, you can use:
 pnpm run ci
 ```
 
-### Run the Documentation
+### Run the Documentation (To improve)
 
-To run the documentation in local development, there is a small workaround to properly resolve react-native dependencies (TO BE FIXED).
+To run the documentation in local development, there is a small workaround to properly resolve react-native dependencies.
 From the project root, you need to run: 
 
 ```sh
@@ -96,6 +96,8 @@ Then, you will be able to run:
 ```sh
 pnpm docs:dev
 ```
+
+If you want to be able to run the example app after running  `pnpm -C ./apps/docs install`, you might need to clean your node_modules.
 
 ### Clean
 
