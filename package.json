@@ -6,9 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "examples": "pnpm -C apps/examples run",
     "examples:web": "pnpm run examples web",
-    "build": "pnpm -C ./packages/react-native-ficus-ui run prepack",
-    "build:dev": "pnpm build && pnpm examples:web",
-    "clean": "rm -rf node_modules packages/react-native-ficus-ui/node_modules packages/react-native-ficus-ui/lib apps/examples/node_modules apps/examples/.expo apps/docs/node_modules",
+    "prepack": "pnpm -C ./packages/react-native-ficus-ui run prepack",
+    "dev": "pnpm prepack && pnpm examples:web",
     "lint": "eslint \"**/*.{js,ts,tsx}\""
   },
   "author": {
