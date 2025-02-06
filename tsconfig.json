@@ -15,8 +15,7 @@
     "preserveWatchOutput": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "ESNext",
-    "jsx": "react-native"
+    "target": "ESNext"
   },
   "exclude": [
     "node_modules",

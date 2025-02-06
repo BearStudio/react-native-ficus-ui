@@ -1,3 +1,5 @@
+/* eslint-disable react-native/no-inline-styles */
+
 import * as React from 'react';
 import RNModal from 'react-native-modal';
 import { SafeAreaView, FlatList } from 'react-native';
@@ -74,25 +76,25 @@ const Select = React.forwardRef<SelectRef, SelectProps>(
      * set values of select based if its multiple select
      * or single valued select
      *
-     * @param value
+     * @param selectValue
      */
-    const onSelect = (value: any) => {
+    const onSelect = (selectValue: any) => {
       let finalValue;
 
       if (isMultiple) {
         const copy = selectedValue.slice();
-        const index = selectedValue.indexOf(value);
+        const index = selectedValue.indexOf(selectValue);
         if (index !== -1) {
           copy.splice(index, 1);
         } else {
-          copy.push(value);
+          copy.push(selectValue);
         }
 
         setSelectedValue(copy);
         finalValue = copy;
       } else {
-        setSelectedValue(value);
-        finalValue = value;
+        setSelectedValue(selectValue);
+        finalValue = selectValue;
       }
 
       if (!submit && !isMultiple) {
