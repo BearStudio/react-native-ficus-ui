@@ -22,6 +22,7 @@ To get started with the project, run `pnpm install` in the root directory to ins
 pnpm install
 ```
 
+### Development
 While developing, you can run the [example app](/example/) to test your changes.
 
 To build the library and start the example app:
@@ -56,6 +57,7 @@ To run the example app on Web:
 pnpm examples web
 ```
 
+### Code quality
 Make sure your code passes TypeScript and ESLint. Run the following to verify:
 
 ```sh
@@ -79,6 +81,30 @@ To test if all the CI steps are working all at once, you can use:
 ```sh
 pnpm run ci
 ```
+
+### Run the Documentation
+
+To run the documentation in local development, there is a small workaround to properly resolve react-native dependencies (TO BE FIXED).
+From the project root, you need to run: 
+
+```sh
+pnpm -C ./apps/docs install
+```
+
+Then, you will be able to run:
+
+```sh
+pnpm docs:dev
+```
+
+### Clean
+
+To clean all node_modules and cache folders:
+
+```sh
+pnpm clean
+```
+
 
 ### Commit message convention
 

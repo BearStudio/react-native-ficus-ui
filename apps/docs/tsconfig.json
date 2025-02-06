@@ -16,7 +16,10 @@
     "moduleResolution": "node",
     "baseUrl": "./",
     "paths": {
-      "@components/*": ["./components/*"]
+      "@components/*": ["./components/*"],
+      "react-native-ficus-ui": [
+        "../../packages/react-native-ficus-ui/src/index"
+      ]
     },
     "plugins": [
       {
