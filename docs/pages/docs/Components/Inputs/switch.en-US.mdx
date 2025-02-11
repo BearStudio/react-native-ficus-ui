@@ -38,23 +38,34 @@ render(<SimpleSwitch />)`} noInline />
 }
 render(<SimpleSwitch />)`} noInline />
 
+### Change thumb size
+
+<CodeEditor code={`const SimpleSwitch = () => {
+  const [on, toggle] = React.useState(false);
+
+  return (
+    <Switch thumbSize={8} on={on} onPress={() => toggle(!on)} />
+  );
+}
+render(<SimpleSwitch />)`} noInline />
+
 ## Props
 
 ### `colorScheme`
 
 The colorScheme property, will define background color of switch when is active.
 
-| Type   | Required |
-| ------ | -------- |
-| string | No       |
+| Type   | Required | Default |
+| ------ | -------- | ------- |
+| string | No       | green   |
 
 ### `activeBg`
 
 The background color of switch when is active.
 
-| Type   | Required | Default   |
-| ------ | -------- | --------- |
-| string | No       | green.300 |
+| Type   | Required |
+| ------ | -------- |
+| string | No       |
 
 ### `bg`
 
@@ -79,6 +90,14 @@ The background color of thumb when toggle is on.
 | Type   | Required | Default |
 | ------ | -------- | ------- |
 | string | No       | white   |
+
+### `thumbSize`
+
+The size of thumb component.
+
+| Type   | Required | Default |
+| ------ | -------- | ------- |
+| number | No       | 24      |
 
 ### `isDisabled`
 
