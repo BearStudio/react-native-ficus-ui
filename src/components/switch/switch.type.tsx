@@ -24,6 +24,8 @@ export interface SwitchProps
   on?: boolean;
   onPress: () => void;
   colorScheme?: string;
+  activeBg?: string;
+  thumbSize?: number;
   thumbBg?: string;
   activeThumbBg?: string;
   duration?: number;

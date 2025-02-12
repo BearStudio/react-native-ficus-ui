@@ -27,11 +27,11 @@ export const getStyle = (theme: ThemeType, props: SwitchProps) => {
 
   computedStyle.circle = {
     // @ts-ignore
-    height: props.h - 6,
+    height: props.thumbSize,
     // @ts-ignore
-    width: props.h - 6,
+    width: props.thumbSize,
     // @ts-ignore
-    borderRadius: props.h - 6,
+    borderRadius: Math.max(props.thumbSize / 2, 2),
   };
 
   // merging style props to computed style
