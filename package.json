@@ -14,18 +14,25 @@
     "test:components": "pnpm -C ./packages/react-native-ficus-ui run test",
     "ci": "pnpm typecheck && pnpm lint && pnpm test:components",
     "clean": "del ./**/node_modules ./**/lib ./**/.next ./**/.expo",
-    "release": "release-it"
+    "release": "release-it",
+    "format:check": "prettier --check packages --cache"
   },
   "dependencies": {
+    "@testing-library/react-native": "13.0.1",
+    "@trivago/prettier-plugin-sort-imports": "5.2.2",
+    "@types/jest": "29.5.2",
+    "@types/react-test-renderer": "18.0.0",
+    "eslint": "9.20.1",
+    "eslint-plugin-testing-library": "7.1.1",
+    "prettier": "3.4.2",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "react-test-renderer": "18.2.0"
   },
   "devDependencies": {
     "@react-native/eslint-config": "0.77.0",
     "@types/react": "18.3.12",
-    "@types/react-dom": "18.3.1",
-    "eslint": "8.57.1",
-    "prettier": "3.4.2"
+    "@types/react-dom": "18.3.1"
   },
   "author": {
     "name": "Nicolas Torion",

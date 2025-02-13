@@ -1,26 +1,32 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
+    /** Base Options */
+    "esModuleInterop": true,
+    "target": "ESNext",
+    "moduleDetection": "force",
     "allowJs": true,
-    "composite": false,
+    "isolatedModules": true,
+    "moduleResolution": "node10",
+    "composite": true,
+
+    /** For transpiling with TypeScript */
+    "module": "ESNext",
+    "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "inlineSources": false,
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "preserveWatchOutput": true,
-    "skipLibCheck": true,
+
+    /** Best practices */
     "strict": true,
-    "target": "ESNext"
+    "skipLibCheck": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
+
+    /** JSX */
+    "jsx": "react-native",
+    "types": ["node", "jest"]
   },
-  "exclude": [
-    "node_modules",
-    "apps",
-    "./babel.config.js",
-    "packages/react-native-ficus-ui/lib"
-  ]
+  "include": ["packages", "__tests__"],
+  "exclude": ["node_modules", "apps"]
 }
