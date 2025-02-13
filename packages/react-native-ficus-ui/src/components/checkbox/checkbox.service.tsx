@@ -2,11 +2,11 @@
 import * as React from 'react';
 
 import { ThemeType } from '../..//theme';
-import { Icon } from '../icon/icon.component';
-import { CheckboxProps } from './checkbox.type';
 import { getThemeColor, getThemeProperty } from '../../theme/theme.service';
-import { Spinner } from '../spinner/spinner.component';
 import { Box } from '../box/box.component';
+import { Icon } from '../icon/icon.component';
+import { Spinner } from '../spinner/spinner.component';
+import { CheckboxProps } from './checkbox.type';
 
 /**
  * get icon name based on state

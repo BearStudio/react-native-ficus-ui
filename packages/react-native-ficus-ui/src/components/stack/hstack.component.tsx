@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import type { StackProps } from './stack.type';
+import { useTheme } from '../../theme';
+import { handleResponsiveProps } from '../../types';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { Stack } from './stack.component';
-import { handleResponsiveProps } from '../../types';
-import { useTheme } from '../../theme';
+import type { StackProps } from './stack.type';
 
 const HStack: React.FunctionComponent<StackProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

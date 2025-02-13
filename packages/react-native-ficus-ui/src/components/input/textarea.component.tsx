@@ -1,17 +1,18 @@
 import * as React from 'react';
 import { useState } from 'react';
+
 import {
-  View as RNView,
   NativeSyntheticEvent,
-  TextInputFocusEventData,
   TextInput as RNTextInput,
+  View as RNView,
+  TextInputFocusEventData,
   TouchableWithoutFeedback,
 } from 'react-native';
 
-import { getStyle } from './input.style';
-import { TextareaProps } from './textarea.type';
 import { useTheme } from '../../theme';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { getStyle } from './input.style';
+import { TextareaProps } from './textarea.type';
 
 const Textarea = React.forwardRef<RNTextInput, TextareaProps>(
   (incomingProps, ref) => {

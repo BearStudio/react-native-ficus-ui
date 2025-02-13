@@ -1,17 +1,17 @@
 import { StyleSheet } from 'react-native';
 
 import {
-  createShadowStyles,
-  createPositionStyle,
-  createSpacingStyles,
-  createStackSpacingStyles,
-  createBorderWidthStyles,
   createBorderColorStyles,
   createBorderRadiusStyles,
+  createBorderWidthStyles,
+  createPositionStyle,
+  createShadowStyles,
+  createSpacingStyles,
+  createStackSpacingStyles,
   getThemeColor,
 } from '../../theme/theme.service';
-import type { StackProps } from './stack.type';
 import type { ThemeType } from '../../theme/type';
+import type { StackProps } from './stack.type';
 
 /**
  * computed style

@@ -1,24 +1,23 @@
 import * as React from 'react';
+
 import {
-  View as RNView,
+  Platform,
+  ActivityIndicator as RNActivityIndicator,
   Animated as RNAnimated,
   Pressable as RNButton,
-  ActivityIndicator as RNActivityIndicator,
-  Platform,
+  View as RNView,
 } from 'react-native';
 
-import { getStyle } from './button.style';
 import { useTheme } from '../../theme';
-import { ButtonProps } from './button.type';
-import { getThemeProperty, getThemeColor } from '../../theme/theme.service';
-import { getUnderlayColor, getRippleColor } from './button.service';
-
-import { Text } from '../text/text.component';
+import { getThemeColor, getThemeProperty } from '../../theme/theme.service';
 import { handleResponsiveProps, textProps } from '../../types';
 import { getSpecificProps } from '../../utilities';
-
 import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { Icon } from '../icon/icon.component';
+import { Text } from '../text/text.component';
+import { getRippleColor, getUnderlayColor } from './button.service';
+import { getStyle } from './button.style';
+import { ButtonProps } from './button.type';
 
 const Button: React.FunctionComponent<ButtonProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

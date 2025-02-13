@@ -1,13 +1,14 @@
 import { ViewProps as RNViewProps } from 'react-native';
+
 import {
   BackgroundPropsType,
+  BorderPropsType,
+  BorderRadiusPropsType,
   DimensionPropsType,
   FlexPropsType,
   PositionPropsType,
-  BorderPropsType,
-  SpacingPropsType,
-  BorderRadiusPropsType,
   ShadowPropsType,
+  SpacingPropsType,
   VariantPropsType,
 } from '../../types';
 import { Option } from './select.option.component';

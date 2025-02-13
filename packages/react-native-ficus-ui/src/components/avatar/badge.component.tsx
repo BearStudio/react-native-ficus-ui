@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import { AvatarBadgeProps } from './avatar.type';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
 import { useTheme } from '../../theme';
+import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { Box } from '../box/box.component';
+import { AvatarBadgeProps } from './avatar.type';
 
 const AvatarBadge: React.FunctionComponent<AvatarBadgeProps> = (
   incomingProps

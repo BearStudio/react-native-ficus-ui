@@ -1,19 +1,19 @@
 import type { ViewProps as RNViewProps } from 'react-native';
 
 import type {
-  BorderPropsType,
-  SpacingPropsType,
-  BorderRadiusPropsType,
-  ShadowPropsType,
-  DimensionPropsType,
-  BackgroundPropsType,
   BackgroundImgPropsType,
+  BackgroundPropsType,
+  BorderPropsType,
+  BorderRadiusPropsType,
+  DimensionPropsType,
   FlexPropsType,
-  PositionPropsType,
-  ZIndexPropsType,
-  OverflowPropsType,
   OpacityPropsType,
+  OverflowPropsType,
+  PositionPropsType,
+  ShadowPropsType,
+  SpacingPropsType,
   VariantPropsType,
+  ZIndexPropsType,
 } from '../../types';
 
 export interface FlexProps

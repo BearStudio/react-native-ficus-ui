@@ -1,12 +1,13 @@
 import * as React from 'react';
+
 import RNSlider from '@react-native-community/slider';
 
+import { useTheme } from '../../theme/theme.hook';
+import { getThemeColor } from '../../theme/theme.service';
+import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { getStyle } from './slider.style';
 import type { SliderProps } from './slider.type';
-import { useTheme } from '../../theme/theme.hook';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
-import { getThemeColor } from '../../theme/theme.service';
 
 const Slider: React.FunctionComponent<SliderProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

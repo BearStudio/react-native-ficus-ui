@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import { AvatarGroupProps } from './avatar.type';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
 import { useTheme } from '../../theme';
+import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { Stack } from '../stack/stack.component';
+import { AvatarGroupProps } from './avatar.type';
 
 const AvatarGroup: React.FunctionComponent<AvatarGroupProps> = (
   incomingProps

@@ -1,15 +1,15 @@
-import type { ViewProps as RNViewProps } from 'react-native';
 import type { SliderProps as RNSliderProps } from '@react-native-community/slider';
+import type { ViewProps as RNViewProps } from 'react-native';
 
 import type {
-  SpacingPropsType,
-  DimensionPropsType,
   BackgroundPropsType,
+  DimensionPropsType,
   FlexPropsType,
-  PositionPropsType,
-  ZIndexPropsType,
   OpacityPropsType,
+  PositionPropsType,
+  SpacingPropsType,
   VariantPropsType,
+  ZIndexPropsType,
 } from '../../types';
 
 export interface SliderProps

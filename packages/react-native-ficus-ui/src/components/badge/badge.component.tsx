@@ -1,11 +1,12 @@
 import * as React from 'react';
+
 import { View as RNView, Text } from 'react-native';
 
+import { useTheme } from '../../theme/theme.hook';
+import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { getStyle } from './badge.style';
 import type { BadgeProps } from './badge.type';
-import { useTheme } from '../../theme/theme.hook';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
 
 const Badge: React.FunctionComponent<BadgeProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

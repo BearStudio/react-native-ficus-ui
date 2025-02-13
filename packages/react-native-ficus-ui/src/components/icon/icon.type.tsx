@@ -1,17 +1,18 @@
 import { ViewProps as RNViewProps } from 'react-native';
+
 import {
   BackgroundPropsType,
+  BorderPropsType,
+  BorderRadiusPropsType,
   DimensionPropsType,
   FlexPropsType,
   OpacityPropsType,
   PositionPropsType,
-  TextPropsType,
-  ZIndexPropsType,
-  BorderPropsType,
-  SpacingPropsType,
-  BorderRadiusPropsType,
   ShadowPropsType,
+  SpacingPropsType,
+  TextPropsType,
   VariantPropsType,
+  ZIndexPropsType,
 } from '../../types';
 
 export type iconFontFamilyType =

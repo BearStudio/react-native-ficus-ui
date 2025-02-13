@@ -1,20 +1,21 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import {
-  View as RNView,
   Pressable as RNButton,
   GestureResponderEvent as RNGestureResponderEvent,
+  View as RNView,
 } from 'react-native';
 
-import { getStyle } from './checkbox.style';
-import { isFunction } from '../../utilities';
-import { getIcon } from './checkbox.service';
-import { CheckboxGroup } from './group.component';
-import { CompundedCheckbox, CheckboxProps } from './checkbox.type';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { useTheme } from '../../theme';
-import { Text } from '../text/text.component';
 import { handleResponsiveProps } from '../../types';
+import { isFunction } from '../../utilities';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { Text } from '../text/text.component';
+import { getIcon } from './checkbox.service';
+import { getStyle } from './checkbox.style';
+import { CheckboxProps, CompundedCheckbox } from './checkbox.type';
+import { CheckboxGroup } from './group.component';
 
 const Checkbox: CompundedCheckbox<CheckboxProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

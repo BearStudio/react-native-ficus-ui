@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
 
+import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { Box } from '../box/box.component';
 import { CheckboxGroupProps } from './checkbox.type';
 

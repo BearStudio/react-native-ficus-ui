@@ -1,13 +1,14 @@
+import React, { useEffect, useRef } from 'react';
+
+import { BottomSheetModal, BottomSheetView } from '@gorhom/bottom-sheet';
 import { SafeAreaView } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { Box } from '../box/box.component';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { getStyle } from './draggable-modal.style';
 import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { Box } from '../box/box.component';
+import { getStyle } from './draggable-modal.style';
 import { DraggableModalProps } from './draggable-modal.type';
-import { BottomSheetModal, BottomSheetView } from '@gorhom/bottom-sheet';
-import React, { useRef, useEffect } from 'react';
 
 const DraggableModal: React.FunctionComponent<DraggableModalProps> = (
   incomingProps

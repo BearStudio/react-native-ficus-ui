@@ -1,21 +1,22 @@
 import * as React from 'react';
-import color from 'color';
 import { useState } from 'react';
+
+import color from 'color';
 import {
-  View as RNView,
   NativeSyntheticEvent,
-  TextInputFocusEventData,
-  TextInput as RNTextInput,
   ActivityIndicator as RNActivityIndicator,
+  TextInput as RNTextInput,
+  View as RNView,
+  TextInputFocusEventData,
   TouchableWithoutFeedback,
 } from 'react-native';
 
+import { useTheme } from '../../theme';
+import { getThemeColor, getThemeProperty } from '../../theme/theme.service';
+import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { getStyle } from './input.style';
 import { InputProps } from './input.type';
-import { useTheme } from '../../theme';
-import { getThemeProperty, getThemeColor } from '../../theme/theme.service';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
 
 const Input = React.forwardRef<RNTextInput, InputProps>(
   (incomingProps, ref) => {

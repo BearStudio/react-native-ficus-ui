@@ -1,7 +1,8 @@
-import { Box } from '../components/box/box.component';
-import type { ThemeType } from './type';
 import React from 'react';
+
+import { Box } from '../components/box/box.component';
 import { Text } from '../components/text/text.component';
+import type { ThemeType } from './type';
 
 export const defaultTheme: ThemeType = {
   name: 'default',
@@ -247,11 +248,11 @@ export const defaultTheme: ThemeType = {
   },
 
   fontSize: {
-    'xs': 11,
-    'sm': 12,
-    'md': 13,
-    'lg': 15,
-    'xl': 17,
+    xs: 11,
+    sm: 12,
+    md: 13,
+    lg: 15,
+    xl: 17,
     '2xl': 19,
     '3xl': 21,
     '4xl': 24,
@@ -270,8 +271,8 @@ export const defaultTheme: ThemeType = {
   shadowColor: '#000',
 
   shadow: {
-    'none': {},
-    'xs': {
+    none: {},
+    xs: {
       shadowOffset: {
         width: 0,
         height: 1,
@@ -281,7 +282,7 @@ export const defaultTheme: ThemeType = {
 
       elevation: 1,
     },
-    'sm': {
+    sm: {
       shadowOffset: {
         width: 0,
         height: 2,
@@ -291,7 +292,7 @@ export const defaultTheme: ThemeType = {
 
       elevation: 4,
     },
-    'md': {
+    md: {
       shadowOffset: {
         width: 0,
         height: 4,
@@ -301,7 +302,7 @@ export const defaultTheme: ThemeType = {
 
       elevation: 8,
     },
-    'lg': {
+    lg: {
       shadowOffset: {
         width: 0,
         height: 6,
@@ -311,7 +312,7 @@ export const defaultTheme: ThemeType = {
 
       elevation: 12,
     },
-    'xl': {
+    xl: {
       shadowOffset: {
         width: 0,
         height: 8,
@@ -334,23 +335,23 @@ export const defaultTheme: ThemeType = {
   },
 
   borderRadius: {
-    'none': 0,
-    'xs': 2,
-    'sm': 4,
-    'md': 6,
-    'lg': 8,
-    'xl': 12,
+    none: 0,
+    xs: 2,
+    sm: 4,
+    md: 6,
+    lg: 8,
+    xl: 12,
     '2xl': 16,
-    'full': 99999,
+    full: 99999,
   },
 
   spacing: {
-    'none': 0,
-    'xs': 4,
-    'sm': 6,
-    'md': 8,
-    'lg': 12,
-    'xl': 24,
+    none: 0,
+    xs: 4,
+    sm: 6,
+    md: 8,
+    lg: 12,
+    xl: 24,
     '2xl': 32,
     '3xl': 64,
     '-xs': -4,
@@ -363,12 +364,12 @@ export const defaultTheme: ThemeType = {
   },
 
   stackSpacing: {
-    'none': 0,
-    'xs': 4,
-    'sm': 6,
-    'md': 8,
-    'lg': 12,
-    'xl': 24,
+    none: 0,
+    xs: 4,
+    sm: 6,
+    md: 8,
+    lg: 12,
+    xl: 24,
     '2xl': 32,
     '3xl': 64,
     '-xs': -4,
@@ -381,36 +382,36 @@ export const defaultTheme: ThemeType = {
   },
 
   avatar: {
-    'xs': 20,
-    'sm': 30,
-    'md': 50,
-    'lg': 70,
-    'xl': 90,
+    xs: 20,
+    sm: 30,
+    md: 50,
+    lg: 70,
+    xl: 90,
     '2xl': 110,
   },
 
   button: {
-    'xs': {
+    xs: {
       paddingHorizontal: 8,
       fontSize: 12,
       height: 25,
     },
-    'sm': {
+    sm: {
       paddingHorizontal: 12,
       fontSize: 13,
       height: 30,
     },
-    'md': {
+    md: {
       paddingHorizontal: 15,
       fontSize: 15,
       height: 42,
     },
-    'lg': {
+    lg: {
       paddingHorizontal: 20,
       fontSize: 17,
       height: 50,
     },
-    'xl': {
+    xl: {
       paddingHorizontal: 25,
       fontSize: 19,
       height: 60,

@@ -1,18 +1,19 @@
 import * as React from 'react';
+
 import {
   TouchableWithoutFeedback as RNTouchableWithoutFeedback,
   View,
 } from 'react-native';
 
+import { useTheme } from '../../theme/theme.hook';
+import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { getStyle } from './touchable-without-feedback.style';
 import type { TouchableWithoutFeedbackProps } from './touchable-without-feedback.type';
-import { useTheme } from '../../theme/theme.hook';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
 
-const TouchableWithoutFeedback: React.FunctionComponent<TouchableWithoutFeedbackProps> = (
-  incomingProps
-) => {
+const TouchableWithoutFeedback: React.FunctionComponent<
+  TouchableWithoutFeedbackProps
+> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();
   const props = useDefaultProps(
     'TouchableWithoutFeedback',

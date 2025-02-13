@@ -1,11 +1,12 @@
 import * as React from 'react';
+
 import { SectionList as RNSectionList } from 'react-native';
 
+import { useTheme } from '../../theme/theme.hook';
+import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { getStyle } from './sectionlist.style';
 import type { SectionListProps } from './sectionlist.type';
-import { useTheme } from '../../theme/theme.hook';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
 
 const SectionList: React.FunctionComponent<SectionListProps> = (
   incomingProps

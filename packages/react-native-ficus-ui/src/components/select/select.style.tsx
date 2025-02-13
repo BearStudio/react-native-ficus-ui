@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native';
-import { ThemeType } from '../../theme';
 
+import { ThemeType } from '../../theme';
 import {
-  createSpacingStyles,
-  createBorderRadiusStyles,
   createBorderColorStyles,
+  createBorderRadiusStyles,
   createBorderWidthStyles,
+  createSpacingStyles,
   getThemeColor,
 } from '../../theme/theme.service';
 import { WINDOW_HEIGHT } from '../../utilities';

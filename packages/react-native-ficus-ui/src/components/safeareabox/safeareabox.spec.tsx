@@ -1,10 +1,11 @@
 import React from 'react';
+
 import { render, screen } from '@testing-library/react-native';
 
+import { ThemeProvider } from '../../theme/theme.provider';
 import { Text } from '../text/text.component';
 import { SafeAreaBox } from './safeareabox.component';
 import type { SafeAreaBoxProps } from './safeareabox.type';
-import { ThemeProvider } from '../../theme/theme.provider';
 
 jest.mock('react-native-toast-message', () => 'Toast');
 

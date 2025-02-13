@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { IconButtonProps } from './icon-button.type';
-import { Button } from '../button/button.component';
+
 import { getThemeProperty, useTheme } from '../../theme';
+import { Button } from '../button/button.component';
+import { IconButtonProps } from './icon-button.type';
 
 const IconButton: React.FunctionComponent<IconButtonProps> = ({
   icon,

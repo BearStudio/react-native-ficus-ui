@@ -4,8 +4,8 @@ pre-commit:
     lint:
       files: git diff --name-only @{push}
       glob: '*.{js,ts,jsx,tsx}'
-      run: npx eslint {files}
+      run: pnpm run lint
     types:
       files: git diff --name-only @{push}
       glob: '*.{js,ts, jsx, tsx}'
-      run: npx tsc --noEmit
+      run: pnpm run typecheck

@@ -1,16 +1,16 @@
 import { StyleSheet } from 'react-native';
 
 import {
-  createShadowStyles,
-  createPositionStyle,
-  createSpacingStyles,
-  createBorderWidthStyles,
   createBorderColorStyles,
   createBorderRadiusStyles,
+  createBorderWidthStyles,
+  createPositionStyle,
+  createShadowStyles,
+  createSpacingStyles,
   getThemeColor,
 } from '../../theme/theme.service';
-import type { ScrollBoxProps } from './scrollbox.type';
 import type { ThemeType } from '../../theme/type';
+import type { ScrollBoxProps } from './scrollbox.type';
 
 /**
  * computed style

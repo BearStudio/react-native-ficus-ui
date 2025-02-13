@@ -1,16 +1,16 @@
-import IconEntypo from 'react-native-vector-icons/Entypo';
-import IconZocial from 'react-native-vector-icons/Zocial';
-import IconFeather from 'react-native-vector-icons/Feather';
-import IconIonicons from 'react-native-vector-icons/Ionicons';
-import IconOcticons from 'react-native-vector-icons/Octicons';
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
+import IconEntypo from 'react-native-vector-icons/Entypo';
 import IconEvilIcons from 'react-native-vector-icons/EvilIcons';
-import IconFoundation from 'react-native-vector-icons/Foundation';
+import IconFeather from 'react-native-vector-icons/Feather';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
 import IconFontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import IconMaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import IconSimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import IconFoundation from 'react-native-vector-icons/Foundation';
+import IconIonicons from 'react-native-vector-icons/Ionicons';
 import IconMaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import IconMaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import IconOcticons from 'react-native-vector-icons/Octicons';
+import IconSimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import IconZocial from 'react-native-vector-icons/Zocial';
 
 import { iconFontFamilyType } from './icon.type';
 

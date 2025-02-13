@@ -1,16 +1,16 @@
 import { StyleSheet } from 'react-native';
 
 import {
-  createShadowStyles,
-  createPositionStyle,
-  createSpacingStyles,
-  createBorderWidthStyles,
   createBorderColorStyles,
   createBorderRadiusStyles,
+  createBorderWidthStyles,
+  createPositionStyle,
+  createShadowStyles,
+  createSpacingStyles,
   getThemeColor,
 } from '../../theme/theme.service';
-import type { TouchableOpacityProps } from './touchable-opacity.type';
 import type { ThemeType } from '../../theme/type';
+import type { TouchableOpacityProps } from './touchable-opacity.type';
 
 /**
  * computed style
