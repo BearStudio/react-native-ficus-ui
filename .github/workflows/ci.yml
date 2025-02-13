@@ -33,7 +33,9 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Run unit tests
-        run: pnpm test -- --maxWorkers=2 --coverage
+        run: |
+          cd ./packages/react-native-ficus-ui
+          pnpm test -- --maxWorkers=2 --coverage
 
   build:
     runs-on: ubuntu-latest

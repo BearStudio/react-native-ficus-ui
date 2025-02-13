@@ -4,6 +4,16 @@ Contributions are always welcome, no matter how large or small!
 
 We want this community to be friendly and respectful to each other. Please follow it in all your interactions with the project. Before contributing, please read the [code of conduct](./CODE_OF_CONDUCT.md).
 
+## Architecture
+The project is split in 2 folders.
+
+`apps/`:
+- `docs/`: The documentation website of the library
+- `examples/`: A small expo app to test your changes while developping
+
+`packages/`: 
+- `react-native-ficus-ui`: The main librairy along with its components, hooks and theme.
+- ... other configuration and helper packages.
 ## Development workflow
 
 To get started with the project, run `pnpm install` in the root directory to install the required dependencies for each package:
@@ -12,32 +22,42 @@ To get started with the project, run `pnpm install` in the root directory to ins
 pnpm install
 ```
 
-While developing, you can run the [example app](/example/) to test your changes. Any changes you make in your library's JavaScript code will be reflected in the example app without a rebuild. If you change any native code, then you'll need to rebuild the example app.
+### Development
+While developing, you can run the [example app](/example/) to test your changes.
 
-To start the packager:
+To build the packages:
 
 ```sh
-pnpm example start
+pnpm prepack
+```
+
+> [!NOTE]
+> ⚠️ Your changes in the library will be repercuted in the example app. But if you change the library's exports, you will need to rebuild the package.
+
+To start the example app:
+```sh
+pnpm dev
 ```
 
 To run the example app on Android:
 
 ```sh
-pnpm example android
+pnpm dev android
 ```
 
 To run the example app on iOS:
 
 ```sh
-pnpm example ios
+pnpm dev ios
 ```
 
 To run the example app on Web:
 
 ```sh
-pnpm example web
+pnpm dev web
 ```
 
+### Code quality
 Make sure your code passes TypeScript and ESLint. Run the following to verify:
 
 ```sh
@@ -54,7 +74,37 @@ pnpm lint --fix
 Remember to add tests for your change if possible. Run the unit tests by:
 
 ```sh
-pnpm test
+pnpm test:components
+```
+
+To test if all the CI steps are working all at once, you can use:
+```sh
+pnpm run ci
+```
+
+### Run the Documentation (To improve)
+
+To run the documentation in local development, there is a small workaround to properly resolve react-native dependencies.
+From the project root, you need to run: 
+
+```sh
+pnpm -C ./apps/docs install
+```
+
+Then, you will be able to run:
+
+```sh
+pnpm docs:dev
+```
+
+If you want to be able to run the example app after running  `pnpm -C ./apps/docs install`, you might need to clean your node_modules.
+
+### Clean
+
+To clean all node_modules and cache folders:
+
+```sh
+pnpm clean
 ```
 
 
@@ -95,10 +145,10 @@ The `package.json` file contains various scripts for common tasks:
 
 - `pnpm typecheck`: type-check files with TypeScript.
 - `pnpm lint`: lint files with ESLint.
-- `pnpm test`: run unit tests with Jest.
-- `pnpm example start`: start the Metro server for the example app.
-- `pnpm example android`: run the example app on Android.
-- `pnpm example ios`: run the example app on iOS.
+- `pnpm test:components`: run the library's components unit tests with Jest.
+- `pnpm examples start`: start the Metro server for the example app.
+- `pnpm examples android`: run the example app on Android.
+- `pnpm examples ios`: run the example app on iOS.
 
 ### Sending a pull request
 

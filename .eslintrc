@@ -1,8 +1,9 @@
 {
-  "extends": ["@react-native-community", "prettier"],
+  "extends": "@react-native",
   "rules": {
     "@typescript-eslint/no-unused-vars": ["off", { "argsIgnorePattern": "^_" }],
     "no-unused-vars": "off",
-    "react-hooks/exhaustive-deps": "off"
+    "react-hooks/exhaustive-deps": "off",
+    "react-in-jsx-scope": "off"
   }
 }
