@@ -2,7 +2,7 @@
   "extends": ["@react-native"],
   "rules": {
     "@typescript-eslint/no-unused-vars": ["off", { "argsIgnorePattern": "^_" }],
-    "no-unused-vars": "off",
+    "no-unused-vars": "warn",
     "react-hooks/exhaustive-deps": "off"
   },
   "overrides": [
