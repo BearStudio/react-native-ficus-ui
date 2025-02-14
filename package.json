@@ -13,7 +13,7 @@
     "typecheck": "pnpm -C ./packages/react-native-ficus-ui run typecheck",
     "test": "jest --config ./jest.config.cjs",
     "ci": "pnpm typecheck && pnpm lint && pnpm test",
-    "clean": "del ./**/node_modules ./**/lib ./**/.next ./**/.expo",
+    "clean": "del ./**/node_modules ./**/lib ./**/dist ./**/.next ./**/.expo",
     "release": "release-it",
     "format:check": "prettier --check packages --cache",
     "format:fix": "prettier --write packages --cache"

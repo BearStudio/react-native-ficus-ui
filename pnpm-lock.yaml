@@ -181,6 +181,9 @@ importers:
       '@expo/vector-icons':
         specifier: 14.0.2
         version: 14.0.2
+      '@ficus-ui/native':
+        specifier: workspace:*
+        version: link:../../packages/components
       '@react-native-community/slider':
         specifier: 4.5.4
         version: 4.5.4
@@ -291,6 +294,18 @@ importers:
         specifier: 5.3.3
         version: 5.3.3
 
+  packages/components:
+    dependencies:
+      '@chakra-ui/utils':
+        specifier: 2.2.2
+        version: 2.2.2(react@18.3.1)
+      '@ficus-ui/style-system':
+        specifier: workspace:*
+        version: link:../style-system
+      '@ficus-ui/theme':
+        specifier: workspace:*
+        version: link:../theme
+
   packages/react-native-ficus-ui:
     dependencies:
       color:
@@ -399,6 +414,21 @@ importers:
       typescript:
         specifier: 5.1.6
         version: 5.1.6
+
+  packages/style-system:
+    dependencies:
+      '@chakra-ui/utils':
+        specifier: 2.2.2
+        version: 2.2.2(react@18.3.1)
+
+  packages/theme:
+    dependencies:
+      '@ficus-ui/style-system':
+        specifier: workspace:*
+        version: link:../style-system
+      deepmerge:
+        specifier: 4.2.2
+        version: 4.2.2
 
 packages:
 
@@ -1187,6 +1217,11 @@ packages:
 
   '@braintree/sanitize-url@6.0.4':
     resolution: {integrity: sha512-s3jaWicZd0pkP0jf5ysyHUI/RE7MHos6qlToFcGWXVp+ykHOy77OUMrfbgJ9it2C5bow7OIQwYYaHjk9XlBQ2A==}
+
+  '@chakra-ui/utils@2.2.2':
+    resolution: {integrity: sha512-jUPLT0JzRMWxpdzH6c+t0YMJYrvc5CLericgITV3zDSXblkfx3DsYXqU11DJTSGZI9dUKzM1Wd0Wswn4eJwvFQ==}
+    peerDependencies:
+      react: 18.3.1
 
   '@commitlint/cli@17.8.1':
     resolution: {integrity: sha512-ay+WbzQesE0Rv4EQKfNbSMiJJ12KdKTDzIt0tcK4k11FdsWmtwP0Kp1NWMOUswfIWo6Eb7p7Ln721Nx9FLNBjg==}
@@ -2244,6 +2279,12 @@ packages:
 
   '@types/keyv@3.1.4':
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
+
+  '@types/lodash.mergewith@4.6.9':
+    resolution: {integrity: sha512-fgkoCAOF47K7sxrQ7Mlud2TH023itugZs2bUg8h/KzT+BnZNrR2jAOmaokbLunHNnobXVWOezAeNn/lZqwxkcw==}
+
+  '@types/lodash@4.17.15':
+    resolution: {integrity: sha512-w/P33JFeySuhN6JLkysYUK2gEmy9kHHFN7E8ro0tkfmlDOgxBDzWEZ/J8cWA+fHqFevpswDTFZnDx+R9lbL6xw==}
 
   '@types/mdast@3.0.15':
     resolution: {integrity: sha512-LnwD+mUEfxWMa1QpDraczIn6k0Ee3SMicuYSSzS6ZYl2gKS09EClnJYGd8Du6rfc5r/GZEk5o1mRb8TaTj03sQ==}
@@ -9969,6 +10010,12 @@ snapshots:
 
   '@braintree/sanitize-url@6.0.4': {}
 
+  '@chakra-ui/utils@2.2.2(react@18.3.1)':
+    dependencies:
+      '@types/lodash.mergewith': 4.6.9
+      lodash.mergewith: 4.6.2
+      react: 18.3.1
+
   '@commitlint/cli@17.8.1':
     dependencies:
       '@commitlint/format': 17.8.1
@@ -11805,6 +11852,12 @@ snapshots:
   '@types/keyv@3.1.4':
     dependencies:
       '@types/node': 22.13.1
+
+  '@types/lodash.mergewith@4.6.9':
+    dependencies:
+      '@types/lodash': 4.17.15
+
+  '@types/lodash@4.17.15': {}
 
   '@types/mdast@3.0.15':
     dependencies:

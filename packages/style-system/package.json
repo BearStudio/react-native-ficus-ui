@@ -1,0 +1,45 @@
+{
+  "name": "@ficus-ui/style-system",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": {
+    "email": "noe@bearstudio.fr",
+    "name": "Noé Tatoud"
+  },
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@chakra-ui/utils": "2.2.2"
+  },
+  "types": "dist/types/src/index.d.ts",
+  "main": "dist/types/src/index.js",
+  "module": "dist/types/src/index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/esm/index.mjs"
+      },
+      "require": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/cjs/index.cjs"
+      }
+    },
+    "./config": {
+      "import": {
+        "types": "./dist/types/config/index.d.ts",
+        "default": "./dist/esm/config/index.mjs"
+      },
+      "require": {
+        "types": "./dist/types/config/index.d.ts",
+        "default": "./dist/cjs/config/index.cjs"
+      }
+    }
+  }
+}
