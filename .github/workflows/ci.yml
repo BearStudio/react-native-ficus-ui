@@ -36,7 +36,6 @@ jobs:
 
       - name: Run unit tests
         run: |
-          cd ./packages/react-native-ficus-ui
           pnpm test -- --maxWorkers=2 --coverage
 
   build:
