@@ -68,3 +68,4 @@ apps/docs/.next
 # TypeScript
 packages/**/tsconfig.tsbuildinfo
 tsconfig.tsbuildinfo
+dist
