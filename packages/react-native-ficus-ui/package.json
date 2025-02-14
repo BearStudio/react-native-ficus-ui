@@ -12,8 +12,9 @@
     "lib"
   ],
   "scripts": {
+    "dev": "tsc --watch",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "lint": "eslint \"**/*.{js,ts,tsx}\" --config ../../.eslintrc",
     "prepack": "bob build"
   },
   "keywords": [

@@ -4,7 +4,8 @@
     "paths": {
       "components/*": ["./components"]
     },
-    "baseUrl": "./src"
+    "baseUrl": "./src",
+    "outDir": "lib"
   },
   "include": ["src"]
 }

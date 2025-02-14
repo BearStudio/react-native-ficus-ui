@@ -60,6 +60,7 @@ android/keystores/debug.keystore
 
 # Bob-generated files
 lib/
+dist/
 
 # Next.js
 apps/docs/.next
