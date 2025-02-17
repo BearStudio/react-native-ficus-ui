@@ -21,17 +21,17 @@ export const border: Config<BorderProps> = {
 };
 
 export interface BorderProps {
-  borderWidth: ResponsiveValue<number>;
-  borderTopWidth: ResponsiveValue<number>;
-  borderRightWidth: ResponsiveValue<number>;
-  borderBottomWidth: ResponsiveValue<number>;
-  borderLeftWidth: ResponsiveValue<number>;
-  borderStartWidth: ResponsiveValue<number>;
-  borderEndWidth: ResponsiveValue<number>;
-  borderColor: ResponsiveValue<string>;
-  borderTopColor: ResponsiveValue<string>;
-  borderRightColor: ResponsiveValue<string>;
-  borderBottomColor: ResponsiveValue<string>;
-  borderLeftColor: ResponsiveValue<string>;
+  borderWidth?: ResponsiveValue<number>;
+  borderTopWidth?: ResponsiveValue<number>;
+  borderRightWidth?: ResponsiveValue<number>;
+  borderBottomWidth?: ResponsiveValue<number>;
+  borderLeftWidth?: ResponsiveValue<number>;
+  borderStartWidth?: ResponsiveValue<number>;
+  borderEndWidth?: ResponsiveValue<number>;
+  borderColor?: ResponsiveValue<string>;
+  borderTopColor?: ResponsiveValue<string>;
+  borderRightColor?: ResponsiveValue<string>;
+  borderBottomColor?: ResponsiveValue<string>;
+  borderLeftColor?: ResponsiveValue<string>;
   borderStyle?: ResponsiveValue<ViewStyle['borderStyle']>;
 }

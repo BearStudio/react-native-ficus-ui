@@ -16,11 +16,11 @@ export const effect: Config<EffectProps> = {
 };
 
 export interface EffectProps {
-  boxShadow: ViewStyle['boxShadow'];
-  shadow: string;
-  shadowOpacity: ResponsiveValue<number | string>;
-  shadowOffset: ResponsiveValue<ViewStyle['shadowOffset']>;
-  shadowRadius: ResponsiveValue<ViewStyle['shadowRadius']>;
-  opacity: ResponsiveValue<number | string>;
-  filter: ViewStyle['shadowOffset'];
+  boxShadow?: ViewStyle['boxShadow'];
+  shadow?: string;
+  shadowOpacity?: ResponsiveValue<number | string>;
+  shadowOffset?: ResponsiveValue<ViewStyle['shadowOffset']>;
+  shadowRadius?: ResponsiveValue<ViewStyle['shadowRadius']>;
+  opacity?: ResponsiveValue<number | string>;
+  filter?: ViewStyle['shadowOffset'];
 }
