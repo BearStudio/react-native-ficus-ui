@@ -1,8 +1,10 @@
-import { SafeAreaView, ScrollView, Text, View } from "react-native";
-import { Box } from "@ficus-ui/native";
+import { Pressable, SafeAreaView, ScrollView, Text, View } from "react-native";
+import { Box, Image } from "@ficus-ui/native";
 import ExampleSection from "@/src/ExampleSection";
+import { Link, useRouter } from "expo-router";
 
 const BoxComponent = () => {
+  const router = useRouter();
   return (
     <SafeAreaView>
       <Text style={{
@@ -186,17 +188,21 @@ const BoxComponent = () => {
             />
           </Box>
         </ExampleSection> */}
-
         <Box
+              as={Pressable}
               h={40}
-              w={40}
+              w={100}
               mr="sm"
               borderColor="green.500"
               borderWidth={1}
-              style={{
-                borderColor:"#718096"
-              }}
-            />
+              textAlignVertical="center"
+              justify="center"
+              align="center"
+              onPress={() => console.log('yes')}
+              bg="red"
+            >
+              <Text > Back</Text>
+            </Box>
         <ExampleSection name="border">
           <Box flexDirection="row">
             <Box
@@ -205,9 +211,6 @@ const BoxComponent = () => {
               mr="sm"
               borderColor="green.500"
               borderWidth={1}
-              style={{
-                borderColor:"#718096"
-              }}
             />
             <Box
               h={40}
@@ -225,7 +228,7 @@ const BoxComponent = () => {
         <ExampleSection name="radius">
           <Box flexDirection="row">
 
-            <Box h={40} w={40} mr="sm" borderRadius="none" bg="blue.400" style={{borderRadius: 10}}/>
+            <Box h={40} w={40} mr="sm" borderRadius="none" bg="blue.400"/>
             <Box h={40} w={40} mr="sm" borderRadius="xs" bg="blue.400" />
             <Box h={40} w={40} mr="sm" borderRadius="sm" bg="blue.400" />
             <Box h={40} w={40} mr="sm" borderRadius="md" bg="blue.400" />

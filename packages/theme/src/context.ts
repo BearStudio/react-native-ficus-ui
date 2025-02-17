@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-import { theme } from '.';
+import { theme } from './theme.default';
 import { FicusTheme } from './theme.types';
 
 export interface ThemeContext {

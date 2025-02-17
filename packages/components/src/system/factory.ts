@@ -1,31 +1,24 @@
+import type { BaseRNElements } from './base-elements';
 import { FicusStyledOptions, NativeFicusComponents, styled } from './system';
 import { FicusComponent } from './system.types';
-import { NativeElements } from './system.utils';
+import { RNElementType } from './system.utils';
 
 interface FicusFactory {
-  <T extends NativeElements, P extends object = {}>(
+  <T extends RNElementType, P extends object = {}>(
     component: T,
     options?: FicusStyledOptions
   ): FicusComponent<T, P>;
 }
 
 function factory() {
-  const cache = new Map<NativeElements, FicusComponent<NativeElements>>();
+  const cache = new Map<RNElementType, FicusComponent<RNElementType>>();
 
   return new Proxy(styled, {
-    /**
-     * @example
-     * const Div = ficus("div")
-     * const WithFicus = ficus(AnotherComponent)
-     */
-    apply(_target, _thisArg, argArray: [NativeElements, FicusStyledOptions]) {
+    apply(_target, _thisArg, argArray: [RNElementType, FicusStyledOptions]) {
       return styled(...argArray);
     },
-    /**
-     * @example
-     * <ficus.div />
-     */
-    get(_, element: NativeElements) {
+
+    get(_, element: BaseRNElements) {
       if (!cache.has(element)) {
         cache.set(element, styled(element));
       }

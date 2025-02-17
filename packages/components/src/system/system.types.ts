@@ -1,54 +1,54 @@
 import { SystemProps } from '@ficus-ui/style-system';
 
-import { NativeElementProps, NativeElements } from './system.utils';
+import { NativeElementProps, RNElementType } from './system.utils';
 
 export interface FicusProps extends SystemProps {}
 
-// TODO: Fix system types
-export interface AsProps<T extends NativeElements = NativeElements> {
+export interface AsProps<T extends RNElementType = RNElementType> {
   as?: T;
 }
 
-export type PropsOf<T extends NativeElements> = Omit<
+// Props for a component with `as` prop to dynamically change the component type
+export type PropsOf<T extends RNElementType> = Omit<
   NativeElementProps<T>,
   'ref'
 > &
-  AsProps;
+  AsProps<T>;
 
-type Assign<T, U> = Omit<T, keyof U> & U;
-
+// Omit common props like `as` or any additional props you define
 export type OmitCommonProps<
   Target,
   OmitAdditionalProps extends keyof any = never,
-> = Omit<Target, OmitAdditionalProps>;
+> = Omit<Target, 'as' | OmitAdditionalProps>;
 
+// Utility type to merge props of the base component and the `as` component
 export type RightJoinProps<
   SourceProps extends object = {},
   OverrideProps extends object = {},
-> = Assign<SourceProps, OverrideProps>;
+> = OmitCommonProps<SourceProps, keyof OverrideProps> & OverrideProps;
 
+// Utility type to merge props of two components, with `as` dynamic resolution
 export type MergeWithAs<
   ComponentProps extends object,
   AsCompProps extends object,
   AdditionalProps extends object = {},
-  AsComponent extends NativeElements = NativeElements,
+  AsComponent extends RNElementType = RNElementType,
 > = (
   | RightJoinProps<ComponentProps, AdditionalProps>
   | RightJoinProps<AsCompProps, AdditionalProps>
-) & {
-  as?: AsComponent;
-};
+) & { as?: AsComponent };
 
+// Component type with `as` prop for dynamic component rendering
 export type ComponentWithAs<
-  Component extends NativeElements,
+  Component extends RNElementType,
   Props extends object = {},
 > = {
-  <AsComponent extends NativeElements = Component>(
+  <AsComponent extends RNElementType = Component>(
     props: MergeWithAs<
-      Props,
       NativeElementProps<Component>,
       NativeElementProps<AsComponent>,
-      NativeElements
+      Props,
+      AsComponent
     >
   ): JSX.Element;
 
@@ -57,5 +57,5 @@ export type ComponentWithAs<
   id?: string;
 };
 
-export interface FicusComponent<T extends NativeElements, P extends object = {}>
-  extends ComponentWithAs<T, Assign<FicusProps, P>> {}
+export interface FicusComponent<T extends RNElementType, P extends object = {}>
+  extends ComponentWithAs<T, FicusProps & P> {}
