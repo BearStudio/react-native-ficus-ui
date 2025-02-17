@@ -4,10 +4,9 @@ import { t } from '../utils';
 import { Config } from '../utils/prop-config';
 import { ResponsiveValue } from '../utils/types';
 
-// TODO: Fix shadow configs
 export const effect: Config<EffectProps> = {
-  boxShadow: t.shadows('boxShadow'),
-  shadow: t.shadows('boxShadow'),
+  boxShadow: true,
+  shadow: t.shadows(),
   shadowOpacity: true,
   shadowOffset: t.shadows('shadowOffset'),
   shadowRadius: t.radius('shadowRadius'),

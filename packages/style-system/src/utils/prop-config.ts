@@ -17,6 +17,8 @@ export interface PropConfig {
   scope?: ThemeScope;
   /**
    * StyleSheet or React Native prop
+   * This can be undefined in case the property maps to a theme aware style that includes several properties.
+   * E.g. `shadow` prop which maps to the theme scope `shadows`
    */
   property?: MaybeArray<RNStyleSheetProperties | (string & {})>;
   /**
@@ -31,7 +33,7 @@ export type Config<T = string> = Record<
 >;
 
 export function toConfig(scope: ThemeScope, transform?: Transform) {
-  return <T extends RNStyleSheetProperties>(property: T | T[]) => {
+  return <T extends RNStyleSheetProperties>(property?: T | T[]) => {
     const result: PropConfig = { property, scope };
     result.transform = createTransform({
       transform,

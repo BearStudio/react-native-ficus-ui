@@ -1,8 +1,6 @@
-import { Image as RNImage } from 'react-native';
+import { type NativeFicusProps, ficus } from '../system';
 
-import { ficus } from '../system/factory';
-import { NativeFicusProps } from '../system/system';
-
+// TODO: Improve Box as Image API from V1
 export interface BoxProps extends NativeFicusProps<'View'> {}
 
 export const Box = ficus('View');
@@ -12,5 +10,3 @@ export const Circle = ficus('View', {
     borderRadius: 'full',
   },
 });
-
-export const Image = ficus(RNImage);
