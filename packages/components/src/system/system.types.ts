@@ -1,8 +1,13 @@
-import { SystemProps } from '@ficus-ui/style-system';
+import { SystemProps, TextStyleProps } from '@ficus-ui/style-system';
 
 import { NativeElementProps, RNElementType } from './system.utils';
 
-export interface FicusProps extends SystemProps {}
+export type FicusProps<T extends RNElementType> = T extends 'Text'
+  ? /**
+     * This enables text style props only for Text component
+     */
+    SystemProps<TextStyleProps>
+  : SystemProps;
 
 export interface AsProps<T extends RNElementType = RNElementType> {
   as?: T;
@@ -58,4 +63,4 @@ export type ComponentWithAs<
 };
 
 export interface FicusComponent<T extends RNElementType, P extends object = {}>
-  extends ComponentWithAs<T, FicusProps & P> {}
+  extends ComponentWithAs<T, FicusProps<T> & P> {}
