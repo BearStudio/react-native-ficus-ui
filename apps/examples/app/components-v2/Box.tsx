@@ -1,5 +1,5 @@
 import { Pressable, SafeAreaView, ScrollView, Text, View } from "react-native";
-import { Box, Image } from "@ficus-ui/native";
+import { Box } from "@ficus-ui/native";
 import ExampleSection from "@/src/ExampleSection";
 import { Link, useRouter } from "expo-router";
 
@@ -14,7 +14,7 @@ const BoxComponent = () => {
         Box component
       </Text>
       <ScrollView >
-        {/* <ExampleSection name="background color">
+        <ExampleSection name="background color">
           <Box flexDirection="row">
             <Box h={40} w={40} mr="sm" bg="green.500" />
             <Box h={40} w={40} mr="sm" bg="teal.500" />
@@ -33,7 +33,7 @@ const BoxComponent = () => {
               bg="white"
               m="md"
               borderRadius="sm"
-              // shadow="none"
+              shadow="none"
               justifyContent="center"
               alignItems="center"
             >
@@ -45,7 +45,7 @@ const BoxComponent = () => {
               bg="white"
               m="md"
               borderRadius="sm"
-              // shadow="xs"
+              shadow="xs"
               justifyContent="center"
               alignItems="center"
             >
@@ -57,7 +57,7 @@ const BoxComponent = () => {
               bg="white"
               m="md"
               borderRadius="sm"
-              // shadow="sm"
+              shadow="sm"
               justifyContent="center"
               alignItems="center"
             >
@@ -69,7 +69,7 @@ const BoxComponent = () => {
               bg="white"
               m="md"
               borderRadius="sm"
-              // shadow="md"
+              shadow="md"
               justifyContent="center"
               alignItems="center"
             >
@@ -81,7 +81,7 @@ const BoxComponent = () => {
               bg="white"
               m="md"
               borderRadius="sm"
-              // shadow="lg"
+              shadow="lg"
               justifyContent="center"
               alignItems="center"
             >
@@ -93,7 +93,7 @@ const BoxComponent = () => {
               bg="white"
               m="md"
               borderRadius="sm"
-              // shadow="xl"
+              shadow="xl"
               justifyContent="center"
               alignItems="center"
             >
@@ -105,15 +105,15 @@ const BoxComponent = () => {
               bg="white"
               m="md"
               borderRadius="sm"
-              // shadow="2xl"
+              shadow="2xl"
               justifyContent="center"
               alignItems="center"
             >
               <Text>2xl</Text>
             </Box>
           </Box>
-        </ExampleSection> */}
-{/*
+        </ExampleSection>
+
         <ExampleSection name="boxShadow prop">
           <Box flexDirection="row">
             <Box
@@ -122,7 +122,7 @@ const BoxComponent = () => {
               bg="white"
               m="md"
               borderRadius="sm"
-              // boxShadow="5 5 5 0 rgba(255, 0, 0, 0.5)"
+              boxShadow="5 5 5 0 rgba(255, 0, 0, 0.5)"
               justifyContent="center"
               alignItems="center"
             />
@@ -132,7 +132,7 @@ const BoxComponent = () => {
               bg="white"
               m="md"
               borderRadius="sm"
-              // boxShadow="5 -5 teal"
+              boxShadow="5 -5 teal"
               justifyContent="center"
               alignItems="center"
             />
@@ -142,7 +142,7 @@ const BoxComponent = () => {
               bg="white"
               m="md"
               borderRadius="sm"
-              // boxShadow="12 12 2 1 rgba(0, 0, 255, .2);"
+              boxShadow="12 12 2 1 rgba(0, 0, 255, .2)"
               justifyContent="center"
               alignItems="center"
             />
@@ -152,7 +152,7 @@ const BoxComponent = () => {
               bg="white"
               m="md"
               borderRadius="sm"
-              // boxShadow="inset 5 5 gold"
+              boxShadow="inset 5 5 gold"
               justifyContent="center"
               alignItems="center"
             />
@@ -162,7 +162,7 @@ const BoxComponent = () => {
               bg="white"
               m="md"
               borderRadius="sm"
-              // boxShadow="3 3 red, -3 0 5 olive"
+              boxShadow="3 3 red, -3 0 5 olive"
               justifyContent="center"
               alignItems="center"
             />
@@ -172,7 +172,7 @@ const BoxComponent = () => {
               bg="white"
               m="md"
               borderRadius="sm"
-              // boxShadow="0 0 0 4 #f4aab9, 0 0 0 6 #66ccff"
+              boxShadow="0 0 0 4 #f4aab9, 0 0 0 6 #66ccff"
               justifyContent="center"
               alignItems="center"
             />
@@ -182,27 +182,12 @@ const BoxComponent = () => {
               bg="white"
               m="md"
               borderRadius="sm"
-              // boxShadow="5 5 0 0 #289FED"
+              boxShadow="5 5 0 0 #289FED"
               justifyContent="center"
               alignItems="center"
             />
           </Box>
-        </ExampleSection> */}
-        <Box
-              as={Pressable}
-              h={40}
-              w={100}
-              mr="sm"
-              borderColor="green.500"
-              borderWidth={1}
-              textAlignVertical="center"
-              justify="center"
-              align="center"
-              onPress={() => console.log('yes')}
-              bg="red"
-            >
-              <Text > Back</Text>
-            </Box>
+        </ExampleSection>
         <ExampleSection name="border">
           <Box flexDirection="row">
             <Box
@@ -224,7 +209,6 @@ const BoxComponent = () => {
             <Box h={40} w={40} mr="sm" borderColor="gray.500" borderWidth={1} />
           </Box>
         </ExampleSection>
-
         <ExampleSection name="radius">
           <Box flexDirection="row">
 
@@ -239,19 +223,26 @@ const BoxComponent = () => {
           </Box>
         </ExampleSection>
 
-        {/* <ExampleSection name="flex">
+        <ExampleSection name="flex">
           <Box direction="row">
             <Box h={40} w={40} bg="red.400" flex={1} />
             <Box h={40} w={40} bg="yellow.400" flex={2} />
             <Box h={40} w={40} bg="green.400" flex={2} />
           </Box>
-        </ExampleSection> */}
-{/*
-        <ExampleSection name="as prop">
-          <Box bg="green.400" p="xl" mt="sm" borderRadius="md">
-            <Text>Style any RN component with Ficus UI with "as" prop !</Text>
-          </Box>
-        </ExampleSection> */}
+        </ExampleSection>
+
+        <ExampleSection name="background image">
+          <Box
+            as="Image"
+            mt="sm"
+            borderRadius="md"
+            h={150}
+            source={{
+              uri: "https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Monochrome-Type-Simple-Background-Image.jpg",
+            }}
+          />
+        </ExampleSection>
+
       </ScrollView>
     </SafeAreaView>
   );

@@ -66,7 +66,6 @@ export function getStyleSheet({ configs = {}, theme }: GetStyleSheetOptions) {
         continue;
       }
 
-      // TO REMOVE ?
       if (isObject(rawValue)) {
         computedStyles = mergeWith({}, computedStyles, rawValue);
         continue;

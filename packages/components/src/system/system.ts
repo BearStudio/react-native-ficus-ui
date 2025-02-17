@@ -53,6 +53,7 @@ export function styled<
     function FicusComponent(props, ref) {
       const { children, style, as, ...rest } = props;
       const { theme, windowWidth } = useTheme();
+
       const [styleProps, restProps] = splitProps(rest, isStyleProp);
 
       const AsComponent = as ? getComponent(as) : Component;
@@ -69,7 +70,7 @@ export function styled<
       const computedStyle = styleObject(propsWithTheme);
 
       return createElement(
-        AsComponent, // Use the dynamic component (either 'as' or default)
+        AsComponent,
         {
           ref,
           style: {
