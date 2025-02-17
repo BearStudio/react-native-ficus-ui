@@ -3,31 +3,41 @@ import { FC, ReactNode, useMemo, useState } from 'react';
 import deepmerge from 'deepmerge';
 import { useWindowDimensions } from 'react-native';
 
-import { ThemeContext } from './context';
+import { FicusThemeWithMetadata, ThemeContext } from './context';
 import { theme } from './theme.default';
-import { FicusTheme } from './theme.types';
 
 export interface ThemeProviderProps {
-  theme?: FicusTheme;
+  theme?: FicusThemeWithMetadata;
   children: ReactNode;
 }
 
 export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
   const { theme: customTheme = {}, children } = props;
-  const { width: windowWidth } = useWindowDimensions();
 
-  const [themeState, setThemeState] = useState<FicusTheme>(
-    deepmerge(theme, customTheme)
+  // Get Metadata
+  const { width: windowWidth } = useWindowDimensions();
+  const breakpoints = theme?.breakpoints
+    ? Object.entries(theme.breakpoints).sort((a, b) => a[1] - b[1])
+    : [];
+
+  // Add metadata to the theme
+  const themeWithMetadata: FicusThemeWithMetadata = Object.assign(theme, {
+    __windowWidth: windowWidth,
+    __breakpoints: breakpoints,
+  });
+
+  const [themeState, setThemeState] = useState<FicusThemeWithMetadata>(
+    deepmerge(themeWithMetadata, customTheme)
   );
 
-  const setTheme = (newTheme: FicusTheme) => {
-    const mergedTheme = deepmerge(theme, newTheme);
+  const setTheme = (newTheme: FicusThemeWithMetadata) => {
+    const mergedTheme = deepmerge(themeWithMetadata, newTheme);
     setThemeState(mergedTheme);
   };
 
   const contextValue = useMemo(
-    () => ({ theme: themeState, setTheme, windowWidth }),
-    [themeState, windowWidth]
+    () => ({ theme: themeState, setTheme }),
+    [themeWithMetadata]
   );
 
   return (

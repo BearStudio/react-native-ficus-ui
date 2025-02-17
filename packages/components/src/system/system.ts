@@ -52,7 +52,7 @@ export function styled<
   const ficusComponent = forwardRef<any, any>(
     function FicusComponent(props, ref) {
       const { children, style, as, ...rest } = props;
-      const { theme, windowWidth } = useTheme();
+      const { theme } = useTheme();
 
       const [styleProps, restProps] = splitProps(rest, isStyleProp);
 
@@ -60,10 +60,7 @@ export function styled<
 
       const propsWithTheme = {
         style,
-        theme: {
-          ...theme,
-          __windowWidth: windowWidth,
-        },
+        theme,
         ...styleProps,
       };
 
@@ -94,5 +91,5 @@ export type NativeFicusProps<T extends RNElementType> = Omit<
   PropsOf<T>,
   'ref' | keyof StyleProps
 > &
-  FicusProps &
+  FicusProps<T> &
   AsProps;

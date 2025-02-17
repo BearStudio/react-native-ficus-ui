@@ -3,16 +3,9 @@ import { isObject } from '@chakra-ui/utils';
 import { Dict } from './types';
 
 /**
- *  Get the value for a prop with responsive value
+ *  Resolve all the responsive property values as a single value depending on current device's windowWidth
  */
 export const expandResponsive = (styles: Dict) => (theme: Dict) => {
-  // FIXME: Move this at a higher level (theme provider ?) and include it in the theme as a 'metadata' to reduce computation costs
-  const breakpoints = theme?.breakpoints
-    ? Object.entries(theme.breakpoints as Dict<number>).sort(
-        (a, b) => a[1] - b[1]
-      )
-    : [];
-
   const windowWidth = theme?.__windowWidth;
   const computedStyles: Dict = {};
 
@@ -25,7 +18,9 @@ export const expandResponsive = (styles: Dict) => (theme: Dict) => {
       continue;
     }
 
-    // FIXME: Parsing of breakpoints
+    /**
+     * For responsive values with `{base: 0, xs: 2}` format
+     */
     if (isObject(value)) {
       for (const breakpoint in value) {
         if (
@@ -44,9 +39,16 @@ export const expandResponsive = (styles: Dict) => (theme: Dict) => {
       continue;
     }
 
+    /**
+     * Breakpoints ordered by ascending size
+     */
+    const breakpoints = theme?.__breakpoints;
+
+    /**
+     * For responsive values with `[0, 2]` format
+     */
     if (Array.isArray(value)) {
       // Defaults to the first value of the array
-
       let matchedValue = value[0];
 
       for (let i = 0; i < breakpoints.length; i++) {

@@ -9,10 +9,11 @@ import {
   PositionProps,
   RadiusProps,
   SpaceProps,
-  TextStyleProps,
 } from './config';
 import { RNStyleSheet, RNStyleSheetProperties } from './utils/prop-config';
-import { ResponsiveValue } from './utils/types';
+import { Dict, ResponsiveValue } from './utils/types';
+
+// Define the base interface for style props with generic ExtraProps that extends Config
 
 export interface StyleProps
   extends BackgroundProps,
@@ -24,8 +25,7 @@ export interface StyleProps
     LayoutProps,
     PositionProps,
     RadiusProps,
-    SpaceProps,
-    TextStyleProps {}
+    SpaceProps {}
 
 export interface SystemStyleSheetProperties
   extends RNStyleSheet,
@@ -58,4 +58,13 @@ export type RecursiveStyleSheetObject<D> = D &
 export type SystemStyleObject =
   RecursiveStyleSheetObject<StyleSheetWithMultiValues>;
 
-export interface SystemProps extends StyleProps {}
+/**
+ * We might need to extend SystemProps.
+ * For example for Text
+ */
+export type SystemProps<ExtraProps extends Dict = {}> = StyleProps & ExtraProps;
+
+/**
+ * Extensible style props
+ */
+export type { TextStyleProps } from './config';

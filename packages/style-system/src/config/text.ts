@@ -26,6 +26,9 @@ export const text: Config<TextStyleProps> = {
   textShadowRadius: t.radius('textShadowRadius'),
 };
 
+/**
+ * Only for React native Text Component
+ */
 export interface TextStyleProps {
   fontSize?: ResponsiveValue<string | number>;
   textDecorLine?: ResponsiveValue<TextStyle['textDecorationLine']>;

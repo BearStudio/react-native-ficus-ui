@@ -5,3 +5,4 @@ export * from './theming-props';
 export * from './define-style';
 export * from './style-sheet';
 export * from './utils';
+export * from './config';

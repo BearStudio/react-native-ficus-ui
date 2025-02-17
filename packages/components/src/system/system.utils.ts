@@ -4,10 +4,13 @@ import {
   baseRNElements,
 } from './base-elements';
 
-type CustomNativeElementProps<T extends React.ComponentType> =
+/**
+ * To allow user to extend custom component with ficus properties
+ */
+type CustomNativeElementProps<T extends React.ComponentType<any>> =
   React.ComponentProps<T>;
 
-export type RNElementType = BaseRNElements | React.ComponentType;
+export type RNElementType = BaseRNElements | React.ComponentType<any>;
 
 export type NativeElementProps<T extends RNElementType> =
   T extends BaseRNElements
