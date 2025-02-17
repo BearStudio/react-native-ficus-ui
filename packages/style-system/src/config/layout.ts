@@ -26,6 +26,6 @@ export interface LayoutProps {
   h?: ResponsiveValue<number | string>;
   w?: ResponsiveValue<number | string>;
   overflow?: ResponsiveValue<Overflow>;
-  display: ResponsiveValue<Display>;
+  display?: ResponsiveValue<Display>;
   aspectRatio?: ResponsiveValue<string | number>;
 }

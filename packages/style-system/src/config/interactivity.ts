@@ -8,6 +8,6 @@ export const interactivty: Config<InteractivityProps> = {
 };
 
 export interface InteractivityProps {
-  pointerEvents: ViewStyle['pointerEvents'];
-  userSelect: TextStyle['userSelect'];
+  pointerEvents?: ViewStyle['pointerEvents'];
+  userSelect?: TextStyle['userSelect'];
 }
