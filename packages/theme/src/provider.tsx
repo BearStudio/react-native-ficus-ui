@@ -3,8 +3,8 @@ import { FC, ReactNode, useMemo, useState } from 'react';
 import deepmerge from 'deepmerge';
 import { useWindowDimensions } from 'react-native';
 
-import { theme } from '.';
 import { ThemeContext } from './context';
+import { theme } from './theme.default';
 import { FicusTheme } from './theme.types';
 
 export interface ThemeProviderProps {

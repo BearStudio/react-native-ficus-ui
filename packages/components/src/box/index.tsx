@@ -1,3 +1,5 @@
+import { Image as RNImage } from 'react-native';
+
 import { ficus } from '../system/factory';
 import { NativeFicusProps } from '../system/system';
 
@@ -10,3 +12,5 @@ export const Circle = ficus('View', {
     borderRadius: 'full',
   },
 });
+
+export const Image = ficus(RNImage);

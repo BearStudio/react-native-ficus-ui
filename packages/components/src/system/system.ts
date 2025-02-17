@@ -8,71 +8,74 @@ import {
   styleSheet,
 } from '@ficus-ui/style-system';
 import { useTheme } from '@ficus-ui/theme';
+import type { StyleProp } from 'react-native';
 
+import { BaseRNElements } from './base-elements';
 import type {
   AsProps,
   FicusComponent,
   FicusProps,
   PropsOf,
 } from './system.types';
-import { NativeElements, RNBaseElements } from './system.utils';
+import { RNElementType, getComponent } from './system.utils';
 
 type Dict<T = any> = Record<string, T>;
 
-interface GetStyleObject {
-  (options: { baseStyle?: SystemStyleObject }): any;
-}
+type GetStyleObject = (options: { baseStyle?: SystemStyleObject }) => (
+  propsWithTheme: {
+    theme: Dict;
+    style: StyleProp<any>;
+  } & Dict
+) => StyleProp<any>;
+
 export const toStyleSheetObject: GetStyleObject =
   ({ baseStyle }) =>
-  (props: any) => {
-    const { theme, style, ...restProps } = props;
-    const styleProps = splitProps(restProps, isStyleProp)[0] ?? {};
-
-    // We always want `style` to override styles by custom props
+  ({ theme, style, ...styleProps }) => {
     const finalStyles = assignAfter({}, baseStyle, compact(styleProps), style);
-
     return styleSheet(finalStyles)(theme);
   };
 
 export interface FicusStyledOptions extends Dict {
   label?: string;
-  baseStyle?: SystemStyleObject;
+  baseStyle?: SystemStyleObject; // Base styles applied to the component.
 }
 
-export function styled<T extends NativeElements, P extends object = {}>(
-  component: T,
-  options?: FicusStyledOptions
-) {
+export function styled<
+  T extends React.ComponentType<any> | RNElementType,
+  P extends object = {},
+>(component: T, options?: FicusStyledOptions) {
   const { baseStyle } = options ?? {};
   const styleObject = toStyleSheetObject({ baseStyle });
 
-  const Component = RNBaseElements[component];
+  const Component = getComponent(component);
 
   const ficusComponent = forwardRef<any, any>(
     function FicusComponent(props, ref) {
-      const { children, style, ...rest } = props;
-
+      const { children, style, as, ...rest } = props;
       const { theme, windowWidth } = useTheme();
+      const [styleProps, restProps] = splitProps(rest, isStyleProp);
+
+      const AsComponent = as ? getComponent(as) : Component;
+
       const propsWithTheme = {
         style,
         theme: {
           ...theme,
           __windowWidth: windowWidth,
         },
-        ...rest,
+        ...styleProps,
       };
 
       const computedStyle = styleObject(propsWithTheme);
 
       return createElement(
-        Component,
+        AsComponent, // Use the dynamic component (either 'as' or default)
         {
           ref,
           style: {
             ...computedStyle,
-            // borderRadius: 6,
           },
-          ...rest,
+          ...restProps,
         },
         children
       );
@@ -83,10 +86,10 @@ export function styled<T extends NativeElements, P extends object = {}>(
 }
 
 export type NativeFicusComponents = {
-  [Tag in NativeElements]: FicusComponent<Tag, {}>;
+  [Tag in BaseRNElements]: FicusComponent<Tag, {}>;
 };
 
-export type NativeFicusProps<T extends NativeElements> = Omit<
+export type NativeFicusProps<T extends RNElementType> = Omit<
   PropsOf<T>,
   'ref' | keyof StyleProps
 > &

@@ -1,30 +1,23 @@
 import {
-  type ImageProps,
-  Image as RNImage,
-  ScrollView as RNScrollView,
-  Text as RNText,
-  View as RNView,
-  type ScrollViewProps,
-  type TextProps,
-  type ViewProps,
-} from 'react-native';
+  type BaseRNElementProps,
+  type BaseRNElements,
+  baseRNElements,
+} from './base-elements';
 
-const nativeElements = ['View', 'Image', 'Text', 'ScrollView'] as const;
-export type NativeElements = (typeof nativeElements)[number];
+type CustomNativeElementProps<T extends React.ComponentType> =
+  React.ComponentProps<T>;
 
-export type RNBaseElementsProps = {
-  View: ViewProps;
-  Image: ImageProps;
-  Text: TextProps;
-  ScrollView: ScrollViewProps;
-};
+export type RNElementType = BaseRNElements | React.ComponentType;
 
-export const RNBaseElements: Record<NativeElements, any> = {
-  View: RNView,
-  Image: RNImage,
-  Text: RNText,
-  ScrollView: RNScrollView,
-};
+export type NativeElementProps<T extends RNElementType> =
+  T extends BaseRNElements
+    ? BaseRNElementProps<T>
+    : T extends React.ComponentType<any>
+      ? CustomNativeElementProps<T>
+      : never;
 
-export type NativeElementProps<T extends NativeElements> =
-  RNBaseElementsProps[T];
+export function getComponent<T extends RNElementType>(component: T) {
+  return typeof component === 'string'
+    ? baseRNElements[component as BaseRNElements]
+    : component;
+}
