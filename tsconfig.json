@@ -28,5 +28,5 @@
     "types": ["node", "jest"]
   },
   "include": ["packages", "__tests__"],
-  "exclude": ["node_modules", "apps"]
+  "exclude": ["node_modules", "apps", "dist"]
 }

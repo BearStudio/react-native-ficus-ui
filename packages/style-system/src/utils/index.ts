@@ -15,12 +15,14 @@ export const t = {
   prop(
     property: PropConfig['property'],
     scope?: ThemeScope,
-    transform?: PropConfig['transform']
+    transform?: PropConfig['transform'],
+    peerProperties?: PropConfig['peerProperties']
   ) {
     return {
       property,
       scope,
       transform: createTransform({ transform }),
+      peerProperties,
     };
   },
 };

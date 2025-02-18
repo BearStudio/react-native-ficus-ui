@@ -1,53 +1,48 @@
 import { Dict } from './types';
 
+// NOTE: This function are taken from Magnus and could probably be improved
 export const transforms = {
-  getThemeProp(value: any, theme: Dict | undefined) {
-    if (theme?.[value]) {
-      return theme[value];
+  getThemeProp(value: any, themeScope: Dict | undefined) {
+    if (themeScope?.[value]) {
+      return themeScope[value];
     }
 
     return value;
   },
+  getFontWeight(
+    value: {
+      fontWeight: string | number;
+      fontFamily?: string;
+    },
+    themeScope: Dict
+  ) {
+    const fontFamilyKey = value.fontFamily ?? '';
+    const fontFamily = themeScope.fontFamily?.[fontFamilyKey];
 
-  // getFontWeight(
-  //   themeFontFamily: ThemeType['fontFamily'],
-  //   fontFamily: TextProps['fontFamily'],
-  //   fontWeight: Dict | undefined
-  // ) {
-  //   if (fontFamily === '' || !fontWeight) {
-  //     return fontWeight;
-  //   }
+    if (fontFamily) {
+      return 'normal';
+    }
 
-  //   if (themeFontFamily) {
-  //     if (
-  //       typeof themeFontFamily[fontWeight as keyof TextProps['fontWeight']] !==
-  //       'undefined'
-  //     ) {
-  //       return 'normal';
-  //     }
-  //   }
+    const resolvedFontWeight = resolveFontWeight(value.fontWeight, themeScope);
 
-  //   if (!fontFamily) {
-  //     return fontWeight;
-  //   }
+    return resolvedFontWeight;
+  },
+  getThemeFontFamily(
+    value: {
+      fontFamily: string;
+      fontWeight?: string | number;
+    },
+    themeScope: Dict
+  ): string | undefined {
+    const rawFontWeight = value.fontWeight;
+    const rawFontFamily = value.fontFamily;
 
-  //   return 'normal';
-  // },
+    const fontFamily = themeScope.fontFamily?.[rawFontFamily] ?? {};
 
-  // getThemeFontFamily(
-  //   value: any,
-  //   themeFontFamily: ThemeType['fontFamily'],
-  //   fontWeight: TextProps['fontWeight'] = 'normal'
-  // ): string | undefined {
-  //   if (themeFontFamily) {
-  //     if ((fontWeight as string) in themeFontFamily) {
-  //       return themeFontFamily[fontWeight as keyof TextProps['fontWeight']];
-  //     }
-  //   }
+    const resolvedFontWeight = resolveFontWeight(rawFontWeight, themeScope);
 
-  //   return undefined;
-  // },
-
+    return fontFamily[resolvedFontWeight] ?? rawFontFamily;
+  },
   getThemeColor(value: any, theme: Dict | undefined) {
     let colorValueResult: string | String = value as string;
 
@@ -88,4 +83,16 @@ export const transforms = {
 export const isValidColor = (color: string): boolean => {
   // TODO
   return typeof color === 'string';
+};
+
+const resolveFontWeight = (
+  fontWeight: string | number = 'normal',
+  themeScope: Dict
+) => {
+  return (
+    // If font weight is a keyword (`light  `, `normal`, ...) map it to a number (300, 400)
+    themeScope.fontWeights[fontWeight] ??
+    // If font weight is already number (300, 400)
+    fontWeight
+  );
 };
