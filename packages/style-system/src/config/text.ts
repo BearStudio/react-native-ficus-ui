@@ -11,8 +11,12 @@ export const text: Config<TextStyleProps> = {
   textDecorStyle: t.prop('textDecorationStyle'),
   fontStyle: true,
   textDecorColor: t.colors('textDecorationColor'),
-  fontWeight: t.prop('fontWeight', 'fontWeights', transforms.getThemeProp),
-  fontFamily: t.prop('fontFamily', 'fonts', transforms.getThemeProp),
+  fontWeight: t.prop('fontWeight', 'fonts', transforms.getFontWeight, [
+    'fontFamily',
+  ]),
+  fontFamily: t.prop('fontFamily', 'fonts', transforms.getThemeFontFamily, [
+    'fontWeight',
+  ]),
   lineHeight: true,
   textAlign: true,
   textTransform: true,
@@ -36,7 +40,7 @@ export interface TextStyleProps {
   fontStyle?: ResponsiveValue<TextStyle['fontSize']>;
   textDecorColor?: ResponsiveValue<string>;
   fontWeight?: ResponsiveValue<TextStyle['fontWeight']>;
-  fontFamily?: ResponsiveValue<string>;
+  fontFamily?: ResponsiveValue<'heading' | 'mono' | (string & {})>;
   lineHeight?: ResponsiveValue<number>;
   textAlign?: ResponsiveValue<TextStyle['textAlign']>;
   textTransform?: ResponsiveValue<TextStyle['textTransform']>;

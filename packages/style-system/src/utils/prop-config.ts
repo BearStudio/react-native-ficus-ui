@@ -25,6 +25,11 @@ export interface PropConfig {
    * Function to transform the value passed
    */
   transform?: Transform;
+  /**
+   * Array of properties that may be needed to transform the current prop
+   * e.g. fontWeight needs fontFamily
+   */
+  peerProperties?: string[];
 }
 
 export type Config<T = string> = Record<

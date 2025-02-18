@@ -20,7 +20,7 @@ export function getStyleSheet({ configs = {}, theme }: GetStyleSheetOptions) {
     let computedStyles: Dict = {};
 
     for (let key in styles) {
-      const value = styles[key];
+      let value = styles[key];
 
       let config = configs[key];
 
@@ -37,6 +37,22 @@ export function getStyleSheet({ configs = {}, theme }: GetStyleSheetOptions) {
       //   );
       //   continue;
       // }
+
+      /**
+       * Add the peer properties to help for computing the value
+       * e.g. fontWeight needs fontFamily
+       */
+      if (config?.peerProperties) {
+        const peerProperties = config.peerProperties;
+
+        for (let i in peerProperties) {
+          const peerProperty = peerProperties[i]!;
+          value = {
+            [key]: value, // Preserve original value
+            [peerProperty]: styles[peerProperty] ?? undefined,
+          };
+        }
+      }
 
       /**
        * The value of the property after transformation
