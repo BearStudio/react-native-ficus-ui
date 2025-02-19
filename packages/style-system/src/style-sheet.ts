@@ -1,4 +1,4 @@
-import { Dict, isObject, mergeWith } from '@chakra-ui/utils';
+import { Dict, isObject, mergeWith, runIfFn } from '@chakra-ui/utils';
 
 import { systemProps } from './system';
 import { SystemStyleObject } from './system.types';
@@ -14,8 +14,10 @@ interface GetStyleSheetOptions {
  * This is the function that will be used to convert all the props to react native StyleSheet
  */
 export function getStyleSheet({ configs = {}, theme }: GetStyleSheetOptions) {
-  const styleSheet = (stylesObject: Record<string, any>) => {
-    const styles = expandResponsive(stylesObject)(theme);
+  const styleSheet = (stylesOrFn: Record<string, any>) => {
+    const _styles = runIfFn(stylesOrFn, theme);
+
+    const styles = expandResponsive(_styles)(theme);
 
     let computedStyles: Dict = {};
 

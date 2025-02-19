@@ -1,7 +1,7 @@
 import { omit } from '@chakra-ui/utils';
 
 import { ThemeTypings } from './theme.types';
-import { ResponsiveValue } from './utils/types';
+import { Dict, ResponsiveValue } from './utils/types';
 
 export interface ThemingProps<ThemeComponent extends string = any> {
   variant?: ResponsiveValue<
@@ -17,8 +17,9 @@ export interface ThemingProps<ThemeComponent extends string = any> {
       : string
   >;
   colorScheme?: ThemeTypings['colorSchemes'];
+  styleConfig?: Dict;
 }
 
 export function omitThemingProps<T extends ThemingProps>(props: T) {
-  return omit(props, ['size', 'variant', 'colorScheme']);
+  return omit(props, ['size', 'variant', 'colorScheme', 'styleConfig']);
 }

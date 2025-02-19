@@ -1,9 +1,23 @@
 import { SystemStyleObject } from './system.types';
 import { Dict } from './utils/types';
 
+export type StyleFunctionProps = {
+  colorScheme: string;
+  colorMode: 'light' | 'dark';
+  orientation?: 'horizontal' | 'vertical';
+  theme: Dict;
+  [key: string]: any;
+};
+
+export type SystemStyleFunction = (
+  props: StyleFunctionProps
+) => SystemStyleObject;
+
+export type SystemStyleInterpolation = SystemStyleObject | SystemStyleFunction;
+
 // ------------------------------------------------------------------ //
 
-export function defineStyle<T extends SystemStyleObject>(styles: T) {
+export function defineStyle<T extends SystemStyleInterpolation>(styles: T) {
   return styles;
 }
 
@@ -16,16 +30,16 @@ type DefaultProps = {
 };
 
 export type StyleConfig = {
-  baseStyle?: SystemStyleObject;
-  sizes?: { [size: string]: SystemStyleObject };
-  variants?: { [variant: string]: SystemStyleObject };
+  baseStyle?: SystemStyleInterpolation;
+  sizes?: { [size: string]: SystemStyleInterpolation };
+  variants?: { [variant: string]: SystemStyleInterpolation };
   defaultProps: DefaultProps;
 };
 
 export function defineStyleConfig<
-  BaseStyle extends SystemStyleObject,
-  Sizes extends Dict<SystemStyleObject>,
-  Variants extends Dict<SystemStyleObject>,
+  BaseStyle extends SystemStyleInterpolation,
+  Sizes extends Dict<SystemStyleInterpolation>,
+  Variants extends Dict<SystemStyleInterpolation>,
 >(config: {
   baseStyle?: BaseStyle;
   sizes: Sizes;

@@ -1,13 +1,22 @@
-import { SystemProps, TextStyleProps } from '@ficus-ui/style-system';
+import {
+  SystemProps as BaseSystemProps,
+  SystemStyleObject,
+  TextStyleProps,
+} from '@ficus-ui/style-system';
 
 import { NativeElementProps, RNElementType } from './system.utils';
 
-export type FicusProps<T extends RNElementType> = T extends 'Text'
-  ? /**
-     * This enables text style props only for Text component
-     */
-    SystemProps<TextStyleProps>
-  : SystemProps;
+export type FicusProps<T extends RNElementType> = SystemProps<T> & {
+  /**
+   * Used for internal style management (like theme styles)
+   * @private
+   */
+  __styles?: SystemStyleObject;
+};
+
+export type SystemProps<T extends RNElementType> = T extends 'Text'
+  ? BaseSystemProps<TextStyleProps> // Ensure BaseSystemProps always gets a type argument
+  : BaseSystemProps<Record<string, unknown>>; // Provide a default type argument
 
 export interface AsProps<T extends RNElementType = RNElementType> {
   as?: T;

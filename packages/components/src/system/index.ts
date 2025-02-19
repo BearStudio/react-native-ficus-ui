@@ -1,2 +1,3 @@
-export { ficus } from './factory';
-export type { NativeFicusProps } from './system';
+export * from './system';
+export * from './forward-ref';
+export * from './factory';
