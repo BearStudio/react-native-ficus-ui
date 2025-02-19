@@ -38,7 +38,7 @@ export const AbsoluteCenter = forwardRef<AbsoluteCenterProps, 'View'>(
     return (
       <ficus.View
         ref={ref}
-        __css={centerStyles[axis]}
+        __styles={centerStyles[axis]}
         {...rest}
         position="absolute"
       />
