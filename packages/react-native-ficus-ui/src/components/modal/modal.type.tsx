@@ -1,11 +1,12 @@
 import { ModalProps as RNModalProps } from 'react-native-modal';
+
 import {
-  BorderPropsType,
-  SpacingPropsType,
-  BorderRadiusPropsType,
   BackgroundPropsType,
+  BorderPropsType,
+  BorderRadiusPropsType,
   DimensionPropsType,
   FlexPropsType,
+  SpacingPropsType,
   VariantPropsType,
 } from '../../types';
 

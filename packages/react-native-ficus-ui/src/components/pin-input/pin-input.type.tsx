@@ -1,21 +1,21 @@
 import type { ViewProps as RNViewProps } from 'react-native';
+import { CodeFieldProps } from 'react-native-confirmation-code-field';
 
 import type {
-  BorderPropsType,
-  SpacingPropsType,
-  BorderRadiusPropsType,
-  ShadowPropsType,
-  DimensionPropsType,
   BackgroundPropsType,
+  BorderPropsType,
+  BorderRadiusPropsType,
+  DimensionPropsType,
   FlexPropsType,
-  PositionPropsType,
-  ZIndexPropsType,
-  OverflowPropsType,
-  OpacityPropsType,
-  VariantPropsType,
   InputPropsType,
+  OpacityPropsType,
+  OverflowPropsType,
+  PositionPropsType,
+  ShadowPropsType,
+  SpacingPropsType,
+  VariantPropsType,
+  ZIndexPropsType,
 } from '../../types';
-import { CodeFieldProps } from 'react-native-confirmation-code-field';
 
 export interface PinInputProps
   extends CodeFieldProps,

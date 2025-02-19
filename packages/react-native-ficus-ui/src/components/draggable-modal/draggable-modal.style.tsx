@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native';
+
 import { ThemeType } from '../../theme';
 import {
-  createSpacingStyles,
-  createBorderWidthStyles,
   createBorderColorStyles,
   createBorderRadiusStyles,
+  createBorderWidthStyles,
+  createSpacingStyles,
   getThemeColor,
 } from '../../theme/theme.service';
 import { DraggableModalProps } from './draggable-modal.type';

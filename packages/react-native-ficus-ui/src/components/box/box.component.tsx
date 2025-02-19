@@ -1,14 +1,15 @@
 import * as React from 'react';
+
 import {
-  View as RNView,
   ImageBackground as RNImageBackground,
+  View as RNView,
 } from 'react-native';
 
+import { useTheme } from '../../theme/theme.hook';
+import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { getStyle } from './box.style';
 import type { BoxProps } from './box.type';
-import { useTheme } from '../../theme/theme.hook';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
 
 const Box: React.FunctionComponent<BoxProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

@@ -1,18 +1,18 @@
 import { FlashListProps as ShopifyFlashListProps } from '@shopify/flash-list';
 
 import type {
-  BorderPropsType,
-  SpacingPropsType,
-  BorderRadiusPropsType,
-  ShadowPropsType,
-  DimensionPropsType,
   BackgroundPropsType,
+  BorderPropsType,
+  BorderRadiusPropsType,
+  DimensionPropsType,
   FlexPropsType,
-  PositionPropsType,
-  ZIndexPropsType,
-  OverflowPropsType,
   OpacityPropsType,
+  OverflowPropsType,
+  PositionPropsType,
+  ShadowPropsType,
+  SpacingPropsType,
   VariantPropsType,
+  ZIndexPropsType,
 } from '../../types';
 
 export interface FlashListProps

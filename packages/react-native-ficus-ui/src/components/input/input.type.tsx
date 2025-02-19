@@ -1,19 +1,20 @@
 import { TextInputProps as RNTextInputProps } from 'react-native';
+
 import {
   BackgroundPropsType,
+  BorderPropsType,
+  BorderRadiusPropsType,
   DimensionPropsType,
   FlexPropsType,
   InputPropsType,
   LoadingPropsType,
   OpacityPropsType,
   PrefixSuffixPropsType,
-  TextPropsType,
-  ZIndexPropsType,
-  BorderPropsType,
-  SpacingPropsType,
-  BorderRadiusPropsType,
   ShadowPropsType,
+  SpacingPropsType,
+  TextPropsType,
   VariantPropsType,
+  ZIndexPropsType,
 } from '../../types';
 
 export interface InputProps

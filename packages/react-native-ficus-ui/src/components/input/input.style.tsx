@@ -1,19 +1,20 @@
 import { isValidElement } from 'react';
-import { StyleSheet } from 'react-native';
-import { ThemeType } from '../../theme';
 
+import { StyleSheet } from 'react-native';
+
+import { ThemeType } from '../../theme';
 import {
-  getThemeProperty,
-  createBorderWidthStyles,
   createBorderColorStyles,
-  createSpacingStyles,
-  createFlexStyles,
   createBorderRadiusStyles,
+  createBorderWidthStyles,
+  createFlexStyles,
   createPositionStyle,
   createShadowStyles,
-  getThemeFontFamily,
+  createSpacingStyles,
   getFontWeight,
   getThemeColor,
+  getThemeFontFamily,
+  getThemeProperty,
 } from '../../theme/theme.service';
 import { InputProps } from './input.type';
 

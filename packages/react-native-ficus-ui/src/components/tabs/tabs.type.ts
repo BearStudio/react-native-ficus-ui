@@ -1,23 +1,25 @@
 import { ReactNode } from 'react';
-import { ViewStyle, TextStyle } from 'react-native';
+
+import { TextStyle, ViewStyle } from 'react-native';
 import type {
   TabViewProps as RNTabViewProps,
   Route,
   SceneRendererProps,
 } from 'react-native-tab-view';
+
 import type {
-  BorderPropsType,
-  SpacingPropsType,
-  BorderRadiusPropsType,
-  ShadowPropsType,
-  DimensionPropsType,
   BackgroundPropsType,
+  BorderPropsType,
+  BorderRadiusPropsType,
+  DimensionPropsType,
   FlexPropsType,
-  PositionPropsType,
-  ZIndexPropsType,
-  OverflowPropsType,
   OpacityPropsType,
+  OverflowPropsType,
+  PositionPropsType,
+  ShadowPropsType,
+  SpacingPropsType,
   VariantPropsType,
+  ZIndexPropsType,
 } from '../../types';
 
 // Define a type that includes all common style props and additional ones needed for your components

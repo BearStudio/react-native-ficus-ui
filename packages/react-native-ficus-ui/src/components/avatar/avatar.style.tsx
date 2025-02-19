@@ -2,20 +2,20 @@
 import { StyleSheet } from 'react-native';
 
 import {
-  createShadowStyles,
-  createPositionStyle,
-  createSpacingStyles,
-  createBorderWidthStyles,
+  createAvatarStyles,
   createBorderColorStyles,
   createBorderRadiusStyles,
-  getThemeColor,
-  createAvatarStyles,
-  getThemeProperty,
+  createBorderWidthStyles,
+  createPositionStyle,
+  createShadowStyles,
+  createSpacingStyles,
   getFontWeight,
+  getThemeColor,
   getThemeFontFamily,
+  getThemeProperty,
 } from '../../theme/theme.service';
-import type { AvatarProps } from './avatar.type';
 import type { ThemeType } from '../../theme/type';
+import type { AvatarProps } from './avatar.type';
 
 const AVATAR_BADGE_RATIO = 2.5;
 
@@ -125,10 +125,10 @@ export const getStyle = (theme: ThemeType, props: AvatarProps) => {
     backgroundColor: props.bg
       ? getThemeColor(theme.colors, props.bg as string)
       : props.colorScheme
-      ? getThemeColor(theme.colors, `${props.colorScheme}.300`)
-      : props.name
-      ? lightenColor(stringToColor(props.name), 30)
-      : getThemeColor(theme.colors, 'gray.300'),
+        ? getThemeColor(theme.colors, `${props.colorScheme}.300`)
+        : props.name
+          ? lightenColor(stringToColor(props.name), 30)
+          : getThemeColor(theme.colors, 'gray.300'),
   };
 
   computedStyle.text = {
@@ -141,10 +141,10 @@ export const getStyle = (theme: ThemeType, props: AvatarProps) => {
     color: props.color
       ? getThemeColor(theme.colors, props.color as string)
       : props.colorScheme
-      ? getThemeColor(theme.colors, `${props.colorScheme}.800`)
-      : props.name
-      ? darkenColor(stringToColor(props.name), 40)
-      : getThemeColor(theme.colors, 'gray.800'),
+        ? getThemeColor(theme.colors, `${props.colorScheme}.800`)
+        : props.name
+          ? darkenColor(stringToColor(props.name), 40)
+          : getThemeColor(theme.colors, 'gray.800'),
     fontSize: props.fontSize
       ? getThemeProperty(theme.fontSize, props.fontSize)
       : getThemeProperty(theme.avatar, props.size) / 2,

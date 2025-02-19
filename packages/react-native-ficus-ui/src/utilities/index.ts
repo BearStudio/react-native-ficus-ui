@@ -1,12 +1,13 @@
 import * as React from 'react';
-import { useState, useRef, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
 import { Dimensions } from 'react-native';
 import {
-  validateHTMLColorRgb,
-  validateHTMLColorSpecialName,
   validateHTMLColorHex,
   validateHTMLColorHsl,
   validateHTMLColorName,
+  validateHTMLColorRgb,
+  validateHTMLColorSpecialName,
 } from 'validate-color';
 
 const WINDOW = Dimensions.get('window');

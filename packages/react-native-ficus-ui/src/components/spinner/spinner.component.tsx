@@ -1,12 +1,13 @@
 import * as React from 'react';
+
 import { ActivityIndicator } from 'react-native';
 
-import { getStyle } from './spinner.style';
-import type { SpinnerProps } from './spinner.type';
 import { useTheme } from '../../theme/theme.hook';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { getThemeColor, getThemeProperty } from '../../theme/theme.service';
 import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { getStyle } from './spinner.style';
+import type { SpinnerProps } from './spinner.type';
 
 const Spinner: React.FunctionComponent<SpinnerProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

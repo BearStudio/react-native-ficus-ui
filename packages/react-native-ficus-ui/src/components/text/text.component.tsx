@@ -1,11 +1,12 @@
 import * as React from 'react';
+
 import { Text as RNText } from 'react-native';
 
-import type { TextProps } from './text.type';
-import { getStyle } from './text.style';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { useTheme } from '../../theme/theme.hook';
 import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { getStyle } from './text.style';
+import type { TextProps } from './text.type';
 
 const Text: React.FunctionComponent<TextProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

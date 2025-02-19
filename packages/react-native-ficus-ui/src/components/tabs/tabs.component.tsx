@@ -1,7 +1,11 @@
 import React, { FC, ReactNode, useState } from 'react';
-import { useWindowDimensions, View } from 'react-native';
-import { TabView, SceneMap, TabBar, TabBarProps } from 'react-native-tab-view';
+
+import { View, useWindowDimensions } from 'react-native';
+import { SceneMap, TabBar, TabBarProps, TabView } from 'react-native-tab-view';
+
 import { useTheme } from '../../theme';
+import { getThemeColor } from '../../theme/theme.service';
+import { Text } from '../text/text.component';
 import { getStyle } from './tabs.style';
 import {
   TabListProps,
@@ -10,8 +14,6 @@ import {
   TabProps,
   TabsProps,
 } from './tabs.type';
-import { Text } from '../text/text.component';
-import { getThemeColor } from '../../theme/theme.service';
 
 const Tab: FC<TabProps> = ({ name, children, ...rest }) => {
   const { theme } = useTheme();
@@ -113,10 +115,8 @@ const Tabs: FC<TabsProps> = ({
   // Style processing
   const styles = getStyle(theme, rest);
   const { children: tabsChildren, ...otherTabsProps } = tabs?.props as any;
-  const {
-    children: panelsChildren,
-    ...otherPanelsProps
-  } = panels?.props as any;
+  const { children: panelsChildren, ...otherPanelsProps } =
+    panels?.props as any;
 
   const panelsStyles = getStyle(theme, otherPanelsProps);
   const tabBarStyle = getStyle(theme, otherTabsProps);

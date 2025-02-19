@@ -1,15 +1,15 @@
 import { StyleSheet } from 'react-native';
-import { ThemeType } from '../../theme';
 
+import { ThemeType } from '../../theme';
 import {
-  getThemeProperty,
+  createBorderColorStyles,
+  createBorderRadiusStyles,
+  createBorderWidthStyles,
+  createPositionStyle,
   createShadowStyles,
   createSpacingStyles,
-  createPositionStyle,
-  createBorderRadiusStyles,
-  createBorderColorStyles,
-  createBorderWidthStyles,
   getThemeColor,
+  getThemeProperty,
 } from '../../theme/theme.service';
 import { ButtonProps } from './button.type';
 
@@ -25,16 +25,16 @@ export const getStyle = (theme: ThemeType, props: ButtonProps) => {
   const buttonBgColor = props.bg
     ? getThemeColor(theme.colors, props.bg as string)
     : props.variant === 'solid'
-    ? getThemeColor(theme.colors, `${props.colorScheme}.500`)
-    : 'transparent';
+      ? getThemeColor(theme.colors, `${props.colorScheme}.500`)
+      : 'transparent';
 
   const buttonTextColor = props.color
     ? getThemeColor(theme.colors, props.color as string)
     : props.variant === 'outline' ||
-      props.variant === 'ghost' ||
-      props.variant === 'link'
-    ? getThemeColor(theme.colors, `${props.colorScheme}.500`)
-    : 'white';
+        props.variant === 'ghost' ||
+        props.variant === 'link'
+      ? getThemeColor(theme.colors, `${props.colorScheme}.500`)
+      : 'white';
 
   computedStyle.button = {
     overflow: 'hidden',

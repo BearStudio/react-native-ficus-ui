@@ -1,16 +1,16 @@
+import { BoxProps } from 'components/box/box.type';
 import { StyleSheet } from 'react-native';
 
 import {
-  createShadowStyles,
-  createPositionStyle,
-  createSpacingStyles,
-  createBorderWidthStyles,
   createBorderColorStyles,
   createBorderRadiusStyles,
+  createBorderWidthStyles,
+  createPositionStyle,
+  createShadowStyles,
+  createSpacingStyles,
   getThemeColor,
 } from '../../theme/theme.service';
 import type { ThemeType } from '../../theme/type';
-import { BoxProps } from 'components/box/box.type';
 
 // Tab view component from react-native-tab-view has a bug with style prop i have to use this workaround to fix it
 const removeUndefinedProps = (obj: any) => {

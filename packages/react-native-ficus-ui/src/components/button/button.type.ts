@@ -1,5 +1,9 @@
 import { PressableProps as RNButtonProps } from 'react-native';
+
 import {
+  BackgroundPropsType,
+  BorderPropsType,
+  BorderRadiusPropsType,
   ButtonPropsType,
   DimensionPropsType,
   DisabledPropsType,
@@ -8,14 +12,11 @@ import {
   OpacityPropsType,
   PositionPropsType,
   PrefixSuffixPropsType,
-  TextPropsType,
-  ZIndexPropsType,
-  BackgroundPropsType,
-  BorderPropsType,
-  SpacingPropsType,
-  BorderRadiusPropsType,
   ShadowPropsType,
+  SpacingPropsType,
+  TextPropsType,
   VariantPropsType,
+  ZIndexPropsType,
 } from '../../types';
 
 export interface ButtonProps

@@ -1,10 +1,11 @@
 import React from 'react';
+
 import { render, screen } from '@testing-library/react-native';
 
+import { ThemeProvider } from '../../theme/theme.provider';
 import { Text } from '../text/text.component';
 import { ScrollBox } from './scrollbox.component';
 import type { ScrollBoxProps } from './scrollbox.type';
-import { ThemeProvider } from '../../theme/theme.provider';
 
 jest.mock('react-native-toast-message', () => 'Toast');
 

@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native';
-import { ThemeType } from '../../theme';
 
+import { ThemeType } from '../../theme';
 import {
-  getThemeProperty,
-  createSpacingStyles,
   createBorderRadiusStyles,
+  createSpacingStyles,
   getThemeColor,
+  getThemeProperty,
 } from '../../theme/theme.service';
 import { SelectOptionProps } from './select.option.type';
 

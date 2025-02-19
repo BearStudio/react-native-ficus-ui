@@ -1,20 +1,21 @@
 import * as React from 'react';
-import { TextInput as RNTextInput, View } from 'react-native';
 
-import { getStyle } from './pin-input.style';
-import type { PinInputProps } from './pin-input.type';
-import { useTheme } from '../../theme/theme.hook';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
+import { TextInput as RNTextInput, View } from 'react-native';
 import {
   CodeField,
   Cursor,
-  isLastFilledCell,
   MaskSymbol,
+  isLastFilledCell,
 } from 'react-native-confirmation-code-field';
+
+import { useTheme } from '../../theme/theme.hook';
+import { getThemeColor } from '../../theme/theme.service';
+import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { Center } from '../center/center.component';
 import { Text } from '../text/text.component';
-import { getThemeColor } from '../../theme/theme.service';
+import { getStyle } from './pin-input.style';
+import type { PinInputProps } from './pin-input.type';
 
 const PinInput = React.forwardRef<RNTextInput, PinInputProps>(
   (incomingProps, ref) => {

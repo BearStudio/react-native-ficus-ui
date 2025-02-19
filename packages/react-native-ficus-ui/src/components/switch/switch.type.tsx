@@ -2,11 +2,11 @@ import { TouchableOpacityProps as RNTouchableOpacityProps } from 'react-native';
 
 import {
   BackgroundPropsType,
+  BorderPropsType,
+  BorderRadiusPropsType,
   DimensionPropsType,
   DisabledPropsType,
-  BorderPropsType,
   SpacingPropsType,
-  BorderRadiusPropsType,
   VariantPropsType,
 } from '../../types';
 

@@ -2,17 +2,17 @@ import type { ViewProps as RNViewProps } from 'react-native';
 
 import type {
   BorderPropsType,
-  SpacingPropsType,
   BorderRadiusPropsType,
-  ShadowPropsType,
   DimensionPropsType,
   FlexPropsType,
-  PositionPropsType,
-  ZIndexPropsType,
-  OverflowPropsType,
   OpacityPropsType,
-  VariantPropsType,
   OrientationPropsType,
+  OverflowPropsType,
+  PositionPropsType,
+  ShadowPropsType,
+  SpacingPropsType,
+  VariantPropsType,
+  ZIndexPropsType,
 } from '../../types';
 
 export interface DividerProps

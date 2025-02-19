@@ -1,14 +1,14 @@
 import { StyleSheet } from 'react-native';
 
 import {
-  getThemeProperty,
-  createSpacingStyles,
-  createBorderWidthStyles,
   createBorderColorStyles,
   createBorderRadiusStyles,
-  getThemeFontFamily,
+  createBorderWidthStyles,
+  createSpacingStyles,
   getFontWeight,
   getThemeColor,
+  getThemeFontFamily,
+  getThemeProperty,
 } from '../../theme/theme.service';
 import type { ThemeType } from '../../theme/type';
 import type { TextProps } from './text.type';

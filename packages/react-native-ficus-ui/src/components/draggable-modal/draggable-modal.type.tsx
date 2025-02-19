@@ -1,11 +1,12 @@
 import { BottomSheetModalProps } from '@gorhom/bottom-sheet';
+
 import {
-  BorderPropsType,
-  SpacingPropsType,
-  BorderRadiusPropsType,
   BackgroundPropsType,
+  BorderPropsType,
+  BorderRadiusPropsType,
   DimensionPropsType,
   FlexPropsType,
+  SpacingPropsType,
   VariantPropsType,
 } from '../../types';
 

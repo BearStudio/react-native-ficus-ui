@@ -1,4 +1,5 @@
 /* eslint-disable jest/no-disabled-tests */
+import * as React from 'react';
 
 import {
   cleanup,
@@ -6,8 +7,8 @@ import {
   render,
   screen,
 } from '@testing-library/react-native';
-import * as React from 'react';
 import { Text, View } from 'react-native';
+
 import { Button } from '../button/button.component';
 import { Select } from './select.component';
 import { Option } from './select.option.component';

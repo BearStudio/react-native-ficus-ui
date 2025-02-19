@@ -1,13 +1,14 @@
 import * as React from 'react';
-import { Animated, TouchableOpacity } from 'react-native';
 import { useEffect, useRef, useState } from 'react';
 
-import { getStyle } from './switch.style';
-import { SwitchProps } from './switch.type';
+import { Animated, TouchableOpacity } from 'react-native';
+
 import { useTheme } from '../../theme';
 import { getThemeColor } from '../../theme/theme.service';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { getStyle } from './switch.style';
+import { SwitchProps } from './switch.type';
 
 const Switch: React.FC<SwitchProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

@@ -1,13 +1,14 @@
 import * as React from 'react';
+
 import { View as RNView } from 'react-native';
 
-import { getStyle } from './icon.style';
-import { getIconSet } from './icon.service';
 import { useTheme } from '../../theme';
-import { IconProps } from './icon.type';
-import { getThemeProperty, getThemeColor } from '../../theme/theme.service';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { getThemeColor, getThemeProperty } from '../../theme/theme.service';
 import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { getIconSet } from './icon.service';
+import { getStyle } from './icon.style';
+import { IconProps } from './icon.type';
 
 const Icon: React.FunctionComponent<IconProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
+import React from 'react';
+
 import { ImageBackground as RNImageBackground, Text, View } from 'react-native';
 
+import { useTheme } from '../../theme/theme.hook';
+import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { Icon } from '../icon/icon.component';
 import { getStyle } from './avatar.style';
 import type { AvatarProps } from './avatar.type';
-import { useTheme } from '../../theme/theme.hook';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
-import React from 'react';
-import { Icon } from '../icon/icon.component';
 
 const Avatar: React.FunctionComponent<AvatarProps> = (incomingProps) => {
   const [isImageValid, setIsImageValid] = useState(false);

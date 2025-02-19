@@ -1,24 +1,25 @@
 /* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import {
-  View as RNView,
-  GestureResponderEvent as RNGestureResponderEvent,
   Pressable as RNButton,
+  GestureResponderEvent as RNGestureResponderEvent,
+  View as RNView,
 } from 'react-native';
 
-import { getStyle } from './radio.style';
 import { getThemeProperty, useTheme } from '../../theme';
-import { Icon } from '../icon/icon.component';
-import { getIconName, getIconColor } from './radio.service';
-import { RadioProps, CompoundedRadio } from './radio.type';
-import { RadioGroup } from './group.component';
-import { Spinner } from '../spinner/spinner.component';
+import { handleResponsiveProps } from '../../types';
 import { isFunction } from '../../utilities';
 import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { Text } from '../text/text.component';
 import { Box } from '../box/box.component';
-import { handleResponsiveProps } from '../../types';
+import { Icon } from '../icon/icon.component';
+import { Spinner } from '../spinner/spinner.component';
+import { Text } from '../text/text.component';
+import { RadioGroup } from './group.component';
+import { getIconColor, getIconName } from './radio.service';
+import { getStyle } from './radio.style';
+import { CompoundedRadio, RadioProps } from './radio.type';
 
 const Radio: CompoundedRadio<RadioProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

@@ -3,9 +3,11 @@ on:
   push:
     branches:
       - main
+      - next
   pull_request:
     branches:
       - main
+      - next
 
 jobs:
   lint:
@@ -34,7 +36,6 @@ jobs:
 
       - name: Run unit tests
         run: |
-          cd ./packages/react-native-ficus-ui
           pnpm test -- --maxWorkers=2 --coverage
 
   build:

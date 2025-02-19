@@ -1,22 +1,22 @@
+import { BoxProps } from 'components/box/box.type';
+import { StackProps } from 'components/stack/stack.type';
 import type { ImageProps as RNImageProps } from 'react-native';
 
 import type {
-  BorderPropsType,
-  SpacingPropsType,
-  BorderRadiusPropsType,
-  ShadowPropsType,
-  DimensionPropsType,
   BackgroundPropsType,
+  BorderPropsType,
+  BorderRadiusPropsType,
+  DimensionPropsType,
   FlexPropsType,
-  PositionPropsType,
-  ZIndexPropsType,
-  OverflowPropsType,
   OpacityPropsType,
-  VariantPropsType,
+  OverflowPropsType,
+  PositionPropsType,
+  ShadowPropsType,
+  SpacingPropsType,
   TextPropsType,
+  VariantPropsType,
+  ZIndexPropsType,
 } from '../../types';
-import { StackProps } from 'components/stack/stack.type';
-import { BoxProps } from 'components/box/box.type';
 
 export interface AvatarProps
   extends Omit<

@@ -1,7 +1,8 @@
 import React from 'react';
-import type { DefaultProps, VariantPropsType } from '../types';
+
 import { useTheme } from '../theme/theme.hook';
 import type { ThemeType } from '../theme/type';
+import type { DefaultProps, VariantPropsType } from '../types';
 
 export const useDefaultProps = <Props extends object>(
   componentName: keyof NonNullable<ThemeType['components']> | null,
@@ -19,9 +20,9 @@ export const useDefaultProps = <Props extends object>(
     }
 
     let propsFromTheme = {
-      ...(theme.components?.[componentName] ?? {}),
+      ...(theme?.components?.[componentName] ?? {}),
       ...(props.variant &&
-        (theme.components?.[componentName]?.variants?.[
+        (theme?.components?.[componentName]?.variants?.[
           props.variant as string
         ] ??
           {})),
@@ -36,7 +37,7 @@ export const useDefaultProps = <Props extends object>(
     };
 
     return mergedProps;
-  }, [componentName, defaultProps, props, theme.components]);
+  }, [componentName, defaultProps, props, theme?.components]);
 
   return finalProps as Props & Required<typeof defaultProps>;
 };

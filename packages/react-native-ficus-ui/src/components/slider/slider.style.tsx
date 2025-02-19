@@ -5,8 +5,8 @@ import {
   createSpacingStyles,
   getThemeColor,
 } from '../../theme/theme.service';
-import type { SliderProps } from './slider.type';
 import type { ThemeType } from '../../theme/type';
+import type { SliderProps } from './slider.type';
 
 /**
  * computed style

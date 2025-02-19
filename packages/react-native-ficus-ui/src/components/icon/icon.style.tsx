@@ -1,14 +1,14 @@
 import { StyleSheet } from 'react-native';
-import { ThemeType } from '../../theme';
 
+import { ThemeType } from '../../theme';
 import {
-  getThemeProperty,
+  createBorderColorStyles,
+  createBorderRadiusStyles,
+  createBorderWidthStyles,
   createShadowStyles,
   createSpacingStyles,
-  createBorderColorStyles,
-  createBorderWidthStyles,
-  createBorderRadiusStyles,
   getThemeColor,
+  getThemeProperty,
 } from '../../theme/theme.service';
 import { IconProps } from './icon.type';
 

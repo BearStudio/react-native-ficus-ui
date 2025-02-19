@@ -1,13 +1,14 @@
 import * as React from 'react';
 
-import { ThemeContext } from './theme.context';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import deepmerge from 'deepmerge';
-import type { ThemeType } from './type';
-import { defaultTheme } from './theme.default';
-import Toast from 'react-native-toast-message';
 import { useWindowDimensions } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import Toast from 'react-native-toast-message';
+
+import { ThemeContext } from './theme.context';
+import { defaultTheme } from './theme.default';
+import type { ThemeType } from './type';
 
 export interface ThemeProviderProps {
   theme?: ThemeType;

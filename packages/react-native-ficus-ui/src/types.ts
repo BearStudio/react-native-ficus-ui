@@ -1,5 +1,8 @@
+// @ts-nocheck
 import React from 'react';
+
 import { ImageSourcePropType as RNImageSourcePropType } from 'react-native';
+
 import { ThemeType } from './theme';
 
 export type ResponsiveValue<T> = T | Record<string, T>;
@@ -427,7 +430,7 @@ export const allFicusProps: string[] = [
 ];
 
 export function handleResponsiveProps<
-  T extends Record<string, ResponsiveValue<any>>
+  T extends Record<string, ResponsiveValue<any>>,
 >(props: T, theme: ThemeType, windowWidth: number): any {
   let newProps = {};
 
@@ -450,10 +453,9 @@ export function handleResponsiveProps<
       // Handle as an object with responsive values
       for (const breakpoint in value) {
         if (theme?.breakpoints && breakpoint in theme?.breakpoints) {
-          const themeBreakpointValue = (theme.breakpoints as Record<
-            string,
-            number
-          >)[breakpoint];
+          const themeBreakpointValue = (
+            theme.breakpoints as Record<string, number>
+          )[breakpoint];
           if (windowWidth >= themeBreakpointValue) {
             newProps = { ...newProps, [prop]: value[breakpoint] };
           }

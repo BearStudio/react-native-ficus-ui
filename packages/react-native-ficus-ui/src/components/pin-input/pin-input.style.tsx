@@ -1,14 +1,14 @@
 import { StyleSheet } from 'react-native';
 
 import {
-  createShadowStyles,
-  createPositionStyle,
-  createSpacingStyles,
   createBorderRadiusStyles,
+  createPositionStyle,
+  createShadowStyles,
+  createSpacingStyles,
   getThemeColor,
 } from '../../theme/theme.service';
-import type { PinInputProps } from './pin-input.type';
 import type { ThemeType } from '../../theme/type';
+import type { PinInputProps } from './pin-input.type';
 
 /**
  * computed style

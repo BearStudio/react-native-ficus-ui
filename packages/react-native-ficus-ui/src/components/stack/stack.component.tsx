@@ -1,11 +1,12 @@
 import * as React from 'react';
+
 import { View as RNView } from 'react-native';
 
+import { useTheme } from '../../theme/theme.hook';
+import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { getStyle } from './stack.style';
 import type { StackProps } from './stack.type';
-import { useTheme } from '../../theme/theme.hook';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
 
 const Stack: React.FunctionComponent<StackProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

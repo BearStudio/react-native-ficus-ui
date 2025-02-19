@@ -1,37 +1,36 @@
-import type { ViewProps as RNViewProps, View as RNView } from 'react-native';
+import type { View as RNView, ViewProps as RNViewProps } from 'react-native';
 
 import type {
-  BorderPropsType,
-  SpacingPropsType,
-  BorderRadiusPropsType,
-  ShadowPropsType,
-  DimensionPropsType,
-  BackgroundPropsType,
   BackgroundImgPropsType,
+  BackgroundPropsType,
+  BorderPropsType,
+  BorderRadiusPropsType,
+  DimensionPropsType,
   FlexPropsType,
-  PositionPropsType,
-  ZIndexPropsType,
-  OverflowPropsType,
   OpacityPropsType,
+  OverflowPropsType,
+  PositionPropsType,
+  ShadowPropsType,
+  SpacingPropsType,
   VariantPropsType,
+  ZIndexPropsType,
 } from '../../types';
 
-export type BoxProps<
-  T extends React.ElementType = typeof RNView
-> = RNViewProps &
-  BorderPropsType &
-  SpacingPropsType &
-  BorderRadiusPropsType &
-  ShadowPropsType &
-  DimensionPropsType &
-  BackgroundPropsType &
-  BackgroundImgPropsType &
-  FlexPropsType &
-  PositionPropsType &
-  ZIndexPropsType &
-  OverflowPropsType &
-  OpacityPropsType &
-  VariantPropsType &
-  React.ComponentPropsWithoutRef<T> & {
-    as?: T;
-  };
+export type BoxProps<T extends React.ElementType = typeof RNView> =
+  RNViewProps &
+    BorderPropsType &
+    SpacingPropsType &
+    BorderRadiusPropsType &
+    ShadowPropsType &
+    DimensionPropsType &
+    BackgroundPropsType &
+    BackgroundImgPropsType &
+    FlexPropsType &
+    PositionPropsType &
+    ZIndexPropsType &
+    OverflowPropsType &
+    OpacityPropsType &
+    VariantPropsType &
+    React.ComponentPropsWithoutRef<T> & {
+      as?: T;
+    };

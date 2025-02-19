@@ -1,15 +1,15 @@
 import { StyleSheet } from 'react-native';
-import { ThemeType } from '../../theme';
 
+import { ThemeType } from '../../theme';
 import {
-  getThemeProperty,
+  createBorderColorStyles,
+  createBorderRadiusStyles,
+  createBorderWidthStyles,
+  createPositionStyle,
   createShadowStyles,
   createSpacingStyles,
-  createPositionStyle,
-  createBorderRadiusStyles,
-  createBorderColorStyles,
-  createBorderWidthStyles,
   getThemeColor,
+  getThemeProperty,
 } from '../../theme/theme.service';
 import { RadioProps } from './radio.type';
 

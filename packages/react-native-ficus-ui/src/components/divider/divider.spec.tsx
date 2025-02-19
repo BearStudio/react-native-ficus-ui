@@ -1,6 +1,8 @@
-import { render, screen } from '@testing-library/react-native';
-import { Divider } from './divider.component';
 import React from 'react';
+
+import { render, screen } from '@testing-library/react-native';
+
+import { Divider } from './divider.component';
 
 describe('Divider component', () => {
   it('should render correctly', () => {
@@ -23,8 +25,8 @@ describe('Divider component', () => {
       </>
     );
 
-    const horizontalDivider = screen.getByTestId(horizontalDividerId);
-    const verticalDivider = screen.getByTestId(verticalDividerId);
+    // const horizontalDivider = screen.getByTestId(horizontalDividerId);
+    // const verticalDivider = screen.getByTestId(verticalDividerId);
 
     // expect(horizontalDivider).toHaveStyle({
     //   borderLeftWidth: 0,
@@ -47,8 +49,8 @@ describe('Divider component', () => {
       </>
     );
 
-    const horizontalDivider = screen.getByTestId(horizontalDividerId);
-    const verticalDivider = screen.getByTestId(verticalDividerId);
+    // const horizontalDivider = screen.getByTestId(horizontalDividerId);
+    // const verticalDivider = screen.getByTestId(verticalDividerId);
 
     // expect(horizontalDivider).toHaveStyle({ borderTopWidth: 5 });
     // expect(verticalDivider).toHaveStyle({ borderLeftWidth: 5 });

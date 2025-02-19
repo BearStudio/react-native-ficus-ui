@@ -1,9 +1,11 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["src"],
-  "exclude": ["lib", "node_modules"],
   "compilerOptions": {
-    "jsx": "react-native",
-    "baseUrl": "./src"
-  }
+    "paths": {
+      "components/*": ["./components"]
+    },
+    "baseUrl": "./src",
+    "outDir": "lib"
+  },
+  "include": ["src"]
 }

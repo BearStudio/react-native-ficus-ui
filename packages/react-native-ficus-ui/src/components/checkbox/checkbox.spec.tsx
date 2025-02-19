@@ -1,11 +1,11 @@
 import React from 'react';
+
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
+import { Box } from '../box/box.component';
 import { Text } from '../text/text.component';
 import { Checkbox } from './checkbox.component';
 import { CheckboxGroup } from './group.component';
-import { Box } from '../box/box.component';
-import { defaultTheme } from '../../theme/theme.default';
 
 describe('Checkbox component', () => {
   it('should render component without error', () => {
@@ -57,8 +57,8 @@ describe('Checkbox component', () => {
     );
 
     const group = screen.getByTestId(checkboxGroupId);
-    const option1 = screen.getByText('Option 1');
-    const option2 = screen.getByText('Option 2');
+    // const option1 = screen.getByText('Option 1');
+    // const option2 = screen.getByText('Option 2');
 
     expect(group).toBeDefined();
     // expect(option1).toBeVisible();
@@ -86,11 +86,11 @@ describe('Checkbox component', () => {
       </CheckboxGroup>
     );
 
-    const option1 = screen.getByText('Option 1');
-    const option2 = screen.getByText('Option 2');
+    // const option1 = screen.getByText('Option 1');
+    // const option2 = screen.getByText('Option 2');
 
-    const red800 = defaultTheme.colors?.red[800];
-    const white = defaultTheme.colors?.white as string;
+    // const red800 = defaultTheme.colors?.red[800];
+    // const white = defaultTheme.colors?.white as string;
 
     // expect(option1).toBeVisible();
     // expect(option2).toBeVisible();

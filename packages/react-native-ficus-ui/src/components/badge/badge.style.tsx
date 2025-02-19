@@ -1,19 +1,19 @@
 import { StyleSheet } from 'react-native';
 
 import {
-  createShadowStyles,
-  createPositionStyle,
-  createSpacingStyles,
-  createBorderWidthStyles,
   createBorderColorStyles,
   createBorderRadiusStyles,
-  getThemeColor,
-  getThemeProperty,
+  createBorderWidthStyles,
+  createPositionStyle,
+  createShadowStyles,
+  createSpacingStyles,
   getFontWeight,
+  getThemeColor,
   getThemeFontFamily,
+  getThemeProperty,
 } from '../../theme/theme.service';
-import type { BadgeProps } from './badge.type';
 import type { ThemeType } from '../../theme/type';
+import type { BadgeProps } from './badge.type';
 
 /**
  * computed style
@@ -28,17 +28,17 @@ export const getStyle = (theme: ThemeType, props: BadgeProps) => {
     props.variant === 'subtle'
       ? getThemeColor(theme.colors, `${props.colorScheme}.100`)
       : props.variant === 'solid'
-      ? getThemeColor(theme.colors, `${props.colorScheme}.500`)
-      : 'transparent';
+        ? getThemeColor(theme.colors, `${props.colorScheme}.500`)
+        : 'transparent';
 
   const badgeTextColor =
     props.variant === 'subtle'
       ? getThemeColor(theme.colors, `${props.colorScheme}.800`)
       : props.variant === 'solid'
-      ? 'white'
-      : props.variant === 'outline'
-      ? getThemeColor(theme.colors, `${props.colorScheme}.500`)
-      : getThemeColor(theme.colors, `${props.colorScheme}.800`);
+        ? 'white'
+        : props.variant === 'outline'
+          ? getThemeColor(theme.colors, `${props.colorScheme}.500`)
+          : getThemeColor(theme.colors, `${props.colorScheme}.800`);
 
   computedStyle.badge = {
     flexDirection: props.direction ? props.direction : props.flexDirection,

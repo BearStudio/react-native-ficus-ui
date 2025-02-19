@@ -1,14 +1,15 @@
 import * as React from 'react';
+
 import { GestureResponderEvent as RNGestureResponderEvent } from 'react-native';
 
+import { useTheme } from '../../theme';
+import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { Box } from '../box/box.component';
+import { Button } from '../button/button.component';
 import { Icon } from '../icon/icon.component';
 import { Text } from '../text/text.component';
 import { SelectOptionProps } from './select.option.type';
-import { Button } from '../button/button.component';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { useTheme } from '../../theme';
-import { handleResponsiveProps } from '../../types';
 
 const Option: React.FunctionComponent<SelectOptionProps> = (incomingProps) => {
   const { theme, windowWidth } = useTheme();

@@ -1,19 +1,19 @@
 /* eslint-disable react-native/no-inline-styles */
-
 import * as React from 'react';
-import RNModal from 'react-native-modal';
-import { SafeAreaView, FlatList } from 'react-native';
-import { useState, useImperativeHandle, useEffect } from 'react';
+import { useEffect, useImperativeHandle, useState } from 'react';
 
-import { getStyle } from './select.style';
-import { Box } from '../box/box.component';
+import { FlatList, SafeAreaView } from 'react-native';
+import RNModal from 'react-native-modal';
+
 import { useTheme } from '../../theme';
-import { Text } from '../text/text.component';
-import { Button } from '../button/button.component';
-import { SelectProps, SelectRef, CompoundedSelect } from './select.type';
-import { ButtonProps } from '../button/button.type';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
 import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { Box } from '../box/box.component';
+import { Button } from '../button/button.component';
+import { ButtonProps } from '../button/button.type';
+import { Text } from '../text/text.component';
+import { getStyle } from './select.style';
+import { CompoundedSelect, SelectProps, SelectRef } from './select.type';
 
 const Select = React.forwardRef<SelectRef, SelectProps>(
   (incomingProps, ref) => {

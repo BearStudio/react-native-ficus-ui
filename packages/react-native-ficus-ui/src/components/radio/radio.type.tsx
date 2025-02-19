@@ -1,7 +1,11 @@
 import * as React from 'react';
+
 import { PressableProps as RNButtonProps } from 'react-native';
+
 import {
   BackgroundPropsType,
+  BorderPropsType,
+  BorderRadiusPropsType,
   ButtonPropsType,
   DimensionPropsType,
   DisabledPropsType,
@@ -9,13 +13,11 @@ import {
   OpacityPropsType,
   PositionPropsType,
   PrefixSuffixPropsType,
-  TextPropsType,
-  ZIndexPropsType,
-  BorderPropsType,
-  SpacingPropsType,
-  BorderRadiusPropsType,
   ShadowPropsType,
+  SpacingPropsType,
+  TextPropsType,
   VariantPropsType,
+  ZIndexPropsType,
 } from '../../types';
 import { BoxProps } from '../box/box.type';
 import { RadioGroup } from './group.component';

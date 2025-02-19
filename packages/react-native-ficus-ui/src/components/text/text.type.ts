@@ -1,16 +1,17 @@
 import type { TextProps as RNTextProps } from 'react-native';
+
 import type {
   BackgroundPropsType,
+  BorderPropsType,
+  BorderRadiusPropsType,
   DimensionPropsType,
   FlexPropsType,
   OpacityPropsType,
   OverflowPropsType,
-  TextPropsType,
-  ZIndexPropsType,
-  BorderPropsType,
   SpacingPropsType,
-  BorderRadiusPropsType,
+  TextPropsType,
   VariantPropsType,
+  ZIndexPropsType,
 } from '../../types';
 
 export interface TextProps

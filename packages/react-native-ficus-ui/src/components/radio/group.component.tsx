@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { useState } from 'react';
 
-import { RadioGroupProps } from './radio.type';
-import { Box } from '../box/box.component';
-import { useDefaultProps } from '../../utilities/useDefaultProps';
-import { handleResponsiveProps } from '../../types';
 import { useTheme } from '../../theme';
+import { handleResponsiveProps } from '../../types';
+import { useDefaultProps } from '../../utilities/useDefaultProps';
+import { Box } from '../box/box.component';
+import { RadioGroupProps } from './radio.type';
 
 const RadioGroup: React.FunctionComponent<RadioGroupProps> = (
   incomingProps
