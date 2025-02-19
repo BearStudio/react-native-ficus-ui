@@ -1,0 +1,43 @@
+{
+  "name": "@ficus-ui/native",
+  "version": "2.0.0-alpha",
+  "scripts": {
+    "dev": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@chakra-ui/utils": "2.2.2",
+    "@ficus-ui/style-system": "workspace:*",
+    "@ficus-ui/theme": "workspace:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/esm/index.mjs"
+      },
+      "require": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/cjs/index.cjs"
+      }
+    },
+    "./config": {
+      "import": {
+        "types": "./dist/types/config/index.d.ts",
+        "default": "./dist/esm/config/index.mjs"
+      },
+      "require": {
+        "types": "./dist/types/config/index.d.ts",
+        "default": "./dist/cjs/config/index.cjs"
+      }
+    }
+  }
+}
