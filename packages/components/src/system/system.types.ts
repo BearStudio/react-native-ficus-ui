@@ -15,27 +15,24 @@ export type FicusProps<T extends RNElementType> = SystemProps<T> & {
 };
 
 export type SystemProps<T extends RNElementType> = T extends 'Text'
-  ? BaseSystemProps<TextStyleProps> // Ensure BaseSystemProps always gets a type argument
-  : BaseSystemProps<Record<string, unknown>>; // Provide a default type argument
+  ? BaseSystemProps<TextStyleProps>
+  : BaseSystemProps;
 
 export interface AsProps<T extends RNElementType = RNElementType> {
   as?: T;
 }
 
-// Props for a component with `as` prop to dynamically change the component type
 export type PropsOf<T extends RNElementType> = Omit<
   NativeElementProps<T>,
   'ref'
 > &
   AsProps<T>;
 
-// Omit common props like `as` or any additional props you define
 export type OmitCommonProps<
   Target,
   OmitAdditionalProps extends keyof any = never,
 > = Omit<Target, 'as' | OmitAdditionalProps>;
 
-// Utility type to merge props of the base component and the `as` component
 export type RightJoinProps<
   SourceProps extends object = {},
   OverrideProps extends object = {},
@@ -52,7 +49,6 @@ export type MergeWithAs<
   | RightJoinProps<AsCompProps, AdditionalProps>
 ) & { as?: AsComponent };
 
-// Component type with `as` prop for dynamic component rendering
 export type ComponentWithAs<
   Component extends RNElementType,
   Props extends object = {},

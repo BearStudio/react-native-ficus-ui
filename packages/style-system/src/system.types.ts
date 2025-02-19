@@ -58,11 +58,16 @@ export type RecursiveStyleSheetObject<D> = D &
 export type SystemStyleObject =
   RecursiveStyleSheetObject<StyleSheetWithMultiValues>;
 
+type Assign<T, U> = Omit<T, keyof U> & U;
+
 /**
  * We might need to extend SystemProps.
  * For example for Text
  */
-export type SystemProps<ExtraProps extends Dict = {}> = StyleProps & ExtraProps;
+export type SystemProps<ExtraProps extends Dict = {}> = Assign<
+  StyleProps,
+  ExtraProps
+>;
 
 /**
  * Extensible style props
