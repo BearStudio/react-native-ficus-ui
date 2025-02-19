@@ -26,14 +26,14 @@ export function defineStyle<T extends SystemStyleInterpolation>(styles: T) {
 type DefaultProps = {
   size?: string;
   variant?: string;
-  colorScheme: string;
+  colorScheme?: string;
 };
 
 export type StyleConfig = {
   baseStyle?: SystemStyleInterpolation;
   sizes?: { [size: string]: SystemStyleInterpolation };
   variants?: { [variant: string]: SystemStyleInterpolation };
-  defaultProps: DefaultProps;
+  defaultProps?: DefaultProps;
 };
 
 export function defineStyleConfig<
@@ -42,8 +42,8 @@ export function defineStyleConfig<
   Variants extends Dict<SystemStyleInterpolation>,
 >(config: {
   baseStyle?: BaseStyle;
-  sizes: Sizes;
-  variants: Variants;
+  sizes?: Sizes;
+  variants?: Variants;
   defaultProps?: {
     size?: keyof Sizes;
     variant?: keyof Variants;

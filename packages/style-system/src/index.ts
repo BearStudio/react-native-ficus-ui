@@ -6,3 +6,4 @@ export * from './define-style';
 export * from './style-sheet';
 export * from './utils';
 export * from './config';
+export * from './style-config';

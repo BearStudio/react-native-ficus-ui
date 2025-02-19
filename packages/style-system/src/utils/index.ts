@@ -29,3 +29,4 @@ export const t = {
 
 export * from './prop-config';
 export * from './types';
+export * from './expand-responsive';

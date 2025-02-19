@@ -30,3 +30,5 @@ export const systemProps = mergeWith(
 );
 
 export const isStyleProp = (prop: string) => prop in systemProps;
+
+export const isTextProp = (prop: string) => prop in text;

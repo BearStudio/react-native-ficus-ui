@@ -18,7 +18,7 @@ export const flexbox: Config<FlexboxProps> = {
   shrink: t.flexbox('flexShrink'),
   justifyContent: true,
   justify: t.flexbox('justifyContent'),
-  alignSelf: t.flexbox('alignItems'),
+  alignSelf: t.flexbox('alignSelf'),
   alignItems: true,
   align: t.flexbox('alignItems'),
 };
