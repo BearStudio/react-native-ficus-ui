@@ -28,3 +28,4 @@ export const t = {
 };
 
 export * from './prop-config';
+export * from './types';

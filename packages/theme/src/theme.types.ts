@@ -1,4 +1,7 @@
-import type { SystemStyleObject, ThemingProps } from '@ficus-ui/style-system';
+import type {
+  SystemStyleInterpolation,
+  ThemingProps,
+} from '@ficus-ui/style-system';
 
 type Dict<T = any> = Record<string, T>;
 
@@ -27,9 +30,9 @@ export type Colors = RecursiveObject<Dict<Partial<ColorHues>> | string>;
 export interface ComponentDefaultProps extends ThemingProps, Dict {}
 
 export interface ComponentStyleConfig {
-  baseStyle?: SystemStyleObject;
-  sizes?: Dict<SystemStyleObject>;
-  variants?: Dict<SystemStyleObject>;
+  baseStyle?: SystemStyleInterpolation;
+  sizes?: Dict<SystemStyleInterpolation>;
+  variants?: Dict<SystemStyleInterpolation>;
   defaultProps?: any;
 }
 

@@ -1,6 +1,6 @@
 import { createElement, forwardRef } from 'react';
 
-import { assignAfter, compact, splitProps } from '@chakra-ui/utils';
+import { assignAfter, compact, runIfFn, splitProps } from '@chakra-ui/utils';
 import {
   StyleProps,
   SystemStyleObject,
@@ -30,8 +30,18 @@ type GetStyleObject = (options: { baseStyle?: SystemStyleObject }) => (
 
 export const toStyleSheetObject: GetStyleObject =
   ({ baseStyle }) =>
-  ({ theme, style, ...styleProps }) => {
-    const finalStyles = assignAfter({}, baseStyle, compact(styleProps), style);
+  (props) => {
+    const { theme, style, __styles, ...styleProps } = props;
+
+    const finalBaseStyle = runIfFn(baseStyle, props);
+    const finalStyles = assignAfter(
+      {},
+      __styles,
+      finalBaseStyle,
+      compact(styleProps),
+      style
+    );
+
     return styleSheet(finalStyles)(theme);
   };
 
@@ -54,14 +64,14 @@ export function styled<
       const { children, style, as, ...rest } = props;
       const { theme } = useTheme();
 
-      const [styleProps, restProps] = splitProps(rest, isStyleProp);
+      const restProps = splitProps(rest, isStyleProp)[1];
 
       const AsComponent = as ? getComponent(as) : Component;
 
       const propsWithTheme = {
         style,
         theme,
-        ...styleProps,
+        ...rest,
       };
 
       const computedStyle = styleObject(propsWithTheme);
@@ -70,9 +80,7 @@ export function styled<
         AsComponent,
         {
           ref,
-          style: {
-            ...computedStyle,
-          },
+          style: computedStyle,
           ...restProps,
         },
         children
