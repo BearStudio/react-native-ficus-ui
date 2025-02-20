@@ -152,14 +152,7 @@ const config: DocsThemeConfig = {
   sidebar: {
     autoCollapse: true,
     defaultMenuCollapseLevel: 1,
-    titleComponent: ({ title, type, route }) => {
-      const router = useRouter();
-      const whichVersion = route.split('/');
-    
-      if (!router.pathname.includes(whichVersion[2])) {
-        return null;
-      }
-    
+    titleComponent: ({ title, type }) => {
       return type === 'separator' ? (
         <div className="flex items-center gap-2">
           <FicusLogo className="h-1.5 shrink-0" />
