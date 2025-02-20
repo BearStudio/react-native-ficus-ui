@@ -6,6 +6,7 @@ import { transforms } from '../utils/transform-functions';
 import { ResponsiveValue } from '../utils/types';
 
 export const text: Config<TextStyleProps> = {
+  color: t.colors('color'),
   textColor: t.colors('color'),
   fontSize: t.prop('fontSize', 'fontSizes', transforms.getThemeProp),
   textDecorLine: t.prop('textDecorationLine'),
@@ -35,6 +36,7 @@ export const text: Config<TextStyleProps> = {
  * Only for React native Text Component
  */
 export interface TextStyleProps {
+  color?: string;
   textColor?: string;
   fontSize?: ResponsiveValue<string | number>;
   textDecorLine?: ResponsiveValue<TextStyle['textDecorationLine']>;
