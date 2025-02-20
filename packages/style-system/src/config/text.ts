@@ -39,7 +39,7 @@ export interface TextStyleProps {
   fontSize?: ResponsiveValue<string | number>;
   textDecorLine?: ResponsiveValue<TextStyle['textDecorationLine']>;
   textDecorStyle?: ResponsiveValue<TextStyle['textDecorationStyle']>;
-  fontStyle?: ResponsiveValue<TextStyle['fontSize']>;
+  fontStyle?: ResponsiveValue<TextStyle['fontStyle']>;
   textDecorColor?: ResponsiveValue<string>;
   fontWeight?: ResponsiveValue<TextStyle['fontWeight']>;
   fontFamily?: ResponsiveValue<'heading' | 'mono' | (string & {})>;
