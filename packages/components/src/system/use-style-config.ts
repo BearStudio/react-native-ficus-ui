@@ -2,11 +2,13 @@ import { useRef } from 'react';
 
 import { compact, get, mergeWith, omit } from '@chakra-ui/utils';
 import {
+  Dict,
   type SystemStyleObject,
   type ThemingProps,
   resolveStyleConfig,
 } from '@ficus-ui/style-system';
 import { useTheme } from '@ficus-ui/theme';
+import isEqual from 'react-fast-compare';
 
 type StylesRef = SystemStyleObject | Record<string, SystemStyleObject>;
 
@@ -40,8 +42,7 @@ function useStyleConfigFn(
     const getStyles = resolveStyleConfig(styleConfig);
     const styles = getStyles(mergedProps);
 
-    // TODO COMPARISON
-    const isStyleEqual = stylesRef.current === styles;
+    const isStyleEqual = isEqual(stylesRef.current, styles);
 
     if (!isStyleEqual) {
       stylesRef.current = styles;
@@ -51,9 +52,22 @@ function useStyleConfigFn(
   return stylesRef.current;
 }
 
+/**
+ * Allow to resolve style config from the theme and merge it with props passed by the user.
+ */
 export function useStyleConfig(
   themeKey: string,
   props: ThemingProps & Record<string, any> = {}
 ) {
   return useStyleConfigFn(themeKey, props) as SystemStyleObject;
+}
+
+/**
+ * Allow to resolve style config for multi parts component
+ */
+export function useMultiStyleConfig(
+  themeKey: string,
+  props: ThemingProps & Dict = {}
+) {
+  return useStyleConfigFn(themeKey, props) as Record<string, SystemStyleObject>;
 }

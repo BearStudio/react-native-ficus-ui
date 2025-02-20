@@ -28,15 +28,11 @@ export function getStyleSheet({ configs = {}, theme }: GetStyleSheetOptions) {
         config = { property: key } as PropConfig;
       }
 
-      // if (isObject(value)) {
-      //   computedStyles[key] = computedStyles[key] ?? {};
-      //   computedStyles[key] = mergeWith(
-      //     {},
-      //     computedStyles[key],
-      //     styleSheet(value, true)
-      //   );
-      //   continue;
-      // }
+      if (isObject(value)) {
+        computedStyles[key] = computedStyles[key] ?? {};
+        computedStyles = mergeWith({}, computedStyles[key], styleSheet(value));
+        continue;
+      }
 
       /**
        * Add the peer properties to help for computing the value

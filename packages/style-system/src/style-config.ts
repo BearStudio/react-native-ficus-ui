@@ -40,11 +40,15 @@ function createResolver(theme: Theme) {
     value: ValueType | undefined,
     props: Record<string, any>
   ) {
+    const result: Record<string, any> = {};
+
     const normalized = normalize(value);
 
     if (!normalized) {
       return;
     }
+
+    const isMultipart = !!config.parts;
 
     const propValue = {
       [prop]: normalized.map((norm) => config[prop]?.[norm]),
@@ -52,6 +56,18 @@ function createResolver(theme: Theme) {
 
     const _styles = expandResponsive(propValue)(theme);
     const styles = runIfFn(_styles[prop], props);
+
+    if (!styles) {
+      return;
+    }
+
+    if (isMultipart) {
+      config.parts?.forEach((part) => {
+        mergeWith(result, {
+          [part]: styles[part],
+        });
+      });
+    }
 
     return styles;
   };

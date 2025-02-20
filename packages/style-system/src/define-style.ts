@@ -54,3 +54,59 @@ export function defineStyleConfig<
 }
 
 // ------------------------------------------------------------------ //
+
+type Anatomy = string[];
+
+export type PartsStyleObject<Parts extends Anatomy = Anatomy> = Partial<
+  Record<Parts[number], SystemStyleObject>
+>;
+
+export type PartsStyleFunction<Parts extends Anatomy = Anatomy> = (
+  props: StyleFunctionProps
+) => PartsStyleObject<Parts>;
+
+export type PartsStyleInterpolation<Parts extends Anatomy = Anatomy> =
+  | PartsStyleObject<Parts>
+  | PartsStyleFunction<Parts>;
+
+export interface MultiStyleConfig<Parts extends Anatomy = Anatomy> {
+  parts: Parts['keys'];
+  baseStyle?: PartsStyleInterpolation<Parts>;
+  sizes?: { [size: string]: PartsStyleInterpolation<Parts> };
+  variants?: { [variant: string]: PartsStyleInterpolation<Parts> };
+  defaultProps?: DefaultProps;
+}
+
+// ------------------------------------------------------------------ //
+
+/**
+ * Returns an object of helpers that can be used to define
+ * the style configuration for a multi-part component.
+ */
+export function createMultiStyleConfigHelpers<Part extends string>(
+  parts: Part[] | Readonly<Part[]>
+) {
+  return {
+    definePartsStyle<PartStyles extends PartsStyleInterpolation<Part[]>>(
+      config: PartStyles
+    ) {
+      return config;
+    },
+    defineMultiStyleConfig<
+      BaseStyle extends PartsStyleInterpolation<Part[]>,
+      Sizes extends Dict<PartsStyleInterpolation<Part[]>>,
+      Variants extends Dict<PartsStyleInterpolation<Part[]>>,
+    >(config: {
+      baseStyle?: BaseStyle;
+      sizes?: Sizes;
+      variants?: Variants;
+      defaultProps?: {
+        size?: keyof Sizes;
+        variant?: keyof Variants;
+        colorScheme?: string;
+      };
+    }) {
+      return { parts: parts as Part[], ...config };
+    },
+  };
+}

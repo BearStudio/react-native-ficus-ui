@@ -13,8 +13,6 @@ import {
 import { RNStyleSheet, RNStyleSheetProperties } from './utils/prop-config';
 import { Dict, ResponsiveValue } from './utils/types';
 
-// Define the base interface for style props with generic ExtraProps that extends Config
-
 export interface StyleProps
   extends BackgroundProps,
     BorderProps,
