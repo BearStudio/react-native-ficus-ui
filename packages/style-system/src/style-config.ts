@@ -65,14 +65,15 @@ type Values = {
 
 export function resolveStyleConfig(config: Config) {
   return (props: Values) => {
-    const { variant, size, theme } = props;
+    const { variant, size, theme, ...rest } = props;
     const recipe = createResolver(theme);
 
     return mergeWith(
       {},
       runIfFn(config.baseStyle ?? {}, props),
       recipe(config, 'sizes', size, props),
-      recipe(config, 'variants', variant, props)
+      recipe(config, 'variants', variant, props),
+      rest
     );
   };
 }
