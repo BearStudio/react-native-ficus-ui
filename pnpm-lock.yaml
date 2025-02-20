@@ -305,6 +305,9 @@ importers:
       '@ficus-ui/theme':
         specifier: workspace:*
         version: link:../theme
+      react-fast-compare:
+        specifier: 3.2.2
+        version: 3.2.2
 
   packages/react-native-ficus-ui:
     dependencies:
@@ -10078,7 +10081,7 @@ snapshots:
       '@types/node': 20.5.1
       chalk: 4.1.2
       cosmiconfig: 8.3.6(typescript@5.3.3)
-      cosmiconfig-typescript-loader: 4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@5.1.6))(ts-node@10.9.2(@types/node@22.13.1)(typescript@5.1.6))(typescript@5.3.3)
+      cosmiconfig-typescript-loader: 4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@5.3.3))(ts-node@10.9.2(@types/node@22.13.1)(typescript@5.1.6))(typescript@5.3.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -13263,7 +13266,7 @@ snapshots:
     dependencies:
       layout-base: 1.0.2
 
-  cosmiconfig-typescript-loader@4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@5.1.6))(ts-node@10.9.2(@types/node@22.13.1)(typescript@5.1.6))(typescript@5.3.3):
+  cosmiconfig-typescript-loader@4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@5.3.3))(ts-node@10.9.2(@types/node@22.13.1)(typescript@5.1.6))(typescript@5.3.3):
     dependencies:
       '@types/node': 20.5.1
       cosmiconfig: 8.3.6(typescript@5.3.3)

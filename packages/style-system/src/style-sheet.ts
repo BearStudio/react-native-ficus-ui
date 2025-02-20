@@ -2,8 +2,7 @@ import { Dict, isObject, mergeWith, runIfFn } from '@chakra-ui/utils';
 
 import { systemProps } from './system';
 import { SystemStyleObject } from './system.types';
-import { expandResponsive } from './utils/expand-responsive';
-import { Config, PropConfig } from './utils/prop-config';
+import { type Config, type PropConfig, expandResponsive } from './utils';
 
 interface GetStyleSheetOptions {
   theme: { [key: string]: any };
@@ -16,7 +15,6 @@ interface GetStyleSheetOptions {
 export function getStyleSheet({ configs = {}, theme }: GetStyleSheetOptions) {
   const styleSheet = (stylesOrFn: Record<string, any>) => {
     const _styles = runIfFn(stylesOrFn, theme);
-
     const styles = expandResponsive(_styles)(theme);
 
     let computedStyles: Dict = {};
@@ -30,15 +28,11 @@ export function getStyleSheet({ configs = {}, theme }: GetStyleSheetOptions) {
         config = { property: key } as PropConfig;
       }
 
-      // if (isObject(value)) {
-      //   computedStyles[key] = computedStyles[key] ?? {};
-      //   computedStyles[key] = mergeWith(
-      //     {},
-      //     computedStyles[key],
-      //     styleSheet(value, true)
-      //   );
-      //   continue;
-      // }
+      if (isObject(value)) {
+        computedStyles[key] = computedStyles[key] ?? {};
+        computedStyles = mergeWith({}, computedStyles[key], styleSheet(value));
+        continue;
+      }
 
       /**
        * Add the peer properties to help for computing the value
