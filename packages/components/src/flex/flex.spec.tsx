@@ -17,7 +17,7 @@ describe('Flex component', () => {
 
   it('applies the row direction', () => {
     const { getByTestId } = render(
-      <TestFlex testID="flex-container" flexDirection="row">
+      <TestFlex testID="flex-container" direction="row">
         <Box h={40} w={40} mr="sm" bg="green.500" />
         <Box h={40} w={40} mr="sm" bg="teal.500" />
       </TestFlex>
@@ -29,7 +29,7 @@ describe('Flex component', () => {
 
   it('applies the column direction', () => {
     const { getByTestId } = render(
-      <TestFlex testID="flex-container" flexDirection="column">
+      <TestFlex testID="flex-container" direction="column">
         <Box h={40} w={40} mr="sm" bg="green.500" />
         <Box h={40} w={40} mr="sm" bg="teal.500" />
       </TestFlex>

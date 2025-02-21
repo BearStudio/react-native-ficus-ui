@@ -11,7 +11,7 @@ const FlexComponent = () => {
           Flex component
         </Text>
         <ExampleSection name="vertical">
-          <Flex flexDirection="column">
+          <Flex direction="column">
             <Box h={40} w={40} bg="green.500" />
             <Box h={40} w={40} bg="teal.500" />
             <Box h={40} w={40} bg="yellow.500" />
