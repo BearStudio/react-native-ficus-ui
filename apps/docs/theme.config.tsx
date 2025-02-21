@@ -5,6 +5,7 @@ import type { DocsThemeConfig } from 'nextra-theme-docs';
 import { LocaleSwitch, useConfig, useTheme } from 'nextra-theme-docs';
 import type { ComponentProps, ReactElement } from 'react';
 import { Badge } from 'react-native-ficus-ui';
+import VersionSwitcher from '@components/version-switcher';
 
 export const FicusLogo = (props: ComponentProps<'svg'>): ReactElement => (
   <svg viewBox="0 0 200 250" width="30" xmlns="http://www.w3.org/2000/svg">
@@ -56,6 +57,7 @@ const FOOTER_LINK_TEXT_DARK = {
     </>
   ),
 };
+
 
 const config: DocsThemeConfig = {
   darkMode: true,
@@ -133,7 +135,12 @@ const config: DocsThemeConfig = {
     );
   },
   navbar: {
-    extraContent: LocaleSwitch,
+    extraContent: (
+      <>
+        <VersionSwitcher />
+        <LocaleSwitch />
+      </>
+    ),
   },
   nextThemes: {
     defaultTheme: 'light',
@@ -145,17 +152,21 @@ const config: DocsThemeConfig = {
   sidebar: {
     autoCollapse: true,
     defaultMenuCollapseLevel: 1,
-    titleComponent: ({ title, type }) =>
-      type === 'separator' ? (
+    titleComponent: ({ title, type }) => {
+      return type === 'separator' ? (
         <div className="flex items-center gap-2">
           <FicusLogo className="h-1.5 shrink-0" />
           {title}
         </div>
       ) : (
         <div className="flex flex-1 justify-between align-middle">
-          <span>{title}</span> {(title === 'Avatar' || title === 'Badge' || title === 'PinInput' || title === 'Responsive' || title === 'Slider' || title === 'Tabs' || title === 'IconButton' || title === 'DraggableModal') && <Badge colorScheme="purple" fontSize="sm" alignSelf="center">New</Badge>}
+          <span>{title}</span> 
+          {(title === 'Avatar' || title === 'Badge' || title === 'PinInput' || title === 'Responsive' || title === 'Slider' || title === 'Tabs' || title === 'IconButton' || title === 'DraggableModal') && (
+            <Badge colorScheme="purple" fontSize="sm" alignSelf="center">New</Badge>
+          )}
         </div>
-      ),
+      );
+    },
     toggleButton: true,
   },
   toc: {
