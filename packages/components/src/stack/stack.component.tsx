@@ -4,7 +4,6 @@ import { getValidChildren } from '@chakra-ui/utils';
 import { SystemProps } from '@ficus-ui/style-system';
 
 import { type NativeFicusProps, ficus, forwardRef } from '../system';
-import { StackItem } from './stack-item.component';
 import { getDividerStyles } from './stack.utils';
 
 interface StackOptions {
@@ -35,12 +34,6 @@ interface StackOptions {
    * @type React.ReactElement
    */
   divider?: React.ReactElement;
-  /**
-   * If `true`, the children will be wrapped in a `Box`
-   *
-   * @default false
-   */
-  shouldWrapChildren?: boolean;
 }
 
 export interface StackProps extends NativeFicusProps<'View'>, StackOptions {}
@@ -61,7 +54,6 @@ export const Stack = forwardRef<StackProps, 'View'>((props, ref) => {
     wrap,
     children,
     divider,
-    shouldWrapChildren,
     ...rest
   } = props;
 
@@ -73,7 +65,7 @@ export const Stack = forwardRef<StackProps, 'View'>((props, ref) => {
   );
 
   const hasDivider = !!divider;
-  const shouldUseChildren = !shouldWrapChildren && !hasDivider;
+  const shouldUseChildren = !hasDivider;
 
   const clones = useMemo(() => {
     const validChildren = getValidChildren(children);
@@ -82,8 +74,7 @@ export const Stack = forwardRef<StackProps, 'View'>((props, ref) => {
       : validChildren.map((child, index) => {
           const key = typeof child.key !== 'undefined' ? child.key : index;
           const isLast = index + 1 === validChildren.length;
-          const wrappedChild = <StackItem key={key}>{child}</StackItem>;
-          const _child = shouldWrapChildren ? wrappedChild : child;
+          const _child = child;
 
           if (!hasDivider) return _child;
 
@@ -103,14 +94,7 @@ export const Stack = forwardRef<StackProps, 'View'>((props, ref) => {
             </Fragment>
           );
         });
-  }, [
-    divider,
-    dividerStyle,
-    hasDivider,
-    shouldUseChildren,
-    shouldWrapChildren,
-    children,
-  ]);
+  }, [divider, dividerStyle, hasDivider, shouldUseChildren, children]);
 
   return (
     <ficus.View

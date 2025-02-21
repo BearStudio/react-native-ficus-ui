@@ -34,15 +34,4 @@ describe('Stack Component', () => {
     expect(item1).toBeTruthy();
     expect(item2).toBeTruthy();
   });
-
-  it('wraps children when shouldWrapChildren is true', () => {
-    const { getAllByTestId } = render(
-      <Stack shouldWrapChildren>
-        <Text testID="stack-child">Item 1</Text>
-        <Text testID="stack-child">Item 2</Text>
-      </Stack>
-    );
-
-    expect(getAllByTestId('stack-child').length).toBe(2);
-  });
 });
