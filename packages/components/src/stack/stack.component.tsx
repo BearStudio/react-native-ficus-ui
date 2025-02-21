@@ -36,8 +36,7 @@ interface StackOptions {
    */
   divider?: React.ReactElement;
   /**
-   * If `true`, the children will be wrapped in a `Box` with
-   * `display: inline-block`, and the `Box` will take the spacing props
+   * If `true`, the children will be wrapped in a `Box`
    *
    * @default false
    */
