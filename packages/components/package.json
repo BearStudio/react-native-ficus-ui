@@ -9,7 +9,8 @@
   "dependencies": {
     "@chakra-ui/utils": "2.2.2",
     "@ficus-ui/style-system": "workspace:*",
-    "@ficus-ui/theme": "workspace:*"
+    "@ficus-ui/theme": "workspace:*",
+    "react-fast-compare": "3.2.2"
   },
   "keywords": [],
   "author": "",

@@ -1,6 +1,5 @@
 import {
   Image as RNImage,
-  Pressable as RNPressable,
   ScrollView as RNScrollView,
   Text as RNText,
   View as RNView,
@@ -14,11 +13,6 @@ export const baseRNElements = {
   Image: RNImage,
   Text: RNText,
   ScrollView: RNScrollView,
-  Pressable: RNPressable,
 } as const;
 
 export type BaseRNElements = keyof typeof baseRNElements;
-
-export type BaseRNElementProps<T extends BaseRNElements> = React.ComponentProps<
-  (typeof baseRNElements)[T]
->;

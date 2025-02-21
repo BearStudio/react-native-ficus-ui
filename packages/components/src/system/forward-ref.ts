@@ -24,6 +24,6 @@ export function forwardRef<
   // @ts-ignore
   return forwardReactRef(component) as unknown as ComponentWithAs<
     Component,
-    Props
+    Omit<Props, 'as'>
   >;
 }
