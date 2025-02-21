@@ -26,7 +26,7 @@ interface StackOptions {
   /**
    * The space between each stack item
    * @type SystemProps["margin"]
-   * @default "0.5rem"
+   * @default "8px"
    */
   spacing?: SystemProps['m'];
 
@@ -58,7 +58,7 @@ export const Stack = forwardRef<StackProps, 'View'>((props, ref) => {
     direction: flexDirection,
     align,
     justify,
-    spacing = '0.5rem',
+    spacing = 8,
     wrap,
     children,
     divider,

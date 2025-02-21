@@ -6,9 +6,6 @@ export const StackItem = forwardRef<StackProps, 'View'>((props, ref) => (
     {...props}
     ref={ref}
     __styles={{
-      display: 'inline-block',
-      flex: '0 0 auto',
-      minWidth: 0,
       ...props['__styles'],
     }}
   />
