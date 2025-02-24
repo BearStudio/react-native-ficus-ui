@@ -1,25 +1,17 @@
-import React from 'react';
+import { renderWithTheme as render } from '@test-utils';
+import { screen } from '@testing-library/react-native';
 
-import { ThemeProvider } from '@ficus-ui/theme';
-import { render, screen } from '@testing-library/react-native';
-
-import { ScrollBox, ScrollBoxProps } from '.';
+import { ScrollBox } from '.';
 import { Text } from '../text';
 
 jest.mock('react-native-toast-message', () => 'Toast');
 
 describe('ScrollBox component', () => {
-  const TestScrollBox: React.FC<ScrollBoxProps> = (props) => (
-    <ThemeProvider>
-      <ScrollBox {...props} />
-    </ThemeProvider>
-  );
-
   it('should render component passed to children', () => {
     render(
-      <TestScrollBox>
+      <ScrollBox>
         <Text>I love Ficus UI (forked from Magnus UI)</Text>
-      </TestScrollBox>
+      </ScrollBox>
     );
 
     expect(

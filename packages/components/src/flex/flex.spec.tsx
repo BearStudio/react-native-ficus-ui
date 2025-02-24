@@ -1,26 +1,17 @@
-import React from 'react';
+import { renderWithTheme as render } from '@test-utils';
 
-import { ThemeProvider } from '@ficus-ui/theme';
-import { render } from '@testing-library/react-native';
-
-import { Flex, FlexProps } from '.';
+import { Flex } from '.';
 import { Box } from '../box';
 
 jest.mock('react-native-toast-message', () => 'Toast');
 
 describe('Flex component', () => {
-  const TestFlex: React.FC<FlexProps> = (props) => (
-    <ThemeProvider>
-      <Flex {...props} />
-    </ThemeProvider>
-  );
-
   it('applies the row direction', () => {
     const { getByTestId } = render(
-      <TestFlex testID="flex-container" direction="row">
+      <Flex testID="flex-container" direction="row">
         <Box h={40} w={40} mr="sm" bg="green.500" />
         <Box h={40} w={40} mr="sm" bg="teal.500" />
-      </TestFlex>
+      </Flex>
     );
     const flexComponent = getByTestId('flex-container');
 
@@ -29,10 +20,10 @@ describe('Flex component', () => {
 
   it('applies the column direction', () => {
     const { getByTestId } = render(
-      <TestFlex testID="flex-container" direction="column">
+      <Flex testID="flex-container" direction="column">
         <Box h={40} w={40} mr="sm" bg="green.500" />
         <Box h={40} w={40} mr="sm" bg="teal.500" />
-      </TestFlex>
+      </Flex>
     );
     const flexComponent = getByTestId('flex-container');
 

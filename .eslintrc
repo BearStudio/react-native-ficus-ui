@@ -3,13 +3,16 @@
   "rules": {
     "@typescript-eslint/no-unused-vars": ["off", { "argsIgnorePattern": "^_" }],
     "no-unused-vars": "warn",
-    "react-hooks/exhaustive-deps": "off"
+    "react-hooks/exhaustive-deps": "off",
+    "react/react-in-jsx-scope": "off",
   },
   "overrides": [
     {
       /** For test files only */
-      "files": ["**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)"],
-      "extends": ["plugin:testing-library/react"]
-    }
-  ]
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)",
+      ],
+      "extends": ["plugin:testing-library/react"],
+    },
+  ],
 }
