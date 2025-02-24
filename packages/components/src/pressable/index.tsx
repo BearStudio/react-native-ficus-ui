@@ -2,7 +2,7 @@ import { SystemStyleObject } from '@ficus-ui/style-system';
 import type { StyleProp, ViewStyle } from 'react-native';
 
 import { NativeFicusProps, ficus, forwardRef } from '../system';
-import { createPressableStyleFn } from './pressable.service';
+import { pressableStyleFn } from './pressable.service';
 
 export interface PressableProps extends NativeFicusProps<'Pressable'> {
   /**
@@ -25,11 +25,7 @@ export interface PressableProps extends NativeFicusProps<'Pressable'> {
 export const Pressable = forwardRef<PressableProps, 'Pressable'>(
   function Pressable(props, ref) {
     return (
-      <ficus.Pressable
-        ref={ref}
-        __stylesFn={createPressableStyleFn}
-        {...props}
-      />
+      <ficus.Pressable ref={ref} __stylesFn={pressableStyleFn} {...props} />
     );
   }
 );

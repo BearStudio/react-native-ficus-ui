@@ -13,7 +13,7 @@ import {
   space,
   text,
 } from './config';
-import { pseudoSelectors } from './pseudos';
+import { pseudoStylesMap } from './pseudos';
 import { Dict } from './utils';
 
 export const systemProps = mergeWith(
@@ -31,7 +31,7 @@ export const systemProps = mergeWith(
   text
 );
 
-const styleProps = { ...systemProps, ...pseudoSelectors };
+const styleProps = { ...systemProps, ...pseudoStylesMap };
 
 export const isStyleProp = (prop: string) => prop in styleProps;
 
