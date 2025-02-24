@@ -1,0 +1,46 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+import PropsTable from "@components/docs/props-table";
+
+# VStack
+
+VStack is a layout component to display several children elements vertically with a space between them.
+
+## Import
+
+```js
+import { VStack } from "@ficus-ui/native";
+```
+
+## Usage
+
+<CodeEditor code={`<VStack spacing={10}>
+  <Center w={40} h={40} bg="yellow.200">
+    <Text>1</Text>
+  </Center>
+  <Center w={40} h={40} bg="red.200">
+    <Text>2</Text>
+  </Center>
+  <Center w={40} h={40} bg="pink.200">
+    <Text>3</Text>
+  </Center>
+</VStack>`} />
+
+## Props
+
+Extends every `Stack` props.
+
+### `spacing`
+<PropsTable
+  description="The stack spacing property between childrens."
+  prop={{ type: "string | number", required: false }}
+/>
+
+### `divider`
+<PropsTable
+  description="Each stack item will show a divider."
+  prop={{ type: "React.ReactElement", required: false }}
+/>

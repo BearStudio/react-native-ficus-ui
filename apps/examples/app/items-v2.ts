@@ -1,5 +1,6 @@
 import { ComponentType } from 'react';
 import BoxComponent from './components-v2/Box';
+import StackComponent from '@/app/components-v2/Stack';
 import FlexComponent from '@/app/components-v2/Flex';
 import TextComponent from '@/app/components-v2/Text';
 import SafeAreaBoxComponent from '@/app/components-v2/SafeAreaBox';
@@ -15,6 +16,7 @@ type ExampleComponentType = {
 
 export const components: ExampleComponentType[] = [
   { navigationPath: 'Box', onScreenName: 'Box', component: BoxComponent },
+  { navigationPath: 'Stack', onScreenName: 'Stack', component: StackComponent },
   { navigationPath: 'Flex', onScreenName: 'Flex', component: FlexComponent },
   { navigationPath: 'Text', onScreenName: 'Text', component: TextComponent },
   { navigationPath: 'SafeAreaBox', onScreenName: 'SafeAreaBox', component: SafeAreaBoxComponent },
