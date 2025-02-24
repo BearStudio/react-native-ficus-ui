@@ -3,6 +3,7 @@ searchable: true
 ---
 
 import { CodeEditor } from '@components/code-editor';
+import PropsTable from "@components/docs/props-table";
 
 # Text
 
@@ -60,401 +61,301 @@ import { Text } from "@ficus-ui/native";
 ## Props
 
 ### `color`
-
-The color property (`color` style prop in StyleSheet)
-
-| Type   | Required | Default  |
-| ------ | -------- | -------- |
-| string | No       | gray.900 |
+<PropsTable
+  description="The color property (`color` style prop in StyleSheet)."
+  prop={{ type: "string", required: false, default: "gray.900" }}
+/>
 
 ### `fontSize`
-
-The font size property (`fontSize` style prop in StyleSheet)
-
-| Type           | Required |
-| -------------- | -------- |
-| string, number | No       |
+<PropsTable
+  description="The font size property (`fontSize` style prop in StyleSheet)."
+  prop={{ type: "string, number", required: false }}
+/>
 
 ### `fontWeight`
-
-The font weight style property (`fontWeight` style prop in StyleSheet)
-
-| Type   | Required |
-| ------ | -------- |
-| string | No       |
+<PropsTable
+  description="The font weight style property (`fontWeight` style prop in StyleSheet)."
+  prop={{ type: "string", required: false }}
+/>
 
 ### `lineWeight`
-
-The line weight style property (`lineWeight` style prop in StyleSheet)
-
-| Type   | Required |
-| ------ | -------- |
-| string | No       |
+<PropsTable
+  description="The line weight style property (`lineWeight` style prop in StyleSheet)."
+  prop={{ type: "string", required: false }}
+/>
 
 ### `bg`
-
-The background color property (`backgroundColor` style prop in StyleSheet)
-
-| Type   | Required |
-| ------ | -------- |
-| string | No       |
+<PropsTable
+  description="The background color property (`backgroundColor` style prop in StyleSheet)."
+  prop={{ type: "string", required: false }}
+/>
 
 ### `m`
-
-The margin property (`margin` style prop in StyleSheet)
-
-| Type           | Required |
-| -------------- | -------- |
-| number, string | No       |
+<PropsTable
+  description="The margin property (`margin` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
 
 ### `mt`
-
-The margin top property (`marginTop` style prop in StyleSheet)
-
-| Type           | Required |
-| -------------- | -------- |
-| number, string | No       |
+<PropsTable
+  description="The margin top property (`marginTop` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
 
 ### `mb`
-
-The margin bottom property (`marginBottom` style prop in StyleSheet)
-
-| Type           | Required |
-| -------------- | -------- |
-| number, string | No       |
+<PropsTable
+  description="The margin bottom property (`marginBottom` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
 
 ### `mr`
-
-The margin right property (`marginRight` style prop in StyleSheet)
-
-| Type           | Required |
-| -------------- | -------- |
-| number, string | No       |
+<PropsTable
+  description="The margin right property (`marginRight` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
 
 ### `ml`
-
-The margin left property (`marginLeft` style prop in StyleSheet)
-
-| Type           | Required |
-| -------------- | -------- |
-| number, string | No       |
+<PropsTable
+  description="The margin left property (`marginLeft` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
 
 ### `mx`
-
-The margin horizontal property (`marginHorizontal` style prop in StyleSheet)
-
-| Type           | Required |
-| -------------- | -------- |
-| number, string | No       |
+<PropsTable
+  description="The margin horizontal property (`marginHorizontal` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
 
 ### `my`
-
-The margin vertical property (`marginVertical` style prop in StyleSheet)
-
-| Type           | Required |
-| -------------- | -------- |
-| number, string | No       |
+<PropsTable
+  description="The margin vertical property (`marginVertical` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
 
 ### `p`
-
-The padding property (`padding` style prop in StyleSheet)
-
-| Type           | Required |
-| -------------- | -------- |
-| number, string | No       |
+<PropsTable
+  description="The padding property (`padding` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
 
 ### `pt`
-
-The padding top property (`paddingTop` style prop in StyleSheet)
-
-| Type           | Required |
-| -------------- | -------- |
-| number, string | No       |
+<PropsTable
+  description="The padding top property (`paddingTop` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
 
 ### `pb`
-
-The padding bottom property (`paddingBottom` style prop in StyleSheet)
-
-| Type           | Required |
-| -------------- | -------- |
-| number, string | No       |
+<PropsTable
+  description="The padding bottom property (`paddingBottom` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
 
 ### `pr`
-
-The padding right property (`paddingRight` style prop in StyleSheet)
-
-| Type           | Required |
-| -------------- | -------- |
-| number, string | No       |
+<PropsTable
+  description="The padding right property (`paddingRight` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
 
 ### `pl`
-
-The padding left property (`paddingLeft` style prop in StyleSheet)
-
-| Type           | Required |
-| -------------- | -------- |
-| number, string | No       |
+<PropsTable
+  description="The padding left property (`paddingLeft` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
 
 ### `px`
-
-The padding horizontal property (`paddingHorizontal` style prop in StyleSheet)
-
-| Type           | Required |
-| -------------- | -------- |
-| number, string | No       |
+<PropsTable
+  description="The padding horizontal property (`paddingHorizontal` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
 
 ### `py`
-
-The padding vertical property (`paddingVertical` style prop in StyleSheet)
-
-| Type           | Required |
-| -------------- | -------- |
-| number, string | No       |
+<PropsTable
+  description="The padding vertical property (`paddingVertical` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
 
 ### `h`
-
-The height property (`height` style prop in StyleSheet)
-
-| Type           | Required |
-| -------------- | -------- |
-| number, string | No       |
+<PropsTable
+  description="The height property (`height` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
 
 ### `w`
-
-The width property (`width` style prop in StyleSheet)
-
-| Type           | Required |
-| -------------- | -------- |
-| number, string | No       |
+<PropsTable
+  description="The width property (`width` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
 
 ### `minH`
-
-The minimum height property (`minHeight` style prop in StyleSheet)
-
-| Type           | Required |
-| -------------- | -------- |
-| number, string | No       |
+<PropsTable
+  description="The minimum height property (`minHeight` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
 
 ### `minW`
-
-The minimum width property (`minWidth` style prop in StyleSheet)
-
-| Type           | Required |
-| -------------- | -------- |
-| number, string | No       |
+<PropsTable
+  description="The minimum width property (`minWidth` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
 
 ### `flex`
-
-The flex property for container (`flex` style prop in StyleSheet)
-
-| Type   | Required |
-| ------ | -------- |
-| number | No       |
+<PropsTable
+  description="The flex property for container (`flex` style prop in StyleSheet)."
+  prop={{ type: "number", required: false }}
+/>
 
 ### `textDecorLine`
-
-The text decoration line style property (`textDecorationLine` style prop in StyleSheet)
-
-| Type                                                                | Required |
-| ------------------------------------------------------------------- | -------- |
-| enum("none", "underline", "line-through", "underline line-through") | No       |
+<PropsTable
+  description="The text decoration line style property (`textDecorationLine` style prop in StyleSheet)."
+  prop={{ type: "enum('none', 'underline', 'line-through', 'underline line-through')", required: false }}
+/>
 
 ### `textDecorStyle`
-
-The text decoration style property (`textDecorationStyle` style prop in StyleSheet)
-
-| Type                                        | Required |
-| ------------------------------------------- | -------- |
-| enum("solid", "double", "dotted", "dashed") | No       |
+<PropsTable
+  description="The text decoration style property (`textDecorationStyle` style prop in StyleSheet)."
+  prop={{ type: "enum('solid', 'double', 'dotted', 'dashed')", required: false }}
+/>
 
 ### `textDecorColor`
-
-The text decoration color style property (`textDecorationColor` style prop in StyleSheet)
-
-| Type   | Required |
-| ------ | -------- |
-| string | No       |
+<PropsTable
+  description="The text decoration color style property (`textDecorationColor` style prop in StyleSheet)."
+  prop={{ type: "string", required: false }}
+/>
 
 ### `textAlign`
-
-The text alignment property (`textAlignment` style prop in StyleSheet)
-
-| Type                                               | Required |
-| -------------------------------------------------- | -------- |
-| enum("auto", "left", "right", "center", "justify") | No       |
+<PropsTable
+  description="The text alignment property (`textAlignment` style prop in StyleSheet)."
+  prop={{ type: "enum('auto', 'left', 'right', 'center', 'justify')", required: false }}
+/>
 
 ### `textTransform`
-
-The text transform property (`textTransform` style prop in StyleSheet)
-
-| Type                                                 | Required |
-| ---------------------------------------------------- | -------- |
-| enum("none", "uppercase", "lowercase", "capitalize") | No       |
+<PropsTable
+  description="The text transform property (`textTransform` style prop in StyleSheet)."
+  prop={{ type: "enum('none', 'uppercase', 'lowercase', 'capitalize')", required: false }}
+/>
 
 ### `letterSpacing`
-
-The letter spacing property (`letterSpacing` style prop in StyleSheet)
-
-| Type   | Required |
-| ------ | -------- |
-| number | No       |
+<PropsTable
+  description="The letter spacing property (`letterSpacing` style prop in StyleSheet)."
+  prop={{ type: "number", required: false }}
+/>
 
 ### `borderRadius`
-
-The border radius property (`borderRadius` style prop in StyleSheet)
-
-| Type           | Required | Default |
-| -------------- | -------- | ------- |
-| number, string | No       | none    |
+<PropsTable
+  description="The border radius property (`borderRadius` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false, default: "none" }}
+/>
 
 ### `borderTopRadius`
-
-The border radius top property (`borderTopLeftRadius` and `borderTopRightRadius` style props in StyleSheet)
-
-| Type           | Required | Default |
-| -------------- | -------- | ------- |
-| number, string | No       | none    |
+<PropsTable
+  description="The border radius top property (`borderTopLeftRadius` and `borderTopRightRadius` style props in StyleSheet)."
+  prop={{ type: "number, string", required: false, default: "none" }}
+/>
 
 ### `borderBottomRadius`
-
-The border radius bottom property (`borderBottomLeftRadius` and `borderBottomRightRadius` style props in StyleSheet)
-
-| Type           | Required | Default |
-| -------------- | -------- | ------- |
-| number, string | No       | none    |
+<PropsTable
+  description="The border radius bottom property (`borderBottomLeftRadius` and `borderBottomRightRadius` style props in StyleSheet)."
+  prop={{ type: "number, string", required: false, default: "none" }}
+/>
 
 ### `borderLeftRadius`
-
-The border radius left property (`borderTopLeftRadius` and `borderBottomLeftRadius` style props in StyleSheet)
-
-| Type           | Required | Default |
-| -------------- | -------- | ------- |
-| number, string | No       | none    |
+<PropsTable
+  description="The border radius left property (`borderTopLeftRadius` and `borderBottomLeftRadius` style props in StyleSheet)."
+  prop={{ type: "number, string", required: false, default: "none" }}
+/>
 
 ### `borderRightRadius`
-
-The border radius right property (`borderTopRightRadius` and `borderBottomRightRadius` style props in StyleSheet)
-
-| Type           | Required | Default |
-| -------------- | -------- | ------- |
-| number, string | No       | none    |
+<PropsTable
+  description="The border radius right property (`borderTopRightRadius` and `borderBottomRightRadius` style props in StyleSheet)."
+  prop={{ type: "number, string", required: false, default: "none" }}
+/>
 
 ### `borderTopLeftRadius`
-
-The border radius top left property (`borderTopLeftRadius` style prop in StyleSheet)
-
-| Type           | Required | Default |
-| -------------- | -------- | ------- |
-| number, string | No       | none    |
+<PropsTable
+  description="The border radius top left property (`borderTopLeftRadius` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false, default: "none" }}
+/>
 
 ### `borderTopRightRadius`
-
-The border radius top right property (`borderTopRightRadius` style prop in StyleSheet)
-
-| Type           | Required | Default |
-| -------------- | -------- | ------- |
-| number, string | No       | none    |
+<PropsTable
+  description="The border radius top right property (`borderTopRightRadius` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false, default: "none" }}
+/>
 
 ### `borderBottomLeftRadius`
-
-The border radius bottom left property (`borderBottomLeftRadius` style prop in StyleSheet)
-
-| Type           | Required | Default |
-| -------------- | -------- | ------- |
-| number, string | No       | none    |
+<PropsTable
+  description="The border radius bottom left property (`borderBottomLeftRadius` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false, default: "none" }}
+/>
 
 ### `borderBottomRightRadius`
-
-The border radius bottom right property (`borderBottomRightRadius` style prop in StyleSheet)
-
-| Type           | Required | Default |
-| -------------- | -------- | ------- |
-| number, string | No       | none    |
+<PropsTable
+  description="The border radius bottom right property (`borderBottomRightRadius` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false, default: "none" }}
+/>
 
 ### `borderColor`
-
-The border color property (`borderColor` style prop in StyleSheet)
-
-| Type   | Required |
-| ------ | -------- |
-| string | No       |
+<PropsTable
+  description="The border color property (`borderColor` style prop in StyleSheet)."
+  prop={{ type: "string", required: false }}
+/>
 
 ### `borderTopColor`
-
-The border top color property (`borderTopColor` style prop in StyleSheet)
-
-| Type   | Required |
-| ------ | -------- |
-| string | No       |
+<PropsTable
+  description="The border top color property (`borderTopColor` style prop in StyleSheet)."
+  prop={{ type: "string", required: false }}
+/>
 
 ### `borderBottomColor`
-
-The border bottom color property (`borderBottomColor` style prop in StyleSheet)
-
-| Type   | Required |
-| ------ | -------- |
-| string | No       |
+<PropsTable
+  description="The border bottom color property (`borderBottomColor` style prop in StyleSheet)."
+  prop={{ type: "string", required: false }}
+/>
 
 ### `borderRightColor`
-
-The border right color property (`borderRightColor` style prop in StyleSheet)
-
-| Type   | Required |
-| ------ | -------- |
-| string | No       |
+<PropsTable
+  description="The border right color property (`borderRightColor` style prop in StyleSheet)."
+  prop={{ type: "string", required: false }}
+/>
 
 ### `borderLeftColor`
-
-The border left color property (`borderLeftColor` style prop in StyleSheet)
-
-| Type   | Required |
-| ------ | -------- |
-| string | No       |
+<PropsTable
+  description="The border left color property (`borderLeftColor` style prop in StyleSheet)."
+  prop={{ type: "string", required: false }}
+/>
 
 ### `borderWidth`
-
-The border width property (`borderWidth` style prop in StyleSheet)
-
-| Type   | Required |
-| ------ | -------- |
-| number | No       |
+<PropsTable
+  description="The border width property (`borderWidth` style prop in StyleSheet)."
+  prop={{ type: "number", required: false }}
+/>
 
 ### `borderTopWidth`
-
-The border top width property (`borderTopWidth` style prop in StyleSheet)
-
-| Type   | Required |
-| ------ | -------- |
-| number | No       |
+<PropsTable
+  description="The border top width property (`borderTopWidth` style prop in StyleSheet)."
+  prop={{ type: "number", required: false }}
+/>
 
 ### `borderBottomWidth`
-
-The border bottom width property (`borderBottomWidth` style prop in StyleSheet)
-
-| Type   | Required |
-| ------ | -------- |
-| number | No       |
+<PropsTable
+  description="The border bottom width property (`borderBottomWidth` style prop in StyleSheet)."
+  prop={{ type: "number", required: false }}
+/>
 
 ### `borderRightWidth`
-
-The border right width property (`borderRightWidth` style prop in StyleSheet)
-
-| Type   | Required |
-| ------ | -------- |
-| number | No       |
+<PropsTable
+  description="The border right width property (`borderRightWidth` style prop in StyleSheet)."
+  prop={{ type: "number", required: false }}
+/>
 
 ### `borderLeftWidth`
-
-The border left width property (`borderLeftWidth` style prop in StyleSheet)
-
-| Type   | Required |
-| ------ | -------- |
-| number | No       |
+<PropsTable
+  description="The border left width property (`borderLeftWidth` style prop in StyleSheet)."
+  prop={{ type: "number", required: false }}
+/>
 
 ### `opacity`
-
-The opacity property (`opacity` style prop in StyleSheet)
-
-| Type   | Required |
-| ------ | -------- |
-| number | No       |
+<PropsTable
+  description="The opacity property (`opacity` style prop in StyleSheet)."
+  prop={{ type: "number", required: false }}
+/>

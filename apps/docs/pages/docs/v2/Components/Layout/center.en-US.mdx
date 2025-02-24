@@ -5,27 +5,35 @@ searchable: true
 import { CodeEditor } from '@components/code-editor';
 import PropsTable from "@components/docs/props-table";
 
-# SafeAreaBox
+# Center
 
-Wrapper around `SafeAreaView` component from `react-native`, it accepts every props from react native `SafeAreaView` component.
+As `Box` component but all chidrens are centered, it accepts every props from react native `View` component.
 
 ## Import
 
 ```js
-import { SafeAreaBox } from "@ficus-ui/native";
+import { Center } from "@ficus-ui/native";
 ```
 
 ## Usage
 
-### Background color
+### Centered boxes
 
-<CodeEditor code={`<SafeAreaBox bg="blue.100" h="100%">
-  <HStack spacing={10} p="lg">
-    <Box h={40} w={40} bg="green.500" />
-    <Box h={40} w={40} bg="teal.500" />
-    <Box h={40} w={40} bg="yellow.500" />
-  </HStack>
-</SafeAreaBox>`} />
+<CodeEditor code={`<Center>
+  <Box h={40} w={40} bg="green.500" />
+  <Box h={40} w={40} bg="teal.500" />
+  <Box h={40} w={40} bg="yellow.500" />
+  <Box h={40} w={40} bg="red.500" />
+  <Box h={40} w={40} bg="blue.500" />
+  <Box h={40} w={40} bg="gray.500" />
+</Center>`} />
+
+### Centered text
+
+<CodeEditor code={`<Center>
+  <Text>I'm a text that is centered by Center component</Text>
+  <Text>I'm another text that is centered by Center component</Text>
+</Center>`} />
 
 ## Props
 
@@ -33,6 +41,18 @@ import { SafeAreaBox } from "@ficus-ui/native";
 <PropsTable
   description="The background color property (`backgroundColor` style prop in StyleSheet)."
   prop={{ type: "string", required: false }}
+/>
+
+### `bgImg`
+<PropsTable
+  description="The background image property. Will use `ImageBackground` component as parent wrapper."
+  prop={{ type: "ImageSourcePropType", required: false }}
+/>
+
+### `bgMode`
+<PropsTable
+  description="The background image mode property."
+  prop={{ type: "enum('contain', 'cover', 'stretch')", required: false }}
 />
 
 ### `m`
@@ -74,6 +94,48 @@ import { SafeAreaBox } from "@ficus-ui/native";
 ### `my`
 <PropsTable
   description="The margin vertical property (`marginVertical` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
+
+### `p`
+<PropsTable
+  description="The padding property (`padding` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
+
+### `pt`
+<PropsTable
+  description="The padding top property (`paddingTop` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
+
+### `pb`
+<PropsTable
+  description="The padding bottom property (`paddingBottom` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
+
+### `pr`
+<PropsTable
+  description="The padding right property (`paddingRight` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
+
+### `pl`
+<PropsTable
+  description="The padding left property (`paddingLeft` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
+
+### `px`
+<PropsTable
+  description="The padding horizontal property (`paddingHorizontal` style prop in StyleSheet)."
+  prop={{ type: "number, string", required: false }}
+/>
+
+### `py`
+<PropsTable
+  description="The padding vertical property (`paddingVertical` style prop in StyleSheet)."
   prop={{ type: "number, string", required: false }}
 />
 
@@ -224,55 +286,55 @@ import { SafeAreaBox } from "@ficus-ui/native";
 ### `borderRadius`
 <PropsTable
   description="The border radius property (`borderRadius` style prop in StyleSheet)."
-  prop={{ type: "number, string", required: false, default: 'none' }}
+  prop={{ type: "number, string", required: false, default: "none" }}
 />
 
 ### `borderTopRadius`
 <PropsTable
   description="The border radius top property (`borderTopLeftRadius` and `borderTopRightRadius` style props in StyleSheet)."
-  prop={{ type: "number, string", required: false, default: 'none' }}
+  prop={{ type: "number, string", required: false, default: "none" }}
 />
 
 ### `borderBottomRadius`
 <PropsTable
   description="The border radius bottom property (`borderBottomLeftRadius` and `borderBottomRightRadius` style props in StyleSheet)."
-  prop={{ type: "number, string", required: false, default: 'none' }}
+  prop={{ type: "number, string", required: false, default: "none" }}
 />
 
 ### `borderLeftRadius`
 <PropsTable
   description="The border radius left property (`borderTopLeftRadius` and `borderBottomLeftRadius` style props in StyleSheet)."
-  prop={{ type: "number, string", required: false, default: 'none' }}
+  prop={{ type: "number, string", required: false, default: "none" }}
 />
 
 ### `borderRightRadius`
 <PropsTable
   description="The border radius right property (`borderTopRightRadius` and `borderBottomRightRadius` style props in StyleSheet)."
-  prop={{ type: "number, string", required: false, default: 'none' }}
+  prop={{ type: "number, string", required: false, default: "none" }}
 />
 
 ### `borderTopLeftRadius`
 <PropsTable
   description="The border radius top left property (`borderTopLeftRadius` style prop in StyleSheet)."
-  prop={{ type: "number, string", required: false, default: 'none' }}
+  prop={{ type: "number, string", required: false, default: "none" }}
 />
 
 ### `borderTopRightRadius`
 <PropsTable
   description="The border radius top right property (`borderTopRightRadius` style prop in StyleSheet)."
-  prop={{ type: "number, string", required: false, default: 'none' }}
+  prop={{ type: "number, string", required: false, default: "none" }}
 />
 
 ### `borderBottomLeftRadius`
 <PropsTable
   description="The border radius bottom left property (`borderBottomLeftRadius` style prop in StyleSheet)."
-  prop={{ type: "number, string", required: false, default: 'none' }}
+  prop={{ type: "number, string", required: false, default: "none" }}
 />
 
 ### `borderBottomRightRadius`
 <PropsTable
   description="The border radius bottom right property (`borderBottomRightRadius` style prop in StyleSheet)."
-  prop={{ type: "number, string", required: false, default: 'none' }}
+  prop={{ type: "number, string", required: false, default: "none" }}
 />
 
 ### `borderColor`
