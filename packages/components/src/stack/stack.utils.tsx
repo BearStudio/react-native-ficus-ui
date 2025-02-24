@@ -18,7 +18,7 @@ export function getDividerStyles(options: Options) {
       my: spacing,
       mx: 0,
       borderLeftWidth: 0,
-      borderBottomWidth: 11,
+      borderBottomWidth: 1,
     },
     'column-reverse': {
       my: spacing,
