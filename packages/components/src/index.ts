@@ -6,5 +6,6 @@ export * from './scroll-box';
 export * from './safe-area-box';
 export * from './center';
 export * from './badge';
+export * from './touchables';
 
 export { ThemeProvider } from '@ficus-ui/theme';
