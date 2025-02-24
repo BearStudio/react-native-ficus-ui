@@ -3,6 +3,7 @@ import { Config } from '../utils/prop-config';
 import { ResponsiveValue } from '../utils/types';
 
 export const radius: Config<RadiusProps> = {
+  rounded: t.radius('borderRadius'),
   borderRadius: t.radius('borderRadius'),
   borderTopLeftRadius: t.radius('borderTopLeftRadius'),
   borderTopRightRadius: t.radius('borderTopRightRadius'),
@@ -21,6 +22,7 @@ export const radius: Config<RadiusProps> = {
 };
 
 export interface RadiusProps {
+  rounded?: ResponsiveValue<string | number>;
   borderRadius?: ResponsiveValue<string | number>;
   borderTopLeftRadius?: ResponsiveValue<string | number>;
   borderTopRightRadius?: ResponsiveValue<string | number>;

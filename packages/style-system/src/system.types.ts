@@ -59,8 +59,16 @@ export type SystemStyleObject =
 type Assign<T, U> = Omit<T, keyof U> & U;
 
 /**
- * We might need to extend SystemProps.
- * For example for Text
+ * We might need to extend SystemProps with ExtraProps.
+ * For example for Text style props
+ *
+ * To be able to use React Native `style` prop with theme value, each prop should be added to the System Config.
+ *
+ * @example
+ * If `backgroundColor` is not in the style system config:
+ * ❌ <MyFicusComponent style={{backgroundColor: 'green.800'}} />
+ * ✅ <MyFicusComponent style={{backgroundColor: '#22543D'}} />
+ *
  */
 export type SystemProps<ExtraProps extends Dict = {}> = Assign<
   StyleProps,
