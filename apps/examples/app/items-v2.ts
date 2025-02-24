@@ -2,6 +2,7 @@ import { ComponentType } from 'react';
 import BoxComponent from './components-v2/Box';
 import TextComponent from '@/app/components-v2/Text';
 import SafeAreaBoxComponent from '@/app/components-v2/SafeAreaBox';
+import BadgeComponent from './components-v2/Badge';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -10,8 +11,8 @@ type ExampleComponentType = {
 };
 
 export const components: ExampleComponentType[] = [
-
   { navigationPath: 'Box', onScreenName: 'Box', component: BoxComponent },
   { navigationPath: 'Text', onScreenName: 'Text', component: TextComponent },
   { navigationPath: 'SafeAreaBox', onScreenName: 'SafeAreaBox', component: SafeAreaBoxComponent },
+  { navigationPath: 'Badge', onScreenName: 'Badge', component: BadgeComponent },
 ];
