@@ -25,7 +25,7 @@ const StackComponent = () => {
                     </VStack>
                 </ExampleSection>
                 <ExampleSection name="Stack with Dividers">
-                    <Stack divider={<StackDivider />} gap={10}>
+                    <Stack divider={<StackDivider />} spacing={10}>
                         <Box h={40} w={40} bg="green.500" />
                         <Box h={40} w={40} bg="teal.500" />
                         <Box h={40} w={40} bg="yellow.500" />
@@ -44,7 +44,7 @@ const StackComponent = () => {
                     </Stack>
                 </ExampleSection>
                 <ExampleSection name="Custom Spacing Stack">
-                    <Stack gap='xl'>
+                    <Stack spacing='xl'>
                         <Box h={40} w={40} bg="blue.500" />
                         <Box h={40} w={40} bg="red.500" />
                         <Box h={40} w={40} bg="green.500" />

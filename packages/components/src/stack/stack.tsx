@@ -1,11 +1,18 @@
 import { Fragment, cloneElement, useMemo } from 'react';
 
 import { getValidChildren } from '@chakra-ui/utils';
+import { SystemProps } from '@ficus-ui/style-system';
 
 import { type NativeFicusProps, ficus, forwardRef } from '../system';
 import { getDividerStyles } from './stack.utils';
 
 interface StackOptions {
+  /**
+   * The space between each stack item
+   * @type SystemProps["margin"]
+   * @default "8px"
+   */
+  spacing?: SystemProps['m'];
   /**
    * If `true`, each stack item will show a divider
    * @type React.ReactElement
@@ -23,10 +30,15 @@ export interface StackProps extends NativeFicusProps<'View'>, StackOptions {}
  *
  */
 export const Stack = forwardRef<StackProps, 'View'>((props, ref) => {
-  const { direction: flexDirection, children, divider, gap, ...rest } = props;
+  const {
+    direction: flexDirection,
+    children,
+    divider,
+    spacing,
+    ...rest
+  } = props;
 
   const direction = flexDirection ?? 'column';
-  const spacing = gap ?? 0;
   const dividerStyle = useMemo(
     () => getDividerStyles({ spacing, direction }),
     [spacing, direction]
@@ -68,7 +80,7 @@ export const Stack = forwardRef<StackProps, 'View'>((props, ref) => {
     <ficus.View
       ref={ref}
       display="flex"
-      gap={hasDivider ? undefined : gap}
+      gap={hasDivider ? undefined : spacing}
       {...rest}
     >
       {clones}
