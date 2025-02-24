@@ -1,5 +1,6 @@
 import { ComponentType } from 'react';
 import BoxComponent from './components-v2/Box';
+import FlexComponent from '@/app/components-v2/Flex';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -10,5 +11,5 @@ type ExampleComponentType = {
 export const components: ExampleComponentType[] = [
 
   { navigationPath: 'Box', onScreenName: 'Box', component: BoxComponent },
-
+  { navigationPath: 'Flex', onScreenName: 'Flex', component: FlexComponent },
 ];
