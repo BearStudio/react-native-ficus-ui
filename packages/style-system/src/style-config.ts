@@ -29,7 +29,6 @@ function normalize(value: any) {
   }
 }
 
-// TODO: Handle multiparts
 /**
  * `size` and `variant` are special props that are not resolved in the style-system.
  * We need to take care of the responsive values here.

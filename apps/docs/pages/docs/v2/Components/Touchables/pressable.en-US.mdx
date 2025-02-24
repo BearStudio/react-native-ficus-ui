@@ -1,0 +1,48 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+import PropsTable from '@components/docs/props-table';
+
+# Pressable
+
+Pressable component that is based on react native `Pressable` component.
+
+## Import
+
+```js
+import { Pressable } from 'react-native-ficus-ui';
+```
+
+## Usage
+
+<CodeEditor code={`<Pressable
+  bg="red.300"
+  p="xl"
+  borderRadius="xl"
+  onPress={() => console.log('Pressed')}
+  _pressed={{
+    opacity:0.9
+  }}
+>
+  <Text>Test</Text>
+</Pressable>`} />
+
+## Props
+
+Extends every `Box` props and react native `Pressable` component.
+
+https://reactnative.dev/docs/pressable#props
+
+### `style`
+<PropsTable
+description="The style prop from React Native. Unlike the regular Pressable component, it does not accept a function."
+ prop={{ type: "StyleProp<ViewStyle>", required: false, default: "-" }}
+/>
+
+### `_pressed`
+<PropsTable
+  description="The properties to apply when `pressed` is true."
+  prop={{ type: "CustomStyleObject", required: false, default: "-" }}
+/>

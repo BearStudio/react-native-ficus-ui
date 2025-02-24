@@ -1,0 +1,32 @@
+import { SystemStyleObject } from '@ficus-ui/style-system';
+import type { StyleProp, ViewStyle } from 'react-native';
+
+import { NativeFicusProps, ficus, forwardRef } from '../system';
+import { createPressableStyleFn } from './pressable.service';
+
+export interface PressableProps extends NativeFicusProps<'Pressable'> {
+  style?: StyleProp<ViewStyle>;
+  /**
+   * Styles to apply when the component is pressed
+   */
+  _pressed?: SystemStyleObject;
+}
+
+/**
+ * Unstyled wrapper around React Native Pressable Component.
+ * @see https://reactnative.dev/docs/pressable
+ *
+ * Instead of passing a style function for the pressed state,
+ * `pressed` style can be defined using the `_pressed` proprety
+ */
+export const Pressable = forwardRef<PressableProps, 'Pressable'>(
+  function Pressable(props, ref) {
+    return (
+      <ficus.Pressable
+        ref={ref}
+        __stylesFn={createPressableStyleFn}
+        {...props}
+      />
+    );
+  }
+);
