@@ -31,7 +31,7 @@ export const Stack = forwardRef<StackProps, 'View'>((props, ref) => {
     () => getDividerStyles({ spacing, direction }),
     [spacing, direction]
   );
-
+  console.log('zxcv', dividerStyle);
   const hasDivider = !!divider;
   const shouldUseChildren = !hasDivider;
 

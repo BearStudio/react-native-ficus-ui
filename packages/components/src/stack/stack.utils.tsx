@@ -18,7 +18,7 @@ export function getDividerStyles(options: Options) {
       my: spacing,
       mx: 0,
       borderLeftWidth: 0,
-      borderBottomWidth: 1,
+      borderBottomWidth: 11,
     },
     'column-reverse': {
       my: spacing,
@@ -40,10 +40,8 @@ export function getDividerStyles(options: Options) {
     },
   };
 
-  return {
-    '&': mapResponsive(
-      direction,
-      (value: keyof typeof dividerStyles) => dividerStyles[value]
-    ),
-  };
+  return mapResponsive(
+    direction,
+    (value: keyof typeof dividerStyles) => dividerStyles[value]
+  );
 }

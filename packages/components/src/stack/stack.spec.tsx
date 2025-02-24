@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from '@testing-library/react-native';
 import { Text } from 'react-native';
 
-import { Stack } from './stack.component';
+import { Stack } from './stack';
 
 describe('Stack Component', () => {
   it('renders children correctly', () => {

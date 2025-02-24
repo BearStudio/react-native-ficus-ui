@@ -1,5 +1,5 @@
 import { ficus, forwardRef } from '../system';
-import { StackProps } from './stack.component';
+import { StackProps } from './stack';
 
 export const StackDivider = forwardRef<StackProps, 'View'>((props, ref) => (
   <ficus.View

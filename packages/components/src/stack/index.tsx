@@ -1,4 +1,4 @@
-export { HStack } from './hstack.component';
-export { Stack } from './stack.component';
-export { StackDivider } from './stack-divider.component';
-export { VStack } from './vstack.component';
+export { HStack } from './hstack';
+export { Stack } from './stack';
+export { StackDivider } from './stack-divider';
+export { VStack } from './vstack';
