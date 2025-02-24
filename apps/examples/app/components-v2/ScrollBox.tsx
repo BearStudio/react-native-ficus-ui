@@ -1,5 +1,6 @@
-import ExampleSection from "@/src/ExampleSection";
-import { Box, SafeAreaBox, ScrollBox, Text } from "@ficus-ui/native";
+import { Box, SafeAreaBox, ScrollBox, Text } from '@ficus-ui/native';
+
+import ExampleSection from '@/src/ExampleSection';
 
 const ScrollBoxComponent = () => {
   return (

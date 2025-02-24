@@ -1,11 +1,10 @@
-import { SafeAreaView } from "react-native";
-import { ScrollBox, Text } from "react-native-ficus-ui";
-import { Box, Center } from "@ficus-ui/native";
-import ExampleSection from "@/src/ExampleSection";
+import { Box, Center, SafeAreaBox, ScrollBox, Text } from '@ficus-ui/native';
+
+import ExampleSection from '@/src/ExampleSection';
 
 const CenterComponent = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaBox>
       <Text mx="xl" fontSize="4xl">
         Center component
       </Text>
@@ -28,7 +27,7 @@ const CenterComponent = () => {
           </Center>
         </ExampleSection>
       </ScrollBox>
-    </SafeAreaView>
+    </SafeAreaBox>
   );
 };
 

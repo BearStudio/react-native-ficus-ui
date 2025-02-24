@@ -1,19 +1,21 @@
-import { Pressable, SafeAreaView, ScrollView, Text, View } from "react-native";
-import { Box } from "@ficus-ui/native";
-import ExampleSection from "@/src/ExampleSection";
-import { Link, useRouter } from "expo-router";
+import { Box, SafeAreaBox, ScrollBox, Text } from '@ficus-ui/native';
+import { useRouter } from 'expo-router';
+
+import ExampleSection from '@/src/ExampleSection';
 
 const BoxComponent = () => {
   const router = useRouter();
   return (
-    <SafeAreaView>
-      <Text style={{
-        marginHorizontal: 20,
-        fontSize: 30
-      }}>
+    <SafeAreaBox>
+      <Text
+        style={{
+          marginHorizontal: 20,
+          fontSize: 30,
+        }}
+      >
         Box component
       </Text>
-      <ScrollView >
+      <ScrollBox>
         <ExampleSection name="background color">
           <Box flexDirection="row">
             <Box h={40} w={40} mr="sm" bg="green.500" />
@@ -24,7 +26,6 @@ const BoxComponent = () => {
             <Box h={40} w={40} mr="sm" bg="gray.500" />
           </Box>
         </ExampleSection>
-
         <ExampleSection name="shadows">
           <Box flexDirection="row">
             <Box
@@ -211,8 +212,7 @@ const BoxComponent = () => {
         </ExampleSection>
         <ExampleSection name="radius">
           <Box flexDirection="row">
-
-            <Box h={40} w={40} mr="sm" borderRadius="none" bg="blue.400"/>
+            <Box h={40} w={40} mr="sm" borderRadius="none" bg="blue.400" />
             <Box h={40} w={40} mr="sm" borderRadius="xs" bg="blue.400" />
             <Box h={40} w={40} mr="sm" borderRadius="sm" bg="blue.400" />
             <Box h={40} w={40} mr="sm" borderRadius="md" bg="blue.400" />
@@ -238,13 +238,12 @@ const BoxComponent = () => {
             borderRadius="md"
             h={150}
             source={{
-              uri: "https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Monochrome-Type-Simple-Background-Image.jpg",
+              uri: 'https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Monochrome-Type-Simple-Background-Image.jpg',
             }}
           />
         </ExampleSection>
-
-      </ScrollView>
-    </SafeAreaView>
+      </ScrollBox>
+    </SafeAreaBox>
   );
 };
 

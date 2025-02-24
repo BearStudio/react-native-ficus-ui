@@ -3,6 +3,9 @@
   "include": ["src"],
   "compilerOptions": {
     "jsx": "react-native",
-    "outDir": "./dist/types"
+    "outDir": "./dist/types",
+    "paths": {
+      "@test-utils": ["./src/test-utils"]
+    }
   }
 }
