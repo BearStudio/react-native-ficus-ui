@@ -1,6 +1,8 @@
-import { SafeAreaView, ScrollView } from "react-native";
-import ExampleSection from "@/src/ExampleSection";
-import { Text } from "@ficus-ui/native";
+import { Text } from '@ficus-ui/native';
+import { SafeAreaView, ScrollView } from 'react-native';
+
+import ExampleSection from '@/src/ExampleSection';
+
 const TextComponent = () => {
   return (
     <SafeAreaView>
