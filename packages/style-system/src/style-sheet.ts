@@ -28,9 +28,17 @@ export function getStyleSheet({ configs = {}, theme }: GetStyleSheetOptions) {
         config = { property: key } as PropConfig;
       }
 
+      /**
+       * Useful for objects containing styles.
+       * E.g: React Native `style` prop
+       */
       if (isObject(value)) {
         computedStyles[key] = computedStyles[key] ?? {};
-        computedStyles = mergeWith({}, computedStyles[key], styleSheet(value));
+        computedStyles[key] = mergeWith(
+          {},
+          computedStyles[key],
+          styleSheet(value)
+        );
         continue;
       }
 
