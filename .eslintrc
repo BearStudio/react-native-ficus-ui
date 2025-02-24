@@ -5,6 +5,7 @@
     "no-unused-vars": "warn",
     "react-hooks/exhaustive-deps": "off",
     "react/react-in-jsx-scope": "off",
+    "curly": "off",
   },
   "overrides": [
     {
