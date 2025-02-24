@@ -1,0 +1,27 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+import PropsTable from "@components/docs/props-table";
+
+
+# Flex
+
+As `Box` component but with `flex={1}` property by default, it accepts every props from react native `View` component.
+
+## Import
+
+```js
+import { Flex } from "@ficus-ui/native";
+```
+
+## Usage
+
+<CodeEditor code={`<Box h={200}>
+  <Flex bg="red.500" />
+</Box>`} />
+
+## Props
+
+Extends every `Box` props.
