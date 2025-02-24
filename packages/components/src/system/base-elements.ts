@@ -3,6 +3,7 @@ import {
   ScrollView as RNScrollView,
   Text as RNText,
   View as RNView,
+  SafeAreaView as RNSafeAreaView,
 } from 'react-native';
 
 /**
@@ -13,6 +14,7 @@ export const baseRNElements = {
   Image: RNImage,
   Text: RNText,
   ScrollView: RNScrollView,
+  SafeAreaView: RNSafeAreaView,
 } as const;
 
 export type BaseRNElements = keyof typeof baseRNElements;

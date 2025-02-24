@@ -1,5 +1,6 @@
 export * from './box';
 export * from './text';
+export * from './safe-area-box';
 export * from './center';
 export * from './badge';
 

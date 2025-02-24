@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { render, screen } from '@testing-library/react-native';
 
 import { Text } from '.';
@@ -7,6 +5,7 @@ import { Text } from '.';
 jest.mock('react-native-toast-message', () => 'Toast');
 
 describe('Text component', () => {
+
   it('should render text correctly', () => {
     render(<Text>I love Ficus UI (forked from Magnus UI)</Text>);
 
