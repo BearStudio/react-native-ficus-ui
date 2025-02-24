@@ -5,7 +5,10 @@ import { NativeFicusProps, ficus, forwardRef } from '../system';
 import { createPressableStyleFn } from './pressable.service';
 
 export interface PressableProps extends NativeFicusProps<'Pressable'> {
-  style?: StyleProp<ViewStyle>;
+  /**
+   * Regular view styles
+   */
+  style?: StyleProp<ViewStyle>; // To override default `Pressable` style type
   /**
    * Styles to apply when the component is pressed
    */
