@@ -1,21 +1,13 @@
-import React from 'react';
-
-import { ThemeProvider } from '@ficus-ui/theme';
 import { render, screen } from '@testing-library/react-native';
 
-import { Text, TextProps } from '.';
+import { Text } from '.';
 
 jest.mock('react-native-toast-message', () => 'Toast');
 
 describe('Text component', () => {
-  const TestText: React.FC<TextProps> = (props) => (
-    <ThemeProvider>
-      <Text {...props} />
-    </ThemeProvider>
-  );
 
   it('should render text correctly', () => {
-    render(<TestText>I love Ficus UI (forked from Magnus UI)</TestText>);
+    render(<Text>I love Ficus UI (forked from Magnus UI)</Text>);
 
     expect(
       screen.getByText('I love Ficus UI (forked from Magnus UI)')
@@ -24,9 +16,9 @@ describe('Text component', () => {
 
   it('should apply styles correctly', () => {
     const { getByText } = render(
-      <TestText fontSize="xl" color="blue.500">
+      <Text fontSize="xl" color="blue.500">
         Styled Text
-      </TestText>
+      </Text>
     );
 
     const textElement = getByText('Styled Text');
@@ -35,7 +27,7 @@ describe('Text component', () => {
   });
 
   it('should support theming props', () => {
-    render(<TestText variant="bold">Themed Text</TestText>);
+    render(<Text variant="bold">Themed Text</Text>);
 
     expect(screen.getByText('Themed Text')).toBeTruthy();
   });
