@@ -59,12 +59,12 @@ export default withNextra({
     },
     {
       source: '/docs.([a-zA-Z-]+)',
-      destination: '/docs/getting-started',
+      destination: '/docs/v2/getting-started',
       statusCode: 302,
     },
     {
       source: '/docs',
-      destination: '/docs/getting-started',
+      destination: '/docs/v2/getting-started',
       statusCode: 302,
     },
   ],
