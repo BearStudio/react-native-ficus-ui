@@ -1,9 +1,12 @@
 import {
   Image as RNImage,
+  SafeAreaView as RNSafeAreaView,
   ScrollView as RNScrollView,
   Text as RNText,
+  TouchableHighlight as RNTouchableHighlight,
+  TouchableOpacity as RNTouchableOpacity,
+  TouchableWithoutFeedback as RNTouchableWithoutFeedback,
   View as RNView,
-  SafeAreaView as RNSafeAreaView,
 } from 'react-native';
 
 /**
@@ -15,6 +18,9 @@ export const baseRNElements = {
   Text: RNText,
   ScrollView: RNScrollView,
   SafeAreaView: RNSafeAreaView,
+  TouchableHighlight: RNTouchableHighlight,
+  TouchableOpacity: RNTouchableOpacity,
+  TouchableWithoutFeedback: RNTouchableWithoutFeedback,
 } as const;
 
 export type BaseRNElements = keyof typeof baseRNElements;
