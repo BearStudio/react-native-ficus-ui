@@ -9,18 +9,12 @@ import { Box } from '../box';
 jest.mock('react-native-toast-message', () => 'Toast');
 
 describe('Center component', () => {
-  const TestCenter: React.FC<CenterProps> = (props) => (
-    <ThemeProvider>
-      <Center {...props} />
-    </ThemeProvider>
-  );
-
   it('should render child components correctly', () => {
     const { getByTestId } = render(
-      <TestCenter>
+      <Center>
         <Box h={40} w={40} mr="sm" bg="green.500" testID="box-green" />
         <Box h={40} w={40} mr="sm" bg="teal.500" testID="box-teal" />
-      </TestCenter>
+      </Center>
     );
 
     expect(getByTestId('box-green')).toBeTruthy();
