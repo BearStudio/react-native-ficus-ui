@@ -1,5 +1,6 @@
-import { isObject, mergeWith, runIfFn } from '@chakra-ui/utils';
+import { isObject, mergeWith, runIfFn, splitProps } from '@chakra-ui/utils';
 
+import { isStyleProp } from './system';
 import { Dict, ResponsiveValue } from './utils';
 import { expandResponsive } from './utils';
 
@@ -84,12 +85,13 @@ export function resolveStyleConfig(config: Config) {
     const { variant, size, theme, ...rest } = props;
     const recipe = createResolver(theme);
 
+    const [restStyles] = splitProps(rest, isStyleProp);
     return mergeWith(
       {},
       runIfFn(config.baseStyle ?? {}, props),
       recipe(config, 'sizes', size, props),
       recipe(config, 'variants', variant, props),
-      rest
+      restStyles
     );
   };
 }
