@@ -7,6 +7,9 @@ import SafeAreaBoxComponent from '@/app/components-v2/SafeAreaBox';
 import ScrollBoxComponent from '@/app/components-v2/ScrollBox';
 import CenterComponent from '@/app/components-v2/Center';
 import BadgeComponent from './components-v2/Badge';
+import TouchableHighlightComponent from './components-v2/TouchableHighlight';
+import TouchableOpacityComponent from './components-v2/TouchableOpacity';
+import TouchableWithoutFeedbackComponent from './components-v2/TouchableWithoutFeedback';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -23,4 +26,7 @@ export const components: ExampleComponentType[] = [
   { navigationPath: 'ScrollBox', onScreenName: 'ScrollBox', component: ScrollBoxComponent },
   { navigationPath: 'Center', onScreenName: 'Center', component: CenterComponent },
   { navigationPath: 'Badge', onScreenName: 'Badge', component: BadgeComponent },
+  { navigationPath: 'TouchableHighlight', onScreenName: 'TouchableHighlight', component: TouchableHighlightComponent },
+  { navigationPath: 'TouchableOpacity', onScreenName: 'TouchableOpacity', component: TouchableOpacityComponent },
+  { navigationPath: 'TouchableWithoutFeedback', onScreenName: 'TouchableWithoutFeedback', component: TouchableWithoutFeedbackComponent },
 ];
