@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import { compact, get, mergeWith, omit } from '@chakra-ui/utils';
+import { compact, memoizedGet as get, mergeWith, omit } from '@chakra-ui/utils';
 import {
   Dict,
   type SystemStyleObject,
@@ -14,7 +14,7 @@ type StylesRef = SystemStyleObject | Record<string, SystemStyleObject>;
 
 function useStyleConfigFn(
   themeKey: string | null,
-  props: ThemingProps & Record<string, any> = {}
+  props: ThemingProps & Dict = {}
 ) {
   const { styleConfig: styleConfigProp, ...rest } = props;
 
