@@ -52,4 +52,3 @@ export const components: ExampleComponentType[] = [
   { navigationPath: 'Modal', onScreenName: 'Modal', component: ModalComponent },
   { navigationPath: 'DraggableModal', onScreenName: 'DraggableModal', component: DraggableModalComponent },
 ];
-
