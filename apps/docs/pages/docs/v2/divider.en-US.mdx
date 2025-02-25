@@ -1,0 +1,69 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+
+
+# Divider
+
+Simple divider component.
+
+## Import
+
+```js
+import { Divider } from "@ficus-ui/native";
+import PropsTable from "@components/docs/props-table";
+```
+
+## Usage
+
+### Horizontal
+
+<CodeEditor code={`<Box>
+  <Text>Test text</Text>
+  <Divider my="md" />
+  <Text>Test text</Text>
+</Box>`} />
+
+### Vertical
+
+<CodeEditor code={`<Box h={40} flexDirection="row">
+  <Divider orientation="vertical" />
+  <Box m="md">
+    <Text>Test text</Text>
+  </Box>
+</Box>`} />
+
+### Custom color
+
+<CodeEditor code={`<Box>
+  <Text>Test text</Text>
+  <Divider colorScheme="blue" my="md" />
+  <Text>Test text</Text>
+</Box>`} />
+
+### Custom size
+
+<CodeEditor code={`<Box>
+  <Text>Test text</Text>
+  <Divider size={10} my="md" />
+  <Text>Test text</Text>
+
+  <Box mt="xl" h={40} flexDirection="row">
+    <Divider size={10} orientation="vertical" />
+    <Box m="md">
+      <Text>Test text</Text>
+    </Box>
+  </Box>
+</Box>`} />
+
+## Props
+
+Extends all `Box` props, except colorScheme properties.
+
+### `orientation`
+<PropsTable
+  description="The orientation of the divider, can be horizontal or vertical."
+  prop={{ type: "enum('vertical', 'horizontal')", required: false, default: "'horizontal'" }}
+/>
