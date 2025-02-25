@@ -7,5 +7,6 @@ export * from './safe-area-box';
 export * from './center';
 export * from './badge';
 export * from './touchables';
+export * from './image';
 
 export { ThemeProvider } from '@ficus-ui/theme';
