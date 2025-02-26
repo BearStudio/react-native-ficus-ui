@@ -7,6 +7,7 @@ import {
   TouchableOpacity as RNTouchableOpacity,
   TouchableWithoutFeedback as RNTouchableWithoutFeedback,
   View as RNView,
+  ActivityIndicator as RNActivityIndicator,
 } from 'react-native';
 
 /**
@@ -21,6 +22,7 @@ export const baseRNElements = {
   TouchableHighlight: RNTouchableHighlight,
   TouchableOpacity: RNTouchableOpacity,
   TouchableWithoutFeedback: RNTouchableWithoutFeedback,
+  ActivityIndicator: RNActivityIndicator,
 } as const;
 
 export type BaseRNElements = keyof typeof baseRNElements;

@@ -10,6 +10,7 @@ import BadgeComponent from './components-v2/Badge';
 import TouchableHighlightComponent from './components-v2/TouchableHighlight';
 import TouchableOpacityComponent from './components-v2/TouchableOpacity';
 import TouchableWithoutFeedbackComponent from './components-v2/TouchableWithoutFeedback';
+import SpinnerComponent from '@/app/components-v2/Spinner';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -29,4 +30,5 @@ export const components: ExampleComponentType[] = [
   { navigationPath: 'TouchableHighlight', onScreenName: 'TouchableHighlight', component: TouchableHighlightComponent },
   { navigationPath: 'TouchableOpacity', onScreenName: 'TouchableOpacity', component: TouchableOpacityComponent },
   { navigationPath: 'TouchableWithoutFeedback', onScreenName: 'TouchableWithoutFeedback', component: TouchableWithoutFeedbackComponent },
+  { navigationPath: 'Spinner', onScreenName: 'Spinner', component: SpinnerComponent },
 ];
