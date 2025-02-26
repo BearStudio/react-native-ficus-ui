@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { NativeFicusProps, ficus, forwardRef } from '../system';
 
 interface AvatarBadgeOptions {
-  size: number;
+  size?: number;
 }
 
 export interface AvatarBadgeProps
@@ -12,27 +12,25 @@ export interface AvatarBadgeProps
 
 const AVATAR_BADGE_RATIO = 2.5;
 
-export const AvatarBadge = forwardRef<AvatarBadgeProps, 'View'>(
-  (props, ref) => {
-    const { size } = props;
+export const AvatarBadge = forwardRef<AvatarBadgeProps, 'View'>((props) => {
+  const { size = 25 } = props;
 
-    const badgeStyles = useMemo(
-      () => ({
-        ...props.__styles,
-        bg: 'green.400',
-        w: size / AVATAR_BADGE_RATIO,
-        h: size / AVATAR_BADGE_RATIO,
-        borderRadius: '100%',
-        borderWidth: 3,
-        borderColor: 'white',
-        borderStyle: 'solid',
-        position: 'absolute',
-        top: size - size / AVATAR_BADGE_RATIO,
-        ml: size - size / AVATAR_BADGE_RATIO, // not sure why left isn't work here so i used ml instead
-      }),
-      [props.__styles]
-    );
+  const badgeStyles = useMemo(
+    () => ({
+      ...props.__styles,
+      bg: 'green.400',
+      w: size / AVATAR_BADGE_RATIO,
+      h: size / AVATAR_BADGE_RATIO,
+      borderRadius: '100%',
+      borderWidth: 3,
+      borderColor: 'white',
+      borderStyle: 'solid',
+      position: 'absolute',
+      top: size - size / AVATAR_BADGE_RATIO,
+      ml: size - size / AVATAR_BADGE_RATIO, // not sure why left isn't work here so i used ml instead
+    }),
+    [props.__styles]
+  );
 
-    return <ficus.View {...props} __styles={badgeStyles} ref={ref} />;
-  }
-);
+  return <ficus.View {...props} __styles={badgeStyles} />;
+});

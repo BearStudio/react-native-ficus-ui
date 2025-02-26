@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { ThemingProps } from '@ficus-ui/style-system';
-import { getThemeProperty, theme } from '@ficus-ui/theme';
 
 import { HStack } from '../stack';
 import { NativeFicusProps, forwardRef } from '../system';

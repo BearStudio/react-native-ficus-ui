@@ -1,7 +1,7 @@
 import { SafeAreaView } from 'react-native';
 
 import ExampleSection from '@/src/ExampleSection';
-import { Avatar, AvatarGroup, HStack, ScrollBox, Text } from '@ficus-ui/native';
+import { Avatar, AvatarBadge, AvatarGroup, HStack, ScrollBox, Text } from '@ficus-ui/native';
 
 const AvatarComponent = () => {
   return (
@@ -82,33 +82,41 @@ const AvatarComponent = () => {
             <Avatar
               name="Nicolas Torion"
               src="https://avatars.githubusercontent.com/u/53612278?v=4"
-              withBadge
-            />
+            >
+              <AvatarBadge />
+            </Avatar>
             <Avatar
               name="Omar Borji"
               src="https://avatars.githubusercontent.com/u/80390318?s=60&v=4"
-              withBadge
-            />
-            <Avatar name="Deelan" colorScheme="green" withBadge />
+            >
+              <AvatarBadge />
+            </Avatar>
+            <Avatar name="Deelan" colorScheme="green">
+              <AvatarBadge />
+            </Avatar>
           </HStack>
         </ExampleSection>
-        <ExampleSection name="avatar badge and group">
 
-        <AvatarGroup size="lg" max={2}>
-            <Avatar
-              name="Nicolas Torion"
-              src="https://avatars.githubusercontent.com/u/53612278?v=4"
-              withBadge
-            />
-            <Avatar
-              name="Omar Borji"
-              src="https://avatars.githubusercontent.com/u/80390318?s=60&v=4"
-              withBadge
-            />
-            <Avatar name="Deelan" 
-              colorScheme="green"
-              withBadge />
-          </AvatarGroup>
+        <ExampleSection name="avatar badge and group">
+          <HStack spacing="md">
+            <AvatarGroup size="lg">
+              <Avatar
+                name="Nicolas Torion"
+                src="https://avatars.githubusercontent.com/u/53612278?v=4"
+              >
+                <AvatarBadge />
+              </Avatar>
+              <Avatar
+                name="Omar Borji"
+                src="https://avatars.githubusercontent.com/u/80390318?s=60&v=4"
+              >
+                <AvatarBadge bg='yellow' />
+              </Avatar>
+              <Avatar name="Deelan" colorScheme="green">
+                <AvatarBadge bg='red' />
+              </Avatar>
+            </AvatarGroup>
+          </HStack>
         </ExampleSection>
       </ScrollBox>
     </SafeAreaView>

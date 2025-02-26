@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
+import React from 'react';
 
 import {
   TextStyleProps,
   ThemingProps,
+  omitThemingProps,
   splitTextProps,
 } from '@ficus-ui/style-system';
 import {
@@ -21,26 +23,24 @@ import {
   useStyleConfig,
 } from '../system';
 import { Text } from '../text';
-import { AvatarBadge } from './avatar-badge';
 
 interface AvatarOptions {
   name: string;
   src?: string;
-  withBadge?: boolean;
   getInitials?(): string;
 }
 
 export interface AvatarProps
-  extends NativeFicusProps<'Image'>,
+  extends NativeFicusProps<'View'>,
     TextStyleProps,
     ThemingProps<'Avatar'>,
     AvatarOptions {}
 
-export const Avatar = forwardRef<AvatarProps, 'Image'>(
+export const Avatar = forwardRef<AvatarProps, 'View'>(
   function Avatar(props, ref) {
     const [isImageValid, setIsImageValid] = useState(false);
     const styles = useStyleConfig('Avatar', props);
-    const { ...rest } = props;
+    const { children, ...rest } = omitThemingProps(props);
     const [textStyles, restStyles] = splitTextProps(styles);
     const { theme } = useTheme();
 
@@ -116,7 +116,11 @@ export const Avatar = forwardRef<AvatarProps, 'Image'>(
             {getInitials(props.name)}
           </Text>
         )}
-        {props?.withBadge && <AvatarBadge size={getActualSize} />}
+        {React.Children.map(children as any, (child: React.ReactElement) => {
+          return React.cloneElement(child, {
+            size: child.props.size ? child.props.size : getActualSize,
+          });
+        })}
       </ficus.View>
     );
   }
