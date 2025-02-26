@@ -25,3 +25,9 @@ export const Box = forwardRef<BoxProps, 'View'>((props, ref) => {
   }
   return <ficus.View ref={ref} {...rest} />;
 });
+
+export const Circle = ficus('View', {
+  baseStyle: {
+    borderRadius: 'full',
+  },
+});
