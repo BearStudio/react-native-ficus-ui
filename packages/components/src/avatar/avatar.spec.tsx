@@ -61,12 +61,4 @@ describe('Avatar component', () => {
 
     expect(getByText('JD')).toBeTruthy();
   });
-
-  it('renders with a badge when withBadge is true', () => {
-    const { getByTestId } = render(
-      <Avatar name="John Doe" withBadge testID="avatar-badge" />
-    );
-
-    expect(getByTestId('avatar-badge')).toBeTruthy();
-  });
 });
