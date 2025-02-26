@@ -1,15 +1,15 @@
 import { SafeAreaView } from 'react-native';
 
 import ExampleSection from '@/src/ExampleSection';
-import { Avatar, HStack, ScrollBox, Text } from '@ficus-ui/native';
+import { Avatar, AvatarGroup, HStack, ScrollBox, Text } from '@ficus-ui/native';
 
 const AvatarComponent = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
+      <ScrollBox>
       <Text mx="xl" fontSize="4xl">
         Avatar component
       </Text>
-      <ScrollBox>
         <ExampleSection name="avatar with photo">
           <HStack spacing="md">
             <Avatar
@@ -46,80 +46,70 @@ const AvatarComponent = () => {
           </HStack>
         </ExampleSection>
 
-        {/* <ExampleSection name="avatar group">
-          <VStack spacing="md">
-            <AvatarGroup>
-              <Avatar
-                name="Nicolas Torion"
-                src="https://avatars.githubusercontent.com/u/53612278?v=4"
-              />
-              <Avatar
-                name="Omar Borji"
-                src="https://avatars.githubusercontent.com/u/80390318?s=60&v=4"
-              />
-              <Avatar name="Deelan" colorScheme="green" />
-              <Avatar name="Mark Cavendish" colorScheme="red" />
-              <Avatar name="Antoine Dupont" colorScheme="purple" />
-              <Avatar name="Zinédine Zidane" colorScheme="pink" />
-            </AvatarGroup>
+        <ExampleSection name="avatar group">
+          <AvatarGroup>
+            <Avatar
+              name="Nicolas Torion"
+              src="https://avatars.githubusercontent.com/u/53612278?v=4"
+            />
+            <Avatar
+              name="Omar Borji"
+              src="https://avatars.githubusercontent.com/u/80390318?s=60&v=4"
+            />
+            <Avatar name="Deelan" colorScheme="green" />
+            <Avatar name="Mark Cavendish" colorScheme="red" />
+            <Avatar name="Antoine Dupont" colorScheme="purple" />
+            <Avatar name="Zinédine Zidane" colorScheme="pink" />
+          </AvatarGroup>
 
-            <AvatarGroup size="lg" max={2}>
-              <Avatar
-                name="Nicolas Torion"
-                src="https://avatars.githubusercontent.com/u/53612278?v=4"
-              />
-              <Avatar
-                name="Omar Borji"
-                src="https://avatars.githubusercontent.com/u/80390318?s=60&v=4"
-              />
-              <Avatar name="Deelan" colorScheme="green" />
-              <Avatar name="Mark Cavendish" colorScheme="red" />
-              <Avatar name="Antoine Dupont" colorScheme="purple" />
-              <Avatar name="Zinédine Zidane" colorScheme="pink" />
-            </AvatarGroup>
-          </VStack>
-        </ExampleSection> */}
-        {/* <ExampleSection name="avatar badge">
+          <AvatarGroup size="lg" max={2}>
+            <Avatar
+              name="Nicolas Torion"
+              src="https://avatars.githubusercontent.com/u/53612278?v=4"
+            />
+            <Avatar
+              name="Omar Borji"
+              src="https://avatars.githubusercontent.com/u/80390318?s=60&v=4"
+            />
+            <Avatar name="Deelan" colorScheme="green" />
+            <Avatar name="Mark Cavendish" colorScheme="red" />
+            <Avatar name="Antoine Dupont" colorScheme="purple" />
+            <Avatar name="Zinédine Zidane" colorScheme="pink" />
+          </AvatarGroup>
+        </ExampleSection>
+        <ExampleSection name="avatar badge">
           <HStack spacing="md">
             <Avatar
               name="Nicolas Torion"
               src="https://avatars.githubusercontent.com/u/53612278?v=4"
-            >
-              <AvatarBadge />
-            </Avatar>
+              withBadge
+            />
             <Avatar
               name="Omar Borji"
               src="https://avatars.githubusercontent.com/u/80390318?s=60&v=4"
-            >
-              <AvatarBadge />
-            </Avatar>
-            <Avatar name="Deelan" colorScheme="green">
-              <AvatarBadge />
-            </Avatar>
+              withBadge
+            />
+            <Avatar name="Deelan" colorScheme="green" withBadge />
           </HStack>
-        </ExampleSection> */}
+        </ExampleSection>
+        <ExampleSection name="avatar badge and group">
 
-        {/* <ExampleSection name="avatar badge and group">
-          <HStack spacing="md">
-            <AvatarGroup size="lg">
-              <Avatar
-                name="Nicolas Torion"
-                src="https://avatars.githubusercontent.com/u/53612278?v=4"
-              >
-                <AvatarBadge />
-              </Avatar>
-              <Avatar
-                name="Omar Borji"
-                src="https://avatars.githubusercontent.com/u/80390318?s=60&v=4"
-              >
-                <AvatarBadge />
-              </Avatar>
-              <Avatar name="Deelan" colorScheme="green">
-                <AvatarBadge />
-              </Avatar>
-            </AvatarGroup>
-          </HStack>
-        </ExampleSection> */}
+        <AvatarGroup size="lg" max={2}>
+            <Avatar
+              name="Nicolas Torion"
+              src="https://avatars.githubusercontent.com/u/53612278?v=4"
+              withBadge
+            />
+            <Avatar
+              name="Omar Borji"
+              src="https://avatars.githubusercontent.com/u/80390318?s=60&v=4"
+              withBadge
+            />
+            <Avatar name="Deelan" 
+              colorScheme="green"
+              withBadge />
+          </AvatarGroup>
+        </ExampleSection>
       </ScrollBox>
     </SafeAreaView>
   );
