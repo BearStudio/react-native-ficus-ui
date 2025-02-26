@@ -12,6 +12,15 @@
     "@ficus-ui/theme": "workspace:*",
     "react-fast-compare": "3.2.2"
   },
+  "devDependencies": {
+    "@types/react": "18.3.1",
+    "react": "18.3.1",
+    "react-native": "0.76.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

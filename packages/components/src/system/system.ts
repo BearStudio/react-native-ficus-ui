@@ -61,7 +61,7 @@ export function styled<
 
   const ficusComponent = forwardRef<any, any>(
     function FicusComponent(props, ref) {
-      const { children, style, as, __styles, ...rest } = props;
+      const { children, style, as, __styles, __stylesFn, ...rest } = props;
       const { theme } = useTheme();
 
       const [styleProps, restProps] = splitProps(rest, isStyleProp);
@@ -77,11 +77,15 @@ export function styled<
 
       const computedStyle = styleObject(propsWithTheme);
 
+      const finalComputedStyle = __stylesFn
+        ? __stylesFn(computedStyle)
+        : computedStyle;
+
       return createElement(
         AsComponent,
         {
           ref,
-          style: computedStyle,
+          style: finalComputedStyle,
           ...restProps,
         },
         children
