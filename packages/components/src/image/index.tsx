@@ -1,5 +1,12 @@
-import { type NativeFicusProps, ficus } from '../system';
+import { type NativeFicusProps, ficus, forwardRef } from '../system';
 
-export interface ImageProps extends NativeFicusProps<'Image'> {}
+interface ImageOptions {
+  src?: string;
+}
 
-export const Image = ficus('Image');
+export interface ImageProps extends NativeFicusProps<'Image'>, ImageOptions {}
+
+export const Image = forwardRef<ImageProps, 'Image'>((props, ref) => {
+  const { src, ...rest } = props;
+  return <ficus.Image ref={ref} {...rest} source={{ uri: src }} />;
+});
