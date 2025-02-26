@@ -1,4 +1,5 @@
 import {
+  ActivityIndicator as RNActivityIndicator,
   Image as RNImage,
   Pressable as RNPressable,
   SafeAreaView as RNSafeAreaView,
@@ -23,6 +24,7 @@ export const baseRNElements = {
   TouchableOpacity: RNTouchableOpacity,
   TouchableWithoutFeedback: RNTouchableWithoutFeedback,
   Pressable: RNPressable,
+  ActivityIndicator: RNActivityIndicator,
 } as const;
 
 export type BaseRNElements = keyof typeof baseRNElements;
