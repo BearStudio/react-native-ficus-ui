@@ -25,13 +25,13 @@ const DividerComponent = () => {
 
         <ExampleSection name="custom color">
           <Text>Test text</Text>
-          <Divider bg="blue" my="md" />
+          <Divider color="red.200" my="md" />
           <Text>Test text</Text>
         </ExampleSection>
 
         <ExampleSection name="custom size">
           <Text>Test text</Text>
-          <Divider w={10} my="md" />
+          <Divider w={10} my="md" color="blue"  />
           <Text>Test text</Text>
 
           <Box mt="xl" h={40} flexDirection="row">

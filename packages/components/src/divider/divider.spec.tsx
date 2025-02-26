@@ -28,7 +28,7 @@ describe('Flex component', () => {
       <Divider
         testID="divider-variant"
         orientation="vertical"
-        bg={theme.colors.red[500]}
+        color="red.500"
       />
     );
     const dividerComponent = getByTestId('divider-variant');
