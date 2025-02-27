@@ -1,0 +1,178 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+import PropsTable from "@components/docs/props-table";
+
+# Tabs
+
+Component that is based on `react-native-tab-view` library.
+
+https://github.com/react-navigation/react-navigation
+
+## Import
+
+```js
+import { Tabs, TabList, Tab, TabPanel, TabPanels } from "@ficus-ui/native";
+```
+
+## Usage
+
+### Default
+
+<CodeEditor code={`const SimpleTabs = () => {
+  const [index, setIndex] = React.useState(0);
+
+  return (
+    <Box h={200} w={300}>
+      <Tabs
+        initialPage={0}
+        onChangeTab={setIndex}
+        selectedTab={index}
+      >
+        <TabList>
+          <Tab name="first">Tab 1</Tab>
+          <Tab name="second">Tab 2</Tab>
+          <Tab name="third">Tab 3</Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel linkedTo="first" p="lg">
+            <Text>Content for the first tab</Text>
+          </TabPanel>
+          <TabPanel linkedTo="second" p="lg">
+            <Text>Content for the second tab</Text>
+          </TabPanel>
+          <TabPanel linkedTo="third" p="lg">
+            <Text>Content for the third tab</Text>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
+    </Box>
+  );
+}
+render(<SimpleTabs />)`} noInline />
+
+### Custom color
+
+<CodeEditor code={`const SimpleTabs = () => {
+  const [index, setIndex] = React.useState(0);
+
+  return (
+    <Box h={200} w={300}>
+      <Tabs
+        initialPage={0}
+        onChangeTab={setIndex}
+        selectedTab={index}
+        colorScheme="orange"
+      >
+        <TabList>
+          <Tab name="first">Tab 1</Tab>
+          <Tab name="second">Tab 2</Tab>
+          <Tab name="third">Tab 3</Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel linkedTo="first" p="lg">
+            <Text>Content for the first tab</Text>
+          </TabPanel>
+          <TabPanel linkedTo="second" p="lg">
+            <Text>Content for the second tab</Text>
+          </TabPanel>
+          <TabPanel linkedTo="third" p="lg">
+            <Text>Content for the third tab</Text>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
+    </Box>
+  );
+}
+render(<SimpleTabs />)`} noInline />
+
+### Custom label
+
+<CodeEditor code={`const SimpleTabs = () => {
+  const [index, setIndex] = React.useState(0);
+
+  const CustomTabLabel = ({
+    focused,
+    children,
+  }: {
+    focused: boolean;
+    children: ReactNode;
+  }) => (
+    <Box bg={focused ? 'teal.600' : 'transparent'} p="md" borderRadius="2xl">
+      <Text color={focused ? 'white' : 'teal.500'} fontWeight="bold">
+        {children}
+      </Text>
+    </Box>
+  );
+
+  return (
+    <Box h={200} w={300}>
+      <Tabs
+        initialPage={0}
+        onChangeTab={setIndex}
+        selectedTab={index}
+        indicatorStyle={{ backgroundColor: 'transparent' }}
+      >
+        <TabList>
+          <Tab name="first">
+            {({ focused }: { focused: boolean }) => (
+              <CustomTabLabel focused={focused}>Tab 1</CustomTabLabel>
+            )}
+          </Tab>
+          <Tab name="second">
+            {({ focused }: { focused: boolean }) => (
+              <CustomTabLabel focused={focused}>Tab 2</CustomTabLabel>
+            )}
+          </Tab>
+          <Tab name="third">
+            {({ focused }: { focused: boolean }) => (
+              <CustomTabLabel focused={focused}>Tab 3</CustomTabLabel>
+            )}
+          </Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel linkedTo="first" p="lg">
+            <Text>Content for the first tab</Text>
+          </TabPanel>
+          <TabPanel linkedTo="second" p="lg">
+            <Text>Content for the second tab</Text>
+          </TabPanel>
+          <TabPanel linkedTo="third" p="lg">
+            <Text>Content for the third tab</Text>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
+    </Box>
+  );
+}
+render(<SimpleTabs />)`} noInline />
+
+## Props
+
+Extends every `Box` props and `TabViewProps` from `react-native-tab-view`
+
+### `colorScheme`
+<PropsTable
+  description="The colorScheme property, will define the tabs' main color."
+  prop={{ type: "string", required: false }}
+/>
+
+### `initialPage`
+<PropsTable
+  description="The initial displayed tab index."
+  prop={{ type: "number", required: false, default: "0" }}
+/>
+
+### `selectedTab`
+<PropsTable
+  description="The current selected tab index."
+  prop={{ type: "number", required: false }}
+/>
+
+### `onChangeTab`
+<PropsTable
+  description="Callback called when the current selected tab has changed."
+  prop={{ type: "(index: number) => void", required: false }}
+/>

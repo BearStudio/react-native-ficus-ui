@@ -9,6 +9,8 @@ import {
   TouchableWithoutFeedback as RNTouchableWithoutFeedback,
   View as RNView,
 } from 'react-native';
+import { TabView  as RNTabView} from 'react-native-tab-view';
+
 
 /**
  * These are the basic react native elements that are supported with the `ficus.View` notation.
@@ -23,6 +25,7 @@ export const baseRNElements = {
   TouchableOpacity: RNTouchableOpacity,
   TouchableWithoutFeedback: RNTouchableWithoutFeedback,
   Pressable: RNPressable,
+  TabView: RNTabView, // temporary put here
 } as const;
 
 export type BaseRNElements = keyof typeof baseRNElements;
