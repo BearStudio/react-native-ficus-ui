@@ -15,6 +15,7 @@ import PressableComponent from './components-v2/Pressable';
 import DividerComponent from '@/app/components-v2/Divider';
 import SpinnerComponent from '@/app/components-v2/Spinner';
 import SliderComponent from '@/app/components-v2/Slider';
+import IconComponent from '@/app/components-v2/Icon';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -39,4 +40,5 @@ export const components: ExampleComponentType[] = [
   { navigationPath: 'Spinner', onScreenName: 'Spinner', component: SpinnerComponent },
   { navigationPath: 'Pressable', onScreenName: 'Pressable', component: PressableComponent },
   { navigationPath: 'Slider', onScreenName: 'Slider', component: SliderComponent },
+  { navigationPath: 'Icon', onScreenName: 'Icon', component: IconComponent },
 ];
