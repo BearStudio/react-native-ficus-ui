@@ -1,6 +1,5 @@
 import { isValidColor } from './utilities';
 
-
 /**
  * Get real theme color value
  *
@@ -54,10 +53,7 @@ export const getThemeColor = (
  * @param theme
  * @param value
  */
-export const getThemeProperty = (
-  theme:any,
-  value: any
-) => {
+export const getThemeProperty = (theme: any, value: any) => {
   if (theme) {
     if (typeof theme[value] !== 'undefined') {
       return theme[value];
@@ -65,8 +61,6 @@ export const getThemeProperty = (
   }
   return value;
 };
-
-
 
 export const stringToColor = (str: string) => {
   // Step 1: Create a hash from the string
