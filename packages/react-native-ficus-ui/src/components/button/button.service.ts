@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 // @ts-nocheck flemme de corriger alors que je vais tout cramer
 import color from 'color';
 
