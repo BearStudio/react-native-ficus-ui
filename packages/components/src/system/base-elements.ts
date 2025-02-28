@@ -4,6 +4,7 @@ import {
   ActivityIndicator as RNActivityIndicator,
   FlatList as RNFlatList,
   Image as RNImage,
+  Modal as RNModal,
   Pressable as RNPressable,
   SafeAreaView as RNSafeAreaView,
   ScrollView as RNScrollView,
@@ -33,6 +34,7 @@ export const baseRNElements = {
   Flatlist: RNFlatList,
   SectionList: RNSectionList,
   FlashList: ShopifyFlashList,
+  Modal: RNModal,
 } as const;
 
 export type BaseRNElements = keyof typeof baseRNElements;

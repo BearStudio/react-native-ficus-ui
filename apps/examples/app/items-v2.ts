@@ -19,6 +19,7 @@ import IconComponent from '@/app/components-v2/Icon';
 import ListComponent from '@/app/components-v2/List';
 import SectionListComponent from '@/app/components-v2/SectionList';
 import FlashListComponent from '@/app/components-v2/FlashList';
+import ModalComponent from '@/app/components-v2/Modal';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -47,4 +48,5 @@ export const components: ExampleComponentType[] = [
   { navigationPath: 'List', onScreenName: 'List', component: ListComponent },
   { navigationPath: 'SectionList', onScreenName: 'SectionList', component: SectionListComponent },
   { navigationPath: 'FlashList', onScreenName: 'FlashList', component: FlashListComponent },
+  { navigationPath: 'Modal', onScreenName: 'Modal', component: ModalComponent },
 ];

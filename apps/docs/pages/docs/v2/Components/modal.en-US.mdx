@@ -1,0 +1,63 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+import PropsTable from "@components/docs/props-table";
+
+# Modal
+
+Component to render a modal imported from `react-native-modal`
+
+https://github.com/react-native-modal/react-native-modal
+
+## Import
+
+```js
+import { Modal } from "@ficus-ui/native";
+```
+
+## Usage
+
+<CodeEditor code={`const TestModal = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  return (
+    <Box>
+      <Button
+        onPress={() => {
+          onOpen();
+        }}
+      >
+        Show Modal
+      </Button>
+
+      <Modal isOpen={isOpen}>
+        <Button
+          h={35}
+          w={35}
+          position="absolute"
+          top={50}
+          right={15}
+          borderRadius="full"
+          colorScheme="gray"
+          onPress={() => {
+            onClose();
+          }}
+        >
+          <Icon color="white" name="close" />
+        </Button>
+      </Modal>
+    </Box>
+  );
+}
+render(<TestModal />)`} noInline />
+
+## Props
+
+Extends every `Box` and `Modal` from React Native props.
+
+### `visible`
+<PropsTable
+  description="Boolean to indicate if the modal is opened or not."
+  prop={{ type: "boolean", required: true, default: "false" }}
+/>

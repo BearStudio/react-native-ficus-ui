@@ -16,5 +16,6 @@ export * from './icon';
 export * from './list';
 export * from './section-list';
 export * from './flash-list';
+export * from './modal';
 
 export { ThemeProvider } from '@ficus-ui/theme';
