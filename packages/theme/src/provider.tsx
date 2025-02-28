@@ -1,7 +1,9 @@
 import { FC, ReactNode, useMemo, useState } from 'react';
 
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import deepmerge from 'deepmerge';
 import { useWindowDimensions } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { FicusThemeWithMetadata, ThemeContext } from './context';
 import { theme } from './theme.default';
@@ -41,8 +43,11 @@ export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
   );
 
   return (
-    <ThemeContext.Provider value={contextValue}>
-      {children}
-    </ThemeContext.Provider>
+    // eslint-disable-next-line react-native/no-inline-styles
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <ThemeContext.Provider value={contextValue}>
+        <BottomSheetModalProvider>{children}</BottomSheetModalProvider>
+      </ThemeContext.Provider>
+    </GestureHandlerRootView>
   );
 };

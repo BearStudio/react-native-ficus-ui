@@ -1,3 +1,7 @@
+import {
+  BottomSheetModal as RNBottomSheetModal,
+  BottomSheetView as RNBottomSheetView,
+} from '@gorhom/bottom-sheet';
 import RNSlider from '@react-native-community/slider';
 import { FlashList as ShopifyFlashList } from '@shopify/flash-list';
 import {
@@ -35,6 +39,8 @@ export const baseRNElements = {
   SectionList: RNSectionList,
   FlashList: ShopifyFlashList,
   Modal: RNModal,
+  BottomSheetModal: RNBottomSheetModal,
+  BottomSheetView: RNBottomSheetView,
 } as const;
 
 export type BaseRNElements = keyof typeof baseRNElements;
