@@ -48,13 +48,13 @@ export const toStyleSheetObject: GetStyleObject =
 export interface FicusStyledOptions extends Dict {
   label?: string;
   baseStyle?: SystemStyleObject; // Base styles applied to the component.
-  exceptionProps?: string[]; // Make exception for conflict props when split
+  excludedProps?: string[]; // Make exception for conflict props when split
 }
 
 export function styled<
   T extends React.ComponentType<any> | RNElementType,
   P extends object = {},
->(component: T, options?: FicusStyledOptions & { exceptionProps?: string[] }) {
+>(component: T, options?: FicusStyledOptions) {
   const { baseStyle, exceptionProps } = options ?? {};
   const styleObject = toStyleSheetObject({ baseStyle });
 
@@ -67,7 +67,7 @@ export function styled<
 
       const [styleProps, restProps] = splitProps(
         rest,
-        (prop) => isStyleProp(prop) && !exceptionProps?.includes(prop)
+        (prop) => isStyleProp(prop) && !(prop in exceptionProps)
       );
       const AsComponent = as ? getComponent(as) : Component;
 
