@@ -9,8 +9,8 @@ const SpinnerComponent = () => {
       </Text>
       <Box mx="xl" mt="lg">
         <Spinner />
-        <Spinner color="red" size="small" />
-        <Spinner color="black" size="large" />
+        <Spinner color="red" size="large" />
+        <Spinner color="green" size="large" />
       </Box>
     </SafeAreaBox>
   );
