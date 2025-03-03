@@ -1,3 +1,4 @@
+import RNSlider from '@react-native-community/slider';
 import {
   ActivityIndicator as RNActivityIndicator,
   Image as RNImage,
@@ -25,6 +26,7 @@ export const baseRNElements = {
   TouchableWithoutFeedback: RNTouchableWithoutFeedback,
   Pressable: RNPressable,
   ActivityIndicator: RNActivityIndicator,
+  Slider: RNSlider,
 } as const;
 
 export type BaseRNElements = keyof typeof baseRNElements;
