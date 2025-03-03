@@ -1,20 +1,22 @@
 import React from 'react';
+
 import { render } from '@testing-library/react-native';
-import {SectionList} from '.';
+
+import { SectionList } from '.';
 import { Box } from '../box';
 import { Text } from '../text';
 
-const MySectionList = ({ sections }:any) => {
+const MySectionList = ({ sections }: any) => {
   return (
     <SectionList
       sections={sections}
-      keyExtractor={(item:any, index:any) => (item.title + index).toString()}
-      renderItem={({ item }:any) => (
+      keyExtractor={(item: any, index: any) => (item.title + index).toString()}
+      renderItem={({ item }: any) => (
         <Box p="sm">
           <Text>{item.title}</Text> {/* Access item.title here */}
         </Box>
       )}
-      renderSectionHeader={({ section: { title } }:any) => (
+      renderSectionHeader={({ section: { title } }: any) => (
         <Box bg="gray.300" p="sm">
           <Text>{title}</Text>
         </Box>
@@ -22,7 +24,6 @@ const MySectionList = ({ sections }:any) => {
     />
   );
 };
-
 
 describe('MySectionList component', () => {
   const sections = [
@@ -55,5 +56,4 @@ describe('MySectionList component', () => {
     expect(getByText('Item 3')).toBeTruthy();
     expect(getByText('Item 4')).toBeTruthy();
   });
-
 });
