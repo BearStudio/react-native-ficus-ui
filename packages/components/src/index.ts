@@ -14,5 +14,6 @@ export * from './spinner';
 export * from './slider';
 export * from './icon';
 export * from './list';
+export * from './section-list';
 
 export { ThemeProvider } from '@ficus-ui/theme';
