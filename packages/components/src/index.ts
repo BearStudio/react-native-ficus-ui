@@ -15,5 +15,6 @@ export * from './slider';
 export * from './icon';
 export * from './list';
 export * from './section-list';
+export * from './flash-list';
 
 export { ThemeProvider } from '@ficus-ui/theme';
