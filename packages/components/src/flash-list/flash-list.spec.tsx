@@ -1,20 +1,19 @@
 import React from 'react';
 
 import { render } from '@testing-library/react-native';
+
 import { FlashList } from '.';
 import { Text } from '../text';
 
 jest.mock('react-native-toast-message', () => 'Toast');
 
 describe('FlashList component', () => {
-
-
   it('should render component passed to children', () => {
     render(
       <FlashList
         data={[{ id: 0, text: 'I love Ficus UI (forked from Magnus UI)' }]}
-        renderItem={({ item }:any) => <Text>{item.text}</Text>}
-        keyExtractor={(item:any) => item.id}
+        renderItem={({ item }: any) => <Text>{item.text}</Text>}
+        keyExtractor={(item: any) => item.id}
         estimatedItemSize={200}
       />
     );
