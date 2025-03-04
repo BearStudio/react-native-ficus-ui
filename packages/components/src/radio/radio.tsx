@@ -60,15 +60,21 @@ export const Radio = forwardRef<RadioProps, 'Pressable'>(
     } = props;
     const [textStyles, restStyles] = splitTextProps(styles);
     const [checked, setChecked] = useState<boolean>(
-      props.isChecked || props.defaultChecked ? true : false
+      isChecked || props.defaultChecked ? true : false
     );
     const [isFocused, setIsFocused] = useState(false);
+    useEffect(() => {
+      if ('isChecked' in props) {
+        setChecked(isChecked ?? false);
+      }
+    }, [props]);
     const onPress = (event: any) => {
       if (isDisabled) {
         return;
       }
-
-      setChecked(!checked);
+      if (!('isChecked' in props)) {
+        setChecked(true);
+      }
 
       if (isFunction(onPressProp)) {
         onPressProp(event);
@@ -158,12 +164,18 @@ export const Radio = forwardRef<RadioProps, 'Pressable'>(
               h={getThemeProperty(theme.radio, size)}
               w={getThemeProperty(theme.radio, size)}
               borderWidth={1}
+              borderRadius={getThemeProperty(theme.radio, size)}
               borderColor={`${colorScheme}.600`}
               alignItems="center"
               justifyContent="center"
             >
               {/* {iconObj} */}
-              <ficus.Text>{checked ? 'X' : ''}</ficus.Text>
+              <ficus.View
+                h={getThemeProperty(theme.radio, size) / 2}
+                w={getThemeProperty(theme.radio, size) / 2}
+                borderRadius={getThemeProperty(theme.radio, size)}
+                bg={checked ? 'black' : 'transparent'}
+              />
             </ficus.View>
           </ficus.View>
           {children && typeof children === 'string' ? (
