@@ -1,4 +1,3 @@
-import { theme } from '@ficus-ui/theme';
 import { renderWithTheme as render } from '@test-utils';
 import { fireEvent } from '@testing-library/react-native';
 
