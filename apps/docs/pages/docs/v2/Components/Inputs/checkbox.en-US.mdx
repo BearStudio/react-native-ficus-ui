@@ -1,0 +1,169 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+import PropsTable from "@components/docs/props-table";
+
+# Checkbox
+
+Component to render a checkbox input.
+
+## Import
+
+```js
+import { Checkbox, CheckboxGroup } from 'react-native-ficus-ui';
+```
+
+## Usage
+
+### Simple checkbox
+
+<CodeEditor code={`<VStack>
+  <Checkbox value={1} prefix={<Text flex={1}>Option 1</Text>} />
+  <Checkbox value={2} prefix={<Text flex={1}>Option 2</Text>} />
+  <Checkbox
+    value={3}
+    prefix={<Text flex={1}>Option 3</Text>}
+    colorScheme="red"
+  />
+  <Checkbox
+    value={4}
+    prefix={<Text flex={1}>Option 4</Text>}
+    colorScheme="pink"
+  />
+  <Checkbox value={5} prefix={<Text flex={1}>Option 5</Text>} isLoading />
+</VStack>`} />
+
+### Checkbox sizes
+
+<CodeEditor code={`<VStack>
+  <Checkbox value={1}>Option 1</Checkbox>
+  <Checkbox value={2} size="lg">
+    Option 2
+  </Checkbox>
+  <Checkbox value={3} size="lg" isLoading>
+    Option 3
+  </Checkbox>
+</VStack>`} />
+
+### Checkbox disabled
+
+<CodeEditor code={`<Checkbox value={1} isDisabled>
+  Option 1
+</Checkbox>`} />
+
+### Checkbox group
+
+<CodeEditor code={`<CheckboxGroup colorScheme="green">
+  <Checkbox value={1}>Option 1</Checkbox>
+  <Checkbox value={2}>Option 2</Checkbox>
+</CheckboxGroup>`} />
+
+### Custom render
+
+<CodeEditor code={`<CheckboxGroup flexDirection="row">
+  {['Option 1', 'Option 2', 'Option 3'].map((item) => (
+    <Checkbox value={item}>
+      {({ isChecked }) => (
+        <Badge
+          variant={isChecked ? 'solid' : 'subtle'}
+          colorScheme="pink"
+          fontSize="lg"
+          px="md"
+          py="md"
+          borderRadius="full"
+          mx="sm"
+        >
+          {item}
+        </Badge>
+      )}
+    </Checkbox>
+  ))}
+</CheckboxGroup>`} />
+
+## Props
+
+### Checkbox props
+
+Extends every `Box` props.
+
+### `colorScheme`
+<PropsTable
+  description="The colorScheme property will define the checkbox color."
+  prop={{ type: "string", required: false, default: "blue" }}
+/>
+
+### `defaultChecked`
+<PropsTable
+  description="Boolean to indicate if checkbox should be checked by default."
+  prop={{ type: "boolean", required: false, default: false }}
+/>
+
+### `isChecked`
+<PropsTable
+  description="Boolean to indicate if checkbox is checked."
+  prop={{ type: "boolean", required: false, default: false }}
+/>
+
+### `isDisabled`
+<PropsTable
+  description="Boolean to indicate if checkbox is disabled."
+  prop={{ type: "boolean", required: false, default: false }}
+/>
+
+### `isLoading`
+<PropsTable
+  description="Boolean to indicate if checkbox should display a loader/spinner."
+  prop={{ type: "boolean", required: false, default: false }}
+/>
+
+### `onChecked`
+<PropsTable
+  description="Function called when checked status changes on checkbox."
+  prop={{ type: "(newValue: boolean) => void", required: false }}
+/>
+
+### `icon`
+<PropsTable
+  description="Custom icon component to replace default checkbox icon."
+  prop={{ type: "React.ReactNode", required: false }}
+/>
+
+### `iconColor`
+<PropsTable
+  description="Custom icon color."
+  prop={{ type: "string", required: false }}
+/>
+
+### `size`
+<PropsTable
+  description="Size of checkbox."
+  prop={{ type: "number | 'sm' | 'lg'", required: false }}
+/>
+
+### RadioGroup props
+
+### `onChange`
+<PropsTable
+  description="Function called when checked value changes."
+  prop={{ type: "(value: any) => void", required: false }}
+/>
+
+### `value`
+<PropsTable
+  description="Value for the checkbox group."
+  prop={{ type: "any", required: false }}
+/>
+
+### `defaultValue`
+<PropsTable
+  description="Default value for the checkbox group."
+  prop={{ type: "any", required: false }}
+/>
+
+### `colorScheme`
+<PropsTable
+  description="The colorScheme property will define group checkboxes color."
+  prop={{ type: "string", required: false, default: "blue" }}
+/>

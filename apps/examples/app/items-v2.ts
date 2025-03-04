@@ -12,6 +12,7 @@ import TouchableOpacityComponent from './components-v2/TouchableOpacity';
 import TouchableWithoutFeedbackComponent from './components-v2/TouchableWithoutFeedback';
 import PressableComponent from './components-v2/Pressable';
 import RadioComponent from '@/app/components-v2/Radio';
+import CheckboxComponent from '@/app/components-v2/Checkbox';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -33,4 +34,5 @@ export const components: ExampleComponentType[] = [
   { navigationPath: 'TouchableWithoutFeedback', onScreenName: 'TouchableWithoutFeedback', component: TouchableWithoutFeedbackComponent },
   { navigationPath: 'Pressable', onScreenName: 'Pressable', component: PressableComponent },
   { navigationPath: 'Radio', onScreenName: 'Radio', component: RadioComponent },
+  { navigationPath: 'Checkbox', onScreenName: 'Checkbox', component: CheckboxComponent },
 ]
