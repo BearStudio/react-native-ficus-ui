@@ -8,5 +8,6 @@ export * from './center';
 export * from './badge';
 export * from './touchables';
 export * from './pressable';
+export * from './radio';
 
 export { ThemeProvider } from '@ficus-ui/theme';
