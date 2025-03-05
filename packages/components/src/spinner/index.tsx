@@ -8,6 +8,7 @@ export const BaseSpinner = ficus('ActivityIndicator', {
   excludedProps: ['color'],
 });
 
+// TODO: Add to theme for default style ?
 export const Spinner = forwardRef<SpinnerProps, 'Image'>((props, ref) => {
   const { color = 'black', ...rest } = props;
 
