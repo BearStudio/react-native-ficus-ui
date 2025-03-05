@@ -9,5 +9,6 @@ export * from './badge';
 export * from './touchables';
 export * from './image';
 export * from './pressable';
+export * from './divider';
 
 export { ThemeProvider } from '@ficus-ui/theme';

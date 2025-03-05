@@ -12,6 +12,7 @@ import TouchableOpacityComponent from './components-v2/TouchableOpacity';
 import TouchableWithoutFeedbackComponent from './components-v2/TouchableWithoutFeedback';
 import ImageComponent from '@/app/components-v2/Image';
 import PressableComponent from './components-v2/Pressable';
+import DividerComponent from '@/app/components-v2/Divider';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -32,6 +33,6 @@ export const components: ExampleComponentType[] = [
   { navigationPath: 'TouchableOpacity', onScreenName: 'TouchableOpacity', component: TouchableOpacityComponent },
   { navigationPath: 'TouchableWithoutFeedback', onScreenName: 'TouchableWithoutFeedback', component: TouchableWithoutFeedbackComponent },
   { navigationPath: 'Image', onScreenName: 'Image', component: ImageComponent },
-];
+  { navigationPath: 'Divider', onScreenName: 'Divider', component: DividerComponent },
   { navigationPath: 'Pressable', onScreenName: 'Pressable', component: PressableComponent },
-]
+];
