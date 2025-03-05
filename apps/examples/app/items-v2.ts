@@ -11,6 +11,7 @@ import TouchableHighlightComponent from './components-v2/TouchableHighlight';
 import TouchableOpacityComponent from './components-v2/TouchableOpacity';
 import TouchableWithoutFeedbackComponent from './components-v2/TouchableWithoutFeedback';
 import ImageComponent from '@/app/components-v2/Image';
+import PressableComponent from './components-v2/Pressable';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -32,3 +33,5 @@ export const components: ExampleComponentType[] = [
   { navigationPath: 'TouchableWithoutFeedback', onScreenName: 'TouchableWithoutFeedback', component: TouchableWithoutFeedbackComponent },
   { navigationPath: 'Image', onScreenName: 'Image', component: ImageComponent },
 ];
+  { navigationPath: 'Pressable', onScreenName: 'Pressable', component: PressableComponent },
+]

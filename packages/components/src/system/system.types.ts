@@ -1,5 +1,6 @@
 import {
   SystemProps as BaseSystemProps,
+  Dict,
   SystemStyleObject,
   TextStyleProps,
 } from '@ficus-ui/style-system';
@@ -12,6 +13,12 @@ export type FicusProps<T extends RNElementType> = SystemProps<T> & {
    * @private
    */
   __styles?: SystemStyleObject;
+
+  /**
+   * Used for custom React Native style functions.
+   * e.g. Pressable API `style`
+   */
+  __stylesFn?: (props: Dict) => any;
 };
 
 export type SystemProps<T extends RNElementType> = T extends 'Text'
@@ -31,7 +38,7 @@ export type PropsOf<T extends RNElementType> = Omit<
 export type OmitCommonProps<
   Target,
   OmitAdditionalProps extends keyof any = never,
-> = Omit<Target, 'as' | OmitAdditionalProps>;
+> = Omit<Target, 'as' | 'android_ripple' | OmitAdditionalProps>;
 
 export type RightJoinProps<
   SourceProps extends object = {},

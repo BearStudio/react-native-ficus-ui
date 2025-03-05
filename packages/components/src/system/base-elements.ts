@@ -1,5 +1,6 @@
 import {
   Image as RNImage,
+  Pressable as RNPressable,
   SafeAreaView as RNSafeAreaView,
   ScrollView as RNScrollView,
   Text as RNText,
@@ -21,6 +22,7 @@ export const baseRNElements = {
   TouchableHighlight: RNTouchableHighlight,
   TouchableOpacity: RNTouchableOpacity,
   TouchableWithoutFeedback: RNTouchableWithoutFeedback,
+  Pressable: RNPressable,
 } as const;
 
 export type BaseRNElements = keyof typeof baseRNElements;

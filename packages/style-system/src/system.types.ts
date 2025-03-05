@@ -10,6 +10,7 @@ import {
   RadiusProps,
   SpaceProps,
 } from './config';
+import { PseudoStyleKey } from './pseudos';
 import { RNStyleSheet, RNStyleSheetProperties } from './utils/prop-config';
 import { Dict, ResponsiveValue } from './utils/types';
 
@@ -41,6 +42,13 @@ export type StyleSheetWithMultiValues = {
     : PropertyValue<K>;
 };
 
+type PseudoSelectorDefinition<D> = D | RecursivePseudo<D>;
+
+export type RecursivePseudo<D> = {
+  // eslint-disable-next-line no-unused-vars
+  [K in PseudoStyleKey]?: PseudoSelectorDefinition<D> & D;
+};
+
 type StyleSheetDefinition<D> =
   | D
   | string
@@ -51,10 +59,15 @@ export interface RecursiveStyleSheetSelector<D> {
 }
 
 export type RecursiveStyleSheetObject<D> = D &
-  (D | RecursiveStyleSheetSelector<D>);
+  (D | RecursivePseudo<D> | RecursiveStyleSheetSelector<D>);
 
 export type SystemStyleObject =
   RecursiveStyleSheetObject<StyleSheetWithMultiValues>;
+
+type PseudoProps = {
+  // eslint-disable-next-line no-unused-vars
+  [K in PseudoStyleKey]?: SystemStyleObject;
+};
 
 type Assign<T, U> = Omit<T, keyof U> & U;
 
@@ -71,7 +84,7 @@ type Assign<T, U> = Omit<T, keyof U> & U;
  *
  */
 export type SystemProps<ExtraProps extends Dict = {}> = Assign<
-  StyleProps,
+  StyleProps & PseudoProps,
   ExtraProps
 >;
 
