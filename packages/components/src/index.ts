@@ -13,5 +13,6 @@ export * from './divider';
 export * from './spinner';
 export * from './slider';
 export * from './icon';
+export * from './list';
 
 export { ThemeProvider } from '@ficus-ui/theme';
