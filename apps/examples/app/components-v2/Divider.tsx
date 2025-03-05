@@ -1,7 +1,7 @@
 import { Divider, Box, Text, SafeAreaBox } from '@ficus-ui/native';
 import ExampleSection from '@/src/ExampleSection';
 
-const DividerComponent = () => {
+  const DividerComponent = () => {
   return (
     <SafeAreaBox>
       <Text mx="xl" fontSize="4xl">
@@ -40,7 +40,7 @@ const DividerComponent = () => {
           <Text>Test text</Text>
           </Box>
         </ExampleSection>
-   
+
       </Box>
     </SafeAreaBox>
   );
