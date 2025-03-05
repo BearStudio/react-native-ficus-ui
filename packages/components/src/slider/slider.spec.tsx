@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { fireEvent, render } from '@testing-library/react-native';
+import { renderWithTheme as render } from '@test-utils';
+import { fireEvent } from '@testing-library/react-native';
 
 import { Slider } from '.';
 

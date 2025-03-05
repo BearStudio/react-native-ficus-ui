@@ -32,8 +32,8 @@ describe('Icon component', () => {
         testID="icon-size"
         name="accessibility"
         color="blue.700"
-        fontSize="6xl"
-        fontFamily="Ionicons"
+        size="6xl"
+        iconSet="Ionicons"
       />
     );
     expect(getByTestId('icon-size').props.children.props.size).toBe(
@@ -42,7 +42,7 @@ describe('Icon component', () => {
   });
 
   it('should use the correct icon set based on fontFamily', () => {
-    render(<Icon testID="icon-font" name="home" fontFamily="Feather" />);
+    render(<Icon testID="icon-font" name="home" iconSet="Feather" />);
 
     expect(getIconSet).toHaveBeenCalledWith('Feather');
   });
