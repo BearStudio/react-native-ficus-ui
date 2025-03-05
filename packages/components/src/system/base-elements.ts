@@ -1,4 +1,5 @@
 import RNSlider from '@react-native-community/slider';
+import { FlashList as ShopifyFlashList } from '@shopify/flash-list';
 import {
   ActivityIndicator as RNActivityIndicator,
   FlatList as RNFlatList,
@@ -31,6 +32,7 @@ export const baseRNElements = {
   Slider: RNSlider,
   Flatlist: RNFlatList,
   SectionList: RNSectionList,
+  FlashList: ShopifyFlashList,
 } as const;
 
 export type BaseRNElements = keyof typeof baseRNElements;
