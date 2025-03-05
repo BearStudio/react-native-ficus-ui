@@ -15,7 +15,7 @@ const SectionListComponent = () => {
       title: "Drinks",
       data: ["Water", "Coke", "Beer"],
     },
-  ];
+  ]
   return (
     <SafeAreaBox>
       <Text mx="xl" fontSize="4xl">
@@ -26,7 +26,7 @@ const SectionListComponent = () => {
           bg="gray.200"
           p="xl"
           sections={DATA}
-          keyExtractor={(item:any, index:number) => (item.title + index).toString()}
+          keyExtractor={(item:any, index:number) => `${item.title}-${index}`}
           renderItem={({ item }:any) => (
             <Box p="sm">
               <Text>{item}</Text>
