@@ -55,7 +55,7 @@ export function styled<
   T extends React.ComponentType<any> | RNElementType,
   P extends object = {},
 >(component: T, options?: FicusStyledOptions) {
-  const { baseStyle, exceptionProps } = options ?? {};
+  const { baseStyle, excludedProps = [] } = options ?? {};
   const styleObject = toStyleSheetObject({ baseStyle });
 
   const Component = getComponent(component);
@@ -65,10 +65,12 @@ export function styled<
       const { children, style, as, __styles, __stylesFn, ...rest } = props;
       const { theme } = useTheme();
 
+      const isExcludedProp = (prop: string) => excludedProps.includes(prop);
       const [styleProps, restProps] = splitProps(
         rest,
-        (prop) => isStyleProp(prop) && !(prop in exceptionProps)
+        (prop) => isStyleProp(prop) && !isExcludedProp(prop)
       );
+
       const AsComponent = as ? getComponent(as) : Component;
 
       const propsWithTheme = {

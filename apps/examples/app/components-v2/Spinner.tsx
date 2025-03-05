@@ -10,7 +10,7 @@ const SpinnerComponent = () => {
       <Box mx="xl" mt="lg">
         <Spinner />
         <Spinner color="red" size="large" />
-        <Spinner color="green" size="large" />
+        <Spinner color="green.500" size="large" />
       </Box>
     </SafeAreaBox>
   );
