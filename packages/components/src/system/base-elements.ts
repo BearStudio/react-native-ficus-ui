@@ -6,6 +6,7 @@ import {
   Pressable as RNPressable,
   SafeAreaView as RNSafeAreaView,
   ScrollView as RNScrollView,
+  SectionList as RNSectionList,
   Text as RNText,
   TouchableHighlight as RNTouchableHighlight,
   TouchableOpacity as RNTouchableOpacity,
@@ -29,6 +30,7 @@ export const baseRNElements = {
   ActivityIndicator: RNActivityIndicator,
   Slider: RNSlider,
   Flatlist: RNFlatList,
+  SectionList: RNSectionList,
 } as const;
 
 export type BaseRNElements = keyof typeof baseRNElements;
