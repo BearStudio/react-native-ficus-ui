@@ -1,4 +1,4 @@
 export { theme, type Theme } from './theme.default';
-export { ThemeProvider } from './provider';
+export { ThemeProvider, type ThemeProviderProps } from './provider';
 export * from './hook';
 export * from './utils';

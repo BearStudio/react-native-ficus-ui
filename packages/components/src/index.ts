@@ -17,5 +17,6 @@ export * from './list';
 export * from './section-list';
 export * from './flash-list';
 export * from './modal';
+export * from './draggable-modal';
 
-export { ThemeProvider } from '@ficus-ui/theme';
+export { FicusProvider, type FicusProviderProps } from './system';
