@@ -11,21 +11,21 @@ const IconComponent = () => {
       <ScrollBox>
         <ExampleSection name="default">
           <HStack spacing={10}>
-            <Icon name="accessibility" color="blue.700" fontSize="6xl" fontFamily="Ionicons" />
+            <Icon name="accessibility" color="blue.700" size="6xl" iconSet="Ionicons" />
             <Icon
               name="star"
               color="yellow.700"
-              fontSize="6xl"
-              fontFamily="Ionicons"
+              size="6xl"
+              iconSet="Ionicons"
             />
           </HStack>
         </ExampleSection>
         <ExampleSection name="sizes">
           <HStack spacing={10}>
-            <Icon name="alarm" color="red.500" fontSize="md"  />
-            <Icon name="analytics" color="teal.500" fontSize="xl" />
-            <Icon name="heart" color="red.500" fontSize="2xl" />
-            <Icon name="brush" color="blue.700" fontSize="6xl" />
+            <Icon name="alarm" color="red.500" size="md"  />
+            <Icon name="analytics" color="teal.500" size="xl" />
+            <Icon name="heart" color="red.500" size="2xl" />
+            <Icon name="brush" color="blue.700" size="6xl" />
           </HStack>
         </ExampleSection>
         <ExampleSection name="back button">
@@ -36,8 +36,8 @@ const IconComponent = () => {
               borderRadius="full"
               name="arrow-back"
               color="yellow.700"
-              fontSize="2xl"
-              fontFamily="Ionicons"
+              size="2xl"
+              iconSet="Ionicons"
             />
           </HStack>
         </ExampleSection>
