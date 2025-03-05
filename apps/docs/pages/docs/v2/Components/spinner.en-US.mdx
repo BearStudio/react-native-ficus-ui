@@ -1,0 +1,44 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+import PropsTable from "@components/docs/props-table";
+
+# Spinner
+
+Simple spinner component that is based on react native `ActivityIndicator` component.
+
+## Import
+
+```js
+import { Spinner } from "@ficus-ui/native";
+```
+
+## Usage
+
+<CodeEditor code={`<HStack spacing={10}>
+  <Spinner />
+  <Spinner color="blue.500" size="sm" />
+  <Spinner color="red.500" size="lg" />
+  <Spinner color="green.500" size="lg" />
+  <Spinner color="pink.500" size="lg" />
+</HStack>`} />
+
+## Props
+
+Extends every `Box` props and react native `ActivityIndicator` component.
+
+https://reactnative.dev/docs/activityindicator#props
+
+### `color`
+<PropsTable
+  description="The color property for `ActivityIndicator`."
+  prop={{ type: "string", required: false }}
+/>
+
+### `size`
+<PropsTable
+  description="The size property for `ActivityIndicator`."
+  prop={{ type: "number, string", required: false }}
+/>
