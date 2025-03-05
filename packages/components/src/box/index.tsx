@@ -1,12 +1,27 @@
-import { type NativeFicusProps, ficus } from '../system';
+import { ImageSourcePropType } from 'react-native';
 
-// TODO: Improve Box as Image API from V1
-export interface BoxProps extends NativeFicusProps<'View'> {}
+import { type NativeFicusProps, ficus, forwardRef } from '../system';
 
-export const Box = ficus('View');
+interface BoxOptions {
+  bgImg?: ImageSourcePropType;
+  bgMode?: 'contain' | 'cover' | 'stretch' | 'repeat';
+}
 
-export const Circle = ficus('View', {
-  baseStyle: {
-    borderRadius: 'full',
-  },
+export interface BoxProps extends NativeFicusProps<'View'>, BoxOptions {}
+
+/**
+ * Boxs help you easily create flexible and automatically distributed layouts
+ *
+ * You can Box elements in the horizontal or vertical direction,
+ * and apply a space or/and divider between each element.
+ *
+ */
+export const Box = forwardRef<BoxProps, 'View'>((props, ref) => {
+  const { bgImg, bgMode, ...rest } = props;
+  if (bgImg) {
+    return (
+      <ficus.Image ref={ref} source={bgImg} resizeMode={bgMode} {...rest} />
+    );
+  }
+  return <ficus.View ref={ref} {...rest} />;
 });

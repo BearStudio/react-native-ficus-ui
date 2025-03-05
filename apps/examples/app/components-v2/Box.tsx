@@ -232,14 +232,14 @@ const BoxComponent = () => {
         </ExampleSection>
 
         <ExampleSection name="background image">
-          <Box
-            as="Image"
+          <Box           
             mt="sm"
             borderRadius="md"
             h={150}
-            source={{
+            bgImg={{
               uri: 'https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Monochrome-Type-Simple-Background-Image.jpg',
             }}
+            
           />
         </ExampleSection>
       </ScrollBox>
