@@ -5,11 +5,11 @@ import { ResponsiveValue } from '../utils/types';
 export const position: Config<PositionProps> = {
   position: true,
   top: t.space('top'),
-  right: t.space('top'),
-  bottom: t.space('top'),
-  left: t.space('top'),
-  zIndex: t.space('top'),
-  elevation: t.space('top'),
+  right: t.space('right'),
+  bottom: t.space('bottom'),
+  left: t.space('left'),
+  zIndex: true,
+  elevation: t.space('elevation'),
 };
 
 export interface PositionProps {

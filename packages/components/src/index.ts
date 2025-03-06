@@ -18,5 +18,6 @@ export * from './section-list';
 export * from './flash-list';
 export * from './modal';
 export * from './draggable-modal';
+export * from './avatar';
 
 export { FicusProvider, type FicusProviderProps } from './system';
