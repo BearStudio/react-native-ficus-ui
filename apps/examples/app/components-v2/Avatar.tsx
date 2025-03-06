@@ -5,8 +5,8 @@ import { Avatar, AvatarBadge, AvatarGroup, HStack, ScrollBox, Text } from '@ficu
 
 const AvatarComponent = () => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <ScrollBox>
+    <SafeAreaView style={{ flex: 1 }} >
+      <ScrollBox bg="white">
       <Text mx="xl" fontSize="4xl">
         Avatar component
       </Text>

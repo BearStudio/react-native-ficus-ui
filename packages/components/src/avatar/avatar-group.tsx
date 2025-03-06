@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { type ReactElement, cloneElement, isValidElement } from 'react';
 
-import { ThemingProps } from '@ficus-ui/style-system';
+import { compact } from '@chakra-ui/utils';
+import {
+  SystemStyleObject,
+  ThemingProps,
+  omitThemingProps,
+} from '@ficus-ui/style-system';
 
 import { HStack } from '../stack';
-import { NativeFicusProps, forwardRef } from '../system';
+import { NativeFicusProps, forwardRef, useMultiStyleConfig } from '../system';
+import { Avatar } from './avatar';
 
 interface AvatarGroupOptions {
   max?: number;
@@ -11,54 +17,75 @@ interface AvatarGroupOptions {
 
 export interface AvatarGroupProps
   extends NativeFicusProps<'View'>,
-    ThemingProps<'AvatarGroup'>,
+    ThemingProps<'Avatar'>,
     AvatarGroupOptions {}
 
+/**
+ * TODO: Possible improvments
+ */
 export const AvatarGroup = forwardRef<AvatarGroupProps, 'View'>((props) => {
-  const { children, max = React.Children.count(children), ...rest } = props;
-  const renderChildren = () => {
-    const totalChildren = React.Children.count(children);
-    const otherItemsCount = totalChildren - max;
+  const styles = useMultiStyleConfig('Avatar', props);
 
-    return React.Children.map(
-      children as any,
-      (child: React.ReactElement, index: number) => {
-        const reverseIndex = totalChildren - index;
+  const {
+    children,
+    max = null,
+    borderRadius = 'full',
+    borderColor = 'white',
+    ...rest
+  } = omitThemingProps(props);
+  /**
+   * Only keep children that are `Avatar` component
+   */
+  const avatarChildren = React.Children.toArray(children).filter(
+    (element) => isValidElement(element) && element.type === Avatar
+  ) as ReactElement[];
 
-        if (index > max) {
-          return <></>;
-        }
+  const truncatedChildren =
+    max != null ? avatarChildren.slice(0, max) : avatarChildren;
 
-        if (index === max) {
-          return React.cloneElement(child, {
-            zIndex: reverseIndex,
-            elevation: reverseIndex,
-            bg: 'gray.200',
-            color: 'gray.800',
-            size: child.props.size ? child.props.size : props.size,
-            ml: index > 0 ? '-lg' : 0,
-            borderWidth: 2,
-            borderColor: 'white',
-            position: 'relative',
-            src: '',
-            name: '',
-            getInitials: () =>
-              `+${otherItemsCount > 99 ? 99 : otherItemsCount}`,
-          });
-        }
+  const excess = max != null ? avatarChildren.length - max : 0;
 
-        return React.cloneElement(child, {
-          zIndex: reverseIndex,
-          elevation: reverseIndex,
-          size: child.props.size ? child.props.size : props.size,
-          ml: index > 0 ? '-lg' : 0,
-          borderWidth: 2,
-          borderColor: 'white',
-          position: 'relative',
-        });
-      }
-    );
+  const reversedChildren = truncatedChildren.reverse();
+  const clones = reversedChildren.map((child, index) => {
+    const isFirstAvatar = index === 0;
+
+    const childProps: SystemStyleObject = {
+      ml: isFirstAvatar ? 0 : '-lg',
+      borderWidth: 3,
+      borderColor,
+      borderRadius,
+      size: child?.props.size ? child.props.size : props.size,
+    };
+
+    return cloneElement(child, compact(childProps));
+  });
+
+  const groupStyles: SystemStyleObject = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    flexDirection: 'row-reverse',
+    spacing: '0',
+    ...styles.group,
   };
 
-  return <HStack {...rest}>{renderChildren()}</HStack>;
+  const excessStyles: SystemStyleObject = {
+    borderRadius,
+    ml: '-lg',
+    ...styles.excessLabel,
+  };
+
+  return (
+    <HStack role="group" __styles={groupStyles} {...rest}>
+      {clones}
+      {excess > 0 && (
+        <Avatar
+          __styles={excessStyles}
+          name={`+${excess}`}
+          colorScheme="gray"
+          getInitials={(excessValue) => excessValue}
+        />
+      )}
+    </HStack>
+  );
 });

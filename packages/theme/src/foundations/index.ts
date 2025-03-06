@@ -1,4 +1,3 @@
-import avatar from './avatar';
 import breakpoints from './breakpoints';
 import colors from './colors';
 import radius from './radius';
@@ -12,6 +11,5 @@ export const foundations = {
   radius,
   shadows,
   space,
-  avatar,
   ...typography,
 };
