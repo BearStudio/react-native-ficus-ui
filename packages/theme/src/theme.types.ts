@@ -55,7 +55,6 @@ interface Foundations extends Typography {
   radius?: RecursiveObject;
   shadows?: RecursiveObject;
   space?: RecursiveObject;
-  avatar?: RecursiveObject;
 }
 
 export interface FicusTheme extends Foundations {
