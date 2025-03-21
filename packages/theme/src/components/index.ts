@@ -1,5 +1,6 @@
 import { avatarTheme } from './avatar';
 import { badgeTheme } from './badge';
+import { checkboxTheme } from './checkbox';
 import { sliderTheme } from './slider';
 
 export { avatarTheme as Avatar } from './avatar';
@@ -11,4 +12,5 @@ export const components = {
   Avatar: avatarTheme,
   Badge: badgeTheme,
   Slider: sliderTheme,
+  Checkbox: checkboxTheme,
 };

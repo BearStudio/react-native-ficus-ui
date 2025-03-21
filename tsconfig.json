@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    /** Base Options */
     "esModuleInterop": true,
     "target": "ESNext",
     "moduleDetection": "force",
@@ -8,25 +7,30 @@
     "isolatedModules": true,
     "moduleResolution": "node10",
     "composite": true,
-
-    /** For transpiling with TypeScript */
     "module": "ESNext",
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
-
-    /** Best practices */
     "strict": true,
     "skipLibCheck": true,
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "noImplicitOverride": true,
     "noUncheckedIndexedAccess": true,
-
-    /** JSX */
     "jsx": "react-native",
-    "types": ["node", "jest"]
+    "types": [
+      "node",
+      "jest"
+    ]
   },
-  "include": ["packages", "__tests__"],
-  "exclude": ["node_modules", "apps", "dist"]
+  "include": [
+    "packages",
+    "__tests__"
+  ],
+  "exclude": [
+    "node_modules",
+    "apps",
+    "dist"
+  ],
+  "extends": "expo/tsconfig.base"
 }

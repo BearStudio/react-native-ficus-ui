@@ -32,7 +32,27 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
+      ],[
+        "expo-font",
+        {
+          "fonts": [
+            "./node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
+            "./node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+            "./node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+            "./node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+            "./node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+            "./node_modules/react-native-vector-icons/Fonts/FontAwesome5.ttf",
+            "./node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+            "./node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+            "./node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+            "./node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+            "./node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+            "./node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+            "./node_modules/react-native-vector-icons/Fonts/Zocial.ttf"
+          ]
+        }
       ]
+
     ],
     "experiments": {
       "typedRoutes": true

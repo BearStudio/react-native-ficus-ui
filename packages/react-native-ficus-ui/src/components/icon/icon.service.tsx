@@ -1,9 +1,9 @@
+import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
 import IconEntypo from 'react-native-vector-icons/Entypo';
 import IconEvilIcons from 'react-native-vector-icons/EvilIcons';
 import IconFeather from 'react-native-vector-icons/Feather';
-import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
-import IconFontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import IconFoundation from 'react-native-vector-icons/Foundation';
 import IconIonicons from 'react-native-vector-icons/Ionicons';
 import IconMaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -28,9 +28,9 @@ export const getIconSet = (fontFamily: iconFontFamilyType = 'FontAwesome') => {
     case 'Feather':
       return IconFeather;
     case 'FontAwesome':
-      return IconFontAwesome;
+      return FontAwesome;
     case 'FontAwesome5':
-      return IconFontAwesome5;
+      return FontAwesome5;
     case 'Foundation':
       return IconFoundation;
     case 'Ionicons':
