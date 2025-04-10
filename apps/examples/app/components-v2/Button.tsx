@@ -1,5 +1,4 @@
 import { Button, HStack, SafeAreaBox, ScrollBox, Stack, Text } from '@ficus-ui/native';
-import { ScrollView } from 'react-native';
 import { Icon } from 'react-native-ficus-ui';
 
 import ExampleSection from '@/src/ExampleSection';
@@ -101,7 +100,7 @@ const ButtonComponent = () => {
         <ExampleSection name="prefix and suffix">
           <Stack spacing={10}>
             <Button colorScheme="green">
-              <Icon name="android1" color="white" fontSize="xl" mr="sm" />{' '}
+              <Icon name="android1" color="white" fontSize="xl" mr="sm" />
               Button
             </Button>
             <Button colorScheme="green">

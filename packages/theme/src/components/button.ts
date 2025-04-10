@@ -37,7 +37,7 @@ const variantOutline = defineStyle((props) => {
   return {
     borderWidth: 1,
     borderStyle: 'solid',
-    borderColor: c === 'gray' ? 'gray.200' : 'currentColor',
+    borderColor: `${c}.500`,
     ...runIfFn(variantGhost, props),
   };
 });
