@@ -145,7 +145,7 @@ The `package.json` file contains various scripts for common tasks:
 
 - `pnpm typecheck`: type-check files with TypeScript.
 - `pnpm lint`: lint files with ESLint.
-- `pnpm test:components`: run the library's components unit tests with Jest.
+- `pnpm test`: run the library's components unit tests with Jest.
 - `pnpm examples start`: start the Metro server for the example app.
 - `pnpm examples android`: run the example app on Android.
 - `pnpm examples ios`: run the example app on iOS.

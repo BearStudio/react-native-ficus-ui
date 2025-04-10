@@ -9,6 +9,7 @@ export * from './badge';
 export * from './touchables';
 export * from './image';
 export * from './pressable';
+export * from './button';
 export * from './divider';
 export * from './spinner';
 export * from './slider';

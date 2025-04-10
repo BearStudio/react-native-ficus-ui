@@ -12,6 +12,7 @@ import TouchableOpacityComponent from './components-v2/TouchableOpacity';
 import TouchableWithoutFeedbackComponent from './components-v2/TouchableWithoutFeedback';
 import ImageComponent from '@/app/components-v2/Image';
 import PressableComponent from './components-v2/Pressable';
+import ButtonComponent from './components-v2/Button';
 import DividerComponent from '@/app/components-v2/Divider';
 import SpinnerComponent from '@/app/components-v2/Spinner';
 import SliderComponent from '@/app/components-v2/Slider';
@@ -42,6 +43,7 @@ export const components: ExampleComponentType[] = [
   { navigationPath: 'TouchableOpacity', onScreenName: 'TouchableOpacity', component: TouchableOpacityComponent },
   { navigationPath: 'TouchableWithoutFeedback', onScreenName: 'TouchableWithoutFeedback', component: TouchableWithoutFeedbackComponent },
   { navigationPath: 'Image', onScreenName: 'Image', component: ImageComponent },
+  { navigationPath: 'Button', onScreenName: 'Button', component: ButtonComponent },
   { navigationPath: 'Divider', onScreenName: 'Divider', component: DividerComponent },
   { navigationPath: 'Spinner', onScreenName: 'Spinner', component: SpinnerComponent },
   { navigationPath: 'Pressable', onScreenName: 'Pressable', component: PressableComponent },
