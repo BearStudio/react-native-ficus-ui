@@ -1,8 +1,18 @@
 import {
+  BottomSheetModal as RNBottomSheetModal,
+  BottomSheetView as RNBottomSheetView,
+} from '@gorhom/bottom-sheet';
+import RNSlider from '@react-native-community/slider';
+import { FlashList as ShopifyFlashList } from '@shopify/flash-list';
+import {
+  ActivityIndicator as RNActivityIndicator,
+  FlatList as RNFlatList,
   Image as RNImage,
+  Modal as RNModal,
   Pressable as RNPressable,
   SafeAreaView as RNSafeAreaView,
   ScrollView as RNScrollView,
+  SectionList as RNSectionList,
   Text as RNText,
   TouchableHighlight as RNTouchableHighlight,
   TouchableOpacity as RNTouchableOpacity,
@@ -23,6 +33,14 @@ export const baseRNElements = {
   TouchableOpacity: RNTouchableOpacity,
   TouchableWithoutFeedback: RNTouchableWithoutFeedback,
   Pressable: RNPressable,
+  ActivityIndicator: RNActivityIndicator,
+  Slider: RNSlider,
+  Flatlist: RNFlatList,
+  SectionList: RNSectionList,
+  FlashList: ShopifyFlashList,
+  Modal: RNModal,
+  BottomSheetModal: RNBottomSheetModal,
+  BottomSheetView: RNBottomSheetView,
 } as const;
 
 export type BaseRNElements = keyof typeof baseRNElements;

@@ -1,16 +1,13 @@
 
 import { Stack } from 'expo-router';
-import { Box, ThemeProvider as ThemeProviderV2 } from '@ficus-ui/native'
-import { ThemeProvider } from 'react-native-ficus-ui';
+import {  FicusProvider } from '@ficus-ui/native'
 
 export default function RootLayout() {
   return (
-    <ThemeProviderV2>
-      <ThemeProvider>
+    <FicusProvider>
         <Stack screenOptions={{ headerShown: false }}>
           <Stack.Screen name="index" />
         </Stack>
-      </ThemeProvider>
-    </ThemeProviderV2>
+    </FicusProvider>
   );
 }
