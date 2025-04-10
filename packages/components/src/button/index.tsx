@@ -37,8 +37,9 @@ export const Button = forwardRef<ButtonProps, 'Pressable'>(
         ref={ref}
         disabled={isDisabled || isLoading}
         aria-disabled={isDisabled || isLoading}
-        {...rest}
+        rounded={props.isRound ? 'full' : undefined}
         __styles={buttonStyles}
+        {...rest}
       >
         {isLoading && <ButtonSpinner {...spinnerStyles} />}
 

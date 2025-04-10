@@ -105,38 +105,38 @@ const variants = {
 
 const sizes = {
   xs: defineStyle({
-    px: 6,
     fontSize: 12,
     height: 25,
+    width: 25,
   }),
   sm: defineStyle({
-    px: 10,
     fontSize: 13,
     height: 30,
+    width: 30,
   }),
   md: defineStyle({
-    px: 14,
     fontSize: 15,
     height: 35,
+    width: 35,
   }),
   lg: defineStyle({
-    px: 16,
     fontSize: 17,
     height: 40,
+    width: 40,
   }),
   xl: defineStyle({
-    px: 18,
     fontSize: 19,
     height: 45,
+    width: 45,
   }),
   '2xl': defineStyle({
-    px: 20,
     fontSize: 21,
     height: 47,
+    width: 47,
   }),
 };
 
-export const buttonTheme = defineStyleConfig({
+export const iconButtonTheme = defineStyleConfig({
   baseStyle,
   variants,
   sizes,

@@ -23,59 +23,61 @@ export interface AvatarProps
     ThemingProps<'Avatar'>,
     AvatarOptions {}
 
-export const Avatar = forwardRef<AvatarProps, 'View'>((props, ref) => {
-  const styles = useMultiStyleConfig('Avatar', props);
-  const {
-    borderRadius = 'full',
-    src,
-    name,
-    getInitials,
-    children,
-    __styles,
-    ...rest
-  } = omitThemingProps(props);
+export const Avatar = forwardRef<AvatarProps, 'View'>(
+  function Button(props, ref) {
+    const styles = useMultiStyleConfig('Avatar', props);
+    const {
+      borderRadius = 'full',
+      src,
+      name,
+      getInitials,
+      children,
+      __styles,
+      ...rest
+    } = omitThemingProps(props);
 
-  const [textStyles, restProps] = splitTextProps(rest);
-  const avatarContainerStyles = useMemo(
-    () => ({
-      borderRadius,
-      alignItems: 'center',
-      justfyContent: 'center',
-      ...styles.container,
-      ...__styles, // Useful for avatar excess label
-    }),
-    [styles.container]
-  );
+    const [textStyles, restProps] = splitTextProps(rest);
+    const avatarContainerStyles = useMemo(
+      () => ({
+        borderRadius,
+        alignItems: 'center',
+        justfyContent: 'center',
+        ...styles.container,
+        ...__styles, // Useful for avatar excess label
+      }),
+      [styles.container]
+    );
 
-  const labelStyles = useMemo(
-    () => ({
-      ...styles.label,
-      ...textStyles,
-    }),
-    [styles.label, textStyles]
-  );
+    const labelStyles = useMemo(
+      () => ({
+        ...styles.label,
+        ...textStyles,
+      }),
+      [styles.label, textStyles]
+    );
 
-  return (
-    <ficus.View ref={ref} {...restProps} __styles={avatarContainerStyles}>
-      <AvatarImage
-        src={src}
-        name={name}
-        borderRadius={borderRadius}
-        getInitials={getInitials}
-        labelStyles={labelStyles}
-      />
-      {/*
-        * To avoid using a context, we clone the element and apply the style retrieved with the `useMultiStyleConfig`
-        */}
-      {React.Children.map(children as any, (child: React.ReactElement) => {
-        return React.cloneElement(child, {
-          __styles: {
-            ...styles.badge,
-            ...child.props.__styles,
-          },
-          size: props.size ?? styles.container?.width,
-        });
-      })}
-    </ficus.View>
-  );
-});
+    return (
+      <ficus.View ref={ref} {...restProps} __styles={avatarContainerStyles}>
+        <AvatarImage
+          src={src}
+          name={name}
+          borderRadius={borderRadius}
+          getInitials={getInitials}
+          labelStyles={labelStyles}
+        />
+        {/*
+          * To avoid using a context, we clone the element and apply the style retrieved with the `useMultiStyleConfig`
+          */}
+        {React.Children.map(children as any, (child: React.ReactElement) => {
+          return React.cloneElement(child, {
+            __styles: {
+              ...styles.badge,
+              ...child.props.__styles,
+            },
+            size: props.size ?? styles.container?.width,
+          });
+        })}
+      </ficus.View>
+    );
+  }
+);
