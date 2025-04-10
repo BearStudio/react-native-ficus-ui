@@ -6,6 +6,7 @@ import { Dict, SystemStyleObject, isTextProp } from '@ficus-ui/style-system';
 import { ButtonProps } from '.';
 import { ficus } from '../system';
 import { getStateStyles } from '../system/get-state-styles';
+import { getColor, useTheme } from '@ficus-ui/theme';
 
 /**
  * Determines if the given React node is a plain text or number.
@@ -49,6 +50,8 @@ export function useButton(props: ButtonProps, styles: SystemStyleObject) {
     loaderColor,
   } = props;
 
+  const { theme } = useTheme();
+  
   // Compute styles based on state
   const stateStyles = useMemo(
     () =>
@@ -76,13 +79,15 @@ export function useButton(props: ButtonProps, styles: SystemStyleObject) {
     [full, stateStyles]
   );
 
+  const resolvedColor = getColor(textStyles?.color, theme.colors);
+
   // Memoized spinner styles
   const spinnerStyles = useMemo(
     () =>
       ({
         position: loadingText ? 'relative' : 'absolute',
         spacing: 8,
-        loaderColor,
+        loaderColor: loaderColor || resolvedColor,
       }) as const,
     [loadingText, loaderColor]
   );

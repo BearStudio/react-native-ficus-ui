@@ -3,8 +3,9 @@ import { defineStyle, defineStyleConfig } from '@ficus-ui/style-system';
 import { runIfFn } from '../utils/run-if-fn';
 
 const baseStyle = defineStyle({
-  borderRadius: 'sm',
+  borderRadius: 'md',
   alignSelf: 'flex-start',
+  fontWeight: 'bold',
   _disabled: {
     opacity: 0.6,
   },
