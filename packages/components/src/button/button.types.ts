@@ -13,4 +13,6 @@ export interface ButtonOptions extends ButtonStates {
   loadingText?: string;
 
   loaderColor?: string;
+
+  isRound?: boolean;
 }

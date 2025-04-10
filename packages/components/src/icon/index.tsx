@@ -12,7 +12,7 @@ interface IconOptions {
 
 export interface IconProps extends NativeFicusProps<'View'>, IconOptions {}
 
-export const Icon = forwardRef<IconProps, 'View'>(function Badge(props, ref) {
+export const Icon = forwardRef<IconProps, 'View'>(function Icon(props, ref) {
   const { name, iconSet, color = 'gray.800', size, ...rest } = props;
   const IconComponent = getIconSet(iconSet);
   return (

@@ -95,6 +95,7 @@ export function useButton(props: ButtonProps, styles: SystemStyleObject) {
   return {
     buttonStyles,
     spinnerStyles,
+    textStyles,
     loadingText: loadingText && (
       <ficus.Text __styles={textStyles}>{loadingText}</ficus.Text>
     ),

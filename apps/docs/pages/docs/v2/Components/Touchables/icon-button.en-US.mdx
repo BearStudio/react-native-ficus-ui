@@ -1,0 +1,159 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+import PropsTable from '@components/docs/props-table';
+
+# IconButton
+
+IconButton component that is based on Ficus UI `Button` component.
+
+## Import
+
+```js
+import { IconButton } from 'react-native-ficus-ui';
+```
+
+## Usage
+
+### Default
+
+<CodeEditor code={`<VStack spacing={10}>
+  <IconButton icon={<Icon name="home" />} size="xs" />
+  <IconButton
+    icon={<Icon name="home" />}
+    colorScheme="pink"
+    size="sm"
+  />
+  <IconButton icon={<Icon name="home" />} colorScheme="teal" />
+  <IconButton
+    icon={<Icon name="home" />}
+    colorScheme="blue"
+    size="lg"
+  />
+  <IconButton
+    icon={<Icon name="home" />}
+    colorScheme="red"
+    size="xl"
+  />
+  <IconButton
+    icon={<Icon name="home" />}
+    colorScheme="orange"
+    size="2xl"
+  />
+</VStack>`} />
+
+### Round
+
+<CodeEditor code={`<VStack spacing={10}>
+  <IconButton icon={<Icon name="home" />} size="xs" isRound />
+  <IconButton
+    icon={<Icon name="home" />}
+    colorScheme="pink"
+    size="sm"
+    isRound
+  />
+  <IconButton
+    icon={<Icon name="home" />}
+    colorScheme="teal"
+    isRound
+  />
+  <IconButton
+    icon={<Icon name="home" />}
+    colorScheme="blue"
+    size="lg"
+    isRound
+  />
+  <IconButton
+    icon={<Icon name="home" />}
+    colorScheme="red"
+    size="xl"
+    isRound
+  />
+  <IconButton
+    icon={<Icon name="home" />}
+    colorScheme="orange"
+    size="2xl"
+    isRound
+  />
+</VStack>`} />
+
+### Variants
+
+<CodeEditor code={`<Box>
+  <HStack spacing={10}>
+    <IconButton icon={<Icon name="home" />} colorScheme="teal" />
+    <IconButton
+      icon={<Icon name="home" />}
+      colorScheme="teal"
+      variant="outline"
+    />
+    <IconButton
+      icon={<Icon name="home" />}
+      colorScheme="teal"
+      variant="ghost"
+    />
+  </HStack>
+  <VStack spacing={10} mt="xl">
+    <IconButton
+      icon={<Icon name="home" />}
+      colorScheme="teal"
+      full
+    />
+    <IconButton
+      icon={<Icon name="home" />}
+      colorScheme="teal"
+      variant="outline"
+      full
+    />
+    <IconButton
+      icon={<Icon name="home" />}
+      colorScheme="teal"
+      variant="ghost"
+      full
+    />
+  </VStack>
+</Box>`} />
+
+## Props
+
+Extends every `Box` props and react native `Button` component.
+
+https://reactnative.dev/docs/button#props
+
+### `style`
+<PropsTable
+description="The style prop from React Native. Unlike the regular Pressable component, it does not accept a function."
+ prop={{ type: "StyleProp<ViewStyle>", required: false, default: "-" }}
+/>
+
+### `colorScheme`
+<PropsTable
+description="The colorScheme property, will define background color and overlay color."
+ prop={{ type: "string", required: false, default: "blue" }}
+/>
+
+### `size`
+<PropsTable
+  description="The size property, will define the size of the button."
+  prop={{ type: "string", required: false, default: "md" }}
+/>
+
+### `full`
+<PropsTable
+description="The full property, if true, then the button takes all the width."
+ prop={{ type: "boolean", required: false, default: "false" }}
+/>
+
+### `isRound`
+<PropsTable
+description="The isRound property, if true, then the button will have a `borderRadius` fully round."
+ prop={{ type: "boolean", required: false, default: "false" }}
+/>
+
+### `_pressed`
+<PropsTable
+  description="The properties to apply when `pressed` is true."
+  prop={{ type: "CustomStyleObject", required: false, default: "-" }}
+/>

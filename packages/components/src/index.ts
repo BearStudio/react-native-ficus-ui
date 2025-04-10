@@ -14,6 +14,7 @@ export * from './divider';
 export * from './spinner';
 export * from './slider';
 export * from './icon';
+export * from './icon-button';
 export * from './list';
 export * from './section-list';
 export * from './flash-list';

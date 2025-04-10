@@ -1,5 +1,4 @@
-import { Button, HStack, SafeAreaBox, ScrollBox, Stack, Text } from '@ficus-ui/native';
-import { Icon } from 'react-native-ficus-ui';
+import { Button, HStack, SafeAreaBox, ScrollBox, Stack, Text, Icon } from '@ficus-ui/native';
 
 import ExampleSection from '@/src/ExampleSection';
 
@@ -45,24 +44,27 @@ const ButtonComponent = () => {
             <Button colorScheme="pink" size="xl">
               Button
             </Button>
+            <Button colorScheme="purple" size="2xl">
+              Button
+            </Button>
           </Stack>
         </ExampleSection>
 
         <ExampleSection name="round">
           <Stack spacing={10}>
-            <Button size="xs" rounded="full">
+            <Button size="xs" isRound>
               Button
             </Button>
-            <Button colorScheme="red" size="sm" rounded="full">
+            <Button colorScheme="red" size="sm" isRound>
               Button
             </Button>
-            <Button colorScheme="orange" size="md" rounded="full">
+            <Button colorScheme="orange" size="md" isRound>
               Button
             </Button>
-            <Button colorScheme="green" size="lg" rounded="full">
+            <Button colorScheme="green" size="lg" isRound>
               Button
             </Button>
-            <Button colorScheme="pink" size="xl" rounded="full">
+            <Button colorScheme="pink" size="xl" isRound>
               Button
             </Button>
           </Stack>
@@ -100,12 +102,12 @@ const ButtonComponent = () => {
         <ExampleSection name="prefix and suffix">
           <Stack spacing={10}>
             <Button colorScheme="green">
-              <Icon name="android1" color="white" fontSize="xl" mr="sm" />
+              <Icon name="heart" color="white" fontSize="xl" mr="sm" />
               Button
             </Button>
             <Button colorScheme="green">
               Button
-              <Icon name="android1" color="white" fontSize="xl" ml="sm" />
+              <Icon name="heart" color="white" fontSize="xl" ml="sm" />
             </Button>
           </Stack>
         </ExampleSection>
