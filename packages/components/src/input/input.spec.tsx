@@ -1,8 +1,10 @@
 import React from 'react';
 
-import { render } from '@testing-library/react-native';
+import { renderWithTheme as render } from '@test-utils';
 
 import { Input } from '.';
+
+jest.mock('react-native-toast-message', () => 'Toast');
 
 describe('Input component', () => {
   it('should render component passed to children', () => {

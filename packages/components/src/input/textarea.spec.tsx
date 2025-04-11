@@ -1,8 +1,10 @@
 import React from 'react';
 
-import { render } from '@testing-library/react-native';
+import { renderWithTheme as render } from '@test-utils';
 
 import { Textarea } from '.';
+
+jest.mock('react-native-toast-message', () => 'Toast');
 
 describe('Textarea component', () => {
   it('should render component passed to children', () => {
