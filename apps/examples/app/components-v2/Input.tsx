@@ -58,7 +58,6 @@ const InputComponent = () => {
             borderColor: "red.500",
             borderStyle: "dashed"
           }}
-          suffix={<Icon name="search" color="gray.900" />}
         />
       </ExampleSection>
     </SafeAreaView>

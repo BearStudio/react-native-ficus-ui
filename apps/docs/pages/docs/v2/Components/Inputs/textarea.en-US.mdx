@@ -1,0 +1,35 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+
+# Textarea
+
+Component that is based on react native `TextInput` component, like input but a textarea larger.
+
+## Import
+
+```js
+import { Textarea } from 'react-native-ficus-ui';
+```
+
+## Usage
+
+<CodeEditor code={`<Box>
+  <Textarea mt="md" />
+  <Textarea
+    mt="md"
+    _focused={{
+      borderWidth: 3,
+      borderColor: "red.500",
+      borderStyle: "dashed"
+    }}
+  />
+</Box>`} />
+
+## Props
+
+Extends every `Box` props and react native `TextInput` component.
+
+https://reactnative.dev/docs/textinput#props
