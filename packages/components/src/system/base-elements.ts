@@ -14,6 +14,7 @@ import {
   ScrollView as RNScrollView,
   SectionList as RNSectionList,
   Text as RNText,
+  TextInput as RNTextInput,
   TouchableHighlight as RNTouchableHighlight,
   TouchableOpacity as RNTouchableOpacity,
   TouchableWithoutFeedback as RNTouchableWithoutFeedback,
@@ -41,6 +42,7 @@ export const baseRNElements = {
   Modal: RNModal,
   BottomSheetModal: RNBottomSheetModal,
   BottomSheetView: RNBottomSheetView,
+  TextInput: RNTextInput,
 } as const;
 
 export type BaseRNElements = keyof typeof baseRNElements;

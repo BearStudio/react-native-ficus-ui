@@ -15,6 +15,8 @@ export interface PressableStates {
 export interface CustomStates {
   /** Whether the component is disabled and non-interactive. */
   disabled?: boolean;
+  /** Whether the component is focused. */
+  focused?: boolean;
 }
 
 export interface ComponentStates extends PressableStates, CustomStates {}
@@ -24,6 +26,9 @@ export function stateStyleResolver(states: CustomStates) {
     return {
       ...styles,
       ...(states.disabled ? styles._disabled : {}),
+      _disabled: null,
+      ...(states.focused ? styles._focused : {}),
+      _focused: null,
     };
   };
 }

@@ -24,6 +24,7 @@ import FlashListComponent from '@/app/components-v2/FlashList';
 import ModalComponent from '@/app/components-v2/Modal';
 import DraggableModalComponent from '@/app/components-v2/DraggableModal';
 import AvatarComponent from '@/app/components-v2/Avatar';
+import InputComponent from '@/app/components-v2/Input';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -56,5 +57,6 @@ export const components: ExampleComponentType[] = [
   { navigationPath: 'FlashList', onScreenName: 'FlashList', component: FlashListComponent },
   { navigationPath: 'Modal', onScreenName: 'Modal', component: ModalComponent },
   { navigationPath: 'DraggableModal', onScreenName: 'DraggableModal', component: DraggableModalComponent },
-  { navigationPath: 'Avatar', onScreenName: 'Avatar', component: AvatarComponent }
+  { navigationPath: 'Avatar', onScreenName: 'Avatar', component: AvatarComponent },
+  { navigationPath: 'Input', onScreenName: 'Input', component: InputComponent }
 ];

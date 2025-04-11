@@ -21,5 +21,6 @@ export * from './flash-list';
 export * from './modal';
 export * from './draggable-modal';
 export * from './avatar';
+export * from './input';
 
 export { FicusProvider, type FicusProviderProps } from './system';

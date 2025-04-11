@@ -41,7 +41,7 @@ export const Avatar = forwardRef<AvatarProps, 'View'>(
       () => ({
         borderRadius,
         alignItems: 'center',
-        justfyContent: 'center',
+        justifyContent: 'center',
         ...styles.container,
         ...__styles, // Useful for avatar excess label
       }),
@@ -66,8 +66,8 @@ export const Avatar = forwardRef<AvatarProps, 'View'>(
           labelStyles={labelStyles}
         />
         {/*
-          * To avoid using a context, we clone the element and apply the style retrieved with the `useMultiStyleConfig`
-          */}
+         * To avoid using a context, we clone the element and apply the style retrieved with the `useMultiStyleConfig`
+         */}
         {React.Children.map(children as any, (child: React.ReactElement) => {
           return React.cloneElement(child, {
             __styles: {

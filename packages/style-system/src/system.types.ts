@@ -91,4 +91,4 @@ export type SystemProps<ExtraProps extends Dict = {}> = Assign<
 /**
  * Extensible style props
  */
-export type { TextStyleProps } from './config';
+export type { TextStyleProps, PrefixSuffixProps } from './config';
