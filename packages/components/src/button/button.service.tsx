@@ -2,11 +2,11 @@ import React, { ReactNode, useMemo } from 'react';
 
 import { isFunction, splitProps } from '@chakra-ui/utils';
 import { Dict, SystemStyleObject, isTextProp } from '@ficus-ui/style-system';
+import { getColor, useTheme } from '@ficus-ui/theme';
 
 import { ButtonProps } from '.';
 import { ficus } from '../system';
 import { getStateStyles } from '../system/get-state-styles';
-import { getColor, useTheme } from '@ficus-ui/theme';
 
 /**
  * Determines if the given React node is a plain text or number.
@@ -51,7 +51,7 @@ export function useButton(props: ButtonProps, styles: SystemStyleObject) {
   } = props;
 
   const { theme } = useTheme();
-  
+
   // Compute styles based on state
   const stateStyles = useMemo(
     () =>

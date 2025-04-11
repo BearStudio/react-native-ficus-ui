@@ -1,26 +1,24 @@
-import {
-  omitThemingProps,
-  ThemingProps,
-} from '@ficus-ui/style-system';
 import { ReactElement, cloneElement, isValidElement } from 'react';
 
-import { forwardRef, useStyleConfig } from '../system';
-import { ButtonProps } from '../button';
-import { Pressable } from '../pressable';
-import { useButton } from '../button/button.service';
 import { omit } from '@chakra-ui/utils';
+import { ThemingProps, omitThemingProps } from '@ficus-ui/style-system';
+
+import { ButtonProps } from '../button';
 import { ButtonSpinner } from '../button/button-spinner';
+import { useButton } from '../button/button.service';
+import { Pressable } from '../pressable';
+import { forwardRef, useStyleConfig } from '../system';
 
 export interface IconButtonProps
   extends ButtonProps,
     ThemingProps<'IconButton'> {
-      icon: React.ReactNode;
-    }
+  icon: React.ReactNode;
+}
 
 export const IconButton = forwardRef<IconButtonProps, 'Pressable'>(
   function IconButton(props, ref) {
     const styles = useStyleConfig('IconButton', props);
-    
+
     const { textStyles, buttonStyles, spinnerStyles } = useButton(
       props,
       styles
@@ -32,9 +30,10 @@ export const IconButton = forwardRef<IconButtonProps, 'Pressable'>(
 
     const enhancedIcon = isValidElement(props.icon)
       ? cloneElement(props.icon as ReactElement, {
-        color: textStyles?.color,
-        size: textStyles?.fontSize
-      }) : props.icon;
+          color: textStyles?.color,
+          size: textStyles?.fontSize,
+        })
+      : props.icon;
 
     return (
       <Pressable
@@ -45,7 +44,7 @@ export const IconButton = forwardRef<IconButtonProps, 'Pressable'>(
         __styles={buttonStyles}
         {...rest}
       >
-        {isLoading ? (<ButtonSpinner {...spinnerStyles} />) : enhancedIcon }
+        {isLoading ? <ButtonSpinner {...spinnerStyles} /> : enhancedIcon}
       </Pressable>
     );
   }

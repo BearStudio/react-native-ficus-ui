@@ -9,12 +9,14 @@ export const BaseSpinner = ficus('ActivityIndicator', {
 });
 
 // TODO: Add to theme for default style ?
-export const Spinner = forwardRef<SpinnerProps, 'Image'>((props, ref) => {
-  const { color = 'black', ...rest } = props;
+export const Spinner = forwardRef<SpinnerProps, 'ActivityIndicator'>(
+  (props, ref) => {
+    const { color = 'black', ...rest } = props;
 
-  const { theme } = useTheme();
+    const { theme } = useTheme();
 
-  const resolvedColor = getColor(color, theme.colors);
+    const resolvedColor = getColor(color, theme.colors);
 
-  return <BaseSpinner ref={ref} {...rest} color={resolvedColor} />;
-});
+    return <BaseSpinner ref={ref} {...rest} color={resolvedColor} />;
+  }
+);

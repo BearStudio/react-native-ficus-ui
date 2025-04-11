@@ -21,3 +21,8 @@ export interface PositionProps {
   zIndex?: ResponsiveValue<number>;
   elevation?: ResponsiveValue<number>;
 }
+
+export interface PrefixSuffixProps {
+  suffix?: React.ReactNode;
+  prefix?: React.ReactNode;
+}
