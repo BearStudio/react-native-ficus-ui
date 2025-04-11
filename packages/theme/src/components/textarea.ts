@@ -32,7 +32,7 @@ const variants = {
   outline: variantOutline,
 };
 
-export const inputTheme = defineStyleConfig({
+export const textareaTheme = defineStyleConfig({
   baseStyle,
   variants,
   defaultProps: {

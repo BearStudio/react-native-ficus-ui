@@ -1,5 +1,5 @@
 import { SafeAreaView } from "react-native";
-import { Icon, Input, Text } from "@ficus-ui/native";
+import { Icon, Input, Text, Textarea } from "@ficus-ui/native";
 import ExampleSection from "@/src/ExampleSection";
 
 const InputComponent = () => {
@@ -47,6 +47,18 @@ const InputComponent = () => {
             borderColor: "red.500",
             borderStyle: "dashed"
           }}
+        />
+      </ExampleSection>
+      <ExampleSection name="Textarea">
+        <Textarea mt="md" />
+        <Textarea
+          mt="md"
+          _focused={{
+            borderWidth: 3,
+            borderColor: "red.500",
+            borderStyle: "dashed"
+          }}
+          suffix={<Icon name="search" color="gray.900" />}
         />
       </ExampleSection>
     </SafeAreaView>

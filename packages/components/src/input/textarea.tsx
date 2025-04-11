@@ -23,13 +23,13 @@ import {
 import { useInput } from './input.service';
 import { InputOptions } from './input.types';
 
-export interface InputProps
+export interface TextareaProps
   extends NativeFicusProps<'TextInput'>,
     PrefixSuffixProps,
     InputOptions,
-    ThemingProps<'Input'> {}
+    ThemingProps<'Textarea'> {}
 
-export const Input = forwardRef<InputProps, 'TextInput'>((props, ref) => {
+export const Textarea = forwardRef<TextareaProps, 'TextInput'>((props, ref) => {
   const [isFocused, setIsFocused] = useState(false);
   const innerRef = useRef<RNTextInput>(null);
 
@@ -37,19 +37,19 @@ export const Input = forwardRef<InputProps, 'TextInput'>((props, ref) => {
 
   const [stylesProps, inputProps] = splitProps(props as Dict, isStyleProp);
 
-  const styles = useStyleConfig('Input', stylesProps);
+  const styles = useStyleConfig('Textarea', stylesProps);
 
   const {
     inputStyles,
-    spinnerStyles,
     inputContainerStyles,
     inputContainerMarginStyles,
     prefixStyles,
     suffixStyles,
+    spinnerStyles,
   } = useInput(props, styles, isFocused);
 
   const propsWithoutThemingProps = omitThemingProps(
-    inputProps as Partial<InputProps>
+    inputProps as Partial<TextareaProps>
   );
 
   const { onFocus, onBlur, prefix, suffix, isLoading, isDisabled, ...rest } =
@@ -99,6 +99,7 @@ export const Input = forwardRef<InputProps, 'TextInput'>((props, ref) => {
             __styles={inputStyles}
             editable={!isDisabled}
             aria-disabled={!isDisabled}
+            multiline
             {...rest}
           />
           {!isLoading && suffix && (
@@ -114,5 +115,3 @@ export const Input = forwardRef<InputProps, 'TextInput'>((props, ref) => {
     </ficus.TouchableWithoutFeedback>
   );
 });
-
-export { Textarea } from './textarea';
