@@ -3,6 +3,7 @@ import { useImperativeHandle, useRef, useState } from 'react';
 import { Dict, splitProps } from '@chakra-ui/utils';
 import {
   PrefixSuffixProps,
+  ResponsiveValue,
   ThemingProps,
   isStyleProp,
   omitThemingProps,
@@ -37,7 +38,11 @@ export const Input = forwardRef<InputProps, 'TextInput'>((props, ref) => {
 
   const [stylesProps, inputProps] = splitProps(props as Dict, isStyleProp);
 
-  const styles = useStyleConfig('Input', stylesProps);
+  const styles = useStyleConfig('Input', {
+    ...stylesProps,
+    size: inputProps?.size as ResponsiveValue<string>,
+    variant: inputProps?.variant as ResponsiveValue<string>,
+  });
 
   const {
     inputStyles,

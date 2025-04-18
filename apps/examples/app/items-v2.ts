@@ -25,6 +25,7 @@ import ModalComponent from '@/app/components-v2/Modal';
 import DraggableModalComponent from '@/app/components-v2/DraggableModal';
 import AvatarComponent from '@/app/components-v2/Avatar';
 import InputComponent from '@/app/components-v2/Input';
+import PinInputComponent from '@/app/components-v2/PinInput';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -58,5 +59,6 @@ export const components: ExampleComponentType[] = [
   { navigationPath: 'Modal', onScreenName: 'Modal', component: ModalComponent },
   { navigationPath: 'DraggableModal', onScreenName: 'DraggableModal', component: DraggableModalComponent },
   { navigationPath: 'Avatar', onScreenName: 'Avatar', component: AvatarComponent },
-  { navigationPath: 'Input', onScreenName: 'Input', component: InputComponent }
+  { navigationPath: 'Input', onScreenName: 'Input', component: InputComponent },
+  { navigationPath: 'PinInput', onScreenName: 'PinInput', component: PinInputComponent }
 ];

@@ -1,5 +1,5 @@
 import { SafeAreaView } from "react-native";
-import { Icon, Input, Text, Textarea } from "@ficus-ui/native";
+import { Icon, Input, Text, Textarea, VStack } from "@ficus-ui/native";
 import ExampleSection from "@/src/ExampleSection";
 
 const InputComponent = () => {
@@ -48,6 +48,26 @@ const InputComponent = () => {
             borderStyle: "dashed"
           }}
         />
+      </ExampleSection>
+      <ExampleSection name="Sizes">
+        <VStack spacing="md">
+          <Input
+            placeholder="Username"
+            size="xs"
+          />
+          <Input
+            placeholder="Username"
+            size="sm"
+          />
+          <Input
+            placeholder="Username"
+            size="md"
+          />
+          <Input
+            placeholder="Username"
+            size="lg"
+          />
+        </VStack>
       </ExampleSection>
       <ExampleSection name="Textarea">
         <Textarea mt="md" />

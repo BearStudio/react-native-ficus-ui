@@ -30,7 +30,7 @@ export function AvatarImage(props: AvatarImageProps) {
       <AvatarLabel
         getInitials={getInitials}
         name={name}
-        __styles={{ ...labelStyles, ...imageStyles }}
+        __styles={{ ...labelStyles }}
       />
     );
   }

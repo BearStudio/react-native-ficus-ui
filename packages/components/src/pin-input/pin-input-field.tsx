@@ -1,0 +1,92 @@
+import { Dict, splitProps } from '@chakra-ui/utils';
+import {
+  ResponsiveValue,
+  ThemingProps,
+  isStyleProp,
+  omitThemingProps,
+} from '@ficus-ui/style-system';
+import {
+  Cursor,
+  MaskSymbol,
+  isLastFilledCell,
+} from 'react-native-confirmation-code-field';
+
+import {
+  type NativeFicusProps,
+  ficus,
+  forwardRef,
+  useStyleConfig,
+} from '../system';
+import { usePinInputField } from './pin-input.service';
+import { PinInputOptions } from './pin-input.types';
+
+export interface PinInputFieldProps
+  extends NativeFicusProps<'View'>,
+    PinInputOptions,
+    ThemingProps<'PinInputField'> {
+  index?: number;
+  symbol?: string;
+  isFocused?: boolean;
+  value?: string;
+}
+
+export const PinInputField = forwardRef<PinInputFieldProps, 'View'>(
+  (props, ref) => {
+    const [stylesProps, inputProps] = splitProps(props as Dict, isStyleProp);
+
+    const styles = useStyleConfig('PinInputField', {
+      ...stylesProps,
+      size: inputProps?.size as ResponsiveValue<string>,
+      variant: inputProps?.variant as ResponsiveValue<string>,
+    });
+
+    const { pinInputFieldStyles } = usePinInputField(props, styles);
+
+    const propsWithoutThemingProps = omitThemingProps(
+      inputProps as Partial<PinInputFieldProps>
+    );
+
+    const { mask, placeholder, symbol, value, index, isFocused, ...rest } =
+      propsWithoutThemingProps;
+
+    let textChild = null;
+
+    if (symbol && mask) {
+      textChild = (
+        <MaskSymbol
+          maskSymbol={placeholder || '•'}
+          isLastFilledCell={isLastFilledCell({
+            index: index || 0,
+            value: value || '',
+          })}
+        >
+          {symbol}
+        </MaskSymbol>
+      );
+    } else if (symbol && !mask) {
+      textChild = symbol;
+    } else if (isFocused) {
+      textChild = <Cursor />;
+    } else {
+      textChild = '';
+    }
+
+    return (
+      <ficus.View key={index} ref={ref}>
+        <ficus.View
+          __styles={pinInputFieldStyles}
+          {...(isFocused && props.colorScheme
+            ? { borderColor: `${props.colorScheme}.500` }
+            : {})}
+          {...rest}
+        >
+          <ficus.Text color="black" fontWeight="bold">
+            {textChild}
+          </ficus.Text>
+        </ficus.View>
+      </ficus.View>
+    );
+  }
+);
+
+PinInputField.displayName = 'PinInputField';
