@@ -22,5 +22,7 @@ export * from './modal';
 export * from './draggable-modal';
 export * from './avatar';
 export * from './input';
+export * from './pin-input';
+export * from './pin-input/pin-input-field';
 
 export { FicusProvider, type FicusProviderProps } from './system';
