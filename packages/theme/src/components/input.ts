@@ -36,7 +36,7 @@ const sizes = {
   xs: defineStyle({
     height: 24,
     px: 'sm',
-    py: 'sm',
+    py: 0,
     fontSize: 'xs',
   }),
   sm: defineStyle({

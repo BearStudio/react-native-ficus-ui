@@ -23,7 +23,6 @@ const InputComponent = () => {
       <ExampleSection name="Password">
         <Input
           placeholder="Password"
-          mt="md"
           secureTextEntry
         />
       </ExampleSection>

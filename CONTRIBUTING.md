@@ -5,15 +5,19 @@ Contributions are always welcome, no matter how large or small!
 We want this community to be friendly and respectful to each other. Please follow it in all your interactions with the project. Before contributing, please read the [code of conduct](./CODE_OF_CONDUCT.md).
 
 ## Architecture
+
 The project is split in 2 folders.
 
 `apps/`:
+
 - `docs/`: The documentation website of the library
 - `examples/`: A small expo app to test your changes while developping
 
-`packages/`: 
+`packages/`:
+
 - `react-native-ficus-ui`: The main librairy along with its components, hooks and theme.
 - ... other configuration and helper packages.
+
 ## Development workflow
 
 To get started with the project, run `pnpm install` in the root directory to install the required dependencies for each package:
@@ -23,6 +27,7 @@ pnpm install
 ```
 
 ### Development
+
 While developing, you can run the [example app](/example/) to test your changes.
 
 To build the packages:
@@ -35,6 +40,7 @@ pnpm prepack
 > ⚠️ Your changes in the library will be repercuted in the example app. But if you change the library's exports, you will need to rebuild the package.
 
 To start the example app:
+
 ```sh
 pnpm dev
 ```
@@ -58,6 +64,7 @@ pnpm dev web
 ```
 
 ### Code quality
+
 Make sure your code passes TypeScript and ESLint. Run the following to verify:
 
 ```sh
@@ -78,6 +85,7 @@ pnpm test:components
 ```
 
 To test if all the CI steps are working all at once, you can use:
+
 ```sh
 pnpm run ci
 ```
@@ -85,7 +93,7 @@ pnpm run ci
 ### Run the Documentation (To improve)
 
 To run the documentation in local development, there is a small workaround to properly resolve react-native dependencies.
-From the project root, you need to run: 
+From the project root, you need to run:
 
 ```sh
 pnpm -C ./apps/docs install
@@ -97,7 +105,7 @@ Then, you will be able to run:
 pnpm docs:dev
 ```
 
-If you want to be able to run the example app after running  `pnpm -C ./apps/docs install`, you might need to clean your node_modules.
+If you want to be able to run the example app after running `pnpm -C ./apps/docs install`, you might need to clean your node_modules.
 
 ### Clean
 
@@ -106,7 +114,6 @@ To clean all node_modules and cache folders:
 ```sh
 pnpm clean
 ```
-
 
 ### Commit message convention
 
