@@ -16,7 +16,6 @@ function useStyleConfigFn(
   themeKey: string | null,
   props: ThemingProps & Dict = {}
 ) {
-  console.log({ props });
   const { styleConfig: styleConfigProp, ...rest } = props;
 
   const { theme } = useTheme();
