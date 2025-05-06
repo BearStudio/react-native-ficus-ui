@@ -5,10 +5,8 @@
 export const pseudoStylesMap = {
   _disabled: 'disabled',
   _focused: 'focused',
-  /**
-   * Specificaly for the Pressable component
-   */
   _pressed: 'pressed',
+  _checked: 'checked',
   // Extend if needed: Add new states here
 } as const;
 
