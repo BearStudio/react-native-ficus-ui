@@ -14,10 +14,12 @@ const baseTrackStyle = defineStyle((props) => ({
   flexDirection: 'row',
   alignItems: 'center',
   borderRadius: 'full',
-  isDisabled: false,
   bg: 'gray.400',
   _checked: {
     bg: `${props.colorScheme}.500`,
+  },
+  _disabled: {
+    opacity: 0.5,
   },
 }));
 
@@ -90,5 +92,6 @@ export const switchTheme = defineMultiStyleConfig({
   defaultProps: {
     size: 'md',
     colorScheme: 'green',
+    duration: 300,
   },
 });

@@ -40,6 +40,7 @@ export const Switch = forwardRef<SwitchProps, 'TouchableOpacity'>((props) => {
     () =>
       getStateStyles(
         {
+          disabled: isDisabled,
           checked: isChecked,
         },
         styles.track || {}
@@ -59,6 +60,7 @@ export const Switch = forwardRef<SwitchProps, 'TouchableOpacity'>((props) => {
     () =>
       getStateStyles(
         {
+          disabled: isDisabled,
           checked: isChecked,
         },
         styles.thumb || {}
@@ -89,7 +91,7 @@ export const Switch = forwardRef<SwitchProps, 'TouchableOpacity'>((props) => {
       const animValue = {
         fromValue: isChecked ? 0 : 1,
         toValue: isChecked ? 1 : 0,
-        duration,
+        duration: duration || theme.components?.Switch?.defaultProps?.duration,
         useNativeDriver: false,
       };
       Animated.timing(animXValue, animValue).start();
@@ -104,6 +106,7 @@ export const Switch = forwardRef<SwitchProps, 'TouchableOpacity'>((props) => {
   return (
     <ficus.TouchableOpacity
       onPress={!isDisabled ? onPress : () => {}}
+      disabled={isDisabled}
       activeOpacity={0.5}
       style={containerStyleObject}
       w={trackStyleObject.width}

@@ -27,12 +27,12 @@ export function stateStyleResolver(states: CustomStates) {
   return function resolver(styles: Dict) {
     return {
       ...styles,
-      ...(states.disabled ? styles._disabled : {}),
-      _disabled: null,
       ...(states.focused ? styles._focused : {}),
       _focused: null,
       ...(states.checked ? styles._checked : {}),
       _checked: null,
+      ...(states.disabled ? styles._disabled : {}),
+      _disabled: null,
     };
   };
 }

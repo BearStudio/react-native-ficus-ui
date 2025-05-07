@@ -104,6 +104,7 @@ export function createMultiStyleConfigHelpers<Part extends string>(
         size?: keyof Sizes;
         variant?: keyof Variants;
         colorScheme?: string;
+        duration?: number;
       };
     }) {
       return { parts: parts as Part[], ...config };
