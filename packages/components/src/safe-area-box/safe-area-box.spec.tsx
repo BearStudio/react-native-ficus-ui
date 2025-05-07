@@ -1,4 +1,5 @@
-import { render, screen } from '@testing-library/react-native';
+import { renderWithTheme as render } from '@test-utils';
+import { screen } from '@testing-library/react-native';
 
 import { SafeAreaBox } from '.';
 import { Text } from '../text';

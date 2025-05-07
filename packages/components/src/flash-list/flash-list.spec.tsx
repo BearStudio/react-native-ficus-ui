@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { render } from '@testing-library/react-native';
+import { renderWithTheme as render } from '@test-utils';
 
 import { FlashList } from '.';
 import { Text } from '../text';

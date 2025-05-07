@@ -1,4 +1,4 @@
-import { isObject, mergeWith, runIfFn, splitProps } from '@chakra-ui/utils';
+import { mergeWith, runIfFn, splitProps } from '@chakra-ui/utils';
 
 import { isStyleProp } from './system';
 import { Dict, ResponsiveValue } from './utils';
@@ -15,20 +15,6 @@ type Config = {
   sizes?: Record<string, any>;
 };
 
-function normalize(value: any) {
-  if (Array.isArray(value)) {
-    return value;
-  }
-
-  if (isObject(value)) {
-    return Object.values(value);
-  }
-
-  if (value !== null) {
-    return [value];
-  }
-}
-
 /**
  * `size` and `variant` are special props that are not resolved in the style-system.
  * We need to take care of the responsive values here.
@@ -42,16 +28,14 @@ function createResolver(theme: Theme) {
   ) {
     const result: Record<string, any> = {};
 
-    const normalized = normalize(value);
-
-    if (!normalized) {
+    if (!value) {
       return;
     }
 
     const isMultipart = !!config.parts;
 
     const propValue = {
-      [prop]: normalized.map((norm) => config[prop]?.[norm]),
+      [prop]: config[prop]?.[value],
     };
 
     const _styles = expandResponsive(propValue)(theme);
@@ -85,6 +69,7 @@ export function resolveStyleConfig(config: Config) {
     const recipe = createResolver(theme);
 
     const [restStyles] = splitProps(rest, isStyleProp);
+
     return mergeWith(
       {},
       runIfFn(config.baseStyle ?? {}, props),

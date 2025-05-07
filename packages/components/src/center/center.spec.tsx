@@ -1,8 +1,8 @@
 import { theme } from '@ficus-ui/theme';
+import { renderWithTheme as render } from '@test-utils';
 
 import { Center } from '.';
 import { Box } from '../box';
-import { renderWithTheme as render } from '../test-utils';
 
 jest.mock('react-native-toast-message', () => 'Toast');
 

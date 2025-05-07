@@ -16,6 +16,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
 
   // Get Metadata
   const { width: windowWidth } = useWindowDimensions();
+
   const breakpoints = theme?.breakpoints
     ? Object.entries(theme.breakpoints).sort((a, b) => a[1] - b[1])
     : [];

@@ -1,4 +1,4 @@
-import { type NativeFicusProps, ficus } from '../system';
+import { NativeFicusProps, ficus } from '../system';
 
 export interface SafeAreaBoxProps extends NativeFicusProps<'SafeAreaView'> {}
 
