@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { omitThemingProps } from '@ficus-ui/style-system';
 import { getColor, useTheme } from '@ficus-ui/theme';
@@ -11,7 +11,7 @@ import {
   toStyleSheetObject,
   useMultiStyleConfig,
 } from '../system';
-import { getStateStyles } from '../system/get-state-styles';
+import { useSwitch } from './switch.service';
 import { SwitchOptions } from './switch.types';
 
 export interface SwitchProps
@@ -28,48 +28,21 @@ export const Switch = forwardRef<SwitchProps, 'TouchableOpacity'>((props) => {
   const prevSwitchOnRef = useRef<boolean>();
   const prevSwitchOn = !!prevSwitchOnRef.current;
 
-  const containerStyleObject = toStyleSheetObject({
-    baseStyle: styles.container,
-  })({
-    ...styles.container,
-    style: {},
-    theme,
-  });
-
-  const trackStateStyles = useMemo(
-    () =>
-      getStateStyles(
-        {
-          disabled: isDisabled,
-          checked: isChecked,
-        },
-        styles.track || {}
-      ),
-    [isChecked]
+  const { containerStyles, trackStyles, thumbStyles } = useSwitch(
+    props,
+    styles
   );
 
   const trackStyleObject = toStyleSheetObject({
-    baseStyle: trackStateStyles,
+    baseStyle: trackStyles,
   })({
-    ...trackStateStyles,
+    ...trackStyles,
     style: {},
     theme,
   });
 
-  const thumbStateStyles = useMemo(
-    () =>
-      getStateStyles(
-        {
-          disabled: isDisabled,
-          checked: isChecked,
-        },
-        styles.thumb || {}
-      ),
-    [isChecked]
-  );
-
-  const thumbStyleObject = toStyleSheetObject({ baseStyle: thumbStateStyles })({
-    ...thumbStateStyles,
+  const thumbStyleObject = toStyleSheetObject({ baseStyle: thumbStyles })({
+    ...thumbStyles,
     style: {},
     theme,
   });
@@ -108,7 +81,7 @@ export const Switch = forwardRef<SwitchProps, 'TouchableOpacity'>((props) => {
       onPress={!isDisabled ? onPress : () => {}}
       disabled={isDisabled}
       activeOpacity={0.5}
-      style={containerStyleObject}
+      __styles={containerStyles}
       w={trackStyleObject.width}
       {...rest}
     >
@@ -120,7 +93,7 @@ export const Switch = forwardRef<SwitchProps, 'TouchableOpacity'>((props) => {
               inputRange: [0, 1],
               outputRange: [
                 getColor(styles.track?.bg, theme.colors),
-                getColor(trackStateStyles?.bg, theme.colors),
+                getColor(trackStyles?.bg, theme.colors),
               ],
             }),
           },
@@ -134,7 +107,7 @@ export const Switch = forwardRef<SwitchProps, 'TouchableOpacity'>((props) => {
                 inputRange: [0, 1],
                 outputRange: [
                   getColor(styles.thumb?.bg, theme.colors),
-                  getColor(thumbStateStyles?.bg, theme.colors),
+                  getColor(thumbStyles?.bg, theme.colors),
                 ],
               }),
             },

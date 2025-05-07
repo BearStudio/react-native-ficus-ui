@@ -4,7 +4,7 @@ import {
   Text,
   TouchableOpacity,
   SafeAreaBox,
-} from 'react-native-ficus-ui';
+} from '@ficus-ui/native';
 
 import { components } from '@/app/items-v2';
 import { useRouter } from 'expo-router';
@@ -18,19 +18,19 @@ const StackV2 = () => {
         <ScrollView style={{ flex: 1 }}>
           <Box mt="xl" px="xl">
           <TouchableOpacity
-                  onPress={() =>
-                    router.back()
-                  }
-                  mt={10}
-                  w="100%"
-                  py={10}
-                >
-                  <Text fontSize="xl">Back</Text>
+            onPress={() =>
+              router.back()
+            }
+            mt={10}
+            w="100%"
+            py={10}
+          >
+            <Text fontSize="xl">Back</Text>
             </TouchableOpacity>
             <Text pb="lg" fontSize="3xl">
               Components
             </Text>
-            <Box flexDir="row">
+            <Box>
               {components.map((item, index) => (
                 <TouchableOpacity
                   key={`item-${index}`}

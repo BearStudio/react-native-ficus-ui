@@ -1,0 +1,70 @@
+import { SafeAreaView } from "react-native";
+import { Box, Checkbox, CheckboxGroup, HStack, Icon, Text, VStack } from  "@ficus-ui/native";
+import ExampleSection from "@/src/ExampleSection";
+
+const CheckboxComponent = () => {
+  return (
+    <SafeAreaView>
+      <Text mx="xl" fontSize="4xl">
+        Checkbox component
+      </Text>
+      <ExampleSection name="Simple checkbox">
+        <VStack spacing="md">
+          <Checkbox>Option 1</Checkbox>
+          <Checkbox colorScheme="red" defaultChecked>Option 1</Checkbox>
+        </VStack>
+      </ExampleSection>
+      <ExampleSection name="Custom icon">
+        <Checkbox colorScheme="purple" defaultChecked icon={<Icon name="flash-outline" />}>Option 1</Checkbox>
+      </ExampleSection>
+      <ExampleSection name="Sizes">
+        <VStack spacing="md">
+          <Checkbox size="xs">Option 1</Checkbox>
+          <Checkbox size="sm">Option 2</Checkbox>
+          <Checkbox size="md">Option 3</Checkbox>
+          <Checkbox size="lg">Option 4</Checkbox>
+        </VStack>
+      </ExampleSection>
+      <ExampleSection name="Checkbox disabled">
+        <HStack spacing="md">
+          <Checkbox isDisabled>
+            Option 1
+          </Checkbox>
+          <Checkbox isDisabled defaultChecked>
+            Option 1
+          </Checkbox>
+        </HStack>
+      </ExampleSection>
+      <ExampleSection name="Checkbox group">
+        <CheckboxGroup colorScheme="green" defaultValue={[2, 3]}>
+          <Checkbox value={1}>Option 1</Checkbox>
+          <Checkbox value={2}>Option 2</Checkbox>
+          <Checkbox value={3}>Option 3</Checkbox>
+          <Checkbox value={4}>Option 4</Checkbox>
+        </CheckboxGroup>
+      </ExampleSection>
+      <ExampleSection name="Custom render">
+        <CheckboxGroup flexDirection="row">
+          {["Option 1", "Option 2", "Option 3"].map((item) => (
+            <Checkbox>
+              {({ isChecked }) => (
+                <Box
+                  bg={isChecked ? "blue.600" : "blue.100"}
+                  px="xl"
+                  py="md"
+                  mr="md"
+                  borderRadius="full"
+                >
+                  <Text color={isChecked ? "white" : "gray.800"}>{item}</Text>
+                </Box>
+              )}
+
+            </Checkbox>
+          ))}
+        </CheckboxGroup>
+      </ExampleSection>
+    </SafeAreaView>
+  );
+};
+
+export default CheckboxComponent;

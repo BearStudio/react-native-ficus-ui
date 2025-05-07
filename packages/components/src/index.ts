@@ -1,4 +1,6 @@
 export * from './box';
+export * from './checkbox';
+export * from './checkbox/checkbox-group';
 export * from './stack';
 export * from './flex';
 export * from './text';
