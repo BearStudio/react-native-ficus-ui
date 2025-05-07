@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { render } from '@testing-library/react-native';
+import { renderWithTheme as render } from '@test-utils';
 
 import { SectionList } from '.';
 import { Box } from '../box';

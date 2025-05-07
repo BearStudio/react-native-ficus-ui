@@ -18,6 +18,7 @@ export interface ThemingProps<ThemeComponent extends string = any> {
   >;
   colorScheme?: ThemeTypings['colorSchemes'];
   styleConfig?: Dict;
+  duration?: number;
 }
 
 export function omitThemingProps<T extends ThemingProps>(props: T) {

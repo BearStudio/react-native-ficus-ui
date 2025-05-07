@@ -5,6 +5,7 @@ import { iconButtonTheme } from './icon-button';
 import { inputTheme } from './input';
 import { pinInputFieldTheme, pinInputTheme } from './pin-input';
 import { sliderTheme } from './slider';
+import { switchTheme } from './switch';
 import { textareaTheme } from './textarea';
 
 export const components = {
@@ -13,6 +14,7 @@ export const components = {
   Button: buttonTheme,
   IconButton: iconButtonTheme,
   Slider: sliderTheme,
+  Switch: switchTheme,
   Input: inputTheme,
   Textarea: textareaTheme,
   PinInput: pinInputTheme,

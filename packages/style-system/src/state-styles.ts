@@ -17,6 +17,8 @@ export interface CustomStates {
   disabled?: boolean;
   /** Whether the component is focused. */
   focused?: boolean;
+  /** Whether the component is checked. */
+  checked?: boolean;
 }
 
 export interface ComponentStates extends PressableStates, CustomStates {}
@@ -25,10 +27,12 @@ export function stateStyleResolver(states: CustomStates) {
   return function resolver(styles: Dict) {
     return {
       ...styles,
-      ...(states.disabled ? styles._disabled : {}),
-      _disabled: null,
       ...(states.focused ? styles._focused : {}),
       _focused: null,
+      ...(states.checked ? styles._checked : {}),
+      _checked: null,
+      ...(states.disabled ? styles._disabled : {}),
+      _disabled: null,
     };
   };
 }

@@ -13,6 +13,7 @@ export * from './button';
 export * from './divider';
 export * from './spinner';
 export * from './slider';
+export * from './switch';
 export * from './icon';
 export * from './icon-button';
 export * from './list';

@@ -26,6 +26,7 @@ import DraggableModalComponent from '@/app/components-v2/DraggableModal';
 import AvatarComponent from '@/app/components-v2/Avatar';
 import InputComponent from '@/app/components-v2/Input';
 import PinInputComponent from '@/app/components-v2/PinInput';
+import SwitchComponent from './components-v2/Switch';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -51,6 +52,7 @@ export const components: ExampleComponentType[] = [
   { navigationPath: 'Spinner', onScreenName: 'Spinner', component: SpinnerComponent },
   { navigationPath: 'Pressable', onScreenName: 'Pressable', component: PressableComponent },
   { navigationPath: 'Slider', onScreenName: 'Slider', component: SliderComponent },
+  { navigationPath: 'Switch', onScreenName: 'Switch', component: SwitchComponent },
   { navigationPath: 'Icon', onScreenName: 'Icon', component: IconComponent },
   { navigationPath: 'IconButton', onScreenName: 'IconButton', component: IconButtonComponent },
   { navigationPath: 'List', onScreenName: 'List', component: ListComponent },
