@@ -46,7 +46,7 @@ const CheckboxComponent = () => {
       <ExampleSection name="Custom render">
         <CheckboxGroup flexDirection="row">
           {["Option 1", "Option 2", "Option 3"].map((item) => (
-            <Checkbox>
+            <Checkbox value={item}>
               {({ isChecked }) => (
                 <Box
                   bg={isChecked ? "blue.600" : "blue.100"}
