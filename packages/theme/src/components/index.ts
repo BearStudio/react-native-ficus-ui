@@ -1,6 +1,8 @@
 import { avatarTheme } from './avatar';
 import { badgeTheme } from './badge';
 import { buttonTheme } from './button';
+import { checkboxTheme } from './checkbox';
+import { checkboxGroupTheme } from './checkbox-group';
 import { iconButtonTheme } from './icon-button';
 import { inputTheme } from './input';
 import { pinInputFieldTheme, pinInputTheme } from './pin-input';
@@ -12,6 +14,8 @@ export const components = {
   Avatar: avatarTheme,
   Badge: badgeTheme,
   Button: buttonTheme,
+  Checkbox: checkboxTheme,
+  CheckboxGroup: checkboxGroupTheme,
   IconButton: iconButtonTheme,
   Slider: sliderTheme,
   Switch: switchTheme,

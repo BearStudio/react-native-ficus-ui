@@ -27,6 +27,7 @@ import AvatarComponent from '@/app/components-v2/Avatar';
 import InputComponent from '@/app/components-v2/Input';
 import PinInputComponent from '@/app/components-v2/PinInput';
 import SwitchComponent from './components-v2/Switch';
+import CheckboxComponent from './components-v2/Checkbox';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -42,6 +43,7 @@ export const components: ExampleComponentType[] = [
   { navigationPath: 'SafeAreaBox', onScreenName: 'SafeAreaBox', component: SafeAreaBoxComponent },
   { navigationPath: 'ScrollBox', onScreenName: 'ScrollBox', component: ScrollBoxComponent },
   { navigationPath: 'Center', onScreenName: 'Center', component: CenterComponent },
+  { navigationPath: 'Checkbox', onScreenName: 'Checkbox', component: CheckboxComponent },
   { navigationPath: 'Badge', onScreenName: 'Badge', component: BadgeComponent },
   { navigationPath: 'TouchableHighlight', onScreenName: 'TouchableHighlight', component: TouchableHighlightComponent },
   { navigationPath: 'TouchableOpacity', onScreenName: 'TouchableOpacity', component: TouchableOpacityComponent },
