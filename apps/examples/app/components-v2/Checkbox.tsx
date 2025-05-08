@@ -37,30 +37,34 @@ const CheckboxComponent = () => {
       </ExampleSection>
       <ExampleSection name="Checkbox group">
         <CheckboxGroup colorScheme="green" defaultValue={[2, 3]}>
-          <Checkbox value={1}>Option 1</Checkbox>
-          <Checkbox value={2}>Option 2</Checkbox>
-          <Checkbox value={3}>Option 3</Checkbox>
-          <Checkbox value={4}>Option 4</Checkbox>
+          <VStack spacing="sm">
+            <Checkbox value={1}>Option 1</Checkbox>
+            <Checkbox value={2}>Option 2</Checkbox>
+            <Checkbox value={3}>Option 3</Checkbox>
+            <Checkbox value={4}>Option 4</Checkbox>
+          </VStack>
         </CheckboxGroup>
       </ExampleSection>
       <ExampleSection name="Custom render">
         <CheckboxGroup flexDirection="row">
-          {["Option 1", "Option 2", "Option 3"].map((item) => (
-            <Checkbox value={item}>
-              {({ isChecked }) => (
-                <Box
-                  bg={isChecked ? "blue.600" : "blue.100"}
-                  px="xl"
-                  py="md"
-                  mr="md"
-                  borderRadius="full"
-                >
-                  <Text color={isChecked ? "white" : "gray.800"}>{item}</Text>
-                </Box>
-              )}
+          <HStack spacing="sm">
+            {["Option 1", "Option 2", "Option 3"].map((item) => (
+              <Checkbox value={item}>
+                {({ isChecked }) => (
+                  <Box
+                    bg={isChecked ? "blue.600" : "blue.100"}
+                    px="xl"
+                    py="md"
+                    mr="md"
+                    borderRadius="full"
+                  >
+                    <Text color={isChecked ? "white" : "gray.800"}>{item}</Text>
+                  </Box>
+                )}
 
-            </Checkbox>
-          ))}
+              </Checkbox>
+            ))}
+          </HStack>
         </CheckboxGroup>
       </ExampleSection>
     </SafeAreaView>

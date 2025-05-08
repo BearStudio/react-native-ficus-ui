@@ -1,29 +1,28 @@
-export interface CheckboxStates {
+export interface RadioStates {
   isChecked?: boolean;
   isDisabled?: boolean;
 }
 
-export interface CheckboxOptions {
+export interface RadioOptions {
   size?: 'xs' | 'sm' | 'md' | 'lg';
   isDisabled?: boolean;
   isChecked?: boolean;
   defaultChecked?: boolean;
   colorScheme?: string;
   onChange?: (value?: string | number) => void;
-  icon?: React.ReactNode;
   children?:
-    | ((states: CheckboxStates) => React.ReactNode)
+    | ((states: RadioStates) => React.ReactNode)
     | React.ReactNode
     | string;
   value?: string | number;
 }
 
-export interface CheckboxGroupOptions {
+export interface RadioGroupOptions {
   size?: 'xs' | 'sm' | 'md' | 'lg';
   isDisabled?: boolean;
   colorScheme?: string;
-  onChange?: (value?: (string | number)[]) => void;
-  value?: (string | number)[];
-  defaultValue?: (string | number)[];
-  children: ((states: CheckboxStates) => React.ReactNode) | React.ReactNode;
+  onChange?: (value?: string | number) => void;
+  value?: string | number;
+  defaultValue?: string | number;
+  children: ((states: RadioStates) => React.ReactNode) | React.ReactNode;
 }

@@ -2,21 +2,21 @@ import React, { useState } from 'react';
 
 import { omitThemingProps } from '@ficus-ui/style-system';
 
-import { Checkbox } from '.';
+import { Radio } from '.';
 import {
   NativeFicusProps,
   ficus,
   forwardRef,
   useMultiStyleConfig,
 } from '../system';
-import { CheckboxGroupOptions, CheckboxStates } from './checkbox.types';
+import { RadioGroupOptions, RadioStates } from './radio.types';
 
-export interface CheckboxGroupProps
+export interface RadioGroupProps
   extends Omit<NativeFicusProps<'View'>, 'children'>,
-    CheckboxGroupOptions {}
+    RadioGroupOptions {}
 
-export const CheckboxGroup = forwardRef<CheckboxGroupProps, 'View'>((props) => {
-  const styles = useMultiStyleConfig('CheckboxGroup', props);
+export const RadioGroup = forwardRef<RadioGroupProps, 'View'>((props) => {
+  const styles = useMultiStyleConfig('RadioGroup', props);
   const { isDisabled, onChange, children, ...rest } = omitThemingProps(props);
 
   const [value, setValue] = useState(props.value ?? props.defaultValue ?? []);
@@ -28,21 +28,12 @@ export const CheckboxGroup = forwardRef<CheckboxGroupProps, 'View'>((props) => {
    * @param value
    */
   const handleOnChange = (optionValue: any) => {
-    const optionIndex = value.indexOf(optionValue);
-    const newValue = [...value];
-
-    if (optionIndex === -1) {
-      newValue.push(optionValue);
-    } else {
-      newValue.splice(optionIndex, 1);
-    }
-
     if (!('value' in props)) {
-      setValue(newValue);
+      setValue(optionValue);
     }
 
     if (onChange) {
-      onChange(newValue);
+      onChange(optionValue);
     }
   };
 
@@ -56,18 +47,18 @@ export const CheckboxGroup = forwardRef<CheckboxGroupProps, 'View'>((props) => {
         | number
         | boolean
         | React.ReactNode
-        | ((states: CheckboxStates) => React.ReactNode)
+        | ((states: RadioStates) => React.ReactNode)
     ): React.ReactNode => {
       // @ts-expect-error
       return React.Children.map(childrenProp, (child): React.ReactNode => {
         if (!React.isValidElement(child)) return child;
 
         // If child is a Radio component
-        if (child.type === Checkbox) {
+        if (child.type === Radio) {
           return React.cloneElement(child, {
             // @ts-expect-error
             onChange: handleOnChange,
-            isChecked: value.indexOf(child.props.value) > -1,
+            isChecked: value === child.props.value,
             ...(props.colorScheme ? { colorScheme: props.colorScheme } : {}),
           });
         }

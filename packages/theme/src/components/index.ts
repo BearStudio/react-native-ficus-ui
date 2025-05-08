@@ -6,6 +6,8 @@ import { checkboxGroupTheme } from './checkbox-group';
 import { iconButtonTheme } from './icon-button';
 import { inputTheme } from './input';
 import { pinInputFieldTheme, pinInputTheme } from './pin-input';
+import { radioTheme } from './radio';
+import { radioGroupTheme } from './radio-group';
 import { sliderTheme } from './slider';
 import { switchTheme } from './switch';
 import { textareaTheme } from './textarea';
@@ -16,6 +18,8 @@ export const components = {
   Button: buttonTheme,
   Checkbox: checkboxTheme,
   CheckboxGroup: checkboxGroupTheme,
+  Radio: radioTheme,
+  RadioGroup: radioGroupTheme,
   IconButton: iconButtonTheme,
   Slider: sliderTheme,
   Switch: switchTheme,

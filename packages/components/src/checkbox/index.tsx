@@ -30,7 +30,6 @@ export const Checkbox = forwardRef<CheckboxProps, 'TouchableOpacity'>(
     const {
       isDisabled,
       isChecked,
-      isLoading,
       defaultChecked,
       onChange,
       onPress,
@@ -42,14 +41,14 @@ export const Checkbox = forwardRef<CheckboxProps, 'TouchableOpacity'>(
     } = omitThemingProps(props);
 
     const [checked, setChecked] = useState(
-      ('checked' in props ? isChecked : defaultChecked) ?? false
+      ('isChecked' in props ? isChecked : defaultChecked) ?? false
     );
 
     const { containerStyles, controlStyles, labelStyles, iconStyles } =
       useCheckbox({ ...props, isChecked: checked }, styles);
 
     useEffect(() => {
-      if ('checked' in props) {
+      if ('isChecked' in props) {
         setChecked(props.isChecked ?? false);
       }
     }, [props]);
@@ -88,7 +87,6 @@ export const Checkbox = forwardRef<CheckboxProps, 'TouchableOpacity'>(
         return children({
           isDisabled: isDisabled ?? false,
           isChecked: checked,
-          isLoading,
         });
       }
 
@@ -107,7 +105,7 @@ export const Checkbox = forwardRef<CheckboxProps, 'TouchableOpacity'>(
     return (
       <ficus.TouchableOpacity
         onPress={handleOnPress}
-        disabled={isDisabled || isLoading}
+        disabled={isDisabled}
         activeOpacity={0.5}
         __styles={containerStyles}
         {...rest}

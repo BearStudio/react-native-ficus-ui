@@ -1,0 +1,181 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+
+# Radio
+
+Component to render a radio input.
+
+## Import
+
+```js
+import { Radio, RadioGroup } from 'react-native-ficus-ui';
+```
+
+## Usage
+
+### Simple checkbox
+
+<CodeEditor code={`<Box>
+  <Radio value={1}>Label</Radio>
+  <Radio value={2} defaultChecked>
+    Label
+  </Radio>
+  <Radio value={3} colorScheme="green">
+    Label
+  </Radio>
+  <Radio value={4} isDisabled>
+    Label
+  </Radio>
+  <Radio value={5}>
+    Label
+  </Radio>
+</Box>`} />
+
+### Simple radio group
+
+<CodeEditor code={`<RadioGroup colorScheme="red">
+  <VStack spacing="sm">
+    <Radio value={1}>
+      Option 1
+    </Radio>
+    <Radio value={2}>
+      Option 2
+    </Radio>
+    <Radio value={3}>
+      Option 3
+    </Radio>
+  </VStack>
+</RadioGroup>`} />
+
+### Radio sizes
+
+<CodeEditor code={`<RadioGroup>
+  <VStack spacing="sm">
+    <Radio value={1} size="xs">
+      Option 1
+    </Radio>
+    <Radio value={2} size="sm">
+      Option 2
+    </Radio>
+    <Radio value={3} size="md">
+      Option 3
+    </Radio>
+    <Radio value={4} size="lg">
+      Option 4
+    </Radio>
+  </VStack>
+</RadioGroup>`} />
+
+### Checkbox disabled
+
+<CodeEditor code={`<HStack spacing="md">
+  <Radio isDisabled>
+    Option 1
+  </Radio>
+  <Radio isDisabled defaultChecked>
+    Option 1
+  </Radio>
+</HStack>`} />
+
+
+### Custom render
+
+<CodeEditor code={`<RadioGroup colorScheme="red">
+  <HStack spacing="md">
+    {["Option 1", "Option 2", "Option 3"].map((item) => (
+        <Radio value={item}>
+          {({ isChecked }) => (
+            <Badge
+              variant={isChecked ? "solid" : "subtle"}
+              colorScheme="pink"
+              fontSize="xl"
+              px="lg"
+              py="lg"
+              borderRadius="full"
+            >
+              {item}
+            </Badge>
+          )}
+        </Radio>
+    ))}
+  </HStack>
+</RadioGroup>`} />
+
+## Props
+
+### Radio props
+
+Extends every `TouchableOpacity` props.
+
+### `colorScheme`
+<PropsTable
+  description="The colorScheme property, will define radio color."
+  prop={{ type: "string", required: false }}
+/>
+
+### `defaultChecked`
+<PropsTable
+  description="Boolean to indicate if radio should be checked by default."
+  prop={{ type: "boolean", required: false }}
+/>
+
+### `isChecked`
+<PropsTable
+  description="Boolean to indicate if radio is checked."
+  prop={{ type: "boolean", required: false }}
+/>
+
+### `isDisabled`
+<PropsTable
+  description="Boolean to indicate if radio is disabled."
+  prop={{ type: "boolean", required: false }}
+/>
+
+### `value`
+<PropsTable
+  description="The value to be used in the radio."
+  prop={{ type: "(value: string | number) => void", required: false }}
+/>
+
+### `onChange`
+<PropsTable
+  description="Function called when checked status changes on radio, value is returned as param."
+  prop={{ type: "(value: string | number) => void", required: false }}
+/>
+
+### `size`
+<PropsTable
+  description="Size of radio."
+  prop={{ type: "number | 'xs' | 'sm' | 'md' | 'lg'", required: false }}
+/>
+
+### RadioGroup props
+
+### `value`
+<PropsTable
+  description="The value of the radio group."
+  prop={{ type: "(value: string | number) => void", required: false }}
+/>
+
+### `onChange`
+<PropsTable
+  description="Function called when checked status changes on any radio children, value is returned as param."
+  prop={{ type: "(value: (string | number)) => void", required: false }}
+/>
+
+### `defaultValue`
+
+<PropsTable
+  description="Default value for the radio group."
+  prop={{ type: "(string | number)", required: false }}
+/>
+
+### `colorScheme`
+
+<PropsTable
+  description="The colorScheme property, will define group radios color."
+  prop={{ type: "string", required: false }}
+/>

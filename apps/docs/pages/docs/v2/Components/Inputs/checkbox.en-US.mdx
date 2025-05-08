@@ -52,31 +52,35 @@ import { Checkbox, CheckboxGroup } from 'react-native-ficus-ui';
 ### Checkbox group
 
 <CodeEditor code={`<CheckboxGroup colorScheme="green" defaultValue={[2, 3]}>
-  <Checkbox value={1}>Option 1</Checkbox>
-  <Checkbox value={2}>Option 2</Checkbox>
-  <Checkbox value={3}>Option 3</Checkbox>
-  <Checkbox value={4}>Option 4</Checkbox>
+  <VStack spacing="sm">
+    <Checkbox value={1}>Option 1</Checkbox>
+    <Checkbox value={2}>Option 2</Checkbox>
+    <Checkbox value={3}>Option 3</Checkbox>
+    <Checkbox value={4}>Option 4</Checkbox>
+  </VStack>
 </CheckboxGroup>`} />
 
 ### Custom render
 
 <CodeEditor code={`<CheckboxGroup flexDirection="row">
-  {["Option 1", "Option 2", "Option 3"].map((item) => (
-    <Checkbox value={item}>
-      {({ isChecked }) => (
-        <Box
-          bg={isChecked ? "blue.600" : "blue.100"}
-          px="xl"
-          py="md"
-          mr="md"
-          borderRadius="full"
-        >
-          <Text color={isChecked ? "white" : "gray.800"}>{item}</Text>
-        </Box>
-      )}
+  <HStack spacing="sm">
+    {["Option 1", "Option 2", "Option 3"].map((item) => (
+      <Checkbox value={item}>
+        {({ isChecked }) => (
+          <Box
+            bg={isChecked ? "blue.600" : "blue.100"}
+            px="xl"
+            py="md"
+            mr="md"
+            borderRadius="full"
+          >
+            <Text color={isChecked ? "white" : "gray.800"}>{item}</Text>
+          </Box>
+        )}
 
-    </Checkbox>
-  ))}
+      </Checkbox>
+    ))}
+  </HStack>
 </CheckboxGroup>`} />
 
 ## Props
@@ -106,12 +110,6 @@ Extends every `TouchableOpacity` props.
 ### `isDisabled`
 <PropsTable
   description="Boolean to indicate if checkbox is disabled."
-  prop={{ type: "boolean", required: false }}
-/>
-
-### `isLoading`
-<PropsTable
-  description="Boolean to indicate if checkbox should display a loader/spinner."
   prop={{ type: "boolean", required: false }}
 />
 

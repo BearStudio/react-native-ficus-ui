@@ -28,6 +28,7 @@ import InputComponent from '@/app/components-v2/Input';
 import PinInputComponent from '@/app/components-v2/PinInput';
 import SwitchComponent from './components-v2/Switch';
 import CheckboxComponent from './components-v2/Checkbox';
+import RadioComponent from './components-v2/Radio';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -44,6 +45,7 @@ export const components: ExampleComponentType[] = [
   { navigationPath: 'ScrollBox', onScreenName: 'ScrollBox', component: ScrollBoxComponent },
   { navigationPath: 'Center', onScreenName: 'Center', component: CenterComponent },
   { navigationPath: 'Checkbox', onScreenName: 'Checkbox', component: CheckboxComponent },
+  { navigationPath: 'Radio', onScreenName: 'Radio', component: RadioComponent },
   { navigationPath: 'Badge', onScreenName: 'Badge', component: BadgeComponent },
   { navigationPath: 'TouchableHighlight', onScreenName: 'TouchableHighlight', component: TouchableHighlightComponent },
   { navigationPath: 'TouchableOpacity', onScreenName: 'TouchableOpacity', component: TouchableOpacityComponent },
@@ -64,5 +66,5 @@ export const components: ExampleComponentType[] = [
   { navigationPath: 'DraggableModal', onScreenName: 'DraggableModal', component: DraggableModalComponent },
   { navigationPath: 'Avatar', onScreenName: 'Avatar', component: AvatarComponent },
   { navigationPath: 'Input', onScreenName: 'Input', component: InputComponent },
-  { navigationPath: 'PinInput', onScreenName: 'PinInput', component: PinInputComponent }
+  { navigationPath: 'PinInput', onScreenName: 'PinInput', component: PinInputComponent },
 ];

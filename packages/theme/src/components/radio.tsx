@@ -3,10 +3,10 @@ import {
   defineStyle,
 } from '@ficus-ui/style-system';
 
-const sliderParts = ['container', 'control', 'label', 'icon'] as const;
+const parts = ['container', 'control', 'label'] as const;
 
 const { definePartsStyle, defineMultiStyleConfig } =
-  createMultiStyleConfigHelpers(sliderParts);
+  createMultiStyleConfigHelpers(parts);
 
 const baseContainerStyle = defineStyle({
   flexDirection: 'row',
@@ -18,12 +18,10 @@ const baseControlStyle = defineStyle((props) => ({
   alignItems: 'center',
   justifyContent: 'center',
   bg: 'white',
-  borderRadius: 'sm',
+  borderRadius: 'full',
   borderColor: 'gray.200',
-  borderWidth: 2,
   _checked: {
-    borderWidth: 0,
-    bg: `${props.colorScheme}.500`,
+    borderColor: `${props.colorScheme}.500`,
   },
   _disabled: {
     opacity: 0.5,
@@ -37,15 +35,10 @@ const baseLabelStyle = defineStyle({
   },
 });
 
-const baseIconStyle = defineStyle({
-  color: 'white',
-});
-
 const baseStyle = definePartsStyle((props) => ({
   container: baseContainerStyle,
   control: baseControlStyle(props),
   label: baseLabelStyle,
-  icon: baseIconStyle,
 }));
 
 const sizes = {
@@ -53,9 +46,10 @@ const sizes = {
     control: {
       w: 16,
       h: 16,
-    },
-    icon: {
-      size: 'md',
+      borderWidth: 2,
+      _checked: {
+        borderWidth: 5,
+      },
     },
     label: {
       ml: 'sm',
@@ -66,9 +60,10 @@ const sizes = {
     control: {
       w: 18,
       h: 18,
-    },
-    icon: {
-      size: 'lg',
+      borderWidth: 2,
+      _checked: {
+        borderWidth: 6,
+      },
     },
     label: {
       ml: 'sm',
@@ -79,9 +74,10 @@ const sizes = {
     control: {
       w: 24,
       h: 24,
-    },
-    icon: {
-      size: 'xl',
+      borderWidth: 2,
+      _checked: {
+        borderWidth: 7,
+      },
     },
     label: {
       ml: 'sm',
@@ -92,9 +88,10 @@ const sizes = {
     control: {
       w: 32,
       h: 32,
-    },
-    icon: {
-      size: '2xl',
+      borderWidth: 2,
+      _checked: {
+        borderWidth: 10,
+      },
     },
     label: {
       ml: 'sm',
@@ -103,7 +100,7 @@ const sizes = {
   }),
 };
 
-export const checkboxTheme = defineMultiStyleConfig({
+export const radioTheme = defineMultiStyleConfig({
   baseStyle,
   sizes,
   defaultProps: {
