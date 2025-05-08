@@ -13,7 +13,7 @@ import {
 import { Text } from '../text/text.component';
 import { getThemeColor } from '../../theme/theme.service';
 
-const Tab: FC<TabProps> = ({ name, children, ...rest }) => {
+const Tab: FC<TabProps> = ({ children, ...rest }) => {
   const { theme } = useTheme();
   const styles = getStyle(theme, rest);
   return <View style={styles.box}>{children as ReactNode}</View>;
