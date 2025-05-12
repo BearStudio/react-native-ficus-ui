@@ -29,5 +29,6 @@ export * from './avatar';
 export * from './input';
 export * from './pin-input';
 export * from './pin-input/pin-input-field';
+export * from './select';
 
 export { FicusProvider, type FicusProviderProps } from './system';

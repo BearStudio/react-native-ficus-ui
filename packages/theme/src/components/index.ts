@@ -8,6 +8,7 @@ import { inputTheme } from './input';
 import { pinInputFieldTheme, pinInputTheme } from './pin-input';
 import { radioTheme } from './radio';
 import { radioGroupTheme } from './radio-group';
+import { selectTheme } from './select';
 import { sliderTheme } from './slider';
 import { switchTheme } from './switch';
 import { textareaTheme } from './textarea';
@@ -27,4 +28,5 @@ export const components = {
   Textarea: textareaTheme,
   PinInput: pinInputTheme,
   PinInputField: pinInputFieldTheme,
+  Select: selectTheme,
 };

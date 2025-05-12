@@ -26,6 +26,12 @@ const InputComponent = () => {
           secureTextEntry
         />
       </ExampleSection>
+      <ExampleSection name="Custom color scheme">
+        <Input
+          placeholder="Username"
+          colorScheme="red"
+        />
+      </ExampleSection>
       <ExampleSection name="Custom border style">
         <Input
           placeholder="Username"

@@ -29,6 +29,7 @@ import PinInputComponent from '@/app/components-v2/PinInput';
 import SwitchComponent from './components-v2/Switch';
 import CheckboxComponent from './components-v2/Checkbox';
 import RadioComponent from './components-v2/Radio';
+import SelectComponent from './components-v2/Select';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -67,4 +68,5 @@ export const components: ExampleComponentType[] = [
   { navigationPath: 'Avatar', onScreenName: 'Avatar', component: AvatarComponent },
   { navigationPath: 'Input', onScreenName: 'Input', component: InputComponent },
   { navigationPath: 'PinInput', onScreenName: 'PinInput', component: PinInputComponent },
+  { navigationPath: 'Select', onScreenName: 'Select', component: SelectComponent },
 ];

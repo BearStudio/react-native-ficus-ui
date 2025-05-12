@@ -95,7 +95,12 @@ export const Input = forwardRef<InputProps, 'TextInput'>((props, ref) => {
   return (
     <ficus.TouchableWithoutFeedback onPress={onPressComponent}>
       <ficus.View __styles={inputContainerMarginStyles}>
-        <ficus.View __styles={inputContainerStyles}>
+        <ficus.View
+          __styles={inputContainerStyles}
+          {...(isFocused && props.colorScheme
+            ? { borderColor: `${props.colorScheme}.500` }
+            : {})}
+        >
           {prefix && <ficus.View __styles={prefixStyles}>{prefix}</ficus.View>}
           <ficus.TextInput
             ref={innerRef}

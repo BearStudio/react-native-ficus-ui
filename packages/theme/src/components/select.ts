@@ -10,20 +10,23 @@ const baseStyle = defineStyle({
   bg: 'white',
   color: 'gray.800',
   shadow: 0,
+  w: '100%',
   _disabled: {
     opacity: 0.6,
   },
 });
 
-const variantOutline = defineStyle({
-  borderWidth: 1,
-  borderStyle: 'solid',
-  borderColor: 'gray.400',
-  _focused: {
-    borderWidth: 2,
+const variantOutline = defineStyle(() => {
+  return {
+    borderWidth: 1,
     borderStyle: 'solid',
-    borderColor: 'blue.500',
-  },
+    borderColor: 'gray.400',
+    _focused: {
+      borderWidth: 2,
+      borderStyle: 'solid',
+      borderColor: 'blue.500',
+    },
+  };
 });
 
 const variants = {
@@ -36,28 +39,43 @@ const sizes = {
     px: 'sm',
     py: 0,
     fontSize: 'xs',
+    _focused: {
+      px: 5,
+    },
   }),
   sm: defineStyle({
     height: 32,
     px: 'md',
     py: 'md',
     fontSize: 'sm',
+    _focused: {
+      px: 7,
+      py: 7,
+    },
   }),
   md: defineStyle({
     height: 40,
     px: 'lg',
     py: 'lg',
     fontSize: 'md',
+    _focused: {
+      px: 11,
+      py: 11,
+    },
   }),
   lg: defineStyle({
     height: 48,
     px: 'lg',
     py: 'lg',
     fontSize: 'md',
+    _focused: {
+      px: 11,
+      py: 11,
+    },
   }),
 };
 
-export const inputTheme = defineStyleConfig({
+export const selectTheme = defineStyleConfig({
   baseStyle,
   variants,
   sizes,

@@ -21,6 +21,7 @@ import {
   View as RNView,
 } from 'react-native';
 import { CodeField as RNCodeField } from 'react-native-confirmation-code-field';
+import RNPickerSelect from 'react-native-picker-select';
 
 /**
  * These are the basic react native elements that are supported with the `ficus.View` notation.
@@ -45,6 +46,7 @@ export const baseRNElements = {
   BottomSheetView: RNBottomSheetView,
   TextInput: RNTextInput,
   CodeField: RNCodeField,
+  PickerSelect: RNPickerSelect,
 } as const;
 
 export type BaseRNElements = keyof typeof baseRNElements;

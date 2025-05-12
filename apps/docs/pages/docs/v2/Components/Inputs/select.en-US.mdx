@@ -1,0 +1,86 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+
+# Select
+
+Component to select an item between several options.
+
+## Import
+
+```js
+import { Select } from 'react-native-ficus-ui';
+```
+
+## Usage
+
+### Simple usage
+
+<CodeEditor code={`const SimpleUsage = () => {
+  const items = [
+    { label: 'Football', value: 'football' },
+    { label: 'Baseball', value: 'baseball' },
+    { label: 'Hockey', value: 'hockey' },
+  ];
+
+  return (
+    <VStack spacing="md">
+      <Select
+        size="md"
+        onValueChange={(value) => console.log(value)}
+        items={items}
+      />
+      <Select
+        size="md"
+        onValueChange={(value) => console.log(value)}
+        items={items}
+        colorScheme="red"
+      />
+    </VStack>
+  );
+}
+render(<SimpleUsage />)`} noInline />
+
+### Sizes
+
+<CodeEditor code={`const SimpleUsage = () => {
+  const items = [
+    { label: 'Football', value: 'football' },
+    { label: 'Baseball', value: 'baseball' },
+    { label: 'Hockey', value: 'hockey' },
+  ];
+
+  return (
+    <VStack spacing="md">
+      <Select
+        size="xs"
+        onValueChange={(value) => console.log(value)}
+        items={items}
+      />
+      <Select
+        size="sm"
+        onValueChange={(value) => console.log(value)}
+        items={items}
+      />
+      <Select
+        size="md"
+        onValueChange={(value) => console.log(value)}
+        items={items}
+      />
+      <Select
+        size="lg"
+        onValueChange={(value) => console.log(value)}
+        items={items}
+      />
+    </VStack>
+  );
+}
+render(<SimpleUsage />)`} noInline />
+
+## Props
+
+Extends every `Box` props and `RNPickerSelect` from `react-native-picker-select`
+
+https://github.com/lawnstarter/react-native-picker-select

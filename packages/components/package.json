@@ -10,7 +10,9 @@
     "@chakra-ui/utils": "2.2.2",
     "@ficus-ui/style-system": "workspace:*",
     "@ficus-ui/theme": "workspace:*",
-    "react-fast-compare": "3.2.2"
+    "react-fast-compare": "3.2.2",
+    "react-native-picker-select": "9.3.1",
+    "@react-native-picker/picker": "2.11.0"
   },
   "devDependencies": {
     "@types/react": "18.3.1",
