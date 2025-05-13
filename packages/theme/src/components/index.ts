@@ -11,6 +11,7 @@ import { radioGroupTheme } from './radio-group';
 import { selectTheme } from './select';
 import { sliderTheme } from './slider';
 import { switchTheme } from './switch';
+import { tabListTheme, tabsTheme } from './tabs';
 import { textareaTheme } from './textarea';
 
 export const components = {
@@ -29,4 +30,6 @@ export const components = {
   PinInput: pinInputTheme,
   PinInputField: pinInputFieldTheme,
   Select: selectTheme,
+  Tabs: tabsTheme,
+  TabList: tabListTheme,
 };

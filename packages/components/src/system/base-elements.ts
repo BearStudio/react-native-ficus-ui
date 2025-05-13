@@ -22,6 +22,7 @@ import {
 } from 'react-native';
 import { CodeField as RNCodeField } from 'react-native-confirmation-code-field';
 import RNPickerSelect from 'react-native-picker-select';
+import { TabView as RNTabView } from 'react-native-tab-view';
 
 /**
  * These are the basic react native elements that are supported with the `ficus.View` notation.
@@ -47,6 +48,7 @@ export const baseRNElements = {
   TextInput: RNTextInput,
   CodeField: RNCodeField,
   PickerSelect: RNPickerSelect,
+  TabView: RNTabView,
 } as const;
 
 export type BaseRNElements = keyof typeof baseRNElements;

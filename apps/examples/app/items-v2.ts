@@ -30,6 +30,7 @@ import SwitchComponent from './components-v2/Switch';
 import CheckboxComponent from './components-v2/Checkbox';
 import RadioComponent from './components-v2/Radio';
 import SelectComponent from './components-v2/Select';
+import TabsExampleComponent from './components-v2/Tabs';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -69,4 +70,5 @@ export const components: ExampleComponentType[] = [
   { navigationPath: 'Input', onScreenName: 'Input', component: InputComponent },
   { navigationPath: 'PinInput', onScreenName: 'PinInput', component: PinInputComponent },
   { navigationPath: 'Select', onScreenName: 'Select', component: SelectComponent },
+  { navigationPath: 'Tabs', onScreenName: 'Tabs', component: TabsExampleComponent },
 ];
