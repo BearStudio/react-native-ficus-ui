@@ -27,6 +27,7 @@ interface TabsOptions {
   children?: ReactNode;
 }
 
+// [FIXME]: There is probably a way to abstract the style handling more generally.
 export interface TabsProps
   extends Omit<
       NativeFicusProps<'TabView'>,

@@ -1,7 +1,8 @@
-export interface SwitchOptions {
-  size?: 'xs' | 'sm' | 'md' | 'lg';
+export interface SwitchStates {
   isDisabled?: boolean;
   isChecked?: boolean;
-  colorScheme?: string;
+}
+
+export interface SwitchOptions extends SwitchStates {
   duration?: number;
 }

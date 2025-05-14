@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { omitThemingProps } from '@ficus-ui/style-system';
+import { ThemingProps, omitThemingProps } from '@ficus-ui/style-system';
 import { getColor, useTheme } from '@ficus-ui/theme';
 import { Animated } from 'react-native';
 
@@ -16,8 +16,8 @@ import { SwitchOptions } from './switch.types';
 
 export interface SwitchProps
   extends NativeFicusProps<'TouchableOpacity'>,
+    ThemingProps<'Switch'>,
     SwitchOptions {}
-
 export const Switch = forwardRef<SwitchProps, 'TouchableOpacity'>(
   (props, ref) => {
     const { theme } = useTheme();
