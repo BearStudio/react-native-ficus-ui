@@ -1,28 +1,24 @@
-export interface RadioStates {
-  isChecked?: boolean;
+export interface RadioGroupStates {
   isDisabled?: boolean;
 }
 
-export interface RadioOptions {
-  size?: 'xs' | 'sm' | 'md' | 'lg';
-  isDisabled?: boolean;
+type RadioGroupValue = string | number;
+export interface RadioGroupOptions extends RadioGroupStates {
+  onChange?: (value?: RadioGroupValue) => void;
+  value?: RadioGroupValue;
+  defaultValue?: RadioGroupValue;
+  children: ((states: RadioStates) => React.ReactNode) | React.ReactNode;
+}
+
+export interface RadioStates extends RadioGroupStates {
   isChecked?: boolean;
+}
+export interface RadioOptions extends RadioStates {
   defaultChecked?: boolean;
-  colorScheme?: string;
-  onChange?: (value?: string | number) => void;
+  onChange?: (value?: RadioGroupValue) => void;
   children?:
     | ((states: RadioStates) => React.ReactNode)
     | React.ReactNode
     | string;
-  value?: string | number;
-}
-
-export interface RadioGroupOptions {
-  size?: 'xs' | 'sm' | 'md' | 'lg';
-  isDisabled?: boolean;
-  colorScheme?: string;
-  onChange?: (value?: string | number) => void;
-  value?: string | number;
-  defaultValue?: string | number;
-  children: ((states: RadioStates) => React.ReactNode) | React.ReactNode;
+  value?: RadioGroupValue;
 }

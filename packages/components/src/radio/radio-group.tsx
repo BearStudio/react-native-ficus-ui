@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { omitThemingProps } from '@ficus-ui/style-system';
+import { ThemingProps, omitThemingProps } from '@ficus-ui/style-system';
 
 import { Radio } from '.';
 import {
@@ -13,6 +13,7 @@ import { RadioGroupOptions, RadioStates } from './radio.types';
 
 export interface RadioGroupProps
   extends Omit<NativeFicusProps<'View'>, 'children'>,
+    ThemingProps<'RadioGroup'>,
     RadioGroupOptions {}
 
 export const RadioGroup = forwardRef<RadioGroupProps, 'View'>((props, ref) => {

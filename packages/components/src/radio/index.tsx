@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { isFunction } from '@chakra-ui/utils';
-import { omitThemingProps } from '@ficus-ui/style-system';
+import { ThemingProps, omitThemingProps } from '@ficus-ui/style-system';
 import { GestureResponderEvent } from 'react-native';
 
 import {
@@ -15,6 +15,7 @@ import { RadioOptions } from './radio.types';
 
 export interface RadioProps
   extends Omit<NativeFicusProps<'TouchableOpacity'>, 'children'>,
+    ThemingProps<'Radio'>,
     RadioOptions {}
 
 export const Radio = forwardRef<RadioProps, 'TouchableOpacity'>(
