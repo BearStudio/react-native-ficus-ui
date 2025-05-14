@@ -1,6 +1,6 @@
 import React, { useId, useState } from 'react';
 
-import { omitThemingProps } from '@ficus-ui/style-system';
+import { ThemingProps, omitThemingProps } from '@ficus-ui/style-system';
 
 import { Checkbox } from '.';
 import {
@@ -13,6 +13,7 @@ import { CheckboxGroupOptions, CheckboxStates } from './checkbox.types';
 
 export interface CheckboxGroupProps
   extends Omit<NativeFicusProps<'View'>, 'children'>,
+    ThemingProps<'CheckboxGroup'>,
     CheckboxGroupOptions {}
 
 export const CheckboxGroup = forwardRef<CheckboxGroupProps, 'View'>(

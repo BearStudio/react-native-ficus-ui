@@ -4,11 +4,9 @@ export interface CheckboxStates {
 }
 
 export interface CheckboxOptions {
-  size?: 'xs' | 'sm' | 'md' | 'lg';
   isDisabled?: boolean;
   isChecked?: boolean;
   defaultChecked?: boolean;
-  colorScheme?: string;
   onChange?: (value?: string | number) => void;
   icon?: React.ReactNode;
   children?:
@@ -19,9 +17,7 @@ export interface CheckboxOptions {
 }
 
 export interface CheckboxGroupOptions {
-  size?: 'xs' | 'sm' | 'md' | 'lg';
   isDisabled?: boolean;
-  colorScheme?: string;
   onChange?: (value?: (string | number)[]) => void;
   value?: (string | number)[];
   defaultValue?: (string | number)[];

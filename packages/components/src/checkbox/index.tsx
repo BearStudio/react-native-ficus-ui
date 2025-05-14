@@ -7,7 +7,7 @@ import {
 } from 'react';
 
 import { isFunction } from '@chakra-ui/utils';
-import { omitThemingProps } from '@ficus-ui/style-system';
+import { ThemingProps, omitThemingProps } from '@ficus-ui/style-system';
 import { GestureResponderEvent } from 'react-native';
 
 import { Icon } from '../icon';
@@ -22,6 +22,7 @@ import { CheckboxOptions } from './checkbox.types';
 
 export interface CheckboxProps
   extends Omit<NativeFicusProps<'TouchableOpacity'>, 'children'>,
+    ThemingProps<'Checkbox'>,
     CheckboxOptions {}
 
 export const Checkbox = forwardRef<CheckboxProps, 'TouchableOpacity'>(
