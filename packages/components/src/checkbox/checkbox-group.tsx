@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useId, useState } from 'react';
 
 import { omitThemingProps } from '@ficus-ui/style-system';
 
@@ -20,6 +20,7 @@ export const CheckboxGroup = forwardRef<CheckboxGroupProps, 'View'>(
     const styles = useMultiStyleConfig('CheckboxGroup', props);
     const { isDisabled, onChange, children, ...rest } = omitThemingProps(props);
 
+    const checkboxGroupId = useId();
     const [value, setValue] = useState(props.value ?? props.defaultValue ?? []);
 
     /**
@@ -66,8 +67,8 @@ export const CheckboxGroup = forwardRef<CheckboxGroupProps, 'View'>(
           // If child is a Radio component
           if (child.type === Checkbox) {
             return React.cloneElement(child, {
-              key: `checkbox-${child.props.value}`,
-              // @ts-expect-error
+              key: `checkbox-${checkboxGroupId}-${child.props.value}`,
+              // @ts-expect-error [FIXME]
               onChange: handleOnChange,
               isChecked: value.indexOf(child.props.value) > -1,
               ...(props.colorScheme ? { colorScheme: props.colorScheme } : {}),

@@ -1,4 +1,4 @@
-import { Box, Image, SafeAreaBox, Text } from '../../../../packages/components/src';
+import { Box, Image, SafeAreaBox, Text } from 'react-native-ficus-ui';
 
 
 const ImageComponent = () => {

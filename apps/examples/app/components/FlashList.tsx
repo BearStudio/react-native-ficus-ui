@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import { SafeAreaView } from "react-native";
-import { Box, Flex, FlashList, Text } from "../../../../packages/components/src";
+import { Box, Flex, FlashList, Text } from "react-native-ficus-ui";
 
 const FlashListComponent = () => {
   const DATA = [

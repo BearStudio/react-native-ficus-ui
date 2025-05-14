@@ -1,4 +1,4 @@
-import { Box, Flex, List, SafeAreaBox, Text } from '../../../../packages/components/src';
+import { Box, Flex, List, SafeAreaBox, Text } from 'react-native-ficus-ui';
 
 const ListComponent = () => {
   const DATA = [

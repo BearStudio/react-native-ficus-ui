@@ -1,4 +1,4 @@
-import { Box, SafeAreaBox, Text, TouchableHighlight } from '../../../../packages/components/src';
+import { Box, SafeAreaBox, Text, TouchableHighlight } from 'react-native-ficus-ui';
 
 const TouchableHighlightComponent = () => {
   return (

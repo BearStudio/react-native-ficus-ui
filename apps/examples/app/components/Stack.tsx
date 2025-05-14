@@ -6,7 +6,7 @@ import {
   StackDivider,
   Text,
   VStack,
-} from '../../../../packages/components/src';
+} from 'react-native-ficus-ui';
 import { SafeAreaView } from 'react-native';
 
 import ExampleSection from '@/src/ExampleSection';

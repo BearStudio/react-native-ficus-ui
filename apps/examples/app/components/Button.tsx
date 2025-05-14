@@ -1,4 +1,4 @@
-import { Button, HStack, SafeAreaBox, ScrollBox, Stack, Text, Icon } from '../../../../packages/components/src';
+import { Button, HStack, SafeAreaBox, ScrollBox, Stack, Text, Icon } from 'react-native-ficus-ui';
 
 import ExampleSection from '@/src/ExampleSection';
 
@@ -102,12 +102,12 @@ const ButtonComponent = () => {
         <ExampleSection name="prefix and suffix">
           <Stack spacing={10}>
             <Button colorScheme="green">
-              <Icon name="heart" color="white" fontSize="xl" mr="sm" />
+              <Icon name="heart" color="white" size="xl" mr="sm" />
               Button
             </Button>
             <Button colorScheme="green">
               Button
-              <Icon name="heart" color="white" fontSize="xl" ml="sm" />
+              <Icon name="heart" color="white" size="xl" ml="sm" />
             </Button>
           </Stack>
         </ExampleSection>

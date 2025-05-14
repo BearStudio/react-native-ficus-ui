@@ -29,29 +29,6 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "main": "dist/cjs/index.cjs",
-  "module": "dist/esm/index.mjs",
-  "types": "dist/types/index.d.ts",
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/types/index.d.ts",
-        "default": "./dist/esm/index.mjs"
-      },
-      "require": {
-        "types": "./dist/types/index.d.ts",
-        "default": "./dist/cjs/index.cjs"
-      }
-    },
-    "./config": {
-      "import": {
-        "types": "./dist/types/config/index.d.ts",
-        "default": "./dist/esm/config/index.mjs"
-      },
-      "require": {
-        "types": "./dist/types/config/index.d.ts",
-        "default": "./dist/cjs/config/index.cjs"
-      }
-    }
-  }
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts"
 }

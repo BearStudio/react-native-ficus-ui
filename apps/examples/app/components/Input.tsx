@@ -1,12 +1,11 @@
-import { SafeAreaView } from "react-native";
-import { Icon, Input, Text, Textarea, VStack } from "../../../../packages/components/src";
+import { Icon, Input, SafeAreaBox, Text, Textarea, VStack } from 'react-native-ficus-ui';
 import ExampleSection from "@/src/ExampleSection";
 
 const InputComponent = () => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaBox>
       <Text mx="xl" fontSize="4xl">
-        Input component
+        Input componen!t
       </Text>
       <ExampleSection name="With prefix">
         <Input
@@ -85,7 +84,7 @@ const InputComponent = () => {
           }}
         />
       </ExampleSection>
-    </SafeAreaView>
+    </SafeAreaBox>
   );
 };
 

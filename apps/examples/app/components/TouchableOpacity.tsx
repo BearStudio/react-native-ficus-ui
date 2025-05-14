@@ -1,4 +1,4 @@
-import { Box, SafeAreaBox, Text, TouchableOpacity } from '../../../../packages/components/src';
+import { Box, SafeAreaBox, Text, TouchableOpacity } from 'react-native-ficus-ui';
 
 const TouchableOpacityComponent = () => {
   return (

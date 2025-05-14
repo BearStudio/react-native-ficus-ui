@@ -3,9 +3,10 @@ import {
   Button,
   Text,
   useDisclosure,
-} from "../../../../packages/components/src";
+  DraggableModal
+} from "react-native-ficus-ui";
 import ExampleSection from "@/src/ExampleSection";
-import { DraggableModal } from "../../../../packages/components/src";
+
 const DraggableModalComponent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (

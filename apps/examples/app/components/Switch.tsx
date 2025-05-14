@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { SafeAreaView } from "react-native";
-import { Switch, ScrollBox, Text, HStack } from  "../../../../packages/components/src";
+import { Switch, ScrollBox, Text, HStack } from  "react-native-ficus-ui";
 import ExampleSection from "@/src/ExampleSection";
 
 const SwitchComponent = () => {

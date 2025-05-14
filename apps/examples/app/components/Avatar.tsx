@@ -1,7 +1,7 @@
 import { SafeAreaView } from 'react-native';
 
 import ExampleSection from '@/src/ExampleSection';
-import { Avatar, AvatarBadge, AvatarGroup, HStack, ScrollBox, Text } from '../../../../packages/components/src';
+import { Avatar, AvatarBadge, AvatarGroup, HStack, ScrollBox, Text } from 'react-native-ficus-ui';
 
 const AvatarComponent = () => {
   return (

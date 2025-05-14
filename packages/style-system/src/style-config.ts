@@ -35,7 +35,7 @@ function createResolver(theme: Theme) {
     const isMultipart = !!config.parts;
 
     const propValue = {
-      [prop]: config[prop]?.[value],
+      [prop]: config[prop]?.[value as keyof (typeof config)[typeof prop]],
     };
 
     const _styles = expandResponsive(propValue)(theme);

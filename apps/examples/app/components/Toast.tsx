@@ -1,5 +1,5 @@
 import { SafeAreaView } from "react-native";
-import { Button, Text, VStack, useToast } from "../../../../packages/components/src";
+import { Button, Text, VStack, useToast } from "react-native-ficus-ui";
 import ExampleSection from "@/src/ExampleSection";
 
 const ToastHook = () => {

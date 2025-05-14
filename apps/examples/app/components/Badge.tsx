@@ -1,4 +1,4 @@
-import { Badge, SafeAreaBox, ScrollBox, Stack, Text } from '../../../../packages/components/src';
+import { Badge, SafeAreaBox, ScrollBox, Stack, Text } from 'react-native-ficus-ui';
 
 import ExampleSection from '@/src/ExampleSection';
 

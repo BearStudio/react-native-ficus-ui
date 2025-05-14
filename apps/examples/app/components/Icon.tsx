@@ -1,5 +1,5 @@
 import ExampleSection from "@/src/ExampleSection";
-import { HStack, Icon, SafeAreaBox, ScrollBox, Text } from "../../../../packages/components/src";
+import { HStack, Icon, SafeAreaBox, ScrollBox, Text } from "react-native-ficus-ui";
 
 
 const IconComponent = () => {
