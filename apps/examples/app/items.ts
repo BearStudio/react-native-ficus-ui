@@ -1,37 +1,37 @@
 import { ComponentType } from 'react';
 import BoxComponent from './components/Box';
-import TextComponent from './components/Text';
-import CenterComponent from './components/Center';
-import FlexComponent from './components/Flex';
-import StackComponent from './components/Stack';
-import ListComponent from './components/List';
-import SectionListComponent from './components/SectionList';
-import ImageComponent from './components/Image';
-import SpinnerComponent from './components/Spinner';
-import PressableComponent from './components/Pressable';
-import TouchableOpacityComponent from './components/TouchableOpacity';
-import TouchableHighlightComponent from './components/TouchableHighlight';
-import TouchableWithoutFeedbackComponent from './components/TouchableWithoutFeedback';
+import StackComponent from '@/app/components/Stack';
+import FlexComponent from '@/app/components/Flex';
+import TextComponent from '@/app/components/Text';
+import SafeAreaBoxComponent from '@/app/components/SafeAreaBox';
+import ScrollBoxComponent from '@/app/components/ScrollBox';
+import CenterComponent from '@/app/components/Center';
+import BadgeComponent from '@/app/components/Badge';
+import TouchableHighlightComponent from '@/app/components/TouchableHighlight';
+import TouchableOpacityComponent from '@/app/components/TouchableOpacity';
+import TouchableWithoutFeedbackComponent from '@/app/components/TouchableWithoutFeedback';
+import ImageComponent from '@/app/components/Image';
+import PressableComponent from '@/app/components/Pressable';
 import ButtonComponent from './components/Button';
-import IconButtonComponent from './components/IconButton';
-import IconComponent from './components/Icon';
+import DividerComponent from '@/app/components/Divider';
+import SpinnerComponent from '@/app/components/Spinner';
+import SliderComponent from '@/app/components/Slider';
+import IconComponent from '@/app/components/Icon';
+import IconButtonComponent from '@/app/components/IconButton';
+import ListComponent from '@/app/components/List';
+import SectionListComponent from '@/app/components/SectionList';
+import FlashListComponent from '@/app/components/FlashList';
+import ModalComponent from '@/app/components/Modal';
+import DraggableModalComponent from '@/app/components/DraggableModal';
+import AvatarComponent from '@/app/components/Avatar';
+import InputComponent from '@/app/components/Input';
+import PinInputComponent from '@/app/components/PinInput';
 import SwitchComponent from './components/Switch';
-import InputComponent from './components/Input';
-import SelectComponent from './components/Select';
 import CheckboxComponent from './components/Checkbox';
 import RadioComponent from './components/Radio';
+import SelectComponent from './components/Select';
+import TabsExampleComponent from './components/Tabs';
 import ToastHook from './components/Toast';
-import ModalComponent from './components/Modal';
-import DraggableModalComponent from './components/DraggableModal';
-import FlashListComponent from './components/FlashList';
-import SafeAreaBoxComponent from './components/SafeAreaBox';
-import DividerComponent from './components/Divider';
-import ScrollBoxComponent from './components/ScrollBox';
-import BadgeComponent from './components/Badge';
-import AvatarComponent from './components/Avatar';
-import PinInputComponent from './components/PinInput';
-import SliderComponent from './components/Slider';
-import TabsComponent from './components/Tabs';
 
 type ExampleComponentType = {
   onScreenName: string;
@@ -40,149 +40,56 @@ type ExampleComponentType = {
 };
 
 export const components: ExampleComponentType[] = [
-  {
-    navigationPath: 'Text',
-    onScreenName: 'Text',
-    component: TextComponent,
-  },
-  { navigationPath: 'Box', onScreenName: 'Box', component: BoxComponent },
+  { navigationPath: 'Avatar', onScreenName: 'Avatar', component: AvatarComponent },
   { navigationPath: 'Badge', onScreenName: 'Badge', component: BadgeComponent },
-  {
-    navigationPath: 'Avatar',
-    onScreenName: 'Avatar',
-    component: AvatarComponent,
-  },
-  {
-    navigationPath: 'PinInput',
-    onScreenName: 'PinInput',
-    component: PinInputComponent,
-  },
-  {
-    navigationPath: 'ScrollBox',
-    onScreenName: 'ScrollBox',
-    component: ScrollBoxComponent,
-  },
-  {
-    navigationPath: 'Divider',
-    onScreenName: 'Divider',
-    component: DividerComponent,
-  },
-  {
-    navigationPath: 'SafeAreaBox',
-    onScreenName: 'SafeAreaBox',
-    component: SafeAreaBoxComponent,
-  },
-  {
-    navigationPath: 'Center',
-    onScreenName: 'Center',
-    component: CenterComponent,
-  },
-  { navigationPath: 'Flex', onScreenName: 'Flex', component: FlexComponent },
+  { navigationPath: 'Box', onScreenName: 'Box', component: BoxComponent },
+  { navigationPath: 'Button', onScreenName: 'Button', component: ButtonComponent },
   { navigationPath: 'Stack', onScreenName: 'Stack', component: StackComponent },
+  { navigationPath: 'Center', onScreenName: 'Center', component: CenterComponent },
+  { navigationPath: 'Checkbox', onScreenName: 'Checkbox', component: CheckboxComponent },
+  { navigationPath: 'Divider', onScreenName: 'Divider', component: DividerComponent },
+  { navigationPath: 'DraggableModal', onScreenName: 'DraggableModal', component: DraggableModalComponent },
+  { navigationPath: 'FlashList', onScreenName: 'FlashList', component: FlashListComponent },
+  { navigationPath: 'IconButton', onScreenName: 'IconButton', component: IconButtonComponent },
+  { navigationPath: 'Icon', onScreenName: 'Icon', component: IconComponent },
+  { navigationPath: 'Image', onScreenName: 'Image', component: ImageComponent },
+  { navigationPath: 'Input', onScreenName: 'Input', component: InputComponent },
+  { navigationPath: 'Flex', onScreenName: 'Flex', component: FlexComponent },
   { navigationPath: 'List', onScreenName: 'List', component: ListComponent },
-  {
-    navigationPath: 'FlashList',
-    onScreenName: 'FlashList',
-    component: FlashListComponent,
-  },
-  {
-    navigationPath: 'SectionList',
-    onScreenName: 'SectionList',
-    component: SectionListComponent,
-  },
-  {
-    navigationPath: 'Image',
-    onScreenName: 'Image',
-    component: ImageComponent,
-  },
-  {
-    navigationPath: 'Icon',
-    onScreenName: 'Icon',
-    component: IconComponent,
-  },
-  {
-    navigationPath: 'Input',
-    onScreenName: 'Input',
-    component: InputComponent,
-  },
-  {
-    navigationPath: 'Select',
-    onScreenName: 'Select',
-    component: SelectComponent,
-  },
-  {
-    navigationPath: 'Spinner',
-    onScreenName: 'Spinner',
-    component: SpinnerComponent,
-  },
-  {
-    navigationPath: 'Button',
-    onScreenName: 'Button',
-    component: ButtonComponent,
-  },
-  {
-    navigationPath: 'IconButton',
-    onScreenName: 'IconButton',
-    component: IconButtonComponent,
-  },
-  {
-    navigationPath: 'Pressable',
-    onScreenName: 'Pressable',
-    component: PressableComponent,
-  },
-  {
-    navigationPath: 'TouchableOpacity',
-    onScreenName: 'TouchableOpacity',
-    component: TouchableOpacityComponent,
-  },
-  {
-    navigationPath: 'TouchableHighlight',
-    onScreenName: 'TouchableHighlight',
-    component: TouchableHighlightComponent,
-  },
-  {
-    navigationPath: 'TouchableWithoutFeedback',
-    onScreenName: 'TouchableWithoutFeedback',
-    component: TouchableWithoutFeedbackComponent,
-  },
-  {
-    navigationPath: 'Switch',
-    onScreenName: 'Switch',
-    component: SwitchComponent,
-  },
-  {
-    navigationPath: 'Checkbox',
-    onScreenName: 'Checkbox',
-    component: CheckboxComponent,
-  },
-  {
-    navigationPath: 'Radio',
-    onScreenName: 'Radio',
-    component: RadioComponent,
-  },
-  {
-    navigationPath: 'Toast',
-    onScreenName: 'Toast',
-    component: ToastHook,
-  },
-  {
-    navigationPath: 'Modal',
-    onScreenName: 'Modal',
-    component: ModalComponent,
-  },
-  {
-    navigationPath: 'DraggableModal',
-    onScreenName: 'DraggableModal',
-    component: DraggableModalComponent,
-  },
-  {
-    navigationPath: 'Slider',
-    onScreenName: 'Slider',
-    component: SliderComponent,
-  },
-  {
-    navigationPath: 'Tabs',
-    onScreenName: 'Tabs',
-    component: TabsComponent,
-  },
+  { navigationPath: 'Modal', onScreenName: 'Modal', component: ModalComponent },
+  { navigationPath: 'PinInput', onScreenName: 'PinInput', component: PinInputComponent },
+  { navigationPath: 'Pressable', onScreenName: 'Pressable', component: PressableComponent },
+  { navigationPath: 'Radio', onScreenName: 'Radio', component: RadioComponent },
+  { navigationPath: 'SafeAreaBox', onScreenName: 'SafeAreaBox', component: SafeAreaBoxComponent },
+  { navigationPath: 'ScrollBox', onScreenName: 'ScrollBox', component: ScrollBoxComponent },
+  { navigationPath: 'SectionList', onScreenName: 'SectionList', component: SectionListComponent },
+  { navigationPath: 'Select', onScreenName: 'Select', component: SelectComponent },
+  { navigationPath: 'Slider', onScreenName: 'Slider', component: SliderComponent },
+  { navigationPath: 'Spinner', onScreenName: 'Spinner', component: SpinnerComponent },
+  { navigationPath: 'Switch', onScreenName: 'Switch', component: SwitchComponent },
+  { navigationPath: 'Tabs', onScreenName: 'Tabs', component: TabsExampleComponent },
+  { navigationPath: 'Text', onScreenName: 'Text', component: TextComponent },
+  { navigationPath: 'TouchableHighlight', onScreenName: 'TouchableHighlight', component: TouchableHighlightComponent },
+  { navigationPath: 'TouchableOpacity', onScreenName: 'TouchableOpacity', component: TouchableOpacityComponent },
+  { navigationPath: 'TouchableWithoutFeedback', onScreenName: 'TouchableWithoutFeedback', component: TouchableWithoutFeedbackComponent },
+  { navigationPath: 'Image', onScreenName: 'Image', component: ImageComponent },
+  { navigationPath: 'Button', onScreenName: 'Button', component: ButtonComponent },
+  { navigationPath: 'Divider', onScreenName: 'Divider', component: DividerComponent },
+  { navigationPath: 'Spinner', onScreenName: 'Spinner', component: SpinnerComponent },
+  { navigationPath: 'Pressable', onScreenName: 'Pressable', component: PressableComponent },
+  { navigationPath: 'Slider', onScreenName: 'Slider', component: SliderComponent },
+  { navigationPath: 'Switch', onScreenName: 'Switch', component: SwitchComponent },
+  { navigationPath: 'Icon', onScreenName: 'Icon', component: IconComponent },
+  { navigationPath: 'IconButton', onScreenName: 'IconButton', component: IconButtonComponent },
+  { navigationPath: 'List', onScreenName: 'List', component: ListComponent },
+  { navigationPath: 'SectionList', onScreenName: 'SectionList', component: SectionListComponent },
+  { navigationPath: 'FlashList', onScreenName: 'FlashList', component: FlashListComponent },
+  { navigationPath: 'Modal', onScreenName: 'Modal', component: ModalComponent },
+  { navigationPath: 'DraggableModal', onScreenName: 'DraggableModal', component: DraggableModalComponent },
+  { navigationPath: 'Avatar', onScreenName: 'Avatar', component: AvatarComponent },
+  { navigationPath: 'Input', onScreenName: 'Input', component: InputComponent },
+  { navigationPath: 'PinInput', onScreenName: 'PinInput', component: PinInputComponent },
+  { navigationPath: 'Select', onScreenName: 'Select', component: SelectComponent },
+  { navigationPath: 'Tabs', onScreenName: 'Tabs', component: TabsExampleComponent },
+  { navigationPath: 'Toast', onScreenName: 'Toast', component: ToastHook },
 ];

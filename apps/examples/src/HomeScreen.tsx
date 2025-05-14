@@ -8,6 +8,7 @@ import {
 
 import { useRouter } from 'expo-router';
 import { ScrollView } from 'react-native';
+import { components } from '@/app/items';
 
 const HomeScreen = () => {
   const router = useRouter();
@@ -16,31 +17,24 @@ const HomeScreen = () => {
       <SafeAreaBox flex={1}>
         {/* list */}
         <ScrollView style={{ flex: 1 }}>
-          <Box mt="xl" px="xl">
-            <Text pb="lg" fontSize="3xl">
+        <Text pb="lg" fontSize="3xl">
               Components
             </Text>
-            <TouchableOpacity
+            <Box>
+              {components.map((item, index) => (
+                <TouchableOpacity
+                  key={`item-${index}`}
                   onPress={() =>
-                    router.push(`/components`)
+                    router.push(`/components/${item.navigationPath}` as any)
                   }
                   mt={10}
                   w="100%"
                   py={10}
                 >
-                  <Text fontSize="xl">V1</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-                  onPress={() =>
-                    router.push(`/components-v2`)
-                  }
-                  mt={10}
-                  w="100%"
-                  py={10}
-                >
-                  <Text fontSize="xl">V2</Text>
-            </TouchableOpacity>
-          </Box>
+                  <Text fontSize="xl">{item.onScreenName}</Text>
+                </TouchableOpacity>
+              ))}
+            </Box>
         </ScrollView>
       </SafeAreaBox>
     </>

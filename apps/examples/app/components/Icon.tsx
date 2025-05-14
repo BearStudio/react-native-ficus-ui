@@ -1,46 +1,48 @@
 import ExampleSection from "@/src/ExampleSection";
-import { SafeAreaView, ScrollView } from "react-native";
-import { Icon, HStack, Text } from "react-native-ficus-ui";
+import { HStack, Icon, SafeAreaBox, ScrollBox, Text } from "@ficus-ui/native";
+
 
 const IconComponent = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaBox>
       <Text mx="xl" fontSize="4xl">
         Icon component
       </Text>
-      <ScrollView>
+      <ScrollBox>
         <ExampleSection name="default">
           <HStack spacing={10}>
-            <Icon name="like1" color="blue.700" fontSize="6xl" />
+            <Icon name="accessibility" color="blue.700" size="6xl" iconSet="Ionicons" />
             <Icon
               name="star"
               color="yellow.700"
-              fontSize="6xl"
-              fontFamily="FontAwesome"
+              size="6xl"
+              iconSet="Ionicons"
             />
-            <Icon name="codesquare" color="red.500" fontSize="6xl" />
-            <Icon name="android1" color="teal.500" fontSize="6xl" />
-            <Icon name="heart" color="red.500" fontSize="6xl" />
-            <Icon name="apple1" color="blue.700" fontSize="6xl" />
-            <Icon name="appstore1" color="teal.500" fontSize="6xl" />
-            <Icon name="slack" color="yellow.700" fontSize="6xl" />
           </HStack>
         </ExampleSection>
-        <ExampleSection name="Like button">
+        <ExampleSection name="sizes">
+          <HStack spacing={10}>
+            <Icon name="alarm" color="red.500" size="md"  />
+            <Icon name="analytics" color="teal.500" size="xl" />
+            <Icon name="heart" color="red.500" size="2xl" />
+            <Icon name="brush" color="blue.700" size="6xl" />
+          </HStack>
+        </ExampleSection>
+        <ExampleSection name="back button">
           <HStack spacing={10}>
             <Icon
               bg="yellow.400"
               p={15}
               borderRadius="full"
-              name="star"
+              name="arrow-back"
               color="yellow.700"
-              fontSize="2xl"
-              fontFamily="FontAwesome"
+              size="2xl"
+              iconSet="Ionicons"
             />
           </HStack>
         </ExampleSection>
-      </ScrollView>
-    </SafeAreaView>
+      </ScrollBox>
+    </SafeAreaBox>
   );
 };
 

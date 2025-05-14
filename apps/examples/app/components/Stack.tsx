@@ -1,61 +1,62 @@
-import { SafeAreaView } from "react-native";
 import {
   Box,
-  Stack,
   HStack,
-  VStack,
   ScrollBox,
+  Stack,
+  StackDivider,
   Text,
-} from "react-native-ficus-ui";
-import ExampleSection from "@/src/ExampleSection";
+  VStack,
+} from '@ficus-ui/native';
+import { SafeAreaView } from 'react-native';
+
+import ExampleSection from '@/src/ExampleSection';
 
 const StackComponent = () => {
   return (
-    <SafeAreaView>
-      <Text mx="xl" fontSize="4xl">
-        Stack component
-      </Text>
+    <SafeAreaView style={{ flex: 1 }}>
       <ScrollBox>
-        <ExampleSection name="Stack row direction">
-          <Stack direction="row" spacing={10}>
-            <Box w={40} h={40} bg="yellow.200">
-              <Text>1</Text>
-            </Box>
-            <Box w={40} h={40} bg="red.200">
-              <Text>2</Text>
-            </Box>
-            <Box w={40} h={40} bg="pink.200">
-              <Text>3</Text>
-            </Box>
-          </Stack>
-        </ExampleSection>
-
+        <Text mx="xl" fontSize="4xl">
+          Stack component
+        </Text>
         <ExampleSection name="HStack">
-          <HStack spacing={10}>
-            <Box w={40} h={40} bg="yellow.200">
-              <Text>1</Text>
-            </Box>
-            <Box w={40} h={40} bg="red.200">
-              <Text>2</Text>
-            </Box>
-            <Box w={40} h={40} bg="pink.200">
-              <Text>3</Text>
-            </Box>
+          <HStack>
+            <Box h={40} w={40} bg="green.500" />
+            <Box h={40} w={40} bg="teal.500" />
+            <Box h={40} w={40} bg="yellow.500" />
           </HStack>
         </ExampleSection>
-
         <ExampleSection name="VStack">
-          <VStack spacing={10}>
-            <Box w={40} h={40} bg="yellow.200">
-              <Text>1</Text>
-            </Box>
-            <Box w={40} h={40} bg="red.200">
-              <Text>2</Text>
-            </Box>
-            <Box w={40} h={40} bg="pink.200">
-              <Text>3</Text>
-            </Box>
+          <VStack>
+            <Box h={40} w={40} bg="green.500" />
+            <Box h={40} w={40} bg="teal.500" />
+            <Box h={40} w={40} bg="yellow.500" />
           </VStack>
+        </ExampleSection>
+        <ExampleSection name="Stack with Dividers">
+          <Stack divider={<StackDivider />} spacing={10}>
+            <Box h={40} w={40} bg="green.500" />
+            <Box h={40} w={40} bg="teal.500" />
+            <Box h={40} w={40} bg="yellow.500" />
+          </Stack>
+        </ExampleSection>
+        <ExampleSection name="Nested Stack">
+          <Stack>
+            <HStack>
+              <Box h={40} w={40} bg="purple.500" />
+              <Box h={40} w={40} bg="pink.500" />
+            </HStack>
+            <VStack>
+              <Box h={40} w={40} bg="cyan.500" />
+              <Box h={40} w={40} bg="orange.500" />
+            </VStack>
+          </Stack>
+        </ExampleSection>
+        <ExampleSection name="Custom Spacing Stack">
+          <Stack spacing="xl">
+            <Box h={40} w={40} bg="blue.500" />
+            <Box h={40} w={40} bg="red.500" />
+            <Box h={40} w={40} bg="green.500" />
+          </Stack>
         </ExampleSection>
       </ScrollBox>
     </SafeAreaView>

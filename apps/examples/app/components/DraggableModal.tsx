@@ -1,12 +1,11 @@
 import { SafeAreaView } from "react-native";
 import {
   Button,
-  DraggableModal,
   Text,
   useDisclosure,
 } from "react-native-ficus-ui";
 import ExampleSection from "@/src/ExampleSection";
-
+import { DraggableModal } from "@ficus-ui/native";
 const DraggableModalComponent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
@@ -28,11 +27,11 @@ const DraggableModalComponent = () => {
           {!isOpen ? "Show Modal" : "Hide Modal"}
         </Button>
 
-        <DraggableModal
+        <DraggableModal 
           isOpen={isOpen}
           onClose={onClose}
           snapPoints={["30%", "80%"]}
-          p="xl"
+          p='sm'
         >
           <Text fontSize="4xl" fontWeight="bold">
             Settings

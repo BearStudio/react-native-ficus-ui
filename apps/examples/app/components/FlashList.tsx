@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import { SafeAreaView } from "react-native";
-import { Box, Flex, FlashList, Text } from "react-native-ficus-ui";
+import { Box, Flex, FlashList, Text } from "@ficus-ui/native";
 
 const FlashListComponent = () => {
   const DATA = [
@@ -27,7 +27,7 @@ const FlashListComponent = () => {
           bg="gray.200"
           p="xl"
           data={DATA}
-          renderItem={({ item }) => (
+          renderItem={({ item }:any) => (
             <Box p="lg">
               <Text>{item.title}</Text>
             </Box>

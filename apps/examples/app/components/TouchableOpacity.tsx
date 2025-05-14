@@ -1,26 +1,25 @@
-import { SafeAreaView } from "react-native";
-import { Box, TouchableOpacity, Text } from "react-native-ficus-ui";
+import { Box, SafeAreaBox, Text, TouchableOpacity } from '@ficus-ui/native';
 
 const TouchableOpacityComponent = () => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaBox style={{ flex: 1 }}>
       <Text mx="xl" fontSize="4xl">
         TouchableOpacity component
       </Text>
       <Box mx="xl" mt="lg">
-        <TouchableOpacity onPress={() => console.log("Pressed")}>
+        <TouchableOpacity onPress={() => console.log('Pressed')}>
           <Text>Test</Text>
         </TouchableOpacity>
         <TouchableOpacity
           bg="red.300"
           p="xl"
           borderRadius="xl"
-          onPress={() => console.log("Pressed")}
+          onPress={() => console.log('Pressed')}
         >
           <Text>Test</Text>
         </TouchableOpacity>
       </Box>
-    </SafeAreaView>
+    </SafeAreaBox>
   );
 };
 

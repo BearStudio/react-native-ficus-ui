@@ -1,60 +1,54 @@
-import { SafeAreaView } from "react-native";
-import { Badge, ScrollBox, Text, VStack } from "react-native-ficus-ui";
-import ExampleSection from "@/src/ExampleSection";
+import { Badge, SafeAreaBox, ScrollBox, Stack, Text } from '@ficus-ui/native';
+
+import ExampleSection from '@/src/ExampleSection';
 
 const BadgeComponent = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaBox>
       <Text mx="xl" fontSize="4xl">
         Badge component
       </Text>
       <ScrollBox>
         <ExampleSection name="color scheme">
-          <VStack spacing="md">
+          <Stack spacing="md">
             <Badge>New</Badge>
             <Badge colorScheme="green">New</Badge>
             <Badge colorScheme="red">New</Badge>
             <Badge colorScheme="orange">New</Badge>
             <Badge colorScheme="purple">New</Badge>
             <Badge colorScheme="pink">New</Badge>
-          </VStack>
+          </Stack>
         </ExampleSection>
-        <ExampleSection name="font size">
-          <VStack spacing="md">
-            <Badge fontSize="xs">New</Badge>
-            <Badge colorScheme="green" fontSize="sm">
+        <ExampleSection name="sizes">
+          <Stack spacing="md">
+            <Badge size="xs">New</Badge>
+            <Badge colorScheme="green" size="sm">
               New
             </Badge>
-            <Badge colorScheme="red" fontSize="md">
+            <Badge colorScheme="red" size="md">
               New
             </Badge>
-            <Badge colorScheme="orange" fontSize="lg">
+            <Badge colorScheme="orange" size="lg">
               New
             </Badge>
-            <Badge colorScheme="purple" fontSize="xl">
+            <Badge colorScheme="purple" size="xl">
               New
             </Badge>
-            <Badge colorScheme="pink" fontSize="2xl">
+            <Badge colorScheme="pink" size="2xl">
               New
             </Badge>
-          </VStack>
+          </Stack>
         </ExampleSection>
 
         <ExampleSection name="variants">
-          <VStack spacing="md">
-            <Badge variant="outline" colorScheme="green" fontSize="2xl">
-              Outline
-            </Badge>
-            <Badge variant="solid" colorScheme="green" fontSize="2xl">
-              Solid
-            </Badge>
-            <Badge variant="subtle" colorScheme="green" fontSize="2xl">
-              Subtle
-            </Badge>
-          </VStack>
+          <Stack spacing="md">
+            <Badge variant="outline">Outline</Badge>
+            <Badge variant="solid">Solid</Badge>
+            <Badge variant="subtle">Subtle</Badge>
+          </Stack>
         </ExampleSection>
       </ScrollBox>
-    </SafeAreaView>
+    </SafeAreaBox>
   );
 };
 

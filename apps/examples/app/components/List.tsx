@@ -1,6 +1,4 @@
-/* eslint-disable react-native/no-inline-styles */
-import { SafeAreaView } from "react-native";
-import { Box, Flex, List, Text } from "react-native-ficus-ui";
+import { Box, Flex, List, SafeAreaBox, Text } from '@ficus-ui/native';
 
 const ListComponent = () => {
   const DATA = [
@@ -18,7 +16,7 @@ const ListComponent = () => {
     },
   ];
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaBox>
       <Text mx="xl" fontSize="4xl">
         List component
       </Text>
@@ -27,14 +25,14 @@ const ListComponent = () => {
           bg="gray.200"
           p="xl"
           data={DATA}
-          renderItem={({ item }) => (
+          renderItem={({ item }:any) => (
             <Box p="lg">
-              <Text>{item.title}</Text>
+              <Text>{item?.title}</Text>
             </Box>
           )}
         />
       </Flex>
-    </SafeAreaView>
+    </SafeAreaBox>
   );
 };
 

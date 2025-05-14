@@ -1,5 +1,5 @@
-import { SafeAreaView } from "react-native";
-import { Box, Flex, SectionList, Text } from "react-native-ficus-ui";
+import { Box, Flex, SafeAreaBox, SectionList, Text } from '@ficus-ui/native';
+
 
 const SectionListComponent = () => {
   const DATA = [
@@ -15,9 +15,9 @@ const SectionListComponent = () => {
       title: "Drinks",
       data: ["Water", "Coke", "Beer"],
     },
-  ];
+  ]
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaBox>
       <Text mx="xl" fontSize="4xl">
         SectionList component
       </Text>
@@ -26,20 +26,20 @@ const SectionListComponent = () => {
           bg="gray.200"
           p="xl"
           sections={DATA}
-          keyExtractor={(item, index) => item + index}
-          renderItem={({ item }) => (
+          keyExtractor={(item:any, index:number) => `${item.title}-${index}`}
+          renderItem={({ item }:any) => (
             <Box p="sm">
               <Text>{item}</Text>
             </Box>
           )}
-          renderSectionHeader={({ section: { title } }) => (
+          renderSectionHeader={({ section: { title } }:any) => (
             <Box bg="gray.300" p="sm">
               <Text>{title}</Text>
             </Box>
           )}
         />
       </Flex>
-    </SafeAreaView>
+    </SafeAreaBox>
   );
 };
 

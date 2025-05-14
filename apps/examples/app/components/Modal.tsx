@@ -1,17 +1,15 @@
-import { SafeAreaView } from 'react-native';
 import {
-  Button,
-  Icon,
   Modal,
+  SafeAreaBox,
   Text,
-  useDisclosure,
-} from 'react-native-ficus-ui';
+} from "@ficus-ui/native";
 import ExampleSection from '@/src/ExampleSection';
+import { Button, Icon, useDisclosure } from "react-native-ficus-ui";
 
 const ModalComponent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <SafeAreaView>
+    <SafeAreaBox>
       <Text mx="xl" fontSize="4xl">
         Modal
       </Text>
@@ -24,7 +22,7 @@ const ModalComponent = () => {
           Show Modal
         </Button>
 
-        <Modal isOpen={isOpen}>
+        <Modal visible={isOpen}>
           <Button
             h={35}
             w={35}
@@ -41,7 +39,7 @@ const ModalComponent = () => {
           </Button>
         </Modal>
       </ExampleSection>
-    </SafeAreaView>
+    </SafeAreaBox>
   );
 };
 

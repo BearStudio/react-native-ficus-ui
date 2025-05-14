@@ -1,11 +1,18 @@
-import { SafeAreaView, TouchableOpacity } from "react-native";
-import { Box, ScrollBox, Text } from "react-native-ficus-ui";
-import ExampleSection from "@/src/ExampleSection";
+import { Box, SafeAreaBox, ScrollBox, Text } from '@ficus-ui/native';
+import { useRouter } from 'expo-router';
+
+import ExampleSection from '@/src/ExampleSection';
 
 const BoxComponent = () => {
+  const router = useRouter();
   return (
-    <SafeAreaView>
-      <Text mx="xl" fontSize="4xl">
+    <SafeAreaBox>
+      <Text
+        style={{
+          marginHorizontal: 20,
+          fontSize: 30,
+        }}
+      >
         Box component
       </Text>
       <ScrollBox>
@@ -19,7 +26,6 @@ const BoxComponent = () => {
             <Box h={40} w={40} mr="sm" bg="gray.500" />
           </Box>
         </ExampleSection>
-
         <ExampleSection name="shadows">
           <Box flexDirection="row">
             <Box
@@ -137,7 +143,7 @@ const BoxComponent = () => {
               bg="white"
               m="md"
               borderRadius="sm"
-              boxShadow="12 12 2 1 rgba(0, 0, 255, .2);"
+              boxShadow="12 12 2 1 rgba(0, 0, 255, .2)"
               justifyContent="center"
               alignItems="center"
             />
@@ -183,7 +189,6 @@ const BoxComponent = () => {
             />
           </Box>
         </ExampleSection>
-
         <ExampleSection name="border">
           <Box flexDirection="row">
             <Box
@@ -205,7 +210,6 @@ const BoxComponent = () => {
             <Box h={40} w={40} mr="sm" borderColor="gray.500" borderWidth={1} />
           </Box>
         </ExampleSection>
-
         <ExampleSection name="radius">
           <Box flexDirection="row">
             <Box h={40} w={40} mr="sm" borderRadius="none" bg="blue.400" />
@@ -228,23 +232,18 @@ const BoxComponent = () => {
         </ExampleSection>
 
         <ExampleSection name="background image">
-          <Box
+          <Box           
             mt="sm"
             borderRadius="md"
             h={150}
             bgImg={{
-              uri: "https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Monochrome-Type-Simple-Background-Image.jpg",
+              uri: 'https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Monochrome-Type-Simple-Background-Image.jpg',
             }}
+            
           />
         </ExampleSection>
-
-        <ExampleSection name="as prop">
-          <Box bg="green.400" p="xl" mt="sm" borderRadius="md">
-            <Text>Style any RN component with Ficus UI with "as" prop !</Text>
-          </Box>
-        </ExampleSection>
       </ScrollBox>
-    </SafeAreaView>
+    </SafeAreaBox>
   );
 };
 

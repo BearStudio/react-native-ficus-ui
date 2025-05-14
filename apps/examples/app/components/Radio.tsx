@@ -1,5 +1,5 @@
 import { SafeAreaView } from "react-native";
-import { Badge, Box, Radio, RadioGroup, Text } from "react-native-ficus-ui";
+import { Badge, Box, HStack, VStack, Radio, RadioGroup, Text } from "@ficus-ui/native";
 import ExampleSection from "@/src/ExampleSection";
 
 const RadioComponent = () => {
@@ -20,7 +20,7 @@ const RadioComponent = () => {
           <Radio value={4} isDisabled>
             Label
           </Radio>
-          <Radio value={5} isLoading>
+          <Radio value={5}>
             Label
           </Radio>
         </Box>
@@ -28,79 +28,59 @@ const RadioComponent = () => {
 
       <ExampleSection name="Simple radio group">
         <RadioGroup colorScheme="red">
-          <Radio value={1} prefix={<Text flex={1}>Option 1</Text>}>
-            Label
-          </Radio>
-          <Radio value={2} prefix={<Text flex={1}>Option 2</Text>}>
-            Label
-          </Radio>
-          <Radio value={3} prefix={<Text flex={1}>Option 3</Text>}>
-            Label
-          </Radio>
+          <VStack spacing="sm">
+            <Radio value={1}>
+              Option 1
+            </Radio>
+            <Radio value={2}>
+              Option 2
+            </Radio>
+            <Radio value={3}>
+              Option 3
+            </Radio>
+          </VStack>
         </RadioGroup>
       </ExampleSection>
 
       <ExampleSection name="Radio sizes">
         <RadioGroup>
-          <Radio value={1} size="sm">
-            Option 1
-          </Radio>
-          <Radio value={2} size="lg">
-            Option 2
-          </Radio>
+          <VStack spacing="sm">
+            <Radio value={1} size="xs">
+              Option 1
+            </Radio>
+            <Radio value={2} size="sm">
+              Option 2
+            </Radio>
+            <Radio value={3} size="md">
+              Option 3
+            </Radio>
+            <Radio value={4} size="lg">
+              Option 4
+            </Radio>
+          </VStack>
         </RadioGroup>
-        <Radio value={3} size="lg" isLoading>
-          Loading option
-        </Radio>
       </ExampleSection>
 
       <ExampleSection name="Custom radio">
-        <RadioGroup colorScheme="red" flexDirection="row">
-          <Radio value={1}>
-            {({ isChecked }) => (
-              <Badge
-                variant={isChecked ? "solid" : "subtle"}
-                colorScheme="pink"
-                fontSize="xl"
-                px="lg"
-                py="lg"
-                borderRadius="full"
-                mx="sm"
-              >
-                Option 1
-              </Badge>
-            )}
-          </Radio>
-          <Radio value={2}>
-            {({ isChecked }) => (
-              <Badge
-                variant={isChecked ? "solid" : "subtle"}
-                colorScheme="pink"
-                fontSize="xl"
-                px="lg"
-                py="lg"
-                borderRadius="full"
-                mx="sm"
-              >
-                Option 2
-              </Badge>
-            )}
-          </Radio>
-          <Radio value={3}>
-            {({ isChecked }) => (
-              <Badge
-                variant={isChecked ? "solid" : "subtle"}
-                colorScheme="pink"
-                fontSize="xl"
-                px="lg"
-                py="lg"
-                borderRadius="full"
-                mx="sm"
-              >
-                Option 3
-              </Badge>
-            )}
-          </Radio>
+        <RadioGroup colorScheme="red">
+          <HStack spacing="md">
+            {["Option 1", "Option 2", "Option 3"].map((item) => (
+                <Radio value={item}>
+                  {({ isChecked }) => (
+                    <Badge
+                      variant={isChecked ? "solid" : "subtle"}
+                      colorScheme="pink"
+                      fontSize="xl"
+                      px="lg"
+                      py="lg"
+                      borderRadius="full"
+                    >
+                      {item}
+                    </Badge>
+                  )}
+                </Radio>
+            ))}
+          </HStack>
         </RadioGroup>
       </ExampleSection>
     </SafeAreaView>

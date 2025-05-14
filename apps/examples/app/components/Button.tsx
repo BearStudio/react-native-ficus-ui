@@ -1,32 +1,36 @@
-import { SafeAreaView, ScrollView } from "react-native";
-import { Button, Icon, Text, HStack, VStack } from "react-native-ficus-ui";
-import ExampleSection from "@/src/ExampleSection";
+import { Button, HStack, SafeAreaBox, ScrollBox, Stack, Text, Icon } from '@ficus-ui/native';
+
+import ExampleSection from '@/src/ExampleSection';
+
 
 const ButtonComponent = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaBox>
       <Text mx="xl" fontSize="4xl">
         Button component
       </Text>
-      <ScrollView>
+      <ScrollBox>
         <ExampleSection name="default">
-          <VStack spacing={10}>
-            <Button onPress={() => console.log("PRESSED")}>Button</Button>
+          <Stack spacing={10}>
+            <Button onPress={() => console.log('PRESSED')}>Button</Button>
             <Button colorScheme="red">Button</Button>
-            <Button colorScheme="orange">Button</Button>
+            <Button colorScheme="yellow">Button</Button>
             <Button colorScheme="green">Button</Button>
-            <Button colorScheme="pink">Button</Button>
+            <Button colorScheme="pink" isDisabled>Button Disabled</Button>
             <Button colorScheme="pink" full>
               Button
             </Button>
-            <Button colorScheme="blue" full isLoading>
+            <Button colorScheme="blue" isLoading>
               Button
             </Button>
-          </VStack>
+            <Button colorScheme="blue" loadingText='Loading...' isLoading>
+              Button
+            </Button>
+          </Stack>
         </ExampleSection>
 
         <ExampleSection name="sizes">
-          <VStack spacing={10}>
+          <Stack spacing={10}>
             <Button size="xs">Button</Button>
             <Button colorScheme="red" size="sm">
               Button
@@ -40,14 +44,14 @@ const ButtonComponent = () => {
             <Button colorScheme="pink" size="xl">
               Button
             </Button>
-            <Button colorScheme="blue" size="2xl">
+            <Button colorScheme="purple" size="2xl">
               Button
             </Button>
-          </VStack>
+          </Stack>
         </ExampleSection>
 
         <ExampleSection name="round">
-          <VStack spacing={10}>
+          <Stack spacing={10}>
             <Button size="xs" isRound>
               Button
             </Button>
@@ -63,7 +67,7 @@ const ButtonComponent = () => {
             <Button colorScheme="pink" size="xl" isRound>
               Button
             </Button>
-          </VStack>
+          </Stack>
         </ExampleSection>
 
         <ExampleSection name="variants">
@@ -79,7 +83,7 @@ const ButtonComponent = () => {
               Button
             </Button>
           </HStack>
-          <VStack spacing={10} mt="xl">
+          <Stack spacing={10} mt="xl">
             <Button colorScheme="teal" full>
               Button
             </Button>
@@ -92,31 +96,23 @@ const ButtonComponent = () => {
             <Button colorScheme="teal" variant="outline" full isLoading>
               Button
             </Button>
-          </VStack>
+          </Stack>
         </ExampleSection>
 
         <ExampleSection name="prefix and suffix">
-          <VStack spacing={10}>
-            <Button
-              colorScheme="green"
-              prefix={
-                <Icon name="android1" color="white" fontSize="xl" mr="sm" />
-              }
-            >
+          <Stack spacing={10}>
+            <Button colorScheme="green">
+              <Icon name="heart" color="white" fontSize="xl" mr="sm" />
               Button
             </Button>
-            <Button
-              colorScheme="green"
-              suffix={
-                <Icon name="android1" color="white" fontSize="xl" ml="sm" />
-              }
-            >
+            <Button colorScheme="green">
               Button
+              <Icon name="heart" color="white" fontSize="xl" ml="sm" />
             </Button>
-          </VStack>
+          </Stack>
         </ExampleSection>
-      </ScrollView>
-    </SafeAreaView>
+      </ScrollBox>
+    </SafeAreaBox>
   );
 };
 

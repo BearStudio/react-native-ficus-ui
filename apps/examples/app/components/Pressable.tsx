@@ -1,9 +1,8 @@
-import { SafeAreaView } from 'react-native';
-import { Box, Pressable, Text } from 'react-native-ficus-ui';
+import {SafeAreaBox, Box, Pressable, Text} from '@ficus-ui/native'
 
 const PressableComponent = () => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaBox style={{ flex: 1 }}>
       <Text mx="xl" fontSize="4xl">
         Pressable component
       </Text>
@@ -13,11 +12,14 @@ const PressableComponent = () => {
           p="xl"
           borderRadius="xl"
           onPress={() => console.log('Pressed')}
+          _pressed={{
+            opacity: 0.8
+          }}
         >
           <Text>Test</Text>
         </Pressable>
       </Box>
-    </SafeAreaView>
+    </SafeAreaBox>
   );
 };
 

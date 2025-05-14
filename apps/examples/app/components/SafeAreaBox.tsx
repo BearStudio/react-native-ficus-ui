@@ -1,4 +1,4 @@
-import { Box, SafeAreaBox, Text } from "react-native-ficus-ui";
+import { Box, SafeAreaBox, Text } from '@ficus-ui/native';
 
 const SafeAreaBoxComponent = () => {
   return (

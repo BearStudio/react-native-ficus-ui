@@ -1,20 +1,18 @@
-import { SafeAreaView } from "react-native";
-import { Box, Spinner, Text } from "react-native-ficus-ui";
+import { Box, SafeAreaBox, Spinner, Text } from "@ficus-ui/native";
+
 
 const SpinnerComponent = () => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaBox style={{ flex: 1 }}>
       <Text mx="xl" fontSize="4xl">
         Spinner component
       </Text>
       <Box mx="xl" mt="lg">
         <Spinner />
-        <Spinner color="blue.500" size="sm" />
-        <Spinner color="red.500" size="lg" />
-        <Spinner color="green.500" size="lg" />
-        <Spinner color="pink.500" size="lg" />
+        <Spinner color="red" size="large" />
+        <Spinner color="green.500" size="large" />
       </Box>
-    </SafeAreaView>
+    </SafeAreaBox>
   );
 };
 
