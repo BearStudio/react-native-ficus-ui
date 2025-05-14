@@ -8,7 +8,7 @@ describe('ImageComponent', () => {
   // TODO: Fix this test after Avatar PR merge
   // eslint-disable-next-line jest/no-disabled-tests
   it.skip('renders correctly with given source and alt text', () => {
-    const testSource = { uri: 'https://example.com/test-image.jpg' };
+    const testSource = 'https://example.com/test-image.jpg';
     const testAlt = 'Test Image';
 
     const { getByLabelText } = render(

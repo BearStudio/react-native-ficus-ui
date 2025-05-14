@@ -318,6 +318,9 @@ importers:
       '@types/react':
         specifier: 18.3.1
         version: 18.3.1
+      '@types/react-native-vector-icons':
+        specifier: 6.4.18
+        version: 6.4.18
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -2034,6 +2037,12 @@ packages:
 
   '@types/react-dom@18.3.1':
     resolution: {integrity: sha512-qW1Mfv8taImTthu4KoXgDfLuk4bydU6Q/TkADnDWWHwi4NX4BR+LWfTp2sVmTqRrsHvyDDTelgelxJ+SsejKKQ==}
+
+  '@types/react-native-vector-icons@6.4.18':
+    resolution: {integrity: sha512-YGlNWb+k5laTBHd7+uZowB9DpIK3SXUneZqAiKQaj1jnJCZM0x71GDim5JCTMi4IFkhc9m8H/Gm28T5BjyivUw==}
+
+  '@types/react-native@0.70.19':
+    resolution: {integrity: sha512-c6WbyCgWTBgKKMESj/8b4w+zWcZSsCforson7UdXtXMecG3MxCinYi6ihhrHVPyUrVzORsvEzK8zg32z4pK6Sg==}
 
   '@types/react-native@0.72.1':
     resolution: {integrity: sha512-lwhhvMKPvH2AJOKkvHVamD/7pFsEmcZG1AoSnsOegKvTl6irWKWTPmTqgAi33Wl91efDYrh61nC48/AgcPo7SA==}
@@ -9923,6 +9932,15 @@ snapshots:
   '@types/prop-types@15.7.14': {}
 
   '@types/react-dom@18.3.1':
+    dependencies:
+      '@types/react': 18.3.1
+
+  '@types/react-native-vector-icons@6.4.18':
+    dependencies:
+      '@types/react': 18.3.1
+      '@types/react-native': 0.70.19
+
+  '@types/react-native@0.70.19':
     dependencies:
       '@types/react': 18.3.1
 
