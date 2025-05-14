@@ -25,7 +25,7 @@ export interface CheckboxProps
     CheckboxOptions {}
 
 export const Checkbox = forwardRef<CheckboxProps, 'TouchableOpacity'>(
-  ({ icon = <Icon name="checkmark-outline" />, ...props }) => {
+  ({ icon = <Icon name="checkmark-outline" />, ...props }, ref) => {
     const styles = useMultiStyleConfig('Checkbox', props);
     const {
       isDisabled,
@@ -104,6 +104,7 @@ export const Checkbox = forwardRef<CheckboxProps, 'TouchableOpacity'>(
 
     return (
       <ficus.TouchableOpacity
+        ref={ref}
         onPress={handleOnPress}
         disabled={isDisabled}
         activeOpacity={0.5}

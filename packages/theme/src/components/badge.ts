@@ -43,11 +43,34 @@ const variants = {
   outline: variantOutline,
 };
 
+const sizes = {
+  xs: defineStyle({
+    fontSize: 12,
+  }),
+  sm: defineStyle({
+    fontSize: 13,
+  }),
+  md: defineStyle({
+    fontSize: 15,
+  }),
+  lg: defineStyle({
+    fontSize: 17,
+  }),
+  xl: defineStyle({
+    fontSize: 19,
+  }),
+  '2xl': defineStyle({
+    fontSize: 21,
+  }),
+};
+
 export const badgeTheme = defineStyleConfig({
   baseStyle,
   variants,
+  sizes,
   defaultProps: {
     variant: 'subtle',
     colorScheme: 'gray',
+    size: 'md',
   },
 });

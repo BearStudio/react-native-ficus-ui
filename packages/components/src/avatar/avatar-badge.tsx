@@ -4,16 +4,18 @@ import { NativeFicusProps, ficus, forwardRef } from '../system';
 
 export interface AvatarBadgeProps extends NativeFicusProps<'View'> {}
 
-export const AvatarBadge = forwardRef<AvatarBadgeProps, 'View'>((props) => {
-  const { __styles } = props;
+export const AvatarBadge = forwardRef<AvatarBadgeProps, 'View'>(
+  (props, ref) => {
+    const { __styles } = props;
 
-  const badgeStyles = useMemo(
-    () => ({
-      position: 'absolute',
-      ...__styles,
-    }),
-    [__styles]
-  );
+    const badgeStyles = useMemo(
+      () => ({
+        position: 'absolute',
+        ...__styles,
+      }),
+      [__styles]
+    );
 
-  return <ficus.View {...props} __styles={badgeStyles} />;
-});
+    return <ficus.View ref={ref} {...props} __styles={badgeStyles} />;
+  }
+);

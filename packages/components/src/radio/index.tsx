@@ -17,84 +17,87 @@ export interface RadioProps
   extends Omit<NativeFicusProps<'TouchableOpacity'>, 'children'>,
     RadioOptions {}
 
-export const Radio = forwardRef<RadioProps, 'TouchableOpacity'>((props) => {
-  const styles = useMultiStyleConfig('Radio', props);
-  const {
-    isDisabled,
-    isChecked,
-    defaultChecked,
-    onChange,
-    onPress,
-    children,
-    value,
-    bg,
-    __styles,
-    ...rest
-  } = omitThemingProps(props);
+export const Radio = forwardRef<RadioProps, 'TouchableOpacity'>(
+  (props, ref) => {
+    const styles = useMultiStyleConfig('Radio', props);
+    const {
+      isDisabled,
+      isChecked,
+      defaultChecked,
+      onChange,
+      onPress,
+      children,
+      value,
+      bg,
+      __styles,
+      ...rest
+    } = omitThemingProps(props);
 
-  const [checked, setChecked] = useState(
-    ('checked' in props ? isChecked : defaultChecked) ?? false
-  );
+    const [checked, setChecked] = useState(
+      ('checked' in props ? isChecked : defaultChecked) ?? false
+    );
 
-  const { containerStyles, controlStyles, labelStyles } = useRadio(
-    { ...props, isChecked: checked },
-    styles
-  );
+    const { containerStyles, controlStyles, labelStyles } = useRadio(
+      { ...props, isChecked: checked },
+      styles
+    );
 
-  useEffect(() => {
-    if ('isChecked' in props) {
-      setChecked(props.isChecked ?? false);
-    }
-  }, [props]);
+    useEffect(() => {
+      if ('isChecked' in props) {
+        setChecked(props.isChecked ?? false);
+      }
+    }, [props]);
 
-  /**
-   * on press checkbox
-   */
-  const handleOnPress = (event: GestureResponderEvent) => {
-    if (isDisabled) {
-      return;
-    }
+    /**
+     * on press checkbox
+     */
+    const handleOnPress = (event: GestureResponderEvent) => {
+      if (isDisabled) {
+        return;
+      }
 
-    setChecked(true);
+      setChecked(true);
 
-    if (isFunction(onChange)) {
-      onChange(value);
-    }
+      if (isFunction(onChange)) {
+        onChange(value);
+      }
 
-    if (isFunction(onPress)) {
-      onPress(event);
-    }
-  };
+      if (isFunction(onPress)) {
+        onPress(event);
+      }
+    };
 
-  const renderChildren = () => {
-    if (isFunction(children)) {
-      return children({
-        isDisabled: isDisabled ?? false,
-        isChecked: checked,
-      });
-    }
+    const renderChildren = () => {
+      if (isFunction(children)) {
+        return children({
+          isDisabled: isDisabled ?? false,
+          isChecked: checked,
+        });
+      }
+
+      return (
+        <>
+          <ficus.View __styles={controlStyles} />
+          {children && typeof children === 'string' ? (
+            <ficus.Text __styles={labelStyles}>{children}</ficus.Text>
+          ) : (
+            children
+          )}
+        </>
+      );
+    };
 
     return (
-      <>
-        <ficus.View __styles={controlStyles} />
-        {children && typeof children === 'string' ? (
-          <ficus.Text __styles={labelStyles}>{children}</ficus.Text>
-        ) : (
-          children
-        )}
-      </>
+      <ficus.TouchableOpacity
+        ref={ref}
+        onPress={handleOnPress}
+        disabled={isDisabled}
+        activeOpacity={0.5}
+        __styles={containerStyles}
+        {...rest}
+      >
+        {renderChildren()}
+      </ficus.TouchableOpacity>
     );
-  };
-
-  return (
-    <ficus.TouchableOpacity
-      onPress={handleOnPress}
-      disabled={isDisabled}
-      activeOpacity={0.5}
-      __styles={containerStyles}
-      {...rest}
-    >
-      {renderChildren()}
-    </ficus.TouchableOpacity>
-  );
-});
+  }
+);

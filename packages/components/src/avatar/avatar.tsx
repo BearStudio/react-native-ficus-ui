@@ -24,7 +24,7 @@ export interface AvatarProps
     AvatarOptions {}
 
 export const Avatar = forwardRef<AvatarProps, 'View'>(
-  function Button(props, ref) {
+  function Avatar(props, ref) {
     const styles = useMultiStyleConfig('Avatar', props);
     const {
       borderRadius = 'full',

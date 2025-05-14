@@ -15,7 +15,7 @@ export interface RadioGroupProps
   extends Omit<NativeFicusProps<'View'>, 'children'>,
     RadioGroupOptions {}
 
-export const RadioGroup = forwardRef<RadioGroupProps, 'View'>((props) => {
+export const RadioGroup = forwardRef<RadioGroupProps, 'View'>((props, ref) => {
   const styles = useMultiStyleConfig('RadioGroup', props);
   const { isDisabled, onChange, children, ...rest } = omitThemingProps(props);
 
@@ -56,6 +56,7 @@ export const RadioGroup = forwardRef<RadioGroupProps, 'View'>((props) => {
         // If child is a Radio component
         if (child.type === Radio) {
           return React.cloneElement(child, {
+            key: `radio-${child.props.value}`,
             // @ts-expect-error
             onChange: handleOnChange,
             isChecked: value === child.props.value,
@@ -77,7 +78,7 @@ export const RadioGroup = forwardRef<RadioGroupProps, 'View'>((props) => {
   };
 
   return (
-    <ficus.View __styles={styles} {...rest}>
+    <ficus.View ref={ref} __styles={styles} {...rest}>
       {renderChildren()}
     </ficus.View>
   );

@@ -19,22 +19,22 @@ const BadgeComponent = () => {
             <Badge colorScheme="pink">New</Badge>
           </Stack>
         </ExampleSection>
-        <ExampleSection name="font size">
+        <ExampleSection name="sizes">
           <Stack spacing="md">
-            <Badge fontSize="xs">New</Badge>
-            <Badge colorScheme="green" fontSize="sm">
+            <Badge size="xs">New</Badge>
+            <Badge colorScheme="green" size="sm">
               New
             </Badge>
-            <Badge colorScheme="red" fontSize="md">
+            <Badge colorScheme="red" size="md">
               New
             </Badge>
-            <Badge colorScheme="orange" fontSize="lg">
+            <Badge colorScheme="orange" size="lg">
               New
             </Badge>
-            <Badge colorScheme="purple" fontSize="xl">
+            <Badge colorScheme="purple" size="xl">
               New
             </Badge>
-            <Badge colorScheme="pink" fontSize="2xl">
+            <Badge colorScheme="pink" size="2xl">
               New
             </Badge>
           </Stack>
