@@ -3,7 +3,7 @@ import {
   SafeAreaBox,
   Text,
   TouchableWithoutFeedback,
-} from '@ficus-ui/native';
+} from '../../../../packages/components/src';
 
 const TouchableWithoutFeedbackComponent = () => {
   return (

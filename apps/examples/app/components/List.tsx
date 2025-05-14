@@ -1,4 +1,4 @@
-import { Box, Flex, List, SafeAreaBox, Text } from '@ficus-ui/native';
+import { Box, Flex, List, SafeAreaBox, Text } from '../../../../packages/components/src';
 
 const ListComponent = () => {
   const DATA = [

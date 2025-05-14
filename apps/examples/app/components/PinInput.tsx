@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native';
-import { PinInput, PinInputField, ScrollBox, Text, VStack } from '@ficus-ui/native';
+import { PinInput, PinInputField, ScrollBox, Text, VStack } from '../../../../packages/components/src';
 import ExampleSection from '@/src/ExampleSection';
 
 const PinInputComponent = () => {

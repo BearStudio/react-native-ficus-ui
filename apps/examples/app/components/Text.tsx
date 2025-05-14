@@ -1,4 +1,4 @@
-import { Text } from '@ficus-ui/native';
+import { Text } from '../../../../packages/components/src';
 import { SafeAreaView, ScrollView } from 'react-native';
 
 import ExampleSection from '@/src/ExampleSection';

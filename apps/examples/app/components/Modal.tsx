@@ -2,9 +2,9 @@ import {
   Modal,
   SafeAreaBox,
   Text,
-} from "@ficus-ui/native";
+} from "../../../../packages/components/src";
 import ExampleSection from '@/src/ExampleSection';
-import { Button, Icon, useDisclosure } from "react-native-ficus-ui";
+import { Button, Icon, useDisclosure } from "../../../../packages/components/src";
 
 const ModalComponent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();

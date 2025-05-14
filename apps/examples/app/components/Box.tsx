@@ -1,4 +1,4 @@
-import { Box, SafeAreaBox, ScrollBox, Text } from '@ficus-ui/native';
+import { Box, SafeAreaBox, ScrollBox, Text } from '../../../../packages/components/src';
 import { useRouter } from 'expo-router';
 
 import ExampleSection from '@/src/ExampleSection';
@@ -232,14 +232,14 @@ const BoxComponent = () => {
         </ExampleSection>
 
         <ExampleSection name="background image">
-          <Box           
+          <Box
             mt="sm"
             borderRadius="md"
             h={150}
             bgImg={{
               uri: 'https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Monochrome-Type-Simple-Background-Image.jpg',
             }}
-            
+
           />
         </ExampleSection>
       </ScrollBox>

@@ -1,4 +1,4 @@
-import { Flex, Text } from "@ficus-ui/native";
+import { Flex, Text } from "../../../../packages/components/src";
 import { SafeAreaView } from "react-native";
 
 const FlexComponent = () => {

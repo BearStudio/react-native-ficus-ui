@@ -10,7 +10,7 @@ import {
   Text,
   SafeAreaBox,
   ScrollBox,
-} from "@ficus-ui/native";
+} from "../../../../packages/components/src";
 
 const TabsExampleComponent = () => {
   const [index, setIndex] = React.useState(0);

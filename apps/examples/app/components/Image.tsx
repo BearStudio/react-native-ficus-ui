@@ -1,4 +1,4 @@
-import { Box, Image, SafeAreaBox, Text } from '@ficus-ui/native';
+import { Box, Image, SafeAreaBox, Text } from '../../../../packages/components/src';
 
 
 const ImageComponent = () => {

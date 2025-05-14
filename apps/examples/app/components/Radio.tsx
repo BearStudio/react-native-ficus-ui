@@ -1,5 +1,5 @@
 import { SafeAreaView } from "react-native";
-import { Badge, Box, HStack, VStack, Radio, RadioGroup, Text } from "@ficus-ui/native";
+import { Badge, Box, HStack, VStack, Radio, RadioGroup, Text } from "../../../../packages/components/src";
 import ExampleSection from "@/src/ExampleSection";
 
 const RadioComponent = () => {

@@ -1,5 +1,5 @@
 import { SafeAreaView, ScrollView } from "react-native";
-import { IconButton, Icon, Text, HStack, VStack } from "@ficus-ui/native";
+import { IconButton, Icon, Text, HStack, VStack } from "../../../../packages/components/src";
 import ExampleSection from "@/src/ExampleSection";
 
 const IconButtonComponent = () => {

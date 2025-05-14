@@ -5,10 +5,7 @@
     "strict": true,
     "paths": {
       "@/*": ["./*"],
-      "react-native-ficus-ui": [
-        "../../packages/react-native-ficus-ui/src/index"
-      ],
-      "@ficus-ui/native": ["../../packages/components/src/index"]
+      "react-native-ficus-ui": ["../../packages/components/src/index"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]

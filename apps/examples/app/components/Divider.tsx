@@ -1,4 +1,4 @@
-import { Divider, Box, Text, SafeAreaBox } from '@ficus-ui/native';
+import { Divider, Box, Text, SafeAreaBox } from '../../../../packages/components/src';
 import ExampleSection from '@/src/ExampleSection';
 
   const DividerComponent = () => {

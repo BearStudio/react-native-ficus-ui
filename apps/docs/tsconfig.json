@@ -18,7 +18,7 @@
     "paths": {
       "@components/*": ["./components/*"],
       "react-native-ficus-ui": [
-        "../../packages/react-native-ficus-ui/src/index"
+        "../../packages/components/src/index"
       ]
     },
     "plugins": [

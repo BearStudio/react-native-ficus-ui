@@ -2,13 +2,14 @@ const { getDefaultConfig } = require('expo/metro-config');
 const path = require('path');
 const blacklist = require('metro-config/src/defaults/exclusionList');
 const escape = require('escape-string-regexp');
-const pak = require('../../package.json');
+const pak = require('./package.json');
 
 const config = getDefaultConfig(__dirname);
 
-const root = path.resolve(__dirname, '../../');
-
-const ficusUi = path.resolve(__dirname, '../../packages/react-native-ficus-ui');
+const root = path.resolve(__dirname, '.');
+const components = path.resolve(__dirname, '../../packages/components');
+const styleSystem = path.resolve(__dirname, '../../packages/style-system');
+const theme = path.resolve(__dirname, '../../packages/theme');
 
 const modules = [
   '@expo/vector-icons',
@@ -16,16 +17,18 @@ const modules = [
 ];
 
 config.watchFolders = [
-  // Add the parent directory to the watchFolders
   root,
-  ficusUi,
+  components,
+  styleSystem,
+  theme,
 ];
 
 config.resolver.nodeModulesPaths = [
-  // Ensure that Metro knows where to find the node_modules of the main project
   path.resolve(__dirname, 'node_modules'),
-  path.resolve(ficusUi, 'node_modules'),
-  path.resolve(root, 'node_modules'), // Optional: if the parent folder has its own node_modules
+  path.resolve(components, 'node_modules'),
+  path.resolve(styleSystem, 'node_modules'),
+  path.resolve(theme, 'node_modules'),
+  path.resolve(root, 'node_modules'),
 ];
 
 // We need to make sure that only one version is loaded for peerDependencies
@@ -42,11 +45,9 @@ config.resolver.extraNodeModules = modules.reduce((acc, name) => {
 }, {});
 
 config.resolver.alias = {
-  // Alias react-native-ficus-ui to the src folder in the parent directory
-  'react-native-ficus-ui': path.resolve(
-    root,
-    'packages/react-native-ficus-ui/src'
-  ),
+  'react-native-ficus-ui': path.resolve(components, 'src'),
+  '@ficus-ui/style-system': path.resolve(styleSystem, 'src'),
+  '@ficus-ui/theme': path.resolve(theme, 'src'),
 };
 
 module.exports = config;

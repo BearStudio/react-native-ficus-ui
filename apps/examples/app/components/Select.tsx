@@ -1,5 +1,5 @@
 import { SafeAreaView } from "react-native";
-import { Text, Select, VStack } from "@ficus-ui/native";
+import { Text, Select, VStack } from "../../../../packages/components/src";
 import ExampleSection from "@/src/ExampleSection";
 
 const SelectComponent = () => {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SafeAreaView } from "react-native";
 
-import { Slider, Text } from '@ficus-ui/native';
+import { Slider, Text } from '../../../../packages/components/src';
 import ExampleSection from "@/src/ExampleSection";
 
 const SliderComponent = () => {

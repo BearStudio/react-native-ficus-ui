@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { SafeAreaView } from "react-native";
-import { Switch, ScrollBox, Text, HStack } from  "@ficus-ui/native";
+import { Switch, ScrollBox, Text, HStack } from  "../../../../packages/components/src";
 import ExampleSection from "@/src/ExampleSection";
 
 const SwitchComponent = () => {
@@ -12,7 +12,7 @@ const SwitchComponent = () => {
   const [isChecked6, toggle6] = useState(false);
   const [isChecked7, toggle7] = useState(false);
   const [isChecked8, toggle8] = useState(false);
-  
+
   return (
     <SafeAreaView>
       <Text mx="xl" fontSize="4xl">

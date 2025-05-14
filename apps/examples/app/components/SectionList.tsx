@@ -1,4 +1,4 @@
-import { Box, Flex, SafeAreaBox, SectionList, Text } from '@ficus-ui/native';
+import { Box, Flex, SafeAreaBox, SectionList, Text } from '../../../../packages/components/src';
 
 
 const SectionListComponent = () => {

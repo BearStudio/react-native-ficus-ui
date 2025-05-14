@@ -1,4 +1,4 @@
-import { Button, HStack, SafeAreaBox, ScrollBox, Stack, Text, Icon } from '@ficus-ui/native';
+import { Button, HStack, SafeAreaBox, ScrollBox, Stack, Text, Icon } from '../../../../packages/components/src';
 
 import ExampleSection from '@/src/ExampleSection';
 

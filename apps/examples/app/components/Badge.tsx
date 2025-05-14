@@ -1,4 +1,4 @@
-import { Badge, SafeAreaBox, ScrollBox, Stack, Text } from '@ficus-ui/native';
+import { Badge, SafeAreaBox, ScrollBox, Stack, Text } from '../../../../packages/components/src';
 
 import ExampleSection from '@/src/ExampleSection';
 

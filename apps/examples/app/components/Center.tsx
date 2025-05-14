@@ -1,4 +1,4 @@
-import { Box, Center, SafeAreaBox, ScrollBox, Text } from '@ficus-ui/native';
+import { Box, Center, SafeAreaBox, ScrollBox, Text } from '../../../../packages/components/src';
 
 import ExampleSection from '@/src/ExampleSection';
 

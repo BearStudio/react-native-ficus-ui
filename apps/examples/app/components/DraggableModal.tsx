@@ -3,9 +3,9 @@ import {
   Button,
   Text,
   useDisclosure,
-} from "react-native-ficus-ui";
+} from "../../../../packages/components/src";
 import ExampleSection from "@/src/ExampleSection";
-import { DraggableModal } from "@ficus-ui/native";
+import { DraggableModal } from "../../../../packages/components/src";
 const DraggableModalComponent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
@@ -27,7 +27,7 @@ const DraggableModalComponent = () => {
           {!isOpen ? "Show Modal" : "Hide Modal"}
         </Button>
 
-        <DraggableModal 
+        <DraggableModal
           isOpen={isOpen}
           onClose={onClose}
           snapPoints={["30%", "80%"]}

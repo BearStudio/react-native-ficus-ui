@@ -1,4 +1,4 @@
-import { Box, SafeAreaBox, Spinner, Text } from "@ficus-ui/native";
+import { Box, SafeAreaBox, Spinner, Text } from "../../../../packages/components/src";
 
 
 const SpinnerComponent = () => {
