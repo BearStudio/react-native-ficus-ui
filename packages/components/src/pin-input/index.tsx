@@ -62,6 +62,7 @@ export const PinInput = forwardRef<PinInputProps, 'CodeField'>((props, ref) => {
     isFocused: boolean;
   }) => (
     <PinInputField
+      key={`pin-input-field-${index}`}
       index={index}
       symbol={symbol}
       mask={mask}
