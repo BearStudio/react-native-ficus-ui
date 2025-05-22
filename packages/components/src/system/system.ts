@@ -49,13 +49,14 @@ export interface FicusStyledOptions extends Dict {
   label?: string;
   baseStyle?: SystemStyleObject; // Base styles applied to the component.
   excludedProps?: string[]; // Make exception for conflict props when split
+  styleProp?: string; // The style prop ("style" as default)
 }
 
 export function styled<
   T extends React.ComponentType<any> | RNElementType,
   P extends object = {},
 >(component: T, options?: FicusStyledOptions) {
-  const { baseStyle, excludedProps = [] } = options ?? {};
+  const { baseStyle, excludedProps = [], styleProp = 'style' } = options ?? {};
   const styleObject = toStyleSheetObject({ baseStyle });
 
   const Component = getComponent(component);
@@ -90,7 +91,7 @@ export function styled<
         AsComponent,
         {
           ref,
-          style: finalComputedStyle,
+          [styleProp]: finalComputedStyle,
           ...restProps,
         },
         children
