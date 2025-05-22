@@ -65,7 +65,7 @@ export const CheckboxGroup = forwardRef<CheckboxGroupProps, 'View'>(
         return React.Children.map(childrenProp, (child): React.ReactNode => {
           if (!React.isValidElement(child)) return child;
 
-          // If child is a Radio component
+          // If child is a Checkbox component
           if (child.type === Checkbox) {
             return React.cloneElement(child, {
               key: `checkbox-${checkboxGroupId}-${child.props.value}`,

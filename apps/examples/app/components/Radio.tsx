@@ -65,7 +65,7 @@ const RadioComponent = () => {
         <RadioGroup colorScheme="red">
           <HStack spacing="md">
             {["Option 1", "Option 2", "Option 3"].map((item) => (
-                <Radio value={item}>
+                <Radio value={item} key={`radio-option-${item}`}>
                   {({ isChecked }) => (
                     <Badge
                       variant={isChecked ? "solid" : "subtle"}

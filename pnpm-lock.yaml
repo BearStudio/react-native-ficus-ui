@@ -236,8 +236,8 @@ importers:
         specifier: 7.4.0
         version: 7.4.0(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       react-native-ficus-ui:
-        specifier: workspace:*
-        version: link:../../packages/components
+        specifier: file:../../packages/components/src
+        version: src@file:packages/components/src
       react-native-gesture-handler:
         specifier: 2.20.2
         version: 2.20.2(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
@@ -6590,6 +6590,9 @@ packages:
 
   sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
+
+  src@file:packages/components/src:
+    resolution: {directory: packages/components/src, type: directory}
 
   ssri@10.0.6:
     resolution: {integrity: sha512-MGrFH9Z4NP9Iyhqn16sDtBpRRNJ0Y2hNa6D65h736fVSaPCHr4DM4sWUNvVaSuC+0OBGhwsrydQwmgfg5LncqQ==}
@@ -15833,6 +15836,8 @@ snapshots:
       through: 2.3.8
 
   sprintf-js@1.0.3: {}
+
+  src@file:packages/components/src: {}
 
   ssri@10.0.6:
     dependencies:

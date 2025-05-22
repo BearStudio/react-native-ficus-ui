@@ -49,7 +49,7 @@ const CheckboxComponent = () => {
         <CheckboxGroup flexDirection="row">
           <HStack spacing="sm">
             {["Option 1", "Option 2", "Option 3"].map((item) => (
-              <Checkbox value={item}>
+              <Checkbox value={item} key={`checkbox-option-${item}`}>
                 {({ isChecked }) => (
                   <Box
                     bg={isChecked ? "blue.600" : "blue.100"}

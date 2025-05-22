@@ -6,10 +6,10 @@ import { Avatar, AvatarBadge, AvatarGroup, HStack, ScrollBox, Text } from 'react
 const AvatarComponent = () => {
   return (
     <SafeAreaView style={{ flex: 1 }} >
-      <ScrollBox bg="white">
-      <Text mx="xl" fontSize="4xl">
-        Avatar component
-      </Text>
+      <ScrollBox>
+        <Text mx="xl" fontSize="4xl">
+          Avatar component
+        </Text>
         <ExampleSection name="avatar with photo">
           <HStack spacing="md">
             <Avatar

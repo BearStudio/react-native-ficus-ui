@@ -16,25 +16,25 @@ const HomeScreen = () => {
     <>
       <SafeAreaBox flex={1}>
         {/* list */}
-        <ScrollView style={{ flex: 1 }}>
-        <Text pb="lg" fontSize="3xl">
-              Components
-            </Text>
-            <Box>
-              {components.map((item, index) => (
-                <TouchableOpacity
-                  key={`item-${index}`}
-                  onPress={() =>
-                    router.push(`/components/${item.navigationPath}` as any)
-                  }
-                  mt={10}
-                  w="100%"
-                  py={10}
-                >
-                  <Text fontSize="xl">{item.onScreenName}</Text>
-                </TouchableOpacity>
-              ))}
-            </Box>
+        <ScrollView style={{ flex: 1, padding: 20 }}>
+          <Text pb="lg" fontSize="3xl">
+            Components
+          </Text>
+          <Box>
+            {components.map((item, index) => (
+              <TouchableOpacity
+                key={`item-${index}`}
+                onPress={() =>
+                  router.push(`/components/${item.navigationPath}` as any)
+                }
+                mt={10}
+                w="100%"
+                py={10}
+              >
+                <Text fontSize="xl">{item.onScreenName}</Text>
+              </TouchableOpacity>
+            ))}
+          </Box>
         </ScrollView>
       </SafeAreaBox>
     </>

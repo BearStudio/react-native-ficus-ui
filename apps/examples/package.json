@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "14.0.2",
-    "react-native-ficus-ui": "workspace:*",
+    "react-native-ficus-ui": "file:../../packages/components/src",
     "@react-native-community/slider": "4.5.4",
     "@react-navigation/native": "7.0.0-rc.21",
     "@shopify/flash-list": "1.5.0",

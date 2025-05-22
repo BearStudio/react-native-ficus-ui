@@ -2,7 +2,7 @@ export interface CheckboxGroupStates {
   isDisabled?: boolean;
 }
 
-type CheckboxValue = string | number[];
+type CheckboxValue = string | number;
 export interface CheckboxGroupOptions extends CheckboxGroupStates {
   onChange?: (value?: CheckboxValue[]) => void;
   value?: CheckboxValue[];
