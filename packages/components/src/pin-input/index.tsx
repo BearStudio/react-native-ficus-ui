@@ -1,13 +1,13 @@
 import React, { ReactNode } from 'react';
 
 import { Dict, splitProps } from '@chakra-ui/utils';
+import { RenderCellOptions } from 'react-native-confirmation-code-field';
 import {
   ThemingProps,
   isStyleProp,
   omitThemingProps,
-} from '@ficus-ui/style-system';
-import { useTheme } from '@ficus-ui/theme';
-import { RenderCellOptions } from 'react-native-confirmation-code-field';
+} from 'react-native-ficus-ui/style-system';
+import { useTheme } from 'react-native-ficus-ui/theme';
 
 import {
   type NativeFicusProps,

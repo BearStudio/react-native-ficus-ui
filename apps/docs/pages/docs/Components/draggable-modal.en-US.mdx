@@ -23,7 +23,7 @@ import { DraggableModal } from "react-native-ficus-ui";
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <ThemeProvider>
+    <FicusProvider>
       <Box h={500} bg="gray.50" p="xl">
         <Button
           colorScheme={!isOpen ? 'green' : 'red'}
@@ -51,7 +51,7 @@ import { DraggableModal } from "react-native-ficus-ui";
           <Text mt="xl">Your settings</Text>
         </DraggableModal>
       </Box>
-    </ThemeProvider>
+    </FicusProvider>
   );
 }
 render(<TestModal />)`} noInline />

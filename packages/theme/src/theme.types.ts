@@ -1,7 +1,7 @@
 import type {
   SystemStyleInterpolation,
   ThemingProps,
-} from '@ficus-ui/style-system';
+} from 'react-native-ficus-ui/style-system';
 import { ToastProps } from 'react-native-toast-message';
 
 type Dict<T = any> = Record<string, T>;

@@ -1,15 +1,15 @@
 import { Dict, splitProps } from '@chakra-ui/utils';
 import {
-  ResponsiveValue,
-  ThemingProps,
-  isStyleProp,
-  omitThemingProps,
-} from '@ficus-ui/style-system';
-import {
   Cursor,
   MaskSymbol,
   isLastFilledCell,
 } from 'react-native-confirmation-code-field';
+import {
+  ResponsiveValue,
+  ThemingProps,
+  isStyleProp,
+  omitThemingProps,
+} from 'react-native-ficus-ui/style-system';
 
 import {
   type NativeFicusProps,

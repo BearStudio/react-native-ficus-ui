@@ -1,4 +1,7 @@
-import { defineStyle, defineStyleConfig } from '@ficus-ui/style-system';
+import {
+  defineStyle,
+  defineStyleConfig,
+} from 'react-native-ficus-ui/style-system';
 
 const baseStyle = defineStyle({
   backgroundColor: 'white',

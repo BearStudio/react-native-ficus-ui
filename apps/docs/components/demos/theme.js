@@ -1,5 +1,5 @@
 import {
-  ThemeProvider,
+  FicusProvider,
   HStack,
   Box,
   VStack,
@@ -73,7 +73,7 @@ export const Theme = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
+    <FicusProvider theme={theme}>
       <Box>
         <VStack spacing={5}>
           <ThemePalette color="red" />
@@ -95,6 +95,6 @@ export const Theme = () => {
           <Text fontSize="4xl" color={textColor}>Example of text with font size 4xl</Text>
         </Box>
       </Box>
-    </ThemeProvider>
+    </FicusProvider>
   );
 };

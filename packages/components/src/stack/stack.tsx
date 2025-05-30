@@ -1,7 +1,7 @@
 import { Fragment, cloneElement, useMemo } from 'react';
 
 import { getValidChildren } from '@chakra-ui/utils';
-import { SystemProps } from '@ficus-ui/style-system';
+import { SystemProps } from 'react-native-ficus-ui/style-system';
 
 import { type NativeFicusProps, ficus, forwardRef } from '../system';
 import { getDividerStyles } from './stack.utils';

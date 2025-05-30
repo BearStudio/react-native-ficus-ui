@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { ThemeProvider, ThemeProviderProps } from '@ficus-ui/theme';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import { ThemeProvider, ThemeProviderProps } from 'react-native-ficus-ui/theme';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export interface FicusProviderProps extends ThemeProviderProps {}

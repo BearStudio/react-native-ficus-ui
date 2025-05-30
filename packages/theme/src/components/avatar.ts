@@ -1,7 +1,7 @@
 import {
   createMultiStyleConfigHelpers,
   defineStyle,
-} from '@ficus-ui/style-system';
+} from 'react-native-ficus-ui/style-system';
 
 import { darkenColor, lightenColor, randomColorFromString } from '../utils';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { theme } from '@ficus-ui/theme';
 import { renderWithTheme as render } from '@test-utils';
+import { theme } from 'react-native-ficus-ui/theme';
 
 import { Pressable } from '.';
 

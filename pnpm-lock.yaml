@@ -64,15 +64,6 @@ importers:
 
   apps/docs:
     dependencies:
-      '@gorhom/bottom-sheet':
-        specifier: 5.0.4
-        version: 5.0.4(@types/react-native@0.72.1(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1)))(@types/react@18.3.1)(react-native-gesture-handler@2.20.2(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native-reanimated@3.16.1(@babel/core@7.26.7)(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
-      '@react-native-community/slider':
-        specifier: 4.5.5
-        version: 4.5.5
-      '@shopify/flash-list':
-        specifier: 1.7.1
-        version: 1.7.1(@babel/runtime@7.26.7)(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       eslint-config-next:
         specifier: ^14.2.6
         version: 14.2.23(eslint@9.20.1(jiti@1.21.7))(typescript@5.3.3)
@@ -112,39 +103,24 @@ importers:
       react-live:
         specifier: ^4.1.7
         version: 4.1.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-native:
-        specifier: 0.76.0
-        version: 0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1)
-      react-native-animatable:
-        specifier: 1.3.3
-        version: 1.3.3
-      react-native-confirmation-code-field:
-        specifier: 7.4.0
-        version: 7.4.0(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       react-native-ficus-ui:
         specifier: workspace:*
         version: link:../../packages/components
-      react-native-modal:
-        specifier: 13.0.1
-        version: 13.0.1(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
-      react-native-pager-view:
-        specifier: 6.5.1
-        version: 6.5.1(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
+      react-native-ficus-ui/style-system:
+        specifier: workspace:*
+        version: link:../../packages/style-system
+      react-native-ficus-ui/theme:
+        specifier: workspace:*
+        version: link:../../packages/theme
+      react-native-gesture-handler:
+        specifier: 2.20.2
+        version: 2.20.2(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       react-native-reanimated:
         specifier: 3.16.1
         version: 3.16.1(@babel/core@7.26.7)(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
-      react-native-tab-view:
-        specifier: 3.5.2
-        version: 3.5.2(react-native-pager-view@6.5.1(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
-      react-native-toast-message:
-        specifier: 2.1.6
-        version: 2.1.6(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
-      react-native-vector-icons:
-        specifier: ^10.2.0
-        version: 10.2.0
       react-native-web:
-        specifier: ^0.19.12
-        version: 0.19.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 0.19.12
+        version: 0.19.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
       '@babel/core':
         specifier: ^7.25.2
@@ -184,15 +160,6 @@ importers:
       '@expo/vector-icons':
         specifier: 14.0.2
         version: 14.0.2
-      '@react-native-community/slider':
-        specifier: 4.5.4
-        version: 4.5.4
-      '@react-navigation/native':
-        specifier: 7.0.0-rc.21
-        version: 7.0.0-rc.21(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
-      '@shopify/flash-list':
-        specifier: 1.5.0
-        version: 1.5.0(@babel/runtime@7.26.7)(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       expo:
         specifier: 52.0.0-preview.7
         version: 52.0.0-preview.7(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
@@ -229,39 +196,15 @@ importers:
       react-native:
         specifier: 0.76.0
         version: 0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1)
-      react-native-animatable:
-        specifier: 1.3.3
-        version: 1.3.3
-      react-native-confirmation-code-field:
-        specifier: 7.4.0
-        version: 7.4.0(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       react-native-ficus-ui:
         specifier: file:../../packages/components/src
         version: src@file:packages/components/src
       react-native-gesture-handler:
         specifier: 2.20.2
         version: 2.20.2(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
-      react-native-modal:
-        specifier: 13.0.1
-        version: 13.0.1(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
-      react-native-pager-view:
-        specifier: 6.2.2
-        version: 6.2.2(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       react-native-reanimated:
         specifier: 3.16.1
         version: 3.16.1(@babel/core@7.26.7)(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
-      react-native-safe-area-context:
-        specifier: 4.12.0
-        version: 4.12.0(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
-      react-native-screens:
-        specifier: 4.0.0-beta.14
-        version: 4.0.0-beta.14(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
-      react-native-tab-view:
-        specifier: 3.5.2
-        version: 3.5.2(react-native-pager-view@6.2.2(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
-      react-native-toast-message:
-        specifier: 2.1.6
-        version: 2.1.6(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       react-native-web:
         specifier: 0.19.13
         version: 0.19.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -299,21 +242,48 @@ importers:
       '@chakra-ui/utils':
         specifier: 2.2.2
         version: 2.2.2(react@18.3.1)
-      '@ficus-ui/style-system':
-        specifier: workspace:*
-        version: link:../style-system
-      '@ficus-ui/theme':
-        specifier: workspace:*
-        version: link:../theme
+      '@gorhom/bottom-sheet':
+        specifier: 5.0.4
+        version: 5.0.4(@types/react-native@0.72.1(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1)))(@types/react@18.3.1)(react-native-gesture-handler@2.20.2(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native-reanimated@3.16.1(@babel/core@7.26.7)(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
+      '@react-native-community/slider':
+        specifier: 4.5.4
+        version: 4.5.4
       '@react-native-picker/picker':
         specifier: 2.11.0
         version: 2.11.0(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
+      '@shopify/flash-list':
+        specifier: 1.5.0
+        version: 1.5.0(@babel/runtime@7.26.7)(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       react-fast-compare:
         specifier: 3.2.2
         version: 3.2.2
+      react-native-confirmation-code-field:
+        specifier: 7.4.0
+        version: 7.4.0(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
+      react-native-ficus-ui/style-system:
+        specifier: workspace:*
+        version: link:../style-system
+      react-native-ficus-ui/theme:
+        specifier: workspace:*
+        version: link:../theme
+      react-native-modal:
+        specifier: 13.0.1
+        version: 13.0.1(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
+      react-native-pager-view:
+        specifier: 6.2.2
+        version: 6.2.2(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       react-native-picker-select:
         specifier: 9.3.1
         version: 9.3.1(@react-native-picker/picker@2.11.0(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))
+      react-native-tab-view:
+        specifier: 3.5.2
+        version: 3.5.2(react-native-pager-view@6.2.2(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
+      react-native-toast-message:
+        specifier: 2.1.6
+        version: 2.1.6(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
+      react-native-vector-icons:
+        specifier: 10.2.0
+        version: 10.2.0
     devDependencies:
       '@types/react':
         specifier: 18.3.1
@@ -336,15 +306,15 @@ importers:
 
   packages/theme:
     dependencies:
-      '@ficus-ui/style-system':
-        specifier: workspace:*
-        version: link:../style-system
       color2k:
         specifier: 2.0.3
         version: 2.0.3
       deepmerge:
         specifier: 4.2.2
         version: 4.2.2
+      react-native-ficus-ui/style-system:
+        specifier: workspace:*
+        version: link:../style-system
 
 packages:
 
@@ -1162,7 +1132,7 @@ packages:
 
   '@expo/bunyan@4.0.1':
     resolution: {integrity: sha512-+Lla7nYSiHZirgK+U/uYzsLv/X+HaJienbD5AKX1UQZHYfWaP+9uuQluRB4GrEVWF0GZ7vEVp/jzaOT9k/SQlg==}
-    engines: {node: '>=0.10.0'}
+    engines: {'0': node >=0.10.0}
 
   '@expo/cli@0.19.4':
     resolution: {integrity: sha512-kj1eSTqJts90bjEvvHdgqKd/f/N9OEjdpa97Xwx11zEQTubK7tLqwdu2/pe6OlKI5zUiavLfwdGLVoVi/sp2mg==}
@@ -1621,9 +1591,6 @@ packages:
   '@react-native-community/slider@4.5.4':
     resolution: {integrity: sha512-TFhwnrp0LTFG90yat8mqEOBLLMJylpnchO5F0KusH8dI0VzViIVIXOzhnx0mUVqLvRwRPbqBB0tvhxd739UhmA==}
 
-  '@react-native-community/slider@4.5.5':
-    resolution: {integrity: sha512-x2N415pg4ZxIltArOKczPwn7JEYh+1OxQ4+hTnafomnMsqs65HZuEWcX+Ch8c5r8V83DiunuQUf5hWGWlw8hQQ==}
-
   '@react-native-picker/picker@2.11.0':
     resolution: {integrity: sha512-QuZU6gbxmOID5zZgd/H90NgBnbJ3VV6qVzp6c7/dDrmWdX8S0X5YFYgDcQFjE3dRen9wB9FWnj2VVdPU64adSg==}
     peerDependencies:
@@ -1774,12 +1741,6 @@ packages:
       react: 18.3.1
       react-native: 0.76.0
 
-  '@react-navigation/native@7.0.0-rc.21':
-    resolution: {integrity: sha512-7cPQ6lX+ovR2YQa0AzVI4YnE3tDl01vVi+TZrss4HYXsxuRlKOE45PS1Seel0b7PlLf9df0OhDckPJWoHF+qaQ==}
-    peerDependencies:
-      react: 18.3.1
-      react-native: 0.76.0
-
   '@react-navigation/routers@7.1.2':
     resolution: {integrity: sha512-emdEjpVDK8zbiu2GChC8oYIAub9i/OpNuQJekVsbyFCBz4/TzaBzms38Q53YaNhdIFNmiYLfHv/Y1Ub7KYfm3w==}
 
@@ -1832,13 +1793,6 @@ packages:
 
   '@shopify/flash-list@1.5.0':
     resolution: {integrity: sha512-XeocevDIXastr6jh3TPo1MzV5XkdqTyWtw/j8kUhz9EOBc2SzNWbpJWyzrAsYKlqYNrnxxs0P9C0amlX2jaQnw==}
-    peerDependencies:
-      '@babel/runtime': '*'
-      react: 18.3.1
-      react-native: 0.76.0
-
-  '@shopify/flash-list@1.7.1':
-    resolution: {integrity: sha512-sUYl7h8ydJutufA26E42Hj7cLvaBTpkMIyNJiFrxUspkcANb6jnFiLt9rEwAuDjvGk/C0lHau+WyT6ZOxqVPwg==}
     peerDependencies:
       '@babel/runtime': '*'
       react: 18.3.1
@@ -6068,12 +6022,6 @@ packages:
       react: 18.3.1
       react-native: 0.76.0
 
-  react-native-pager-view@6.5.1:
-    resolution: {integrity: sha512-YdX7bP+rPYvATMU7HzlMq9JaG3ui/+cVRbFZFGW+QshDULANFg9ECR1BA7H7JTIcO/ZgWCwF+1aVmYG5yBA9Og==}
-    peerDependencies:
-      react: 18.3.1
-      react-native: 0.76.0
-
   react-native-picker-select@9.3.1:
     resolution: {integrity: sha512-o621HcsKJfJkpYeP/PZQiZTKbf8W7FT08niLFL0v1pGkIQyak5IfzfinV2t+/l1vktGwAH2Tt29LrP/Hc5fk3A==}
     peerDependencies:
@@ -6114,6 +6062,12 @@ packages:
   react-native-vector-icons@10.2.0:
     resolution: {integrity: sha512-n5HGcxUuVaTf9QJPs/W22xQpC2Z9u0nb0KgLPnVltP8vdUvOp6+R26gF55kilP/fV4eL4vsAHUqUjewppJMBOQ==}
     hasBin: true
+
+  react-native-web@0.19.12:
+    resolution: {integrity: sha512-o2T0oztoVDQjztt4YksO9S1XRjoH/AqcSvifgWLrPJgGVbMWsfhILgl6lfUdEamVZzZSVV/2gqDVMAk/qq7mZw==}
+    peerDependencies:
+      react: 18.3.1
+      react-dom: 18.3.1
 
   react-native-web@0.19.13:
     resolution: {integrity: sha512-etv3bN8rJglrRCp/uL4p7l8QvUNUC++QwDbdZ8CB7BvZiMvsxfFIRM1j04vxNldG3uo2puRd6OSWR3ibtmc29A==}
@@ -6186,12 +6140,6 @@ packages:
 
   recyclerlistview@4.2.0:
     resolution: {integrity: sha512-uuBCi0c+ggqHKwrzPX4Z/mJOzsBbjZEAwGGmlwpD/sD7raXixdAbdJ6BTcAmuWG50Cg4ru9p12M94Njwhr/27A==}
-    peerDependencies:
-      react: 18.3.1
-      react-native: 0.76.0
-
-  recyclerlistview@4.2.1:
-    resolution: {integrity: sha512-NtVYjofwgUCt1rEsTp6jHQg/47TWjnO92TU2kTVgJ9wsc/ely4HnizHHa+f/dI7qaw4+zcSogElrLjhMltN2/g==}
     peerDependencies:
       react: 18.3.1
       react-native: 0.76.0
@@ -6952,9 +6900,6 @@ packages:
   tslib@2.4.0:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
 
-  tslib@2.6.3:
-    resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
-
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
@@ -7630,7 +7575,7 @@ snapshots:
   '@babel/helper-member-expression-to-functions@7.25.9':
     dependencies:
       '@babel/traverse': 7.26.7
-      '@babel/types': 7.26.7
+      '@babel/types': 7.26.8
     transitivePeerDependencies:
       - supports-color
 
@@ -7652,7 +7597,7 @@ snapshots:
 
   '@babel/helper-optimise-call-expression@7.25.9':
     dependencies:
-      '@babel/types': 7.26.7
+      '@babel/types': 7.26.8
 
   '@babel/helper-plugin-utils@7.26.5': {}
 
@@ -7689,7 +7634,7 @@ snapshots:
 
   '@babel/helper-wrap-function@7.25.9':
     dependencies:
-      '@babel/template': 7.25.9
+      '@babel/template': 7.26.8
       '@babel/traverse': 7.26.8
       '@babel/types': 7.26.8
     transitivePeerDependencies:
@@ -9328,8 +9273,6 @@ snapshots:
 
   '@react-native-community/slider@4.5.4': {}
 
-  '@react-native-community/slider@4.5.5': {}
-
   '@react-native-picker/picker@2.11.0(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)':
     dependencies:
       react: 18.3.1
@@ -9444,7 +9387,7 @@ snapshots:
       '@babel/plugin-transform-sticky-regex': 7.25.9(@babel/core@7.26.7)
       '@babel/plugin-transform-typescript': 7.26.7(@babel/core@7.26.7)
       '@babel/plugin-transform-unicode-regex': 7.25.9(@babel/core@7.26.7)
-      '@babel/template': 7.25.9
+      '@babel/template': 7.26.8
       '@react-native/babel-plugin-codegen': 0.76.6(@babel/preset-env@7.26.7(@babel/core@7.26.7))
       babel-plugin-syntax-hermes-parser: 0.25.1
       babel-plugin-transform-flow-enums: 0.0.2(@babel/core@7.26.7)
@@ -9633,16 +9576,6 @@ snapshots:
       react-native: 0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1)
       use-latest-callback: 0.2.3(react@18.3.1)
 
-  '@react-navigation/native@7.0.0-rc.21(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@react-navigation/core': 7.3.1(react@18.3.1)
-      escape-string-regexp: 4.0.0
-      fast-deep-equal: 3.1.3
-      nanoid: 3.3.7
-      react: 18.3.1
-      react-native: 0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1)
-      use-latest-callback: 0.2.3(react@18.3.1)
-
   '@react-navigation/routers@7.1.2':
     dependencies:
       nanoid: 3.3.8
@@ -9717,14 +9650,6 @@ snapshots:
       react-native: 0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1)
       recyclerlistview: 4.2.0(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       tslib: 2.4.0
-
-  '@shopify/flash-list@1.7.1(@babel/runtime@7.26.7)(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@babel/runtime': 7.26.7
-      react: 18.3.1
-      react-native: 0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1)
-      recyclerlistview: 4.2.1(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
-      tslib: 2.6.3
 
   '@sinclair/typebox@0.27.8': {}
 
@@ -15155,11 +15080,6 @@ snapshots:
       react: 18.3.1
       react-native: 0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1)
 
-  react-native-pager-view@6.5.1(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1):
-    dependencies:
-      react: 18.3.1
-      react-native: 0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1)
-
   react-native-picker-select@9.3.1(@react-native-picker/picker@2.11.0(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)):
     dependencies:
       '@react-native-picker/picker': 2.11.0(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
@@ -15204,13 +15124,6 @@ snapshots:
       react-native-pager-view: 6.2.2(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       use-latest-callback: 0.1.11(react@18.3.1)
 
-  react-native-tab-view@3.5.2(react-native-pager-view@6.5.1(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1):
-    dependencies:
-      react: 18.3.1
-      react-native: 0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1)
-      react-native-pager-view: 6.5.1(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
-      use-latest-callback: 0.1.11(react@18.3.1)
-
   react-native-toast-message@2.1.6(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1):
     dependencies:
       react: 18.3.1
@@ -15220,6 +15133,21 @@ snapshots:
     dependencies:
       prop-types: 15.8.1
       yargs: 16.2.0
+
+  react-native-web@0.19.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      '@babel/runtime': 7.26.7
+      '@react-native/normalize-colors': 0.74.89
+      fbjs: 3.0.5
+      inline-style-prefixer: 6.0.4
+      memoize-one: 6.0.0
+      nullthrows: 1.1.1
+      postcss-value-parser: 4.2.0
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      styleq: 0.1.3
+    transitivePeerDependencies:
+      - encoding
 
   react-native-web@0.19.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
@@ -15348,14 +15276,6 @@ snapshots:
       tslib: 2.8.1
 
   recyclerlistview@4.2.0(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1):
-    dependencies:
-      lodash.debounce: 4.0.8
-      prop-types: 15.8.1
-      react: 18.3.1
-      react-native: 0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1)
-      ts-object-utils: 0.0.5
-
-  recyclerlistview@4.2.1(react-native@0.76.0(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1):
     dependencies:
       lodash.debounce: 4.0.8
       prop-types: 15.8.1
@@ -16217,8 +16137,6 @@ snapshots:
   tslib@1.14.1: {}
 
   tslib@2.4.0: {}
-
-  tslib@2.6.3: {}
 
   tslib@2.8.1: {}
 

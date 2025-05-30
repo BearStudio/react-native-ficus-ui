@@ -1,8 +1,12 @@
 import React, { ReactNode, useMemo } from 'react';
 
 import { isFunction, splitProps } from '@chakra-ui/utils';
-import { Dict, SystemStyleObject, isTextProp } from '@ficus-ui/style-system';
-import { getColor, useTheme } from '@ficus-ui/theme';
+import {
+  Dict,
+  SystemStyleObject,
+  isTextProp,
+} from 'react-native-ficus-ui/style-system';
+import { getColor, useTheme } from 'react-native-ficus-ui/theme';
 
 import { ButtonProps } from '.';
 import { ficus } from '../system';

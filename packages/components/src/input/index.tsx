@@ -2,17 +2,17 @@ import { useImperativeHandle, useRef, useState } from 'react';
 
 import { Dict, splitProps } from '@chakra-ui/utils';
 import {
+  NativeSyntheticEvent,
+  TextInput as RNTextInput,
+  TextInputFocusEventData,
+} from 'react-native';
+import {
   PrefixSuffixProps,
   ResponsiveValue,
   ThemingProps,
   isStyleProp,
   omitThemingProps,
-} from '@ficus-ui/style-system';
-import {
-  NativeSyntheticEvent,
-  TextInput as RNTextInput,
-  TextInputFocusEventData,
-} from 'react-native';
+} from 'react-native-ficus-ui/style-system';
 
 import { ButtonSpinner } from '../button/button-spinner';
 import {

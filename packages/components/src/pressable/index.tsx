@@ -1,5 +1,5 @@
-import { SystemStyleObject } from '@ficus-ui/style-system';
 import type { StyleProp, ViewStyle } from 'react-native';
+import { SystemStyleObject } from 'react-native-ficus-ui/style-system';
 
 import { NativeFicusProps, ficus, forwardRef } from '../system';
 import { pressableStyleFn } from './pressable.service';

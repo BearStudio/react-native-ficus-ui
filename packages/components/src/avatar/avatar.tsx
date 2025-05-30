@@ -6,7 +6,7 @@ import {
   ThemingProps,
   omitThemingProps,
   splitTextProps,
-} from '@ficus-ui/style-system';
+} from 'react-native-ficus-ui/style-system';
 
 import {
   type NativeFicusProps,

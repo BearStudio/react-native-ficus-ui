@@ -46,8 +46,8 @@ config.resolver.extraNodeModules = modules.reduce((acc, name) => {
 
 config.resolver.alias = {
   'react-native-ficus-ui': path.resolve(components, 'src'),
-  '@ficus-ui/style-system': path.resolve(styleSystem, 'src'),
-  '@ficus-ui/theme': path.resolve(theme, 'src'),
+  'react-native-ficus-ui/style-system': path.resolve(styleSystem, 'src'),
+  'react-native-ficus-ui/theme': path.resolve(theme, 'src'),
 };
 
 module.exports = config;

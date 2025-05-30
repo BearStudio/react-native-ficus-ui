@@ -1,8 +1,9 @@
 module.exports = {
   preset: 'react-native',
   moduleNameMapper: {
-    '^@ficus-ui/style-system$': '<rootDir>/packages/style-system/src',
-    '^@ficus-ui/theme$': '<rootDir>/packages/theme/src',
+    '^react-native-ficus-ui/style-system$':
+      '<rootDir>/packages/style-system/src',
+    '^react-native-ficus-ui/theme$': '<rootDir>/packages/theme/src',
     '^@test-utils$': '<rootDir>/packages/components/src/test-utils',
   },
   setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],

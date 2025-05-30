@@ -1,5 +1,8 @@
 import { mapResponsive } from '@chakra-ui/utils';
-import { ResponsiveValue, SystemProps } from '@ficus-ui/style-system';
+import {
+  ResponsiveValue,
+  SystemProps,
+} from 'react-native-ficus-ui/style-system';
 
 export type StackDirection = ResponsiveValue<
   'row' | 'column' | 'row-reverse' | 'column-reverse' | undefined

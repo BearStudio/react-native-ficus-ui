@@ -73,13 +73,15 @@ export default withNextra({
   transpilePackages: [
     'react-native',
     'react-native-web',
-    'react-native-animatable',
     'react-native-toast-message',
     'react-native-vector-icons',
     'react-native-ficus-ui',
     'react-native-confirmation-code-field',
     '@gorhom/bottom-sheet',
-    'react-native-gesture-handler'
+    'react-native-gesture-handler',
+    'react-native-picker-select',
+    '@react-native-picker/picker',
+    'react-native-reanimated'
   ],
 
   webpack: (config, { isDevelopment }) => {
@@ -87,6 +89,7 @@ export default withNextra({
       ...(config.resolve.alias || {}),
       // Transform all direct `react-native` imports to `react-native-web`
       'react-native$': 'react-native-web',
+      'react-native/index.js': 'react-native-web',
     };
     config.resolve.extensions = [
       '.web.js',

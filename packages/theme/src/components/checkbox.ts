@@ -1,7 +1,7 @@
 import {
   createMultiStyleConfigHelpers,
   defineStyle,
-} from '@ficus-ui/style-system';
+} from 'react-native-ficus-ui/style-system';
 
 const sliderParts = ['container', 'control', 'label', 'icon'] as const;
 

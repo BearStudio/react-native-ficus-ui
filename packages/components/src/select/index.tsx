@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import { ThemingProps } from '@ficus-ui/style-system';
-import { useTheme } from '@ficus-ui/theme';
+import { ThemingProps } from 'react-native-ficus-ui/style-system';
+import { useTheme } from 'react-native-ficus-ui/theme';
 
 import {
   type NativeFicusProps,

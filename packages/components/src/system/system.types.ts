@@ -3,7 +3,7 @@ import {
   Dict,
   SystemStyleObject,
   TextStyleProps,
-} from '@ficus-ui/style-system';
+} from 'react-native-ficus-ui/style-system';
 
 import { NativeElementProps, RNElementType } from './system.utils';
 

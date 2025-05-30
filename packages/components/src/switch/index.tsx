@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { ThemingProps, omitThemingProps } from '@ficus-ui/style-system';
-import { getColor, useTheme } from '@ficus-ui/theme';
 import { Animated } from 'react-native';
+import {
+  ThemingProps,
+  omitThemingProps,
+} from 'react-native-ficus-ui/style-system';
+import { getColor, useTheme } from 'react-native-ficus-ui/theme';
 
 import {
   type NativeFicusProps,

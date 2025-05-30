@@ -1,14 +1,14 @@
 import { createElement, forwardRef } from 'react';
 
 import { assignAfter, compact, runIfFn, splitProps } from '@chakra-ui/utils';
+import type { StyleProp } from 'react-native';
 import {
   StyleProps,
   SystemStyleObject,
   isStyleProp,
   styleSheet,
-} from '@ficus-ui/style-system';
-import { useTheme } from '@ficus-ui/theme';
-import type { StyleProp } from 'react-native';
+} from 'react-native-ficus-ui/style-system';
+import { useTheme } from 'react-native-ficus-ui/theme';
 
 import { BaseRNElements } from './base-elements';
 import type {

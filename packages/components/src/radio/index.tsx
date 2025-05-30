@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
 
 import { isFunction } from '@chakra-ui/utils';
-import { ThemingProps, omitThemingProps } from '@ficus-ui/style-system';
 import { GestureResponderEvent } from 'react-native';
+import {
+  ThemingProps,
+  omitThemingProps,
+} from 'react-native-ficus-ui/style-system';
 
 import {
   type NativeFicusProps,

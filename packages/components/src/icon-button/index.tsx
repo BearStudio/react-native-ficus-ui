@@ -1,7 +1,10 @@
 import { ReactElement, cloneElement, isValidElement } from 'react';
 
 import { omit } from '@chakra-ui/utils';
-import { ThemingProps, omitThemingProps } from '@ficus-ui/style-system';
+import {
+  ThemingProps,
+  omitThemingProps,
+} from 'react-native-ficus-ui/style-system';
 
 import { ButtonProps } from '../button';
 import { ButtonSpinner } from '../button/button-spinner';

@@ -1,14 +1,14 @@
 import { useRef } from 'react';
 
 import { compact, memoizedGet as get, mergeWith, omit } from '@chakra-ui/utils';
+import isEqual from 'react-fast-compare';
 import {
   Dict,
   type SystemStyleObject,
   type ThemingProps,
   resolveStyleConfig,
-} from '@ficus-ui/style-system';
-import { useTheme } from '@ficus-ui/theme';
-import isEqual from 'react-fast-compare';
+} from 'react-native-ficus-ui/style-system';
+import { useTheme } from 'react-native-ficus-ui/theme';
 
 type StylesRef = SystemStyleObject | Record<string, SystemStyleObject>;
 

@@ -1,6 +1,6 @@
-import { theme } from '@ficus-ui/theme';
 import { renderWithTheme as render } from '@test-utils';
 import { screen } from '@testing-library/react-native';
+import { theme } from 'react-native-ficus-ui/theme';
 
 import { Text } from '.';
 

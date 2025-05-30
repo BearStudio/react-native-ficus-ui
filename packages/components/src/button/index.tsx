@@ -5,7 +5,7 @@ import {
   TextStyleProps,
   ThemingProps,
   omitThemingProps,
-} from '@ficus-ui/style-system';
+} from 'react-native-ficus-ui/style-system';
 
 import { Pressable, PressableProps } from '../pressable';
 import { ficus, forwardRef, useStyleConfig } from '../system';

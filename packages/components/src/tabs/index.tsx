@@ -1,9 +1,12 @@
 import React, { ReactNode, useState } from 'react';
 
 import { Dict, splitProps } from '@chakra-ui/utils';
-import { ResponsiveValue, isStyleProp } from '@ficus-ui/style-system';
-import { useTheme } from '@ficus-ui/theme';
 import { Dimensions } from 'react-native';
+import {
+  ResponsiveValue,
+  isStyleProp,
+} from 'react-native-ficus-ui/style-system';
+import { useTheme } from 'react-native-ficus-ui/theme';
 import { SceneMap, TabBar, TabBarProps } from 'react-native-tab-view';
 import { Props as RNTabBarProps } from 'react-native-tab-view/lib/typescript/src/TabBar';
 import {

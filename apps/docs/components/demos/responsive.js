@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Badge } from 'react-native-ficus-ui';
 import {
-  ThemeProvider,
+  FicusProvider,
+  Badge,
   Box,
   Image,
   HStack,
@@ -76,7 +76,7 @@ export const Responsive = () => {
   }, []);
 
   return (
-    <ThemeProvider>
+    <FicusProvider>
       {isLoading ? (
         <Center flex={1}>
           <Spinner color="teal.500" size="lg" />
@@ -114,6 +114,6 @@ export const Responsive = () => {
           </Box>
         </Box>
       )}
-    </ThemeProvider>
+    </FicusProvider>
   );
 };

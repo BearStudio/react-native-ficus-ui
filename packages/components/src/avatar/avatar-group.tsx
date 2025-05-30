@@ -5,7 +5,7 @@ import {
   SystemStyleObject,
   ThemingProps,
   omitThemingProps,
-} from '@ficus-ui/style-system';
+} from 'react-native-ficus-ui/style-system';
 
 import { HStack } from '../stack';
 import { NativeFicusProps, forwardRef, useMultiStyleConfig } from '../system';

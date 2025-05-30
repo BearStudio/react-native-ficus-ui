@@ -1,13 +1,9 @@
 import React from 'react';
 
-import {
-  cleanup,
-  fireEvent,
-  screen,
-} from '@testing-library/react-native';
 import { renderWithTheme as render } from '@test-utils';
+import { cleanup, fireEvent, screen } from '@testing-library/react-native';
 import { ActivityIndicator, View } from 'react-native';
-import { theme } from '@ficus-ui/theme';
+import { theme } from 'react-native-ficus-ui/theme';
 
 import { Button } from '.';
 
@@ -15,17 +11,19 @@ afterEach(cleanup);
 
 describe('Button component', () => {
   it('should render without errors', () => {
-    const { getByText } = render(<Button>I love Ficus UI (forked from Magnus UI)</Button>);
+    const { getByText } = render(
+      <Button>I love Ficus UI (forked from Magnus UI)</Button>
+    );
 
-    expect(
-      getByText('I love Ficus UI (forked from Magnus UI)')
-    ).toBeTruthy();
+    expect(getByText('I love Ficus UI (forked from Magnus UI)')).toBeTruthy();
   });
 
   it('should pressing trigger event', () => {
     const onPressMock = jest.fn();
 
-    const { getByText } = render(<Button onPress={onPressMock}>Click Me</Button>);
+    const { getByText } = render(
+      <Button onPress={onPressMock}>Click Me</Button>
+    );
 
     const button = getByText('Click Me');
 

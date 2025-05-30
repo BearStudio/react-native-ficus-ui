@@ -1,4 +1,4 @@
-import { getColor, useTheme } from '@ficus-ui/theme';
+import { getColor, useTheme } from 'react-native-ficus-ui/theme';
 
 import { type NativeFicusProps, ficus, forwardRef } from '../system';
 

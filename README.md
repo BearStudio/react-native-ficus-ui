@@ -38,19 +38,19 @@ cd ios && pod install
 
 ## Usage
 
-You need to wrap your root component inside ThemeProvider component from react-native-ficus-ui.
+You need to wrap your root component inside FicusProvider component from react-native-ficus-ui.
 
 ```js title="index.js"
 import { AppRegistry } from 'react-native';
-import { ThemeProvider } from 'react-native-ficus-ui';
+import { FicusProvider } from 'react-native-ficus-ui';
 
 import App from './src/App';
 
 export default function Main() {
   return (
-    <ThemeProvider>
+    <FicusProvider>
       <App />
-    </ThemeProvider>
+    </FicusProvider>
   );
 }
 

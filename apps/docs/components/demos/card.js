@@ -1,4 +1,4 @@
-import { ThemeProvider } from 'react-native-ficus-ui';
+import { FicusProvider } from 'react-native-ficus-ui';
 
 import { ItemCard } from '@components/demos/responsive';
 
@@ -14,8 +14,8 @@ export const Card = () => {
   };
 
   return (
-    <ThemeProvider>
+    <FicusProvider>
       <ItemCard content={item} />
-    </ThemeProvider>
+    </FicusProvider>
   );
 };

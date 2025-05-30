@@ -1,5 +1,5 @@
 {
-  "name": "@ficus-ui/style-system",
+  "name": "react-native-ficus-ui/style-system",
   "version": "1.0.0",
   "scripts": {
     "dev": "tsc --watch",

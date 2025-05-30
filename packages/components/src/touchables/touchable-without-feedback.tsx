@@ -1,5 +1,5 @@
 import { splitProps } from '@chakra-ui/utils';
-import { Dict, isStyleProp } from '@ficus-ui/style-system';
+import { Dict, isStyleProp } from 'react-native-ficus-ui/style-system';
 
 import { NativeFicusProps, ficus, forwardRef } from '../system';
 

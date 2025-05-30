@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
-import { ThemingProps } from '@ficus-ui/style-system';
-import { getColor, useTheme } from '@ficus-ui/theme';
+import { ThemingProps } from 'react-native-ficus-ui/style-system';
+import { getColor, useTheme } from 'react-native-ficus-ui/theme';
 
 import {
   type NativeFicusProps,

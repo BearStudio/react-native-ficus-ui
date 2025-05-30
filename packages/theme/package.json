@@ -1,5 +1,5 @@
 {
-  "name": "@ficus-ui/theme",
+  "name": "react-native-ficus-ui/theme",
   "version": "1.0.0",
   "scripts": {
     "dev": "tsc --watch",
@@ -7,7 +7,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@ficus-ui/style-system": "workspace:*",
+    "react-native-ficus-ui/style-system": "workspace:*",
     "color2k": "2.0.3",
     "deepmerge": "4.2.2"
   },

@@ -9,11 +9,20 @@
   },
   "dependencies": {
     "@chakra-ui/utils": "2.2.2",
-    "@ficus-ui/style-system": "workspace:*",
-    "@ficus-ui/theme": "workspace:*",
+    "react-native-ficus-ui/style-system": "workspace:*",
+    "react-native-ficus-ui/theme": "workspace:*",
     "@react-native-picker/picker": "2.11.0",
+    "@react-native-community/slider": "4.5.4",
     "react-fast-compare": "3.2.2",
-    "react-native-picker-select": "9.3.1"
+    "react-native-picker-select": "9.3.1",
+    "react-native-confirmation-code-field": "7.4.0",
+    "react-native-modal": "13.0.1",
+    "react-native-tab-view": "3.5.2",
+    "react-native-toast-message": "2.1.6",
+    "react-native-pager-view": "6.2.2",
+    "react-native-vector-icons": "10.2.0",
+    "@shopify/flash-list": "1.5.0",
+    "@gorhom/bottom-sheet": "5.0.4"
   },
   "devDependencies": {
     "@types/react": "18.3.1",

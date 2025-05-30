@@ -1,4 +1,4 @@
-import { SystemStyleObject } from '@ficus-ui/style-system';
+import { SystemStyleObject } from 'react-native-ficus-ui/style-system';
 
 import { Image, ImageProps } from '../image';
 import { useImage } from '../image/use-image';

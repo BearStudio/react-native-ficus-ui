@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { SystemStyleObject } from '@ficus-ui/style-system';
+import { SystemStyleObject } from 'react-native-ficus-ui/style-system';
 
 import { getStateStyles } from '../system/get-state-styles';
 
