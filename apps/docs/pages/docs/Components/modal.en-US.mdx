@@ -21,6 +21,7 @@ import { Modal } from "react-native-ficus-ui";
 
 <CodeEditor code={`const TestModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box>
       <Button
@@ -31,13 +32,14 @@ import { Modal } from "react-native-ficus-ui";
         Show Modal
       </Button>
 
-      <Modal isOpen={isOpen}>
+      <Modal visible={isOpen}>
         <Button
           h={35}
           w={35}
           position="absolute"
           top={50}
           right={15}
+          px={0}
           borderRadius="full"
           colorScheme="gray"
           onPress={() => {

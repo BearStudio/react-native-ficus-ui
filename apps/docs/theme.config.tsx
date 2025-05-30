@@ -5,7 +5,6 @@ import type { DocsThemeConfig } from 'nextra-theme-docs';
 import { LocaleSwitch, useConfig, useTheme } from 'nextra-theme-docs';
 import type { ComponentProps, ReactElement } from 'react';
 import { Badge } from 'react-native-ficus-ui';
-import VersionSwitcher from '@components/version-switcher';
 
 export const FicusLogo = (props: ComponentProps<'svg'>): ReactElement => (
   <svg viewBox="0 0 200 250" width="30" xmlns="http://www.w3.org/2000/svg">
@@ -137,7 +136,6 @@ const config: DocsThemeConfig = {
   navbar: {
     extraContent: (
       <>
-        <VersionSwitcher />
         <LocaleSwitch />
       </>
     ),
