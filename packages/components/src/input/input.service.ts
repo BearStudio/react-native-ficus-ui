@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 
-import { Dict } from '@chakra-ui/utils';
 import { SystemStyleObject } from '@ficus-ui/style-system';
 import { getColor, useTheme } from '@ficus-ui/theme';
 
@@ -37,27 +36,20 @@ export function useInput(
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-between',
-      margin: 0,
       ...stateStyles,
     }),
     [stateStyles]
-  );
-
-  const inputContainerMarginStyles = useMemo(
-    () => ({
-      padding: isFocused
-        ? 0
-        : (styles as Dict)._focused?.borderWidth -
-          (styles as Dict)?.borderWidth,
-    }),
-    [styles, isFocused]
   );
 
   const inputStyles = useMemo(
     () => ({
       flex: 1,
       borderWidth: 0,
+      padding: 0,
       margin: 0,
+      height: 20,
+      lineHeight: 20,
+      fontSize: 12,
     }),
     []
   );
@@ -94,7 +86,6 @@ export function useInput(
 
   return {
     inputContainerStyles,
-    inputContainerMarginStyles,
     inputStyles,
     spinnerStyles,
     prefixStyles,

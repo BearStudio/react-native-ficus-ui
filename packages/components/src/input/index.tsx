@@ -48,7 +48,6 @@ export const Input = forwardRef<InputProps, 'TextInput'>((props, ref) => {
     inputStyles,
     spinnerStyles,
     inputContainerStyles,
-    inputContainerMarginStyles,
     prefixStyles,
     suffixStyles,
   } = useInput(props, styles, isFocused);
@@ -94,32 +93,30 @@ export const Input = forwardRef<InputProps, 'TextInput'>((props, ref) => {
 
   return (
     <ficus.TouchableWithoutFeedback onPress={onPressComponent}>
-      <ficus.View __styles={inputContainerMarginStyles}>
-        <ficus.View
-          __styles={inputContainerStyles}
-          {...(isFocused && props.colorScheme
-            ? { borderColor: `${props.colorScheme}.500` }
-            : {})}
-        >
-          {prefix && <ficus.View __styles={prefixStyles}>{prefix}</ficus.View>}
-          <ficus.TextInput
-            ref={innerRef}
-            onFocus={onFocusInput}
-            onBlur={onBlurInput}
-            __styles={inputStyles}
-            editable={!isDisabled}
-            aria-disabled={!isDisabled}
-            {...rest}
-          />
-          {!isLoading && suffix && (
-            <ficus.View __styles={suffixStyles}>{suffix}</ficus.View>
-          )}
-          {isLoading && (
-            <ficus.View __styles={suffixStyles}>
-              <ButtonSpinner {...spinnerStyles} />
-            </ficus.View>
-          )}
-        </ficus.View>
+      <ficus.View
+        __styles={inputContainerStyles}
+        {...(isFocused && props.colorScheme
+          ? { borderColor: `${props.colorScheme}.500` }
+          : {})}
+      >
+        {prefix && <ficus.View __styles={prefixStyles}>{prefix}</ficus.View>}
+        <ficus.TextInput
+          ref={innerRef}
+          onFocus={onFocusInput}
+          onBlur={onBlurInput}
+          __styles={inputStyles}
+          editable={!isDisabled}
+          aria-disabled={!isDisabled}
+          {...rest}
+        />
+        {!isLoading && suffix && (
+          <ficus.View __styles={suffixStyles}>{suffix}</ficus.View>
+        )}
+        {isLoading && (
+          <ficus.View __styles={suffixStyles}>
+            <ButtonSpinner {...spinnerStyles} />
+          </ficus.View>
+        )}
       </ficus.View>
     </ficus.TouchableWithoutFeedback>
   );

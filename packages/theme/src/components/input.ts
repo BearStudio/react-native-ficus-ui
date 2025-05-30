@@ -36,24 +36,40 @@ const sizes = {
     px: 'sm',
     py: 0,
     fontSize: 'xs',
+    _focused: {
+      px: 5,
+      py: 0,
+    },
   }),
   sm: defineStyle({
     height: 32,
     px: 'md',
     py: 'md',
     fontSize: 'sm',
+    _focused: {
+      px: 7,
+      py: 7,
+    },
   }),
   md: defineStyle({
     height: 40,
     px: 'lg',
     py: 'lg',
     fontSize: 'md',
+    _focused: {
+      px: 11,
+      py: 11,
+    },
   }),
   lg: defineStyle({
     height: 48,
     px: 'lg',
     py: 'lg',
     fontSize: 'md',
+    _focused: {
+      px: 11,
+      py: 11,
+    },
   }),
 };
 
@@ -62,6 +78,7 @@ export const inputTheme = defineStyleConfig({
   variants,
   sizes,
   defaultProps: {
+    size: 'md',
     variant: 'outline',
   },
 });
