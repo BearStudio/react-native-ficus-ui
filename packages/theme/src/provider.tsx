@@ -2,6 +2,7 @@ import { FC, ReactNode, useMemo, useState } from 'react';
 
 import deepmerge from 'deepmerge';
 import { useWindowDimensions } from 'react-native';
+import Toast from 'react-native-toast-message';
 
 import { FicusThemeWithMetadata, ThemeContext } from './context';
 import { theme } from './theme.default';
@@ -44,6 +45,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
   return (
     <ThemeContext.Provider value={contextValue}>
       {children}
+      <Toast {...themeState.toastProps} />
     </ThemeContext.Provider>
   );
 };

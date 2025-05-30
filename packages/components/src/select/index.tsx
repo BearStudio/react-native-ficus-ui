@@ -45,6 +45,12 @@ export const Select = forwardRef<SelectProps, 'PickerSelect'>((props, ref) => {
       }}
       onOpen={() => setIsFocused(true)}
       onClose={() => setIsFocused(false)}
+      // To make is focused work on android
+      pickerProps={{
+        onFocus: () => setIsFocused(true),
+        onBlur: () => setIsFocused(false),
+      }}
+      useNativeAndroidPickerStyle={false}
       {...props}
     />
   );

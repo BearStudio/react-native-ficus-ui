@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 
 import { SystemStyleObject } from '@ficus-ui/style-system';
 import { getColor, useTheme } from '@ficus-ui/theme';
+import { Platform } from 'react-native';
 
 import { InputProps } from '.';
 import { getStateStyles } from '../system/get-state-styles';
@@ -47,9 +48,9 @@ export function useInput(
       borderWidth: 0,
       padding: 0,
       margin: 0,
-      height: 20,
-      lineHeight: 20,
-      fontSize: 12,
+      height: 18,
+      lineHeight: 18,
+      ...(Platform.OS === 'android' ? { lineHeight: 20, fontSize: 12 } : {}),
     }),
     []
   );

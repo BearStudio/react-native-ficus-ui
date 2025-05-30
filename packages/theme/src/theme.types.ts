@@ -2,6 +2,7 @@ import type {
   SystemStyleInterpolation,
   ThemingProps,
 } from '@ficus-ui/style-system';
+import { ToastProps } from 'react-native-toast-message';
 
 type Dict<T = any> = Record<string, T>;
 
@@ -59,4 +60,5 @@ interface Foundations extends Typography {
 
 export interface FicusTheme extends Foundations {
   components?: ThemeComponents;
+  toastProps?: ToastProps;
 }

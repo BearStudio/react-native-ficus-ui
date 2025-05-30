@@ -32,6 +32,7 @@ const ModalComponent = () => {
             position="absolute"
             top={50}
             right={15}
+            px={0}
             borderRadius="full"
             colorScheme="gray"
             onPress={() => {

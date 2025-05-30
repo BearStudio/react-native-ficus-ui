@@ -35,6 +35,7 @@ const HomeScreen = () => {
               </TouchableOpacity>
             ))}
           </Box>
+          <Box h={50} />
         </ScrollView>
       </SafeAreaBox>
     </>
