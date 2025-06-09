@@ -1,32 +1,28 @@
 {
   "compilerOptions": {
-    /** Base Options */
+    "baseUrl": "src",
+    "paths": {
+      "react-native-ficus-ui": ["./src/index"]
+    },
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
     "esModuleInterop": true,
-    "target": "ESNext",
-    "moduleDetection": "force",
-    "allowJs": true,
-    "isolatedModules": true,
-    "moduleResolution": "node10",
-    "composite": true,
-
-    /** For transpiling with TypeScript */
-    "module": "ESNext",
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
-
-    /** Best practices */
-    "strict": true,
-    "skipLibCheck": true,
-    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "lib": ["esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noStrictGenericChecks": false,
     "noUnusedLocals": true,
-    "noImplicitOverride": true,
-    "noUncheckedIndexedAccess": true,
-
-    /** JSX */
-    "jsx": "react-native",
-    "types": ["node", "jest"]
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "esnext",
+    "types": ["react-native", "jest"]
   },
-  "include": ["packages", "__tests__"],
-  "exclude": ["node_modules", "apps", "dist"]
+  "include": ["src"]
 }

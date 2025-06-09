@@ -7,7 +7,7 @@ module.exports = function (api) {
         'module-resolver',
         {
           alias: {
-            'react-native-ficus-ui': '../../packages/components/src/index',
+            'react-native-ficus-ui': '../../src',
           },
         },
       ],

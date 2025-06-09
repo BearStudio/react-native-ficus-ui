@@ -1,5 +1,5 @@
 import { Stack } from 'expo-router';
-import { FicusProvider } from '../../../packages/components/src'
+import { FicusProvider } from '../../../src/components'
 
 export default function RootLayout() {
   return (

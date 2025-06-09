@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Box, Text } from '../../../packages/components/src';
+import { Box, Text } from '../../../src/components';
 
 interface ExampleSectionProps {
   name: string;
