@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "react-native-ficus-ui-docs",
+  "name": "docs",
   "author": "Nicolas Torion",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "intersection-observer": "^0.10.0",
     "isomorphic-git": "1.21.0",
     "markdown-to-jsx": "^6.11.4",
-    "next": "^13.5.6",
+    "next": "15.3.3",
     "nextra": "2.13.4",
     "nextra-theme-docs": "2.13.4",
     "react": "^18.2.0",

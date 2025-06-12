@@ -1,0 +1,74 @@
+{
+  "name": "react-native-ficus-ui",
+  "private": true,
+  "version": "2.0.0-alpha",
+  "engines": {
+    "node": ">= 18.0.0"
+  },
+  "main": "index.ts",
+  "exports": {
+    ".": {
+      "import": "./index.ts"
+    }
+  },
+  "scripts": {
+    "release": "release-it"
+  },
+  "dependencies": {
+    "@chakra-ui/utils": "2.2.2",
+    "@gorhom/bottom-sheet": "5.0.4",
+    "@react-native-community/slider": "4.5.4",
+    "@react-native-picker/picker": "2.11.0",
+    "@shopify/flash-list": "1.5.0",
+    "@trivago/prettier-plugin-sort-imports": "5.2.2",
+    "@types/jest": "29.5.2",
+    "@types/react-test-renderer": "18.0.0",
+    "color2k": "2.0.3",
+    "deepmerge": "4.2.2",
+    "eslint": "8.57.0",
+    "eslint-plugin-testing-library": "7.1.1",
+    "prettier": "3.4.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-fast-compare": "3.2.2",
+    "react-native-confirmation-code-field": "7.4.0",
+    "react-native-modal": "13.0.1",
+    "react-native-pager-view": "6.2.2",
+    "react-native-picker-select": "9.3.1",
+    "react-native-tab-view": "3.5.2",
+    "react-native-toast-message": "2.1.6",
+    "react-native-vector-icons": "10.2.0",
+    "react-test-renderer": "18.2.0"
+  },
+  "devDependencies": {
+    "@react-native/eslint-config": "0.77.0",
+    "@testing-library/react-native": "13.0.1",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@types/react-native-vector-icons": "6.4.18",
+    "del-cli": "6.0.0",
+    "react": "18.3.1",
+    "react-native": "0.76.0",
+    "turbo": "2.4.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "author": {
+    "name": "Nicolas Torion",
+    "email": "nicolas.torion@bearstudio.fr",
+    "url": "https://github.com/ntorionbearstudio"
+  },
+  "license": "MIT",
+  "pnpm": {
+    "overrides": {
+      "react": "18.3.1",
+      "react-native": "0.76.0",
+      "react-dom": "18.3.1",
+      "@types/react": "18.3.1",
+      "@types/react-dom": "18.3.1"
+    }
+  },
+  "packageManager": "pnpm@9.15.5"
+}
