@@ -1,4 +1,4 @@
-import { FC, ReactNode, useMemo, useState } from 'react';
+import { FC, ReactNode, useEffect, useMemo, useState } from 'react';
 
 import deepmerge from 'deepmerge';
 import { useWindowDimensions } from 'react-native';
@@ -39,8 +39,12 @@ export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
 
   const contextValue = useMemo(
     () => ({ theme: themeState, setTheme }),
-    [themeWithMetadata]
+    [themeState]
   );
+
+  useEffect(() => {
+    setTheme({ __windowWidth: windowWidth });
+  }, [windowWidth]);
 
   return (
     <ThemeContext.Provider value={contextValue}>

@@ -8499,8 +8499,8 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.27.6
       '@expo/code-signing-certificates': 0.0.5
-      '@expo/config': 10.0.2
-      '@expo/config-plugins': 9.0.3
+      '@expo/config': 10.0.11
+      '@expo/config-plugins': 9.0.17
       '@expo/devcert': 1.2.0
       '@expo/env': 0.4.2
       '@expo/image-utils': 0.6.5
@@ -8640,7 +8640,7 @@ snapshots:
   '@expo/config@10.0.2':
     dependencies:
       '@babel/code-frame': 7.10.4
-      '@expo/config-plugins': 9.0.3
+      '@expo/config-plugins': 9.0.17
       '@expo/config-types': 52.0.5
       '@expo/json-file': 9.1.4
       deepmerge: 4.3.1
@@ -8703,7 +8703,7 @@ snapshots:
       '@babel/generator': 7.27.5
       '@babel/parser': 7.27.5
       '@babel/types': 7.27.6
-      '@expo/config': 10.0.2
+      '@expo/config': 10.0.11
       '@expo/env': 0.4.2
       '@expo/json-file': 9.0.2
       '@expo/spawn-async': 1.7.2

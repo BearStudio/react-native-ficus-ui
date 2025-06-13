@@ -42,7 +42,6 @@ export const Textarea = forwardRef<TextareaProps, 'TextInput'>((props, ref) => {
   const {
     inputStyles,
     inputContainerStyles,
-    inputContainerMarginStyles,
     prefixStyles,
     suffixStyles,
     spinnerStyles,
@@ -89,7 +88,7 @@ export const Textarea = forwardRef<TextareaProps, 'TextInput'>((props, ref) => {
 
   return (
     <ficus.TouchableWithoutFeedback onPress={onPressComponent}>
-      <ficus.View __styles={inputContainerMarginStyles}>
+      <ficus.View>
         <ficus.View __styles={inputContainerStyles}>
           {prefix && <ficus.View __styles={prefixStyles}>{prefix}</ficus.View>}
           <ficus.TextInput

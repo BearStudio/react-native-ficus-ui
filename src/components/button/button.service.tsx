@@ -3,7 +3,7 @@ import React, { ReactNode, useMemo } from 'react';
 import { isFunction, splitProps } from '@chakra-ui/utils';
 
 import { ButtonProps } from '.';
-import { Dict, SystemStyleObject, isTextProp } from '../../style-system';
+import { Dict, SystemStyleObject, expandResponsive, isTextProp } from '../../style-system';
 import { getColor, useTheme } from '../../theme';
 import { ficus } from '../system';
 import { getStateStyles } from '../system/get-state-styles';
@@ -66,6 +66,8 @@ export function useButton(props: ButtonProps, styles: SystemStyleObject) {
 
   const [textStyles] = splitProps(stateStyles, isTextProp);
 
+  const responsiveFull = expandResponsive({ full })(theme);
+
   // Memoized button styles
   const buttonStyles = useMemo<SystemStyleObject>(
     () => ({
@@ -73,11 +75,13 @@ export function useButton(props: ButtonProps, styles: SystemStyleObject) {
       alignItems: 'center',
       justifyContent: 'center',
       flexDirection: 'row',
-      width: full ? '100%' : undefined,
+      width: responsiveFull?.full ? '100%' : undefined,
       ...stateStyles,
     }),
-    [full, stateStyles]
+    [responsiveFull?.full, stateStyles]
   );
+
+  console.log({ responsiveFull: responsiveFull?.full, buttonStyles });
 
   const resolvedColor = getColor(textStyles?.color, theme.colors);
 
@@ -108,7 +112,10 @@ export function useButton(props: ButtonProps, styles: SystemStyleObject) {
           /**
            * To be able to render it inside of the invisible View when loading
            */
-          return children({ pressed: false });
+          return children({
+            pressed: false,
+            hovered: false,
+          });
         }
 
         return children;

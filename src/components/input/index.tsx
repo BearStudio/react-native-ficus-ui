@@ -106,7 +106,7 @@ export const Input = forwardRef<InputProps, 'TextInput'>((props, ref) => {
           onBlur={onBlurInput}
           __styles={inputStyles}
           editable={!isDisabled}
-          aria-disabled={!isDisabled}
+          aria-disabled={isDisabled}
           {...rest}
         />
         {!isLoading && suffix && (

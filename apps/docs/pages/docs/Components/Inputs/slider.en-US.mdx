@@ -21,7 +21,7 @@ import { Slider } from "react-native-ficus-ui";
 
 ### Default
 
-<CodeEditor code={`<Box>
+<CodeEditor code={`<Box bg="gray.50" p="md">
   <Slider />
   <Slider colorScheme="green" defaultValue={0.2} />
   <Slider colorScheme="red" defaultValue={0.3} />
@@ -35,7 +35,7 @@ import { Slider } from "react-native-ficus-ui";
   const [value, setValue] = React.useState(0.2);
 
   return (
-    <Box>
+    <Box bg="gray.50" p="md">
       <Text>Slider value : {Math.round(value * 100) / 100}</Text>
       <Slider colorScheme="teal" value={value} onValueChange={setValue} />
     </Box>
@@ -45,7 +45,7 @@ render(<SimpleSlider />)`} noInline />
 
 ### Custom step
 
-<CodeEditor code={`<Slider colorScheme="orange" step={0.2} />`} />
+<CodeEditor code={`<Box bg="gray.50" p="md"><Slider colorScheme="orange" step={0.2} /></Box>`} />
 
 ## Props
 

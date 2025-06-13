@@ -85,7 +85,7 @@ export const Responsive = () => {
         <Box w="100%">
           <Box
             flexDirection="row"
-            justify={['flex-start', 'center']}
+            justify="flex-start"
             my="lg"
           >
             <Box
@@ -104,6 +104,7 @@ export const Responsive = () => {
                 full={[true, false]}
                 mt={[5, 0]}
                 ml={[0, 5]}
+                h={40}
               >
                 Search
               </Button>
