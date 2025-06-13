@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 import { fireEvent } from '@testing-library/react-native';
 

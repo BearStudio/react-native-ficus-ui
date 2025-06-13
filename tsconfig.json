@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
     "paths": {
       "react-native-ficus-ui": ["./src/index"]
     },
@@ -24,5 +23,5 @@
     "target": "esnext",
     "types": ["react-native", "jest"]
   },
-  "include": ["apps", "src"]
+  "include": ["apps"]
 }

@@ -69,3 +69,6 @@ apps/docs/.next
 src/**/tsconfig.tsbuildinfo
 tsconfig.tsbuildinfo
 dist
+
+# Tests
+coverage/

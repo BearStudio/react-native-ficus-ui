@@ -79,7 +79,7 @@ export const Responsive = () => {
     <FicusProvider>
       {isLoading ? (
         <Center flex={1}>
-          <Spinner color="teal.500" size="lg" />
+          <Spinner color="teal.500" />
         </Center>
       ) : (
         <Box w="100%">

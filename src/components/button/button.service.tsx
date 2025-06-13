@@ -3,7 +3,12 @@ import React, { ReactNode, useMemo } from 'react';
 import { isFunction, splitProps } from '@chakra-ui/utils';
 
 import { ButtonProps } from '.';
-import { Dict, SystemStyleObject, expandResponsive, isTextProp } from '../../style-system';
+import {
+  Dict,
+  SystemStyleObject,
+  expandResponsive,
+  isTextProp,
+} from '../../style-system';
 import { getColor, useTheme } from '../../theme';
 import { ficus } from '../system';
 import { getStateStyles } from '../system/get-state-styles';
@@ -81,8 +86,6 @@ export function useButton(props: ButtonProps, styles: SystemStyleObject) {
     [responsiveFull?.full, stateStyles]
   );
 
-  console.log({ responsiveFull: responsiveFull?.full, buttonStyles });
-
   const resolvedColor = getColor(textStyles?.color, theme.colors);
 
   // Memoized spinner styles
@@ -114,7 +117,6 @@ export function useButton(props: ButtonProps, styles: SystemStyleObject) {
            */
           return children({
             pressed: false,
-            hovered: false,
           });
         }
 

@@ -1,5 +1,6 @@
 /* eslint-disable no-bitwise */
 import { transparentize as transparentize2k } from 'color2k';
+import { isValidColor } from '../utilities';
 
 type Dict<T = any> = Record<string, T>;
 
@@ -56,11 +57,6 @@ export function getColor(value: any, theme: Dict | undefined) {
   return isValidColor(colorValueResult as string)
     ? (colorValueResult as string)
     : 'transparent';
-}
-
-function isValidColor(value: string): boolean {
-  // TODO
-  return true;
 }
 
 export function randomColorFromString(str: string) {

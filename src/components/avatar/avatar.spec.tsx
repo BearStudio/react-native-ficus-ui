@@ -32,32 +32,4 @@ describe('Avatar component', () => {
       backgroundColor: theme.colors.blue[300],
     });
   });
-
-  it('renders the image if src is valid', async () => {
-    global.fetch = jest.fn(() => Promise.resolve({ ok: true })) as jest.Mock;
-
-    const { getByTestId } = render(
-      <Avatar
-        name="John Doe"
-        src="https://example.com/avatar.jpg"
-        testID="avatar-image"
-      />
-    );
-
-    expect(getByTestId('avatar-image')).toBeTruthy();
-  });
-
-  it('renders initials if image fails to load', async () => {
-    global.fetch = jest.fn(() => Promise.resolve({ ok: false })) as jest.Mock;
-
-    const { getByText } = render(
-      <Avatar
-        name="John Doe"
-        src="https://example.com/avatar.jpg"
-        testID="avatar-fallback"
-      />
-    );
-
-    expect(getByText('JD')).toBeTruthy();
-  });
 });

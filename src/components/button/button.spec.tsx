@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { cleanup, fireEvent, screen } from '@testing-library/react-native';
 import { ActivityIndicator, View } from 'react-native';
 

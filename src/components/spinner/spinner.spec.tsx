@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 import { Spinner } from '.';
 import { renderWithTheme as render } from '../../test-utils';

@@ -1,3 +1,4 @@
+import { isValidColor } from '../../theme/utilities';
 import { Dict } from './types';
 
 // NOTE: This function are taken from Magnus and could probably be improved
@@ -78,11 +79,6 @@ export const transforms = {
       ? (colorValueResult as string)
       : 'transparent';
   },
-};
-
-export const isValidColor = (color: string): boolean => {
-  // TODO
-  return typeof color === 'string';
 };
 
 const resolveFontWeight = (
