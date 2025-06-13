@@ -4,7 +4,7 @@ import {
   Text,
   TouchableOpacity,
   SafeAreaBox,
-} from '../../../packages/components/src';
+} from '../../../src/components';
 
 import { useRouter } from 'expo-router';
 import { ScrollView } from 'react-native';

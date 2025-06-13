@@ -1,0 +1,10 @@
+{
+  "center": "Center",
+  "flex": "Flex",
+  "hstack": "HStack",
+  "vstack": "VStack",
+  "stack": "Stack",
+  "safeareabox": "SafeAreaBox",
+  "scrollbox": "ScrollBox",
+  "tabs": "Tabs"
+}

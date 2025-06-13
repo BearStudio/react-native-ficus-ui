@@ -13,9 +13,9 @@ The project is split in 2 folders.
 - `docs/`: The documentation website of the library
 - `examples/`: A small expo app to test your changes while developping
 
-`packages/`:
+`src/`:
 
-- `react-native-ficus-ui`: The main librairy along with its components, hooks and theme.
+- `components`: The main library along with its components, hooks and theme.
 - ... other configuration and helper packages.
 
 ## Development workflow
@@ -29,12 +29,6 @@ pnpm install
 ### Development
 
 While developing, you can run the [example app](/example/) to test your changes.
-
-To build the packages:
-
-```sh
-pnpm prepack
-```
 
 > [!NOTE]
 > ⚠️ Your changes in the library will be repercuted in the example app. But if you change the library's exports, you will need to rebuild the package.

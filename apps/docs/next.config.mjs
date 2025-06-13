@@ -77,11 +77,15 @@ export default withNextra({
     'react-native-vector-icons',
     'react-native-ficus-ui',
     'react-native-confirmation-code-field',
-    '@gorhom/bottom-sheet',
     'react-native-gesture-handler',
     'react-native-picker-select',
+    'react-native-reanimated',
+    'react-native-tab-view',
+    'recyclerlistview',
+    '@gorhom/bottom-sheet',
     '@react-native-picker/picker',
-    'react-native-reanimated'
+    '@react-native-community/slider',
+    '@shopify/flash-list'
   ],
 
   webpack: (config, { isDevelopment }) => {

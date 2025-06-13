@@ -17,7 +17,7 @@ import { TouchableHighlight } from 'react-native-ficus-ui';
 ## Usage
 
 <CodeEditor code={`<VStack spacing={10}>
-  <TouchableHighlight onPress={() => console.log('Pressed')}>
+  <TouchableHighlight>
     <Text>Test</Text>
   </TouchableHighlight>
   <TouchableHighlight
@@ -26,7 +26,6 @@ import { TouchableHighlight } from 'react-native-ficus-ui';
     borderRadius="xl"
     underlayColor="white"
     activeOpacity={0.5}
-    onPress={() => console.log('Pressed')}
   >
     <Text>Test</Text>
   </TouchableHighlight>
