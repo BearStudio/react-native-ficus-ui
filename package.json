@@ -8,15 +8,15 @@
   "scripts": {
     "dev": "turbo dev --filter='!./apps/docs'",
     "docs:dev": "pnpm -C ./apps/docs run dev",
-    "prepack": "pnpm -C ./packages/components run prepack",
-    "lint": "eslint packages --ext .ts,.tsx --config .eslintrc",
-    "typecheck": "pnpm -C ./packages/components run typecheck",
+    "prepack": "pnpm -C ./src/components run prepack",
+    "lint": "eslint serc --ext .ts,.tsx --config .eslintrc",
+    "typecheck": "pnpm -C ./src/components run typecheck",
     "test:old": "jest --config ./jest.config.cjs",
-    "test": "jest --config ./jest.config.cjs --testPathPattern='./packages/components'",
+    "test": "jest --config ./jest.config.cjs --testPathPattern='./src/components'",
     "ci": "pnpm typecheck && pnpm lint && pnpm test",
     "clean": "del ./**/node_modules ./**/lib ./**/dist ./**/.next ./**/.expo",
-    "format:check": "prettier --check packages --cache",
-    "format:fix": "prettier --write packages --cache"
+    "format:check": "prettier --check src --cache",
+    "format:fix": "prettier --write src --cache"
   },
   "dependencies": {
     "@testing-library/react-native": "13.0.1",
