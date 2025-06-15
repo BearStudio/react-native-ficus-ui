@@ -3,7 +3,7 @@
   "private": true,
   "version": "2.0.0-alpha",
   "engines": {
-    "node": ">= 18.0.0"
+    "node": ">= 22.0.0"
   },
   "scripts": {
     "dev": "turbo dev --filter='!./apps/docs'",
