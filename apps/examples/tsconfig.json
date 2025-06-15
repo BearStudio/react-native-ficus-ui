@@ -5,6 +5,7 @@
     "strict": true,
     "paths": {
       "@/*": ["./*"],
+      "react-native-ficus-ui": ["../../package/src"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]

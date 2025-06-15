@@ -4,7 +4,7 @@ import {
   Text,
   TouchableOpacity,
   SafeAreaBox,
-} from '../../../src/components';
+} from 'react-native-ficus-ui';
 
 import { useRouter } from 'expo-router';
 import { ScrollView } from 'react-native';

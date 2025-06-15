@@ -17,6 +17,7 @@
     "baseUrl": "./",
     "paths": {
       "@components/*": ["./components/*"],
+      "react-native-ficus-ui": ["../../package/src"],
     },
     "plugins": [
       {

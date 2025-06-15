@@ -6,7 +6,7 @@ const pak = require('./package.json');
 
 const config = getDefaultConfig(__dirname);
 
-const root = path.resolve(__dirname, '../../src');
+const root = path.resolve(__dirname, '../../package/src');
 
 const modules = [
   '@expo/vector-icons',
@@ -26,7 +26,7 @@ config.resolver.blockList = exclusionList([
   ),
   new RegExp(
     `${escape(
-      path.resolve(__dirname, '../../src/test-utils')
+      path.resolve(__dirname, '../../package/src/test-utils')
     )}\\/.*`
   ),
 ]);

@@ -1,4 +1,5 @@
 {
+  "box": "Box",
   "center": "Center",
   "flex": "Flex",
   "hstack": "HStack",

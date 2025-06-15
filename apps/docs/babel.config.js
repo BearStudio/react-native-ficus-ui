@@ -6,7 +6,7 @@ module.exports = {
   overrides: [
     {
       test: [
-        path.resolve(__dirname, '../../src'),
+        path.resolve(__dirname, '../../package/src'),
         path.resolve(__dirname, '../../node_modules/react-native'),
       ],
       presets: ['next/babel'],

@@ -1,5 +1,5 @@
 import { Stack } from 'expo-router';
-import { FicusProvider } from '../../../src/components'
+import { FicusProvider } from 'react-native-ficus-ui';
 
 export default function RootLayout() {
   return (

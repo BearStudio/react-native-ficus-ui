@@ -6,16 +6,33 @@
   "engines": {
     "node": ">= 18.0.0"
   },
-  "main": "index.ts",
+  "main": "lib/module/index.js",
+  "types": "lib/typescript/index.d.ts",
   "exports": {
     ".": {
-      "import": "./index.ts",
-      "require": "./index.ts"
+      "import": "./lib/module/index.js",
+      "require": "./lib/module/index.js"
     }
   },
-  "files": [
-    "."
-  ],
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      [
+        "module",
+        {
+          "esm": true
+        }
+      ],
+      [
+        "typescript",
+        {
+          "project": "tsconfig.json",
+          "tsc": "../node_modules/.bin/tsc"
+        }
+      ]
+    ]
+  },
   "scripts": {
     "release": "release-it",
     "typecheck": "tsc --noEmit",
@@ -84,19 +101,6 @@
       "@types/react": "18.3.1",
       "@types/react-dom": "18.3.1"
     }
-  },
-  "react-native-builder-bob": {
-    "source": ".",
-    "output": "lib",
-    "targets": [
-      [
-        "module",
-        {
-          "esm": true
-        }
-      ],
-      "typescript"
-    ]
   },
   "packageManager": "pnpm@9.15.5"
 }
