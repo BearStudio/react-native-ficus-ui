@@ -3,9 +3,10 @@
   "compilerOptions": {
     "jsx": "preserve",
     "strict": true,
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "react-native-ficus-ui": ["../../package/src"]
+      "react-native-ficus-ui": ["../../packages/react-native-ficus-ui/src"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]

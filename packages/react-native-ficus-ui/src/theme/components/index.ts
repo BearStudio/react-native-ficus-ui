@@ -12,6 +12,7 @@ import { selectTheme } from './select';
 import { sliderTheme } from './slider';
 import { switchTheme } from './switch';
 import { tabListTheme, tabsTheme } from './tabs';
+import { textTheme } from './text';
 import { textareaTheme } from './textarea';
 
 export const components = {
@@ -32,4 +33,5 @@ export const components = {
   Select: selectTheme,
   Tabs: tabsTheme,
   TabList: tabListTheme,
+  Text: textTheme,
 };

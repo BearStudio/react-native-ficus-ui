@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "update-example",
+  "name": "app-example",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {

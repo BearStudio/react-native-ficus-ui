@@ -6,17 +6,17 @@
     "node": ">= 22.0.0"
   },
   "scripts": {
-    "dev": "turbo dev --filter='!./apps/docs'",
+    "dev": "pnpm -C ./apps/examples run dev",
     "docs:dev": "pnpm -C ./apps/docs run dev",
-    "prepack": "pnpm -C ./package run prepack",
-    "lint": "eslint ./package --ext .ts,.tsx --config .eslintrc",
-    "typecheck": "pnpm -C ./package run typecheck",
+    "prepack": "pnpm -C ./packages/react-native-ficus-ui run prepack",
+    "lint": "eslint ./packages/react-native-ficus-ui --ext .ts,.tsx --config .eslintrc",
+    "typecheck": "pnpm -C ./packages/react-native-ficus-ui run typecheck",
     "test:old": "jest --config ./jest.config.cjs",
-    "test": "jest --testPathPattern='./package'",
+    "test": "jest --testPathPattern='./packages/react-native-ficus-ui'",
     "ci": "pnpm typecheck && pnpm lint && pnpm test",
     "clean": "del ./**/node_modules ./**/lib ./**/dist ./**/.next ./**/.expo",
-    "format:check": "prettier --check ./package--cache",
-    "format:fix": "prettier --write ./package --cache"
+    "format:check": "prettier --check ./packages/react-native-ficus-ui --cache",
+    "format:fix": "prettier --write ./packages/react-native-ficus-ui --cache"
   },
   "dependencies": {
     "eslint": "8.57.0",

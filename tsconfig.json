@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "paths": {
-      "react-native-ficus-ui": ["./package/src/index"]
+      "react-native-ficus-ui": ["./packages/react-native-ficus-ui/src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
@@ -23,5 +23,5 @@
     "target": "esnext",
     "types": ["react-native", "jest"]
   },
-  "include": ["apps"]
+  "include": ["apps", "packages"]
 }
