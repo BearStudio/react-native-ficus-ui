@@ -12,18 +12,6 @@ runs:
     - name: Install pnpm
       uses: pnpm/action-setup@v4
 
-    - name: Cache dependencies
-      id: pnpm-cache
-      uses: actions/cache@v3
-      with:
-        path: |
-          **/node_modules
-        key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
-        restore-keys: |
-          ${{ runner.os }}-pnpm-
-
     - name: Install dependencies
-      if: steps.pnpm-cache.outputs.cache-hit != 'true'
-      run: |
-        pnpm install --frozen-lockfile
+      run: pnpm install --frozen-lockfile
       shell: bash
