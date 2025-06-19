@@ -1,11 +1,11 @@
 import { SafeAreaView } from 'react-native';
 
 import ExampleSection from '@/src/ExampleSection';
-import { Avatar, AvatarBadge, AvatarGroup, HStack, ScrollBox, Text } from 'react-native-ficus-ui';
+import { Avatar, AvatarBadge, AvatarGroup, HStack, SafeAreaBox, ScrollBox, Text, useColorModeValue } from 'react-native-ficus-ui';
 
 const AvatarComponent = () => {
   return (
-    <SafeAreaView style={{ flex: 1 }} >
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <ScrollBox>
         <Text mx="xl" fontSize="4xl">
           Avatar component
@@ -119,7 +119,7 @@ const AvatarComponent = () => {
           </HStack>
         </ExampleSection>
       </ScrollBox>
-    </SafeAreaView>
+    </SafeAreaBox>
   );
 };
 

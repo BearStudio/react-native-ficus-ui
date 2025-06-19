@@ -10,12 +10,14 @@ import {
   RadiusProps,
   SpaceProps,
 } from './config';
+import { CommonProps } from './config/common';
 import { PseudoStyleKey } from './pseudos';
 import { RNStyleSheet, RNStyleSheetProperties } from './utils/prop-config';
 import { Dict, ResponsiveValue } from './utils/types';
 
 export interface StyleProps
-  extends BackgroundProps,
+  extends CommonProps,
+    BackgroundProps,
     BorderProps,
     ColorProps,
     EffectProps,

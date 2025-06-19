@@ -1,10 +1,10 @@
 import { SafeAreaView } from "react-native";
-import { Box, Checkbox, CheckboxGroup, HStack, Icon, Text, VStack } from  "react-native-ficus-ui";
+import { Box, Checkbox, CheckboxGroup, HStack, Icon, SafeAreaBox, Text, useColorModeValue, VStack } from  "react-native-ficus-ui";
 import ExampleSection from "@/src/ExampleSection";
 
 const CheckboxComponent = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         Checkbox component
       </Text>
@@ -67,7 +67,7 @@ const CheckboxComponent = () => {
           </HStack>
         </CheckboxGroup>
       </ExampleSection>
-    </SafeAreaView>
+    </SafeAreaBox>
   );
 };
 

@@ -1,9 +1,9 @@
-import { Box, SafeAreaBox, Spinner, Text } from "react-native-ficus-ui";
+import { Box, SafeAreaBox, Spinner, Text, useColorModeValue } from "react-native-ficus-ui";
 
 
 const SpinnerComponent = () => {
   return (
-    <SafeAreaBox style={{ flex: 1 }}>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         Spinner component
       </Text>

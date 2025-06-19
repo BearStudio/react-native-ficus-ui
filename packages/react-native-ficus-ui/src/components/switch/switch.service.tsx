@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 
 import { SwitchProps } from '.';
+import { useColorMode } from '../../hooks';
 import { SystemStyleObject } from '../../style-system';
 import { getStateStyles } from '../system/get-state-styles';
 
@@ -13,6 +14,8 @@ export function useSwitch(
 ) {
   const { isDisabled, isChecked } = props;
 
+  const { colorMode } = useColorMode();
+
   const containerStyles = useMemo(
     () =>
       getStateStyles(
@@ -20,9 +23,10 @@ export function useSwitch(
           disabled: isDisabled,
           checked: isChecked,
         },
-        styles.container || {}
+        styles.container || {},
+        colorMode
       ),
-    [isDisabled, isChecked]
+    [isDisabled, isChecked, colorMode]
   );
 
   const trackStyles = useMemo(
@@ -32,9 +36,10 @@ export function useSwitch(
           disabled: isDisabled,
           checked: isChecked,
         },
-        styles.track || {}
+        styles.track || {},
+        colorMode
       ),
-    [isDisabled, isChecked]
+    [isDisabled, isChecked, colorMode]
   );
 
   const thumbStyles = useMemo(
@@ -44,9 +49,10 @@ export function useSwitch(
           disabled: isDisabled,
           checked: isChecked,
         },
-        styles.thumb || {}
+        styles.thumb || {},
+        colorMode
       ),
-    [isDisabled, isChecked]
+    [isDisabled, isChecked, colorMode]
   );
 
   return {

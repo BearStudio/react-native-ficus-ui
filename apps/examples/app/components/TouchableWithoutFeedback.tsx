@@ -3,11 +3,12 @@ import {
   SafeAreaBox,
   Text,
   TouchableWithoutFeedback,
+  useColorModeValue,
 } from 'react-native-ficus-ui';
 
 const TouchableWithoutFeedbackComponent = () => {
   return (
-    <SafeAreaBox style={{ flex: 1 }}>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         TouchableWithoutFeedback component
       </Text>
@@ -21,7 +22,7 @@ const TouchableWithoutFeedbackComponent = () => {
           borderRadius="xl"
           onPress={() => console.log('Pressed')}
         >
-          <Text>Test</Text>
+          <Text color="black">Test</Text>
         </TouchableWithoutFeedback>
       </Box>
     </SafeAreaBox>

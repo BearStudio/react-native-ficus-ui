@@ -1,5 +1,4 @@
-import { SafeAreaView } from "react-native";
-import { Text, Select, VStack } from "react-native-ficus-ui";
+import { Text, Select, VStack, SafeAreaBox, useColorModeValue } from "react-native-ficus-ui";
 import ExampleSection from "@/src/ExampleSection";
 
 const SelectComponent = () => {
@@ -10,7 +9,7 @@ const SelectComponent = () => {
   ];
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         Select component
       </Text>
@@ -53,7 +52,7 @@ const SelectComponent = () => {
           />
         </VStack>
       </ExampleSection>
-    </SafeAreaView>
+    </SafeAreaBox>
   );
 };
 

@@ -1,7 +1,10 @@
 import { defineStyle, defineStyleConfig } from '../../style-system';
 
 const baseStyle = defineStyle({
-  backgroundColor: 'white',
+  bg: 'white',
+  _dark: {
+    bg: 'gray.700',
+  },
 });
 
 const variantDefault = defineStyle({});
@@ -19,7 +22,10 @@ export const tabsTheme = defineStyleConfig({
 });
 
 const baseTabListStyle = defineStyle({
-  backgroundColor: 'white',
+  bg: 'white',
+  _dark: {
+    bg: 'gray.700',
+  },
 });
 
 const variantTabListDefault = defineStyle({});

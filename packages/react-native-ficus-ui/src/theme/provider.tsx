@@ -4,7 +4,7 @@ import deepmerge from 'deepmerge';
 import { useWindowDimensions } from 'react-native';
 import Toast from 'react-native-toast-message';
 
-import { FicusThemeWithMetadata, ThemeContext } from './context';
+import { ColorMode, FicusThemeWithMetadata, ThemeContext } from './context';
 import { theme } from './theme.default';
 
 export interface ThemeProviderProps {
@@ -32,14 +32,21 @@ export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
     deepmerge(themeWithMetadata, customTheme)
   );
 
+  const [colorMode, setColorMode] = useState<ColorMode>('light');
+
   const setTheme = (newTheme: FicusThemeWithMetadata) => {
     const mergedTheme = deepmerge(themeWithMetadata, newTheme);
     setThemeState(mergedTheme);
   };
 
   const contextValue = useMemo(
-    () => ({ theme: themeState, setTheme }),
-    [themeState]
+    () => ({
+      theme: themeState,
+      setTheme,
+      colorMode,
+      setColorMode,
+    }),
+    [themeState, colorMode]
   );
 
   useEffect(() => {

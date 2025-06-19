@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 
+import { useColorMode } from '../../hooks';
 import { SystemStyleObject } from '../../style-system';
 import { getStateStyles } from '../system/get-state-styles';
 
@@ -7,6 +8,8 @@ import { getStateStyles } from '../system/get-state-styles';
  * Custom hook for managing select behavior and styles.
  */
 export function useSelect(styles: SystemStyleObject, isFocused: boolean) {
+  const { colorMode } = useColorMode();
+
   // Compute styles based on state
   const stateStyles = useMemo(
     () =>
@@ -14,9 +17,10 @@ export function useSelect(styles: SystemStyleObject, isFocused: boolean) {
         {
           focused: isFocused,
         },
-        styles
+        styles,
+        colorMode
       ),
-    [isFocused, styles]
+    [isFocused, styles, colorMode]
   );
 
   const selectStyles = useMemo(

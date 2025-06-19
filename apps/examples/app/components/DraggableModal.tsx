@@ -3,14 +3,16 @@ import {
   Button,
   Text,
   useDisclosure,
-  DraggableModal
+  DraggableModal,
+  SafeAreaBox,
+  useColorModeValue
 } from "react-native-ficus-ui";
 import ExampleSection from "@/src/ExampleSection";
 
 const DraggableModalComponent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <SafeAreaView>
+    <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         DraggableModal
       </Text>
@@ -41,7 +43,7 @@ const DraggableModalComponent = () => {
           <Text mt="xl">Your settings</Text>
         </DraggableModal>
       </ExampleSection>
-    </SafeAreaView>
+    </SafeAreaBox>
   );
 };
 

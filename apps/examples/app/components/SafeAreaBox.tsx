@@ -2,7 +2,7 @@ import { Box, SafeAreaBox, Text } from 'react-native-ficus-ui';
 
 const SafeAreaBoxComponent = () => {
   return (
-    <SafeAreaBox bg="blue.100" h="100%">
+    <SafeAreaBox bg="blue.100" _dark={{bg: 'blue.900'}} h="100%">
       <Box px="xl">
         <Text fontSize="4xl">SafeAreaBox component</Text>
         <Box flexDirection="row">

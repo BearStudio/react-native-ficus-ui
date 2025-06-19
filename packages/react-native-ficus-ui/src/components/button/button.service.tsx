@@ -3,6 +3,7 @@ import React, { ReactNode, useMemo } from 'react';
 import { isFunction, splitProps } from '@chakra-ui/utils';
 
 import { ButtonProps } from '.';
+import { useColorMode } from '../../hooks';
 import {
   Dict,
   SystemStyleObject,
@@ -57,6 +58,8 @@ export function useButton(props: ButtonProps, styles: SystemStyleObject) {
 
   const { theme } = useTheme();
 
+  const { colorMode } = useColorMode();
+
   // Compute styles based on state
   const stateStyles = useMemo(
     () =>
@@ -64,9 +67,10 @@ export function useButton(props: ButtonProps, styles: SystemStyleObject) {
         {
           disabled: isDisabled || isLoading,
         },
-        styles
+        styles,
+        colorMode
       ),
-    [isDisabled, isLoading, styles]
+    [isDisabled, isLoading, styles, colorMode]
   );
 
   const [textStyles] = splitProps(stateStyles, isTextProp);

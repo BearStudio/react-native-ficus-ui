@@ -1,3 +1,4 @@
+import { useColorMode } from '../../hooks';
 import { getColor, useTheme } from '../../theme';
 import { type NativeFicusProps, ficus, forwardRef } from '../system';
 
@@ -10,7 +11,9 @@ export const BaseSpinner = ficus('ActivityIndicator', {
 // TODO: Add to theme for default style ?
 export const Spinner = forwardRef<SpinnerProps, 'ActivityIndicator'>(
   (props, ref) => {
-    const { color = 'black', ...rest } = props;
+    const { colorMode } = useColorMode();
+
+    const { color = colorMode === 'dark' ? 'white' : 'black', ...rest } = props;
 
     const { theme } = useTheme();
 

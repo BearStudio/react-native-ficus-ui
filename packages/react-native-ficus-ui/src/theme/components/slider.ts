@@ -12,20 +12,17 @@ const baseTrackStyle = defineStyle((props) => {
 
   return {
     bg: `${c}.500`,
+    _dark: {
+      bg: `${c}.200`,
+    },
   };
 });
 
-const baseFilledTrackStyle = defineStyle((props) => {
-  const { colorScheme: c } = props;
-
-  if (c === 'gray') {
-    return {
-      bg: `${c}.200`,
-    };
-  }
-  return {
-    bg: `${c}.100`,
-  };
+const baseFilledTrackStyle = defineStyle({
+  bg: 'gray.100',
+  _dark: {
+    bg: 'gray.600',
+  },
 });
 
 const baseThumbStyle = defineStyle({
@@ -36,7 +33,7 @@ const baseStyle = definePartsStyle((props) => ({
   container: baseContainerStyle,
   track: baseTrackStyle(props),
   thumb: baseThumbStyle,
-  filledTrack: baseFilledTrackStyle(props),
+  filledTrack: baseFilledTrackStyle,
 }));
 
 // TODO

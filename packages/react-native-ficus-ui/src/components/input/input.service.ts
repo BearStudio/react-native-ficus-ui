@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import { Platform } from 'react-native';
 
 import { InputProps } from '.';
+import { useColorMode } from '../../hooks';
 import { SystemStyleObject } from '../../style-system';
 import { getColor, useTheme } from '../../theme';
 import { getStateStyles } from '../system/get-state-styles';
@@ -19,6 +20,8 @@ export function useInput(
 
   const { theme } = useTheme();
 
+  const { colorMode } = useColorMode();
+
   // Compute styles based on state
   const stateStyles = useMemo(
     () =>
@@ -27,9 +30,10 @@ export function useInput(
           disabled: isDisabled || isLoading,
           focused: isFocused,
         },
-        styles
+        styles,
+        colorMode
       ),
-    [isDisabled, isLoading, isFocused, styles]
+    [isDisabled, isLoading, isFocused, styles, colorMode]
   );
 
   const inputContainerStyles = useMemo(
@@ -50,6 +54,7 @@ export function useInput(
       margin: 0,
       height: 18,
       lineHeight: 18,
+      color: colorMode === 'dark' ? 'white' : 'black',
       ...(Platform.OS === 'android' ? { lineHeight: 20, fontSize: 12 } : {}),
     }),
     []

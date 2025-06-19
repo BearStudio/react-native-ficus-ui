@@ -12,8 +12,14 @@ const baseTrackStyle = defineStyle((props) => ({
   alignItems: 'center',
   borderRadius: 'full',
   bg: 'gray.400',
+  _dark: {
+    bg: 'gray.600',
+  },
   _checked: {
     bg: `${props.colorScheme}.500`,
+    _dark: {
+      bg: `${props.colorScheme}.200`,
+    },
   },
   _disabled: {
     opacity: 0.5,

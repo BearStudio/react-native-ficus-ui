@@ -4,6 +4,10 @@ import {
   Text,
   TouchableOpacity,
   SafeAreaBox,
+  IconButton,
+  Icon,
+  useColorMode,
+  useColorModeValue,
 } from 'react-native-ficus-ui';
 
 import { useRouter } from 'expo-router';
@@ -12,14 +16,20 @@ import { components } from '@/app/items';
 
 const HomeScreen = () => {
   const router = useRouter();
+
+  const {colorMode, toggleColorMode} = useColorMode();
+
   return (
     <>
-      <SafeAreaBox flex={1}>
+      <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
         {/* list */}
         <ScrollView style={{ flex: 1, padding: 20 }}>
-          <Text pb="lg" fontSize="3xl">
-            Components
-          </Text>
+          <Box pb="lg" flexDirection="row" justifyContent="space-between" alignItems="center">
+            <Text fontSize="3xl">
+              Components
+            </Text>
+            <IconButton variant="outline" icon={<Icon name={colorMode === 'light' ? 'moon' : 'sunny'} />} isRound onPress={toggleColorMode} />
+          </Box>
           <Box>
             {components.map((item, index) => (
               <TouchableOpacity

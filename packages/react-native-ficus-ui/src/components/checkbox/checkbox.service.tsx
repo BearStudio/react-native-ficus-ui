@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 
 import { CheckboxProps } from '.';
+import { useColorMode } from '../../hooks';
 import { SystemStyleObject } from '../../style-system';
 import { getStateStyles } from '../system/get-state-styles';
 
@@ -13,6 +14,8 @@ export function useCheckbox(
 ) {
   const { isDisabled, isChecked } = props;
 
+  const { colorMode } = useColorMode();
+
   const containerStyles = useMemo(
     () =>
       getStateStyles(
@@ -20,9 +23,10 @@ export function useCheckbox(
           disabled: isDisabled,
           checked: isChecked,
         },
-        styles.container || {}
+        styles.container || {},
+        colorMode
       ),
-    [isDisabled, isChecked]
+    [isDisabled, isChecked, colorMode]
   );
 
   const controlStyles = useMemo(
@@ -32,9 +36,10 @@ export function useCheckbox(
           disabled: isDisabled,
           checked: isChecked,
         },
-        styles.control || {}
+        styles.control || {},
+        colorMode
       ),
-    [isDisabled, isChecked]
+    [isDisabled, isChecked, colorMode]
   );
 
   const labelStyles = useMemo(
@@ -44,9 +49,10 @@ export function useCheckbox(
           disabled: isDisabled,
           checked: isChecked,
         },
-        styles.label || {}
+        styles.label || {},
+        colorMode
       ),
-    [isDisabled, isChecked]
+    [isDisabled, isChecked, colorMode]
   );
 
   const iconStyles = useMemo(
@@ -56,9 +62,10 @@ export function useCheckbox(
           disabled: isDisabled,
           checked: isChecked,
         },
-        styles.icon || {}
+        styles.icon || {},
+        colorMode
       ),
-    [isDisabled, isChecked]
+    [isDisabled, isChecked, colorMode]
   );
 
   return {

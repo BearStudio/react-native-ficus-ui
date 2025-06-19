@@ -1,10 +1,10 @@
 import ExampleSection from "@/src/ExampleSection";
-import { HStack, Icon, SafeAreaBox, ScrollBox, Text } from "react-native-ficus-ui";
+import { HStack, Icon, SafeAreaBox, ScrollBox, Text, useColorModeValue } from "react-native-ficus-ui";
 
 
 const IconComponent = () => {
   return (
-    <SafeAreaBox>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         Icon component
       </Text>

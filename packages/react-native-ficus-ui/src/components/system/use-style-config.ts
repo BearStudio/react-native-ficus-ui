@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { compact, memoizedGet as get, mergeWith, omit } from '@chakra-ui/utils';
 import isEqual from 'react-fast-compare';
 
+import { useColorMode } from '../../hooks';
 import {
   Dict,
   type SystemStyleObject,
@@ -21,6 +22,8 @@ function useStyleConfigFn(
 
   const { theme } = useTheme();
 
+  const { colorMode } = useColorMode();
+
   const themeStyleConfig = themeKey
     ? get(theme, `components.${themeKey}`)
     : undefined;
@@ -28,7 +31,7 @@ function useStyleConfigFn(
   const styleConfig = styleConfigProp || themeStyleConfig;
 
   const mergedProps = mergeWith(
-    { theme },
+    { theme, colorMode },
     styleConfig?.defaultProps ?? {},
     compact(omit(rest, ['children'])),
     (obj, src) => (!obj ? src : undefined)

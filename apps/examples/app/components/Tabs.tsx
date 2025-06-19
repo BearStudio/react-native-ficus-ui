@@ -10,12 +10,16 @@ import {
   Text,
   SafeAreaBox,
   ScrollBox,
+  useColorModeValue,
+  useColorMode,
 } from "react-native-ficus-ui";
 
 const TabsExampleComponent = () => {
   const [index, setIndex] = React.useState(0);
   const [index2, setIndex2] = React.useState(0);
   const [index3, setIndex3] = React.useState(0);
+
+  const { colorMode } = useColorMode();
 
   // eslint-disable-next-line react/no-unstable-nested-components
   const CustomTabLabel = ({
@@ -25,15 +29,15 @@ const TabsExampleComponent = () => {
     focused: boolean;
     children: ReactNode;
   }) => (
-    <Box bg={focused ? "teal.600" : "transparent"} p="md" borderRadius="2xl">
-      <Text color={focused ? "white" : "teal.500"} fontWeight="bold">
+    <Box bg={focused ? colorMode === "dark" ? "teal.500" : "teal.600" : "transparent"} p="md" borderRadius="2xl">
+      <Text color={focused ? "white" : colorMode === "dark" ? "teal.200" : "teal.500"} fontWeight="bold">
         {children}
       </Text>
     </Box>
   );
 
   return (
-    <SafeAreaBox flex={1}>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         Tabs component
       </Text>
@@ -44,7 +48,6 @@ const TabsExampleComponent = () => {
               initialPage={0}
               onChangeTab={setIndex}
               selectedTab={index}
-              bg="white"
               borderRadius="xl"
             >
               <TabList>
@@ -74,7 +77,6 @@ const TabsExampleComponent = () => {
               onChangeTab={setIndex2}
               selectedTab={index2}
               colorScheme="orange"
-              bg="white"
               borderRadius="xl"
             >
               <TabList>
@@ -103,7 +105,6 @@ const TabsExampleComponent = () => {
               initialPage={0}
               onChangeTab={setIndex3}
               selectedTab={index3}
-              bg="white"
               borderRadius="xl"
             >
               <TabList indicatorStyle={{ backgroundColor: "transparent" }}>

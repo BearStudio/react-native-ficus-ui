@@ -1,11 +1,11 @@
-import { Button, HStack, SafeAreaBox, ScrollBox, Stack, Text, Icon } from 'react-native-ficus-ui';
+import { Button, HStack, SafeAreaBox, ScrollBox, Stack, Text, Icon, useColorModeValue } from 'react-native-ficus-ui';
 
 import ExampleSection from '@/src/ExampleSection';
 
 
 const ButtonComponent = () => {
   return (
-    <SafeAreaBox>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         Button component
       </Text>
@@ -102,12 +102,12 @@ const ButtonComponent = () => {
         <ExampleSection name="prefix and suffix">
           <Stack spacing={10}>
             <Button colorScheme="green">
-              <Icon name="heart" color="white" size="xl" mr="sm" />
+              <Icon name="heart" color={useColorModeValue('white', 'gray.800')} size="xl" mr="sm" />
               Button
             </Button>
             <Button colorScheme="green">
               Button
-              <Icon name="heart" color="white" size="xl" ml="sm" />
+              <Icon name="heart" color={useColorModeValue('white', 'gray.800')} size="xl" ml="sm" />
             </Button>
           </Stack>
         </ExampleSection>

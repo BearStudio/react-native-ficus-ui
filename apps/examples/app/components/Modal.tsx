@@ -1,9 +1,11 @@
 import {
   Button,
+  Flex,
   Icon,
   Modal,
   SafeAreaBox,
   Text,
+  useColorModeValue,
   useDisclosure,
 } from 'react-native-ficus-ui';
 
@@ -12,7 +14,7 @@ import ExampleSection from '@/src/ExampleSection';
 const ModalComponent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <SafeAreaBox>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         Modal
       </Text>
@@ -26,21 +28,23 @@ const ModalComponent = () => {
         </Button>
 
         <Modal visible={isOpen}>
-          <Button
-            h={35}
-            w={35}
-            position="absolute"
-            top={50}
-            right={15}
-            px={0}
-            borderRadius="full"
-            colorScheme="gray"
-            onPress={() => {
-              onClose();
-            }}
-          >
-            <Icon color="white" name="close" />
-          </Button>
+          <Flex _dark={{ bg: 'gray.800' }}>
+            <Button
+              h={35}
+              w={35}
+              position="absolute"
+              top={50}
+              right={15}
+              px={0}
+              borderRadius="full"
+              colorScheme="gray"
+              onPress={() => {
+                onClose();
+              }}
+            >
+              <Icon color="white" name="close" />
+            </Button>
+          </Flex>
         </Modal>
       </ExampleSection>
     </SafeAreaBox>

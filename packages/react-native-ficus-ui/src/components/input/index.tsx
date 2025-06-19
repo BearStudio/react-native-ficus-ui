@@ -7,6 +7,7 @@ import {
   TextInputFocusEventData,
 } from 'react-native';
 
+import { useColorModeValue } from '../../hooks';
 import {
   PrefixSuffixProps,
   ResponsiveValue,
@@ -14,6 +15,7 @@ import {
   isStyleProp,
   omitThemingProps,
 } from '../../style-system';
+import { useTheme } from '../../theme';
 import { ButtonSpinner } from '../button/button-spinner';
 import {
   type NativeFicusProps,
@@ -33,6 +35,8 @@ export interface InputProps
 export const Input = forwardRef<InputProps, 'TextInput'>((props, ref) => {
   const [isFocused, setIsFocused] = useState(false);
   const innerRef = useRef<RNTextInput>(null);
+
+  const { theme } = useTheme();
 
   useImperativeHandle(ref, () => innerRef.current as RNTextInput);
 
@@ -107,6 +111,11 @@ export const Input = forwardRef<InputProps, 'TextInput'>((props, ref) => {
           __styles={inputStyles}
           editable={!isDisabled}
           aria-disabled={isDisabled}
+          placeholderTextColor={useColorModeValue(
+            undefined,
+            // @ts-expect-error
+            theme?.colors?.gray?.[500]
+          )}
           {...rest}
         />
         {!isLoading && suffix && (

@@ -1,10 +1,10 @@
-import { Badge, SafeAreaBox, ScrollBox, Stack, Text } from 'react-native-ficus-ui';
+import { Badge, SafeAreaBox, ScrollBox, Stack, Text, useColorModeValue } from 'react-native-ficus-ui';
 
 import ExampleSection from '@/src/ExampleSection';
 
 const BadgeComponent = () => {
   return (
-    <SafeAreaBox>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         Badge component
       </Text>

@@ -17,6 +17,10 @@ const baseControlStyle = defineStyle((props) => ({
   bg: 'white',
   borderRadius: 'full',
   borderColor: 'gray.200',
+  _dark: {
+    bg: 'gray.900',
+    borderColor: 'gray.600',
+  },
   _checked: {
     borderColor: `${props.colorScheme}.500`,
   },
@@ -27,6 +31,9 @@ const baseControlStyle = defineStyle((props) => ({
 
 const baseLabelStyle = defineStyle({
   color: 'gray.700',
+  _dark: {
+    color: 'white',
+  },
   _disabled: {
     opacity: 0.5,
   },

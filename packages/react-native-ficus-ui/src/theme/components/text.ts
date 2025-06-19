@@ -1,7 +1,9 @@
 import { defineStyle, defineStyleConfig } from '../../style-system';
 
 const baseStyle = defineStyle({
-  color: 'red',
+  _dark: {
+    color: 'white',
+  },
 });
 
 export const textTheme = defineStyleConfig({

@@ -1,6 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import { SafeAreaView } from "react-native";
-import { Box, Flex, FlashList, Text } from "react-native-ficus-ui";
+import { Box, Flex, FlashList, Text, SafeAreaBox, useColorModeValue } from "react-native-ficus-ui";
 
 const FlashListComponent = () => {
   const DATA = [
@@ -18,13 +17,13 @@ const FlashListComponent = () => {
     },
   ];
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         FlashList component
       </Text>
       <Flex mt="xl">
         <FlashList
-          bg="gray.200"
+          bg={useColorModeValue('gray.200', 'gray.700')}
           p="xl"
           data={DATA}
           renderItem={({ item }:any) => (
@@ -35,7 +34,7 @@ const FlashListComponent = () => {
           estimatedItemSize={200}
         />
       </Flex>
-    </SafeAreaView>
+    </SafeAreaBox>
   );
 };
 

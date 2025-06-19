@@ -16,8 +16,14 @@ const variantGhost = defineStyle((props) => {
   if (c === 'gray') {
     return {
       color: 'gray.800',
+      _dark: {
+        color: 'white',
+      },
       _pressed: {
         bg: 'gray.100',
+        _dark: {
+          bg: 'gray.800',
+        },
       },
     };
   }
@@ -27,6 +33,9 @@ const variantGhost = defineStyle((props) => {
     bg: 'transparent',
     _pressed: {
       bg: `${c}.50`,
+      _dark: {
+        bg: `${c}.900`,
+      },
     },
   };
 });

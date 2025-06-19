@@ -1,9 +1,9 @@
-import { Box, Image, SafeAreaBox, Text } from 'react-native-ficus-ui';
+import { Box, Image, SafeAreaBox, Text, useColorModeValue } from 'react-native-ficus-ui';
 
 
 const ImageComponent = () => {
   return (
-    <SafeAreaBox>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         Image component
       </Text>

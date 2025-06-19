@@ -16,17 +16,30 @@ const variantGhost = defineStyle((props) => {
   if (c === 'gray') {
     return {
       color: 'gray.800',
+      _dark: {
+        color: 'white',
+      },
       _pressed: {
         bg: 'gray.100',
+        _dark: {
+          bg: 'gray.800',
+        },
       },
     };
   }
 
   return {
-    color: `${c}.600`,
+    color: `${c}.500`,
     bg: 'transparent',
+    _dark: {
+      color: `${c}.200`,
+      borderColor: `${c}.200`,
+    },
     _pressed: {
       bg: `${c}.50`,
+      _dark: {
+        bg: `${c}.900`,
+      },
     },
   };
 });
@@ -77,8 +90,16 @@ const variantSolid = defineStyle((props) => {
   return {
     bg,
     color,
+    _dark: {
+      bg: `${c}.200`,
+      color: 'gray.800',
+    },
     _pressed: {
       bg: pressedBg,
+      _dark: {
+        bg: `${c}.400`,
+        color: 'gray.800',
+      },
     },
   };
 });
@@ -92,6 +113,10 @@ const variantLink = defineStyle((props) => {
     textDecorationColor: `${c}.500`,
     verticalAlign: 'baseline',
     color: `${c}.500`,
+    _dark: {
+      color: `${c}.200`,
+      textDecorationColor: `${c}.200`,
+    },
   };
 });
 

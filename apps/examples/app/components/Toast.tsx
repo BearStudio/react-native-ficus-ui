@@ -1,11 +1,10 @@
-import { SafeAreaView } from "react-native";
-import { Button, Text, VStack, useToast } from "react-native-ficus-ui";
+import { Button, SafeAreaBox, Text, VStack, useColorModeValue, useToast } from "react-native-ficus-ui";
 import ExampleSection from "@/src/ExampleSection";
 
 const ToastHook = () => {
   const { show, hide } = useToast();
   return (
-    <SafeAreaView>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         Toast
       </Text>
@@ -69,7 +68,7 @@ const ToastHook = () => {
           </Button>
         </VStack>
       </ExampleSection>
-    </SafeAreaView>
+    </SafeAreaBox>
   );
 };
 

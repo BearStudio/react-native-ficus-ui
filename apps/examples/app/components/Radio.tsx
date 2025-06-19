@@ -1,10 +1,9 @@
-import { SafeAreaView } from "react-native";
-import { Badge, Box, HStack, VStack, Radio, RadioGroup, Text } from "react-native-ficus-ui";
+import { Badge, Box, HStack, VStack, Radio, RadioGroup, Text, SafeAreaBox, useColorModeValue } from "react-native-ficus-ui";
 import ExampleSection from "@/src/ExampleSection";
 
 const RadioComponent = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         Radio component
       </Text>
@@ -83,7 +82,7 @@ const RadioComponent = () => {
           </HStack>
         </RadioGroup>
       </ExampleSection>
-    </SafeAreaView>
+    </SafeAreaBox>
   );
 };
 

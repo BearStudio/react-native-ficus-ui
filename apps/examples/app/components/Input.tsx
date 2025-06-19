@@ -5,6 +5,7 @@ import {
   ScrollBox,
   Text,
   Textarea,
+  useColorModeValue,
   VStack,
 } from 'react-native-ficus-ui';
 
@@ -12,7 +13,7 @@ import ExampleSection from '@/src/ExampleSection';
 
 const InputComponent = () => {
   return (
-    <SafeAreaBox>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         Input component
       </Text>
@@ -20,13 +21,13 @@ const InputComponent = () => {
         <ExampleSection name="With prefix">
           <Input
             placeholder="Username"
-            prefix={<Icon name="search" color="gray.900" />}
+            prefix={<Icon name="search" color={useColorModeValue('gray.900', 'white')} />}
           />
         </ExampleSection>
         <ExampleSection name="With suffix">
           <Input
             placeholder="Username"
-            suffix={<Icon name="search" color="gray.900" />}
+            suffix={<Icon name="search" color={useColorModeValue('gray.900', 'white')} />}
           />
         </ExampleSection>
         <ExampleSection name="Password">

@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 
+import { useColorMode } from '../../hooks';
 import { type NativeFicusProps, ficus, forwardRef } from '../system';
 
 interface DividerOptions {
@@ -17,9 +18,11 @@ export interface DividerProps
  */
 export const Divider = forwardRef<DividerProps, 'View'>(
   function Divider(props, ref) {
+    const { colorMode } = useColorMode();
+
     const {
       orientation = 'horizontal',
-      color = 'black',
+      color = colorMode === 'dark' ? 'white' : 'black',
       __styles,
       ...rest
     } = props;

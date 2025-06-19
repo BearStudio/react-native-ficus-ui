@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { SafeAreaView } from "react-native";
-import { Switch, ScrollBox, Text, HStack } from  "react-native-ficus-ui";
+import { Switch, ScrollBox, Text, HStack, SafeAreaBox, useColorModeValue } from  "react-native-ficus-ui";
 import ExampleSection from "@/src/ExampleSection";
 
 const SwitchComponent = () => {
@@ -14,7 +13,7 @@ const SwitchComponent = () => {
   const [isChecked8, toggle8] = useState(false);
 
   return (
-    <SafeAreaView>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         Switch component
       </Text>
@@ -43,7 +42,7 @@ const SwitchComponent = () => {
           </HStack>
         </ExampleSection>
       </ScrollBox>
-    </SafeAreaView>
+    </SafeAreaBox>
   );
 };
 

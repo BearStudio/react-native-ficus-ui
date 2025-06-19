@@ -31,6 +31,5 @@ export * from './pin-input';
 export * from './pin-input/pin-input-field';
 export * from './select';
 export * from './tabs';
-export * from './hooks';
 
 export { FicusProvider, type FicusProviderProps } from './system';

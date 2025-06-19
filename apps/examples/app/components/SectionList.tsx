@@ -1,4 +1,4 @@
-import { Box, Flex, SafeAreaBox, SectionList, Text } from 'react-native-ficus-ui';
+import { Box, Flex, SafeAreaBox, SectionList, Text, useColorModeValue } from 'react-native-ficus-ui';
 
 
 const SectionListComponent = () => {
@@ -17,13 +17,13 @@ const SectionListComponent = () => {
     },
   ]
   return (
-    <SafeAreaBox>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         SectionList component
       </Text>
       <Flex mt="xl">
         <SectionList
-          bg="gray.200"
+          bg={useColorModeValue('gray.200', 'gray.700')}
           p="xl"
           sections={DATA}
           keyExtractor={(item:any, index:number) => `${item.title}-${index}`}
@@ -33,7 +33,7 @@ const SectionListComponent = () => {
             </Box>
           )}
           renderSectionHeader={({ section: { title } }:any) => (
-            <Box bg="gray.300" p="sm">
+            <Box bg="gray.300" _dark={{ bg: 'gray.800' }} p="sm">
               <Text>{title}</Text>
             </Box>
           )}

@@ -1,3 +1,4 @@
+import { ColorMode } from '../theme/context';
 import { Dict } from './utils';
 
 /**
@@ -23,15 +24,31 @@ export interface CustomStates {
 
 export interface ComponentStates extends PressableStates, CustomStates {}
 
-export function stateStyleResolver(states: CustomStates) {
+export function stateStyleResolver(states: CustomStates, colorMode: ColorMode) {
+  const isDark = colorMode === 'dark';
+
   return function resolver(styles: Dict) {
     return {
       ...styles,
-      ...(states.focused ? styles._focused : {}),
+      ...(isDark ? styles._dark : {}),
+      _dark: null,
+      ...(states.focused
+        ? isDark
+          ? { ...styles._focused, ...styles._focused?._dark }
+          : styles._focused
+        : {}),
       _focused: null,
-      ...(states.checked ? styles._checked : {}),
+      ...(states.checked
+        ? isDark
+          ? { ...styles._checked, ...styles._checked?._dark }
+          : styles._checked
+        : {}),
       _checked: null,
-      ...(states.disabled ? styles._disabled : {}),
+      ...(states.disabled
+        ? isDark
+          ? { ...styles._disabled, ...styles._disabled?._dark }
+          : styles._disabled
+        : {}),
       _disabled: null,
     };
   };

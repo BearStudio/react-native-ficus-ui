@@ -1,10 +1,10 @@
-import { Box, Center, SafeAreaBox, ScrollBox, Text } from 'react-native-ficus-ui';
+import { Box, Center, SafeAreaBox, ScrollBox, Text, useColorModeValue } from 'react-native-ficus-ui';
 
 import ExampleSection from '@/src/ExampleSection';
 
 const CenterComponent = () => {
   return (
-    <SafeAreaBox>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         Center component
       </Text>

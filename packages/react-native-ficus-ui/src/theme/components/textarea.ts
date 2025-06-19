@@ -13,6 +13,10 @@ const baseStyle = defineStyle({
   _disabled: {
     opacity: 0.6,
   },
+  _dark: {
+    bg: 'gray.900',
+    color: 'white',
+  },
 });
 
 const variantOutline = defineStyle(() => {
@@ -24,6 +28,9 @@ const variantOutline = defineStyle(() => {
       borderWidth: 2,
       borderStyle: 'solid',
       borderColor: 'blue.500',
+    },
+    _dark: {
+      borderColor: 'gray.600',
     },
   };
 });

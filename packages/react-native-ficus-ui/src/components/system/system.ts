@@ -3,6 +3,7 @@ import { createElement, forwardRef } from 'react';
 import { assignAfter, compact, runIfFn, splitProps } from '@chakra-ui/utils';
 import type { StyleProp } from 'react-native';
 
+import { useColorMode } from '../../hooks';
 import {
   StyleProps,
   SystemStyleObject,
@@ -65,10 +66,14 @@ export function styled<
     function FicusComponent(props, ref) {
       const { children, style, as, __styles, __stylesFn, ...rest } = props;
       const { theme } = useTheme();
+      const { colorMode } = useColorMode();
+
+      const restResult =
+        colorMode === 'dark' ? { ...rest, ...rest._dark } : rest;
 
       const isExcludedProp = (prop: string) => excludedProps.includes(prop);
       const [styleProps, restProps] = splitProps(
-        rest,
+        restResult,
         (prop) => isStyleProp(prop) && !isExcludedProp(prop)
       );
 
@@ -84,7 +89,7 @@ export function styled<
       const computedStyle = styleObject(propsWithTheme);
 
       const finalComputedStyle = __stylesFn
-        ? __stylesFn(computedStyle)
+        ? __stylesFn(computedStyle, colorMode)
         : computedStyle;
 
       return createElement(

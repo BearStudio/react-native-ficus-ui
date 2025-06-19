@@ -1,10 +1,10 @@
-import { Box, SafeAreaBox, ScrollBox, Text } from 'react-native-ficus-ui';
+import { Box, SafeAreaBox, ScrollBox, Text, useColorModeValue } from 'react-native-ficus-ui';
 
 import ExampleSection from '@/src/ExampleSection';
 
 const ScrollBoxComponent = () => {
   return (
-    <SafeAreaBox>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         ScrollBox component
       </Text>
@@ -33,6 +33,7 @@ const ScrollBoxComponent = () => {
               shadow="none"
               justifyContent="center"
               alignItems="center"
+              _dark={{ shadowColor: 'white' }}
             >
               <Text>none</Text>
             </Box>
@@ -45,6 +46,7 @@ const ScrollBoxComponent = () => {
               shadow="xs"
               justifyContent="center"
               alignItems="center"
+              _dark={{ shadowColor: 'white' }}
             >
               <Text>xs</Text>
             </Box>
@@ -57,6 +59,7 @@ const ScrollBoxComponent = () => {
               shadow="sm"
               justifyContent="center"
               alignItems="center"
+              _dark={{ shadowColor: 'white' }}
             >
               <Text>sm</Text>
             </Box>
@@ -69,6 +72,7 @@ const ScrollBoxComponent = () => {
               shadow="md"
               justifyContent="center"
               alignItems="center"
+              _dark={{ shadowColor: 'white' }}
             >
               <Text>md</Text>
             </Box>
@@ -81,6 +85,7 @@ const ScrollBoxComponent = () => {
               shadow="lg"
               justifyContent="center"
               alignItems="center"
+              _dark={{ shadowColor: 'white' }}
             >
               <Text>lg</Text>
             </Box>
@@ -93,6 +98,7 @@ const ScrollBoxComponent = () => {
               shadow="xl"
               justifyContent="center"
               alignItems="center"
+              _dark={{ shadowColor: 'white' }}
             >
               <Text>xl</Text>
             </Box>
@@ -105,6 +111,7 @@ const ScrollBoxComponent = () => {
               shadow="2xl"
               justifyContent="center"
               alignItems="center"
+              _dark={{ shadowColor: 'white' }}
             >
               <Text>2xl</Text>
             </Box>

@@ -17,6 +17,7 @@ import {
   forwardRef,
   useStyleConfig,
 } from '../system';
+import { Text } from '../text';
 import { usePinInputField } from './pin-input.service';
 import { PinInputOptions } from './pin-input.types';
 
@@ -64,9 +65,13 @@ export const PinInputField = forwardRef<PinInputFieldProps, 'View'>(
         </MaskSymbol>
       );
     } else if (symbol && !mask) {
-      textChild = symbol;
+      textChild = <Text>{symbol}</Text>;
     } else if (isFocused) {
-      textChild = <Cursor />;
+      textChild = (
+        <Text>
+          <Cursor />
+        </Text>
+      );
     } else {
       textChild = '';
     }

@@ -35,6 +35,10 @@ const fieldBaseStyle = defineStyle({
   _disabled: {
     opacity: 0.6,
   },
+  _dark: {
+    bg: 'gray.900',
+    color: 'white',
+  },
 });
 
 const fieldVariantOutline = defineStyle(() => {
@@ -47,6 +51,9 @@ const fieldVariantOutline = defineStyle(() => {
       borderWidth: 2,
       borderStyle: 'solid',
       borderColor: 'blue.500',
+    },
+    _dark: {
+      borderColor: 'gray.600',
     },
   };
 });

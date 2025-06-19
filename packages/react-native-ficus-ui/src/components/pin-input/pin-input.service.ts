@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 
 import { PinInputProps } from '.';
+import { useColorMode } from '../../hooks';
 import { SystemStyleObject } from '../../style-system';
 import { getStateStyles } from '../system/get-state-styles';
 import { PinInputFieldProps } from './pin-input-field';
@@ -11,6 +12,8 @@ import { PinInputFieldProps } from './pin-input-field';
 export function usePinInput(props: PinInputProps, styles: SystemStyleObject) {
   const { isDisabled } = props;
 
+  const { colorMode } = useColorMode();
+
   // Compute styles based on state
   const stateStyles = useMemo(
     () =>
@@ -18,9 +21,10 @@ export function usePinInput(props: PinInputProps, styles: SystemStyleObject) {
         {
           disabled: isDisabled,
         },
-        styles
+        styles,
+        colorMode
       ),
-    [isDisabled, styles]
+    [isDisabled, styles, colorMode]
   );
 
   const pinInputStyles = useMemo(
@@ -44,6 +48,8 @@ export function usePinInputField(
 ) {
   const { isDisabled, isFocused } = props;
 
+  const { colorMode } = useColorMode();
+
   // Compute styles based on state
   const stateStyles = useMemo(
     () =>
@@ -52,9 +58,10 @@ export function usePinInputField(
           disabled: isDisabled,
           focused: isFocused,
         },
-        styles
+        styles,
+        colorMode
       ),
-    [isDisabled, isFocused, styles]
+    [isDisabled, isFocused, styles, colorMode]
   );
 
   const pinInputFieldStyles = useMemo(

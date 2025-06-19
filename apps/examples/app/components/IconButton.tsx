@@ -1,14 +1,13 @@
-import { SafeAreaView, ScrollView } from "react-native";
-import { IconButton, Icon, Text, HStack, VStack } from "react-native-ficus-ui";
+import { IconButton, Icon, Text, HStack, VStack, SafeAreaBox, ScrollBox, useColorModeValue } from "react-native-ficus-ui";
 import ExampleSection from "@/src/ExampleSection";
 
 const IconButtonComponent = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         IconButton component
       </Text>
-      <ScrollView>
+      <ScrollBox>
         <ExampleSection name="default">
           <VStack spacing={10}>
             <IconButton icon={<Icon name="heart" />} size="xs" />
@@ -105,8 +104,8 @@ const IconButtonComponent = () => {
             />
           </VStack>
         </ExampleSection>
-      </ScrollView>
-    </SafeAreaView>
+      </ScrollBox>
+    </SafeAreaBox>
   );
 };
 

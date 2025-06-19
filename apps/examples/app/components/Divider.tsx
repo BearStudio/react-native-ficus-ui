@@ -1,9 +1,9 @@
-import { Divider, Box, Text, SafeAreaBox } from 'react-native-ficus-ui';
+import { Divider, Box, Text, SafeAreaBox, useColorModeValue } from 'react-native-ficus-ui';
 import ExampleSection from '@/src/ExampleSection';
 
   const DividerComponent = () => {
   return (
-    <SafeAreaBox>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         Divider component
       </Text>

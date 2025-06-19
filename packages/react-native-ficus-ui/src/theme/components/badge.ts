@@ -33,7 +33,13 @@ const variantOutline = defineStyle((props) => {
 
   return {
     color: `${c}.500`,
-    boxShadow: '0 0 0 1 rgba(0, 0, 0, 0.5)',
+    borderWidth: 1,
+    borderColor: `${c}.500`,
+
+    _dark: {
+      color: 'white',
+      borderColor: 'white',
+    },
   };
 });
 

@@ -4,6 +4,7 @@ import {
   SystemStyleObject,
   TextStyleProps,
 } from '../../style-system';
+import { ColorMode } from '../../theme/context';
 import { NativeElementProps, RNElementType } from './system.utils';
 
 export type FicusProps<T extends RNElementType> = SystemProps<T> & {
@@ -17,7 +18,7 @@ export type FicusProps<T extends RNElementType> = SystemProps<T> & {
    * Used for custom React Native style functions.
    * e.g. Pressable API `style`
    */
-  __stylesFn?: (props: Dict) => any;
+  __stylesFn?: (props: Dict, colorMode: ColorMode) => any;
 };
 
 export type SystemProps<T extends RNElementType> = T extends 'Text'

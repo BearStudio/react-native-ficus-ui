@@ -1,14 +1,13 @@
 import { useState } from "react";
-import { SafeAreaView } from "react-native";
 
-import { Slider, Text } from 'react-native-ficus-ui';
+import { Slider, Text, SafeAreaBox, useColorModeValue } from 'react-native-ficus-ui';
 import ExampleSection from "@/src/ExampleSection";
 
 const SliderComponent = () => {
   const [value, setValue] = useState(0.2);
 
   return (
-    <SafeAreaView>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         Slider
       </Text>
@@ -28,7 +27,7 @@ const SliderComponent = () => {
       <ExampleSection name="Slider custom step">
         <Slider colorScheme="orange" step={0.2} h={40}/>
       </ExampleSection>
-    </SafeAreaView>
+    </SafeAreaBox>
   );
 };
 

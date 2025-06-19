@@ -9,6 +9,7 @@ import {
   SceneRendererProps,
 } from 'react-native-tab-view/lib/typescript/src/types';
 
+import { useColorMode } from '../../hooks';
 import { ResponsiveValue, isStyleProp } from '../../style-system';
 import { useTheme } from '../../theme';
 import {
@@ -46,6 +47,7 @@ export const Tabs = (props: TabsProps) => {
   } = props;
 
   const { theme } = useTheme();
+  const { colorMode } = useColorMode();
 
   const [stylesProps, tabsProps] = splitProps(props as Dict, isStyleProp);
 
@@ -82,7 +84,11 @@ export const Tabs = (props: TabsProps) => {
     {}
   );
 
-  const tabsMainColor = colorScheme ? `${colorScheme}.600` : null;
+  const tabsMainColor = colorScheme
+    ? colorMode === 'dark'
+      ? `${colorScheme}.200`
+      : `${colorScheme}.600`
+    : null;
 
   const tabListStyles = useStyleConfig('TabList', {
     ...tabs.props,

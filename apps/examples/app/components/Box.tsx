@@ -1,12 +1,10 @@
-import { Box, SafeAreaBox, ScrollBox, Text } from 'react-native-ficus-ui';
-import { useRouter } from 'expo-router';
+import { Box, SafeAreaBox, ScrollBox, Text, useColorModeValue } from 'react-native-ficus-ui';
 
 import ExampleSection from '@/src/ExampleSection';
 
 const BoxComponent = () => {
-  const router = useRouter();
   return (
-    <SafeAreaBox>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text
         style={{
           marginHorizontal: 20,
@@ -37,6 +35,7 @@ const BoxComponent = () => {
               shadow="none"
               justifyContent="center"
               alignItems="center"
+              _dark={{ shadowColor: 'white' }}
             >
               <Text>none</Text>
             </Box>
@@ -49,6 +48,7 @@ const BoxComponent = () => {
               shadow="xs"
               justifyContent="center"
               alignItems="center"
+              _dark={{ shadowColor: 'white' }}
             >
               <Text>xs</Text>
             </Box>
@@ -61,6 +61,7 @@ const BoxComponent = () => {
               shadow="sm"
               justifyContent="center"
               alignItems="center"
+              _dark={{ shadowColor: 'white' }}
             >
               <Text>sm</Text>
             </Box>
@@ -73,6 +74,7 @@ const BoxComponent = () => {
               shadow="md"
               justifyContent="center"
               alignItems="center"
+              _dark={{ shadowColor: 'white' }}
             >
               <Text>md</Text>
             </Box>
@@ -85,6 +87,7 @@ const BoxComponent = () => {
               shadow="lg"
               justifyContent="center"
               alignItems="center"
+              _dark={{ shadowColor: 'white' }}
             >
               <Text>lg</Text>
             </Box>
@@ -97,6 +100,7 @@ const BoxComponent = () => {
               shadow="xl"
               justifyContent="center"
               alignItems="center"
+              _dark={{ shadowColor: 'white' }}
             >
               <Text>xl</Text>
             </Box>
@@ -109,6 +113,7 @@ const BoxComponent = () => {
               shadow="2xl"
               justifyContent="center"
               alignItems="center"
+              _dark={{ shadowColor: 'white' }}
             >
               <Text>2xl</Text>
             </Box>

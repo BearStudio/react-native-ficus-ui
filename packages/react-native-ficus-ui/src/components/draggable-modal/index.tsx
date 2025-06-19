@@ -1,10 +1,17 @@
 import { ReactNode, useEffect, useRef } from 'react';
 
 import { BottomSheetModal } from '@gorhom/bottom-sheet';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, ViewStyle } from 'react-native';
 
+import { useColorMode } from '../../hooks';
+import { useTheme } from '../../theme';
 import { Box } from '../box';
-import { type NativeFicusProps, ficus, forwardRef } from '../system';
+import {
+  type NativeFicusProps,
+  ficus,
+  forwardRef,
+  toStyleSheetObject,
+} from '../system';
 import { mergeRefs } from '../utils/merge-refs';
 
 interface DraggableModalOptions {
@@ -21,6 +28,9 @@ export const DraggableModal = forwardRef<
   'BottomSheetModal'
 >(function DraggableModal(props, ref) {
   const _ref = useRef<BottomSheetModal>(null);
+
+  const { theme } = useTheme();
+  const { colorMode } = useColorMode();
 
   const bottomSheetModalRef = mergeRefs(_ref, ref);
   const { children, isOpen, onClose, h, ...rest } = props;
@@ -39,8 +49,31 @@ export const DraggableModal = forwardRef<
     justifyContent: 'flex-end',
     borderTopLeftRadius: 12,
     borderTopRightRadius: 12,
-    bg: 'white',
   };
+
+  const bottomSheetBackgroundStyles = {
+    backgroundColor: colorMode === 'dark' ? 'gray.900' : 'white',
+  };
+
+  const bottomSheetBackgroundStyleObject = toStyleSheetObject({
+    baseStyle: bottomSheetBackgroundStyles,
+  })({
+    ...bottomSheetBackgroundStyles,
+    theme,
+    style: undefined,
+  });
+
+  const handleStyles = {
+    backgroundColor: colorMode === 'dark' ? 'white' : 'gray.600',
+  };
+
+  const handleStyleObject = toStyleSheetObject({
+    baseStyle: handleStyles,
+  })({
+    ...handleStyles,
+    theme,
+    style: undefined,
+  });
 
   const handleChange = (index: number) => {
     if (index === -1 && onClose) {
@@ -57,6 +90,8 @@ export const DraggableModal = forwardRef<
       onChange={handleChange}
       {...rest}
       __styles={bottomSheetStyles}
+      backgroundStyle={bottomSheetBackgroundStyleObject as ViewStyle}
+      handleIndicatorStyle={handleStyleObject}
     >
       <ficus.BottomSheetView {...rest}>
         <Box h={h ?? '100%'}>

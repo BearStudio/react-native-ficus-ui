@@ -1,4 +1,4 @@
-import { Box, Flex, List, SafeAreaBox, Text } from 'react-native-ficus-ui';
+import { Box, Flex, List, SafeAreaBox, Text, useColorModeValue } from 'react-native-ficus-ui';
 
 const ListComponent = () => {
   const DATA = [
@@ -16,13 +16,13 @@ const ListComponent = () => {
     },
   ];
   return (
-    <SafeAreaBox>
+    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         List component
       </Text>
       <Flex mt="xl">
         <List
-          bg="gray.200"
+          bg={useColorModeValue('gray.200', 'gray.700')}
           p="xl"
           data={DATA}
           renderItem={({ item }:any) => (
