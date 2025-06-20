@@ -171,8 +171,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/react-native-ficus-ui
       react-native-gesture-handler:
-        specifier: 2.20.2
-        version: 2.20.2(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
+        specifier: 2.26.0
+        version: 2.26.0(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       react-native-reanimated:
         specifier: 3.16.1
         version: 3.16.1(@babel/core@7.27.4)(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
@@ -215,7 +215,7 @@ importers:
         version: 2.2.2(react@18.3.1)
       '@gorhom/bottom-sheet':
         specifier: 5.0.4
-        version: 5.0.4(@types/react-native@0.70.19)(@types/react@18.3.1)(react-native-gesture-handler@2.20.2(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native-reanimated@3.16.1(@babel/core@7.27.4)(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
+        version: 5.0.4(@types/react-native@0.70.19)(@types/react@18.3.1)(react-native-gesture-handler@2.26.0(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native-reanimated@3.16.1(@babel/core@7.27.4)(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       '@react-native-community/slider':
         specifier: 4.5.4
         version: 4.5.4
@@ -262,14 +262,14 @@ importers:
         specifier: 13.0.1
         version: 13.0.1(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       react-native-pager-view:
-        specifier: 6.2.2
-        version: 6.2.2(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
+        specifier: 6.5.1
+        version: 6.5.1(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       react-native-picker-select:
         specifier: 9.3.1
         version: 9.3.1(@react-native-picker/picker@2.11.0(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))
       react-native-tab-view:
         specifier: 3.5.2
-        version: 3.5.2(react-native-pager-view@6.2.2(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
+        version: 3.5.2(react-native-pager-view@6.5.1(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       react-native-toast-message:
         specifier: 2.1.6
         version: 2.1.6(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
@@ -6394,6 +6394,12 @@ packages:
       react: 18.3.1
       react-native: 0.76.0
 
+  react-native-gesture-handler@2.26.0:
+    resolution: {integrity: sha512-pfE1j9Vzu0qpWj/Aq1IK+cYnougN69mCKvWuq1rdNjH2zs1WIszF0Mum9/oGQTemgjyc/JgiqOOTgwcleAMAGg==}
+    peerDependencies:
+      react: 18.3.1
+      react-native: 0.76.0
+
   react-native-helmet-async@2.0.4:
     resolution: {integrity: sha512-m3CkXWss6B1dd6mCMleLpzDCJJGGaHOLQsUzZv8kAASJmMfmVT4d2fx375iXKTRWT25ThBfae3dECuX5cq/8hg==}
     peerDependencies:
@@ -6414,8 +6420,8 @@ packages:
   react-native-monorepo-config@0.1.9:
     resolution: {integrity: sha512-GLFYMEEcbltxZw7oUbbh/p0oXqA52lSirXt7o/N1qD6CFTvku84OVL6teeQ1Ef92pq+bepq4x0Qz+d6lapVbuQ==}
 
-  react-native-pager-view@6.2.2:
-    resolution: {integrity: sha512-MLkJB7iP6v0Hd4/B4/R/gLCSE+YBtjxG/vHZYBDU+fI3U7HBYgKAg4o6ad8HxbKVcWWyRDNeeVRGISw1MUjlHw==}
+  react-native-pager-view@6.5.1:
+    resolution: {integrity: sha512-YdX7bP+rPYvATMU7HzlMq9JaG3ui/+cVRbFZFGW+QshDULANFg9ECR1BA7H7JTIcO/ZgWCwF+1aVmYG5yBA9Og==}
     peerDependencies:
       react: 18.3.1
       react-native: 0.76.0
@@ -9208,13 +9214,13 @@ snapshots:
       find-up: 5.0.0
       js-yaml: 4.1.0
 
-  '@gorhom/bottom-sheet@5.0.4(@types/react-native@0.70.19)(@types/react@18.3.1)(react-native-gesture-handler@2.20.2(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native-reanimated@3.16.1(@babel/core@7.27.4)(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)':
+  '@gorhom/bottom-sheet@5.0.4(@types/react-native@0.70.19)(@types/react@18.3.1)(react-native-gesture-handler@2.26.0(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native-reanimated@3.16.1(@babel/core@7.27.4)(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@gorhom/portal': 1.0.14(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       invariant: 2.2.4
       react: 18.3.1
       react-native: 0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1)
-      react-native-gesture-handler: 2.20.2(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
+      react-native-gesture-handler: 2.26.0(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       react-native-reanimated: 3.16.1(@babel/core@7.27.4)(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
     optionalDependencies:
       '@types/react': 18.3.1
@@ -15903,6 +15909,14 @@ snapshots:
       react: 18.3.1
       react-native: 0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1)
 
+  react-native-gesture-handler@2.26.0(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1):
+    dependencies:
+      '@egjs/hammerjs': 2.0.17
+      hoist-non-react-statics: 3.3.2
+      invariant: 2.2.4
+      react: 18.3.1
+      react-native: 0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1)
+
   react-native-helmet-async@2.0.4(react@18.3.1):
     dependencies:
       invariant: 2.2.4
@@ -15927,7 +15941,7 @@ snapshots:
       escape-string-regexp: 5.0.0
       fast-glob: 3.3.3
 
-  react-native-pager-view@6.2.2(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1):
+  react-native-pager-view@6.5.1(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1):
     dependencies:
       react: 18.3.1
       react-native: 0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1)
@@ -15970,11 +15984,11 @@ snapshots:
       react-native-is-edge-to-edge: 1.1.7(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       warn-once: 0.1.1
 
-  react-native-tab-view@3.5.2(react-native-pager-view@6.2.2(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1):
+  react-native-tab-view@3.5.2(react-native-pager-view@6.5.1(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1):
     dependencies:
       react: 18.3.1
       react-native: 0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1)
-      react-native-pager-view: 6.2.2(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
+      react-native-pager-view: 6.5.1(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
       use-latest-callback: 0.2.3(react@18.3.1)
 
   react-native-toast-message@2.1.6(react-native@0.76.0(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1):
