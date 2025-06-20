@@ -28,6 +28,9 @@ const variantOutline = defineStyle(() => {
       borderWidth: 2,
       borderStyle: 'solid',
       borderColor: 'blue.500',
+      _dark: {
+        borderColor: 'blue.300',
+      },
     },
     _dark: {
       borderColor: 'gray.600',

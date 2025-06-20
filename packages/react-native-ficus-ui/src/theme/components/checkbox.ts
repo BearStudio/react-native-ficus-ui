@@ -25,6 +25,9 @@ const baseControlStyle = defineStyle((props) => ({
   _checked: {
     borderWidth: 0,
     bg: `${props.colorScheme}.500`,
+    _dark: {
+      bg: `${props.colorScheme}.300`,
+    },
   },
   _disabled: {
     opacity: 0.5,
@@ -43,6 +46,11 @@ const baseLabelStyle = defineStyle({
 
 const baseIconStyle = defineStyle({
   color: 'white',
+  _checked: {
+    _dark: {
+      color: 'gray.800',
+    },
+  },
 });
 
 const baseStyle = definePartsStyle((props) => ({

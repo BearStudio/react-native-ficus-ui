@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import { useColorModeValue } from '../../hooks';
 import { ThemingProps } from '../../style-system';
 import { useTheme } from '../../theme';
 import {
@@ -24,12 +25,14 @@ export const Select = forwardRef<SelectProps, 'PickerSelect'>((props, ref) => {
 
   const { selectStyles } = useSelect(styles, isFocused);
 
+  const colorValue = useColorModeValue(500, 300);
+
   const inputStyle = toStyleSheetObject({ baseStyle: selectStyles })({
     ...selectStyles,
     theme,
     style: undefined,
     ...(isFocused && props.colorScheme
-      ? { borderColor: `${props.colorScheme}.500` }
+      ? { borderColor: `${props.colorScheme}.${colorValue}` }
       : {}),
   });
 

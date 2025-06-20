@@ -13,7 +13,7 @@ const baseTrackStyle = defineStyle((props) => {
   return {
     bg: `${c}.500`,
     _dark: {
-      bg: `${c}.200`,
+      bg: `${c}.300`,
     },
   };
 });

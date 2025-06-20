@@ -23,6 +23,9 @@ const baseControlStyle = defineStyle((props) => ({
   },
   _checked: {
     borderColor: `${props.colorScheme}.500`,
+    _dark: {
+      borderColor: `${props.colorScheme}.300`,
+    },
   },
   _disabled: {
     opacity: 0.5,

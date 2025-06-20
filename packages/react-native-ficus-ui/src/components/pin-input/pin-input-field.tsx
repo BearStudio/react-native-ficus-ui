@@ -5,6 +5,7 @@ import {
   isLastFilledCell,
 } from 'react-native-confirmation-code-field';
 
+import { useColorModeValue } from '../../hooks';
 import {
   ResponsiveValue,
   ThemingProps,
@@ -76,12 +77,14 @@ export const PinInputField = forwardRef<PinInputFieldProps, 'View'>(
       textChild = '';
     }
 
+    const colorValue = useColorModeValue(500, 300);
+
     return (
       <ficus.View key={index} ref={ref}>
         <ficus.View
           __styles={pinInputFieldStyles}
           {...(isFocused && props.colorScheme
-            ? { borderColor: `${props.colorScheme}.500` }
+            ? { borderColor: `${props.colorScheme}.${colorValue}` }
             : {})}
           {...rest}
         >
