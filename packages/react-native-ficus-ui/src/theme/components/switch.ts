@@ -18,7 +18,7 @@ const baseTrackStyle = defineStyle((props) => ({
   _checked: {
     bg: `${props.colorScheme}.500`,
     _dark: {
-      bg: `${props.colorScheme}.200`,
+      bg: `${props.colorScheme}.300`,
     },
   },
   _disabled: {

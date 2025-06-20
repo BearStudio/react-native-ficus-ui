@@ -5,7 +5,7 @@ import { Avatar, AvatarBadge, AvatarGroup, HStack, SafeAreaBox, ScrollBox, Text,
 
 const AvatarComponent = () => {
   return (
-    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
+    <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
       <ScrollBox>
         <Text mx="xl" fontSize="4xl">
           Avatar component

@@ -21,7 +21,7 @@ const HomeScreen = () => {
 
   return (
     <>
-      <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
+      <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
         {/* list */}
         <ScrollView style={{ flex: 1, padding: 20 }}>
           <Box pb="lg" flexDirection="row" justifyContent="space-between" alignItems="center">

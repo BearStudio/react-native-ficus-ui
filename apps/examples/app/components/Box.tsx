@@ -4,7 +4,7 @@ import ExampleSection from '@/src/ExampleSection';
 
 const BoxComponent = () => {
   return (
-    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
+    <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
       <Text
         style={{
           marginHorizontal: 20,

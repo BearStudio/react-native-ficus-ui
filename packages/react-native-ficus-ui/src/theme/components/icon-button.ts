@@ -31,6 +31,10 @@ const variantGhost = defineStyle((props) => {
   return {
     color: `${c}.600`,
     bg: 'transparent',
+    _dark: {
+      color: `${c}.300`,
+      borderColor: `${c}.300`,
+    },
     _pressed: {
       bg: `${c}.50`,
       _dark: {
@@ -86,8 +90,16 @@ const variantSolid = defineStyle((props) => {
   return {
     bg,
     color,
+    _dark: {
+      bg: `${c}.300`,
+      color: 'gray.800',
+    },
     _pressed: {
       bg: pressedBg,
+      _dark: {
+        bg: `${c}.400`,
+        color: 'gray.800',
+      },
     },
   };
 });
@@ -101,6 +113,10 @@ const variantLink = defineStyle((props) => {
     textDecorationColor: `${c}.500`,
     verticalAlign: 'baseline',
     color: `${c}.500`,
+    _dark: {
+      color: `${c}.300`,
+      textDecorationColor: `${c}.300`,
+    },
   };
 });
 

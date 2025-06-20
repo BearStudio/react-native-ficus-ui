@@ -14,7 +14,7 @@ import ExampleSection from '@/src/ExampleSection';
 const ModalComponent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <SafeAreaBox flex={1} bg={useColorModeValue("white", "gray.800")}>
+    <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         Modal
       </Text>
@@ -42,7 +42,7 @@ const ModalComponent = () => {
                 onClose();
               }}
             >
-              <Icon color="white" name="close" />
+              <Icon color={useColorModeValue('white', 'gray.800')} name="close" />
             </Button>
           </Flex>
         </Modal>

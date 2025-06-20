@@ -25,6 +25,10 @@ const variantSubtle = defineStyle((props) => {
   return {
     bg: `${c}.100`,
     color: `${c}.800`,
+    _dark: {
+      bg: `${c}.800`,
+      color: `${c}.200`,
+    },
   };
 });
 
