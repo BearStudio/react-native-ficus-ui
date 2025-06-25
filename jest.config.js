@@ -13,6 +13,8 @@ module.exports = {
       '|react-native-picker-select' +
       '|react-native-tab-view' +
       '|react-native-vector-icons' +
+      '|@gorhom/bottom-sheet' +
+      '|react-native-gesture-handler' +
       ')/)',
   ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
