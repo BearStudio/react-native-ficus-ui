@@ -1,7 +1,6 @@
 {
   "type": "module",
   "name": "react-native-ficus-ui",
-  "private": true,
   "version": "2.0.0-alpha",
   "engines": {
     "node": ">= 22.0.0"
