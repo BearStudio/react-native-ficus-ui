@@ -11,8 +11,8 @@ type ListProps<ItemT> = RNFlatListProps<ItemT> &
   Omit<NativeFicusProps<'FlatList'>, keyof RNFlatListProps<ItemT>>;
 
 export function List<ItemT>(props: ListProps<ItemT>) {
-  const FicusFlatList = ficus(RNFlatList) as React.ComponentType<
-    ListProps<ItemT>
-  >;
+  const FicusFlatList = ficus(RNFlatList, {
+    baseStyle: { flex: 1 },
+  }) as React.ComponentType<ListProps<ItemT>>;
   return <FicusFlatList {...props} />;
 }

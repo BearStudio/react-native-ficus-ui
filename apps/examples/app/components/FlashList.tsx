@@ -26,7 +26,7 @@ const FlashListComponent = () => {
           bg={useColorModeValue('gray.200', 'gray.700')}
           p="xl"
           data={DATA}
-          renderItem={({ item }:any) => (
+          renderItem={({ item }) => (
             <Box p="lg">
               <Text>{item.title}</Text>
             </Box>

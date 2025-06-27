@@ -1,8 +1,16 @@
-import { type NativeFicusProps, ficus } from '../system';
+import {
+  FlashList as RNFlashList,
+  FlashListProps as RNFlashListProps,
+} from '@shopify/flash-list';
 
-export interface FlashListProps extends NativeFicusProps<'FlashList'> {}
+import { NativeFicusProps, ficus } from '../system';
 
-export const FlashList = ficus('FlashList', {
-  baseStyle: {},
-  styleProp: 'contentContainerStyle',
-});
+type FlashListProps<ItemT> = RNFlashListProps<ItemT> &
+  Omit<NativeFicusProps<'FlashList'>, keyof RNFlashListProps<ItemT>>;
+
+export function FlashList<ItemT>(props: FlashListProps<ItemT>) {
+  const FicusFlatList = ficus(RNFlashList, {
+    styleProp: 'contentContainerStyle',
+  }) as React.ComponentType<FlashListProps<ItemT>>;
+  return <FicusFlatList {...props} />;
+}
