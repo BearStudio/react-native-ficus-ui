@@ -128,7 +128,7 @@ const config: DocsThemeConfig = {
           className="hidden select-none font-extrabold ltr:ml-2 rtl:mr-2 md:inline"
           title={TITLE[locale!] || ''}
         >
-          React Native Ficus UI
+          React Native Ficus UI <span className="text-gray-400">v2</span>
         </span>
       </>
     );

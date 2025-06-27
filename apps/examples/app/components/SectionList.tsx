@@ -26,13 +26,13 @@ const SectionListComponent = () => {
           bg={useColorModeValue('gray.200', 'gray.700')}
           p="xl"
           sections={DATA}
-          keyExtractor={(item:any, index:number) => `${item.title}-${index}`}
-          renderItem={({ item }:any) => (
+          keyExtractor={(item, index) => `${item}-${index}`}
+          renderItem={({ item }) => (
             <Box p="sm">
-              <Text>{item}</Text>
+              <Text>{item as unknown as string}</Text>
             </Box>
           )}
-          renderSectionHeader={({ section: { title } }:any) => (
+          renderSectionHeader={({ section: { title } }) => (
             <Box bg="gray.300" _dark={{ bg: 'gray.800' }} p="sm">
               <Text>{title}</Text>
             </Box>

@@ -39,7 +39,7 @@ export const baseRNElements = {
   Pressable: RNPressable,
   ActivityIndicator: RNActivityIndicator,
   Slider: RNSlider,
-  Flatlist: RNFlatList,
+  FlatList: RNFlatList,
   SectionList: RNSectionList,
   FlashList: ShopifyFlashList,
   Modal: RNModal,
