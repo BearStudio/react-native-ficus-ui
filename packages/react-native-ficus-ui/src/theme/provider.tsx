@@ -35,7 +35,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
   const [colorMode, setColorMode] = useState<ColorMode>('light');
 
   const setTheme = (newTheme: FicusThemeWithMetadata) => {
-    const mergedTheme = deepmerge(themeWithMetadata, newTheme);
+    const mergedTheme = deepmerge(themeState, newTheme);
     setThemeState(mergedTheme);
   };
 
