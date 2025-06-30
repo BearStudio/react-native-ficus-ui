@@ -1,4 +1,4 @@
-import { getColor, getProperty, theme } from '../../theme';
+import { getColor, getProperty, useTheme } from '../../theme';
 import { type NativeFicusProps, ficus, forwardRef } from '../system';
 import { type IconSet, getIconSet } from './icon.service';
 
@@ -14,6 +14,8 @@ export interface IconProps extends NativeFicusProps<'View'>, IconOptions {}
 export const Icon = forwardRef<IconProps, 'View'>(function Icon(props, ref) {
   const { name, iconSet, color = 'gray.800', size, ...rest } = props;
   const IconComponent = getIconSet(iconSet);
+  const { theme } = useTheme();
+
   return (
     <ficus.View ref={ref} {...rest}>
       <IconComponent
