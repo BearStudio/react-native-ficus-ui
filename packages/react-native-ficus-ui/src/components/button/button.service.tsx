@@ -20,6 +20,24 @@ import { getStateStyles } from '../system/get-state-styles';
 const isTextNode = (node: any): boolean =>
   typeof node === 'string' || typeof node === 'number';
 
+function applyColorToChild(
+  child: React.ReactNode,
+  styles: Dict
+): React.ReactNode {
+  if (!React.isValidElement(child)) return child;
+
+  // If it's a primitive element like <Icon />, inject color or styles
+  const childProps = {
+    ...(child.props || {}),
+    __styles: {
+      ...(child.props?.__styles || {}),
+      color: styles?.color,
+    },
+  };
+
+  return React.cloneElement(child, childProps);
+}
+
 /**
  * Splits children into an array, wrapping text children in `ficus.Text` with applied styles.
  */
@@ -37,6 +55,14 @@ export function splitChildren(
           {child}
         </ficus.Text>
       );
+
+    if (React.isValidElement(child)) {
+      return (
+        <React.Fragment key={key}>
+          {applyColorToChild(child, textStyles || {})}
+        </React.Fragment>
+      );
+    }
 
     return <React.Fragment key={key}>{child}</React.Fragment>;
   });
