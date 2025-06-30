@@ -29,10 +29,7 @@ function applyColorToChild(
   // If it's a primitive element like <Icon />, inject color or styles
   const childProps = {
     ...(child.props || {}),
-    __styles: {
-      ...(child.props?.__styles || {}),
-      color: styles?.color,
-    },
+    color: child.props?.color || styles?.color,
   };
 
   return React.cloneElement(child, childProps);

@@ -102,12 +102,12 @@ const ButtonComponent = () => {
         <ExampleSection name="prefix and suffix">
           <Stack spacing={10}>
             <Button colorScheme="green">
-              <Icon name="heart" color={useColorModeValue('white', 'gray.800')} size="xl" mr="sm" />
+              <Icon name="heart" size="xl" mr="sm" />
               Button
             </Button>
             <Button colorScheme="green">
               Button
-              <Icon name="heart" color={useColorModeValue('white', 'gray.800')} size="xl" ml="sm" />
+              <Icon name="heart" size="xl" ml="sm" />
             </Button>
           </Stack>
         </ExampleSection>
