@@ -57,7 +57,7 @@ export function useInput(
       color: colorMode === 'dark' ? 'white' : 'black',
       ...(Platform.OS === 'android' ? { lineHeight: 20, fontSize: 12 } : {}),
     }),
-    []
+    [colorMode]
   );
 
   const prefixStyles = useMemo(

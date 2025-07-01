@@ -1,10 +1,12 @@
 import {
   Icon,
+  IconButton,
   Input,
   SafeAreaBox,
   ScrollBox,
   Text,
   Textarea,
+  useColorMode,
   useColorModeValue,
   VStack,
 } from 'react-native-ficus-ui';
@@ -12,11 +14,14 @@ import {
 import ExampleSection from '@/src/ExampleSection';
 
 const InputComponent = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
       <Text mx="xl" fontSize="4xl">
         Input component
       </Text>
+      <IconButton variant="outline" icon={<Icon name={colorMode === 'light' ? 'moon' : 'sunny'} />} isRound onPress={toggleColorMode} />
       <ScrollBox>
         <ExampleSection name="With prefix">
           <Input
