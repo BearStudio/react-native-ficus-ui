@@ -2,6 +2,28 @@
   "type": "module",
   "name": "react-native-ficus-ui",
   "version": "2.0.0",
+  "contributors": [
+    {
+      "name": "Nicolas Torion",
+      "email": "nicolas.torion@bearstudio.fr",
+      "url": "https://github.com/ntorionbearstudio"
+    },
+    {
+      "name": "Noé Tatoud",
+      "email": "noe@bearstudio.fr",
+      "url": "https://github.com/ntatoud"
+    },
+    {
+      "name": "Omar Borji",
+      "email": "omar@bearstudio.fr",
+      "url": "https://github.com/omar-bear"
+    },
+    {
+      "name": "Héloïse Guillaume",
+      "email": "heloise@bearstudio.fr",
+      "url": "https://github.com/heloise-gllm"
+    }
+  ],
   "engines": {
     "node": ">= 22.0.0"
   },
