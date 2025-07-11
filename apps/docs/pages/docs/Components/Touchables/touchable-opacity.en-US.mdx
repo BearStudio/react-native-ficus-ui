@@ -1,0 +1,37 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+
+# TouchableOpacity
+
+Component that is based on react native `TouchableOpacity` component.
+
+## Import
+
+```js
+import { TouchableOpacity } from 'react-native-ficus-ui';
+```
+
+## Usage
+
+<CodeEditor code={`<VStack spacing={10}>
+  <TouchableOpacity onPress={() => console.log('Pressed')}>
+    <Text>Test</Text>
+  </TouchableOpacity>
+  <TouchableOpacity
+    bg="red.300"
+    p="xl"
+    borderRadius="xl"
+    onPress={() => console.log('Pressed')}
+  >
+    <Text color="black">Test</Text>
+  </TouchableOpacity>
+</VStack>`} />
+
+## Props
+
+Extends every `Box` props and react native `TouchableOpacity` component.
+
+https://reactnative.dev/docs/touchableopacity#props

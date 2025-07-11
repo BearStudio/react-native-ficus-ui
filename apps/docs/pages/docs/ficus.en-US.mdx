@@ -1,0 +1,22 @@
+---
+searchable: true
+---
+
+# ficus()
+
+Ficus UI V2 brings now a new method ficus() to custom any React Native component with Ficus UI style props.
+
+For example here we create a component `CustomView` that is a red circle `View` from React Native. 
+
+```js
+import { View } from 'react-native';
+import { ficus } from 'react-native-ficus-ui';
+
+export const CustomView = ficus(View, {
+  baseStyle: {
+    borderRadius: 'full',
+    bg: 'red'
+  },
+});
+```
+

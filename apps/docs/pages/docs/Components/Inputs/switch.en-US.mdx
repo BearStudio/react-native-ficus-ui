@@ -1,0 +1,109 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+import PropsTable from "@components/docs/props-table";
+
+# Slider
+
+A simple Switch component.
+
+## Import
+
+```js
+import { Switch } from "react-native-ficus-ui";
+```
+## Usage
+
+### Default
+
+<CodeEditor code={`const SimpleSwitch = () => {
+  const [isChecked, toggle] = React.useState(false);
+
+  return (
+    <Switch isChecked={isChecked} onPress={() => toggle(!isChecked)} />
+  );
+}
+render(<SimpleSwitch />)`} noInline />
+
+### Change color
+
+<CodeEditor code={`const SimpleSwitch = () => {
+  const [isChecked, toggle] = React.useState(false);
+
+  return (
+    <Switch colorScheme="red" isChecked={isChecked} onPress={() => toggle(!isChecked)} />
+  );
+}
+render(<SimpleSwitch />)`} noInline />
+
+### Sizes
+
+<CodeEditor code={`const SimpleSwitch = () => {
+  const [isChecked1, toggle1] = React.useState(false);
+  const [isChecked2, toggle2] = React.useState(false);
+  const [isChecked3, toggle3] = React.useState(false);
+  const [isChecked4, toggle4] = React.useState(false);
+
+  return (
+    <HStack spacing="md">
+      <Switch size="xs" isChecked={isChecked1} onPress={() => toggle1(!isChecked1)} />
+      <Switch size="sm" colorScheme="blue" isChecked={isChecked2} onPress={() => toggle2(!isChecked2)} />
+      <Switch size="md" colorScheme="orange" isChecked={isChecked3} onPress={() => toggle3(!isChecked3)} />
+      <Switch size="lg" colorScheme="purple" isChecked={isChecked4} onPress={() => toggle4(!isChecked4)} />
+    </HStack>
+  );
+}
+render(<SimpleSwitch />)`} noInline />
+
+### Change animation duration
+
+<CodeEditor code={`const SimpleSwitch = () => {
+  const [isChecked, toggle] = React.useState(false);
+
+  return (
+    <Switch colorScheme="red" duration={100} isChecked={isChecked} onPress={() => toggle(!isChecked)} />
+  );
+}
+render(<SimpleSwitch />)`} noInline />
+
+### Disabled
+
+<CodeEditor code={`const SimpleSwitch = () => {
+  return (
+    <HStack spacing="md">
+      <Switch isDisabled isChecked={false} />
+      <Switch isDisabled isChecked />
+    </HStack>
+  );
+}
+render(<SimpleSwitch />)`} noInline />
+
+## Props
+
+Extends every `Box` props.
+
+### `colorScheme`
+<PropsTable
+  description="The colorScheme property, will define background color of switch when is active."
+  prop={{ type: "string", required: false }}
+/>
+
+### `isDisabled`
+<PropsTable
+  description="Disables onPress handler when true."
+  prop={{ type: "boolean", required: false, default: false }}
+/>
+
+### `isChecked`
+<PropsTable
+  description="Makes the toggle checked when true."
+  prop={{ type: "boolean", required: false, default: false }}
+/>
+
+### `onPress`
+<PropsTable
+  description="onPress event handler."
+  prop={{ type: "function", required: false }}
+/>

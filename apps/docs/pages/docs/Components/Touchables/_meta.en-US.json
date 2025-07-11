@@ -1,0 +1,8 @@
+{
+  "button": "Button",
+  "icon-button": "IconButton",
+  "pressable": "Pressable",
+  "touchable-highlight": "TouchableHighlight",
+  "touchable-opacity": "TouchableOpacity",
+  "touchable-without-feedback": "TouchableWithoutFeedback"
+}

@@ -1,0 +1,167 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+import PropsTable from '@components/docs/props-table';
+
+# Checkbox
+
+Component to render a checkbox input.
+
+## Import
+
+```js
+import { Checkbox, CheckboxGroup } from 'react-native-ficus-ui';
+```
+
+## Usage
+
+### Simple checkbox
+
+<CodeEditor code={`<VStack spacing="md">
+  <Checkbox>Option 1</Checkbox>
+  <Checkbox colorScheme="red" defaultChecked>Option 1</Checkbox>
+</VStack>`} />
+
+### Custom icon
+
+<CodeEditor code={`<VStack spacing="md">
+  <Checkbox colorScheme="purple" defaultChecked icon={<Icon name="flash-outline" />}>Option 1</Checkbox>
+</VStack>`} />
+
+### Checkbox sizes
+
+<CodeEditor code={`<VStack spacing="md">
+  <Checkbox size="xs">Option 1</Checkbox>
+  <Checkbox size="sm">Option 2</Checkbox>
+  <Checkbox size="md">Option 3</Checkbox>
+  <Checkbox size="lg">Option 4</Checkbox>
+</VStack>`} />
+
+### Checkbox disabled
+
+<CodeEditor code={`<HStack spacing="md">
+  <Checkbox isDisabled>
+    Option 1
+  </Checkbox>
+  <Checkbox isDisabled defaultChecked>
+    Option 1
+  </Checkbox>
+</HStack>`} />
+
+### Checkbox group
+
+<CodeEditor code={`<CheckboxGroup colorScheme="green" defaultValue={[2, 3]}>
+  <VStack spacing="sm">
+    <Checkbox value={1}>Option 1</Checkbox>
+    <Checkbox value={2}>Option 2</Checkbox>
+    <Checkbox value={3}>Option 3</Checkbox>
+    <Checkbox value={4}>Option 4</Checkbox>
+  </VStack>
+</CheckboxGroup>`} />
+
+### Custom render
+
+<CodeEditor code={`<CheckboxGroup flexDirection="row">
+  <HStack spacing="sm">
+    {["Option 1", "Option 2", "Option 3"].map((item) => (
+      <Checkbox value={item}>
+        {({ isChecked }) => (
+          <Box
+            bg={isChecked ? "blue.600" : "blue.100"}
+            px="xl"
+            py="md"
+            mr="md"
+            borderRadius="full"
+          >
+            <Text color={isChecked ? "white" : "gray.800"}>{item}</Text>
+          </Box>
+        )}
+
+      </Checkbox>
+    ))}
+  </HStack>
+</CheckboxGroup>`} />
+
+## Props
+
+### Checkbox props
+
+Extends every `TouchableOpacity` props.
+
+### `colorScheme`
+<PropsTable
+  description="The colorScheme property, will define checkbox color."
+  prop={{ type: "string", required: false }}
+/>
+
+### `defaultChecked`
+<PropsTable
+  description="Boolean to indicate if checkbox should be checked by default."
+  prop={{ type: "boolean", required: false }}
+/>
+
+### `isChecked`
+<PropsTable
+  description="Boolean to indicate if checkbox is checked."
+  prop={{ type: "boolean", required: false }}
+/>
+
+### `isDisabled`
+<PropsTable
+  description="Boolean to indicate if checkbox is disabled."
+  prop={{ type: "boolean", required: false }}
+/>
+
+### `value`
+<PropsTable
+  description="The value to be used in the checkbox."
+  prop={{ type: "(value: string | number) => void", required: false }}
+/>
+
+### `onChange`
+<PropsTable
+  description="Function called when checked status changes on checkbox, value is returned as param."
+  prop={{ type: "(value: string | number) => void", required: false }}
+/>
+
+### `icon`
+<PropsTable
+  description="Custom icon component to replace default checkbox icon."
+  prop={{ type: "React.ReactNode", required: false }}
+/>
+
+### `size`
+<PropsTable
+  description="Size of checkbox."
+  prop={{ type: "number | 'xs' | 'sm' | 'md' | 'lg'", required: false }}
+/>
+
+### CheckboxGroup props
+
+### `value`
+<PropsTable
+  description="The value of the checkbox group."
+  prop={{ type: "(value: string | number)[] => void", required: false }}
+/>
+
+### `onChange`
+<PropsTable
+  description="Function called when checked status changes on any checkbox children, value is returned as param."
+  prop={{ type: "(value: (string | number)[]) => void", required: false }}
+/>
+
+### `defaultValue`
+
+<PropsTable
+  description="Default value for the checkbox group."
+  prop={{ type: "(string | number)[]", required: false }}
+/>
+
+### `colorScheme`
+
+<PropsTable
+  description="The colorScheme property, will define group checkboxs color."
+  prop={{ type: "string", required: false }}
+/>

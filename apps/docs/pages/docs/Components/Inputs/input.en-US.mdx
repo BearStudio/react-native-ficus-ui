@@ -1,0 +1,91 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+
+# Input
+
+Component that is based on react native `TextInput` component.
+
+## Import
+
+```js
+import { Input } from 'react-native-ficus-ui';
+```
+
+## Usage
+
+### With prefix
+
+<CodeEditor code={`<Input
+  placeholder="Username"
+  prefix={<Icon name="search" color="gray.900" fontFamily="Feather" />}
+/>`} />
+
+### With suffix
+
+<CodeEditor code={`<Input
+  placeholder="Username"
+  suffix={<Icon name="search" color="gray.900" fontFamily="Feather" />}
+/>`} />
+
+### Password
+
+<CodeEditor code={`<Input
+  placeholder="Password"
+  secureTextEntry
+/>`} />
+
+### Custom color scheme
+
+<CodeEditor code={`<Input
+  placeholder="Username"
+  colorScheme="red"
+/>`} />
+
+### Custom border style
+
+<CodeEditor code={`<Box>
+  <Input
+    placeholder="Username"
+    borderWidth={2}
+    suffix={<Icon name="search" color="gray.900" />}
+    _focused={{
+      borderWidth: 3,
+      borderColor: "orange.500"
+    }}
+  />
+  <Input
+    mt="md"
+    placeholder="Username"
+    borderWidth={2}
+    suffix={<Icon name="search" color="gray.900" />}
+    _focused={{
+      borderWidth: 3,
+      borderColor: "red.500",
+      borderStyle: "dashed"
+    }}
+  />
+</Box>`} />
+
+### Textarea
+
+<CodeEditor code={`<Box>
+  <Textarea mt="md" />
+  <Textarea
+    mt="md"
+    _focused={{
+      borderWidth: 3,
+      borderColor: "red.500",
+      borderStyle: "dashed"
+    }}
+  />
+</Box>`} />
+
+## Props
+
+Extends every `Box` props and react native `TextInput` component.
+
+https://reactnative.dev/docs/textinput#props
+

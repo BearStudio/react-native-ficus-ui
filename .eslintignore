@@ -1,2 +1,7 @@
-node_modules/
-docs/
+node_modules
+lib
+dist
+.next
+
+# Temporary
+apps

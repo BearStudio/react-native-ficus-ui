@@ -1,0 +1,31 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+
+# SafeAreaBox
+
+Wrapper around `SafeAreaView` component from `react-native`, it accepts every props from react native `SafeAreaView` component.
+
+## Import
+
+```js
+import { SafeAreaBox } from "react-native-ficus-ui";
+```
+
+## Usage
+
+### Background color
+
+<CodeEditor code={`<SafeAreaBox bg="blue.100" h="100%">
+  <HStack spacing={10} p="lg">
+    <Box h={40} w={40} bg="green.500" />
+    <Box h={40} w={40} bg="teal.500" />
+    <Box h={40} w={40} bg="yellow.500" />
+  </HStack>
+</SafeAreaBox>`} />
+
+## Props
+
+Extends every `Box` and `SafeAreaView` from React Native props.

@@ -1,0 +1,39 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+
+# Center
+
+As `Box` component but all chidrens are centered, it accepts every props from react native `View` component.
+
+## Import
+
+```js
+import { Center } from "react-native-ficus-ui";
+```
+
+## Usage
+
+### Centered boxes
+
+<CodeEditor code={`<Center>
+  <Box h={40} w={40} bg="green.500" />
+  <Box h={40} w={40} bg="teal.500" />
+  <Box h={40} w={40} bg="yellow.500" />
+  <Box h={40} w={40} bg="red.500" />
+  <Box h={40} w={40} bg="blue.500" />
+  <Box h={40} w={40} bg="gray.500" />
+</Center>`} />
+
+### Centered text
+
+<CodeEditor code={`<Center>
+  <Text>I'm a text that is centered by Center component</Text>
+  <Text>I'm another text that is centered by Center component</Text>
+</Center>`} />
+
+## Props
+
+Extends every `Box` props.

@@ -1,0 +1,33 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+
+# VStack
+
+VStack is a layout component to display several children elements vertically with a space between them.
+
+## Import
+
+```js
+import { VStack } from "react-native-ficus-ui";
+```
+
+## Usage
+
+<CodeEditor code={`<VStack spacing={10}>
+  <Center w={40} h={40} bg="yellow.200">
+    <Text color="black">1</Text>
+  </Center>
+  <Center w={40} h={40} bg="red.200">
+    <Text color="black">2</Text>
+  </Center>
+  <Center w={40} h={40} bg="pink.200">
+    <Text color="black">3</Text>
+  </Center>
+</VStack>`} />
+
+## Props
+
+Extends every `Stack` props.

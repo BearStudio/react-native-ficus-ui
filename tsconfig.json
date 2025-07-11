@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
     "paths": {
-      "react-native-ficus-ui": ["./src/index"]
+      "react-native-ficus-ui": ["./packages/react-native-ficus-ui/src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "lib": ["esnext"],
     "module": "esnext",
     "moduleResolution": "node",
@@ -22,7 +21,7 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
-    "types": ["react-native", "jest", "@testing-library/jest-native"]
+    "types": ["react-native", "jest"]
   },
-  "include": ["src"]
+  "include": ["apps", "packages"]
 }

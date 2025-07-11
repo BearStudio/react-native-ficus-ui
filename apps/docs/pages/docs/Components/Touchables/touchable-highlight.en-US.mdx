@@ -1,0 +1,38 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+
+# TouchableHighlight
+
+Component that is based on react native `TouchableHighlight` component.
+
+## Import
+
+```js
+import { TouchableHighlight } from 'react-native-ficus-ui';
+```
+
+## Usage
+
+<CodeEditor code={`<VStack spacing={10}>
+  <TouchableHighlight>
+    <Text>Test</Text>
+  </TouchableHighlight>
+  <TouchableHighlight
+    bg="red.300"
+    p="xl"
+    borderRadius="xl"
+    underlayColor="white"
+    activeOpacity={0.5}
+  >
+    <Text color="black">Test</Text>
+  </TouchableHighlight>
+</VStack>`} />
+
+## Props
+
+Extends every `Box` props and react native `TouchableHighlight` component.
+
+https://reactnative.dev/docs/touchablehighlight#props

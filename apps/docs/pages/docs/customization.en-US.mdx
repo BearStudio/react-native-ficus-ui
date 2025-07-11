@@ -1,0 +1,183 @@
+---
+searchable: true
+---
+
+import { Link } from 'nextra-theme-docs';
+import { Callout, FileTree } from 'nextra/components';
+
+# Customization
+
+You can provide a custom theme to customize the colors, font sizes, border radius etc. with the `ThemeProvider` component. Check the default theme to see which customization options are supported.
+
+```js
+import { AppRegistry } from 'react-native';
+import { ThemeProvider } from 'react-native-ficus-ui';
+import App from './src/App';
+
+// this is our custom theme
+const theme = {
+  colors: {
+    // Use Smart Swatch to generate colors palette https://smart-swatch.netlify.app
+    violet: {
+      50: '#f0eaff',
+      100: '#d1c1f4',
+      200: '#b199e7',
+      300: '#9171dc',
+      400: '#7248d0',
+      500: '#592fb7',
+      600: '#45248f',
+      700: '#311968',
+      800: '#1e0f40',
+      900: '#0c031b',
+    },
+  },
+  fontSizes: {
+    '6xl': 32,
+  },
+  space: {
+    'xs': 2,
+    '5xl': 64,
+  },
+  // components defaults can also be customized
+  components: {
+    Text: {
+      color: 'gray.100',
+    },
+  },
+};
+
+export default function Main() {
+  return (
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
+  );
+}
+```
+
+To generate custom colors palette use Smart Swatch tool : https://smart-swatch.netlify.app
+
+## Component customization
+
+On components you can define variants and sizes with different style configurations.
+
+Here's the component style object that can be passed inside custom theme :
+
+```js
+import { ComponentStyleConfig } from 'react-native-ficus-ui'
+
+const ComponentStyle: ComponentStyleConfig = {
+  // style object for base or default style
+  baseStyle: {},
+  // styles for different sizes ("sm", "md", "lg")
+  sizes: {},
+  // styles for different visual variants ("outline", "solid")
+  variants: {},
+  // default values for 'size', 'variant' and 'colorScheme'
+  defaultProps: {
+    size: '',
+    variant: '',
+    colorScheme: '',
+  },
+}
+```
+
+Example of default Input theme :
+
+```js
+import { defineStyle, defineStyleConfig } from 'react-native-ficus-ui';
+
+const baseStyle = defineStyle({
+  borderRadius: 'md',
+  alignSelf: 'flex-start',
+  fontWeight: 'bold',
+  px: 'lg',
+  py: 'lg',
+  fontSize: 'md',
+  bg: 'white',
+  color: 'gray.800',
+  shadow: 0,
+  _disabled: {
+    opacity: 0.6,
+  },
+  _dark: {
+    bg: 'gray.900',
+    color: 'white',
+  },
+});
+
+const variantOutline = defineStyle({
+  borderWidth: 1,
+  borderStyle: 'solid',
+  borderColor: 'gray.400',
+  _focused: {
+    borderWidth: 2,
+    borderStyle: 'solid',
+    borderColor: 'blue.500',
+    _dark: {
+      borderColor: 'blue.300',
+    },
+  },
+  _dark: {
+    borderColor: 'gray.600',
+  },
+});
+
+const variants = {
+  outline: variantOutline,
+};
+
+const sizes = {
+  xs: defineStyle({
+    height: 24,
+    px: 'sm',
+    py: 0,
+    fontSize: 'xs',
+    _focused: {
+      px: 5,
+      py: 0,
+    },
+  }),
+  sm: defineStyle({
+    height: 32,
+    px: 'md',
+    py: 'md',
+    fontSize: 'sm',
+    _focused: {
+      px: 7,
+      py: 7,
+    },
+  }),
+  md: defineStyle({
+    height: 40,
+    px: 'lg',
+    py: 'lg',
+    fontSize: 'md',
+    _focused: {
+      px: 11,
+      py: 11,
+    },
+  }),
+  lg: defineStyle({
+    height: 48,
+    px: 'lg',
+    py: 'lg',
+    fontSize: 'md',
+    _focused: {
+      px: 11,
+      py: 11,
+    },
+  }),
+};
+
+export const inputTheme = defineStyleConfig({
+  baseStyle,
+  variants,
+  sizes,
+  defaultProps: {
+    size: 'md',
+    variant: 'outline',
+  },
+});
+
+```

@@ -1,0 +1,163 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+import PropsTable from "@components/docs/props-table";
+
+# Avatar
+
+Component to represent user, and displays the profile picture, initials or fallback icon.
+
+## Import
+
+```js
+import { Avatar, AvatarGroup } from "react-native-ficus-ui";
+```
+
+## Usage
+
+### Avatar with photo
+
+<CodeEditor code={`<Avatar
+  name="Nicolas Torion"
+  src="https://avatars.githubusercontent.com/u/53612278?v=4"
+/>`} />
+
+### Generated color
+
+<CodeEditor code={`<HStack spacing="md">
+  <Avatar name="Nicolas Torion" size="xs" />
+  <Avatar name="Omar Borji" size="sm" />
+  <Avatar name="Deelan" size="md" />
+  <Avatar name="Mark Cavendish" size="lg" />
+  <Avatar name="Antoine Dupont" size="xl" />
+</HStack>`} />
+
+### Color scheme
+
+<CodeEditor code={`<HStack spacing="md">
+  <Avatar name="Nicolas Torion" size="xs" colorScheme="blue" />
+  <Avatar name="Omar Borji" size="sm" colorScheme="orange" />
+  <Avatar name="Deelan" size="md" colorScheme="green" />
+  <Avatar name="Mark Cavendish" size="lg" colorScheme="red" />
+  <Avatar name="Antoine Dupont" size="xl" colorScheme="purple" />
+</HStack>`} />
+
+### Avatar group
+
+<CodeEditor code={`<VStack spacing="md">
+  <AvatarGroup>
+    <Avatar
+      name="Nicolas Torion"
+      src="https://avatars.githubusercontent.com/u/53612278?v=4"
+    />
+    <Avatar
+      name="Omar Borji"
+      src="https://avatars.githubusercontent.com/u/80390318?s=60&v=4"
+    />
+    <Avatar name="Deelan" colorScheme="green" />
+    <Avatar name="Mark Cavendish" colorScheme="red" />
+    <Avatar name="Antoine Dupont" colorScheme="purple" />
+    <Avatar name="Zinédine Zidane" colorScheme="pink" />
+  </AvatarGroup>
+
+  <AvatarGroup size="lg" max={2}>
+    <Avatar
+      name="Nicolas Torion"
+      src="https://avatars.githubusercontent.com/u/53612278?v=4"
+    />
+    <Avatar
+      name="Omar Borji"
+      src="https://avatars.githubusercontent.com/u/80390318?s=60&v=4"
+    />
+    <Avatar name="Deelan" colorScheme="green" />
+    <Avatar name="Mark Cavendish" colorScheme="red" />
+    <Avatar name="Antoine Dupont" colorScheme="purple" />
+    <Avatar name="Zinédine Zidane" colorScheme="pink" />
+  </AvatarGroup>
+</VStack>`} />
+
+### Avatar badge
+
+<CodeEditor code={`<HStack spacing="md">
+  <Avatar
+    name="Nicolas Torion"
+    src="https://avatars.githubusercontent.com/u/53612278?v=4"
+  >
+    <AvatarBadge />
+  </Avatar>
+  <Avatar
+    name="Omar Borji"
+    src="https://avatars.githubusercontent.com/u/80390318?s=60&v=4"
+  >
+    <AvatarBadge bg="orange.500" borderColor="orange.100" />
+  </Avatar>
+  <Avatar name="Deelan" colorScheme="green">
+    <AvatarBadge bg="orange.500" borderColor="orange.100" />
+  </Avatar>
+</HStack>`} />
+
+### Avatar badge and group
+
+<CodeEditor code={`<HStack spacing="md">
+  <AvatarGroup size="lg">
+    <Avatar
+      name="Nicolas Torion"
+      src="https://avatars.githubusercontent.com/u/53612278?v=4"
+    >
+      <AvatarBadge />
+    </Avatar>
+    <Avatar
+      name="Omar Borji"
+      src="https://avatars.githubusercontent.com/u/80390318?s=60&v=4"
+    >
+      <AvatarBadge bg="orange.500" borderColor="orange.100" />
+    </Avatar>
+    <Avatar name="Deelan" colorScheme="green">
+      <AvatarBadge bg="orange.500" borderColor="orange.100" />
+    </Avatar>
+  </AvatarGroup>
+</HStack>`} />
+
+## Props
+
+Extends every `Box` and `Text` props.
+
+### `colorScheme`
+<PropsTable
+  description="The colorScheme property, will define background color and text color."
+  prop={{ type: "string", required: false, defaultValue: "`gray`" }}
+/>
+
+### `name`
+<PropsTable
+  description="The name property representing the name of the person in the avatar. If src has loaded, the name will be used as the alt attribute of the img, else, the name will be used to create the initials."
+  prop={{ type: "string", required: true }}
+/>
+
+### `size`
+<PropsTable
+  description="The size property, defining the size of the avatar."
+  prop={{ type: "number", required: false }}
+/>
+
+### `src`
+<PropsTable
+  description="The src property. The source of the avatar image."
+  prop={{ type: "string", required: false }}
+/>
+
+### AvatarGroup props
+
+### `size`
+<PropsTable
+  description="The size property, defining the size of Avatar children."
+  prop={{ type: "string", required: false }}
+/>
+
+### `max`
+<PropsTable
+  description="The max property, defining the max number of Avatar children that should be displayed. If there are more to display, an item indicating the number of other avatars will be displayed."
+  prop={{ type: "number", required: false }}
+/>

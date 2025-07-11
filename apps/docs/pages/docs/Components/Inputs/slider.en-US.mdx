@@ -1,0 +1,103 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+import PropsTable from "@components/docs/props-table";
+
+# Slider
+
+Component that is based on `@react-native-community/slider` library.
+
+https://github.com/callstack/react-native-slider
+
+## Import
+
+```js
+import { Slider } from "react-native-ficus-ui";
+```
+
+## Usage
+
+### Default
+
+<CodeEditor code={`
+const SimpleSlider = () => {
+  const bgColor = useColorModeValue("gray.50", "gray.800");
+
+  return (
+    <Box bg={bgColor} p="md">
+      <Slider />
+      <Slider colorScheme="green" defaultValue={0.2} />
+      <Slider colorScheme="red" defaultValue={0.3} />
+      <Slider colorScheme="orange" defaultValue={0.5} />
+      <Slider colorScheme="pink" filledTrackColor="pink.100" />
+    </Box>
+  );
+}
+render(<SimpleSlider />)`} noInline />
+
+### Change value
+
+<CodeEditor code={`const SimpleSlider = () => {
+  const [value, setValue] = React.useState(0.2);
+  const bgColor = useColorModeValue("gray.50", "gray.800");
+
+  return (
+    <Box bg={bgColor} p="md">
+      <Text>Slider value : {Math.round(value * 100) / 100}</Text>
+      <Slider colorScheme="teal" value={value} onValueChange={setValue} />
+    </Box>
+  );
+}
+render(<SimpleSlider />)`} noInline />
+
+### Custom step
+
+<CodeEditor code={`
+const SimpleSlider = () => {
+  const bgColor = useColorModeValue("gray.50", "gray.800");
+
+  return (
+    <Box bg={bgColor} p="md">
+      <Slider colorScheme="orange" step={0.2} />
+    </Box>
+  );
+}
+render(<SimpleSlider />)`} noInline />
+
+## Props
+
+Extends every `Box` props and `SliderProps` from `@react-native-community/slider`
+
+https://github.com/callstack/react-native-slider/blob/main/package/typings/index.d.ts
+
+### `colorScheme`
+<PropsTable
+  description="The colorScheme property will define the slider's main color."
+  prop={{ type: "string", required: false }}
+/>
+
+### `filledTrackColor`
+<PropsTable
+  description="The filled track color of the slider."
+  prop={{ type: "string", required: false }}
+/>
+
+### `min`
+<PropsTable
+  description="The minimum value of the slider input."
+  prop={{ type: "number", required: false, default: 0 }}
+/>
+
+### `max`
+<PropsTable
+  description="The maximum value of the slider input."
+  prop={{ type: "number", required: false, default: 1 }}
+/>
+
+### `defaultValue`
+<PropsTable
+  description="The default value of the slider input."
+  prop={{ type: "number", required: false }}
+/>

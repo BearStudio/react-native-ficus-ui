@@ -1,0 +1,11 @@
+{
+  "avatar": "Avatar",
+  "badge": "Badge",
+  "text": "Text",
+  "image": "Image",
+  "divider": "Divider",
+  "icon": "Icon",
+  "spinner": "Spinner",
+  "modal": "Modal",
+  "draggable-modal": "DraggableModal"
+}

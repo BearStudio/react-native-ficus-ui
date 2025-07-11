@@ -1,0 +1,80 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+import PropsTable from "@components/docs/props-table";
+
+# Icon
+
+Component to display icon, it's a wrapper around the `Icon` component from `react-native-vector-icons` library.
+
+## Import
+
+```js
+import { Icon } from "react-native-ficus-ui";
+```
+
+## Usage
+
+### Examples
+
+<CodeEditor code={`<HStack spacing={10}>
+  <Icon name="accessibility" color="blue.700" size="6xl" iconSet="Ionicons" />
+  <Icon
+    name="star"
+    color="yellow.700"
+    size="6xl"
+    iconSet="Ionicons"
+  />
+</HStack>`} />
+
+### Sizes
+
+<CodeEditor code={`<HStack spacing={10}>
+  <Icon name="alarm" color="red.500" size="md"  />
+  <Icon name="analytics" color="teal.500" size="xl" />
+  <Icon name="heart" color="red.500" size="2xl" />
+  <Icon name="brush" color="blue.700" size="6xl" />
+</HStack>`} />
+
+### Back button
+
+<CodeEditor code={`<Icon
+  bg="yellow.400"
+  p={15}
+  borderRadius="full"
+  name="arrow-back"
+  color="yellow.700"
+  size="2xl"
+  iconSet="Ionicons"
+  w={50}
+/>`} />
+
+## Props
+
+Extends every `Box`
+
+### `name`
+<PropsTable
+  description="The name property (`name` style prop in StyleSheet)."
+  prop={{ type: "string", required: true }}
+/>
+
+### `color`
+<PropsTable
+  description="The color property (`color` style prop in StyleSheet)."
+  prop={{ type: "string", required: false, defaultValue: "gray.800" }}
+/>
+
+### `size`
+<PropsTable
+  description="The size property."
+  prop={{ type: "string, number", required: false }}
+/>
+
+### `iconSet`
+<PropsTable
+  description="The iconSet to use for the Icon"
+  prop={{ type: "string", required: false, defaultValue: "Ionicons" }}
+/>
