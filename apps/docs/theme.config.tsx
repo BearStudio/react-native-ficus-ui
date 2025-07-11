@@ -148,6 +148,7 @@ const config: DocsThemeConfig = {
     extraContent: (
       <>
         <LocaleSwitch />
+        <a href="https://v1.ficus-ui.com/" className="text-sm">V1</a>
       </>
     ),
   },
