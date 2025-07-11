@@ -1,3 +1,4 @@
+import { useTheme } from 'nextra-theme-docs';
 import { useEffect, useState } from 'react';
 import {
   FicusProvider,
@@ -11,6 +12,8 @@ import {
   Button,
   Center,
   Spinner,
+  useColorMode,
+  useColorModeValue,
 } from 'react-native-ficus-ui';
 
 export const ItemCard = ({ content, ...props }) => {
@@ -18,10 +21,10 @@ export const ItemCard = ({ content, ...props }) => {
     <VStack
       p={10}
       borderWidth={1}
-      borderColor="gray.200"
+      borderColor={useColorModeValue("gray.200", "gray.600")}
       borderRadius="lg"
       spacing="md"
-      bg="white"
+      bg={useColorModeValue("white", "gray.800")}
       {...props}
     >
       <Image
@@ -37,7 +40,7 @@ export const ItemCard = ({ content, ...props }) => {
           textTransform="uppercase"
           fontSize="sm"
           fontWeight="bold"
-          color="pink.800"
+          color={useColorModeValue("pink.800", "pink.600")}
         >
           {content.location}
         </Text>
@@ -55,6 +58,17 @@ export const ItemCard = ({ content, ...props }) => {
     </VStack>
   );
 };
+
+const ThemeProvider = ({ children }) => {
+  const { theme: nextraTheme } = useTheme();
+  const { setColorMode } = useColorMode();
+
+  useEffect(() => {
+    setColorMode(nextraTheme);
+  }, [nextraTheme]);
+
+  return children;
+}
 
 export const Responsive = () => {
   const item = {
@@ -77,44 +91,46 @@ export const Responsive = () => {
 
   return (
     <FicusProvider>
-      {isLoading ? (
-        <Center flex={1}>
-          <Spinner color="teal.500" />
-        </Center>
-      ) : (
-        <Box w="100%">
-          <Box
-            flexDirection="row"
-            justify="flex-start"
-            my="lg"
-          >
+      <ThemeProvider>
+        {isLoading ? (
+          <Center flex={1}>
+            <Spinner color="teal.500" />
+          </Center>
+        ) : (
+          <Box w="100%">
             <Box
-              flexDirection={['column', 'row']}
-              w={['100%', undefined]}
+              flexDirection="row"
+              justify="flex-start"
+              my="lg"
             >
-              <Input
-                placeholder="Search location"
-                p={10}
-                w={['100%', 300]}
-                borderWidth={2}
-                focusBorderColor="teal.500"
-              />
-              <Button
-                colorScheme="teal"
-                full={[true, false]}
-                mt={[5, 0]}
-                ml={[0, 5]}
-                h={40}
+              <Box
+                flexDirection={['column', 'row']}
+                w={['100%', undefined]}
               >
-                Search
-              </Button>
+                <Input
+                  placeholder="Search location"
+                  p={10}
+                  w={['100%', 300]}
+                  borderWidth={2}
+                  focusBorderColor="teal.500"
+                />
+                <Button
+                  colorScheme="teal"
+                  full={[true, false]}
+                  mt={[5, 0]}
+                  ml={[0, 5]}
+                  h={40}
+                >
+                  Search
+                </Button>
+              </Box>
+            </Box>
+            <Box mt="lg">
+              <ItemCard content={item} w={['100%', '50%']} />
             </Box>
           </Box>
-          <Box mt="lg">
-            <ItemCard content={item} w={['100%', '50%']} />
-          </Box>
-        </Box>
-      )}
+        )}
+      </ThemeProvider>
     </FicusProvider>
   );
 };

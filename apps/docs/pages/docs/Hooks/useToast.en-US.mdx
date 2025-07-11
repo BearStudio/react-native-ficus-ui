@@ -39,36 +39,74 @@ const { show, hide } = useToast();
 toastProps: {
     position: 'bottom',
     config: {
-        success: ({ text1, text2 }) => (
-            <Box bg="green.500" p="lg" borderRadius="lg">
-                <Text color="white" fontWeight="bold" fontSize="lg">
+        success: ({ text1, text2 }: BaseToastProps) => (
+            <Box
+                bg="green.500"
+                _dark={{ bg: 'green.300' }}
+                p="lg"
+                borderRadius="lg"
+            >
+                <Text
+                    color="white"
+                    _dark={{ color: 'gray.800' }}
+                    fontWeight="bold"
+                    fontSize="lg"
+                >
                     {text1}
                 </Text>
-                <Text color="white">{text2}</Text>
+                <Text color="white" _dark={{ color: 'gray.800' }}>
+                    {text2}
+                </Text>
             </Box>
         ),
-        error: ({ text1, text2 }) => (
-            <Box bg="red.500" p="lg" borderRadius="lg">
-                <Text color="white" fontWeight="bold" fontSize="lg">
+        error: ({ text1, text2 }: BaseToastProps) => (
+            <Box bg="red.500" _dark={{ bg: 'red.300' }} p="lg" borderRadius="lg">
+                <Text
+                    color="white"
+                    _dark={{ color: 'gray.800' }}
+                    fontWeight="bold"
+                    fontSize="lg"
+                >
                     {text1}
                 </Text>
-                <Text color="white">{text2}</Text>
+                <Text color="white" _dark={{ color: 'gray.800' }}>
+                    {text2}
+                </Text>
             </Box>
         ),
-        warning: ({ text1, text2 }) => (
-            <Box bg="orange.500" p="lg" borderRadius="lg">
-                <Text color="white" fontWeight="bold" fontSize="lg">
+        warning: ({ text1, text2 }: BaseToastProps) => (
+            <Box
+                bg="orange.500"
+                _dark={{ bg: 'orange.300' }}
+                p="lg"
+                borderRadius="lg"
+            >
+                <Text
+                    color="white"
+                    _dark={{ color: 'gray.800' }}
+                    fontWeight="bold"
+                    fontSize="lg"
+                >
                     {text1}
                 </Text>
-                <Text color="white">{text2}</Text>
+                <Text color="white" _dark={{ color: 'gray.800' }}>
+                    {text2}
+                </Text>
             </Box>
         ),
-        info: ({ text1, text2 }) => (
-            <Box bg="blue.500" p="lg" borderRadius="lg">
-                <Text color="white" fontWeight="bold" fontSize="lg">
+        info: ({ text1, text2 }: BaseToastProps) => (
+            <Box bg="blue.500" _dark={{ bg: 'blue.300' }} p="lg" borderRadius="lg">
+                <Text
+                    color="white"
+                    _dark={{ color: 'gray.800' }}
+                    fontWeight="bold"
+                    fontSize="lg"
+                >
                     {text1}
                 </Text>
-                <Text color="white">{text2}</Text>
+                <Text color="white" _dark={{ color: 'gray.800' }}>
+                    {text2}
+                </Text>
             </Box>
         ),
     },

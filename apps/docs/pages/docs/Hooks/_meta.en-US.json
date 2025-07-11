@@ -1,5 +1,7 @@
 {
   "useTheme": "useTheme",
+  "useColorMode": "useColorMode",
+  "useColorModeValue": "useColorModeValue",
   "useMediaQuery": "useMediaQuery",
   "useToast": "useToast",
   "useDisclosure": "useDisclosure"

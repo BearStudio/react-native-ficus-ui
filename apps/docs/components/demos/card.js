@@ -1,6 +1,19 @@
-import { FicusProvider } from 'react-native-ficus-ui';
+import { FicusProvider, useColorMode } from 'react-native-ficus-ui';
 
 import { ItemCard } from '@components/demos/responsive';
+import { useTheme } from 'nextra-theme-docs';
+import { useEffect } from 'react';
+
+const ThemeProvider = ({ children }) => {
+  const { theme: nextraTheme } = useTheme();
+  const { setColorMode } = useColorMode();
+
+  useEffect(() => {
+    setColorMode(nextraTheme);
+  }, [nextraTheme]);
+
+  return children;
+}
 
 export const Card = () => {
   const item = {
@@ -15,7 +28,9 @@ export const Card = () => {
 
   return (
     <FicusProvider>
-      <ItemCard content={item} />
+      <ThemeProvider>
+        <ItemCard content={item} />
+      </ThemeProvider>
     </FicusProvider>
   );
 };

@@ -1,0 +1,28 @@
+---
+searchable: true
+---
+
+# Dark Mode 🌜
+
+Ficus UI V2 supports dark mode out of the box. All components are light and dark mode compatible.
+
+You can overwrite the dark mode style of a component inside the theme by passing an object `_dark` like this :
+
+```js
+const baseStyle = defineStyle({
+  bg: 'white',
+  color: 'gray.800',
+  _dark: {
+    bg: 'gray.900',
+    color: 'white',
+  },
+});
+```
+
+But also directly on components :
+
+```js
+<Box bg="gray.300" _dark={{ bg: 'gray.800' }} p="sm">
+  <Text>{title}</Text>
+</Box>
+```

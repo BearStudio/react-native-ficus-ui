@@ -1,0 +1,21 @@
+---
+searchable: true
+---
+
+# useTheme
+
+Hook used to determine the value to apply for the current color mode.
+
+## Import
+
+```js
+import { useColorModeValue } from 'react-native-ficus-ui';
+```
+
+## Usage
+
+```js
+const value = useColorModeValue('appliedValueWhenLight', 'appliedValueWhenDark');
+
+const textColor = useColorModeValue('dark', 'white');
+```

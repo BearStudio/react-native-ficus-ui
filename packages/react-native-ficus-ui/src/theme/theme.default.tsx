@@ -1,11 +1,10 @@
-/* eslint-disable react-native/no-inline-styles */
 import {
-  BaseToast,
   BaseToastProps,
   ToastPosition,
   ToastProps,
 } from 'react-native-toast-message';
 
+import { Box, Text } from '../components';
 import { Dict } from '../style-system';
 import { components } from './components';
 import { foundations } from './foundations';
@@ -21,81 +20,75 @@ export const theme = {
   toastProps: {
     position: 'bottom' as ToastPosition,
     config: {
-      success: (toastProps: ThemeToastProps) => (
-        <BaseToast
-          style={{
-            borderLeftColor:
-              toastProps?.props?.colorMode === 'dark' ? '#68D391' : '#38A169',
-            backgroundColor:
-              toastProps?.props?.colorMode === 'dark' ? '#4A5568' : 'white',
-          }}
-          text1Style={{
-            color:
-              toastProps?.props?.colorMode === 'dark' ? 'white' : '#171923',
-          }}
-          text2Style={{
-            color:
-              toastProps?.props?.colorMode === 'dark' ? 'white' : '#1A202C',
-          }}
-          {...toastProps}
-        />
+      success: ({ text1, text2 }: BaseToastProps) => (
+        <Box
+          bg="green.500"
+          _dark={{ bg: 'green.300' }}
+          p="lg"
+          borderRadius="lg"
+        >
+          <Text
+            color="white"
+            _dark={{ color: 'gray.800' }}
+            fontWeight="bold"
+            fontSize="lg"
+          >
+            {text1}
+          </Text>
+          <Text color="white" _dark={{ color: 'gray.800' }}>
+            {text2}
+          </Text>
+        </Box>
       ),
-      error: (toastProps: ThemeToastProps) => (
-        <BaseToast
-          style={{
-            borderLeftColor:
-              toastProps?.props?.colorMode === 'dark' ? '#FC8181' : '#E53E3E',
-            backgroundColor:
-              toastProps?.props?.colorMode === 'dark' ? '#4A5568' : 'white',
-          }}
-          text1Style={{
-            color:
-              toastProps?.props?.colorMode === 'dark' ? 'white' : '#171923',
-          }}
-          text2Style={{
-            color:
-              toastProps?.props?.colorMode === 'dark' ? 'white' : '#1A202C',
-          }}
-          {...toastProps}
-        />
+      error: ({ text1, text2 }: BaseToastProps) => (
+        <Box bg="red.500" _dark={{ bg: 'red.300' }} p="lg" borderRadius="lg">
+          <Text
+            color="white"
+            _dark={{ color: 'gray.800' }}
+            fontWeight="bold"
+            fontSize="lg"
+          >
+            {text1}
+          </Text>
+          <Text color="white" _dark={{ color: 'gray.800' }}>
+            {text2}
+          </Text>
+        </Box>
       ),
-      warning: (toastProps: ThemeToastProps) => (
-        <BaseToast
-          style={{
-            borderLeftColor:
-              toastProps?.props?.colorMode === 'dark' ? '#F6AD55' : '#DD6B20',
-            backgroundColor:
-              toastProps?.props?.colorMode === 'dark' ? '#4A5568' : 'white',
-          }}
-          text1Style={{
-            color:
-              toastProps?.props?.colorMode === 'dark' ? 'white' : '#171923',
-          }}
-          text2Style={{
-            color:
-              toastProps?.props?.colorMode === 'dark' ? 'white' : '#1A202C',
-          }}
-          {...toastProps}
-        />
+      warning: ({ text1, text2 }: BaseToastProps) => (
+        <Box
+          bg="orange.500"
+          _dark={{ bg: 'orange.300' }}
+          p="lg"
+          borderRadius="lg"
+        >
+          <Text
+            color="white"
+            _dark={{ color: 'gray.800' }}
+            fontWeight="bold"
+            fontSize="lg"
+          >
+            {text1}
+          </Text>
+          <Text color="white" _dark={{ color: 'gray.800' }}>
+            {text2}
+          </Text>
+        </Box>
       ),
-      info: (toastProps: ThemeToastProps) => (
-        <BaseToast
-          style={{
-            borderLeftColor:
-              toastProps?.props?.colorMode === 'dark' ? '#63b3ed' : '#3182ce',
-            backgroundColor:
-              toastProps?.props?.colorMode === 'dark' ? '#4A5568' : 'white',
-          }}
-          text1Style={{
-            color:
-              toastProps?.props?.colorMode === 'dark' ? 'white' : '#171923',
-          }}
-          text2Style={{
-            color:
-              toastProps?.props?.colorMode === 'dark' ? 'white' : '#1A202C',
-          }}
-          {...toastProps}
-        />
+      info: ({ text1, text2 }: BaseToastProps) => (
+        <Box bg="blue.500" _dark={{ bg: 'blue.300' }} p="lg" borderRadius="lg">
+          <Text
+            color="white"
+            _dark={{ color: 'gray.800' }}
+            fontWeight="bold"
+            fontSize="lg"
+          >
+            {text1}
+          </Text>
+          <Text color="white" _dark={{ color: 'gray.800' }}>
+            {text2}
+          </Text>
+        </Box>
       ),
     },
   },

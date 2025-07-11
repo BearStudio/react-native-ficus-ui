@@ -16,35 +16,43 @@ import { SectionList } from "react-native-ficus-ui";
 
 ## Usage
 
-<CodeEditor code={`<SectionList
-  bg="gray.200"
-  p="xl"
-  sections={[
-    {
-      title: 'Main dishes',
-      data: ['Pizza', 'Burger', 'Risotto'],
-    },
-    {
-      title: 'Sides',
-      data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
-    },
-    {
-      title: 'Drinks',
-      data: ['Water', 'Coke', 'Beer'],
-    },
-  ]}
-  keyExtractor={(item, index) => item + index}
-  renderItem={({ item }) => (
-    <Box p="sm">
-      <Text>{item}</Text>
-    </Box>
-  )}
-  renderSectionHeader={({ section: { title } }) => (
-    <Box bg="gray.300" p="sm">
-      <Text>{title}</Text>
-    </Box>
-  )}
-/>`} />
+<CodeEditor code={`
+const SimpleList = () => {
+  const bgColor = useColorModeValue("gray.200", "gray.700");
+
+  return (
+    <SectionList
+      bg={bgColor}
+      p="xl"
+      sections={[
+        {
+          title: 'Main dishes',
+          data: ['Pizza', 'Burger', 'Risotto'],
+        },
+        {
+          title: 'Sides',
+          data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
+        },
+        {
+          title: 'Drinks',
+          data: ['Water', 'Coke', 'Beer'],
+        },
+      ]}
+      keyExtractor={(item, index) => item + index}
+      renderItem={({ item }) => (
+        <Box p="sm">
+          <Text>{item}</Text>
+        </Box>
+      )}
+      renderSectionHeader={({ section: { title } }) => (
+        <Box bg="gray.300" _dark={{ bg: 'gray.800' }} p="sm">
+          <Text>{title}</Text>
+        </Box>
+      )}
+    />
+  );
+}
+render(<SimpleList />)`} noInline />
 
 ## Props
 

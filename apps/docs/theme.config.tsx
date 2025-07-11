@@ -3,8 +3,9 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import type { DocsThemeConfig } from 'nextra-theme-docs';
 import { LocaleSwitch, useConfig, useTheme } from 'nextra-theme-docs';
-import type { ComponentProps, ReactElement } from 'react';
-import { Badge } from 'react-native-ficus-ui';
+import { useEffect, type ComponentProps, type ReactElement } from 'react';
+import { Badge, FicusProvider, useColorMode } from 'react-native-ficus-ui';
+import { ColorMode } from 'react-native-ficus-ui/src/theme/context';
 
 export const FicusLogo = (_: ComponentProps<'svg'>): ReactElement => (
   <svg viewBox="0 0 200 250" width="30" xmlns="http://www.w3.org/2000/svg">
@@ -57,6 +58,16 @@ const FOOTER_LINK_TEXT_DARK = {
   ),
 };
 
+const ThemeProvider = ({ children }) => {
+  const { theme: nextraTheme } = useTheme();
+  const { setColorMode } = useColorMode();
+
+  useEffect(() => {
+    setColorMode(nextraTheme as ColorMode);
+  }, [nextraTheme]);
+
+  return children;
+}
 
 const config: DocsThemeConfig = {
   darkMode: true,
@@ -158,10 +169,15 @@ const config: DocsThemeConfig = {
         </div>
       ) : (
         <div className="flex flex-1 justify-between align-middle">
-          <span>{title}</span> 
-          {(title === 'Avatar' || title === 'Badge' || title === 'PinInput' || title === 'Responsive' || title === 'Slider' || title === 'Tabs' || title === 'IconButton' || title === 'DraggableModal') && (
-            <Badge colorScheme="purple" fontSize="sm" alignSelf="center">New</Badge>
-          )}
+          <span>{title}</span>
+          <FicusProvider>
+            <ThemeProvider>
+              {(title === 'Dark Mode 🌜' || title === 'Select' || title === 'useColorMode' || title === 'useColorModeValue' || title === 'ficus()') && (
+                <Badge colorScheme="purple" fontSize="sm" alignSelf="flex-end">V2</Badge>
+              )}
+            </ThemeProvider>
+          </FicusProvider>
+
         </div>
       );
     },

@@ -1,0 +1,47 @@
+---
+searchable: true
+---
+
+import { Link } from 'nextra-theme-docs';
+import { Callout, FileTree } from 'nextra/components';
+
+# How to migrate from V1
+
+Migration from V1 to V2 introduces some breaking changes to take in account.
+V2 contains a huge refactoring of the library to improve the quality and possibilities of the library use.
+
+Here, you can find the recap of all the breaking changes. If you have any issue during the update to V2, please open an issue on Github repository.
+
+## FicusProvider
+
+`ThemeProvider` becomes `FicusProvider`
+
+## New theme structure
+
+Ficus UI V2 brings new theme structure, please update your custom theme following instructions <Link href="/customization">here</Link>.
+
+Also, new theme introduces variants and sizes customization to apply different styles for each config.
+
+## Switch component
+
+`Switch` component has been refactored, now prop `on` becomes `isChecked`.
+
+## Button component
+
+`prefix` and `suffix` props have been removed from `Button` component, now we can pass directly in children the prefix and suffix.
+
+For example :
+
+```js
+<Button colorScheme="green">
+    <Icon name="heart" color={useColorModeValue('white', 'gray.800')} size="xl" mr="sm" />
+    Button
+</Button>
+```
+
+Also, as for inputs, the style and size of `Button` has been slightly changed.
+
+## Select component
+
+Select component has been totally changed to use the library https://github.com/lawnstarter/react-native-picker-select.
+Now the component has a more "native" approach than the previous select modal component in V1.
