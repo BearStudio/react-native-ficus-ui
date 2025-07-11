@@ -1,4 +1,4 @@
-<img src="docs/static/img/banner.png" width="80%" alt="React Native Ficus UI banner" />
+<img src="apps/docs/static/img/banner.png" width="80%" alt="React Native Ficus UI banner" />
 
 <br />
 
