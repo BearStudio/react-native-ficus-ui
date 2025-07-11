@@ -1,3 +1,5 @@
+import { ReactElement } from 'react';
+
 import { Dict, splitProps } from '@chakra-ui/utils';
 import {
   Cursor,
@@ -51,7 +53,7 @@ export const PinInputField = forwardRef<PinInputFieldProps, 'View'>(
     const { mask, placeholder, symbol, value, index, isFocused, ...rest } =
       propsWithoutThemingProps;
 
-    let textChild = null;
+    let textChild: ReactElement | string | null = null;
 
     if (symbol && mask) {
       textChild = (
