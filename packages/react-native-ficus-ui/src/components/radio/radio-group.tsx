@@ -49,7 +49,7 @@ export const RadioGroup = forwardRef<RadioGroupProps, 'View'>((props, ref) => {
         | React.ReactNode
         | ((states: RadioStates) => React.ReactNode)
     ): React.ReactNode => {
-      // @ts-expect-error
+      // @ts-expect-error : conversion issue
       return React.Children.map(childrenProp, (child): React.ReactNode => {
         if (!React.isValidElement(child)) return child;
 
@@ -57,7 +57,7 @@ export const RadioGroup = forwardRef<RadioGroupProps, 'View'>((props, ref) => {
         if (child.type === Radio) {
           return React.cloneElement(child, {
             key: `radio-${child.props.value}`,
-            // @ts-expect-error
+            // @ts-expect-error : conversion issue
             onChange: handleOnChange,
             isChecked: value === child.props.value,
             ...(props.colorScheme ? { colorScheme: props.colorScheme } : {}),

@@ -115,10 +115,7 @@ export const Input = forwardRef<InputProps, 'TextInput'>((props, ref) => {
           __styles={inputStyles}
           editable={!isDisabled}
           aria-disabled={isDisabled}
-          placeholderTextColor={
-            // @ts-expect-error
-            theme?.colors?.gray?.[500]
-          }
+          placeholderTextColor={(theme?.colors?.gray as Dict)?.[500]}
           {...rest}
         />
         {!isLoading && suffix && (
