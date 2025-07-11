@@ -2,7 +2,7 @@
 
 <br />
 
-Ficus UI is a React Native UI library forked on Magnus UI and inspired by Chakra UI
+Ficus UI is a React Native UI library inspired by Chakra UI
 
 ## Requirements
 
