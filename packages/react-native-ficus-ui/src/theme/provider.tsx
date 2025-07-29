@@ -6,6 +6,7 @@ import Toast from 'react-native-toast-message';
 
 import { ColorMode, FicusThemeWithMetadata, ThemeContext } from './context';
 import { theme } from './theme.default';
+import { getToastConfig } from './toast.config';
 
 export interface ThemeProviderProps {
   theme?: FicusThemeWithMetadata;
@@ -13,6 +14,8 @@ export interface ThemeProviderProps {
 }
 
 export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
+  theme.toastProps.config = getToastConfig();
+
   const { theme: customTheme = {}, children } = props;
 
   // Get Metadata
