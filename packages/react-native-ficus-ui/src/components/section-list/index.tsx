@@ -16,12 +16,11 @@ type FicusSectionListProps<ItemT, SectionT> = RNSectionListProps<
     keyof RNSectionListProps<ItemT, SectionT>
   >;
 
+const FicusSectionList = ficus(RNSectionList) as React.ComponentType<
+  FicusSectionListProps<any, any>
+>;
 export function SectionList<ItemT, SectionT>(
   props: FicusSectionListProps<ItemT, SectionT>
 ) {
-  const FicusSectionList = ficus(RNSectionList) as React.ComponentType<
-    FicusSectionListProps<ItemT, SectionT>
-  >;
-
   return <FicusSectionList {...props} />;
 }
