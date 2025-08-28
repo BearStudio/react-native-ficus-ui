@@ -12,7 +12,7 @@ type ListProps<ItemT> = RNFlatListProps<ItemT> &
 
 const FicusFlatList = ficus(RNFlatList, {
   baseStyle: { flex: 1 },
-}) as React.ComponentType<any>;
+}) as <ItemT>(props: ListProps<ItemT>) => React.ReactElement;
 
 export function List<ItemT>(props: ListProps<ItemT>) {
   return <FicusFlatList {...props} />;

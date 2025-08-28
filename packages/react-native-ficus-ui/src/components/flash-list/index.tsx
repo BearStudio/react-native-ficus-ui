@@ -8,10 +8,10 @@ import { NativeFicusProps, ficus } from '../system';
 type FlashListProps<ItemT> = RNFlashListProps<ItemT> &
   Omit<NativeFicusProps<'FlashList'>, keyof RNFlashListProps<ItemT>>;
 
-const FicusFlatList = ficus(RNFlashList, {
+const FicusFlashList = ficus(RNFlashList, {
   styleProp: 'contentContainerStyle',
-}) as React.ComponentType<FlashListProps<any>>;
+}) as <ItemT>(props: FlashListProps<ItemT>) => React.ReactElement;
 
 export function FlashList<ItemT>(props: FlashListProps<ItemT>) {
-  return <FicusFlatList {...props} />;
+  return <FicusFlashList {...props} />;
 }
