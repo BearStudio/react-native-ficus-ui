@@ -7,9 +7,9 @@ import PropsTable from "@components/docs/props-table";
 
 # Modal
 
-Component to render a modal imported from `react-native-modal`
+Custom wrapper around the React Native [`Modal`](https://github.com/react-native-modal/react-native-modal).
+It provides default styles for background overlay and a content container.
 
-https://github.com/react-native-modal/react-native-modal
 
 ## Import
 
@@ -32,7 +32,7 @@ import { Modal } from "react-native-ficus-ui";
         Show Modal
       </Button>
 
-      <Modal visible={isOpen}>
+      <Modal visible={isOpen} height="50%" width="90%">
         <Button
           h={35}
           w={35}
@@ -56,10 +56,40 @@ render(<TestModal />)`} noInline />
 
 ## Props
 
-Extends every `Box` and `Modal` from React Native props.
+Extends every `Box` and `Modal` from React Native props and some custom props.
 
 ### `visible`
 <PropsTable
   description="Boolean to indicate if the modal is opened or not."
   prop={{ type: "boolean", required: true, default: "false" }}
+/>
+
+### `width`
+<PropsTable
+description="Width of the content container. Accepts DimensionValue (number, string, or percentage)."
+prop={{ type: "DimensionValue", required: false, default: "'100%'" }}
+/>
+
+## `height`
+<PropsTable
+description="Height of the content container. Accepts DimensionValue (number, string, or percentage)."
+prop={{ type: "DimensionValue", required: false, default: "'100%'" }}
+/>
+
+## `backgroundColor`
+<PropsTable
+description="Background color of the content container."
+prop={{ type: "string", required: false, default: "'white'" }}
+/>
+
+## `backgroundViewStyle`
+<PropsTable
+description="Style object applied to the full-screen background overlay (default: semi-transparent black)."
+prop={{ type: "ViewStyle", required: false, default: "{ flex: 1, justifyContent: 'flex-end', alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.5)' }" }}
+/>
+
+## `contentViewStyle`
+<PropsTable
+description="Style object applied to the modal content container."
+prop={{ type: "ViewStyle", required: false, default: "{ width: '100%', height: '100%', backgroundColor: 'white' }" }}
 />
