@@ -32,22 +32,24 @@ import { Modal } from "react-native-ficus-ui";
         Show Modal
       </Button>
 
-      <Modal visible={isOpen}>
-        <Button
-          h={35}
-          w={35}
-          position="absolute"
-          top={50}
-          right={15}
-          px={0}
-          borderRadius="full"
-          colorScheme="gray"
-          onPress={() => {
-            onClose();
-          }}
-        >
-          <Icon color="white" name="close" />
-        </Button>
+      <Modal isOpen={isOpen}>
+        <Flex bg="white">
+          <Button
+            h={35}
+            w={35}
+            position="absolute"
+            top={50}
+            right={15}
+            px={0}
+            borderRadius="full"
+            colorScheme="gray"
+            onPress={() => {
+              onClose();
+            }}
+          >
+            <Icon color="white" name="close" />
+          </Button>
+        </Flex>
       </Modal>
     </Box>
   );
@@ -58,7 +60,7 @@ render(<TestModal />)`} noInline />
 
 Extends every `Box` and `Modal` from React Native props.
 
-### `visible`
+### `isOpen`
 <PropsTable
   description="Boolean to indicate if the modal is opened or not."
   prop={{ type: "boolean", required: true, default: "false" }}

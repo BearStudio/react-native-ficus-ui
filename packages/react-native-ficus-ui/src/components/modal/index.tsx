@@ -1,7 +1,28 @@
-import { ModalProps } from 'react-native';
-
 import { type NativeFicusProps, ficus } from '../system';
 
-export interface ModalProp extends NativeFicusProps<'Modal'>, ModalProps {}
+interface ModalOptions {
+  isOpen?: boolean;
+  onClose?: () => void;
+}
 
-export const Modal = ficus('Modal');
+type RNModalProps = Partial<
+  Omit<NativeFicusProps<'Modal'>, 'isVisible' | 'onDismiss'>
+>;
+
+type OptionalNativeModalProps = {
+  [K in keyof RNModalProps]?: RNModalProps[K];
+};
+
+export type FicusModalProps = OptionalNativeModalProps & ModalOptions;
+
+const FicusModal = ficus('Modal');
+
+export function Modal(props: FicusModalProps) {
+  return (
+    <FicusModal
+      isVisible={props.isOpen || false}
+      onDismiss={props.onClose}
+      {...props}
+    />
+  );
+}
