@@ -1,8 +1,22 @@
-<img src="https://github.com/BearStudio/react-native-ficus-ui/raw/main/apps/docs/static/img/banner.png" width="80%" alt="React Native Ficus UI banner" />
+<img src="https://raw.githubusercontent.com/BearStudio/react-native-ficus-ui/refs/heads/main/apps/docs/static/img/banner.png" width="100%" alt="React Native Ficus UI banner" />
 
 <br />
 
+<h1 align="center">React Native Ficus UI 🍃</h1>
+
 Ficus UI is a React Native UI library inspired by Chakra UI
+
+<p align="center">
+  <a href="https://github.com/BearStudio/react-native-ficus-ui/blob/main/LICENSE">
+    <img alt="MIT License" src="https://img.shields.io/github/license/chakra-ui/chakra-ui"/>
+  </a>
+  <a href="https://www.npmjs.com/package/react-native-ficus-ui">
+    <img alt="NPM Downloads" src="https://img.shields.io/npm/dm/react-native-ficus-ui"/>
+  </a>
+  <a href="https://github.com/BearStudio/react-native-ficus-ui">
+    <img alt="Github Stars" src="https://badgen.net/github/stars/BearStudio/react-native-ficus-ui" />
+  </a>
+</p>
 
 ## Requirements
 
@@ -60,6 +74,16 @@ AppRegistry.registerComponent('main', () => Main);
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+
+## Core team
+
+<a href="https://www.bearstudio.fr/"><img src="https://avatars.githubusercontent.com/u/21054556?s=48&v=4" height="50" width="50" /></a>
+<a href="https://github.com/ntorionbearstudio"><img src="https://avatars.githubusercontent.com/u/53612278?v=4" height="50" width="50" /></a>
+<a href="https://github.com/ntatoud"><img src="https://avatars.githubusercontent.com/u/135032615?v=4" height="50" width="50" /></a>
+<a href="https://github.com/omar-bear"><img src="https://avatars.githubusercontent.com/u/80390318?v=4" height="50" width="50" /></a>
+<a href="https://github.com/heloise-gllm"><img src="https://avatars.githubusercontent.com/u/139237256?v=4" height="50" width="50" /></a>
+<a href="https://github.com/houssembaltii"><img src="https://avatars.githubusercontent.com/u/155462028?v=4" height="50" width="50" /></a>
+<a href="https://github.com/HugoPerard"><img src="https://avatars.githubusercontent.com/u/48803115?v=4" height="50" width="50" /></a>
 
 ## License
 
