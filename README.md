@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/BearStudio/react-native-ficus-ui/refs/heads/main/apps/docs/static/img/banner.png" width="80%" alt="React Native Ficus UI banner" />
+<img src="https://raw.githubusercontent.com/BearStudio/react-native-ficus-ui/refs/heads/main/apps/docs/static/img/banner.png" width="100%" alt="React Native Ficus UI banner" />
 
 <br />
 
