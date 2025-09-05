@@ -8,7 +8,6 @@ import {
   ActivityIndicator as RNActivityIndicator,
   FlatList as RNFlatList,
   Image as RNImage,
-  Modal as RNModal,
   Pressable as RNPressable,
   SafeAreaView as RNSafeAreaView,
   ScrollView as RNScrollView,
@@ -21,6 +20,7 @@ import {
   View as RNView,
 } from 'react-native';
 import { CodeField as RNCodeField } from 'react-native-confirmation-code-field';
+import Modal from 'react-native-modal';
 import RNPickerSelect from 'react-native-picker-select';
 import { TabView as RNTabView } from 'react-native-tab-view';
 
@@ -42,7 +42,7 @@ export const baseRNElements = {
   FlatList: RNFlatList,
   SectionList: RNSectionList,
   FlashList: ShopifyFlashList,
-  Modal: RNModal,
+  Modal,
   BottomSheetModal: RNBottomSheetModal,
   BottomSheetView: RNBottomSheetView,
   TextInput: RNTextInput,

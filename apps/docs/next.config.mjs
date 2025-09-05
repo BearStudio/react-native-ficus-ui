@@ -72,6 +72,8 @@ export default withNextra({
 
   transpilePackages: [
     'react-native',
+    'react-native-modal',
+    'react-native-animatable',
     'react-native-web',
     'react-native-toast-message',
     'react-native-vector-icons',
