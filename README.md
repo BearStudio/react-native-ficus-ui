@@ -77,8 +77,12 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 
 ## Core team
 
-<a href="https://www.bearstudio.fr/"><img src="https://avatars.githubusercontent.com/u/21054556?s=48&v=4" /></a>
-<a href="https://opencollective.com/chakra-ui/organization/1/website"><img src="https://avatars.githubusercontent.com/u/53612278?v=4" /></a>
+<a href="https://www.bearstudio.fr/"><img src="https://avatars.githubusercontent.com/u/21054556?s=48&v=4" height="50" width="50" /></a>
+<a href="https://github.com/ntorionbearstudio"><img src="https://avatars.githubusercontent.com/u/53612278?v=4" height="50" width="50" /></a>
+<a href="https://github.com/ntatoud"><img src="https://avatars.githubusercontent.com/u/135032615?v=4" height="50" width="50" /></a>
+<a href="https://github.com/omar-bear"><img src="https://avatars.githubusercontent.com/u/80390318?v=4" height="50" width="50" /></a>
+<a href="https://github.com/heloise-gllm"><img src="https://avatars.githubusercontent.com/u/139237256?v=4" height="50" width="50" /></a>
+<a href="https://github.com/houssembaltii"><img src="https://avatars.githubusercontent.com/u/155462028?v=4" height="50" width="50" /></a>
 
 ## License
 
