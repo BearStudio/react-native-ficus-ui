@@ -2,7 +2,7 @@
 
 <br />
 
-# React Native Ficus UI 🍃
+<h1 align="center">React Native Ficus UI 🍃</h1>
 
 Ficus UI is a React Native UI library inspired by Chakra UI
 
