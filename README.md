@@ -2,7 +2,21 @@
 
 <br />
 
+# React Native Ficus UI 🍃
+
 Ficus UI is a React Native UI library inspired by Chakra UI
+
+<p align="center">
+  <a href="https://github.com/BearStudio/react-native-ficus-ui/blob/main/LICENSE">
+    <img alt="MIT License" src="https://img.shields.io/github/license/chakra-ui/chakra-ui"/>
+  </a>
+  <a href="https://www.npmjs.com/package/react-native-ficus-ui">
+    <img alt="NPM Downloads" src="https://img.shields.io/npm/dm/react-native-ficus-ui"/>
+  </a>
+  <a href="https://github.com/BearStudio/react-native-ficus-ui">
+    <img alt="Github Stars" src="https://badgen.net/github/stars/BearStudio/react-native-ficus-ui" />
+  </a>
+</p>
 
 ## Requirements
 
@@ -60,6 +74,11 @@ AppRegistry.registerComponent('main', () => Main);
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+
+## Core team
+
+<a href="https://www.bearstudio.fr/"><img src="https://avatars.githubusercontent.com/u/21054556?s=48&v=4" /></a>
+<a href="https://opencollective.com/chakra-ui/organization/1/website"><img src="https://avatars.githubusercontent.com/u/53612278?v=4" /></a>
 
 ## License
 
