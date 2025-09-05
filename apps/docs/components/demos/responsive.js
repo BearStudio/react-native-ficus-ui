@@ -112,7 +112,6 @@ export const Responsive = () => {
                   p={10}
                   w={['100%', 300]}
                   borderWidth={2}
-                  focusBorderColor="teal.500"
                 />
                 <Button
                   colorScheme="teal"

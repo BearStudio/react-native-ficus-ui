@@ -16,15 +16,6 @@ https://shopify.github.io/flash-list/docs/
 
 So, `List` component accepts every props from react native `FlatList` component.
 
-<Callout type="warning" emoji="⚠️">
-  `FlashList` is a great component with huge performances improvements but it
-  works better with list items of the same size/height. That's why you have to
-  pass an `estimatedItemSize` param to `FlashList` component. <br />
-  If you have items with different sizes to display inside your list, you should
-  use default `List` / `FlatList` component. Using `FlashList` with different sizes
-  will cause blank spaces while scrolling into the list.
-</Callout>
-
 ## Import
 
 ```js
@@ -56,10 +47,4 @@ import { FlashList } from "react-native-ficus-ui";
 <PropsTable
   description="For simplicity, data is a plain array of items of a given type."
   prop={{ type: "ItemT[]", required: true }}
-/>
-
-### `estimatedItemSize`
-<PropsTable
-  description="A single numeric value that hints FlashList about the approximate size of the items before they're rendered."
-  prop={{ type: "number", required: false }}
 />
