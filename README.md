@@ -83,6 +83,7 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 <a href="https://github.com/omar-bear"><img src="https://avatars.githubusercontent.com/u/80390318?v=4" height="50" width="50" /></a>
 <a href="https://github.com/heloise-gllm"><img src="https://avatars.githubusercontent.com/u/139237256?v=4" height="50" width="50" /></a>
 <a href="https://github.com/houssembaltii"><img src="https://avatars.githubusercontent.com/u/155462028?v=4" height="50" width="50" /></a>
+<a href="https://github.com/HugoPerard"><img src="https://avatars.githubusercontent.com/u/48803115?v=4" height="50" width="50" /></a>
 
 ## License
 
