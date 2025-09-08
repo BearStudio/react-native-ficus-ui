@@ -1,7 +1,13 @@
 import { useMemo } from 'react';
 
 import { useColorMode } from '../../hooks';
-import { type NativeFicusProps, ficus, forwardRef } from '../system';
+import { ThemingProps, omitThemingProps } from '../../style-system';
+import {
+  type NativeFicusProps,
+  ficus,
+  forwardRef,
+  useMultiStyleConfig,
+} from '../system';
 
 interface DividerOptions {
   color?: string;
@@ -10,49 +16,47 @@ interface DividerOptions {
 
 export interface DividerProps
   extends NativeFicusProps<'View'>,
-    DividerOptions {}
+    DividerOptions,
+    ThemingProps<'Divider'> {}
 
 /**
  * Layout component used to visually separate content in a list or group.
  * It displays a thin horizontal or vertical line
  */
-export const Divider = forwardRef<DividerProps, 'View'>(
-  function Divider(props, ref) {
-    const { colorMode } = useColorMode();
+export const Divider = forwardRef<DividerProps, 'View'>((props, ref) => {
+  const { colorMode } = useColorMode();
+  const themingProps = omitThemingProps(props);
 
-    const {
-      orientation = 'horizontal',
-      color = colorMode === 'dark' ? 'white' : 'black',
-      __styles,
-      ...rest
-    } = props;
+  const {
+    orientation = 'horizontal',
+    __styles,
+    color: colorProp,
+    ...rest
+  } = themingProps;
 
-    const dividerStyles = useMemo(() => {
-      const bg = color;
+  const styles = useMultiStyleConfig('Divider', props);
 
-      return {
-        vertical: {
-          w: 1,
-          h: '100%',
-          bg,
-        },
-        horizontal: {
-          h: 1,
-          w: '100%',
-          bg,
-        },
-      };
-    }, [color]);
+  const color =
+    colorProp ??
+    (styles.color as string) ??
+    (colorMode === 'dark' ? 'white' : 'black');
 
-    return (
-      <ficus.View
-        ref={ref}
-        {...rest}
-        __styles={{
-          ...dividerStyles[orientation],
-          ...__styles,
-        }}
-      />
-    );
-  }
-);
+  const dividerStyles = useMemo(() => {
+    const base = { ...styles, bg: color };
+    return {
+      vertical: { w: 1, h: '100%', ...base },
+      horizontal: { h: 1, w: '100%', ...base },
+    };
+  }, [color, styles]);
+
+  return (
+    <ficus.View
+      ref={ref}
+      {...rest}
+      __styles={{
+        ...dividerStyles[orientation],
+        ...__styles,
+      }}
+    />
+  );
+});
