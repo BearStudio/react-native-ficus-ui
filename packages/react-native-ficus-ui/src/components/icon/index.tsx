@@ -10,7 +10,7 @@ interface IconOptions {
 }
 
 export interface IconProps extends NativeFicusProps<'View'>, IconOptions {}
-export { IconSet } from './icon.service';
+export type { IconSet } from './icon.service';
 
 export const Icon = forwardRef<IconProps, 'View'>(function Icon(props, ref) {
   const { name, iconSet, color = 'gray.800', size, ...rest } = props;
