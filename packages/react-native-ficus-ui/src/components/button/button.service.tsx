@@ -11,7 +11,7 @@ import {
   isTextProp,
 } from '../../style-system';
 import { getColor, useTheme } from '../../theme';
-import { ficus } from '../system';
+import { ficus, useStyleConfig } from '../system';
 import { getStateStyles } from '../system/get-state-styles';
 
 /**
@@ -97,6 +97,8 @@ export function useButton(props: ButtonProps, styles: SystemStyleObject) {
   );
 
   const [textStyles] = splitProps(stateStyles, isTextProp);
+  const baseTextStyles = useStyleConfig('Text', {});
+  const mergedTextStyles = { ...baseTextStyles, ...textStyles };
 
   const responsiveFull = expandResponsive({ full })(theme);
 
@@ -129,9 +131,9 @@ export function useButton(props: ButtonProps, styles: SystemStyleObject) {
   return {
     buttonStyles,
     spinnerStyles,
-    textStyles,
+    textStyles: mergedTextStyles,
     loadingText: loadingText && (
-      <ficus.Text __styles={textStyles}>{loadingText}</ficus.Text>
+      <ficus.Text __styles={mergedTextStyles}>{loadingText}</ficus.Text>
     ),
     /**
      * Retrieves the processed button children.
@@ -150,7 +152,7 @@ export function useButton(props: ButtonProps, styles: SystemStyleObject) {
         return children;
       }
 
-      return splitChildren(children, textStyles, id) as ReactNode;
+      return splitChildren(children, mergedTextStyles, id) as ReactNode;
     },
   };
 }

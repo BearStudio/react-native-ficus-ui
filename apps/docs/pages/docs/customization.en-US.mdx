@@ -181,3 +181,47 @@ export const inputTheme = defineStyleConfig({
 });
 
 ```
+
+## Fonts
+
+You can add your fonts in your theme as follows.
+
+1. Download the font file or install it.
+
+2. Create a font.ts file in your src/theme/fundations folder as follows.
+```js
+import { Theme } from 'react-native-ficus-ui';
+
+export const fonts = {
+  fontFamily: {
+    Vazirmatn: {
+      100: 'Vazirmatn_100Thin',
+      200: 'Vazirmatn_200ExtraLight',
+      300: 'Vazirmatn_300Light',
+      400: 'Vazirmatn_400Regular',
+      500: 'Vazirmatn_500Medium',
+      600: 'Vazirmatn_600SemiBold',
+      700: 'Vazirmatn_700Bold',
+      800: 'Vazirmatn_800ExtraBold',
+      900: 'Vazirmatn_900Black',
+    },
+  },
+  fontWeights: {
+    hairline: 100,
+    thin: 200,
+    light: 300,
+    normal: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+    extrabold: 800,
+    black: 900,
+  },
+} satisfies Theme['fonts'];
+```
+
+3. Import your fonts in your index.ts
+
+4. Initialize and load them in src/index.tsx or App.tsx
+
+

@@ -114,11 +114,13 @@ export const Tabs = (props: TabsProps) => {
   }) => {
     if (typeof route.renderLabelChildren === 'string') {
       return (
-        <Text color={tabsMainColor || color}>{route.renderLabelChildren}</Text>
+        <Text {...route.otherProps} color={tabsMainColor || color}>
+          {route.renderLabelChildren}
+        </Text>
       );
     }
     return (
-      <ficus.View>
+      <ficus.View {...route.otherProps}>
         {typeof route.renderLabelChildren === 'function'
           ? route.renderLabelChildren({
               route,
@@ -153,7 +155,6 @@ export const Tabs = (props: TabsProps) => {
               : {})}
             {...tabs?.props}
             {...sceneProps}
-            {...rest}
           />
         );
       }}
