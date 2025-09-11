@@ -44,6 +44,7 @@ interface Typography {
   // FIXME
   fonts?: {
     fontWeights?: RecursiveObject;
+    fontFamily?: RecursiveObject;
   } & RecursiveObject;
 }
 

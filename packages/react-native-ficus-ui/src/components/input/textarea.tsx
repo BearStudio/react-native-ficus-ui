@@ -97,7 +97,7 @@ export const Textarea = forwardRef<TextareaProps, 'TextInput'>((props, ref) => {
             onBlur={onBlurInput}
             __styles={inputStyles}
             editable={!isDisabled}
-            aria-disabled={!isDisabled}
+            aria-disabled={isDisabled}
             multiline
             {...rest}
           />
