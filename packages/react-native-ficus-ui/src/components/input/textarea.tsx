@@ -13,6 +13,7 @@ import {
   isStyleProp,
   omitThemingProps,
 } from '../../style-system';
+import { getColor, useTheme } from '../../theme';
 import { ButtonSpinner } from '../button/button-spinner';
 import {
   type NativeFicusProps,
@@ -36,6 +37,7 @@ export const Textarea = forwardRef<TextareaProps, 'TextInput'>((props, ref) => {
   useImperativeHandle(ref, () => innerRef.current as RNTextInput);
 
   const [stylesProps, inputProps] = splitProps(props as Dict, isStyleProp);
+  const { theme } = useTheme();
 
   const styles = useStyleConfig('Textarea', stylesProps);
 
@@ -51,8 +53,16 @@ export const Textarea = forwardRef<TextareaProps, 'TextInput'>((props, ref) => {
     inputProps as Partial<TextareaProps>
   );
 
-  const { onFocus, onBlur, prefix, suffix, isLoading, isDisabled, ...rest } =
-    propsWithoutThemingProps;
+  const {
+    onFocus,
+    onBlur,
+    prefix,
+    suffix,
+    isLoading,
+    isDisabled,
+    placeholderTextColor,
+    ...rest
+  } = propsWithoutThemingProps;
 
   /**
    * on focus input
@@ -99,6 +109,7 @@ export const Textarea = forwardRef<TextareaProps, 'TextInput'>((props, ref) => {
             editable={!isDisabled}
             aria-disabled={isDisabled}
             multiline
+            placeholderTextColor={getColor(placeholderTextColor, theme.colors)}
             {...rest}
           />
           {!isLoading && suffix && (
