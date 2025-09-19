@@ -55,6 +55,7 @@ export function useInput(
       height: 18,
       lineHeight: 18,
       color: colorMode === 'dark' ? 'white' : 'black',
+      outline: 'none',
       ...(Platform.OS === 'android' ? { lineHeight: 20, fontSize: 12 } : {}),
     }),
     [colorMode]

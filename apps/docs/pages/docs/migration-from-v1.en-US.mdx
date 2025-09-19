@@ -25,6 +25,111 @@ Also, new theme introduces variants and sizes customization to apply different s
 ## Switch component
 
 `Switch` component has been refactored, now prop `on` becomes `isChecked`.
+The props for customizing the thumb and track are no longer available; you now need to use the theme to apply custom styles.
+
+For example :
+
+```js
+import {
+  createMultiStyleConfigHelpers,
+  defineStyle,
+} from 'react-native-ficus-ui';
+
+const sliderParts = ['container', 'thumb', 'track'] as const;
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(sliderParts);
+
+const baseContainerStyle = defineStyle({});
+
+const baseTrackStyle = defineStyle((props) => ({
+  flexDirection: 'row',
+  alignItems: 'center',
+  borderRadius: 'full',
+  bg: 'gray.950',
+  width: 32,
+  height: 16,
+  _checked: {
+    bg: 'brand.950' || `${props.colorScheme}.500`,
+  },
+  _disabled: {
+    opacity: 0.5,
+  },
+}));
+
+const baseThumbStyle = defineStyle((props) => ({
+  borderRadius: 'full',
+  width: 8,
+  height: 8,
+  bg: 'brand.950' || `${props.colorScheme}.500`,
+  _checked: {
+    bg: 'gray.950',
+  },
+}));
+
+const baseStyle = definePartsStyle((props) => ({
+  container: baseContainerStyle,
+  track: baseTrackStyle(props),
+  thumb: baseThumbStyle(props),
+}));
+
+const sizes = {
+  xs: defineStyle({
+    track: {
+      h: 16,
+      w: 32,
+      p: 4,
+    },
+    thumb: {
+      w: 8,
+      h: 8,
+    },
+  }),
+  sm: defineStyle({
+    track: {
+      h: 24,
+      w: 40,
+      p: 2,
+    },
+    thumb: {
+      w: 20,
+      h: 20,
+    },
+  }),
+  md: defineStyle({
+    track: {
+      h: 30,
+      w: 55,
+      p: 2,
+    },
+    thumb: {
+      w: 26,
+      h: 26,
+    },
+  }),
+  lg: defineStyle({
+    track: {
+      h: 36,
+      w: 70,
+      p: 2,
+    },
+    thumb: {
+      w: 32,
+      h: 32,
+    },
+  }),
+};
+
+export default defineMultiStyleConfig({
+  baseStyle,
+  sizes,
+  defaultProps: {
+    size: 'md',
+    colorScheme: 'green',
+    duration: 300,
+  },
+});
+```
 
 ## Button component
 
@@ -39,7 +144,21 @@ For example :
 </Button>
 ```
 
-Also, as for inputs, the style and size of `Button` has been slightly changed.
+By default, the Button component now uses the same font as defined in the theme for the Text component.
+To customize the font specifically for Button, set the fontFamily in the button theme's baseStyle to apply it globally, or override it in individual variants as needed.
+
+For example :
+
+```js
+const baseStyle = defineStyle({
+  borderRadius: 'sm',
+  size: 'sm',
+  fontFamily: 'Vazirmatn',
+});
+```
+
+
+Finally, as for inputs, the style and size of `Button` has been slightly changed.
 
 ## Select component
 

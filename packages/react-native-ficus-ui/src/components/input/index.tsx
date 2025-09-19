@@ -15,7 +15,7 @@ import {
   isStyleProp,
   omitThemingProps,
 } from '../../style-system';
-import { useTheme } from '../../theme';
+import { getColor, useTheme } from '../../theme';
 import { ButtonSpinner } from '../button/button-spinner';
 import {
   type NativeFicusProps,
@@ -60,8 +60,16 @@ export const Input = forwardRef<InputProps, 'TextInput'>((props, ref) => {
     inputProps as Partial<InputProps>
   );
 
-  const { onFocus, onBlur, prefix, suffix, isLoading, isDisabled, ...rest } =
-    propsWithoutThemingProps;
+  const {
+    onFocus,
+    onBlur,
+    prefix,
+    suffix,
+    isLoading,
+    isDisabled,
+    placeholderTextColor,
+    ...rest
+  } = propsWithoutThemingProps;
 
   /**
    * on focus input
@@ -115,7 +123,7 @@ export const Input = forwardRef<InputProps, 'TextInput'>((props, ref) => {
           __styles={inputStyles}
           editable={!isDisabled}
           aria-disabled={isDisabled}
-          placeholderTextColor={(theme?.colors?.gray as Dict)?.[500]}
+          placeholderTextColor={getColor(placeholderTextColor, theme.colors)}
           {...rest}
         />
         {!isLoading && suffix && (
