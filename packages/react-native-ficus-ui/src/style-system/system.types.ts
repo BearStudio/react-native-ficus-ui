@@ -11,7 +11,7 @@ import {
   SpaceProps,
 } from './config';
 import { CommonProps } from './config/common';
-import { PseudoStyleKey } from './pseudos';
+import { PseudoStyleKey, StateStyles } from './pseudos';
 import { RNStyleSheet, RNStyleSheetProperties } from './utils/prop-config';
 import { Dict, ResponsiveValue } from './utils/types';
 
@@ -63,8 +63,9 @@ export interface RecursiveStyleSheetSelector<D> {
 export type RecursiveStyleSheetObject<D> = D &
   (D | RecursivePseudo<D> | RecursiveStyleSheetSelector<D>);
 
-export type SystemStyleObject =
-  RecursiveStyleSheetObject<StyleSheetWithMultiValues>;
+export type SystemStyleObject = RecursiveStyleSheetObject<
+  StyleSheetWithMultiValues & StateStyles<any>
+>;
 
 type PseudoProps = {
   // eslint-disable-next-line no-unused-vars
