@@ -1,6 +1,7 @@
+import { PinInputProps } from '../../components/pin-input';
 import { defineStyle, defineStyleConfig } from '../../style-system';
 
-const baseStyle = defineStyle({
+const baseStyle = defineStyle<PinInputProps>({
   alignSelf: 'flex-start',
   justifyContent: 'flex-start',
 });

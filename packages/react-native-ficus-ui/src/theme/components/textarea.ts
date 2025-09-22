@@ -1,6 +1,7 @@
+import { TextareaProps } from '../../components/input/textarea';
 import { defineStyle, defineStyleConfig } from '../../style-system';
 
-const baseStyle = defineStyle({
+const baseStyle = defineStyle<TextareaProps>({
   borderRadius: 'md',
   alignSelf: 'flex-start',
   fontWeight: 'bold',
@@ -9,7 +10,7 @@ const baseStyle = defineStyle({
   fontSize: 'md',
   bg: 'white',
   color: 'gray.800',
-  shadow: 0,
+  shadow: 'none',
   _disabled: {
     opacity: 0.6,
   },

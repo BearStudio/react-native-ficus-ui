@@ -107,7 +107,7 @@ const variantSolid = defineStyle((props) => {
 const variantLink = defineStyle((props) => {
   const { colorScheme: c } = props;
   return {
-    padding: 0,
+    p: 0,
     lineHeight: 18,
     textDecorationLine: 'underline',
     textDecorationColor: `${c}.500`,
@@ -130,33 +130,33 @@ const variants = {
 const sizes = {
   xs: defineStyle({
     fontSize: 12,
-    height: 25,
-    width: 25,
+    h: 25,
+    w: 25,
   }),
   sm: defineStyle({
     fontSize: 13,
-    height: 30,
-    width: 30,
+    h: 30,
+    w: 30,
   }),
   md: defineStyle({
     fontSize: 15,
-    height: 35,
-    width: 35,
+    h: 35,
+    w: 35,
   }),
   lg: defineStyle({
     fontSize: 17,
-    height: 40,
-    width: 40,
+    h: 40,
+    w: 40,
   }),
   xl: defineStyle({
     fontSize: 19,
-    height: 45,
-    width: 45,
+    h: 45,
+    w: 45,
   }),
   '2xl': defineStyle({
     fontSize: 21,
-    height: 47,
-    width: 47,
+    h: 47,
+    w: 47,
   }),
 };
 

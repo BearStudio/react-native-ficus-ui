@@ -9,7 +9,7 @@ const baseStyle = defineStyle({
   fontSize: 'md',
   bg: 'white',
   color: 'gray.800',
-  shadow: 0,
+  shadow: 'none',
   w: '100%',
   _disabled: {
     opacity: 0.6,
@@ -45,7 +45,7 @@ const variants = {
 
 const sizes = {
   xs: defineStyle({
-    height: 24,
+    h: 24,
     px: 'sm',
     py: 0,
     fontSize: 'xs',
@@ -54,7 +54,7 @@ const sizes = {
     },
   }),
   sm: defineStyle({
-    height: 32,
+    h: 32,
     px: 'md',
     py: 'md',
     fontSize: 'sm',
@@ -64,7 +64,7 @@ const sizes = {
     },
   }),
   md: defineStyle({
-    height: 40,
+    h: 40,
     px: 'lg',
     py: 'lg',
     fontSize: 'md',
@@ -74,7 +74,7 @@ const sizes = {
     },
   }),
   lg: defineStyle({
-    height: 48,
+    h: 48,
     px: 'lg',
     py: 'lg',
     fontSize: 'md',

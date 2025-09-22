@@ -1,7 +1,8 @@
+import { ButtonProps } from '../../components';
 import { defineStyle, defineStyleConfig } from '../../style-system';
 import { runIfFn } from '../utils/run-if-fn';
 
-const baseStyle = defineStyle({
+const baseStyle = defineStyle<ButtonProps>({
   borderRadius: 'md',
   alignSelf: 'flex-start',
   fontWeight: 'bold',
@@ -107,7 +108,7 @@ const variantSolid = defineStyle((props) => {
 const variantLink = defineStyle((props) => {
   const { colorScheme: c } = props;
   return {
-    padding: 0,
+    p: 0,
     lineHeight: 18,
     textDecorationLine: 'underline',
     textDecorationColor: `${c}.500`,
@@ -131,32 +132,32 @@ const sizes = {
   xs: defineStyle({
     px: 6,
     fontSize: 12,
-    height: 25,
+    h: 25,
   }),
   sm: defineStyle({
     px: 10,
     fontSize: 13,
-    height: 30,
+    h: 30,
   }),
   md: defineStyle({
     px: 14,
     fontSize: 15,
-    height: 35,
+    h: 35,
   }),
   lg: defineStyle({
     px: 16,
     fontSize: 17,
-    height: 40,
+    h: 40,
   }),
   xl: defineStyle({
     px: 18,
     fontSize: 19,
-    height: 45,
+    h: 45,
   }),
   '2xl': defineStyle({
     px: 20,
     fontSize: 21,
-    height: 47,
+    h: 47,
   }),
 };
 

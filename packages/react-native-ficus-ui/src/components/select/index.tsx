@@ -10,10 +10,12 @@ import {
   toStyleSheetObject,
   useStyleConfig,
 } from '../system';
+import { TextProps } from '../text';
 import { useSelect } from './select.service';
 
 export interface SelectProps
   extends NativeFicusProps<'PickerSelect'>,
+    Partial<Omit<TextProps, 'as' | 'style'>>,
     ThemingProps<'Select'> {}
 
 export const Select = forwardRef<SelectProps, 'PickerSelect'>((props, ref) => {
