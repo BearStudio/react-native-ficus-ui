@@ -1,6 +1,7 @@
+import { BadgeProps } from '../../components';
 import { defineStyle, defineStyleConfig } from '../../style-system';
 
-const baseStyle = defineStyle({
+const baseStyle = defineStyle<BadgeProps>({
   px: 4,
   py: 2,
   textTransform: 'uppercase',

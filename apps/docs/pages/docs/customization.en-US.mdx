@@ -82,12 +82,13 @@ const ComponentStyle: ComponentStyleConfig = {
 }
 ```
 
-Example of default Input theme :
+Example of default Input theme with type-safe props.
+Using `InputProps` allows autocompletion in defineStyle.
 
 ```js
-import { defineStyle, defineStyleConfig } from 'react-native-ficus-ui';
+import { defineStyle, defineStyleConfig, InputProps } from 'react-native-ficus-ui';
 
-const baseStyle = defineStyle({
+const baseStyle = defineStyle<InputProps>({
   borderRadius: 'md',
   alignSelf: 'flex-start',
   fontWeight: 'bold',

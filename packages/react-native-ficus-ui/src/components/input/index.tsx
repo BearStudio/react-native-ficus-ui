@@ -23,12 +23,14 @@ import {
   forwardRef,
   useStyleConfig,
 } from '../system';
+import { TextProps } from '../text';
 import { useInput } from './input.service';
 import { InputOptions } from './input.types';
 
 export interface InputProps
   extends NativeFicusProps<'TextInput'>,
     PrefixSuffixProps,
+    Omit<TextProps, 'textAlign' | 'textAlignVertical' | 'as'>,
     InputOptions,
     ThemingProps<'Input'> {}
 

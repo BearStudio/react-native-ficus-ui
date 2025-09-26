@@ -1,3 +1,4 @@
+import { AvatarBadgeProps } from '../../components/avatar/avatar-badge';
 import { createMultiStyleConfigHelpers, defineStyle } from '../../style-system';
 import { darkenColor, lightenColor, randomColorFromString } from '../utils';
 
@@ -12,7 +13,7 @@ const avatarParts = [
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(avatarParts);
 
-const baseStyleBagde = defineStyle({
+const baseStyleBagde = defineStyle<AvatarBadgeProps>({
   bg: 'green.400',
   borderRadius: '100%',
   borderWidth: 2,
@@ -23,8 +24,8 @@ const baseStyleBagde = defineStyle({
 const baseStyleExcessLabel = defineStyle({
   bg: 'gray.300',
   fontSize: 'sm',
-  width: 30,
-  height: 30,
+  w: 30,
+  h: 30,
 });
 
 const baseStyleContainer = defineStyle((props) => {
@@ -39,8 +40,8 @@ const baseStyleContainer = defineStyle((props) => {
     bg,
     borderColor: 'white',
     verticalAlign: 'center',
-    width: 30,
-    height: 30,
+    w: 30,
+    h: 30,
   };
 });
 
@@ -71,20 +72,20 @@ const AVATAR_BADGE_RATIO = 3;
 function getSize(size: number) {
   return definePartsStyle({
     container: {
-      width: size,
-      height: size,
+      w: size,
+      h: size,
     },
     excessLabel: {
-      width: size,
-      height: size,
+      w: size,
+      h: size,
       fontSize: size / 4,
     },
     label: {
       fontSize: size / 3,
     },
     badge: {
-      width: size / AVATAR_BADGE_RATIO,
-      height: size / AVATAR_BADGE_RATIO,
+      w: size / AVATAR_BADGE_RATIO,
+      h: size / AVATAR_BADGE_RATIO,
       top: size - size / AVATAR_BADGE_RATIO,
       right: 0,
     },

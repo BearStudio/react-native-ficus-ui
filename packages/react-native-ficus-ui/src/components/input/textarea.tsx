@@ -21,6 +21,7 @@ import {
   forwardRef,
   useStyleConfig,
 } from '../system';
+import { TextProps } from '../text';
 import { useInput } from './input.service';
 import { InputOptions } from './input.types';
 
@@ -28,6 +29,7 @@ export interface TextareaProps
   extends NativeFicusProps<'TextInput'>,
     PrefixSuffixProps,
     InputOptions,
+    Omit<TextProps, 'as' | 'textAlign' | 'textAlignVertical'>,
     ThemingProps<'Textarea'> {}
 
 export const Textarea = forwardRef<TextareaProps, 'TextInput'>((props, ref) => {
