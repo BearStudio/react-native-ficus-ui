@@ -3,6 +3,7 @@ searchable: true
 ---
 
 import { CodeEditor } from '@components/code-editor';
+import PropsTable from "@components/docs/props-table";
 
 # Input
 
@@ -89,3 +90,14 @@ Extends every `Box` props and react native `TextInput` component.
 
 https://reactnative.dev/docs/textinput#props
 
+### `colorScheme`
+<PropsTable
+  description="The colorScheme property, will define the focus border main color."
+  prop={{ type: "string", required: false }}
+/>
+
+### `borderTint`
+<PropsTable
+  description="The borderTint property, will define the focus border color tint."
+  prop={{ type: "number", required: false }}
+/>
