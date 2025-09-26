@@ -14,3 +14,5 @@ export const pseudoStylesMap = {
  * Represents the valid pseudo-class keys derived from `pseudoStylesMap`.
  */
 export type PseudoStyleKey = keyof typeof pseudoStylesMap;
+
+export type StateStyles<T = any> = Partial<Record<PseudoStyleKey, T>>;

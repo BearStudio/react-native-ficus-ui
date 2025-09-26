@@ -36,15 +36,27 @@ export function useInput(
     [isDisabled, isLoading, isFocused, styles, colorMode]
   );
 
-  const inputContainerStyles = useMemo(
-    () => ({
+  const themeFocused = styles?._focused;
+  const propFocused = props._focused;
+
+  const inputContainerStyles = useMemo(() => {
+    let base = {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-between',
       ...stateStyles,
-    }),
-    [stateStyles]
-  );
+    };
+
+    if (isFocused) {
+      base = {
+        ...base,
+        ...(themeFocused || {}),
+        ...(propFocused || {}),
+      };
+    }
+
+    return base;
+  }, [stateStyles, isFocused, themeFocused, propFocused]);
 
   const inputStyles = useMemo(
     () => ({
