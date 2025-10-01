@@ -18,6 +18,7 @@ import { mergeRefs } from '../utils/merge-refs';
 interface DraggableModalOptions {
   isOpen?: boolean;
   onClose?: () => void;
+  isScrollable?: boolean;
   scrollViewProps?: BottomSheetScrollViewProps;
 }
 
@@ -35,7 +36,15 @@ export const DraggableModal = forwardRef<
   const { colorMode } = useColorMode();
 
   const bottomSheetModalRef = mergeRefs(_ref, ref);
-  const { children, isOpen, onClose, h, scrollViewProps, ...rest } = props;
+  const {
+    children,
+    isOpen,
+    onClose,
+    h,
+    isScrollable,
+    scrollViewProps,
+    ...rest
+  } = props;
 
   useEffect(() => {
     if (isOpen) {
@@ -86,6 +95,15 @@ export const DraggableModal = forwardRef<
   const safeAreaViewStyle = {
     flex: 1,
   };
+
+  const modalContent = (
+    <Box h={h ?? '100%'}>
+      <SafeAreaView style={safeAreaViewStyle}>
+        {children as ReactNode}
+      </SafeAreaView>
+    </Box>
+  );
+
   return (
     <ficus.BottomSheetModal
       ref={bottomSheetModalRef}
@@ -95,15 +113,13 @@ export const DraggableModal = forwardRef<
       backgroundStyle={bottomSheetBackgroundStyleObject as ViewStyle}
       handleIndicatorStyle={handleStyleObject}
     >
-      <BottomSheetScrollView {...scrollViewProps}>
-        <ficus.BottomSheetView {...rest}>
-          <Box h={h ?? '100%'}>
-            <SafeAreaView style={safeAreaViewStyle}>
-              {children as ReactNode}
-            </SafeAreaView>
-          </Box>
-        </ficus.BottomSheetView>
-      </BottomSheetScrollView>
+      {isScrollable ? (
+        <BottomSheetScrollView {...scrollViewProps}>
+          {modalContent}
+        </BottomSheetScrollView>
+      ) : (
+        <ficus.BottomSheetView {...rest}>{modalContent}</ficus.BottomSheetView>
+      )}
     </ficus.BottomSheetModal>
   );
 });
