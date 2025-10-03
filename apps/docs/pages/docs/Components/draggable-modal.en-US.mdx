@@ -8,7 +8,11 @@ import PropsTable from "@components/docs/props-table";
 # DraggableModal
 
 Component to render a draggable modal, based on [`react-native-bottom-sheet`](https://github.com/gorhom/react-native-bottom-sheet).
-It wraps a `BottomSheetModal` and automatically embeds a `BottomSheetScrollView` so that your content is scrollable out of the box.
+It wraps a `BottomSheetModal`, if you need to add scroll inside content view you can use scrollables components from https://gorhom.dev/react-native-bottom-sheet/scrollables
+
+<Callout type="warning" emoji="⚠️">
+  If `BottomSheetScrollView` from `react-native-bottom-sheet` is not working inside `DraggableModal` component then try to use `ScrollView` from `react-native-gesture-handler`
+</Callout>
 
 ## Import
 
