@@ -1,7 +1,7 @@
 {
   "name": "react-native-ficus-ui-monorepo",
   "private": true,
-  "version": "2.3.0",
+  "version": "2.3.1",
   "engines": {
     "node": ">= 22.0.0"
   },
