@@ -1,7 +1,6 @@
 import { ReactNode, useEffect, useRef } from 'react';
 
-import { BottomSheetModal, BottomSheetScrollView } from '@gorhom/bottom-sheet';
-import { BottomSheetScrollViewProps } from '@gorhom/bottom-sheet/lib/typescript/components/bottomSheetScrollable/types';
+import { BottomSheetModal } from '@gorhom/bottom-sheet';
 import { SafeAreaView, ViewStyle } from 'react-native';
 
 import { useColorMode } from '../../hooks';
@@ -18,7 +17,6 @@ import { mergeRefs } from '../utils/merge-refs';
 interface DraggableModalOptions {
   isOpen?: boolean;
   onClose?: () => void;
-  scrollViewProps?: BottomSheetScrollViewProps;
 }
 
 export interface DraggableModalProps
@@ -35,7 +33,7 @@ export const DraggableModal = forwardRef<
   const { colorMode } = useColorMode();
 
   const bottomSheetModalRef = mergeRefs(_ref, ref);
-  const { children, isOpen, onClose, h, scrollViewProps, ...rest } = props;
+  const { children, isOpen, onClose, h, ...rest } = props;
 
   useEffect(() => {
     if (isOpen) {
@@ -95,15 +93,13 @@ export const DraggableModal = forwardRef<
       backgroundStyle={bottomSheetBackgroundStyleObject as ViewStyle}
       handleIndicatorStyle={handleStyleObject}
     >
-      <BottomSheetScrollView {...scrollViewProps}>
-        <ficus.BottomSheetView {...rest}>
-          <Box h={h ?? '100%'}>
-            <SafeAreaView style={safeAreaViewStyle}>
-              {children as ReactNode}
-            </SafeAreaView>
-          </Box>
-        </ficus.BottomSheetView>
-      </BottomSheetScrollView>
+      <ficus.BottomSheetView {...rest}>
+        <Box h={h ?? '100%'}>
+          <SafeAreaView style={safeAreaViewStyle}>
+            {children as ReactNode}
+          </SafeAreaView>
+        </Box>
+      </ficus.BottomSheetView>
     </ficus.BottomSheetModal>
   );
 });
