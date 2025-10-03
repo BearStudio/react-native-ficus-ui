@@ -32,7 +32,9 @@ export interface InputProps
     PrefixSuffixProps,
     Omit<TextProps, 'textAlign' | 'textAlignVertical' | 'as'>,
     InputOptions,
-    ThemingProps<'Input'> {}
+    ThemingProps<'Input'> {
+  borderTint?: number;
+}
 
 export const Input = forwardRef<InputProps, 'TextInput'>((props, ref) => {
   const [isFocused, setIsFocused] = useState(false);
@@ -104,16 +106,20 @@ export const Input = forwardRef<InputProps, 'TextInput'>((props, ref) => {
       innerRef?.current?.focus();
     }
   };
+  const scheme = props.colorScheme ?? inputContainerStyles.colorScheme;
 
-  const colorValue = useColorModeValue(500, 300);
+  const defaultTint = useColorModeValue(500, 300);
+
+  const borderTint =
+    props.borderTint ?? inputContainerStyles.borderTint ?? defaultTint;
 
   return (
     <ficus.TouchableWithoutFeedback onPress={onPressComponent}>
       <ficus.View
         __styles={inputContainerStyles}
-        {...(isFocused && props.colorScheme
+        {...(isFocused && scheme
           ? {
-              borderColor: `${props.colorScheme}.${colorValue}`,
+              borderColor: `${scheme}.${borderTint}`,
             }
           : {})}
       >
