@@ -1,3 +1,5 @@
+import { GestureResponderEvent } from 'react-native';
+
 export interface CheckboxGroupStates {
   isDisabled?: boolean;
 }
@@ -12,6 +14,7 @@ export interface CheckboxGroupOptions extends CheckboxGroupStates {
 
 export interface CheckboxStates extends CheckboxGroupStates {
   isChecked?: boolean;
+  onToggle?: (event: GestureResponderEvent) => void;
 }
 
 export interface CheckboxOptions extends CheckboxStates {
