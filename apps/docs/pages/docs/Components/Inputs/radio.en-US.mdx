@@ -12,7 +12,7 @@ Component to render a radio input.
 ## Import
 
 ```js
-import { Radio, RadioGroup } from 'react-native-ficus-ui';
+import { Radio, RadioGroup, Button } from 'react-native-ficus-ui';
 ```
 
 ## Usage
@@ -88,17 +88,16 @@ import { Radio, RadioGroup } from 'react-native-ficus-ui';
   <HStack spacing="md">
     {["Option 1", "Option 2", "Option 3"].map((item) => (
         <Radio value={item}>
-          {({ isChecked }) => (
-            <Badge
-              variant={isChecked ? "solid" : "subtle"}
+          {({ isChecked, onToggle }) => (
+            <Button
+              bg={isChecked ? "pink.500" : "pink.200"}
               colorScheme="pink"
               fontSize="xl"
-              px="lg"
-              py="lg"
               borderRadius="full"
+              onPress={onToggle}
             >
               {item}
-            </Badge>
+            </Button>
           )}
         </Radio>
     ))}
@@ -127,6 +126,12 @@ Extends every `TouchableOpacity` props.
 <PropsTable
   description="Boolean to indicate if radio is checked."
   prop={{ type: "boolean", required: false }}
+/>
+
+### `onToggle`
+<PropsTable
+  description="Function that applies the toggle logic for when an item is checked."
+  prop={{ type: "(event : GestureEvent) => void", required: false }}
 />
 
 ### `isDisabled`

@@ -1,3 +1,5 @@
+import { GestureResponderEvent } from 'react-native';
+
 export interface RadioGroupStates {
   isDisabled?: boolean;
 }
@@ -12,6 +14,7 @@ export interface RadioGroupOptions extends RadioGroupStates {
 
 export interface RadioStates extends RadioGroupStates {
   isChecked?: boolean;
+  onToggle?: (event: GestureResponderEvent) => void;
 }
 export interface RadioOptions extends RadioStates {
   defaultChecked?: boolean;

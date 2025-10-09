@@ -12,7 +12,7 @@ Component to render a checkbox input.
 ## Import
 
 ```js
-import { Checkbox, CheckboxGroup } from 'react-native-ficus-ui';
+import { Checkbox, CheckboxGroup, Button } from 'react-native-ficus-ui';
 ```
 
 ## Usage
@@ -67,16 +67,17 @@ import { Checkbox, CheckboxGroup } from 'react-native-ficus-ui';
   <HStack spacing="sm">
     {["Option 1", "Option 2", "Option 3"].map((item) => (
       <Checkbox value={item}>
-        {({ isChecked }) => (
-          <Box
+        {({ isChecked, onToggle }) => (
+          <Button
             bg={isChecked ? "blue.600" : "blue.100"}
             px="xl"
             py="md"
             mr="md"
             borderRadius="full"
+            onPress={onToggle}
           >
             <Text color={isChecked ? "white" : "gray.800"}>{item}</Text>
-          </Box>
+          </Button>
         )}
 
       </Checkbox>
@@ -124,6 +125,12 @@ Extends every `TouchableOpacity` props.
 <PropsTable
   description="Function called when checked status changes on checkbox, value is returned as param."
   prop={{ type: "(value: string | number) => void", required: false }}
+/>
+
+### `onToggle`
+<PropsTable
+  description="Function that applies the toggle logic for when an item is checked."
+  prop={{ type: "(event : GestureEvent) => void", required: false }}
 />
 
 ### `icon`
