@@ -235,12 +235,12 @@ const SkeletonText = forwardRef<SkeletonTextProps, 'View'>(
       <ficus.View {...rest}>
         {Array.from({ length: noOfLines }, (_, index) => (
           <ficus.View
+            key={index}
             flexDirection="row"
             mb={index < noOfLines - 1 ? spacing : 0}
             pr={index === noOfLines - 1 ? '30%' : 0} // Last line shorter
           >
             <BaseSkeleton
-              key={index}
               h={height}
               borderRadius="sm"
               flex={1}
