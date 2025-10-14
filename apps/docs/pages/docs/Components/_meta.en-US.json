@@ -5,6 +5,7 @@
   "image": "Image",
   "divider": "Divider",
   "icon": "Icon",
+  "skeleton": "Skeleton",
   "spinner": "Spinner",
   "modal": "Modal",
   "draggable-modal": "DraggableModal"

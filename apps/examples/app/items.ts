@@ -30,6 +30,7 @@ import SwitchComponent from './components/Switch';
 import CheckboxComponent from './components/Checkbox';
 import RadioComponent from './components/Radio';
 import SelectComponent from './components/Select';
+import SkeletonComponent from './components/Skeleton';
 import TabsExampleComponent from './components/Tabs';
 import ToastHook from './components/Toast';
 
@@ -63,6 +64,7 @@ export const components: ExampleComponentType[] = [
   { navigationPath: 'ScrollBox', onScreenName: 'ScrollBox', component: ScrollBoxComponent },
   { navigationPath: 'SectionList', onScreenName: 'SectionList', component: SectionListComponent },
   { navigationPath: 'Select', onScreenName: 'Select', component: SelectComponent },
+  { navigationPath: 'Skeleton', onScreenName: 'Skeleton', component: SkeletonComponent },
   { navigationPath: 'Slider', onScreenName: 'Slider', component: SliderComponent },
   { navigationPath: 'Spinner', onScreenName: 'Spinner', component: SpinnerComponent },
   { navigationPath: 'Stack', onScreenName: 'Stack', component: StackComponent },
