@@ -186,6 +186,8 @@ const SkeletonText = forwardRef<SkeletonTextProps, 'View'>(
       fontSize = 'md',
       noOfLines = 1,
       lineSpacing = 'xs',
+      isLoaded = false,
+      children,
       ...rest
     } = props;
 
@@ -200,8 +202,21 @@ const SkeletonText = forwardRef<SkeletonTextProps, 'View'>(
 
     const height = getHeight(fontSize as string);
 
+    if (isLoaded) {
+      return <>{children}</>;
+    }
+
     if (noOfLines === 1) {
-      return <BaseSkeleton ref={ref} h={height} borderRadius="sm" {...rest} />;
+      return (
+        <BaseSkeleton
+          ref={ref}
+          h={height}
+          borderRadius="sm"
+          {...rest}
+        >
+          {children}
+        </BaseSkeleton>
+      );
     }
 
     const spacingMap: Record<string, number> = {

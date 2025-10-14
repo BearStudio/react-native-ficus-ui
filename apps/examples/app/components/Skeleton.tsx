@@ -51,7 +51,7 @@ const SkeletonComponent = () => {
               <Text fontSize="sm">Small text content</Text>
             </Skeleton.Text>
 
-            <Skeleton.Text fontSize="xl" isLoaded={isLoaded}>
+            <Skeleton.Text noOfLines={1} fontSize="xl" isLoaded={isLoaded}>
               <Text fontSize="xl">Large text content</Text>
             </Skeleton.Text>
 
