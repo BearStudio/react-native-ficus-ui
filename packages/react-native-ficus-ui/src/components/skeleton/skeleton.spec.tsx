@@ -21,9 +21,6 @@ jest.mock('react-native-reanimated', () => {
   };
 });
 
-// Mock react-native-linear-gradient
-jest.mock('react-native-linear-gradient', () => 'LinearGradient');
-
 describe('Skeleton', () => {
   it('renders skeleton when not loaded', () => {
     const { queryByText } = render(
