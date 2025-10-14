@@ -9,6 +9,7 @@ import { pinInputFieldTheme, pinInputTheme } from './pin-input';
 import { radioTheme } from './radio';
 import { radioGroupTheme } from './radio-group';
 import { selectTheme } from './select';
+import { Skeleton as skeletonTheme } from './skeleton';
 import { sliderTheme } from './slider';
 import { switchTheme } from './switch';
 import { tabListTheme, tabsTheme } from './tabs';
@@ -24,6 +25,7 @@ export const components = {
   Radio: radioTheme,
   RadioGroup: radioGroupTheme,
   IconButton: iconButtonTheme,
+  Skeleton: skeletonTheme,
   Slider: sliderTheme,
   Switch: switchTheme,
   Input: inputTheme,
