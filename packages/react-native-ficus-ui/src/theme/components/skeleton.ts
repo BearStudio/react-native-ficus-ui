@@ -19,30 +19,10 @@ const variants = {
   }),
 };
 
-const sizes = {
-  xs: defineStyle({
-    h: 12,
-  }),
-  sm: defineStyle({
-    h: 16,
-  }),
-  md: defineStyle({
-    h: 20,
-  }),
-  lg: defineStyle({
-    h: 24,
-  }),
-  xl: defineStyle({
-    h: 28,
-  }),
-};
-
 export const Skeleton = defineStyleConfig({
   baseStyle,
   variants,
-  sizes,
   defaultProps: {
     variant: 'subtle',
-    size: 'md',
   },
 });

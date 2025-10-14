@@ -125,10 +125,6 @@ const BaseSkeleton = forwardRef<SkeletonProps, 'View'>(
       return <>{children}</>;
     }
 
-    const backgroundColor = getColor(
-      colorMode === 'dark' ? 'gray.600' : 'gray.300',
-      theme.colors
-    );
     const shimmerColor = getColor(
       colorMode === 'dark' ? 'gray.500' : 'gray.100',
       theme.colors
@@ -147,7 +143,6 @@ const BaseSkeleton = forwardRef<SkeletonProps, 'View'>(
         ref={ref}
         onLayout={onLayout}
         overflow="hidden"
-        backgroundColor={backgroundColor}
         __styles={styles}
         {...rest}
       >
