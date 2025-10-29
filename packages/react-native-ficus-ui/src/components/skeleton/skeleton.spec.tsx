@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
-import { Skeleton, SkeletonProvider } from './index';
+import { Skeleton, SkeletonCircle, SkeletonText, SkeletonProvider } from './index';
 import { Text } from '../text';
 
 // Mock react-native-reanimated
@@ -17,14 +17,15 @@ jest.mock('react-native-reanimated', () => {
     Easing: {
       inOut: jest.fn(() => jest.fn()),
       ease: jest.fn(),
+      linear: jest.fn(),
     },
   };
 });
 
 describe('Skeleton', () => {
-  it('renders skeleton when not loaded', () => {
+  it('renders skeleton when loading', () => {
     const { queryByText } = render(
-      <Skeleton isLoaded={false}>
+      <Skeleton loading={true}>
         <Text>Test content</Text>
       </Skeleton>
     );
@@ -32,9 +33,9 @@ describe('Skeleton', () => {
     expect(queryByText('Test content')).toBeNull();
   });
 
-  it('renders content when loaded', () => {
+  it('renders content when not loading', () => {
     const { getByText } = render(
-      <Skeleton isLoaded={true}>
+      <Skeleton loading={false}>
         <Text>Test content</Text>
       </Skeleton>
     );
@@ -42,20 +43,28 @@ describe('Skeleton', () => {
     expect(getByText('Test content')).toBeDefined();
   });
 
-  it('renders SkeletonBox correctly', () => {
-    const { getByTestId } = render(
-      <Skeleton.Box testID="skeleton-box" isLoaded={false} />
+  it('renders Skeleton correctly with variants', () => {
+    const { getByTestId: getByTestId1 } = render(
+      <Skeleton testID="skeleton-pulse" variant="pulse" loading={true} />
+    );
+    const { getByTestId: getByTestId2 } = render(
+      <Skeleton testID="skeleton-shine" variant="shine" loading={true} />
+    );
+    const { getByTestId: getByTestId3 } = render(
+      <Skeleton testID="skeleton-none" variant="none" loading={true} />
     );
 
-    expect(getByTestId('skeleton-box')).toBeDefined();
+    expect(getByTestId1('skeleton-pulse')).toBeDefined();
+    expect(getByTestId2('skeleton-shine')).toBeDefined();
+    expect(getByTestId3('skeleton-none')).toBeDefined();
   });
 
   it('renders SkeletonText with correct height based on fontSize', () => {
     const { getByTestId } = render(
-      <Skeleton.Text
+      <SkeletonText
         testID="skeleton-text"
         fontSize="xl"
-        isLoaded={false}
+        loading={true}
       />
     );
 
@@ -64,10 +73,10 @@ describe('Skeleton', () => {
 
   it('renders multiple lines for SkeletonText when noOfLines > 1', () => {
     const { getByTestId } = render(
-      <Skeleton.Text
+      <SkeletonText
         testID="skeleton-text-multiline"
         noOfLines={3}
-        isLoaded={false}
+        loading={true}
       />
     );
 
@@ -76,10 +85,10 @@ describe('Skeleton', () => {
 
   it('renders SkeletonCircle with correct size', () => {
     const { getByTestId } = render(
-      <Skeleton.Circle
+      <SkeletonCircle
         testID="skeleton-circle"
-        boxSize={50}
-        isLoaded={false}
+        size="10"
+        loading={true}
       />
     );
 
@@ -96,19 +105,11 @@ describe('Skeleton', () => {
     expect(getByText('Provider children')).toBeDefined();
   });
 
-  it('applies shimmer animation by default', () => {
+  it('applies colorPalette correctly', () => {
     const { getByTestId } = render(
-      <Skeleton testID="skeleton-shimmer" shimmer={true} isLoaded={false} />
+      <Skeleton testID="skeleton-colored" colorPalette="blue" loading={true} />
     );
 
-    expect(getByTestId('skeleton-shimmer')).toBeDefined();
-  });
-
-  it('disables shimmer animation when shimmer is false', () => {
-    const { getByTestId } = render(
-      <Skeleton testID="skeleton-no-shimmer" shimmer={false} isLoaded={false} />
-    );
-
-    expect(getByTestId('skeleton-no-shimmer')).toBeDefined();
+    expect(getByTestId('skeleton-colored')).toBeDefined();
   });
 });

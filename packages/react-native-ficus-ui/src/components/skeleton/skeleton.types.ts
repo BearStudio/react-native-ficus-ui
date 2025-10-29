@@ -1,7 +1,7 @@
 // packages/react-native-ficus-ui/src/components/skeleton/skeleton.types.ts
 import { ReactNode } from 'react';
 import { NativeFicusProps } from '../system';
-import { ThemingProps, ResponsiveValue } from '../../style-system';
+import { ResponsiveValue } from '../../style-system';
 
 export interface SkeletonProviderOptions {
   /**
@@ -24,21 +24,27 @@ export interface SkeletonProviderOptions {
 
 export interface SkeletonOptions {
   /**
-   * Whether to show shimmer animation
+   * The loading state of the skeleton
    * @default true
    */
-  shimmer?: boolean;
+  loading?: boolean;
+
+  /**
+   * The variant of the skeleton animation
+   * @default "pulse"
+   */
+  variant?: 'pulse' | 'shine' | 'none';
+
+  /**
+   * The color palette of the component
+   * @default "gray"
+   */
+  colorPalette?: 'gray' | 'red' | 'orange' | 'yellow' | 'green' | 'teal' | 'blue' | 'cyan' | 'purple' | 'pink';
 
   /**
    * Duration of the shimmer animation in milliseconds (overrides provider duration)
    */
   duration?: number;
-
-  /**
-   * Whether the skeleton is loaded (shows content instead of skeleton)
-   * @default false
-   */
-  isLoaded?: boolean;
 
   /**
    * Content to show when loaded
@@ -51,8 +57,13 @@ export interface SkeletonProviderProps
 
 export interface SkeletonProps
   extends NativeFicusProps<'View'>,
-    SkeletonOptions,
-    ThemingProps<'Skeleton'> {}
+    SkeletonOptions {
+  /**
+   * The variant of the skeleton animation (overrides SkeletonOptions)
+   * @default "pulse"
+   */
+  variant?: 'pulse' | 'shine' | 'none';
+}
 
 export interface SkeletonBoxProps extends SkeletonProps {}
 
@@ -72,9 +83,9 @@ export interface SkeletonTextProps
 
   /**
    * Spacing between lines when noOfLines > 1
-   * @default "xs"
+   * @default "4"
    */
-  lineSpacing?: ResponsiveValue<string | number>;
+  gap?: ResponsiveValue<string | number>;
 }
 
 export interface SkeletonCircleProps
@@ -82,11 +93,12 @@ export interface SkeletonCircleProps
     SkeletonOptions {
   /**
    * Size of the circle (both width and height)
-   * @default 40
+   * @default "10"
    */
-  boxSize?: ResponsiveValue<number | string>;
+  size?: ResponsiveValue<number | string>;
 }
 
 export interface SkeletonContextValue {
   progress: any; // Animated.SharedValue<number> | null
+  instanceCount: number;
 }

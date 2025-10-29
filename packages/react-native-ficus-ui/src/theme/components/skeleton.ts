@@ -2,19 +2,30 @@ import { defineStyle, defineStyleConfig } from '../../style-system';
 
 const baseStyle = defineStyle({
   borderRadius: 'md',
-  h: 20,
+  h: 'lg',
   w: '100%',
 });
 
 const variants = {
-  subtle: defineStyle((props) => {
+  pulse: defineStyle((props) => {
+    const { colorScheme = 'gray', colorMode } = props;
     return {
-      bg: props.colorMode === 'dark' ? 'gray.600' : 'gray.300',
+      bg: colorMode === 'dark' ? `${colorScheme}.600` : `${colorScheme}.200`,
+      opacity: 1,
     };
   }),
-  solid: defineStyle((props) => {
+  shine: defineStyle((props) => {
+    const { colorScheme = 'gray', colorMode } = props;
     return {
-      bg: props.colorMode === 'dark' ? 'gray.500' : 'gray.400',
+      bg: colorMode === 'dark' ? `${colorScheme}.600` : `${colorScheme}.200`,
+      opacity: 1,
+    };
+  }),
+  none: defineStyle((props) => {
+    const { colorScheme = 'gray', colorMode } = props;
+    return {
+      bg: colorMode === 'dark' ? `${colorScheme}.600` : `${colorScheme}.200`,
+      opacity: 1,
     };
   }),
 };
@@ -23,6 +34,7 @@ export const Skeleton = defineStyleConfig({
   baseStyle,
   variants,
   defaultProps: {
-    variant: 'subtle',
+    variant: 'pulse',
+    colorScheme: 'gray',
   },
 });

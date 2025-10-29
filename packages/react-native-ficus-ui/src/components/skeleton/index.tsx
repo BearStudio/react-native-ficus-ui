@@ -3,6 +3,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useRef,
   useState,
 } from 'react';
 
@@ -35,7 +36,10 @@ import {
 } from './skeleton.types';
 
 // Skeleton Context
-const SkeletonContext = createContext<SkeletonContextValue>({ progress: null });
+const SkeletonContext = createContext<SkeletonContextValue>({
+  progress: null,
+  instanceCount: 0,
+});
 
 const SkeletonProvider = ({
   duration = 1200,
@@ -43,6 +47,7 @@ const SkeletonProvider = ({
   children,
 }: SkeletonProviderProps) => {
   const progress = useSharedValue(0);
+  const instanceCountRef = useRef(0);
 
   useEffect(() => {
     if (paused) {
@@ -62,19 +67,26 @@ const SkeletonProvider = ({
   }, [duration, paused, progress]);
 
   return (
-    <SkeletonContext.Provider value={{ progress }}>
+    <SkeletonContext.Provider
+      value={{
+        progress,
+        instanceCount: instanceCountRef.current,
+      }}
+    >
       {children}
     </SkeletonContext.Provider>
   );
 };
-
 // Base Skeleton Component
 const BaseSkeleton = forwardRef<SkeletonProps, 'View'>(
   function BaseSkeleton(props, ref) {
+    // Extract theming props BEFORE omitThemingProps
+    const variant = props.variant || 'pulse';
+    const colorPalette = props.colorPalette || 'gray';
+
     const {
-      shimmer = true,
+      loading = true,
       duration = 1200,
-      isLoaded = false,
       children,
       ...rest
     } = omitThemingProps(props);
@@ -86,7 +98,11 @@ const BaseSkeleton = forwardRef<SkeletonProps, 'View'>(
     const { theme } = useTheme();
 
     const localProgress = useSharedValue(0);
-    const styles = useStyleConfig('Skeleton', props);
+    const styles = useStyleConfig('Skeleton', {
+      ...props,
+      variant,
+      colorScheme: colorPalette, // Pass colorPalette as colorScheme to theme
+    });
 
     const onLayout = useCallback((e: LayoutChangeEvent) => {
       const { width: w, height: h } = e.nativeEvent.layout;
@@ -94,49 +110,131 @@ const BaseSkeleton = forwardRef<SkeletonProps, 'View'>(
     }, []);
 
     useEffect(() => {
-      if (!shimmer) {
+      if (variant === 'none' || !loading) {
         return;
       }
       if (globalProgress) {
         return;
       }
 
-      localProgress.value = 0;
-      localProgress.value = withRepeat(
-        withTiming(1, {
-          duration: Math.max(400, duration),
-          easing: Easing.inOut(Easing.ease),
-        }),
-        -1,
-        false
-      );
-      return () => cancelAnimation(localProgress);
-    }, [shimmer, globalProgress, duration, localProgress]);
+      const startAnimation = () => {
+        localProgress.value = 0;
+        localProgress.value = withRepeat(
+          withTiming(1, {
+            duration: Math.max(800, duration),
+            easing:
+              variant === 'pulse' ? Easing.inOut(Easing.ease) : Easing.linear,
+          }),
+          -1,
+          false
+        );
+      };
 
-    const shimmerStyle = useAnimatedStyle(() => {
+      // Start animation immediately
+      startAnimation();
+
+      return () => {
+        cancelAnimation(localProgress);
+      };
+    }, [variant, loading, globalProgress, duration, localProgress]);
+
+    const pulseAnimationStyle = useAnimatedStyle(() => {
+      if (variant !== 'pulse') return {};
       const p = (globalProgress?.value ?? localProgress.value) || 0;
-      const start = -size.width - 60;
-      const end = size.width + 60;
-      const x = start + (end - start) * p;
-      return { transform: [{ translateX: x }] };
+      
+      // Smooth sine wave for more natural breathing effect
+      const sineWave = Math.sin(p * Math.PI * 2);
+      const normalizedSine = (sineWave + 1) / 2; // Convert -1,1 to 0,1
+      
+      // More pronounced opacity range for better visibility
+      const opacity = 0.4 + normalizedSine * 0.6; // Animate from 0.4 to 1.0
+      
+      return { opacity };
+    });
+
+    const shineAnimationStyle = useAnimatedStyle(() => {
+      if (variant !== 'shine') return {};
+      const p = (globalProgress?.value ?? localProgress.value) || 0;
+      
+      // Smooth easing for more natural shine movement
+      const easedProgress = p < 0.5
+        ? 2 * p * p
+        : 1 - Math.pow(-2 * p + 2, 2) / 2; // EaseInOutQuad
+      
+      const translateX = (easedProgress - 0.5) * size.width * 2.5; // Slightly wider sweep
+      
+      return { transform: [{ translateX }] };
     }, [size.width]);
 
-    if (isLoaded) {
+    // Enhanced shimmer styles with better gradients
+    const shimmerGradientStyle = useAnimatedStyle(() => {
+      if (variant !== 'shine') return {};
+      const p = (globalProgress?.value ?? localProgress.value) || 0;
+      
+      // Dynamic opacity for shimmer overlay
+      const overlayOpacity = 0.6 + Math.sin(p * Math.PI * 2) * 0.2;
+      
+      return { opacity: overlayOpacity };
+    });
+
+    // Enhanced pulse animation with color transition
+    const pulseColorStyle = useAnimatedStyle(() => {
+      if (variant !== 'pulse') return {};
+      const p = (globalProgress?.value ?? localProgress.value) || 0;
+      
+      // Smooth sine wave for color transition
+      const sineWave = Math.sin(p * Math.PI * 2);
+      const normalizedSine = (sineWave + 1) / 2;
+      
+      // Interpolate between base and highlight colors for pulse effect
+      const colorIntensity = 0.7 + normalizedSine * 0.3; // 0.7 to 1.0
+      
+      return {
+        backgroundColor: colorMode === 'dark'
+          ? `rgba(107, 114, 128, ${colorIntensity})` // gray.500 with varying opacity
+          : `rgba(229, 231, 235, ${colorIntensity})`, // gray.200 with varying opacity
+      };
+    });
+
+    if (!loading) {
       return <>{children}</>;
     }
 
-    const shimmerColor = getColor(
-      colorMode === 'dark' ? 'gray.500' : 'gray.100',
+    // Enhanced color system with better contrast
+    const baseShimmerColor = getColor(
+      colorMode === 'dark' ? `${colorPalette}.600` : `${colorPalette}.200`,
+      theme.colors
+    );
+    
+    const highlightShimmerColor = getColor(
+      colorMode === 'dark' ? `${colorPalette}.400` : `${colorPalette}.100`,
       theme.colors
     );
 
     const shimmerBaseStyle = StyleSheet.create({
       shimmer: {
-        width: Math.max(80, size.width * 0.35),
-        backgroundColor: shimmerColor,
-        opacity: 0.8,
+        width: '100%',
+        height: '100%',
+        backgroundColor: highlightShimmerColor,
       },
     }).shimmer;
+
+    // For pulse variant, apply enhanced animation to the main element
+    if (variant === 'pulse') {
+      return (
+        <Animated.View style={[pulseAnimationStyle]}>
+          <Animated.View style={[pulseColorStyle]}>
+            <ficus.View
+              ref={ref}
+              onLayout={onLayout}
+              overflow="hidden"
+              __styles={styles}
+              {...rest}
+            />
+          </Animated.View>
+        </Animated.View>
+      );
+    }
 
     return (
       <ficus.View
@@ -146,26 +244,27 @@ const BaseSkeleton = forwardRef<SkeletonProps, 'View'>(
         __styles={styles}
         {...rest}
       >
-        {shimmer && size.width > 0 && (
+        {variant === 'shine' && (
           <Animated.View
             pointerEvents="none"
             style={[
               StyleSheet.absoluteFillObject,
-              shimmerBaseStyle,
-              shimmerStyle,
+              { backgroundColor: baseShimmerColor },
+              shimmerGradientStyle,
             ]}
-          />
+          >
+            <Animated.View style={[shimmerBaseStyle, shineAnimationStyle]} />
+          </Animated.View>
         )}
+        {/* Note: variant 'none' just uses the base styles without any overlay */}
       </ficus.View>
     );
   }
-);
-
-// Skeleton Box
+); // Skeleton Box
 const SkeletonBox = forwardRef<SkeletonBoxProps, 'View'>(
   function SkeletonBox(props, ref) {
     const defaultProps = {
-      h: 20,
+      h: 'lg',
       borderRadius: 'md',
       ...props,
     };
@@ -180,8 +279,8 @@ const SkeletonText = forwardRef<SkeletonTextProps, 'View'>(
     const {
       fontSize = 'md',
       noOfLines = 1,
-      lineSpacing = 'xs',
-      isLoaded = false,
+      gap = '4',
+      loading = true,
       children,
       ...rest
     } = props;
@@ -197,7 +296,7 @@ const SkeletonText = forwardRef<SkeletonTextProps, 'View'>(
 
     const height = getHeight(fontSize as string);
 
-    if (isLoaded) {
+    if (!loading) {
       return <>{children}</>;
     }
 
@@ -207,6 +306,7 @@ const SkeletonText = forwardRef<SkeletonTextProps, 'View'>(
           ref={ref}
           h={height}
           borderRadius="sm"
+          loading={loading}
           {...rest}
         >
           {children}
@@ -215,16 +315,16 @@ const SkeletonText = forwardRef<SkeletonTextProps, 'View'>(
     }
 
     const spacingMap: Record<string, number> = {
-      xs: 4,
-      sm: 8,
-      md: 12,
-      lg: 16,
+      '1': 4,
+      '2': 8,
+      '3': 12,
+      '4': 16,
+      '5': 20,
+      '6': 24,
     };
 
     const spacing =
-      typeof lineSpacing === 'number'
-        ? lineSpacing
-        : spacingMap[lineSpacing as string] || 4;
+      typeof gap === 'number' ? gap : spacingMap[gap as string] || 16;
 
     return (
       <ficus.View {...rest}>
@@ -239,6 +339,7 @@ const SkeletonText = forwardRef<SkeletonTextProps, 'View'>(
               h={height}
               borderRadius="sm"
               flex={1}
+              loading={loading}
             />
           </ficus.View>
         ))}
@@ -250,29 +351,23 @@ const SkeletonText = forwardRef<SkeletonTextProps, 'View'>(
 // Skeleton Circle
 const SkeletonCircle = forwardRef<SkeletonCircleProps, 'View'>(
   function SkeletonCircle(props, ref) {
-    const { boxSize = 40, ...rest } = props;
+    const { size = 40, ...rest } = props;
 
     return (
-      <BaseSkeleton
-        ref={ref}
-        w={boxSize}
-        h={boxSize}
-        borderRadius="full"
-        {...rest}
-      />
+      <BaseSkeleton ref={ref} w={size} h={size} borderRadius="full" {...rest} />
     );
   }
 );
 
-// Main Skeleton export with attached components
-export const Skeleton = Object.assign(SkeletonBox, {
-  Box: SkeletonBox,
-  Text: SkeletonText,
-  Circle: SkeletonCircle,
-});
+// Main Skeleton export
+export const Skeleton = SkeletonBox;
+export { SkeletonCircle };
+export { SkeletonText };
 
-// Individual exports
+// Provider export
 export { SkeletonProvider };
+
+// Type exports
 export type {
   SkeletonProps,
   SkeletonBoxProps,
