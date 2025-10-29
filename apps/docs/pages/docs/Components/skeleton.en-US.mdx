@@ -1,0 +1,263 @@
+---
+searchable: true
+---
+
+import { CodeEditor } from '@components/code-editor';
+import PropsTable from "@components/docs/props-table";
+
+# Skeleton
+
+The Skeleton component provides animated placeholders while content is loading. It supports different shapes and automatically adapts to dark mode.
+
+## Import
+
+```js
+import { Skeleton, SkeletonProvider } from "react-native-ficus-ui";
+```
+
+## Usage
+
+### Basic skeleton
+
+<CodeEditor code={`<VStack spacing="md">
+  <Skeleton w="200" h="20" />
+  <Skeleton w="150" h="15" />
+  <Skeleton w="300" h="12" />
+</VStack>`} />
+
+### Skeleton Box
+
+<CodeEditor code={`<VStack spacing="md">
+  <Skeleton.Box w="100%" h="100" />
+  <Skeleton.Box w="200" h="50" borderRadius="lg" />
+  <Skeleton.Box w="150" h="30" borderRadius="full" />
+</VStack>`} />
+
+### Skeleton Text
+
+<CodeEditor code={`<VStack spacing="md">
+  <Skeleton.Text fontSize="sm" />
+  <Skeleton.Text fontSize="md" />
+  <Skeleton.Text fontSize="lg" />
+  <Skeleton.Text fontSize="xl" />
+  <Skeleton.Text fontSize="2xl" />
+</VStack>`} />
+
+### Multi-line text skeleton
+
+<CodeEditor code={`<VStack spacing="lg">
+  <Skeleton.Text noOfLines={2} />
+  <Skeleton.Text noOfLines={3} lineSpacing="md" />
+  <Skeleton.Text noOfLines={4} lineSpacing="lg" />
+</VStack>`} />
+
+### Skeleton Circle
+
+<CodeEditor code={`<HStack spacing="md">
+  <Skeleton.Circle boxSize="30" />
+  <Skeleton.Circle boxSize="50" />
+  <Skeleton.Circle boxSize="70" />
+  <Skeleton.Circle boxSize="100" />
+</HStack>`} />
+
+### Loading state with content
+
+<CodeEditor code={`function LoadingExample() {
+  const [isLoaded, setIsLoaded] = React.useState(false);
+  
+  React.useEffect(() => {
+    const timer = setTimeout(() => setIsLoaded(true), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <VStack spacing="md">
+      <Button onPress={() => setIsLoaded(!isLoaded)}>
+        {isLoaded ? 'Show Skeleton' : 'Show Content'}
+      </Button>
+      
+      <Skeleton isLoaded={isLoaded}>
+        <Text>This content appears when loaded!</Text>
+      </Skeleton>
+      
+      <Skeleton.Text fontSize="lg" isLoaded={isLoaded}>
+        <Text fontSize="lg" fontWeight="bold">
+          This is a loaded text with large font size
+        </Text>
+      </Skeleton.Text>
+    </VStack>
+  );
+}`} />
+
+### Synchronized animation with SkeletonProvider
+
+<CodeEditor code={`<SkeletonProvider>
+  <VStack spacing="md">
+    <HStack spacing="md" alignItems="center">
+      <Skeleton.Circle boxSize="50" />
+      <VStack flex={1} spacing="xs">
+        <Skeleton.Text fontSize="lg" w="70%" />
+        <Skeleton.Text fontSize="sm" w="50%" />
+      </VStack>
+    </HStack>
+    
+    <Skeleton.Box w="100%" h="100" borderRadius="md" />
+    
+    <Skeleton.Text noOfLines={3} />
+  </VStack>
+</SkeletonProvider>`} />
+
+### Card layout example
+
+<CodeEditor code={`<Box bg="white" p="lg" borderRadius="lg" shadow="sm">
+  <SkeletonProvider>
+    <VStack spacing="md">
+      <HStack spacing="md" alignItems="center">
+        <Skeleton.Circle boxSize="40" />
+        <VStack flex={1} spacing="xs">
+          <Skeleton.Text w="60%" />
+          <Skeleton.Text w="40%" fontSize="sm" />
+        </VStack>
+      </HStack>
+      
+      <Skeleton.Box h="120" borderRadius="md" />
+      
+      <VStack spacing="xs">
+        <Skeleton.Text />
+        <Skeleton.Text />
+        <Skeleton.Text w="80%" />
+      </VStack>
+    </VStack>
+  </SkeletonProvider>
+</Box>`} />
+
+### Custom shimmer settings
+
+<CodeEditor code={`<VStack spacing="lg">
+  <Text fontSize="md" fontWeight="bold">Default shimmer (enabled)</Text>
+  <Skeleton.Box w="200" h="30" />
+  
+  <Text fontSize="md" fontWeight="bold">No shimmer animation</Text>
+  <Skeleton.Box w="200" h="30" shimmer={false} />
+  
+  <Text fontSize="md" fontWeight="bold">Custom animation duration</Text>
+  <SkeletonProvider duration={800}>
+    <Skeleton.Box w="200" h="30" />
+  </SkeletonProvider>
+</VStack>`} />
+
+## Props
+
+### Skeleton
+
+Extends every `Box` props.
+
+#### `isLoaded`
+<PropsTable
+  description="If true, the skeleton will be replaced by the children."
+  prop={{ type: "boolean", required: false, defaultValue: "false" }}
+/>
+
+#### `shimmer`
+<PropsTable
+  description="If true, the skeleton will show a shimmer animation."
+  prop={{ type: "boolean", required: false, defaultValue: "true" }}
+/>
+
+#### `duration`
+<PropsTable
+  description="The duration of the shimmer animation in milliseconds. Overrides provider duration."
+  prop={{ type: "number", required: false, defaultValue: "1200" }}
+/>
+
+### Skeleton.Text
+
+Extends every `Skeleton` props.
+
+#### `fontSize`
+<PropsTable
+  description="The font size to calculate the skeleton height automatically."
+  prop={{ type: "ResponsiveValue<string | number>", required: false, defaultValue: "'md'" }}
+/>
+
+#### `noOfLines`
+<PropsTable
+  description="The number of lines to render for multi-line text skeleton."
+  prop={{ type: "number", required: false, defaultValue: "1" }}
+/>
+
+#### `lineSpacing`
+<PropsTable
+  description="The spacing between lines when noOfLines > 1."
+  prop={{ type: "ResponsiveValue<string | number>", required: false, defaultValue: "'xs'" }}
+/>
+
+### Skeleton.Circle
+
+Extends every `Skeleton` props.
+
+#### `boxSize`
+<PropsTable
+  description="The size of the circle (both width and height)."
+  prop={{ type: "ResponsiveValue<number | string>", required: false, defaultValue: "40" }}
+/>
+
+### SkeletonProvider
+
+#### `duration`
+<PropsTable
+  description="The duration of the shimmer animation in milliseconds for all child skeleton components."
+  prop={{ type: "number", required: false, defaultValue: "1200" }}
+/>
+
+#### `paused`
+<PropsTable
+  description="If true, the shimmer animation will be paused."
+  prop={{ type: "boolean", required: false, defaultValue: "false" }}
+/>
+
+## Accessibility
+
+The Skeleton component includes proper accessibility features:
+
+- Automatically sets appropriate `accessibilityLabel` when content is loading
+- Maintains proper screen reader support
+- Respects user's reduced motion preferences
+
+## Styling
+
+Skeleton components can be styled using all standard Ficus UI style props:
+
+<CodeEditor code={`<VStack spacing="md">
+  <Skeleton.Box 
+    w="200" 
+    h="30" 
+    bg="blue.100" 
+    borderRadius="full"
+    borderWidth={2}
+    borderColor="blue.300"
+  />
+  
+  <Skeleton.Text 
+    fontSize="lg"
+    bg="red.100"
+    borderRadius="md"
+    p="sm"
+  />
+  
+  <Skeleton.Circle 
+    boxSize="60"
+    bg="green.200"
+    borderWidth={3}
+    borderColor="green.400"
+  />
+</VStack>`} />
+
+## Performance
+
+The Skeleton component is optimized for performance:
+
+- Uses `react-native-reanimated` for 60fps animations
+- Pure React Native implementation - no external native dependencies
+- Lightweight shimmer effect with minimal CPU usage
+- Works perfectly in Expo Go and all React Native environments
