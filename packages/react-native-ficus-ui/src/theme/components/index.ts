@@ -1,6 +1,7 @@
 import { avatarTheme } from './avatar';
 import { badgeTheme } from './badge';
 import { buttonTheme } from './button';
+import { centerTheme } from './center';
 import { checkboxTheme } from './checkbox';
 import { checkboxGroupTheme } from './checkbox-group';
 import { iconButtonTheme } from './icon-button';
@@ -20,6 +21,7 @@ export const components = {
   Badge: badgeTheme,
   Button: buttonTheme,
   Checkbox: checkboxTheme,
+  Center: centerTheme,
   CheckboxGroup: checkboxGroupTheme,
   Radio: radioTheme,
   RadioGroup: radioGroupTheme,
