@@ -260,8 +260,8 @@ importers:
         specifier: 7.4.0
         version: 7.4.0(react-native@0.81.5(@babel/core@7.28.6)(@types/react@19.1.17)(react@19.1.0))(react@19.1.0)
       react-native-modal:
-        specifier: 13.0.1
-        version: 13.0.1(react-native@0.81.5(@babel/core@7.28.6)(@types/react@19.1.17)(react@19.1.0))(react@19.1.0)
+        specifier: 14.0.0-rc.1
+        version: 14.0.0-rc.1(react-native@0.81.5(@babel/core@7.28.6)(@types/react@19.1.17)(react@19.1.0))(react@19.1.0)
       react-native-pager-view:
         specifier: 8.0.0
         version: 8.0.0(react-native@0.81.5(@babel/core@7.28.6)(@types/react@19.1.17)(react@19.1.0))(react@19.1.0)
@@ -6465,8 +6465,8 @@ packages:
       react: 19.1.0
       react-dom: 19.1.0
 
-  react-native-animatable@1.3.3:
-    resolution: {integrity: sha512-2ckIxZQAsvWn25Ho+DK3d1mXIgj7tITkrS4pYDvx96WyOttSvzzFeQnM2od0+FUMzILbdHDsDEqZvnz1DYNQ1w==}
+  react-native-animatable@1.4.0:
+    resolution: {integrity: sha512-DZwaDVWm2NBvBxf7I0wXKXLKb/TxDnkV53sWhCvei1pRyTX3MVFpkvdYBknNBqPrxYuAIlPxEp7gJOidIauUkw==}
 
   react-native-builder-bob@0.40.11:
     resolution: {integrity: sha512-LKh8xbjvh6JLxpRAiTSXqWAC27LJrSOMaXsN8aPwNc4HmXFnMUsl54OSL+d38ZZtBkFh8O2x1Z4Vno20rLy3Lw==}
@@ -6496,8 +6496,8 @@ packages:
       react: 19.1.0
       react-native: 0.81.5
 
-  react-native-modal@13.0.1:
-    resolution: {integrity: sha512-UB+mjmUtf+miaG/sDhOikRfBOv0gJdBU2ZE1HtFWp6UixW9jCk/bhGdHUgmZljbPpp0RaO/6YiMmQSSK3kkMaw==}
+  react-native-modal@14.0.0-rc.1:
+    resolution: {integrity: sha512-v5pvGyx1FlmBzdHyPqBsYQyS2mIJhVmuXyNo5EarIzxicKhuoul6XasXMviGcXboEUT0dTYWs88/VendojPiVw==}
     peerDependencies:
       react: 19.1.0
       react-native: 0.81.5
@@ -15856,7 +15856,7 @@ snapshots:
       sucrase: 3.35.1
       use-editable: 2.3.3(react@19.1.0)
 
-  react-native-animatable@1.3.3:
+  react-native-animatable@1.4.0:
     dependencies:
       prop-types: 15.8.1
 
@@ -15908,12 +15908,11 @@ snapshots:
       react: 19.1.0
       react-native: 0.81.5(@babel/core@7.28.6)(@types/react@19.1.17)(react@19.1.0)
 
-  react-native-modal@13.0.1(react-native@0.81.5(@babel/core@7.28.6)(@types/react@19.1.17)(react@19.1.0))(react@19.1.0):
+  react-native-modal@14.0.0-rc.1(react-native@0.81.5(@babel/core@7.28.6)(@types/react@19.1.17)(react@19.1.0))(react@19.1.0):
     dependencies:
-      prop-types: 15.8.1
       react: 19.1.0
       react-native: 0.81.5(@babel/core@7.28.6)(@types/react@19.1.17)(react@19.1.0)
-      react-native-animatable: 1.3.3
+      react-native-animatable: 1.4.0
 
   react-native-monorepo-config@0.1.10:
     dependencies:
