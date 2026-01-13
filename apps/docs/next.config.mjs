@@ -82,6 +82,7 @@ export default withNextra({
     'react-native-gesture-handler',
     'react-native-picker-select',
     'react-native-reanimated',
+    'react-native-worklets',
     'react-native-tab-view',
     'recyclerlistview',
     '@gorhom/bottom-sheet',
@@ -104,7 +105,14 @@ export default withNextra({
       '.web.tsx',
       ...config.resolve.extensions,
     ];
-    config.plugins.push(new webpack.DefinePlugin({ __DEV__: isDevelopment, }));
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        __DEV__: isDevelopment,
+        // Polyfill 'global' for packages like @gorhom/bottom-sheet that expect Node.js/React Native environment
+        global: 'globalThis',
+      })
+    );
+
     return config;
   },
 });

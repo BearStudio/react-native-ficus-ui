@@ -41,7 +41,7 @@
       "react-dom": "19.1.0",
       "@types/react": "~19.1.10",
       "@types/react-dom": "19.1.0",
-      "react-native-tab-view>use-latest-callback": "0.2.3",
+      "use-latest-callback": "0.2.3",
       "react-native-screens": "4.16.0"
     }
   },
