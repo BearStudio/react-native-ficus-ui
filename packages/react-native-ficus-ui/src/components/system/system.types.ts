@@ -1,3 +1,5 @@
+import type { JSX } from 'react';
+
 import {
   SystemProps as BaseSystemProps,
   Dict,

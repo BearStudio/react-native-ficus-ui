@@ -83,7 +83,7 @@
     "react-native-tab-view": "3.5.2",
     "react-native-toast-message": "2.1.6",
     "react-native-vector-icons": "10.2.0",
-    "react-test-renderer": "18.2.0",
+    "react-test-renderer": "19.1.0",
     "validate-color": "2.2.4"
   },
   "devDependencies": {

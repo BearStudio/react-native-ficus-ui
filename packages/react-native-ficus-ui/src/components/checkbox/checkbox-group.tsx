@@ -64,20 +64,22 @@ export const CheckboxGroup = forwardRef<CheckboxGroupProps, 'View'>(
         return React.Children.map(childrenProp, (child): React.ReactNode => {
           if (!React.isValidElement(child)) return child;
 
+          const childProps = child.props as Record<string, any>;
+
           // If child is a Checkbox component
           if (child.type === Checkbox) {
             return React.cloneElement(child, {
-              key: `checkbox-${checkboxGroupId}-${child.props.value}`,
+              key: `checkbox-${checkboxGroupId}-${childProps.value}`,
               // @ts-expect-error : conversion issue
               onChange: handleOnChange,
-              isChecked: value.indexOf(child.props.value) > -1,
+              isChecked: value.indexOf(childProps.value) > -1,
               ...(props.colorScheme ? { colorScheme: props.colorScheme } : {}),
             });
           }
 
           // If child has children, apply recursively
-          if (child.props?.children) {
-            const updatedChildren = renderRecursive(child.props.children);
+          if (childProps?.children) {
+            const updatedChildren = renderRecursive(childProps.children);
             return React.cloneElement(child, undefined, updatedChildren);
           }
 

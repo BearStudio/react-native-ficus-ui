@@ -68,13 +68,14 @@ export const Avatar = forwardRef<AvatarProps, 'View'>(
          * To avoid using a context, we clone the element and apply the style retrieved with the `useMultiStyleConfig`
          */}
         {React.Children.map(children as any, (child: React.ReactElement) => {
+          const childProps = child.props as Record<string, any>;
           return React.cloneElement(child, {
             __styles: {
               ...styles.badge,
-              ...child.props.__styles,
+              ...childProps.__styles,
             },
             size: props.size ?? styles.container?.width,
-          });
+          } as Record<string, any>);
         })}
       </ficus.View>
     );
