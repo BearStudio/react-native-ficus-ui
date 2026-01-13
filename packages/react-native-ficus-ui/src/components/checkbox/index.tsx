@@ -80,7 +80,7 @@ export const Checkbox = forwardRef<CheckboxProps, 'TouchableOpacity'>(
           ...(iconStyles.size ? { size: iconStyles.size } : {}),
           ...(iconStyles.iconSet ? { iconSet: iconStyles.iconSet } : {}),
           __styles: iconStyles,
-        })
+        } as Record<string, any>)
       : icon;
 
     const renderChildren = () => {

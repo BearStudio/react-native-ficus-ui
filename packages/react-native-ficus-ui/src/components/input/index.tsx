@@ -126,8 +126,8 @@ export const Input = forwardRef<InputProps, 'TextInput'>((props, ref) => {
         {prefix && <ficus.View __styles={prefixStyles}>{prefix}</ficus.View>}
         <ficus.TextInput
           ref={innerRef}
-          onFocus={onFocusInput}
-          onBlur={onBlurInput}
+          onFocus={onFocusInput as any}
+          onBlur={onBlurInput as any}
           __styles={inputStyles}
           editable={!isDisabled}
           aria-disabled={isDisabled}

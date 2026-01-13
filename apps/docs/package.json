@@ -20,15 +20,15 @@
     "next": "15.3.3",
     "nextra": "2.13.4",
     "nextra-theme-docs": "2.13.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "react-icons": "^5.3.0",
     "react-intersection-observer": "^8.26.2",
     "react-live": "^4.1.7",
     "react-native-ficus-ui": "workspace:*",
-    "react-native-gesture-handler": "2.20.2",
-    "react-native-reanimated": "3.16.1",
-    "react-native-web": "0.19.12"
+    "react-native-gesture-handler": "2.28.0",
+    "react-native-reanimated": "4.1.6",
+    "react-native-web": "0.21.2"
   },
   "dependenciesMeta": {
     "nextra": {
@@ -47,7 +47,7 @@
     "babel-loader": "^9.1.3",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.3",
-    "typescript": "5.3.3",
+    "typescript": "5.9.3",
     "webpack": "^5.95.0"
   },
   "nextBundleAnalysis": {
@@ -57,7 +57,10 @@
   },
   "pnpm": {
     "overrides": {
-      "react-native": "npm:react-native-web"
+      "react-native": "npm:react-native-web",
+      "react": "19.1.0",
+      "react-dom": "19.1.0",
+      "use-latest-callback": "0.2.3"
     }
   }
 }

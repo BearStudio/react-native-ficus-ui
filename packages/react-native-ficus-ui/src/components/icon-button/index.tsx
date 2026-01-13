@@ -32,7 +32,7 @@ export const IconButton = forwardRef<IconButtonProps, 'Pressable'>(
       ? cloneElement(props.icon as ReactElement, {
           color: textStyles?.color,
           size: textStyles?.fontSize,
-        })
+        } as Record<string, any>)
       : props.icon;
 
     return (

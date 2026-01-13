@@ -1,6 +1,5 @@
 const { getDefaultConfig } = require('expo/metro-config');
 const path = require('path');
-const exclusionList = require('metro-config/src/defaults/exclusionList');
 const escape = require('escape-string-regexp');
 const pak = require('./package.json');
 
@@ -15,8 +14,8 @@ const modules = [
   ...Object.keys(pak.peerDependencies ?? {}),
 ];
 
-// 🔁 Use `blockList` instead of deprecated `blacklistRE`
-config.resolver.blockList = exclusionList([
+// ---- blockList (sans exclusionList) ----
+const customBlockList = [
   // Block test files
   new RegExp(`${escape(libRoot)}.*\\.(spec|test)\\.[jt]sx?$`),
 
@@ -26,13 +25,22 @@ config.resolver.blockList = exclusionList([
       path.resolve(workspaceRoot, 'node_modules/@testing-library/react-native')
     )}\\/.*`
   ),
-  new RegExp(
-    `${escape(
-      path.resolve(libRoot, 'src/test-utils')
-    )}\\/.*`
-  ),
-]);
 
+  // Block test utils inside the lib
+  new RegExp(`${escape(path.resolve(libRoot, 'src/test-utils'))}\\/.*`),
+];
+
+// Normalise la blockList par défaut en tableau puis concatène
+const defaultBlockList = config.resolver?.blockList;
+const defaultAsArray = Array.isArray(defaultBlockList)
+  ? defaultBlockList
+  : defaultBlockList
+    ? [defaultBlockList]
+    : [];
+
+config.resolver.blockList = [...defaultAsArray, ...customBlockList];
+
+// ---- monorepo/watch ----
 config.watchFolders = [libRoot];
 
 config.resolver.nodeModulesPaths = [

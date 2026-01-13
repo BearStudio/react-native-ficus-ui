@@ -1,5 +1,7 @@
 import React, { type ReactElement, cloneElement, isValidElement } from 'react';
 
+import type { AvatarProps } from './avatar';
+
 import { compact } from '@chakra-ui/utils';
 
 import {
@@ -39,7 +41,7 @@ export const AvatarGroup = forwardRef<AvatarGroupProps, 'View'>(
      */
     const avatarChildren = React.Children.toArray(children).filter(
       (element) => isValidElement(element) && element.type === Avatar
-    ) as ReactElement[];
+    ) as ReactElement<AvatarProps>[];
 
     const truncatedChildren =
       max != null ? avatarChildren.slice(0, max) : avatarChildren;
@@ -50,7 +52,7 @@ export const AvatarGroup = forwardRef<AvatarGroupProps, 'View'>(
     const clones = reversedChildren.map((child, index) => {
       const isFirstAvatar = index === 0;
 
-      const childProps: SystemStyleObject = {
+      const childProps = {
         ml: isFirstAvatar ? 0 : '-lg',
         borderWidth: 3,
         borderColor,
@@ -58,7 +60,7 @@ export const AvatarGroup = forwardRef<AvatarGroupProps, 'View'>(
         size: child?.props.size ? child.props.size : props.size,
       };
 
-      return cloneElement(child, compact(childProps));
+      return cloneElement(child, compact(childProps) as Partial<AvatarProps>);
     });
 
     const groupStyles: SystemStyleObject = {

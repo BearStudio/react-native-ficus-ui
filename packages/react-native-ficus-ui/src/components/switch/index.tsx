@@ -26,7 +26,7 @@ export const Switch = forwardRef<SwitchProps, 'TouchableOpacity'>(
     const { isDisabled, isChecked, duration, onPress, bg, __styles, ...rest } =
       omitThemingProps(props);
 
-    const prevSwitchOnRef = useRef<boolean>();
+    const prevSwitchOnRef = useRef<boolean | undefined>(undefined);
     const prevSwitchOn = !!prevSwitchOnRef.current;
 
     const { containerStyles, trackStyles, thumbStyles } = useSwitch(

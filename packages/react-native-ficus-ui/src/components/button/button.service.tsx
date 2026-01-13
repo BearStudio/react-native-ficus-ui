@@ -26,10 +26,11 @@ function applyColorToChild(
 ): React.ReactNode {
   if (!React.isValidElement(child)) return child;
 
+  const existingProps = child.props as Record<string, any>;
   // If it's a primitive element like <Icon />, inject color or styles
   const childProps = {
-    ...(child.props || {}),
-    color: child.props?.color || styles?.color,
+    ...existingProps,
+    color: existingProps?.color || styles?.color,
   };
 
   return React.cloneElement(child, childProps);

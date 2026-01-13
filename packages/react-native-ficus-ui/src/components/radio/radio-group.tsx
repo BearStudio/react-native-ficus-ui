@@ -53,20 +53,22 @@ export const RadioGroup = forwardRef<RadioGroupProps, 'View'>((props, ref) => {
       return React.Children.map(childrenProp, (child): React.ReactNode => {
         if (!React.isValidElement(child)) return child;
 
+        const childProps = child.props as Record<string, any>;
+
         // If child is a Radio component
         if (child.type === Radio) {
           return React.cloneElement(child, {
-            key: `radio-${child.props.value}`,
+            key: `radio-${childProps.value}`,
             // @ts-expect-error : conversion issue
             onChange: handleOnChange,
-            isChecked: value === child.props.value,
+            isChecked: value === childProps.value,
             ...(props.colorScheme ? { colorScheme: props.colorScheme } : {}),
           });
         }
 
         // If child has children, apply recursively
-        if (child.props?.children) {
-          const updatedChildren = renderRecursive(child.props.children);
+        if (childProps?.children) {
+          const updatedChildren = renderRecursive(childProps.children);
           return React.cloneElement(child, undefined, updatedChildren);
         }
 

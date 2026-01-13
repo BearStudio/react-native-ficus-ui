@@ -1,7 +1,7 @@
 {
   "name": "react-native-ficus-ui-monorepo",
   "private": true,
-  "version": "2.3.1",
+  "version": "2.4.0",
   "engines": {
     "node": ">= 22.0.0"
   },
@@ -36,12 +36,14 @@
   "license": "MIT",
   "pnpm": {
     "overrides": {
-      "react": "18.3.1",
-      "react-native": "0.76.0",
-      "react-dom": "18.3.1",
-      "@types/react": "18.3.1",
-      "@types/react-dom": "18.3.1",
-      "react-native-tab-view>use-latest-callback": "0.2.3"
+      "react": "19.1.0",
+      "react-native": "0.81.5",
+      "react-dom": "19.1.0",
+      "@types/react": "~19.1.10",
+      "@types/react-dom": "19.1.0",
+      "use-latest-callback": "0.2.3",
+      "react-native-screens": "4.16.0",
+      "@headlessui/react": "2.2.0"
     }
   },
   "packageManager": "pnpm@9.15.5"
