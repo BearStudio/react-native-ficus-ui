@@ -1,18 +1,20 @@
-import ExampleSection from "@/src/ExampleSection";
-import React, { ReactNode } from "react";
+import React, { ReactNode } from 'react';
+
 import {
   Box,
-  Tabs,
-  TabList,
-  Tab,
-  TabPanel,
-  TabPanels,
-  Text,
   SafeAreaBox,
   ScrollBox,
-  useColorModeValue,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Text,
   useColorMode,
-} from "react-native-ficus-ui";
+  useColorModeValue,
+} from 'react-native-ficus-ui';
+
+import ExampleSection from '@/src/ExampleSection';
 
 const TabsExampleComponent = () => {
   const [index, setIndex] = React.useState(0);
@@ -29,15 +31,30 @@ const TabsExampleComponent = () => {
     focused: boolean;
     children: ReactNode;
   }) => (
-    <Box bg={focused ? colorMode === "dark" ? "teal.500" : "teal.600" : "transparent"} p="md" borderRadius="2xl">
-      <Text color={focused ? "white" : colorMode === "dark" ? "teal.200" : "teal.500"} fontWeight="bold">
+    <Box
+      bg={
+        focused
+          ? colorMode === 'dark'
+            ? 'teal.500'
+            : 'teal.600'
+          : 'transparent'
+      }
+      p="md"
+      borderRadius="2xl"
+    >
+      <Text
+        color={
+          focused ? 'white' : colorMode === 'dark' ? 'teal.200' : 'teal.500'
+        }
+        fontWeight="bold"
+      >
         {children}
       </Text>
     </Box>
   );
 
   return (
-    <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
+    <SafeAreaBox flex={1} bg={useColorModeValue('gray.100', 'gray.800')}>
       <Text mx="xl" fontSize="4xl">
         Tabs component
       </Text>
@@ -107,7 +124,7 @@ const TabsExampleComponent = () => {
               selectedTab={index3}
               borderRadius="xl"
             >
-              <TabList indicatorStyle={{ backgroundColor: "transparent" }}>
+              <TabList indicatorStyle={{ backgroundColor: 'transparent' }}>
                 <Tab name="first">
                   {({ focused }: { focused: boolean }) => (
                     <CustomTabLabel focused={focused}>Tab 1</CustomTabLabel>

@@ -1,11 +1,12 @@
 import { ReactNode, useEffect, useRef } from 'react';
 
 import { BottomSheetModal } from '@gorhom/bottom-sheet';
-import { SafeAreaView, ViewStyle } from 'react-native';
+import { ViewStyle } from 'react-native';
 
 import { useColorMode } from '../../hooks';
 import { useTheme } from '../../theme';
 import { Box } from '../box';
+import { SafeAreaBox } from '../safe-area-box';
 import {
   type NativeFicusProps,
   ficus,
@@ -95,9 +96,9 @@ export const DraggableModal = forwardRef<
     >
       <ficus.BottomSheetView {...rest}>
         <Box h={h ?? '100%'}>
-          <SafeAreaView style={safeAreaViewStyle}>
+          <SafeAreaBox style={safeAreaViewStyle}>
             {children as ReactNode}
-          </SafeAreaView>
+          </SafeAreaBox>
         </Box>
       </ficus.BottomSheetView>
     </ficus.BottomSheetModal>

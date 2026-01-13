@@ -1,8 +1,14 @@
-import { Box, SafeAreaBox, Text, TouchableOpacity, useColorModeValue } from 'react-native-ficus-ui';
+import {
+  Box,
+  SafeAreaBox,
+  Text,
+  TouchableOpacity,
+  useColorModeValue,
+} from 'react-native-ficus-ui';
 
 const TouchableOpacityComponent = () => {
   return (
-    <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
+    <SafeAreaBox flex={1} bg={useColorModeValue('gray.100', 'gray.800')}>
       <Text mx="xl" fontSize="4xl">
         TouchableOpacity component
       </Text>

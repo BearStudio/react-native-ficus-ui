@@ -1,8 +1,14 @@
-import {SafeAreaBox, Box, Pressable, Text, useColorModeValue} from 'react-native-ficus-ui'
+import {
+  Box,
+  Pressable,
+  SafeAreaBox,
+  Text,
+  useColorModeValue,
+} from 'react-native-ficus-ui';
 
 const PressableComponent = () => {
   return (
-    <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
+    <SafeAreaBox flex={1} bg={useColorModeValue('gray.100', 'gray.800')}>
       <Text mx="xl" fontSize="4xl">
         Pressable component
       </Text>
@@ -13,7 +19,7 @@ const PressableComponent = () => {
           borderRadius="xl"
           onPress={() => console.log('Pressed')}
           _pressed={{
-            opacity: 0.8
+            opacity: 0.8,
           }}
         >
           <Text color="black">Test</Text>

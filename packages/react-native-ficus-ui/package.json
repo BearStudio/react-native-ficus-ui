@@ -65,32 +65,27 @@
     "@gorhom/bottom-sheet": "5.2.8",
     "@react-native-community/slider": "4.5.4",
     "@react-native-picker/picker": "2.11.0",
-    "@react-native/babel-preset": "0.80.0",
     "@shopify/flash-list": "2.0.3",
-    "@trivago/prettier-plugin-sort-imports": "5.2.2",
     "color2k": "2.0.3",
     "deepmerge": "4.2.2",
-    "eslint": "8.57.0",
-    "prettier": "3.4.2",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
     "react-fast-compare": "3.2.2",
-    "react-native-builder-bob": "0.40.11",
     "react-native-confirmation-code-field": "7.4.0",
     "react-native-modal": "13.0.1",
     "react-native-pager-view": "8.0.0",
     "react-native-picker-select": "9.3.1",
+    "react-native-safe-area-context": ">=5",
     "react-native-tab-view": "3.5.2",
     "react-native-toast-message": "2.1.6",
     "react-native-vector-icons": "10.2.0",
-    "react-test-renderer": "18.2.0",
     "validate-color": "2.2.4"
   },
   "devDependencies": {
     "@babel/preset-flow": "7.27.1",
     "@babel/preset-react": "7.24.7",
     "@babel/preset-typescript": "7.24.7",
+    "@react-native/babel-preset": "0.80.0",
     "@react-native/eslint-config": "0.77.0",
+    "@trivago/prettier-plugin-sort-imports": "5.2.2",
     "@testing-library/react-native": "13.0.1",
     "@types/jest": "29.5.2",
     "@types/react": "18.3.12",
@@ -99,15 +94,20 @@
     "@types/react-test-renderer": "18.0.0",
     "babel-jest": "30.0.0",
     "del-cli": "6.0.0",
+    "eslint": "8.57.0",
     "eslint-plugin-testing-library": "7.5.3",
     "metro-react-native-babel-preset": "0.77.0",
+    "prettier": "3.4.2",
     "react": "19.1.0",
+    "react-dom": "19.1.0",
     "react-native": "0.81.5",
+    "react-native-builder-bob": "0.40.11",
+    "react-test-renderer": "19.1.0",
     "turbo": "2.4.2"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
+    "react": "^18.2.0 || ^19.0.0",
+    "react-native": ">=0.76.0 <1.0.0"
   },
   "author": {
     "name": "Nicolas Torion",
@@ -115,14 +115,5 @@
     "url": "https://github.com/ntorionbearstudio"
   },
   "license": "MIT",
-  "pnpm": {
-    "overrides": {
-      "react": "18.3.1",
-      "react-native": "0.76.0",
-      "react-dom": "18.3.1",
-      "@types/react": "18.3.1",
-      "@types/react-dom": "18.3.1"
-    }
-  },
-  "packageManager": "pnpm@9.15.5"
+  "packageManager": "pnpm"
 }

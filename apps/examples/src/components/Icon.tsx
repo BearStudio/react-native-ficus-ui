@@ -1,17 +1,29 @@
-import ExampleSection from "@/src/ExampleSection";
-import { HStack, Icon, SafeAreaBox, ScrollBox, Text, useColorModeValue } from "react-native-ficus-ui";
+import {
+  HStack,
+  Icon,
+  SafeAreaBox,
+  ScrollBox,
+  Text,
+  useColorModeValue,
+} from 'react-native-ficus-ui';
 
+import ExampleSection from '@/src/ExampleSection';
 
 const IconComponent = () => {
   return (
-    <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
+    <SafeAreaBox flex={1} bg={useColorModeValue('gray.100', 'gray.800')}>
       <Text mx="xl" fontSize="4xl">
         Icon component
       </Text>
       <ScrollBox>
         <ExampleSection name="default">
           <HStack spacing={10}>
-            <Icon name="accessibility" color="blue.700" size="6xl" iconSet="Ionicons" />
+            <Icon
+              name="accessibility"
+              color="blue.700"
+              size="6xl"
+              iconSet="Ionicons"
+            />
             <Icon
               name="star"
               color="yellow.700"
@@ -22,7 +34,7 @@ const IconComponent = () => {
         </ExampleSection>
         <ExampleSection name="sizes">
           <HStack spacing={10}>
-            <Icon name="alarm" color="red.500" size="md"  />
+            <Icon name="alarm" color="red.500" size="md" />
             <Icon name="analytics" color="teal.500" size="xl" />
             <Icon name="heart" color="red.500" size="2xl" />
             <Icon name="brush" color="blue.700" size="6xl" />

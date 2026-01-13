@@ -1,11 +1,19 @@
-import { Button, HStack, SafeAreaBox, ScrollBox, Stack, Text, Icon, useColorModeValue } from 'react-native-ficus-ui';
+import {
+  Button,
+  HStack,
+  Icon,
+  SafeAreaBox,
+  ScrollBox,
+  Stack,
+  Text,
+  useColorModeValue,
+} from 'react-native-ficus-ui';
 
 import ExampleSection from '@/src/ExampleSection';
 
-
 const ButtonComponent = () => {
   return (
-    <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
+    <SafeAreaBox flex={1} bg={useColorModeValue('gray.100', 'gray.800')}>
       <Text mx="xl" fontSize="4xl">
         Button component
       </Text>
@@ -16,14 +24,16 @@ const ButtonComponent = () => {
             <Button colorScheme="red">Button</Button>
             <Button colorScheme="yellow">Button</Button>
             <Button colorScheme="green">Button</Button>
-            <Button colorScheme="pink" isDisabled>Button Disabled</Button>
+            <Button colorScheme="pink" isDisabled>
+              Button Disabled
+            </Button>
             <Button colorScheme="pink" full>
               Button
             </Button>
             <Button colorScheme="blue" isLoading>
               Button
             </Button>
-            <Button colorScheme="blue" loadingText='Loading...' isLoading>
+            <Button colorScheme="blue" loadingText="Loading..." isLoading>
               Button
             </Button>
           </Stack>

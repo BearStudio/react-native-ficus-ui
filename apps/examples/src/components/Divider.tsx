@@ -1,16 +1,23 @@
-import { Divider, Box, Text, SafeAreaBox, useColorModeValue } from 'react-native-ficus-ui';
+import {
+  Box,
+  Divider,
+  SafeAreaBox,
+  Text,
+  useColorModeValue,
+} from 'react-native-ficus-ui';
+
 import ExampleSection from '@/src/ExampleSection';
 
-  const DividerComponent = () => {
+const DividerComponent = () => {
   return (
-    <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
+    <SafeAreaBox flex={1} bg={useColorModeValue('gray.100', 'gray.800')}>
       <Text mx="xl" fontSize="4xl">
         Divider component
       </Text>
       <Box>
         <ExampleSection name="horizontal">
           <Text>Test text</Text>
-          <Divider my="md" orientation="horizontal"  />
+          <Divider my="md" orientation="horizontal" />
           <Text>Test text</Text>
         </ExampleSection>
 
@@ -31,16 +38,15 @@ import ExampleSection from '@/src/ExampleSection';
 
         <ExampleSection name="custom size">
           <Text>Test text</Text>
-          <Divider w={10} my="md" color="blue"  />
+          <Divider w={10} my="md" color="blue" />
           <Text>Test text</Text>
 
           <Box mt="xl" h={40} flexDirection="row">
-          <Text>Test text</Text>
-          <Divider h={50} my="md" orientation="vertical" />
-          <Text>Test text</Text>
+            <Text>Test text</Text>
+            <Divider h={50} my="md" orientation="vertical" />
+            <Text>Test text</Text>
           </Box>
         </ExampleSection>
-
       </Box>
     </SafeAreaBox>
   );

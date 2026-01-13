@@ -1,10 +1,16 @@
-import { Box, SafeAreaBox, ScrollBox, Text, useColorModeValue } from 'react-native-ficus-ui';
+import {
+  Box,
+  SafeAreaBox,
+  ScrollBox,
+  Text,
+  useColorModeValue,
+} from 'react-native-ficus-ui';
 
 import ExampleSection from '@/src/ExampleSection';
 
 const ScrollBoxComponent = () => {
   return (
-    <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
+    <SafeAreaBox flex={1} bg={useColorModeValue('gray.100', 'gray.800')}>
       <Text mx="xl" fontSize="4xl">
         ScrollBox component
       </Text>

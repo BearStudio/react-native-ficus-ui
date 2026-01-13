@@ -1,20 +1,20 @@
 import {
   Box,
   HStack,
+  SafeAreaBox,
   ScrollBox,
   Stack,
   StackDivider,
   Text,
   VStack,
-  SafeAreaBox,
-  useColorModeValue
+  useColorModeValue,
 } from 'react-native-ficus-ui';
 
 import ExampleSection from '@/src/ExampleSection';
 
 const StackComponent = () => {
   return (
-    <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
+    <SafeAreaBox flex={1} bg={useColorModeValue('gray.100', 'gray.800')}>
       <ScrollBox>
         <Text mx="xl" fontSize="4xl">
           Stack component

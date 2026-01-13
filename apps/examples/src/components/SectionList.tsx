@@ -1,23 +1,29 @@
-import { Box, Flex, SafeAreaBox, SectionList, Text, useColorModeValue } from 'react-native-ficus-ui';
-
+import {
+  Box,
+  Flex,
+  SafeAreaBox,
+  SectionList,
+  Text,
+  useColorModeValue,
+} from 'react-native-ficus-ui';
 
 const SectionListComponent = () => {
   const DATA = [
     {
-      title: "Main dishes",
-      data: ["Pizza", "Burger", "Risotto"],
+      title: 'Main dishes',
+      data: ['Pizza', 'Burger', 'Risotto'],
     },
     {
-      title: "Sides",
-      data: ["French Fries", "Onion Rings", "Fried Shrimps"],
+      title: 'Sides',
+      data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
     },
     {
-      title: "Drinks",
-      data: ["Water", "Coke", "Beer"],
+      title: 'Drinks',
+      data: ['Water', 'Coke', 'Beer'],
     },
-  ]
+  ];
   return (
-    <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
+    <SafeAreaBox flex={1} bg={useColorModeValue('gray.100', 'gray.800')}>
       <Text mx="xl" fontSize="4xl">
         SectionList component
       </Text>

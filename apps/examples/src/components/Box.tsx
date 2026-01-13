@@ -1,10 +1,16 @@
-import { Box, SafeAreaBox, ScrollBox, Text, useColorModeValue } from 'react-native-ficus-ui';
+import {
+  Box,
+  SafeAreaBox,
+  ScrollBox,
+  Text,
+  useColorModeValue,
+} from 'react-native-ficus-ui';
 
 import ExampleSection from '@/src/ExampleSection';
 
 const BoxComponent = () => {
   return (
-    <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
+    <SafeAreaBox flex={1} bg={useColorModeValue('gray.100', 'gray.800')}>
       <Text
         style={{
           marginHorizontal: 20,
@@ -244,7 +250,6 @@ const BoxComponent = () => {
             bgImg={{
               uri: 'https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Monochrome-Type-Simple-Background-Image.jpg',
             }}
-
           />
         </ExampleSection>
       </ScrollBox>

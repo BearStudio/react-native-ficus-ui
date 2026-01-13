@@ -1,5 +1,15 @@
 import React, { useState } from 'react';
-import { PinInput, PinInputField, ScrollBox, Text, VStack, SafeAreaBox, useColorModeValue } from 'react-native-ficus-ui';
+
+import {
+  PinInput,
+  PinInputField,
+  SafeAreaBox,
+  ScrollBox,
+  Text,
+  VStack,
+  useColorModeValue,
+} from 'react-native-ficus-ui';
+
 import ExampleSection from '@/src/ExampleSection';
 
 const PinInputComponent = () => {
@@ -14,7 +24,7 @@ const PinInputComponent = () => {
   const [pinValue9, setPinValue9] = useState<string>();
 
   return (
-    <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
+    <SafeAreaBox flex={1} bg={useColorModeValue('gray.100', 'gray.800')}>
       <Text mx="xl" fontSize="4xl">
         PinInput component
       </Text>

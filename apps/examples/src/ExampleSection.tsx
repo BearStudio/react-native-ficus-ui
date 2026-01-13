@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+
 import { Box, Text } from 'react-native-ficus-ui';
 
 interface ExampleSectionProps {

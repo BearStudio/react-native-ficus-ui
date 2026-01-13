@@ -1,11 +1,19 @@
-import { SafeAreaView } from 'react-native';
+import {
+  Avatar,
+  AvatarBadge,
+  AvatarGroup,
+  HStack,
+  SafeAreaBox,
+  ScrollBox,
+  Text,
+  useColorModeValue,
+} from 'react-native-ficus-ui';
 
 import ExampleSection from '@/src/ExampleSection';
-import { Avatar, AvatarBadge, AvatarGroup, HStack, SafeAreaBox, ScrollBox, Text, useColorModeValue } from 'react-native-ficus-ui';
 
 const AvatarComponent = () => {
   return (
-    <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
+    <SafeAreaBox flex={1} bg={useColorModeValue('gray.100', 'gray.800')}>
       <ScrollBox>
         <Text mx="xl" fontSize="4xl">
           Avatar component
@@ -110,10 +118,10 @@ const AvatarComponent = () => {
                 name="Omar Borji"
                 src="https://avatars.githubusercontent.com/u/80390318?s=60&v=4"
               >
-                <AvatarBadge bg='yellow' />
+                <AvatarBadge bg="yellow" />
               </Avatar>
               <Avatar name="Deelan" colorScheme="green">
-                <AvatarBadge bg='red' />
+                <AvatarBadge bg="red" />
               </Avatar>
             </AvatarGroup>
           </HStack>

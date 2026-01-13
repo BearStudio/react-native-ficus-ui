@@ -1,9 +1,19 @@
-import { IconButton, Icon, Text, HStack, VStack, SafeAreaBox, ScrollBox, useColorModeValue } from "react-native-ficus-ui";
-import ExampleSection from "@/src/ExampleSection";
+import {
+  HStack,
+  Icon,
+  IconButton,
+  SafeAreaBox,
+  ScrollBox,
+  Text,
+  VStack,
+  useColorModeValue,
+} from 'react-native-ficus-ui';
+
+import ExampleSection from '@/src/ExampleSection';
 
 const IconButtonComponent = () => {
   return (
-    <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
+    <SafeAreaBox flex={1} bg={useColorModeValue('gray.100', 'gray.800')}>
       <Text mx="xl" fontSize="4xl">
         IconButton component
       </Text>
@@ -85,11 +95,7 @@ const IconButtonComponent = () => {
             />
           </HStack>
           <VStack spacing={10} mt="xl">
-            <IconButton
-              icon={<Icon name="heart" />}
-              colorScheme="teal"
-              full
-            />
+            <IconButton icon={<Icon name="heart" />} colorScheme="teal" full />
             <IconButton
               icon={<Icon name="heart" />}
               colorScheme="teal"

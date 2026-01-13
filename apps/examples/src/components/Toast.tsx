@@ -1,10 +1,18 @@
-import { Button, SafeAreaBox, Text, VStack, useColorModeValue, useToast } from "react-native-ficus-ui";
-import ExampleSection from "@/src/ExampleSection";
+import {
+  Button,
+  SafeAreaBox,
+  Text,
+  VStack,
+  useColorModeValue,
+  useToast,
+} from 'react-native-ficus-ui';
+
+import ExampleSection from '@/src/ExampleSection';
 
 const ToastHook = () => {
   const { show, hide } = useToast();
   return (
-    <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
+    <SafeAreaBox flex={1} bg={useColorModeValue('gray.100', 'gray.800')}>
       <Text mx="xl" fontSize="4xl">
         Toast
       </Text>
@@ -13,9 +21,9 @@ const ToastHook = () => {
           <Button
             onPress={() => {
               show({
-                type: "success",
-                text1: "Hello",
-                text2: "This is some something 👋",
+                type: 'success',
+                text1: 'Hello',
+                text2: 'This is some something 👋',
               });
             }}
             colorScheme="green"
@@ -25,9 +33,9 @@ const ToastHook = () => {
           <Button
             onPress={() => {
               show({
-                type: "error",
-                text1: "Hello",
-                text2: "This is some something 👋",
+                type: 'error',
+                text1: 'Hello',
+                text2: 'This is some something 👋',
               });
             }}
             colorScheme="red"
@@ -37,9 +45,9 @@ const ToastHook = () => {
           <Button
             onPress={() => {
               show({
-                type: "warning",
-                text1: "Hello",
-                text2: "This is some something 👋",
+                type: 'warning',
+                text1: 'Hello',
+                text2: 'This is some something 👋',
               });
             }}
             colorScheme="orange"
@@ -49,9 +57,9 @@ const ToastHook = () => {
           <Button
             onPress={() => {
               show({
-                type: "info",
-                text1: "Hello",
-                text2: "This is some something 👋",
+                type: 'info',
+                text1: 'Hello',
+                text2: 'This is some something 👋',
               });
             }}
             colorScheme="blue"
