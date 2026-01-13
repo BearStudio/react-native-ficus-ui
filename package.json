@@ -42,7 +42,8 @@
       "@types/react": "~19.1.10",
       "@types/react-dom": "19.1.0",
       "use-latest-callback": "0.2.3",
-      "react-native-screens": "4.16.0"
+      "react-native-screens": "4.16.0",
+      "@headlessui/react": "2.2.0"
     }
   },
   "packageManager": "pnpm@9.15.5"
