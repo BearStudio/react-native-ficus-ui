@@ -64,7 +64,7 @@
     "@chakra-ui/utils": "2.2.2",
     "@gorhom/bottom-sheet": "5.2.8",
     "@react-native-community/slider": "4.5.4",
-    "@react-native-picker/picker": "2.11.0",
+    "@react-native-picker/picker": "2.11.1",
     "@react-native/babel-preset": "0.80.0",
     "@shopify/flash-list": "2.0.3",
     "@trivago/prettier-plugin-sort-imports": "5.2.2",
