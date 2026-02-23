@@ -73,6 +73,7 @@ export const Radio = forwardRef<RadioProps, 'TouchableOpacity'>(
         return children({
           isDisabled: isDisabled ?? false,
           isChecked: checked,
+          onToggle: handleOnPress,
         });
       }
 

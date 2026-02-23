@@ -1,21 +1,41 @@
-import { SafeAreaView } from "react-native";
-import { Box, Checkbox, CheckboxGroup, HStack, Icon, SafeAreaBox, Text, useColorModeValue, VStack } from  "react-native-ficus-ui";
-import ExampleSection from "@/src/ExampleSection";
+import { SafeAreaView } from 'react-native';
+import {
+  Box,
+  Button,
+  Checkbox,
+  CheckboxGroup,
+  HStack,
+  Icon,
+  SafeAreaBox,
+  Text,
+  VStack,
+  useColorModeValue,
+} from 'react-native-ficus-ui';
+
+import ExampleSection from '@/src/ExampleSection';
 
 const CheckboxComponent = () => {
   return (
-    <SafeAreaBox flex={1} bg={useColorModeValue("gray.100", "gray.800")}>
+    <SafeAreaBox flex={1} bg={useColorModeValue('gray.100', 'gray.800')}>
       <Text mx="xl" fontSize="4xl">
         Checkbox component
       </Text>
       <ExampleSection name="Simple checkbox">
         <VStack spacing="md">
           <Checkbox>Option 1</Checkbox>
-          <Checkbox colorScheme="red" defaultChecked>Option 1</Checkbox>
+          <Checkbox colorScheme="red" defaultChecked>
+            Option 1
+          </Checkbox>
         </VStack>
       </ExampleSection>
       <ExampleSection name="Custom icon">
-        <Checkbox colorScheme="purple" defaultChecked icon={<Icon name="flash-outline" />}>Option 1</Checkbox>
+        <Checkbox
+          colorScheme="purple"
+          defaultChecked
+          icon={<Icon name="flash-outline" />}
+        >
+          Option 1
+        </Checkbox>
       </ExampleSection>
       <ExampleSection name="Sizes">
         <VStack spacing="md">
@@ -27,9 +47,7 @@ const CheckboxComponent = () => {
       </ExampleSection>
       <ExampleSection name="Checkbox disabled">
         <HStack spacing="md">
-          <Checkbox isDisabled>
-            Option 1
-          </Checkbox>
+          <Checkbox isDisabled>Option 1</Checkbox>
           <Checkbox isDisabled defaultChecked>
             Option 1
           </Checkbox>
@@ -48,20 +66,41 @@ const CheckboxComponent = () => {
       <ExampleSection name="Custom render">
         <CheckboxGroup flexDirection="row">
           <HStack spacing="sm">
-            {["Option 1", "Option 2", "Option 3"].map((item) => (
+            {['Option 1', 'Option 2', 'Option 3'].map((item) => (
               <Checkbox value={item} key={`checkbox-option-${item}`}>
                 {({ isChecked }) => (
                   <Box
-                    bg={isChecked ? "blue.600" : "blue.100"}
+                    bg={isChecked ? 'blue.600' : 'blue.100'}
                     px="xl"
                     py="md"
                     mr="md"
                     borderRadius="full"
                   >
-                    <Text color={isChecked ? "white" : "gray.800"}>{item}</Text>
+                    <Text color={isChecked ? 'white' : 'gray.800'}>{item}</Text>
                   </Box>
                 )}
-
+              </Checkbox>
+            ))}
+          </HStack>
+        </CheckboxGroup>
+      </ExampleSection>
+      <ExampleSection name="Custom render with Button">
+        <CheckboxGroup flexDirection="row">
+          <HStack spacing="sm">
+            {['Option 1', 'Option 2', 'Option 3'].map((item) => (
+              <Checkbox value={item} key={`checkbox-option-${item}`}>
+                {({ isChecked, onToggle }) => (
+                  <Button
+                    bg={isChecked ? 'blue.600' : 'blue.100'}
+                    px="xl"
+                    py="md"
+                    mr="md"
+                    borderRadius="full"
+                    onPress={onToggle}
+                  >
+                    <Text color={isChecked ? 'white' : 'gray.800'}>{item}</Text>
+                  </Button>
+                )}
               </Checkbox>
             ))}
           </HStack>
