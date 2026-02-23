@@ -1,11 +1,13 @@
-import { NativeFicusProps, ficus } from '../system';
+import { ThemingProps, omitThemingProps } from '../../style-system';
+import { NativeFicusProps, ficus, useStyleConfig } from '../system';
 
-export interface CenterProps extends NativeFicusProps<'View'> {}
+export interface CenterProps
+  extends NativeFicusProps<'View'>,
+    ThemingProps<'View'> {}
 
-export const Center = ficus('View', {
-  baseStyle: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export const Center = function Center(props: CenterProps) {
+  const styles = useStyleConfig('Center', props);
+  const { ...rest } = omitThemingProps(props);
+
+  return <ficus.View __styles={styles} {...rest} />;
+};
