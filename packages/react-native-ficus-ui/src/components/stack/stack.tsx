@@ -81,6 +81,7 @@ export const Stack = forwardRef<StackProps, 'View'>((props, ref) => {
       ref={ref}
       display="flex"
       gap={hasDivider ? undefined : spacing}
+      flexDirection={direction}
       {...rest}
     >
       {clones}
