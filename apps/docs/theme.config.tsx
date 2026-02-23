@@ -111,9 +111,10 @@ const config: DocsThemeConfig = {
   },
   head: function useHead() {
     const config = useConfig<{ description?: string; image?: string }>();
-    const description =
+    const defaultDescription =
       'Ficus UI is a simple, modular and accessible UI library for React Native, forked from Magnus UI and inspired by Chakra UI';
-    const image = '/img/banner.png';
+    const description = config.frontMatter.description || defaultDescription;
+    const image = config.frontMatter.image || '/img/banner.png';
     return (
       <>
         <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
