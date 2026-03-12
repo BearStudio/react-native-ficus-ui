@@ -88,6 +88,7 @@ export const Checkbox = forwardRef<CheckboxProps, 'TouchableOpacity'>(
         return children({
           isDisabled: isDisabled ?? false,
           isChecked: checked,
+          onToggle: handleOnPress,
         });
       }
 
